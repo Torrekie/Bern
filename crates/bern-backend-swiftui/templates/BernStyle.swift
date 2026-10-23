@@ -2091,7 +2091,7 @@ extension View {
         bernNamedCoordinateSpace(bernSnapSpace)
     }
 
-    @ViewBuilder private func bernNamedCoordinateSpace<Name: Hashable>(_ name: Name) -> some View {
+    @ViewBuilder fileprivate func bernNamedCoordinateSpace<Name: Hashable>(_ name: Name) -> some View {
         #if os(macOS)
         if #available(macOS 14, *) { coordinateSpace(.named(name)) }
         else { coordinateSpace(name: name) }
