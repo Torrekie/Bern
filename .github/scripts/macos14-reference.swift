@@ -378,6 +378,19 @@ do {
         guard let session = session else { throw Failure(description: "Application did not register exactly one UI session") }
         NSRunningApplication(processIdentifier: process.processIdentifier)?.activate(options: [.activateAllWindows, .activateIgnoringOtherApps])
         _ = try cli(["ui", "set-language", "--language", "en"], session: session)
+        if product == "Gallery" {
+            // Gallery's explicit System choice overrides the development
+            // environment variable. Use its existing appearance action.
+            let choice = try control(inspect(session), suffix: "." + appearance, role: "button")
+            _ = try cli(["ui", "activate", "--target", choice["target"] as! String], session: session)
+            let state = try cli(["state"]) as? [String: Any] ?? [:]
+            let values = state["values"] as? [String: Any] ?? [:]
+            guard (values["appearance"] as? String)?.lowercased() == appearance else {
+                throw Failure(description: "Gallery did not commit the requested appearance")
+            }
+            checks.append(["description": "Gallery application appearance", "expected": appearance, "actual": values["appearance"] ?? NSNull()])
+            try pause(0.4)
+        }
         let listed = try cli(["window", "list"], session: session) as? [[String: Any]] ?? []
         let main = listed.filter { $0["kind"] as? String == "main" }
         guard main.count == 1, let identifier = main[0]["window"] as? String else {
