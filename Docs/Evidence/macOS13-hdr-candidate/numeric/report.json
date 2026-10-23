@@ -1,0 +1,575 @@
+{
+  "source": {
+    "path": "examples/showcase/images/hdr-pq.png",
+    "sha256": "96f80d2f1c06070dac29e3b7e2924a6aed8e54286bc73921f62cf75420a599ed",
+    "upstream_commit": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+    "byte_identical_to_upstream": true,
+    "shape": [
+      360,
+      640,
+      4
+    ],
+    "chunk_types": [
+      "IHDR",
+      "iCCP",
+      "cICP",
+      "eXIf",
+      "IDAT",
+      "IEND"
+    ],
+    "cicp": "09100001",
+    "ramp_y": [
+      240,
+      360
+    ],
+    "ramp_rgb_pq_max_difference": 1.5259021896696368e-05,
+    "ramp_peak_nit": 812.0552724503983,
+    "top_left_nit": [
+      203.01642419639813,
+      203.01642419639813,
+      203.01642419639813
+    ],
+    "top_right_nit": [
+      812.0552724503983,
+      812.0552724503983,
+      812.0552724503983
+    ],
+    "ramp_monotone": true,
+    "valid_alpha_opaque": true
+  },
+  "reference": {
+    "path": "Docs/Evidence/macOS14-reference-normal/images-layout-light.png",
+    "sha256": "ed55052080e78d477d6d995bc951f6aee55c7b0e4dd2f8c102ab9ee8a6c176cf",
+    "image_size": [
+      920,
+      668
+    ],
+    "profile_name": "Display",
+    "image_rect": [
+      435,
+      330,
+      192,
+      108
+    ],
+    "ramp_roi": [
+      435,
+      409,
+      627,
+      432
+    ],
+    "pixel_mapping": "source_x=(screen_index+0.5)*640/192-0.5; linear-nit interpolation",
+    "valid_screen_x": [
+      437,
+      625
+    ],
+    "color_pipeline": "embedded ICC \u2192 LittleCMS perceptual sRGB 8-bit; average 23 interior rows",
+    "max_row_std_srgb_255": 0.7010658911563957,
+    "mean_row_std_srgb_255": 0.4759810402694606,
+    "max_measured_channel_spread": 0.39130434782609314
+  },
+  "parameters": {
+    "BT2408_A5_ISO_reference_1000_to_100": {
+      "source_black_nit": 0,
+      "source_peak_nit": 1000,
+      "target_black_nit": 0,
+      "target_peak_nit": 100,
+      "output_normalization_nit": 100,
+      "source_peak_status": "hypothesis; no MDCV in source"
+    },
+    "BT2408_A5_ISO_reference_1000_to_203": {
+      "source_black_nit": 0,
+      "source_peak_nit": 1000,
+      "target_black_nit": 0,
+      "target_peak_nit": 203,
+      "output_normalization_nit": 203,
+      "source_peak_status": "hypothesis; no MDCV in source"
+    },
+    "BT2408_A5_observed_asset_peak_to_100": {
+      "source_black_nit": 0,
+      "source_peak_nit": 812.0552724503983,
+      "target_black_nit": 0,
+      "target_peak_nit": 100,
+      "output_normalization_nit": 100,
+      "source_peak_status": "hypothesis; no MDCV in source"
+    },
+    "BT2408_A5_observed_asset_peak_to_203": {
+      "source_black_nit": 0,
+      "source_peak_nit": 812.0552724503983,
+      "target_black_nit": 0,
+      "target_peak_nit": 203,
+      "output_normalization_nit": 203,
+      "source_peak_status": "hypothesis; no MDCV in source"
+    },
+    "BT2408_A5_unknown_master_10000_to_100": {
+      "source_black_nit": 0,
+      "source_peak_nit": 10000,
+      "target_black_nit": 0,
+      "target_peak_nit": 100,
+      "output_normalization_nit": 100,
+      "source_peak_status": "hypothesis; no MDCV in source"
+    },
+    "BT2408_A5_unknown_master_10000_to_203": {
+      "source_black_nit": 0,
+      "source_peak_nit": 10000,
+      "target_black_nit": 0,
+      "target_peak_nit": 203,
+      "output_normalization_nit": 203,
+      "source_peak_status": "hypothesis; no MDCV in source"
+    },
+    "BT2446_A_1000_to_100": {
+      "source_peak_nit": 1000,
+      "target_peak_nit": 100,
+      "method": "neutral-axis Method A, Table 2, SDR gamma 2.4 decoded then encoded sRGB"
+    },
+    "linear_clip_reference_100": {
+      "reference_white_nit": 100,
+      "purpose": "no-tone-map control"
+    },
+    "linear_clip_reference_203": {
+      "reference_white_nit": 203,
+      "purpose": "no-tone-map control"
+    }
+  },
+  "metrics": {
+    "BT2408_A5_ISO_reference_1000_to_100": {
+      "mae_srgb_255": 8.986576403071519,
+      "rmse_srgb_255": 15.722389292208794,
+      "max_abs_srgb_255": 45.19915429843333,
+      "mean_bias_srgb_255": 8.986067955460799
+    },
+    "BT2408_A5_ISO_reference_1000_to_203": {
+      "mae_srgb_255": 0.0979693917101672,
+      "rmse_srgb_255": 0.11936198274180802,
+      "max_abs_srgb_255": 0.3832432081180741,
+      "mean_bias_srgb_255": -0.01233246460624451
+    },
+    "BT2408_A5_observed_asset_peak_to_100": {
+      "mae_srgb_255": 10.304224054019777,
+      "rmse_srgb_255": 17.047660731007543,
+      "max_abs_srgb_255": 47.01681037070395,
+      "mean_bias_srgb_255": 10.304224054019777
+    },
+    "BT2408_A5_observed_asset_peak_to_203": {
+      "mae_srgb_255": 1.4221409535030411,
+      "rmse_srgb_255": 1.8339463848197726,
+      "max_abs_srgb_255": 3.582416286061431,
+      "mean_bias_srgb_255": 1.4145299408523626
+    },
+    "BT2408_A5_unknown_master_10000_to_100": {
+      "mae_srgb_255": 18.261358990051804,
+      "rmse_srgb_255": 18.93516869254547,
+      "max_abs_srgb_255": 27.672621580078044,
+      "mean_bias_srgb_255": -14.6079756679101
+    },
+    "BT2408_A5_unknown_master_10000_to_203": {
+      "mae_srgb_255": 24.845933629872114,
+      "rmse_srgb_255": 26.214000638027738,
+      "max_abs_srgb_255": 34.54181036452269,
+      "mean_bias_srgb_255": -24.844073897100607
+    },
+    "BT2446_A_1000_to_100": {
+      "mae_srgb_255": 35.82803360732581,
+      "rmse_srgb_255": 39.30783505736171,
+      "max_abs_srgb_255": 60.771752682286916,
+      "mean_bias_srgb_255": -35.82803360732581
+    },
+    "linear_clip_reference_100": {
+      "mae_srgb_255": 15.444597070931215,
+      "rmse_srgb_255": 25.20352800036681,
+      "max_abs_srgb_255": 69.1228520179489,
+      "mean_bias_srgb_255": 15.444597070931215
+    },
+    "linear_clip_reference_203": {
+      "mae_srgb_255": 5.381616479721194,
+      "rmse_srgb_255": 8.688771363316283,
+      "max_abs_srgb_255": 25.82608695652172,
+      "mean_bias_srgb_255": 5.374005467070516
+    }
+  },
+  "samples": [
+    {
+      "screen_x": 439,
+      "source_x": 14.5,
+      "source_nit": [
+        18.42588939573837,
+        18.42588939573837,
+        18.42588939573837
+      ],
+      "source_relative_203": 0.09076792805782448,
+      "measured_srgb_255": [
+        84.8695652173913,
+        85.0,
+        84.8695652173913
+      ],
+      "measured_linear_srgb": [
+        0.09056062447053946,
+        0.0908484778715914,
+        0.09055927113290273
+      ],
+      "candidates": {
+        "BT2408_A5_ISO_reference_1000_to_100": 118.93504855322277,
+        "BT2408_A5_ISO_reference_1000_to_203": 84.96647967147169,
+        "BT2408_A5_observed_asset_peak_to_100": 118.93504855322277,
+        "BT2408_A5_observed_asset_peak_to_203": 84.96647967147169,
+        "BT2408_A5_unknown_master_10000_to_100": 112.54218679746934,
+        "BT2408_A5_unknown_master_10000_to_203": 84.96647967147169,
+        "BT2446_A_1000_to_100": 65.44812838317898,
+        "linear_clip_reference_100": 118.93504855322162,
+        "linear_clip_reference_203": 84.96647967147082
+      }
+    },
+    {
+      "screen_x": 447,
+      "source_x": 41.166666666666664,
+      "source_nit": [
+        52.30815668663803,
+        52.30815668663803,
+        52.31510027883346
+      ],
+      "source_relative_203": 0.2576870503318711,
+      "measured_srgb_255": [
+        138.95652173913044,
+        138.82608695652175,
+        138.69565217391303
+      ],
+      "measured_linear_srgb": [
+        0.2580108239408956,
+        0.2574818514275491,
+        0.2569577110034197
+      ],
+      "candidates": {
+        "BT2408_A5_ISO_reference_1000_to_100": 183.55173654843165,
+        "BT2408_A5_ISO_reference_1000_to_203": 138.87748867745918,
+        "BT2408_A5_observed_asset_peak_to_100": 185.70700725969672,
+        "BT2408_A5_observed_asset_peak_to_203": 138.87748867745918,
+        "BT2408_A5_unknown_master_10000_to_100": 156.75006239306563,
+        "BT2408_A5_unknown_master_10000_to_203": 133.43781556002034,
+        "BT2446_A_1000_to_100": 101.47373355773556,
+        "linear_clip_reference_100": 191.34542567636106,
+        "linear_clip_reference_203": 138.87748867745478
+      }
+    },
+    {
+      "screen_x": 459,
+      "source_x": 81.16666666666667,
+      "source_nit": [
+        103.14128330883281,
+        103.14128330883281,
+        103.14128330883281
+      ],
+      "source_relative_203": 0.5080851394523783,
+      "measured_srgb_255": [
+        187.95652173913044,
+        188.2173913043478,
+        188.17391304347825
+      ],
+      "measured_linear_srgb": [
+        0.5026330117969295,
+        0.5041914890744161,
+        0.5039308428647481
+      ],
+      "candidates": {
+        "BT2408_A5_ISO_reference_1000_to_100": 218.440116378721,
+        "BT2408_A5_ISO_reference_1000_to_203": 188.04143655200292,
+        "BT2408_A5_observed_asset_peak_to_100": 221.78370674000953,
+        "BT2408_A5_observed_asset_peak_to_203": 188.7837967547877,
+        "BT2408_A5_unknown_master_10000_to_100": 184.2612848059592,
+        "BT2408_A5_unknown_master_10000_to_203": 165.7464518777004,
+        "BT2446_A_1000_to_100": 132.47710687927446,
+        "linear_clip_reference_100": 254.99999999999997,
+        "linear_clip_reference_203": 188.86758655088352
+      }
+    },
+    {
+      "screen_x": 483,
+      "source_x": 161.16666666666666,
+      "source_nit": [
+        204.80265607673837,
+        204.80265607673837,
+        204.80265607673837
+      ],
+      "source_relative_203": 1.0088800791957555,
+      "measured_srgb_255": [
+        229.2173913043478,
+        229.17391304347825,
+        229.2608695652174
+      ],
+      "measured_linear_srgb": [
+        0.7852247803971578,
+        0.7848893206924288,
+        0.7855621781713507
+      ],
+      "candidates": {
+        "BT2408_A5_ISO_reference_1000_to_100": 241.55508696680917,
+        "BT2408_A5_ISO_reference_1000_to_203": 229.39063300245107,
+        "BT2408_A5_observed_asset_peak_to_100": 244.3088615543544,
+        "BT2408_A5_observed_asset_peak_to_203": 232.7093325888549,
+        "BT2408_A5_unknown_master_10000_to_100": 208.62230675763143,
+        "BT2408_A5_unknown_master_10000_to_203": 195.50763110896528,
+        "BT2446_A_1000_to_100": 171.27922686123463,
+        "linear_clip_reference_100": 254.99999999999997,
+        "linear_clip_reference_203": 254.99999999999997
+      }
+    },
+    {
+      "screen_x": 531,
+      "source_x": 321.1666666666667,
+      "source_nit": [
+        408.0986450816358,
+        408.0986450816358,
+        408.0986450816358
+      ],
+      "source_relative_203": 2.0103381531115065,
+      "measured_srgb_255": [
+        250.34782608695653,
+        250.2173913043478,
+        250.2173913043478
+      ],
+      "measured_linear_srgb": [
+        0.9590059286967004,
+        0.9578714675746811,
+        0.9578694641777641
+      ],
+      "candidates": {
+        "BT2408_A5_ISO_reference_1000_to_100": 252.46062610199212,
+        "BT2408_A5_ISO_reference_1000_to_203": 250.07438906030674,
+        "BT2408_A5_observed_asset_peak_to_100": 253.60745087988116,
+        "BT2408_A5_observed_asset_peak_to_203": 252.0431214841648,
+        "BT2408_A5_unknown_master_10000_to_100": 228.05184381795516,
+        "BT2408_A5_unknown_master_10000_to_203": 219.98861095380525,
+        "BT2446_A_1000_to_100": 211.12377967238498,
+        "linear_clip_reference_100": 254.99999999999997,
+        "linear_clip_reference_203": 254.99999999999997
+      }
+    },
+    {
+      "screen_x": 578,
+      "source_x": 477.8333333333333,
+      "source_nit": [
+        607.2166967374753,
+        607.2166967374753,
+        607.2166967374753
+      ],
+      "source_relative_203": 2.9912152548644104,
+      "measured_srgb_255": [
+        254.2173913043478,
+        254.34782608695653,
+        254.17391304347825
+      ],
+      "measured_linear_srgb": [
+        0.9930384393110611,
+        0.9941990353396918,
+        0.9926576204167218
+      ],
+      "candidates": {
+        "BT2408_A5_ISO_reference_1000_to_100": 254.55595356485227,
+        "BT2408_A5_ISO_reference_1000_to_203": 254.13569260163862,
+        "BT2408_A5_observed_asset_peak_to_100": 254.89356099951019,
+        "BT2408_A5_observed_asset_peak_to_203": 254.77342366861913,
+        "BT2408_A5_unknown_master_10000_to_100": 236.63489387002156,
+        "BT2408_A5_unknown_master_10000_to_203": 231.0081284194272,
+        "BT2446_A_1000_to_100": 232.17159900458054,
+        "linear_clip_reference_100": 254.99999999999997,
+        "linear_clip_reference_203": 254.99999999999997
+      }
+    },
+    {
+      "screen_x": 617,
+      "source_x": 607.8333333333334,
+      "source_nit": [
+        772.3873299604911,
+        772.3873299604911,
+        772.3873299604911
+      ],
+      "source_relative_203": 3.804863694386656,
+      "measured_srgb_255": [
+        254.65217391304347,
+        254.8695652173913,
+        254.82608695652175
+      ],
+      "measured_linear_srgb": [
+        0.9969050772569844,
+        0.9988394039713689,
+        0.9984525386284921
+      ],
+      "candidates": {
+        "BT2408_A5_ISO_reference_1000_to_100": 254.9380668287735,
+        "BT2408_A5_ISO_reference_1000_to_203": 254.87937494292717,
+        "BT2408_A5_observed_asset_peak_to_100": 254.99945272354987,
+        "BT2408_A5_observed_asset_peak_to_203": 254.99883477371876,
+        "BT2408_A5_unknown_master_10000_to_100": 240.89660319819794,
+        "BT2408_A5_unknown_master_10000_to_203": 236.52560679172328,
+        "BT2446_A_1000_to_100": 243.75462932565833,
+        "linear_clip_reference_100": 254.99999999999997,
+        "linear_clip_reference_203": 254.99999999999997
+      }
+    }
+  ],
+  "robustness": {
+    "all_192_columns": {
+      "mae_srgb_255": 0.09935946639915164,
+      "rmse_srgb_255": 0.12179026212563251,
+      "max_abs_srgb_255": 0.39867119105833027,
+      "mean_bias_srgb_255": -0.008736659810765792
+    },
+    "A14_rows_405_410": {
+      "mae_srgb_255": 0.16715517526691773,
+      "rmse_srgb_255": 0.20703340674988216,
+      "max_abs_srgb_255": 0.6249532230445425,
+      "mean_bias_srgb_255": -0.011977854677166984
+    },
+    "A14_rows_409_432": {
+      "mae_srgb_255": 0.0979693917101672,
+      "rmse_srgb_255": 0.11936198274180802,
+      "max_abs_srgb_255": 0.3832432081180741,
+      "mean_bias_srgb_255": -0.01233246460624451
+    },
+    "A14_rows_423_435": {
+      "mae_srgb_255": 0.11390324209947406,
+      "rmse_srgb_255": 0.139290017626803,
+      "max_abs_srgb_255": 0.42023727583864456,
+      "mean_bias_srgb_255": -0.01912915491357259
+    },
+    "black_sensitivity_source_0_target_0.0005": {
+      "mae_srgb_255": 0.1023000710352434,
+      "rmse_srgb_255": 0.12606210597306947,
+      "max_abs_srgb_255": 0.38039734209750975,
+      "mean_bias_srgb_255": 0.012206645469746338
+    },
+    "black_sensitivity_source_0.0005_target_0.0005": {
+      "mae_srgb_255": 0.09796939171015129,
+      "rmse_srgb_255": 0.11936198274179323,
+      "max_abs_srgb_255": 0.3832432081180741,
+      "mean_bias_srgb_255": -0.012332464606292283
+    },
+    "PQ_signal_interpolation_instead_of_linear_nit": {
+      "mae_srgb_255": 0.09775905848657628,
+      "rmse_srgb_255": 0.11924215155437037,
+      "max_abs_srgb_255": 0.3835206981432009,
+      "mean_bias_srgb_255": -0.01311562863346035
+    },
+    "ICC_intent_0": {
+      "mae_srgb_255": 0.0979693917101672,
+      "rmse_srgb_255": 0.11936198274180802,
+      "max_abs_srgb_255": 0.3832432081180741,
+      "mean_bias_srgb_255": -0.01233246460624451
+    },
+    "ICC_intent_1": {
+      "mae_srgb_255": 0.0979693917101672,
+      "rmse_srgb_255": 0.11936198274180802,
+      "max_abs_srgb_255": 0.3832432081180741,
+      "mean_bias_srgb_255": -0.01233246460624451
+    },
+    "ICC_intent_2": {
+      "mae_srgb_255": 0.0979693917101672,
+      "rmse_srgb_255": 0.11936198274180802,
+      "max_abs_srgb_255": 0.3832432081180741,
+      "mean_bias_srgb_255": -0.01233246460624451
+    },
+    "ICC_intent_3": {
+      "mae_srgb_255": 0.0979693917101672,
+      "rmse_srgb_255": 0.11936198274180802,
+      "max_abs_srgb_255": 0.3832432081180741,
+      "mean_bias_srgb_255": -0.01233246460624451
+    },
+    "B14_plus_one_y_rows_410_433": {
+      "mae_srgb_255": 0.0967704541791117,
+      "rmse_srgb_255": 0.11914978837504499,
+      "max_abs_srgb_255": 0.36652795400320315,
+      "mean_bias_srgb_255": -0.013642979561533266
+    },
+    "B14_vs_A14_aligned": {
+      "mae_srgb_255": 0.021970397779833763,
+      "rmse_srgb_255": 0.0326985092669179,
+      "max_abs_srgb_255": 0.08695652173915391,
+      "mean_bias_srgb_255": 0.0013105149552887553
+    },
+    "B14_provenance": {
+      "path": "Docs/Evidence/macOS14-port-comparison/showcase-images-layout-light.png",
+      "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780",
+      "profile_name": "Display",
+      "image_rect": [
+        435,
+        331,
+        192,
+        108
+      ],
+      "ramp_roi": [
+        435,
+        410,
+        627,
+        433
+      ]
+    }
+  },
+  "candidate_geometry": {
+    "knee_input_nit": 87.836267395426,
+    "knee_input_relative_203": 0.4326909723912611,
+    "full_sampled_nit_interval": [
+      1.482561068223158,
+      810.4814825363486
+    ],
+    "inner_188_sampled_nit_interval": [
+      9.954283072128302,
+      802.0755055357314
+    ],
+    "linear_srgb_rmse": 0.000952163711153042,
+    "left_plateau_predicted_srgb_255": 228.993304800653,
+    "right_plateau_predicted_srgb_255": 254.9367649156703
+  },
+  "unvalidated_edr_extension": [
+    {
+      "display_headroom": 1,
+      "target_peak_nit": 203,
+      "edr_linear_white_203_peak_812": [
+        0.7834574653176367,
+        0.9994354133576363
+      ]
+    },
+    {
+      "display_headroom": 1.5,
+      "target_peak_nit": 304.5,
+      "edr_linear_white_203_peak_812": [
+        0.978249264583199,
+        1.4985206418024302
+      ]
+    },
+    {
+      "display_headroom": 2,
+      "target_peak_nit": 406,
+      "edr_linear_white_203_peak_812": [
+        1.0000000000000104,
+        1.996623562942227
+      ]
+    },
+    {
+      "display_headroom": 3,
+      "target_peak_nit": 609,
+      "edr_linear_white_203_peak_812": [
+        1.0000000000000104,
+        2.9835776703701473
+      ]
+    },
+    {
+      "display_headroom": 4,
+      "target_peak_nit": 812,
+      "edr_linear_white_203_peak_812": [
+        1.0000000000000104,
+        3.878328198295843
+      ]
+    },
+    {
+      "display_headroom": 4.926108374384237,
+      "target_peak_nit": 1000.0,
+      "edr_linear_white_203_peak_812": [
+        1.0,
+        4.0
+      ]
+    }
+  ],
+  "constraints": [
+    "No fitting or geometry optimization.",
+    "Source/master peak and target absolute white are explicit alternative hypotheses, not observed macOS parameters.",
+    "Only neutral SDR captured axis: color treatment and current-headroom HDR behavior not identified."
+  ]
+}

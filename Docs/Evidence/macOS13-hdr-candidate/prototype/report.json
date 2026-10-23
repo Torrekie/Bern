@@ -1,0 +1,6323 @@
+{
+  "candidate" : "BT2408-6 Annex5 LB0 LW1000 Lmin0 Lmax203*Hd; LW1000 is candidate preset, not PNG metadata; ISO default diffuse white203 is not read from ICC lumi100",
+  "captures" : [
+    {
+      "active" : false,
+      "content_height" : 180,
+      "content_width" : 480,
+      "current" : 1,
+      "draws" : [
+        2,
+        2
+      ],
+      "frames" : {
+        "High candidate" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 264,
+          "y" : 20
+        },
+        "Standard" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 24,
+          "y" : 20
+        }
+      },
+      "image_height" : 416,
+      "image_width" : 960,
+      "key" : false,
+      "potential" : 2,
+      "requests_edr" : [
+        false,
+        false
+      ],
+      "scale" : 2,
+      "stage" : "standard-initial"
+    },
+    {
+      "active" : false,
+      "content_height" : 180,
+      "content_width" : 480,
+      "current" : 2,
+      "draws" : [
+        28,
+        29
+      ],
+      "frames" : {
+        "High candidate" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 264,
+          "y" : 20
+        },
+        "Standard" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 24,
+          "y" : 20
+        }
+      },
+      "image_height" : 416,
+      "image_width" : 960,
+      "key" : false,
+      "potential" : 2,
+      "requests_edr" : [
+        false,
+        true
+      ],
+      "scale" : 2,
+      "stage" : "high-request"
+    },
+    {
+      "active" : false,
+      "content_height" : 180,
+      "content_width" : 480,
+      "current" : 1,
+      "draws" : [
+        64,
+        66
+      ],
+      "frames" : {
+        "High candidate" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 264,
+          "y" : 20
+        },
+        "Standard" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 24,
+          "y" : 20
+        }
+      },
+      "image_height" : 416,
+      "image_width" : 960,
+      "key" : false,
+      "potential" : 2,
+      "requests_edr" : [
+        false,
+        false
+      ],
+      "scale" : 2,
+      "stage" : "back-to-standard"
+    },
+    {
+      "active" : false,
+      "content_height" : 180,
+      "content_width" : 480,
+      "current" : 2,
+      "draws" : [
+        91,
+        94
+      ],
+      "frames" : {
+        "High candidate" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 264,
+          "y" : 20
+        },
+        "Standard" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 24,
+          "y" : 20
+        }
+      },
+      "image_height" : 416,
+      "image_width" : 960,
+      "key" : false,
+      "potential" : 2,
+      "requests_edr" : [
+        false,
+        true
+      ],
+      "scale" : 2,
+      "stage" : "high-again"
+    }
+  ],
+  "decode_validate_milliseconds" : 18.031954765319824,
+  "decoded_byte_order" : "Little",
+  "duration_seconds" : 6.1766899824142456,
+  "frontmost_at_finish" : 75891,
+  "limitations" : "Known neutral input only. No physical nit measurement, color\/gamut or metadata rule proof. Hd>1 is an unverified extension of a scalar candidate, not Apple14 equivalence. WindowServer SDR PNG may clip >1 even when distinct linear EDR pixels are submitted. No manually posted screen notifications.",
+  "original_frontmost_pid" : 75891,
+  "os" : "Version 13.7.8 (Build 22H730)",
+  "output" : "Float32 RGBA CGImage linear BT2020 Lout\/203 -> CoreImage -> rgba16Float CAMetalLayer extendedLinearITUR2020 -> system screen conversion; no PQ output layer",
+  "real_os_notifications" : [
+    {
+      "current" : 1,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "standard-initial",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "standard-initial",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "standard-initial",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "standard-initial",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0050736665725708,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0050736665725708,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0050736665725708,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0050736665725708,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.052607536315918,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.052607536315918,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.052607536315918,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.052607536315918,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1023895740509033,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1023895740509033,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1023895740509033,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1023895740509033,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1281565427780151,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1281565427780151,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1281565427780151,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1281565427780151,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1412651538848877,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1412651538848877,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1412651538848877,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1412651538848877,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1679407358169556,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1679407358169556,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1679407358169556,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1679407358169556,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1952400207519531,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1952400207519531,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1952400207519531,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1952400207519531,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2373899221420288,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2373899221420288,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2373899221420288,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2373899221420288,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2663124799728394,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2663124799728394,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2663124799728394,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2663124799728394,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.326201319694519,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.326201319694519,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.326201319694519,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.326201319694519,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3416109085083008,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3416109085083008,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3416109085083008,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3416109085083008,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3729695081710815,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3729695081710815,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3729695081710815,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3729695081710815,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4213864803314209,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4213864803314209,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4213864803314209,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4213864803314209,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4715118408203125,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4715118408203125,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4715118408203125,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4715118408203125,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5059067010879517,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5059067010879517,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5059067010879517,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5059067010879517,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5234043598175049,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5234043598175049,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5234043598175049,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5234043598175049,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5411053895950317,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5411053895950317,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5411053895950317,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5411053895950317,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5771269798278809,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5771269798278809,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5771269798278809,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5771269798278809,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5954521894454956,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5954521894454956,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5954521894454956,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5954521894454956,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6517153978347778,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6517153978347778,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6517153978347778,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6517153978347778,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6709073781967163,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6709073781967163,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6709073781967163,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6709073781967163,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7099629640579224,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7099629640579224,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7099629640579224,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7099629640579224,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7499312162399292,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7499312162399292,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7499312162399292,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7499312162399292,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7702643871307373,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7702643871307373,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7702643871307373,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7702643871307373,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8116414546966553,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8116414546966553,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8116414546966553,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8116414546966553,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8326923847198486,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8326923847198486,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8326923847198486,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8326923847198486,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8539870977401733,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8539870977401733,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8539870977401733,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8539870977401733,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9416670799255371,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9416670799255371,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9416670799255371,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9416670799255371,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9642304182052612,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9642304182052612,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9642304182052612,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9642304182052612,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 2,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 2,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 2,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "Standard"
+    },
+    {
+      "current" : 2,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-request",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9787793159484863,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9787793159484863,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9787793159484863,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9787793159484863,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.956051230430603,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.956051230430603,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.956051230430603,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.956051230430603,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8894213438034058,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8894213438034058,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8894213438034058,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8894213438034058,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8250609636306763,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8250609636306763,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8250609636306763,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8250609636306763,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8040992021560669,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8040992021560669,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8040992021560669,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8040992021560669,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7628937959671021,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7628937959671021,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7628937959671021,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7628937959671021,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7226288318634033,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7226288318634033,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7226288318634033,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7226288318634033,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6832841634750366,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6832841634750366,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6832841634750366,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6832841634750366,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6639499664306641,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6639499664306641,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6639499664306641,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6639499664306641,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6448385715484619,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6448385715484619,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6448385715484619,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6448385715484619,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6259454488754272,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6259454488754272,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6259454488754272,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6259454488754272,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5888091325759888,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5888091325759888,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5888091325759888,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5888091325759888,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.570560097694397,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.570560097694397,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.570560097694397,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.570560097694397,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5346887111663818,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5346887111663818,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5346887111663818,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5346887111663818,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5170613527297974,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5170613527297974,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5170613527297974,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5170613527297974,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4824123382568359,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4824123382568359,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4824123382568359,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4824123382568359,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4653849601745605,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4653849601745605,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4653849601745605,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4653849601745605,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.431916356086731,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.431916356086731,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.431916356086731,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.431916356086731,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3831402063369751,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3831402063369751,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3831402063369751,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3831402063369751,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3672530651092529,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3672530651092529,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3672530651092529,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3672530651092529,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3360251188278198,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3360251188278198,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3360251188278198,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3360251188278198,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2905154228210449,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2905154228210449,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2905154228210449,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2905154228210449,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.261040210723877,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.261040210723877,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.261040210723877,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.261040210723877,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2465564012527466,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2465564012527466,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2465564012527466,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2465564012527466,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2322381734848022,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2322381734848022,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2322381734848022,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2322381734848022,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2180848121643066,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2180848121643066,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2180848121643066,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2180848121643066,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2040939331054688,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2040939331054688,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2040939331054688,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2040939331054688,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1902638673782349,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1902638673782349,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1902638673782349,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1902638673782349,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1630783081054688,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1630783081054688,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1630783081054688,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1630783081054688,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1365140676498413,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1365140676498413,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1365140676498413,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1365140676498413,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1234598159790039,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1234598159790039,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1234598159790039,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1234598159790039,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1105557680130005,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1105557680130005,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1105557680130005,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1105557680130005,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0978004932403564,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0978004932403564,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0978004932403564,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0978004932403564,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0604056119918823,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0604056119918823,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0604056119918823,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0604056119918823,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0482254028320312,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0482254028320312,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0482254028320312,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0482254028320312,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.036185622215271,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.036185622215271,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.036185622215271,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.036185622215271,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0242844820022583,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0242844820022583,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0242844820022583,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0242844820022583,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0008895397186279,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0008895397186279,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0008895397186279,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0008895397186279,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "back-to-standard",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0105509757995605,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0105509757995605,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0105509757995605,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0105509757995605,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0222929716110229,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0222929716110229,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0222929716110229,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0222929716110229,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0341713428497314,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0341713428497314,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0341713428497314,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0341713428497314,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0583434104919434,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0583434104919434,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0583434104919434,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0583434104919434,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0830812454223633,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0830812454223633,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0830812454223633,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0830812454223633,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1083968877792358,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1083968877792358,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1083968877792358,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1083968877792358,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.121275782585144,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.121275782585144,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.121275782585144,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.121275782585144,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1474838256835938,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1474838256835938,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1474838256835938,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1474838256835938,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1743052005767822,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1743052005767822,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1743052005767822,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1743052005767822,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1879498958587646,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1879498958587646,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1879498958587646,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1879498958587646,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2017531394958496,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2017531394958496,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2017531394958496,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2017531394958496,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2298421859741211,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2298421859741211,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2298421859741211,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2298421859741211,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2880066633224487,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2880066633224487,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2880066633224487,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2880066633224487,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3181121349334717,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3181121349334717,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3181121349334717,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3181121349334717,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3489212989807129,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3489212989807129,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3489212989807129,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3489212989807129,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3804507255554199,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3804507255554199,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3804507255554199,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3804507255554199,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3964906930923462,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3964906930923462,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3964906930923462,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3964906930923462,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4291313886642456,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4291313886642456,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4291313886642456,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4291313886642456,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4457374811172485,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4457374811172485,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4457374811172485,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4457374811172485,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4967210292816162,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4967210292816162,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4967210292816162,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4967210292816162,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5141119956970215,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5141119956970215,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5141119956970215,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5141119956970215,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5317044258117676,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5317044258117676,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5317044258117676,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5317044258117676,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5675066709518433,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5675066709518433,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5675066709518433,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5675066709518433,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6041451692581177,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6041451692581177,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6041451692581177,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6041451692581177,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.660714864730835,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.660714864730835,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.660714864730835,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.660714864730835,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6995319128036499,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6995319128036499,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6995319128036499,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6995319128036499,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8005908727645874,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8005908727645874,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8005908727645874,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8005908727645874,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8426773548126221,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8426773548126221,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8426773548126221,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8426773548126221,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9298245906829834,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9298245906829834,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9298245906829834,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9298245906829834,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9978793859481812,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9978793859481812,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9978793859481812,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9978793859481812,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 2,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 2,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 2,
+      "intent" : "Standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "Standard"
+    },
+    {
+      "current" : 2,
+      "intent" : "High",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "potential" : 2,
+      "stage" : "high-again",
+      "view" : "High candidate"
+    }
+  ],
+  "resident_at_finish" : 24543232,
+  "restore_after_seconds" : 0.36899793148040771,
+  "restore_requested" : true,
+  "source_nits" : [
+    203.01642419639813,
+    812.05527245039832
+  ],
+  "source_raw" : "640x360 opaque neutral PNG RGBA16 BE, ImageIO decoded explicit byte order handled; CICP9\/16\/0\/1; copy(namedPQ) retains identical provider bytes; original file\/ICC unmodified",
+  "source_sha256" : "96f80d2f1c06070dac29e3b7e2924a6aed8e54286bc73921f62cf75420a599ed",
+  "submitted_texture_pixels" : [
+    {
+      "current" : 1,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "standard-initial",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "standard-initial",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "standard-initial",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "standard-initial",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1,
+      "effective" : 1,
+      "intent" : "High",
+      "left" : 0.783203125,
+      "requests_edr" : true,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0050736665725708,
+      "effective" : 1.0050736665725708,
+      "intent" : "High",
+      "left" : 0.7861328125,
+      "requests_edr" : true,
+      "right" : 1.00390625,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0050736665725708,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.052607536315918,
+      "effective" : 1.052607536315918,
+      "intent" : "High",
+      "left" : 0.81201171875,
+      "requests_edr" : true,
+      "right" : 1.0517578125,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.052607536315918,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1281565427780151,
+      "effective" : 1.1281565427780151,
+      "intent" : "High",
+      "left" : 0.849609375,
+      "requests_edr" : true,
+      "right" : 1.126953125,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1281565427780151,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1412651538848877,
+      "effective" : 1.1412651538848877,
+      "intent" : "High",
+      "left" : 0.85595703125,
+      "requests_edr" : true,
+      "right" : 1.1396484375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1412651538848877,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1679407358169556,
+      "effective" : 1.1679407358169556,
+      "intent" : "High",
+      "left" : 0.8681640625,
+      "requests_edr" : true,
+      "right" : 1.1669921875,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1679407358169556,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1952400207519531,
+      "effective" : 1.1952400207519531,
+      "intent" : "High",
+      "left" : 0.88037109375,
+      "requests_edr" : true,
+      "right" : 1.1943359375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1952400207519531,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2373899221420288,
+      "effective" : 1.2373899221420288,
+      "intent" : "High",
+      "left" : 0.89794921875,
+      "requests_edr" : true,
+      "right" : 1.236328125,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2373899221420288,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2663124799728394,
+      "effective" : 1.2663124799728394,
+      "intent" : "High",
+      "left" : 0.90966796875,
+      "requests_edr" : true,
+      "right" : 1.2646484375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2663124799728394,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3416109085083008,
+      "effective" : 1.3416109085083008,
+      "intent" : "High",
+      "left" : 0.9365234375,
+      "requests_edr" : true,
+      "right" : 1.33984375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3416109085083008,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3729695081710815,
+      "effective" : 1.3729695081710815,
+      "intent" : "High",
+      "left" : 0.9462890625,
+      "requests_edr" : true,
+      "right" : 1.37109375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3729695081710815,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4213864803314209,
+      "effective" : 1.4213864803314209,
+      "intent" : "High",
+      "left" : 0.9599609375,
+      "requests_edr" : true,
+      "right" : 1.419921875,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4213864803314209,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5059067010879517,
+      "effective" : 1.5059067010879517,
+      "intent" : "High",
+      "left" : 0.97900390625,
+      "requests_edr" : true,
+      "right" : 1.50390625,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5059067010879517,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5059067010879517,
+      "effective" : 1.5059067010879517,
+      "intent" : "High",
+      "left" : 0.97900390625,
+      "requests_edr" : true,
+      "right" : 1.50390625,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5059067010879517,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5411053895950317,
+      "effective" : 1.5411053895950317,
+      "intent" : "High",
+      "left" : 0.9853515625,
+      "requests_edr" : true,
+      "right" : 1.5390625,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5411053895950317,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5771269798278809,
+      "effective" : 1.5771269798278809,
+      "intent" : "High",
+      "left" : 0.99072265625,
+      "requests_edr" : true,
+      "right" : 1.5751953125,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5771269798278809,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5954521894454956,
+      "effective" : 1.5954521894454956,
+      "intent" : "High",
+      "left" : 0.9931640625,
+      "requests_edr" : true,
+      "right" : 1.5927734375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5954521894454956,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6517153978347778,
+      "effective" : 1.6517153978347778,
+      "intent" : "High",
+      "left" : 0.998046875,
+      "requests_edr" : true,
+      "right" : 1.6494140625,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6517153978347778,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6709073781967163,
+      "effective" : 1.6709073781967163,
+      "intent" : "High",
+      "left" : 0.9990234375,
+      "requests_edr" : true,
+      "right" : 1.66796875,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6709073781967163,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7099629640579224,
+      "effective" : 1.7099629640579224,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.70703125,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7099629640579224,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7702643871307373,
+      "effective" : 1.7702643871307373,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.767578125,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7702643871307373,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7702643871307373,
+      "effective" : 1.7702643871307373,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.767578125,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7702643871307373,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8116414546966553,
+      "effective" : 1.8116414546966553,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.80859375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8116414546966553,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8326923847198486,
+      "effective" : 1.8326923847198486,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.830078125,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8326923847198486,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8539870977401733,
+      "effective" : 1.8539870977401733,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.8505859375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8539870977401733,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9642304182052612,
+      "effective" : 1.9642304182052612,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.9609375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9642304182052612,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 2,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 2,
+      "effective" : 2,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.99609375,
+      "stage" : "high-request",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 2,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9787793159484863,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9787793159484863,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.956051230430603,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.956051230430603,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8894213438034058,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8894213438034058,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7628937959671021,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7628937959671021,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7628937959671021,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7628937959671021,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.7226288318634033,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.7226288318634033,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6832841634750366,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6832841634750366,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6639499664306641,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6639499664306641,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6448385715484619,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6448385715484619,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6259454488754272,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6259454488754272,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5888091325759888,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5888091325759888,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.570560097694397,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.570560097694397,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5346887111663818,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5346887111663818,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5170613527297974,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5170613527297974,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4824123382568359,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4824123382568359,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4653849601745605,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4653849601745605,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.431916356086731,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.431916356086731,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3831402063369751,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3831402063369751,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3672530651092529,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3672530651092529,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3360251188278198,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3360251188278198,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.261040210723877,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.261040210723877,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.261040210723877,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.261040210723877,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2465564012527466,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2465564012527466,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2180848121643066,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2180848121643066,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2040939331054688,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2040939331054688,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1902638673782349,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1902638673782349,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1630783081054688,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1630783081054688,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1365140676498413,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1365140676498413,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1234598159790039,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1234598159790039,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1105557680130005,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1105557680130005,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0978004932403564,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0978004932403564,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0604056119918823,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0604056119918823,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0482254028320312,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0482254028320312,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0242844820022583,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0242844820022583,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0008895397186279,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0008895397186279,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "back-to-standard",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1,
+      "effective" : 1,
+      "intent" : "High",
+      "left" : 0.783203125,
+      "requests_edr" : true,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0105509757995605,
+      "effective" : 1.0105509757995605,
+      "intent" : "High",
+      "left" : 0.7890625,
+      "requests_edr" : true,
+      "right" : 1.009765625,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0105509757995605,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0222929716110229,
+      "effective" : 1.0222929716110229,
+      "intent" : "High",
+      "left" : 0.79541015625,
+      "requests_edr" : true,
+      "right" : 1.021484375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0222929716110229,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0341713428497314,
+      "effective" : 1.0341713428497314,
+      "intent" : "High",
+      "left" : 0.8017578125,
+      "requests_edr" : true,
+      "right" : 1.033203125,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0341713428497314,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0583434104919434,
+      "effective" : 1.0583434104919434,
+      "intent" : "High",
+      "left" : 0.81494140625,
+      "requests_edr" : true,
+      "right" : 1.0576171875,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0583434104919434,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.0830812454223633,
+      "effective" : 1.0830812454223633,
+      "intent" : "High",
+      "left" : 0.82763671875,
+      "requests_edr" : true,
+      "right" : 1.08203125,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.0830812454223633,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1083968877792358,
+      "effective" : 1.1083968877792358,
+      "intent" : "High",
+      "left" : 0.84033203125,
+      "requests_edr" : true,
+      "right" : 1.107421875,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1083968877792358,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.121275782585144,
+      "effective" : 1.121275782585144,
+      "intent" : "High",
+      "left" : 0.8466796875,
+      "requests_edr" : true,
+      "right" : 1.1201171875,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.121275782585144,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1474838256835938,
+      "effective" : 1.1474838256835938,
+      "intent" : "High",
+      "left" : 0.85888671875,
+      "requests_edr" : true,
+      "right" : 1.146484375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1474838256835938,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.1879498958587646,
+      "effective" : 1.1879498958587646,
+      "intent" : "High",
+      "left" : 0.87744140625,
+      "requests_edr" : true,
+      "right" : 1.1865234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.1879498958587646,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2017531394958496,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2017531394958496,
+      "effective" : 1.2017531394958496,
+      "intent" : "High",
+      "left" : 0.88330078125,
+      "requests_edr" : true,
+      "right" : 1.2001953125,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2298421859741211,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.2298421859741211,
+      "effective" : 1.2298421859741211,
+      "intent" : "High",
+      "left" : 0.89501953125,
+      "requests_edr" : true,
+      "right" : 1.228515625,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2880066633224487,
+      "effective" : 1.2880066633224487,
+      "intent" : "High",
+      "left" : 0.91748046875,
+      "requests_edr" : true,
+      "right" : 1.2861328125,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.2880066633224487,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3181121349334717,
+      "effective" : 1.3181121349334717,
+      "intent" : "High",
+      "left" : 0.92822265625,
+      "requests_edr" : true,
+      "right" : 1.31640625,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3181121349334717,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3489212989807129,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3489212989807129,
+      "effective" : 1.3489212989807129,
+      "intent" : "High",
+      "left" : 0.9384765625,
+      "requests_edr" : true,
+      "right" : 1.34765625,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3804507255554199,
+      "effective" : 1.3804507255554199,
+      "intent" : "High",
+      "left" : 0.9482421875,
+      "requests_edr" : true,
+      "right" : 1.37890625,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3804507255554199,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.3964906930923462,
+      "effective" : 1.3964906930923462,
+      "intent" : "High",
+      "left" : 0.953125,
+      "requests_edr" : true,
+      "right" : 1.39453125,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.3964906930923462,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4291313886642456,
+      "effective" : 1.4291313886642456,
+      "intent" : "High",
+      "left" : 0.9619140625,
+      "requests_edr" : true,
+      "right" : 1.427734375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4291313886642456,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.4457374811172485,
+      "effective" : 1.4457374811172485,
+      "intent" : "High",
+      "left" : 0.96630859375,
+      "requests_edr" : true,
+      "right" : 1.4443359375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.4457374811172485,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5141119956970215,
+      "effective" : 1.5141119956970215,
+      "intent" : "High",
+      "left" : 0.98095703125,
+      "requests_edr" : true,
+      "right" : 1.51171875,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5141119956970215,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.5675066709518433,
+      "effective" : 1.5675066709518433,
+      "intent" : "High",
+      "left" : 0.9892578125,
+      "requests_edr" : true,
+      "right" : 1.5654296875,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.5675066709518433,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6041451692581177,
+      "effective" : 1.6041451692581177,
+      "intent" : "High",
+      "left" : 0.994140625,
+      "requests_edr" : true,
+      "right" : 1.6015625,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6041451692581177,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.6995319128036499,
+      "effective" : 1.6995319128036499,
+      "intent" : "High",
+      "left" : 0.99951171875,
+      "requests_edr" : true,
+      "right" : 1.697265625,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.6995319128036499,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8005908727645874,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.8005908727645874,
+      "effective" : 1.8005908727645874,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.7978515625,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8426773548126221,
+      "effective" : 1.8426773548126221,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.83984375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.8426773548126221,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 1.9298245906829834,
+      "effective" : 1.9298245906829834,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.9267578125,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 1.9298245906829834,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 2,
+      "effective" : 2,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.99609375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 2,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    },
+    {
+      "current" : 2,
+      "effective" : 2,
+      "intent" : "High",
+      "left" : 1,
+      "requests_edr" : true,
+      "right" : 1.99609375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "High candidate"
+    },
+    {
+      "current" : 2,
+      "effective" : 1,
+      "intent" : "Standard",
+      "left" : 0.783203125,
+      "requests_edr" : false,
+      "right" : 0.9990234375,
+      "stage" : "high-again",
+      "unit" : "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view" : "Standard"
+    }
+  ],
+  "timings" : [
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1,
+      "lut_bytes" : 191144,
+      "milliseconds" : 7.5019598007202148,
+      "resident_after" : 23871488,
+      "resident_before" : 16138240
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 2,
+      "lut_bytes" : 191144,
+      "milliseconds" : 6.6759586334228516,
+      "resident_after" : 27574272,
+      "resident_before" : 23871488
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1,
+      "lut_bytes" : 191144,
+      "milliseconds" : 7.4449777603149414,
+      "resident_after" : 34963456,
+      "resident_before" : 27574272
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 2,
+      "lut_bytes" : 191144,
+      "milliseconds" : 6.6530704498291016,
+      "resident_after" : 38764544,
+      "resident_before" : 34963456
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1,
+      "lut_bytes" : 191144,
+      "milliseconds" : 8.3130598068237305,
+      "resident_after" : 43040768,
+      "resident_before" : 36159488
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1,
+      "lut_bytes" : 191144,
+      "milliseconds" : 12.822985649108887,
+      "resident_after" : 47235072,
+      "resident_before" : 40173568
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.0050736665725708,
+      "lut_bytes" : 191144,
+      "milliseconds" : 28.164982795715332,
+      "resident_after" : 33980416,
+      "resident_before" : 24641536
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.052607536315918,
+      "lut_bytes" : 191144,
+      "milliseconds" : 22.118091583251953,
+      "resident_after" : 39256064,
+      "resident_before" : 31621120
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.1281565427780151,
+      "lut_bytes" : 191144,
+      "milliseconds" : 19.749045372009277,
+      "resident_after" : 46940160,
+      "resident_before" : 39370752
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.1412651538848877,
+      "lut_bytes" : 191144,
+      "milliseconds" : 26.969075202941895,
+      "resident_after" : 39829504,
+      "resident_before" : 47087616
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.1679407358169556,
+      "lut_bytes" : 191144,
+      "milliseconds" : 30.991077423095703,
+      "resident_after" : 46415872,
+      "resident_before" : 39862272
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.1952400207519531,
+      "lut_bytes" : 191144,
+      "milliseconds" : 23.798942565917969,
+      "resident_after" : 50233344,
+      "resident_before" : 46481408
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.2373899221420288,
+      "lut_bytes" : 191144,
+      "milliseconds" : 21.83997631072998,
+      "resident_after" : 47955968,
+      "resident_before" : 47267840
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.2663124799728394,
+      "lut_bytes" : 191144,
+      "milliseconds" : 30.554056167602539,
+      "resident_after" : 45760512,
+      "resident_before" : 48021504
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.3416109085083008,
+      "lut_bytes" : 191144,
+      "milliseconds" : 31.055092811584473,
+      "resident_after" : 42483712,
+      "resident_before" : 45760512
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.3729695081710815,
+      "lut_bytes" : 191144,
+      "milliseconds" : 19.482016563415527,
+      "resident_after" : 45907968,
+      "resident_before" : 42024960
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.4213864803314209,
+      "lut_bytes" : 191144,
+      "milliseconds" : 38.967013359069824,
+      "resident_after" : 43958272,
+      "resident_before" : 40747008
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.5059067010879517,
+      "lut_bytes" : 191144,
+      "milliseconds" : 11.996984481811523,
+      "resident_after" : 51412992,
+      "resident_before" : 44007424
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.5411053895950317,
+      "lut_bytes" : 191144,
+      "milliseconds" : 15.649914741516113,
+      "resident_after" : 46055424,
+      "resident_before" : 42156032
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.5771269798278809,
+      "lut_bytes" : 191144,
+      "milliseconds" : 29.145956039428711,
+      "resident_after" : 47759360,
+      "resident_before" : 46071808
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.5954521894454956,
+      "lut_bytes" : 191144,
+      "milliseconds" : 18.491983413696289,
+      "resident_after" : 47611904,
+      "resident_before" : 43892736
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.6517153978347778,
+      "lut_bytes" : 191144,
+      "milliseconds" : 11.821985244750977,
+      "resident_after" : 47857664,
+      "resident_before" : 47595520
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.6709073781967163,
+      "lut_bytes" : 191144,
+      "milliseconds" : 28.118014335632324,
+      "resident_after" : 47742976,
+      "resident_before" : 40370176
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.7099629640579224,
+      "lut_bytes" : 191144,
+      "milliseconds" : 15.717029571533203,
+      "resident_after" : 47857664,
+      "resident_before" : 47824896
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.7702643871307373,
+      "lut_bytes" : 191144,
+      "milliseconds" : 12.701988220214844,
+      "resident_after" : 51527680,
+      "resident_before" : 47841280
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.8116414546966553,
+      "lut_bytes" : 191144,
+      "milliseconds" : 15.064001083374023,
+      "resident_after" : 58114048,
+      "resident_before" : 51593216
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.8326923847198486,
+      "lut_bytes" : 191144,
+      "milliseconds" : 23.206949234008789,
+      "resident_after" : 58015744,
+      "resident_before" : 58179584
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.8539870977401733,
+      "lut_bytes" : 191144,
+      "milliseconds" : 15.508055686950684,
+      "resident_after" : 45596672,
+      "resident_before" : 38060032
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.9642304182052612,
+      "lut_bytes" : 191144,
+      "milliseconds" : 31.587004661560059,
+      "resident_after" : 49217536,
+      "resident_before" : 45629440
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 2,
+      "lut_bytes" : 191144,
+      "milliseconds" : 18.852949142456055,
+      "resident_after" : 43155456,
+      "resident_before" : 49315840
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1,
+      "lut_bytes" : 191144,
+      "milliseconds" : 7.8110694885253906,
+      "resident_after" : 36782080,
+      "resident_before" : 29147136
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.0105509757995605,
+      "lut_bytes" : 191144,
+      "milliseconds" : 10.483980178833008,
+      "resident_after" : 34144256,
+      "resident_before" : 24690688
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.0222929716110229,
+      "lut_bytes" : 191144,
+      "milliseconds" : 9.9949836730957031,
+      "resident_after" : 41631744,
+      "resident_before" : 34177024
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.0341713428497314,
+      "lut_bytes" : 191144,
+      "milliseconds" : 11.072039604187012,
+      "resident_after" : 48087040,
+      "resident_before" : 41664512
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.0583434104919434,
+      "lut_bytes" : 191144,
+      "milliseconds" : 15.845060348510742,
+      "resident_after" : 48103424,
+      "resident_before" : 48070656
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.0830812454223633,
+      "lut_bytes" : 191144,
+      "milliseconds" : 7.8730583190917969,
+      "resident_after" : 48070656,
+      "resident_before" : 48103424
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.1083968877792358,
+      "lut_bytes" : 191144,
+      "milliseconds" : 11.127948760986328,
+      "resident_after" : 51544064,
+      "resident_before" : 48136192
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.121275782585144,
+      "lut_bytes" : 191144,
+      "milliseconds" : 20.28501033782959,
+      "resident_after" : 51511296,
+      "resident_before" : 51527680
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.1474838256835938,
+      "lut_bytes" : 191144,
+      "milliseconds" : 15.802979469299316,
+      "resident_after" : 51445760,
+      "resident_before" : 47955968
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.1879498958587646,
+      "lut_bytes" : 191144,
+      "milliseconds" : 15.587925910949707,
+      "resident_after" : 51478528,
+      "resident_before" : 51462144
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.2017531394958496,
+      "lut_bytes" : 191144,
+      "milliseconds" : 27.302026748657227,
+      "resident_after" : 51281920,
+      "resident_before" : 51478528
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.2298421859741211,
+      "lut_bytes" : 191144,
+      "milliseconds" : 26.047110557556152,
+      "resident_after" : 47955968,
+      "resident_before" : 51281920
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.2880066633224487,
+      "lut_bytes" : 191144,
+      "milliseconds" : 18.63706111907959,
+      "resident_after" : 47988736,
+      "resident_before" : 47972352
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.3181121349334717,
+      "lut_bytes" : 191144,
+      "milliseconds" : 27.086973190307617,
+      "resident_after" : 44564480,
+      "resident_before" : 48070656
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.3489212989807129,
+      "lut_bytes" : 191144,
+      "milliseconds" : 11.319994926452637,
+      "resident_after" : 48562176,
+      "resident_before" : 44646400
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.3804507255554199,
+      "lut_bytes" : 191144,
+      "milliseconds" : 12.163043022155762,
+      "resident_after" : 48578560,
+      "resident_before" : 48594944
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.3964906930923462,
+      "lut_bytes" : 191144,
+      "milliseconds" : 14.366030693054199,
+      "resident_after" : 48988160,
+      "resident_before" : 48627712
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.4291313886642456,
+      "lut_bytes" : 191144,
+      "milliseconds" : 25.398969650268555,
+      "resident_after" : 48988160,
+      "resident_before" : 49004544
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.4457374811172485,
+      "lut_bytes" : 191144,
+      "milliseconds" : 21.724939346313477,
+      "resident_after" : 56311808,
+      "resident_before" : 49020928
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.5141119956970215,
+      "lut_bytes" : 191144,
+      "milliseconds" : 19.134998321533203,
+      "resident_after" : 56393728,
+      "resident_before" : 56311808
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.5675066709518433,
+      "lut_bytes" : 191144,
+      "milliseconds" : 15.891909599304199,
+      "resident_after" : 60112896,
+      "resident_before" : 56393728
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.6041451692581177,
+      "lut_bytes" : 191144,
+      "milliseconds" : 30.081033706665039,
+      "resident_after" : 40239104,
+      "resident_before" : 52543488
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.6995319128036499,
+      "lut_bytes" : 191144,
+      "milliseconds" : 88.076949119567871,
+      "resident_after" : 31883264,
+      "resident_before" : 38567936
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.8005908727645874,
+      "lut_bytes" : 191144,
+      "milliseconds" : 17.124056816101074,
+      "resident_after" : 36978688,
+      "resident_before" : 32899072
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.8426773548126221,
+      "lut_bytes" : 191144,
+      "milliseconds" : 32.120943069458008,
+      "resident_after" : 43696128,
+      "resident_before" : 36782080
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 1.9298245906829834,
+      "lut_bytes" : 191144,
+      "milliseconds" : 22.596955299377441,
+      "resident_after" : 51527680,
+      "resident_before" : 43843584
+    },
+    {
+      "float_image_bytes" : 3686400,
+      "headroom" : 2,
+      "lut_bytes" : 191144,
+      "milliseconds" : 22.966980934143066,
+      "resident_after" : 55001088,
+      "resident_before" : 51544064
+    }
+  ],
+  "vectors" : [
+    {
+      "headroom" : 1,
+      "left" : 0.78345746531763671,
+      "right" : 0.9994354133576363
+    },
+    {
+      "headroom" : 1.5,
+      "left" : 0.97824926458319894,
+      "right" : 1.4985206418024302
+    },
+    {
+      "headroom" : 2,
+      "left" : 1.0000000000000104,
+      "right" : 1.9966235629422271
+    },
+    {
+      "headroom" : 3,
+      "left" : 1.0000000000000104,
+      "right" : 2.9835776703701473
+    },
+    {
+      "headroom" : 4,
+      "left" : 1.0000000000000104,
+      "right" : 3.8783281982958431
+    },
+    {
+      "headroom" : 5,
+      "left" : 1.0000000000000104,
+      "right" : 3.9999999999999423
+    }
+  ]
+}

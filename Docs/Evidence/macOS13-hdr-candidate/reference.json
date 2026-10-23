@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "scope": "EXPERIMENTAL CANDIDATE; NOT INTEGRATED INTO PRODUCT; NOT GENERAL APPLE14 HIGH/COLOR/METADATA EQUIVALENCE",
+  "created_utc": "2026-10-23T16:38:49.733389+00:00",
+  "upstream_source_commit": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+  "latest_product_build_source_commit": "52264541ea584745bde514ea43e98e337a24772a",
+  "prototype_environment": "macOS13.7.8 arm64 Apple M1, Swift5.9.2 SDK14.2; target13.0",
+  "inputs": [
+    {
+      "path": "examples/showcase/images/hdr-pq.png",
+      "bytes": 15506,
+      "sha256": "96f80d2f1c06070dac29e3b7e2924a6aed8e54286bc73921f62cf75420a599ed"
+    },
+    {
+      "path": "Docs/Evidence/macOS14-reference-normal/images-layout-light.png",
+      "bytes": 173031,
+      "sha256": "ed55052080e78d477d6d995bc951f6aee55c7b0e4dd2f8c102ab9ee8a6c176cf"
+    },
+    {
+      "path": "Docs/Evidence/macOS14-port-comparison/showcase-images-layout-light.png",
+      "bytes": 172517,
+      "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780"
+    }
+  ],
+  "prototype_source_files": {
+    "ToneMap.swift": "603d123d26d02da03c6f4d8829a49ff551604d57967d51e38045b38df7fc31a1",
+    "Display.swift": "9fcfd5bcb974156a6819372c42ad3e38dfcab5b9b0923e396a2fd140213780ce",
+    "main.swift": "a9a2e00f33345a6ca13fff1e64b68cece4d86134dd483d7b8d34f0c2fe371923"
+  },
+  "measurements": {
+    "scope": "Known SHA-locked neutral PQ fixture only; no product change",
+    "source_sha256": "96f80d2f1c06070dac29e3b7e2924a6aed8e54286bc73921f62cf75420a599ed",
+    "source_nits": [
+      203.01642419639813,
+      812.0552724503983
+    ],
+    "decoded_byte_order": "Little",
+    "standard_ramp_to_A14": {
+      "top_halves_srgb_mean": [
+        [
+          228.92664742664743,
+          228.93049543049543,
+          228.91991341991343
+        ],
+        [
+          254.82154882154882,
+          254.83549783549785,
+          254.82659932659934
+        ]
+      ],
+      "ramp_MAE_codes": 0.10410884983040382,
+      "ramp_max_error_codes": 0.45652173913043725,
+      "ramp_bias_codes": [
+        -0.015205827937094116,
+        -0.026422294172061895,
+        -0.02208603145236005
+      ]
+    },
+    "high_Hd2_last_texture": {
+      "current": 2,
+      "effective": 2,
+      "intent": "High",
+      "left": 1,
+      "requests_edr": true,
+      "right": 1.99609375,
+      "stage": "high-again",
+      "unit": "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+      "view": "High candidate"
+    },
+    "real_os_notification_count": 404,
+    "captured_headrooms": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "decode_validate_ms": 18.031954765319824,
+    "map_ms_first4": [
+      7.501959800720215,
+      6.675958633422852,
+      7.444977760314941,
+      6.653070449829102
+    ],
+    "map_ms_median": 18.63706111907959,
+    "map_ms_max": 88.07694911956787,
+    "map_call_count": 57,
+    "sampled_process_resident_max_bytes": 60112896,
+    "resident_after_stop": 24543232,
+    "retained_float_image_bytes": 3686400,
+    "original_raw_bytes": 1843200,
+    "frontmost_original_pid": 75891,
+    "frontmost_restored_pid": 75891,
+    "restored_after_seconds": 0.3689979314804077,
+    "total_window_seconds": 6.176689982414246,
+    "limitations": [
+      "Not Apple14 physical High proof",
+      "Neutral scalar only; no color/gamut or HLG validation",
+      "LW1000 candidate preset, not extracted metadata",
+      "Hd>1 formula extension lacks14 same-headroom reference",
+      "CPU draw-path max88ms is unsuitable as-is for smooth production updates",
+      "SDR screenshot clips >1; actual GPU linear components remain distinct"
+    ],
+    "standard_raw_image_areas": [
+      {
+        "stage": "standard-initial",
+        "raw_RGBA_equal_initial": true
+      },
+      {
+        "stage": "high-request",
+        "raw_RGBA_equal_initial": true
+      },
+      {
+        "stage": "back-to-standard",
+        "raw_RGBA_equal_initial": true
+      },
+      {
+        "stage": "high-again",
+        "raw_RGBA_equal_initial": true
+      }
+    ],
+    "high_back_to_standard_matches_initial": true
+  },
+  "file_count": 32,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2586,
+      "sha256": "8bd2fa1d940ce0877097def919264a0adcd64d6516a417b82d7db570f27cb18b"
+    },
+    {
+      "path": "color-probe13/binary.txt",
+      "bytes": 169,
+      "sha256": "c0695f8eb807bc18d2532db65a4a59ad3ec3281932cc720026d2a72390d5353f"
+    },
+    {
+      "path": "color-probe13/build-SHA256SUMS",
+      "bytes": 243,
+      "sha256": "2efb829744502a4a670e5e0c456f235ca0c57298e10cddbada17d381ddc210db"
+    },
+    {
+      "path": "color-probe13/capture-0.png",
+      "bytes": 225941,
+      "sha256": "2a281b1ff6b99c5180edc894659803244cb145db02c0bd54fa882fe971e685a0"
+    },
+    {
+      "path": "color-probe13/environment.txt",
+      "bytes": 496,
+      "sha256": "f8a341b11eed60ae46e1e14838206fcd5a36a238dbc615eaef00d6cc482574c3"
+    },
+    {
+      "path": "color-probe13/png-manifest.json",
+      "bytes": 1212,
+      "sha256": "9c7a8a47cdaf222c4fee62bf822901addfcc363b823225ec59c3bf66b57780d1"
+    },
+    {
+      "path": "color-probe13/report.json",
+      "bytes": 29556,
+      "sha256": "873a5a71c2fc0779cb78927e26faa25e08e94380d74180c48d87f3bc97608635"
+    },
+    {
+      "path": "color-probe13/runtime13.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "color-probe13/source-ffb-icc.png",
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    {
+      "path": "color-probe13/source-named-pq.png",
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    {
+      "path": "color-probe13/validation.json",
+      "bytes": 14008,
+      "sha256": "11f5708aabdb4713197abd53cc235abdb46d67bb39707aeeb12f47ab08243a23"
+    },
+    {
+      "path": "numeric/REPORT.md",
+      "bytes": 8285,
+      "sha256": "f3bfe2d1fe626e0a4f4f3f1e8fbc963f433b7384169fad84a32857c70354d9e6"
+    },
+    {
+      "path": "numeric/analyze.py",
+      "bytes": 15056,
+      "sha256": "c91386e0f3a73255c512a4fd9068c012fa85d29f6ccaa073542ca1871e0f57c2"
+    },
+    {
+      "path": "numeric/ramp.csv",
+      "bytes": 68574,
+      "sha256": "45628217f19f0b6a4e9c1450779941f33ff29a8c9e03b1705a688ea7df43c07c"
+    },
+    {
+      "path": "numeric/report.json",
+      "bytes": 18476,
+      "sha256": "3b6dfb869d4ab81c6a994746264552dd9cac8b9d6ad1d3c60fdfbe85cf36d04f"
+    },
+    {
+      "path": "production-strategy.md",
+      "bytes": 5259,
+      "sha256": "1a25840b5887659673673a98e8dc4c246e55d3c76436fb1b916c3317b1c2b276"
+    },
+    {
+      "path": "prototype/Display.swift",
+      "bytes": 5157,
+      "sha256": "9fcfd5bcb974156a6819372c42ad3e38dfcab5b9b0923e396a2fd140213780ce"
+    },
+    {
+      "path": "prototype/README.md",
+      "bytes": 6880,
+      "sha256": "a295d50b2beb3fc0931b50ddedaf1988f12f651066b07ba4559e28c184bdd430"
+    },
+    {
+      "path": "prototype/ToneMap.swift",
+      "bytes": 7002,
+      "sha256": "603d123d26d02da03c6f4d8829a49ff551604d57967d51e38045b38df7fc31a1"
+    },
+    {
+      "path": "prototype/analyze.py",
+      "bytes": 2401,
+      "sha256": "c793946bc02de54980097d1dd2db72f9a44f87041ae240d9a5581574e817bc0d"
+    },
+    {
+      "path": "prototype/back-to-standard.png",
+      "bytes": 89004,
+      "sha256": "c1a6ebc39ff658085581371d6010db980007102c98fe60d362958bc4d9544979"
+    },
+    {
+      "path": "prototype/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "prototype/core-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "prototype/environment.txt",
+      "bytes": 185,
+      "sha256": "34168d956d683a37ff79c60df21c8152fe91641d4563d9ccf38d3d28cd19390d"
+    },
+    {
+      "path": "prototype/high-again.png",
+      "bytes": 89786,
+      "sha256": "4a95e0e4279d88e08c4a0a591a9e9dc77c59df27089260e6680a7c609abde800"
+    },
+    {
+      "path": "prototype/high-request.png",
+      "bytes": 89786,
+      "sha256": "4a95e0e4279d88e08c4a0a591a9e9dc77c59df27089260e6680a7c609abde800"
+    },
+    {
+      "path": "prototype/main.swift",
+      "bytes": 6169,
+      "sha256": "a9a2e00f33345a6ca13fff1e64b68cece4d86134dd483d7b8d34f0c2fe371923"
+    },
+    {
+      "path": "prototype/metrics.json",
+      "bytes": 191856,
+      "sha256": "d0d28e2769d72d71f2a8531c0b4203b7999d0359531f0cd3706d2aa942e5d078"
+    },
+    {
+      "path": "prototype/report.json",
+      "bytes": 179374,
+      "sha256": "22bb1a481917c2bd37553ef0ff0c0fa38f30305745887b35e2763eb27d5ccc84"
+    },
+    {
+      "path": "prototype/run.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "prototype/standard-initial.png",
+      "bytes": 89004,
+      "sha256": "c1a6ebc39ff658085581371d6010db980007102c98fe60d362958bc4d9544979"
+    },
+    {
+      "path": "prototype/summary.json",
+      "bytes": 2521,
+      "sha256": "29ebc35389ef0f886c101becb7c7054058b61354c6447d98ab003b4bf20749da"
+    }
+  ],
+  "additional_color_probe13": "Native13 baseline only; validation.json owns its source/run provenance. Not an Annex5 integration or macOS14 color equivalence result."
+}

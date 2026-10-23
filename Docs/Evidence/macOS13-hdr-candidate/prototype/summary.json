@@ -1,0 +1,93 @@
+{
+  "scope": "Known SHA-locked neutral PQ fixture only; no product change",
+  "source_sha256": "96f80d2f1c06070dac29e3b7e2924a6aed8e54286bc73921f62cf75420a599ed",
+  "source_nits": [
+    203.01642419639813,
+    812.0552724503983
+  ],
+  "decoded_byte_order": "Little",
+  "standard_ramp_to_A14": {
+    "top_halves_srgb_mean": [
+      [
+        228.92664742664743,
+        228.93049543049543,
+        228.91991341991343
+      ],
+      [
+        254.82154882154882,
+        254.83549783549785,
+        254.82659932659934
+      ]
+    ],
+    "ramp_MAE_codes": 0.10410884983040382,
+    "ramp_max_error_codes": 0.45652173913043725,
+    "ramp_bias_codes": [
+      -0.015205827937094116,
+      -0.026422294172061895,
+      -0.02208603145236005
+    ]
+  },
+  "high_Hd2_last_texture": {
+    "current": 2,
+    "effective": 2,
+    "intent": "High",
+    "left": 1,
+    "requests_edr": true,
+    "right": 1.99609375,
+    "stage": "high-again",
+    "unit": "linear BT.2020 relative to UI white=1 (ISO default Wc=203)",
+    "view": "High candidate"
+  },
+  "real_os_notification_count": 404,
+  "captured_headrooms": [
+    1,
+    2,
+    1,
+    2
+  ],
+  "decode_validate_ms": 18.031954765319824,
+  "map_ms_first4": [
+    7.501959800720215,
+    6.675958633422852,
+    7.444977760314941,
+    6.653070449829102
+  ],
+  "map_ms_median": 18.63706111907959,
+  "map_ms_max": 88.07694911956787,
+  "map_call_count": 57,
+  "sampled_process_resident_max_bytes": 60112896,
+  "resident_after_stop": 24543232,
+  "retained_float_image_bytes": 3686400,
+  "original_raw_bytes": 1843200,
+  "frontmost_original_pid": 75891,
+  "frontmost_restored_pid": 75891,
+  "restored_after_seconds": 0.3689979314804077,
+  "total_window_seconds": 6.176689982414246,
+  "limitations": [
+    "Not Apple14 physical High proof",
+    "Neutral scalar only; no color/gamut or HLG validation",
+    "LW1000 candidate preset, not extracted metadata",
+    "Hd>1 formula extension lacks14 same-headroom reference",
+    "CPU draw-path max88ms is unsuitable as-is for smooth production updates",
+    "SDR screenshot clips >1; actual GPU linear components remain distinct"
+  ],
+  "standard_raw_image_areas": [
+    {
+      "stage": "standard-initial",
+      "raw_RGBA_equal_initial": true
+    },
+    {
+      "stage": "high-request",
+      "raw_RGBA_equal_initial": true
+    },
+    {
+      "stage": "back-to-standard",
+      "raw_RGBA_equal_initial": true
+    },
+    {
+      "stage": "high-again",
+      "raw_RGBA_equal_initial": true
+    }
+  ],
+  "high_back_to_standard_matches_initial": true
+}

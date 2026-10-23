@@ -1,0 +1,138 @@
+{
+  "ci_build": {
+    "artifact": {
+      "digest": "sha256:c8a2951c29b30870f117db2a9e83e5911fd2a60437d3ff6318f0cee1d6140ee0",
+      "id": 12514789587,
+      "name": "macos14-image-probe-build",
+      "size_in_bytes": 287622
+    },
+    "binary_deployment": "arm64; LC_BUILD_VERSION minos13.0 sdk26.2; see binary.txt",
+    "conclusion": "success",
+    "environment": "CI build host macOS15.7.9/Xcode26.3; SDK26.2/Swift6.2.4; see environment.txt",
+    "executable_sha256": "641bdaf4d93ab076212310d15d558cea2a0a20e8028d73e89be5174ae341c7ac",
+    "execution": "build_only; actual macOS13 runtime evidence collected locally",
+    "head_sha": "ac2ff5a065a534fdab1eb0ca76c5230ea5846c09",
+    "run_id": 39986052533,
+    "source_matches_tracked_probe": true,
+    "source_sha256": "daa7e0e16bf374b35ef9e431d65cb22eaff3b251dfe6c7336c4bac16bacec6e1",
+    "tar_sha256": "376d560d05bfb7f616465c6b7aa4a78b38e0f68cdccd6f8f2dea97defe6c1bf1",
+    "url": "https://github.com/Torrekie/Bern/actions/runs/39986052533",
+    "workflow_name": "macOS 14 image layout calibration"
+  },
+  "comparison": {
+    "all_case_records_exactly_equal": true,
+    "all_environments_equal": true,
+    "all_grid_width_events_equal": true,
+    "all_png_sha256_equal": true,
+    "baseline_report": "../report.json",
+    "baseline_validation": "../validation.json",
+    "card_heights_points": {
+      "availabilityWrapper-minrow-0": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      },
+      "availabilityWrapper-minrow-150": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      },
+      "availabilityWrapper-minrow-inherited": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      },
+      "standardHelper-minrow-0": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      },
+      "standardHelper-minrow-150": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      },
+      "standardHelper-minrow-inherited": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      },
+      "upstream-minrow-0": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      },
+      "upstream-minrow-150": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      },
+      "upstream-minrow-inherited": {
+        "fixed109": 129,
+        "hdr": 147,
+        "images": 129,
+        "layers": 200,
+        "single_caption": 36
+      }
+    },
+    "cases": 9,
+    "native_card_detections": 45,
+    "native_card_geometry_differences": [],
+    "onGeometryChange_conclusion": "SDK26/Swift6 takes original onGeometryChange at source lines190-191; SDK14.2/Swift5.9 uses GeometryReader adapter. In this complete9case/27phase actual-macOS13 run, all measured geometry and all captured PNG bytes are unchanged.",
+    "phases": 27,
+    "png_count": 27,
+    "public_frame_differences": [],
+    "public_frame_rectangle_records": 1800,
+    "top_level_report_differences": [
+      "elapsed_seconds",
+      "probe_source_sha"
+    ]
+  },
+  "limitations": [
+    "macOS14 measurement remains outstanding.",
+    "Fixed probe window/appearance/settings only; no full-application acceptance.",
+    "Matching captures do not establish physical HDR brightness or tone-mapper equivalence.",
+    "Runtime log retains nine SwiftUI preference-update warnings; success requires completed captures and all geometry records, not absence of warnings."
+  ],
+  "preservation": {
+    "all_original_pngs_hashed_before_deletion": true,
+    "executable_and_tar_removed_after_hashing": true,
+    "module_cache_present": false,
+    "probe_asset_copies_removed_only_if_identical_to_repository": true,
+    "removed_repetitive_pngs": 24,
+    "retained_original_pngs": [
+      "upstream-minrow-inherited-bottom.png",
+      "upstream-minrow-inherited-middle.png",
+      "upstream-minrow-inherited-top.png"
+    ],
+    "source_snapshot_retained": true
+  },
+  "runtime": {
+    "all_phase_frontmost_pids": [
+      75891
+    ],
+    "architecture": "arm64",
+    "elapsed_seconds": 20.881872057914734,
+    "frontmost_after": 75891,
+    "frontmost_before": 75891,
+    "os": "Version 13.7.8 (Build 22H730)"
+  },
+  "scope": "Exact CI-built SDK26.2/Swift6.2.4 arm64 executable ran on actual macOS13.7.8. Compare against SDK14.2/Swift5.9.2 adapter build on the same OS. No macOS14 measurement or whole-application/HDR equivalence claimed.",
+  "success": true
+}

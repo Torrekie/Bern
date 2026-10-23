@@ -6,7 +6,7 @@
 
 | 检查 | 结果 | 范围 |
 |---|---|---|
-| 新编译器、新 SDK、target 13.0 | Showcase / Gallery 均编译、链接、签名验证成功 | Swift 6.3.3、SDK 26.5、Rust 1.99；仍需要新工具链编译，并未移植至 Swift 5.3 |
+| 新编译器、新 SDK、target 13.0 | Showcase / Gallery 均编译、链接、签名验证成功 | 最新 `5226454`：Swift 6.2.4、SDK 26.2、Rust 1.99；此前参考构建为 Swift 6.3.3/SDK26.5；仍需要新工具链，并未移植至 Swift 5.3 |
 | 同一 target 13 应用在本机 13.7.8 启动 | 两个真正的 SwiftUI 应用均启动、建立 UI 会话 | arm64；Info.plist 与 Mach-O 的最低版本均为 13.0 |
 | 原上游 A 与迁移 B，同在 macOS 14.8.9 运行 | 21 张 PNG：17 张 RGB 像素完全相同；3 张分别只有 12/35/76 个像素相差 1 级 | 余下图片页首个 section 多 1 点，后续内容随之下移；尚未把原因归给任何观察机制 |
 | 13 系统圆形图标按钮 | 实际应用中的 AX 对齐尺寸为 20×20 点，位置与 14 参考一致 | 使用系统 `NSButton.circular`，没有自画 bezel；实际 AXPress 一次只运行一次引擎命令 |
@@ -15,6 +15,8 @@
 | 13 默认侧栏与宽度恢复 | 真正整应用、干净独立 defaults 首开210；AX调为260后，页面重建和进程重启均保留260 | 仅为隔离改变bundle ID及临时签名，可执行文件字节与CI产物相同；没有清用户窗口历史 |
 | 空白与媒体占位、语言切换 | 空白/错误媒体占位测量边界均在1pt内；Ready→Failed→Ready恢复后原始画面像素相同；中英文切换及取消关闭保留草稿 | 状态切换通过实际控件绑定，语言测试不冒称真实输入法或菜单点击 |
 | 原生交互 | 通知 AXPress 改变会话草稿；音量 AXIncrement 从 50 到 60，只产生一次引擎提交；Command-Comma 打开原生 Settings scene | 这些不是鼠标拖动验证；CLI 状态与原生 AX 操作分别记录 |
+
+最新完整应用源码为 `52264541ea584745bde514ea43e98e337a24772a`，已包含HDR路由/系统SDR修复和14原生Pinch路径恢复。两项CI均通过：[Showcase](https://github.com/Torrekie/Bern/actions/runs/39986051547)、[Gallery](https://github.com/Torrekie/Bern/actions/runs/39986052416)，环境为Swift6.2.4、SDK26.2、Rust1.99。两份产物均已在本机13.7.8启动、建立唯一会话并完成window/control inspect，随后停止自有进程；启动检查前后的前台应用一致。原始记录见[Showcase](../Evidence/macOS13-latest-build/showcase/report.json)和[Gallery](../Evidence/macOS13-latest-build/gallery/report.json)。这轮没有重拍全部视觉/交互样本，不能把下述0f/46截图改标为522。
 
 第三轮完整应用已验证源码为 `46a286245c1e4c1380ea0e2285587cfe6225a3f8`：
 
@@ -35,6 +37,7 @@ macOS 14 上的 A/B 对照使用此前的 `fa820f706e5faf1bae8b8f07e23545842a164
 | [Gallery 原始参考](../Evidence/macOS14-gallery-normal/reference.json) | 8 张浅/深色 PNG，4 个 Inspector/滚动 GIF；[采集](https://github.com/Torrekie/Bern/actions/runs/39964126654) |
 | [本机13候选证据](../Evidence/macOS13-candidate/reference.json) | 14张原始窗口PNG，分开注明0f/46源码版本；[Gallery量化](../Evidence/macOS13-candidate/gallery-comparison.json)、[侧栏宽度](../Evidence/macOS13-candidate/sidebar-width.json)、[语言/关闭](../Evidence/macOS13-candidate/language-close.json) |
 | [同系统迁移比较](../Evidence/macOS14-port-comparison/comparison.json) | 每张图片的 RGB 比较、原始文件哈希、不同 PNG、图片页差异测量；相同图片复用 A 的原图，避免重复保存 |
+| [13图片布局SDK复核](../Evidence/macOS13-image-layout/sdk26/validation.json) | SDK26.2与既有SDK14.2在同一13宿主的9组配置/27位置中，1800个公开坐标框、45次卡片检测均一致，27张PNG哈希全部相同。此结论仅限该夹具条件；14同项测量仍待完成。 |
 
 Gallery 的外观由它自己的 Light/Dark 动作设置，不能只给进程环境变量，因为示例会显式恢复 System。最终静态 Gallery 参考在连续 5 次 WindowServer 缓冲相同后采集。早期误标深色的图片不作为深色依据。
 
@@ -62,12 +65,26 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 | 未覆盖控件变体 | Gallery Frame的volume PopoverButton和icon风格Menu仍可能进入13自画圆形ButtonStyle，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
 | 图片页首卡高度 | A14/B14/C13首卡分别124/125/129pt。图片均在y108…198，caption墨迹只差0.5pt；后续HDR卡均147pt，仅继承首卡偏移。三个13图片包装结构的公开Column/Grid框均109pt，[13独立公开框探针](../Evidence/macOS13-image-layout/reference.json)的9组合/27截图确认固定109pt行卡也为129pt，最小行高24/0/150均未改变卡高。尚缺14同一公开框测量；不能归因字体或用负padding抵消。 |
-| PQ/HLG 色彩 | `e06e080`补足严格cICP识别、系统SDR转换、无Metal备用及真实余量通知更新。独立真实窗口SDR约228.93/254.89，与14虚拟SDR参考接近；真实OS通知观察到1→2→1→2， paused Metal view会重绘。但High仍缺14引入的自适应全局tone mapper，current2截图两半255，尚不能通过。完整应用CI仍待；后续`5226454`还恢复了14的原生MagnifyGesture，13保留MagnificationGesture兼容路径，局部target13类型检查通过，触控板手势尚未实测。[原始证据与范围](../Evidence/macOS13-hdr/reference.json)。 |
+| PQ/HLG 色彩 | `e06e080`的严格cICP识别、系统SDR转换、无Metal备用与真实余量通知已随最新`5226454`完整构建并启动。原产品High尚未等同；新增独立Annex5候选在已知中性PQ样本上，Hd1完整ramp对14 MAE0.104109/255，Hd2提交linear EDR为1/1.996094，真实通知观察到1→2→1→2。这是未接入产品的有限输入实验，彩色/metadata/HLG及同条件14High未通过。[原系统路径证据](../Evidence/macOS13-hdr/reference.json)、[候选证据与限制](../Evidence/macOS13-hdr-candidate/reference.json)。 |
 | 真正鼠标拖动 | 独立系统NSSlider也未收到自动化drag的mouseDown，值仍50；同控件AXIncrement能产生一次action并变55，因而已在Bern外复现输入交付限制。尚未证明“拖动时只预览，松手仅提交一次”。AXIncrement 单次提交不替代它。 |
 | 物理 HDR、输入法、完整动画时序 | 未验收。屏幕潜在EDR为2，实际值会随HDR surface启动从1升到约2；不能把启动前的1当作设备不支持HDR，也不能用SDR截图证明物理HDR亮度等效。 |
 | 原生材质配色 | ICC归一后的活动窗口背景仍有差异，可能受桌面染色等本机原生材质条件与14虚拟屏幕条件影响，尚未隔离归因。raised panel可相同，但整窗口颜色尚不能宣称等效；不以固定RGB抵销未经隔离的环境差异。 |
 
 GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的故意失败时段，并计划11月2日退役：[官方公告](https://github.com/actions/runner-images/issues/13518)。已取得的普通外观参考继续可用；该时段的 runner 失败不能归为源码失败。
+
+## HDR独立候选的新增证据
+
+[候选归档](../Evidence/macOS13-hdr-candidate/README.md)将数值推导与本机窗口实验分开保留。CPU原型在640×360上按原始PQ编码解码nit，以公开Annex5候选输出linear BT2020的`Lout/203`；current1与2的提交像素单位由GPU读回验证，Standard切换前后原始图像RGBA完全一致。1000仅是受这张14中性ramp支持的候选预设，203是ISO默认内容白，不是ICC lumi100。
+
+13公开`CIImageOption.toneMapHDRtoSDR`仅有Bool，没有目标headroom；`CIExposureAdjust`只做线性曝光乘法。即使在已知Annex5标量函数下，Hd2的前后曝光也不等于直接目标映射，详见[接口边界与数学反例](../Evidence/macOS13-hdr-candidate/README.md)。没有将这类组合当作已完成的High替代，也没有追加系统CI组合实验。
+
+原型只占前台约0.369秒后恢复即时前台，后续均采自有inactive窗口。CPU动态转换median18.64ms/max88.08ms，不能原样放在主线程产品化；进程resident采样峰60.1MB不是GPU峰值。彩色应用空间、合法元数据缺省/优先级和14实际High适配仍需新probe；当前没有用图片SHA/中性条件作为产品功能白名单，也没有修改产品色调映射。
+
+## 下一次14运行采集
+
+已发布[轻量runtime probe工作流](https://github.com/Torrekie/Bern/actions/workflows/macos14-probe-runtime.yml)，仅下载运行现有exact artifact，不重新构建。截至本次记录尚未dispatch14。计划在brownout结束的北京时间2026-10-24 08:00后，图片公开框测量使用`probe=image, build_run=39986052533`（[已构建输入](https://github.com/Torrekie/Bern/actions/runs/39986052533)）；HDR中性/彩色探针使用`probe=hdr, build_run=39987622874`（[已构建输入](https://github.com/Torrekie/Bern/actions/runs/39987622874)）。这些是待执行输入，不是14通过结果。
+
+新SDK26.2与旧SDK14.2在同一13图片夹具中的框、卡片检测和全部27张PNG一致，只排除这组13条件下本轮编译组合造成的差异；不能据此解释14/13图片首卡高度或其它未测布局。HDR新probe也不能自动覆盖metadata、HLG或实际Hd>1。
 
 ## 空间控制
 

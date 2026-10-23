@@ -1,0 +1,35 @@
+{
+  "pngs": {
+    "capture-0.png": {
+      "bytes": 225941,
+      "retained": true,
+      "sha256": "2a281b1ff6b99c5180edc894659803244cb145db02c0bd54fa882fe971e685a0"
+    },
+    "capture-1.png": {
+      "bytes": 225941,
+      "retained": false,
+      "sha256": "2a281b1ff6b99c5180edc894659803244cb145db02c0bd54fa882fe971e685a0"
+    },
+    "capture-2.png": {
+      "bytes": 225941,
+      "retained": false,
+      "sha256": "2a281b1ff6b99c5180edc894659803244cb145db02c0bd54fa882fe971e685a0"
+    },
+    "capture-3.png": {
+      "bytes": 225941,
+      "retained": false,
+      "sha256": "2a281b1ff6b99c5180edc894659803244cb145db02c0bd54fa882fe971e685a0"
+    },
+    "source-ffb-icc.png": {
+      "bytes": 15470,
+      "retained": true,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "source-named-pq.png": {
+      "bytes": 15588,
+      "retained": true,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    }
+  },
+  "scope": "Six original PNGs hashed before cleanup. The three duplicate WindowServer captures are removed only after exact SHA equality to capture-0. The two source PNGs and capture-0 are retained without re-encoding."
+}
