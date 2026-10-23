@@ -4,7 +4,7 @@ This independent follow-up to `standard-color-e06/` tests two public components 
 
 At current headroom1/potential2, **NSImageView equals direct SwiftUI in every640x360 image RGB pixel**, both in the original screenshot profile and after ICC->sRGB conversion. All ten patch means and632 gray-ramp column means have zero difference. CGContext8bit sRGB differs: patch MAE0.917777/max5.059409 codes/255; ramp MAE0.257338/max0.75. The retained report, validation, one raw screenshot and full column arrays preserve the comparison.
 
-NSImage's logical size is320x180points on this2x display. The actual NSImageView native frame/bounds/image size are asserted320x180; all three images are displayed at640x360 physical pixels. An earlier fixture attempt used640x360 logical points and clipped the NSImageView; its invalid NSImageView comparisons were rejected and remain only in work/rejected-intrinsic-size. They are not this evidence.
+NSImage's logical size is320x180points on this2x display. The actual NSImageView native frame/bounds/image size are asserted320x180; all three images are displayed at640x360 physical pixels. An earlier fixture attempt used640x360 logical points and clipped the NSImageView; its invalid NSImageView comparisons were rejected. Those unused scratch artifacts were removed after hashing; the corrected source and valid evidence are retained here.
 
 The unique own window was nonkey/inactive for0.791seconds, four consecutive canonical WindowServer buffers were exact, and no activation/global key occurred. Foreground QQ PID75891 stayed unchanged. The native view's image was released and own view tree detached before exit. Executable and newly created module cache were removed after hashing.
 
