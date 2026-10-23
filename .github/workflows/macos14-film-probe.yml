@@ -1,0 +1,139 @@
+name: macOS 14 Gallery Film timing
+run-name: Film timing ${{ inputs.variant }} from build ${{ inputs.build_run }}
+
+# Builds only the external observer; the selected application is never rebuilt.
+on:
+  workflow_dispatch:
+    inputs:
+      variant:
+        description: Existing upstream14 or genuine SwiftUI port13 Gallery artifact
+        type: choice
+        options: [upstream, port]
+        required: true
+      build_run:
+        description: Successful existing Gallery build run ID in this repository
+        type: string
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: macos14-film-probe
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    runs-on: macos-14
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/download-artifact@v5
+        with:
+          name: ${{ inputs.variant == 'upstream' && 'macos14-reference-build' || 'macos13-gallery' }}
+          run-id: ${{ inputs.build_run }}
+          github-token: ${{ github.token }}
+          path: build
+      - name: Use the ordinary reference profile on this disposable runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          defaults write com.apple.universalaccess increaseContrast -bool false
+          killall cfprefsd || true
+      - name: Verify the exact application and observe three fresh processes
+        env:
+          FILM_VARIANT: ${{ inputs.variant }}
+          FILM_BUILD_RUN: ${{ inputs.build_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$FILM_VARIANT" in
+            upstream) archive=reference-app.tar.gz; minimum=14.0 ;;
+            port) archive=gallery.tar.gz; minimum=13.0 ;;
+            *) exit 1 ;;
+          esac
+          [[ "$FILM_BUILD_RUN" =~ ^[0-9]+$ ]]
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          export BERN_SOURCE_SHA="$(sed -n 's/^source_sha=//p' build/environment.txt)"
+          build_harness_sha="$(sed -n 's/^harness_sha=//p' build/environment.txt)"
+          [[ "$BERN_SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$build_harness_sha" =~ ^[0-9a-f]{40}$ ]]
+          if test "$FILM_VARIANT" = upstream; then
+            test "$BERN_SOURCE_SHA" = ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee
+            test "$(sed -n 's/^source_repository=//p' build/environment.txt)" = AimesSoft/Bern
+          fi
+          mkdir -p exact evidence/runtime observer-work
+          trap 'rm -rf observer-work' EXIT
+          (cd build && shasum -a 256 -c "$archive.sha256")
+          tar -xzf "build/$archive" -C exact
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - exact/Gallery.app/Contents/Info.plist)" = "$minimum"
+          test "$(xcrun vtool -show-build exact/Gallery.app/Contents/MacOS/Gallery | awk '/minos/ {print $2; exit}')" = "$minimum"
+          test "$(lipo -archs exact/Gallery.app/Contents/MacOS/Gallery)" = arm64
+          test "$(lipo -archs exact/bin/gallery)" = arm64
+          codesign --verify --deep --strict exact/Gallery.app
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          d = json.loads(Path('build/build.json').read_text())
+          assert d['app_bundle'] == 'Gallery.app' and d['protocol'] == 'gallery', d
+          assert d['architecture'] == 'arm64' and d['platform'] == 'macos', d
+          assert d['minimum_macos'] == ('14.0' if os.environ['FILM_VARIANT'] == 'upstream' else '13.0'), d
+          assert d['ui'] == ('swiftui' if os.environ['FILM_VARIANT'] == 'upstream' else 'swiftui-modern'), d
+          PY
+          cp build/environment.txt evidence/runtime/build-environment.txt
+          cp build/binary.txt evidence/runtime/build-binary.txt
+          cp build/build.json "build/$archive.sha256" evidence/runtime/
+          cp harness/.github/scripts/gallery-film-probe.swift evidence/runtime/
+          {
+            printf 'source_sha=%s\nobserver_sha=%s\nbuild_harness_sha=%s\n' "$BERN_SOURCE_SHA" "$GITHUB_SHA" "$build_harness_sha"
+            printf 'variant=%s\nbuild_run=%s\n' "$FILM_VARIANT" "$FILM_BUILD_RUN"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun swiftc -version
+            xcrun --show-sdk-version
+            shasum -a 256 exact/Gallery.app/Contents/MacOS/Gallery exact/bin/gallery evidence/runtime/gallery-film-probe.swift
+            xcrun vtool -show-build exact/Gallery.app/Contents/MacOS/Gallery
+            xcrun vtool -show-build exact/bin/gallery
+          } > evidence/runtime/environment.txt 2>&1
+          xcrun swiftc -swift-version 5 -target arm64-apple-macos14.0 \
+            -module-cache-path observer-work/modules \
+            harness/.github/scripts/gallery-film-probe.swift -o observer-work/FilmProbe \
+            > evidence/runtime/observer-build.log 2>&1
+          observer-work/FilmProbe "$PWD/exact/Gallery.app" "$PWD/exact/bin/gallery" "$PWD/evidence/runtime" \
+            > evidence/runtime/observer.log 2>&1
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          root = Path('evidence/runtime')
+          d = json.loads((root/'result.json').read_text())
+          assert d['success'] is True, d.get('failure')
+          assert d['source_sha'] == os.environ['BERN_SOURCE_SHA'] and d['harness_sha'] == os.environ['GITHUB_SHA']
+          assert d['variant'] == os.environ['FILM_VARIANT']
+          assert d['appearance_profile'] == 'normal'
+          assert d['system_preferences']['reduce_motion'] is False and d['system_preferences']['reduce_transparency'] is False
+          assert d['system_preferences']['increase_contrast'] is False
+          assert [c['scenario'] for c in d['cases']] == ['immediate', 'wait', 'direct']
+          assert len({c['pid'] for c in d['cases']}) == 3 and len({c['session'] for c in d['cases']}) == 3
+          for c in d['cases']:
+              assert c['first_second_ax'], c
+              assert c['film']['equal_comparisons'] >= 4 and (root/c['film']['png']).is_file()
+              assert c['film']['bounds_points']['Width'] == 920 and c['film']['bounds_points']['Height'] == 668
+              if not d['accessibility_trusted']:
+                  assert all('missing' in s for s in c['first_second_ax'])
+          # AX absence remains an explicit measurement gap, not invented frames.
+          PY
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-film-${{ inputs.variant }}
+          path: evidence/runtime/
+          if-no-files-found: error
+          retention-days: 3

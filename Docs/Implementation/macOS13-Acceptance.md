@@ -40,6 +40,8 @@ macOS 14 上的 A/B 对照使用此前的 `fa820f706e5faf1bae8b8f07e23545842a164
 | [本机13候选证据](../Evidence/macOS13-candidate/reference.json) | 14张原始窗口PNG，分开注明0f/46源码版本；[Gallery量化](../Evidence/macOS13-candidate/gallery-comparison.json)、[侧栏宽度](../Evidence/macOS13-candidate/sidebar-width.json)、[语言/关闭](../Evidence/macOS13-candidate/language-close.json) |
 | [同系统迁移比较](../Evidence/macOS14-port-comparison/comparison.json) | 每张图片的 RGB 比较、原始文件哈希、不同 PNG、图片页差异测量；相同图片复用 A 的原图，避免重复保存 |
 | [13图片布局SDK复核](../Evidence/macOS13-image-layout/sdk26/validation.json) | SDK26.2与既有SDK14.2在同一13宿主的9组配置/27位置中，1800个公开坐标框、45次卡片检测均一致，27张PNG哈希全部相同。此结论仅限该夹具条件；14同项测量仍待完成。 |
+| [13背景路径隔离](../Evidence/macOS13-window-background/README.md) | 同一个inactive浅色窗口中，语义颜色直接绘制为236灰；透明NavigationSplitView detail为240/236/237，显式填充后恢复236灰。五组各两次稳定缓冲，窗口2.446秒、前台不变；这不是完整Gallery或14对照。 |
+| [13 toolbarRole候选](../Evidence/macOS13-toolbar-role/README.md) | 同一Showcase式固定标题样例中，automatic、split上的editor和detail上的editor共9个原生框样本均不移位，标题仍存在；未扩充为Gallery或所有公开composition均已排除。 |
 
 Gallery 的外观由它自己的 Light/Dark 动作设置，不能只给进程环境变量，因为示例会显式恢复 System。最终静态 Gallery 参考在连续 5 次 WindowServer 缓冲相同后采集。早期误标深色的图片不作为深色依据。
 
@@ -62,7 +64,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 
 | 项目 | 当前证据与后续条件 |
 |---|---|
-| Film 初始身份 | 第三轮已经修复原生探针/SwiftUI绘制坐标分离，并通过9种居中/缩放/减少动态效果小样例；整应用Last几何在1pt内。但是同样Inspector关闭后首次进入Film，14参考为Glen，13为声明初始值3对应Madras。尚未确定14的初始布局/侧栏时序，不硬改为4。 |
+| Film 初始身份 | 第三轮已经修复原生探针/SwiftUI绘制坐标分离，并通过9种居中/缩放/减少动态效果小样例；整应用Last几何在1pt内。14参考为Glen，13为Madras。最新只读复核已排除最终外框和侧栏尺寸差异，但原记录没有关闭→Film的viewport或target/nearest轨迹，不能断言3写回成4。[事实与三组最小区分采样](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
 | 未覆盖控件变体 | `f9e08b1`已让生成器选中的普通volume PopoverButton复用系统圆形NSButton，独立native action检查通过（单次触发、快捷键、disabled、外部打开和WindowServer alpha=0的关闭，与原Button配对一致）；整应用该版本构建、本机启动及Frame绑定打开/编辑均通过；14/13 Frame视觉仍待验收。icon风格Menu、显式尺寸等仍有独立路径，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
@@ -70,7 +72,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 | PQ/HLG 色彩 | `e06e080`的严格cICP识别、系统SDR转换、无Metal备用与真实余量通知已随`5226454`及最新`f9e08b1`完整构建并启动。原产品High尚未等同；新增独立Annex5候选在已知中性PQ样本上，Hd1完整ramp对14 MAE0.104109/255，Hd2提交linear EDR为1/1.996094，真实通知观察到1→2→1→2。这是未接入产品的有限输入实验，彩色/metadata/HLG及同条件14High未通过。[原系统路径证据](../Evidence/macOS13-hdr/reference.json)、[候选证据与限制](../Evidence/macOS13-hdr-candidate/reference.json)。 |
 | 真正鼠标拖动 | 独立系统NSSlider也未收到自动化drag的mouseDown，值仍50；同控件AXIncrement能产生一次action并变55，因而已在Bern外复现输入交付限制。尚未证明“拖动时只预览，松手仅提交一次”。AXIncrement 单次提交不替代它。 |
 | 物理 HDR、输入法、完整动画时序 | 未验收。屏幕潜在EDR为2，实际值会随HDR surface启动从1升到约2；不能把启动前的1当作设备不支持HDR，也不能用SDR截图证明物理HDR亮度等效。 |
-| 原生材质配色 | ICC归一后的活动窗口背景仍有差异，可能受桌面染色等本机原生材质条件与14虚拟屏幕条件影响，尚未隔离归因。raised panel可相同，但整窗口颜色尚不能宣称等效；不以固定RGB抵销未经隔离的环境差异。 |
+| 原生材质配色 | ICC归一后的活动窗口背景仍有差异。原比较中canvas只是空白点位昵称；Patterns/Film该处是透明detail，并未填surface.canvas。五组局部实窗隔离已证明：没有Bern tint/overlay，透明split detail也能与同窗的语义颜色实画不同；公开原生树中存在系统windowBackground材质。该inactive手建窗口未精确复现完整Gallery238/237/239，也不能唯一归因系统着色输入；14同binary和活动窗口仍待。raised panel可相同，但整窗口颜色尚不能宣称等效，不以固定RGB抵销。 |
 
 GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的故意失败时段，并计划11月2日退役：[官方公告](https://github.com/actions/runner-images/issues/13518)。已取得的普通外观参考继续可用；该时段的 runner 失败不能归为源码失败。
 
@@ -89,6 +91,14 @@ GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的�
 已发布[轻量runtime probe工作流](https://github.com/Torrekie/Bern/actions/workflows/macos14-probe-runtime.yml)，仅下载运行现有exact artifact，不重新构建。截至本次记录尚未dispatch14。计划在brownout结束的北京时间2026-10-24 08:00后，图片公开框测量使用`probe=image, build_run=39986052533`（[已构建输入](https://github.com/Torrekie/Bern/actions/runs/39986052533)）；HDR中性/彩色探针使用`probe=hdr, build_run=39987622874`（[已构建输入](https://github.com/Torrekie/Bern/actions/runs/39987622874)）。这些是待执行输入，不是14通过结果。
 
 新SDK26.2与旧SDK14.2在同一13图片夹具中的框、卡片检测和全部27张PNG一致，只排除这组13条件下本轮编译组合造成的差异；不能据此解释14/13图片首卡高度或其它未测布局。HDR新probe也不能自动覆盖metadata、HLG或实际Hd>1。
+
+新增两项只运行既有Gallery构建的独立采集：`macos14-film-probe.yml`使用`variant=upstream, build_run=39959549054`，每组新进程区分Inspector立即关闭、等待关闭、从未打开三种首次Film；`macos14-frame-compare.yml`锁定同一A构建和`f9e08b1`的Gallery构建39991406873，在同一runner配对Frame和真实音量弹出层。两脚本已通过本机Swift5.9.2/SDK14.2类型检查和工作流语法检查，尚未运行14。Frame的own-PID鼠标移动仅限CI采集，必须实际撑过3.2秒idle门槛，否则失败；不算物理输入验收。Film缺失AX节点会明确留下测量缺口，PNG完成不等于内部target/nearest已观测。
+
+新增`macos14-background-probe.yml`准备构建同一个target13的背景探针供13/14分别运行，默认`build_only=true`；随后通用runtime工作流接受`probe=background`。本次仅完成采集代码和局部检查，没有触发该构建或14运行，不能把旧SDK14.2局部记录标成新SDK同binary结果。
+
+## 暂停检查点（2026-10-24，北京时间）
+
+按用户要求，在macOS14远程采集还将停用数小时的情况下暂停goal；已有实现和未通过项保留，不标记完成。已设置本对话08:05的一次性定时检查（`bern-macos-14`）。目前模型工具没有恢复paused goal的状态接口；定时检查若仍无正式恢复能力，只报告环境并提示用户`/goal resume`，不创建替代goal或空转。恢复后先取得上述14缺失证据，再按最小差异调整产品。macOS11、Swift5.3、Objective-C和iOS仍暂停。
 
 ## 空间控制
 
