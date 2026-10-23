@@ -48,7 +48,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 - 13 Inspector 复用 `HSplitView`，内容仍为原 SwiftUI；滚动仍为系统 SwiftUI ScrollView。居中边距使用真实SwiftUI内容padding，并按滚动视图作用域隔离，避免直接改变NSScrollView insets造成LazyHStack原生/绘制坐标分离。相位使用14实窗校准的有效viewport及easeInOut Bezier曲线。
 - 缺失的按键监听只作用于当前窗口和焦点，不全局吞键；文本编辑与输入法仍需单独实测。
 - 普通无显式尺寸的圆形 IconButton 复用 `NSButton`。toolbar、bar/group、显式宽高、plain/prominent、custom look、cancel 保留原路径；destructive、enabled、快捷键、AX ID 与最新 action 转接系统属性。
-- PQ/HLG 使用系统 MTKView/CoreImage/EDR 图层；普通 SDR 仍使用 SwiftUI Image。gain-map 的系统能力分支保持原逻辑。
+- PQ/HLG 使用系统 MTKView/CoreImage/EDR 图层，严格识别标准cICP编码后才补足旧系统的色空间识别；SDR转换由Core Image完成，无Metal时复用NSImageView。请求HDR看潜在余量，绘制看当前余量，并通过系统屏幕通知更新，避免以启动前的1永久关闭HDR。普通SDR仍用SwiftUI Image；gain-map能力分支保持原逻辑。
 - 显示时钟在 13 使用 CoreVideo 垂直同步；14 保留原生显示链接，不以固定 Timer 代替。
 
 ## 尚不能通过的项目
@@ -61,7 +61,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
 | 图片页首卡高度 | A14/B14/C13首卡分别124/125/129pt。图片均在y108…198，caption墨迹只差0.5pt；后续HDR卡均147pt，仅继承首卡偏移。三个13图片包装结构的公开Column/Grid框均109pt，尚缺14同一公开框测量；不能归因字体或用负padding抵消。 |
-| PQ/HLG 色彩 | 13对合法自定义ICC的ITUR2100识别会失败，当前整应用PQ两亮度都压白。严格cICP识别及系统等价色空间转换已在独立样例得到SDR229/255，接近14参考228.93/254.83；完整应用适配仍在验证，暂不算修复通过。 |
+| PQ/HLG 色彩 | `e06e080`补足严格cICP识别、系统SDR转换、无Metal备用及真实余量通知更新。独立真实窗口SDR约228.93/254.89，与14虚拟SDR参考接近；真实OS通知观察到1→2→1→2， paused Metal view会重绘。但High仍缺14引入的自适应全局tone mapper，current2截图两半255，尚不能通过。完整应用CI仍待；[原始证据与范围](../Evidence/macOS13-hdr/reference.json)。 |
 | 真正鼠标拖动 | 当前自动化鼠标没有把拖动送达；尚未证明“拖动时只预览，松手仅提交一次”。AXIncrement 单次提交不替代它。 |
 | 物理 HDR、输入法、完整动画时序 | 未验收。屏幕潜在EDR为2，实际值会随HDR surface启动从1升到约2；不能把启动前的1当作设备不支持HDR，也不能用SDR截图证明物理HDR亮度等效。 |
 | 原生材质配色 | ICC归一后的活动窗口背景仍有差异，可能受桌面染色等本机原生材质条件与14虚拟屏幕条件影响，尚未隔离归因。raised panel可相同，但整窗口颜色尚不能宣称等效；不以固定RGB抵销未经隔离的环境差异。 |

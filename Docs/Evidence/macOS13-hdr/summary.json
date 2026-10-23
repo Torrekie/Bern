@@ -1,0 +1,32 @@
+{
+  "os": "Version 13.7.8 (Build 22H730)",
+  "fixture_policy_cases_passed": 8,
+  "real_os_notifications": 308,
+  "manual_fixture_notifications": 4,
+  "headroom_by_capture": {
+    "high-initial": 2,
+    "high-to-standard": 1,
+    "standard-to-high": 2,
+    "screen-notifications": 2,
+    "resized": 2
+  },
+  "textures": {
+    "format": "RGBA16Float",
+    "sdr": {
+      "space": "sRGB",
+      "encoded_left": 0.89794921875,
+      "encoded_right": 1.0
+    },
+    "hdr": {
+      "space": "ITU-R 2100 PQ",
+      "pq_encoded_left": 0.58056640625,
+      "pq_encoded_right": 0.72900390625
+    }
+  },
+  "high_equivalence": "NOT PASSED: adaptive lower-headroom tone mapping is missing; WindowServer SDR PNG is 255/255 at current=2, potential=2.",
+  "physical_hdr_luminance": "NOT MEASURED; no macOS14 physical HDR display reference.",
+  "actual_second_screen_migration": "NOT TESTED; explicit notification handler exercised within own process.",
+  "frontmost_original_pid": 75891,
+  "frontmost_restored_pid": 75891,
+  "runtime_sha256": "1ec700f09c9b2488f0253beed0b2134e08b651bd5c6936f0e8e70abad454ac0f"
+}

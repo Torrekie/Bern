@@ -1,0 +1,4422 @@
+{
+  "canonical_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+  "fixture_instrumentation" : "Product helper bodies extracted verbatim plus fixture-only counters\/OS-notification logs and 2-pixel GPU blit readback per frame; SoftwareImage forces native no-Metal fallback without replacing the installed GPU",
+  "focus" : "Activated only until initial capture, then restored original frontmost; later captures were own inactive window",
+  "limitations" : "No second physical display was available; screen notifications are posted only in this fixture process. WindowServer SDR PNG is not a physical HDR luminance measurement.",
+  "notifications" : [
+    {
+      "headroom" : 1,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0128978490829468,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0128978490829468,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0128978490829468,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0128978490829468,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0486171245574951,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0486171245574951,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0486171245574951,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0486171245574951,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.1238803863525391,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.1238803863525391,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.1238803863525391,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.1238803863525391,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5176306962966919,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5176306962966919,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5176306962966919,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5176306962966919,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5352647304534912,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5352647304534912,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5352647304534912,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5352647304534912,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.9567868709564209,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.9567868709564209,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.9567868709564209,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.9567868709564209,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.8688573837280273,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8688573837280273,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8688573837280273,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8688573837280273,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8051974773406982,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8051974773406982,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8051974773406982,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8051974773406982,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7639669179916382,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7639669179916382,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7639669179916382,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7639669179916382,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7437059879302979,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7437059879302979,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7437059879302979,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7437059879302979,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7236779928207397,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7236779928207397,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7236779928207397,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7236779928207397,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7038798332214355,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7038798332214355,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7038798332214355,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7038798332214355,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6843092441558838,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6843092441558838,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6843092441558838,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6843092441558838,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6458396911621094,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6458396911621094,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6458396911621094,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6458396911621094,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5715163946151733,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5715163946151733,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5715163946151733,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5715163946151733,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5534660816192627,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5534660816192627,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5534660816192627,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5534660816192627,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5356230735778809,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5356230735778809,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5356230735778809,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5356230735778809,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5179849863052368,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5179849863052368,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5179849863052368,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5179849863052368,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4494354724884033,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4494354724884033,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4494354724884033,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4494354724884033,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4000625610351562,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4000625610351562,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4000625610351562,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4000625610351562,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3680852651596069,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3680852651596069,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3680852651596069,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3680852651596069,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3063048124313354,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3063048124313354,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3063048124313354,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3063048124313354,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.2618075609207153,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.2618075609207153,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.2618075609207153,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.2618075609207153,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.247314453125,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.247314453125,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.247314453125,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.247314453125,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1773083209991455,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1773083209991455,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1773083209991455,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1773083209991455,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1637858152389526,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1637858152389526,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1637858152389526,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1637858152389526,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1372054815292358,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1372054815292358,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1372054815292358,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1372054815292358,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0984678268432617,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0984678268432617,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0984678268432617,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0984678268432617,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0858508348464966,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0858508348464966,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0858508348464966,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0858508348464966,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0610505342483521,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0610505342483521,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0610505342483521,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0610505342483521,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0488629341125488,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0488629341125488,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0488629341125488,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0488629341125488,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0249073505401611,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0249073505401611,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0249073505401611,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0249073505401611,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0131349563598633,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0131349563598633,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0131349563598633,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0131349563598633,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0014981031417847,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0014981031417847,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0014981031417847,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0014981031417847,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0106297731399536,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0106297731399536,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0106297731399536,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0106297731399536,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0223727226257324,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0223727226257324,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0223727226257324,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0223727226257324,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0342520475387573,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0342520475387573,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0342520475387573,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0342520475387573,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0462689399719238,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0462689399719238,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0462689399719238,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0462689399719238,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0584263801574707,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0584263801574707,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0584263801574707,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0584263801574707,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0831654071807861,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0831654071807861,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0831654071807861,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0831654071807861,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0957515239715576,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0957515239715576,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0957515239715576,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0957515239715576,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1213634014129639,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1213634014129639,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1213634014129639,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1213634014129639,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1343929767608643,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1343929767608643,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1343929767608643,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1343929767608643,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1609076261520386,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1609076261520386,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1609076261520386,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1609076261520386,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1743971109390259,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1743971109390259,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1743971109390259,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1743971109390259,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2018473148345947,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2018473148345947,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2018473148345947,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2018473148345947,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2158119678497314,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2158119678497314,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2158119678497314,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2158119678497314,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2442300319671631,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2442300319671631,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2442300319671631,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2442300319671631,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2586873769760132,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2586873769760132,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2586873769760132,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2586873769760132,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.28810715675354,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.28810715675354,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.28810715675354,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.28810715675354,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3030745983123779,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3030745983123779,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3030745983123779,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3030745983123779,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3335318565368652,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3335318565368652,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3335318565368652,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3335318565368652,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3805593252182007,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3805593252182007,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3805593252182007,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3805593252182007,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4128280878067017,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4128280878067017,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4128280878067017,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4128280878067017,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4292436838150024,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4292436838150024,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4292436838150024,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4292436838150024,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4458513259887695,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4458513259887695,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4458513259887695,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4458513259887695,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4796463251113892,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4796463251113892,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4796463251113892,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4796463251113892,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5318256616592407,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5318256616592407,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5318256616592407,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5318256616592407,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5496245622634888,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5496245622634888,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5496245622634888,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5496245622634888,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5858452320098877,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5858452320098877,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5858452320098877,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5858452320098877,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6042716503143311,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6042716503143311,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6042716503143311,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6042716503143311,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6229124069213867,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6229124069213867,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6229124069213867,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6229124069213867,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6417696475982666,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6417696475982666,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6417696475982666,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6417696475982666,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6996662616729736,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6996662616729736,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6996662616729736,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6996662616729736,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7393932342529297,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7393932342529297,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7393932342529297,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7393932342529297,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7596046924591064,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7596046924591064,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7596046924591064,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7596046924591064,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8007326126098633,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8007326126098633,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8007326126098633,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8007326126098633,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8216567039489746,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8216567039489746,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8216567039489746,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8216567039489746,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8642349243164062,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8642349243164062,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8642349243164062,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8642349243164062,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8858970403671265,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8858970403671265,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8858970403671265,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8858970403671265,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9299768209457397,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9299768209457397,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9299768209457397,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9299768209457397,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9524028301239014,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9524028301239014,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9524028301239014,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9524028301239014,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9980378150939941,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9980378150939941,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9980378150939941,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9980378150939941,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "standard",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "high",
+      "manual" : false,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "standard",
+      "manual" : true,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "screen-notifications"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "high",
+      "manual" : true,
+      "name" : "NSApplicationDidChangeScreenParametersNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "screen-notifications"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "standard",
+      "manual" : true,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : false,
+      "requests_edr" : false,
+      "stage" : "screen-notifications"
+    },
+    {
+      "headroom" : 2,
+      "intent" : "high",
+      "manual" : true,
+      "name" : "NSWindowDidChangeScreenNotification",
+      "renders_hdr" : true,
+      "requests_edr" : true,
+      "stage" : "screen-notifications"
+    }
+  ],
+  "original_frontmost_pid" : 75891,
+  "os" : "Version 13.7.8 (Build 22H730)",
+  "policy" : [
+    {
+      "current" : 1,
+      "intent" : "standard",
+      "pass" : true,
+      "potential" : 1,
+      "rendersHDR" : false,
+      "requestsEDR" : false
+    },
+    {
+      "current" : 2,
+      "intent" : "standard",
+      "pass" : true,
+      "potential" : 1,
+      "rendersHDR" : false,
+      "requestsEDR" : false
+    },
+    {
+      "current" : 1,
+      "intent" : "standard",
+      "pass" : true,
+      "potential" : 2,
+      "rendersHDR" : false,
+      "requestsEDR" : false
+    },
+    {
+      "current" : 2,
+      "intent" : "standard",
+      "pass" : true,
+      "potential" : 2,
+      "rendersHDR" : false,
+      "requestsEDR" : false
+    },
+    {
+      "current" : 1,
+      "intent" : "high",
+      "pass" : true,
+      "potential" : 1,
+      "rendersHDR" : false,
+      "requestsEDR" : false
+    },
+    {
+      "current" : 2,
+      "intent" : "high",
+      "pass" : true,
+      "potential" : 1,
+      "rendersHDR" : false,
+      "requestsEDR" : false
+    },
+    {
+      "current" : 1,
+      "intent" : "high",
+      "pass" : true,
+      "potential" : 2,
+      "rendersHDR" : false,
+      "requestsEDR" : true
+    },
+    {
+      "current" : 2,
+      "intent" : "high",
+      "pass" : true,
+      "potential" : 2,
+      "rendersHDR" : true,
+      "requestsEDR" : true
+    }
+  ],
+  "restore_requested" : true,
+  "restored_frontmost_pid" : 75891,
+  "samples" : [
+    {
+      "active" : true,
+      "capture_height" : 456,
+      "capture_width" : 1400,
+      "content_height" : 200,
+      "draws" : 12,
+      "frames" : {
+        "High" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 254,
+          "y" : 22.5
+        },
+        "No Metal fallback" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 474,
+          "y" : 22.5
+        },
+        "Standard" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 34,
+          "y" : 22.5
+        }
+      },
+      "headroom" : 2,
+      "key" : true,
+      "potential" : 2,
+      "refreshes" : 38,
+      "scale" : 2,
+      "stage" : "high-initial",
+      "surfaces" : [
+        {
+          "drawable_size" : [
+            384,
+            216
+          ],
+          "frame" : {
+            "height" : 108,
+            "width" : 192,
+            "x" : 34,
+            "y" : 69.5
+          },
+          "output_space" : "Optional(kCGColorSpaceSRGB)",
+          "pixel_format" : 115,
+          "requests_edr" : false
+        },
+        {
+          "drawable_size" : [
+            384,
+            216
+          ],
+          "frame" : {
+            "height" : 108,
+            "width" : 192,
+            "x" : 254,
+            "y" : 69.5
+          },
+          "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+          "pixel_format" : 115,
+          "requests_edr" : true
+        }
+      ]
+    },
+    {
+      "active" : false,
+      "capture_height" : 456,
+      "capture_width" : 1400,
+      "content_height" : 200,
+      "draws" : 69,
+      "frames" : {
+        "High" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 254,
+          "y" : 22.5
+        },
+        "No Metal fallback" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 474,
+          "y" : 22.5
+        },
+        "Standard" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 34,
+          "y" : 22.5
+        }
+      },
+      "headroom" : 1,
+      "key" : false,
+      "potential" : 2,
+      "refreshes" : 155,
+      "scale" : 2,
+      "stage" : "high-to-standard",
+      "surfaces" : [
+        {
+          "drawable_size" : [
+            384,
+            216
+          ],
+          "frame" : {
+            "height" : 108,
+            "width" : 192,
+            "x" : 34,
+            "y" : 69.5
+          },
+          "output_space" : "Optional(kCGColorSpaceSRGB)",
+          "pixel_format" : 115,
+          "requests_edr" : false
+        },
+        {
+          "drawable_size" : [
+            384,
+            216
+          ],
+          "frame" : {
+            "height" : 108,
+            "width" : 192,
+            "x" : 254,
+            "y" : 69.5
+          },
+          "output_space" : "Optional(kCGColorSpaceSRGB)",
+          "pixel_format" : 115,
+          "requests_edr" : false
+        }
+      ]
+    },
+    {
+      "active" : false,
+      "capture_height" : 456,
+      "capture_width" : 1400,
+      "content_height" : 200,
+      "draws" : 146,
+      "frames" : {
+        "High" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 254,
+          "y" : 22.5
+        },
+        "No Metal fallback" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 474,
+          "y" : 22.5
+        },
+        "Standard" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 34,
+          "y" : 22.5
+        }
+      },
+      "headroom" : 2,
+      "key" : false,
+      "potential" : 2,
+      "refreshes" : 316,
+      "scale" : 2,
+      "stage" : "standard-to-high",
+      "surfaces" : [
+        {
+          "drawable_size" : [
+            384,
+            216
+          ],
+          "frame" : {
+            "height" : 108,
+            "width" : 192,
+            "x" : 34,
+            "y" : 69.5
+          },
+          "output_space" : "Optional(kCGColorSpaceSRGB)",
+          "pixel_format" : 115,
+          "requests_edr" : false
+        },
+        {
+          "drawable_size" : [
+            384,
+            216
+          ],
+          "frame" : {
+            "height" : 108,
+            "width" : 192,
+            "x" : 254,
+            "y" : 69.5
+          },
+          "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+          "pixel_format" : 115,
+          "requests_edr" : true
+        }
+      ]
+    },
+    {
+      "active" : false,
+      "capture_height" : 456,
+      "capture_width" : 1400,
+      "content_height" : 200,
+      "draws" : 148,
+      "frames" : {
+        "High" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 254,
+          "y" : 22.5
+        },
+        "No Metal fallback" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 474,
+          "y" : 22.5
+        },
+        "Standard" : {
+          "height" : 108,
+          "width" : 192,
+          "x" : 34,
+          "y" : 22.5
+        }
+      },
+      "headroom" : 2,
+      "key" : false,
+      "potential" : 2,
+      "refreshes" : 320,
+      "scale" : 2,
+      "stage" : "screen-notifications",
+      "surfaces" : [
+        {
+          "drawable_size" : [
+            384,
+            216
+          ],
+          "frame" : {
+            "height" : 108,
+            "width" : 192,
+            "x" : 34,
+            "y" : 69.5
+          },
+          "output_space" : "Optional(kCGColorSpaceSRGB)",
+          "pixel_format" : 115,
+          "requests_edr" : false
+        },
+        {
+          "drawable_size" : [
+            384,
+            216
+          ],
+          "frame" : {
+            "height" : 108,
+            "width" : 192,
+            "x" : 254,
+            "y" : 69.5
+          },
+          "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+          "pixel_format" : 115,
+          "requests_edr" : true
+        }
+      ]
+    },
+    {
+      "active" : false,
+      "capture_height" : 456,
+      "capture_width" : 1400,
+      "content_height" : 200,
+      "draws" : 150,
+      "frames" : {
+        "High" : {
+          "height" : 117,
+          "width" : 208,
+          "x" : 246,
+          "y" : 22.5
+        },
+        "No Metal fallback" : {
+          "height" : 117,
+          "width" : 208,
+          "x" : 466,
+          "y" : 22.5
+        },
+        "Standard" : {
+          "height" : 117,
+          "width" : 208,
+          "x" : 26,
+          "y" : 22.5
+        }
+      },
+      "headroom" : 2,
+      "key" : false,
+      "potential" : 2,
+      "refreshes" : 320,
+      "scale" : 2,
+      "stage" : "resized",
+      "surfaces" : [
+        {
+          "drawable_size" : [
+            416,
+            234
+          ],
+          "frame" : {
+            "height" : 117,
+            "width" : 208,
+            "x" : 26,
+            "y" : 60.5
+          },
+          "output_space" : "Optional(kCGColorSpaceSRGB)",
+          "pixel_format" : 115,
+          "requests_edr" : false
+        },
+        {
+          "drawable_size" : [
+            416,
+            234
+          ],
+          "frame" : {
+            "height" : 117,
+            "width" : 208,
+            "x" : 246,
+            "y" : 60.5
+          },
+          "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+          "pixel_format" : 115,
+          "requests_edr" : true
+        }
+      ]
+    },
+    {
+      "metal_views" : 0,
+      "software_views" : 0,
+      "stage" : "unmounted",
+      "stops" : 2
+    }
+  ],
+  "source_uses_2100" : false,
+  "submitted_texture_pixels" : [
+    {
+      "headroom" : 1,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0486171245574951,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.0486171245574951,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5176306962966919,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.5176306962966919,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.9567868709564209,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.9567868709564209,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.9567868709564209,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 1.9567868709564209,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-initial"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8688573837280273,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8688573837280273,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8051974773406982,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.8051974773406982,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7639669179916382,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7639669179916382,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7437059879302979,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7437059879302979,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7236779928207397,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7236779928207397,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7038798332214355,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.7038798332214355,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6843092441558838,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6843092441558838,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6458396911621094,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.6458396911621094,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5715163946151733,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5715163946151733,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5534660816192627,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5534660816192627,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5356230735778809,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5356230735778809,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5179849863052368,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.5179849863052368,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4494354724884033,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4494354724884033,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4000625610351562,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.4000625610351562,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3680852651596069,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3680852651596069,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3063048124313354,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.3063048124313354,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.2618075609207153,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.2618075609207153,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.247314453125,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.247314453125,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1637858152389526,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1637858152389526,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1372054815292358,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.1372054815292358,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0984678268432617,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0984678268432617,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0858508348464966,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0858508348464966,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0610505342483521,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0610505342483521,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0488629341125488,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0488629341125488,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0249073505401611,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0249073505401611,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0131349563598633,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0131349563598633,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0014981031417847,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1.0014981031417847,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "high-to-standard"
+    },
+    {
+      "headroom" : 1,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0106297731399536,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0106297731399536,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0223727226257324,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0223727226257324,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0342520475387573,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0342520475387573,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0462689399719238,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0462689399719238,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0584263801574707,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0584263801574707,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0831654071807861,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0831654071807861,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0957515239715576,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.0957515239715576,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1213634014129639,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1213634014129639,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1343929767608643,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1343929767608643,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1609076261520386,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1609076261520386,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1743971109390259,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.1743971109390259,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2018473148345947,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2018473148345947,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2158119678497314,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2158119678497314,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2442300319671631,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2442300319671631,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2586873769760132,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.2586873769760132,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.28810715675354,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.28810715675354,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3030745983123779,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3030745983123779,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3335318565368652,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.3335318565368652,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4128280878067017,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4128280878067017,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4292436838150024,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4292436838150024,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4458513259887695,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.4458513259887695,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5318256616592407,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5318256616592407,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5318256616592407,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5318256616592407,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5496245622634888,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5496245622634888,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5858452320098877,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.5858452320098877,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6042716503143311,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6042716503143311,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6417696475982666,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6417696475982666,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6996662616729736,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.6996662616729736,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7393932342529297,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7393932342529297,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7596046924591064,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.7596046924591064,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8007326126098633,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8007326126098633,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8216567039489746,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8216567039489746,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8642349243164062,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8642349243164062,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8858970403671265,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.8858970403671265,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9299768209457397,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9299768209457397,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9524028301239014,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9524028301239014,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9980378150939941,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 1.9980378150939941,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "standard-to-high"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "screen-notifications"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "screen-notifications"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.58056640625,
+      "output_space" : "Optional(kCGColorSpaceITUR_2100_PQ)",
+      "right" : 0.72900390625,
+      "route" : "HDR",
+      "stage" : "resized"
+    },
+    {
+      "headroom" : 2,
+      "left" : 0.89794921875,
+      "output_space" : "Optional(kCGColorSpaceSRGB)",
+      "right" : 1,
+      "route" : "SDR",
+      "stage" : "resized"
+    }
+  ]
+}
