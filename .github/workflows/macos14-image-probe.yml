@@ -10,6 +10,11 @@ on:
         description: Build and retain the probe while macOS 14 runtime is unavailable
         type: boolean
         default: false
+      builder:
+        description: Official ARM64 build pool with an SDK 26 toolchain
+        type: choice
+        options: [macos-26, macos-15]
+        default: macos-26
 
 permissions:
   contents: read
@@ -20,10 +25,10 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-26
+    runs-on: ${{ inputs.builder || 'macos-26' }}
     timeout-minutes: 10
     env:
-      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+      DEVELOPER_DIR: ${{ inputs.builder == 'macos-15' && '/Applications/Xcode_26.3.app/Contents/Developer' || '/Applications/Xcode_26.6.app/Contents/Developer' }}
     steps:
       - uses: actions/checkout@v5
         with:

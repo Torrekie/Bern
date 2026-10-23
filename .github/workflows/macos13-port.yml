@@ -13,6 +13,11 @@ on:
         type: choice
         options: [showcase, gallery]
         default: showcase
+      builder:
+        description: Official ARM64 build pool; both provide an SDK 26 toolchain
+        type: choice
+        options: [macos-26, macos-15]
+        default: macos-26
 
 permissions:
   contents: read
@@ -24,10 +29,10 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-26
+    runs-on: ${{ inputs.builder || 'macos-26' }}
     timeout-minutes: 45
     env:
-      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+      DEVELOPER_DIR: ${{ inputs.builder == 'macos-15' && '/Applications/Xcode_26.3.app/Contents/Developer' || '/Applications/Xcode_26.6.app/Contents/Developer' }}
       CARGO_INCREMENTAL: "0"
       CARGO_BUILD_JOBS: "2"
       CARGO_TERM_COLOR: never
@@ -64,7 +69,7 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             source/target
-          key: bern-macos13-cargo-v1-${{ hashFiles('source/Cargo.lock') }}
+          key: ${{ inputs.builder == 'macos-15' && 'bern-macos13-cargo-macos15-v1' || 'bern-macos13-cargo-v1' }}-${{ hashFiles('source/Cargo.lock') }}
       - name: Build the genuine SwiftUI macos_modern target
         shell: bash
         run: |
