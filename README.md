@@ -1,6 +1,5 @@
-> 此分支新增 Darwin 20（macOS 11 / iOS 14）兼容与纯 Objective-C AppKit/UIKit 入口。
-> SwiftUI 兼容入口与 Objective-C 入口共享原生渲染组件；原有生成器可用 `swiftui-modern` 选择。
-> 实现与验证边界见 [Darwin 20 说明](Docs/Implementation/Darwin20.md)，示例见 [Darwin20 Demo](examples/darwin20-demo)。下文上游性能数据不代表新后端的实测结果。
+> 当前按真正的 SwiftUI modern → macOS 13 → macOS 11 / Swift 5.3 → Objective-C 分阶段推进；iOS 暂停。进度、有限审查与验收条件见 [macOS 兼容计划](Docs/Implementation/macOS-Compatibility.md)。
+> 上一轮共享原生后端保留为实验候选，尚未通过与上游 SwiftUI 的等效对照。该实现仍是当前默认 `swiftui` 入口；本阶段显式审查 `swiftui-modern` / `macos_modern`，其 [Darwin 20 记录](Docs/Implementation/Darwin20.md)不作为新阶段的验收结论。下文上游性能数据也不代表新后端实测。
 
 <div align="center">
 

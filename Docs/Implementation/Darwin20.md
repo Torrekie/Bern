@@ -1,5 +1,7 @@
 # Darwin 20 Apple 后端
 
+> 本文记录上一轮共享原生后端实验，不代表已完成上游 SwiftUI 的等效移植。当前执行顺序、实际工具链审查及验收条件以 [macOS 分阶段兼容计划](macOS-Compatibility.md) 为准。iOS 工作暂停。
+
 本分支从 AimesSoft/Bern 的 `ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee` 创建。
 目标是为同一份 Bern 声明提供 macOS 11 / iOS 14 基线的 SwiftUI 和纯 Objective-C 入口。
 
