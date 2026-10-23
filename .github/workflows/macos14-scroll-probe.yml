@@ -1,0 +1,47 @@
+name: macOS 14 scroll transition calibration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: macos-14
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Compile the isolated native SwiftUI probe
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work evidence
+          {
+            printf 'harness_sha=%s\n' "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun swiftc -version
+            shasum -a 256 .github/scripts/scroll-transition-probe.swift
+          } > evidence/environment.txt
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          xcrun swiftc -swift-version 5 -target arm64-apple-macosx14.0 \
+            -framework SwiftUI -framework AppKit -framework CoreGraphics \
+            .github/scripts/scroll-transition-probe.swift -o work/ScrollTransitionProbe > evidence/compile.log 2>&1
+          codesign --force --sign - work/ScrollTransitionProbe
+      - name: Observe public ScrollView behavior in a real window
+        shell: bash
+        run: |
+          set -euo pipefail
+          work/ScrollTransitionProbe "$PWD/evidence" > evidence/runtime.log 2>&1
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-scroll-calibration
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 3
