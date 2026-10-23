@@ -4,9 +4,15 @@ name: macOS 14 upstream reference
 
 on:
   workflow_dispatch:
+    inputs:
+      build_run:
+        description: Run containing a completed upstream build; empty builds upstream again
+        type: string
+        default: ""
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: macos14-reference-${{ github.ref }}
@@ -22,6 +28,7 @@ env:
 jobs:
   build:
     name: Build upstream SwiftUI with SDK 26
+    if: ${{ inputs.build_run == '' }}
     runs-on: macos-26
     timeout-minutes: 45
     env:
@@ -107,6 +114,7 @@ jobs:
   capture:
     name: Run that application on macOS 14
     needs: build
+    if: ${{ !cancelled() && (needs.build.result == 'success' || inputs.build_run != '') }}
     runs-on: macos-14
     timeout-minutes: 10
     steps:
@@ -120,6 +128,8 @@ jobs:
         with:
           name: macos14-reference-build
           path: build
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.build_run || github.run_id }}
       - name: Verify and unpack the application without rebuilding
         shell: bash
         run: |
@@ -135,6 +145,7 @@ jobs:
           } 2>&1 | tee evidence/runtime/environment.txt
           test "$(sw_vers -productVersion | cut -d. -f1)" = 14
           test "$(uname -m)" = arm64
+          test "$(sed -n 's/^source_sha=//p' build/environment.txt)" = "$REFERENCE_SHA"
           (cd build && shasum -a 256 -c reference-app.tar.gz.sha256)
           tar -xzf build/reference-app.tar.gz -C reference
           codesign --verify --deep --strict reference/Showcase.app

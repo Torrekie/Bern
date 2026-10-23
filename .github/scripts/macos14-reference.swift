@@ -109,18 +109,24 @@ func control(_ rows: [[String: Any]], suffix: String, role: String) throws -> [S
 }
 func visibleWindow(_ pid: pid_t) -> [String: Any]? {
     let rows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
-    return rows.filter { info in
-        let bounds = info[kCGWindowBounds as String] as? [String: Any] ?? [:]
-        return (info[kCGWindowOwnerPID as String] as? NSNumber)?.int32Value == pid
-            && (info[kCGWindowLayer as String] as? NSNumber)?.intValue == 0
-            && ((bounds["Width"] as? NSNumber)?.doubleValue ?? 0) > 120
-            && ((bounds["Height"] as? NSNumber)?.doubleValue ?? 0) > 120
-    }.max { left, right in
-        let a = left[kCGWindowBounds as String] as? [String: NSNumber] ?? [:]
-        let b = right[kCGWindowBounds as String] as? [String: NSNumber] ?? [:]
-        return (a["Width"]?.doubleValue ?? 0) * (a["Height"]?.doubleValue ?? 0)
-            < (b["Width"]?.doubleValue ?? 0) * (b["Height"]?.doubleValue ?? 0)
+    var largest: [String: Any]?
+    var largestArea = 0.0
+    for info in rows {
+        guard let owner = info[kCGWindowOwnerPID as String] as? NSNumber,
+              owner.int32Value == pid else { continue }
+        guard let layer = info[kCGWindowLayer as String] as? NSNumber,
+              layer.intValue == 0 else { continue }
+        guard let bounds = info[kCGWindowBounds as String] as? [String: NSNumber],
+              let width = bounds["Width"]?.doubleValue,
+              let height = bounds["Height"]?.doubleValue,
+              width > 120, height > 120 else { continue }
+        let area = width * height
+        if area > largestArea {
+            largest = info
+            largestArea = area
+        }
     }
+    return largest
 }
 func capture(_ name: String, process: Process, session: String) throws {
     guard process.isRunning, let info = visibleWindow(process.processIdentifier),
