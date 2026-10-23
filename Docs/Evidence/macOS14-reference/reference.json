@@ -1,0 +1,1100 @@
+{
+  "capture": "CGWindowListCreateImage / WindowServer",
+  "commands": [
+    {
+      "appearance": "light",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 3,
+      "stderr": "error: no running engine was found; start the application with its control channel enabled\n",
+      "stdout": ""
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "session_id": "1b7414df04e000-ui",
+          "windows": []
+        }
+      ]
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "System",
+          "focused": true,
+          "frame": {
+            "height": 640.0,
+            "width": 920.0,
+            "x": 500.0,
+            "y": 190.0
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 2,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": {
+        "actions": [
+          "Activate",
+          "Close",
+          "Minimize",
+          "Maximize",
+          "Move",
+          "Resize"
+        ],
+        "changed_by": "Command",
+        "focused": true,
+        "frame": {
+          "height": 668.0,
+          "width": 920.0,
+          "x": 500.0,
+          "y": 190.0
+        },
+        "kind": "main",
+        "lifecycle": "Open",
+        "presentation": "Native",
+        "size": "Normal",
+        "version": 3,
+        "visibility": "Visible",
+        "window": "main#1"
+      }
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "enabled": true,
+          "label": "Text",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Text",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.sidebar_search",
+          "value": "",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Controls"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "enabled": true,
+          "label": "Save automatically",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.autosave",
+          "value": "true",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Brightness",
+          "reason": null,
+          "role": "slider",
+          "target": "controls_page.brightness",
+          "value": "0.6",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.density",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.density_chips",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Notifications",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.notifications",
+          "value": "true",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.strip_density",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.strip_filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Sync",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.sync",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.toolbar_filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Volume",
+          "reason": null,
+          "role": "slider",
+          "target": "controls_page.volume",
+          "value": "50",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Switches & Sliders",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Controls",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.sidebar_search",
+          "value": "",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668.0,
+            "width": 920.0,
+            "x": 500.0,
+            "y": 190.0
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "controls_page.notifications",
+        "--value",
+        "false"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "ui",
+        "set-number",
+        "--target",
+        "controls_page.volume",
+        "--value",
+        "73"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "state"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": {
+        "revision": "1",
+        "values": {
+          "activations": 0,
+          "display_name": "",
+          "featured": "Pattern",
+          "featured_source": {
+            "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4"
+          },
+          "items": [
+            {
+              "clip": {
+                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4"
+              },
+              "count": 12,
+              "id": 1,
+              "kind": "Documents"
+            },
+            {
+              "clip": {
+                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/tides.mp4"
+              },
+              "count": 248,
+              "id": 2,
+              "kind": "Photos"
+            },
+            {
+              "clip": {
+                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4"
+              },
+              "count": 37,
+              "id": 3,
+              "kind": "Music"
+            },
+            {
+              "clip": {
+                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/tides.mp4"
+              },
+              "count": 5,
+              "id": 4,
+              "kind": "Movies"
+            },
+            {
+              "clip": {
+                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4"
+              },
+              "count": 19,
+              "id": 5,
+              "kind": "Downloads"
+            }
+          ],
+          "last_action": null,
+          "volume": 73.0
+        }
+      }
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "enabled": true,
+          "label": "Save automatically",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.autosave",
+          "value": "true",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Brightness",
+          "reason": null,
+          "role": "slider",
+          "target": "controls_page.brightness",
+          "value": "0.6",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.density",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.density_chips",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Notifications",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.notifications",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.strip_density",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.strip_filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Sync",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.sync",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.toolbar_filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Volume",
+          "reason": null,
+          "role": "slider",
+          "target": "controls_page.volume",
+          "value": "73",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Switches & Sliders",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Controls",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.sidebar_search",
+          "value": "",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "1b7414df04e000-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668.0,
+            "width": 920.0,
+            "x": 500.0,
+            "y": 190.0
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 3,
+      "stderr": "error: no running engine was found; start the application with its control channel enabled\n",
+      "stdout": ""
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "session_id": "ea55248f050300-ui",
+          "windows": [
+            "main#1"
+          ]
+        }
+      ]
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "ea55248f050300-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "ea55248f050300-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "System",
+          "focused": true,
+          "frame": {
+            "height": 668.0,
+            "width": 920.0,
+            "x": 500.0,
+            "y": 190.0
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "ea55248f050300-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": {
+        "actions": [
+          "Activate",
+          "Close",
+          "Minimize",
+          "Maximize",
+          "Move",
+          "Resize"
+        ],
+        "changed_by": "System",
+        "focused": true,
+        "frame": {
+          "height": 668.0,
+          "width": 920.0,
+          "x": 500.0,
+          "y": 190.0
+        },
+        "kind": "main",
+        "lifecycle": "Open",
+        "presentation": "Native",
+        "size": "Normal",
+        "version": 3,
+        "visibility": "Visible",
+        "window": "main#1"
+      }
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "ea55248f050300-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "enabled": true,
+          "label": "Text",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Text",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.sidebar_search",
+          "value": "",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "ea55248f050300-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Controls"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "ea55248f050300-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "enabled": true,
+          "label": "Save automatically",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.autosave",
+          "value": "true",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Brightness",
+          "reason": null,
+          "role": "slider",
+          "target": "controls_page.brightness",
+          "value": "0.6",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.density",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.density_chips",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Notifications",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.notifications",
+          "value": "true",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Density",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.strip_density",
+          "value": "Regular",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.strip_filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Sync",
+          "reason": null,
+          "role": "switch",
+          "target": "controls_page.sync",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Show",
+          "reason": null,
+          "role": "picker",
+          "target": "controls_page.toolbar_filter",
+          "value": "All",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Volume",
+          "reason": null,
+          "role": "slider",
+          "target": "controls_page.volume",
+          "value": "50",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Switches & Sliders",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Controls",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.sidebar_search",
+          "value": "",
+          "window": "main#1"
+        }
+      ]
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "ea55248f050300-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "System",
+          "focused": true,
+          "frame": {
+            "height": 668.0,
+            "width": 920.0,
+            "x": 500.0,
+            "y": 190.0
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ]
+    }
+  ],
+  "displays": [
+    {
+      "color_space": "Apple Virtual",
+      "frame_points": "{{0, 0}, {1920, 1080}}",
+      "scale": 1
+    }
+  ],
+  "geometry_scope": "Outer frame normalized through window.resize; CLI does not expose the content rect, and PNGs include system window chrome",
+  "harness_sha": "377b488810db926a2486ef2a75c58ca0dc628a2f",
+  "interaction_scope": "Generated CLI bindings only; mouse, keyboard and animation behavior are not verified",
+  "os": "Version 14.8.9 (Build 23J631)",
+  "requested_outer_size_points": {
+    "height": 668,
+    "width": 920
+  },
+  "screen_recording_preflight": true,
+  "source_sha": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+  "success": true,
+  "system_preferences": {
+    "accent": "default",
+    "increase_contrast": false,
+    "reduce_motion": true,
+    "reduce_transparency": true
+  },
+  "windows": [
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1248,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "controls-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Switches & Sliders",
+      "window_number": 24,
+      "sha256": "089c1a04ee389248a404e3a79827ae2c8a5ce2a7e616b0a35ad3e94c6fb89a95"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1248,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "controls-light-after-commit.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Switches & Sliders",
+      "window_number": 24,
+      "sha256": "85b9cefde81189f5b99b317fbb8ae9b6a75746e01dbcb91ad27abd9f018d68fd"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1283,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "controls-dark.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "System",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Switches & Sliders",
+      "window_number": 32,
+      "sha256": "c4d69b759b691836fcd65c3b22bbcc24808908dc3ef8d1ac9236d4624c698f36"
+    }
+  ],
+  "capture_run": "https://github.com/Torrekie/Bern/actions/runs/39946674436",
+  "build_run": "https://github.com/Torrekie/Bern/actions/runs/39943744831",
+  "runtime_environment": "source_sha=ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee\nharness_sha=377b488810db926a2486ef2a75c58ca0dc628a2f\nrunner_arch=ARM64\nimage_os=macos14\nimage_version=20260831.0302.1\nProductName:\t\tmacOS\nProductVersion:\t\t14.8.9\nBuildVersion:\t\t23J631\narm64\nXcode 15.4\nBuild version 15F31d\nswift-driver version: 1.90.11.1 Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)\nTarget: arm64-apple-macosx14.0\n",
+  "build_environment": "source_repository=AimesSoft/Bern\nsource_sha=ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee\nharness_sha=69af5582318d33c734b84ba5d13c538efd05ea53\nrunner_arch=ARM64\nimage_os=macos26\nimage_version=20261013.0424.1\nProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\narm64\nXcode 26.6\nBuild version 17F113\n26.5\nswift-driver version: 1.148.6 Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0\n",
+  "build_binary": "minimum_macos=14.0\ntarget/bern/macos/Showcase.app/Contents/MacOS/Showcase: Mach-O 64-bit executable arm64\ntarget/bern/macos/Showcase.app/Contents/MacOS/Showcase:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 14.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\ntarget/bern/macos/Showcase.app/Contents/MacOS/Showcase:\n\t/System/Library/Frameworks/Security.framework/Versions/A/Security (compatibility version 1.0.0, current version 61901.120.67)\n\t/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5026.5.4)\n\t/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI (compatibility version 1.0.0, current version 7.5.3)\n\t/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2685.60.104)\n\t/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)\n\t/System/Library/Frameworks/AVKit.framework/Versions/A/AVKit (compatibility version 1.0.0, current version 1.0.0)\n\t/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)\n\t/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork (compatibility version 1.0.0, current version 3860.255.21)\n\t/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 1965.5.1)\n\t/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia (compatibility version 1.0.0, current version 3320.8.5)\n\t/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5026.5.4)\n\t/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)\n\t/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore (compatibility version 1.2.0, current version 1195.14.4)\n\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)\n\t/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2420.7.1, weak)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 411.255.0, weak)\n\t/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0)\n\t/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 2.2.0, weak)\n\t/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)\n\t/usr/lib/swift/libswiftCoreMedia.dylib (compatibility version 1.0.0, current version 3320.8.5)\n\t/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 377.120.8)\n\t/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1542.100.32)\n\t/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 373.2.0, weak)\n\t/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)\n\t/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 951.7.0)\n\t/usr/lib/swift/libswiftObservation.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)\n\t/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 877.5.1)\n\t/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 128.120.2, weak)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1082.0.0)\n\t/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 23.0.0, weak)\n\t/usr/lib/swift/libswiftCoreGraphics.dylib (compatibility version 1.0.0, current version 1.0.0)\n",
+  "source_archive_sha256": "099269fa653d0e11e1622c722b891312674a5c5ccfee50fbbd18884dc45b9652",
+  "limitations": [
+    "Reduce Motion and Reduce Transparency were enabled on the runner.",
+    "CLI binding changes were verified; mouse, keyboard, gesture and animation behavior were not verified.",
+    "Outer frame is 920x668 points at scale 1; content rect was not independently measured."
+  ]
+}

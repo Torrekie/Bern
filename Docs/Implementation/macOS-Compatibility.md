@@ -13,7 +13,7 @@
 | 3：SwiftUI → Objective-C | 以阶段 2 的真实 SwiftUI 实现为参照，逐个控件与交互移植。尽可能使用系统 AppKit 控件。 | 相同输入、状态、尺寸、语言和外观下的界面及交互一致；必要自定义组件明确说明。旧实验实现须重新对照，不能自动视作通过。 |
 | 4：iOS | 暂不实现、构建或下载运行时。 | 本机空间充足且存在可调用的 iOS 17 模拟器，再建立 SwiftUI 基准并开始对照。 |
 
-阶段 1 当前状态：**本表所列有限源码审查与本机编译尝试完成，等效移植尚未开始；macOS 14 运行基准待采集。**
+阶段 1 当前状态：**本表所列有限源码审查与本机编译尝试完成；已获得 macOS 14 在减少动态效果/透明度设置下的运行参考。等效移植尚未开始，普通材质和动画的证据仍待补足。**
 
 ## 本机实际工具与组合尝试
 
@@ -78,8 +78,23 @@ GitHub 官方现仍列出 arm64 `macos-14`，但将于 **2026-11-02** 退役；2
 
 手动工作流见 [macos14-reference.yml](../../.github/workflows/macos14-reference.yml)，采集脚本见 [macos14-reference.swift](../../.github/scripts/macos14-reference.swift)。它分离上游源码与采集脚本，用新 SDK 构建 target 14，然后把同一个产物送到 macOS 14；不在旧运行主机重新构建。采集固定外框的 light/dark 控件页及 CLI 状态变化，记录显示缩放、色彩空间、强调色与辅助功能偏好。CLI 未暴露内容区精确尺寸；鼠标、键盘与动画仍须后续实际验证。
 
-本机已通过工作流 YAML、内嵌 shell 语法和采集脚本的 Swift 类型检查；这些检查不等于远程运行通过。用户已授权创建公开 [Torrekie/Bern](https://github.com/Torrekie/Bern) fork、发布两个 CI 文件并运行一次。远程默认分支仅比创建时的上游增加这两个采集文件，未发布本地旧实验后端。
+本机已通过工作流 YAML、内嵌 shell 语法和采集脚本的 Swift 类型检查。已创建公开 [Torrekie/Bern](https://github.com/Torrekie/Bern) fork 并发布两个 CI 文件；远程默认分支仅比创建时的上游增加这两个采集文件，未发布本地旧实验后端。
 
 首次采集：[39943744831](https://github.com/Torrekie/Bern/actions/runs/39943744831)，采集脚本提交 `69af5582318d33c734b84ba5d13c538efd05ea53`。应用源码仍为固定的 `ffbdbdf`。
 
-构建 job 已通过：arm64 macOS 26.6.2 / Xcode 26.6 / SDK 26.5 / Swift 6.3.3 / Rust 1.99.0；生成应用的 Info.plist 与 Mach-O 均为最低 macOS 14.0，签名验证通过。这确认了新 SDK 配旧 target 的构建路线，但不证明 13 可运行。macOS 14 运行 job 仍在等待 runner；没有运行截图或等效验收结论，不进入下一阶段。
+构建 job 已通过：arm64 macOS 26.6.2 / Xcode 26.6 / SDK 26.5 / Swift 6.3.3 / Rust 1.99.0；生成应用的 Info.plist 与 Mach-O 均为最低 macOS 14.0，签名验证通过。这确认了新 SDK 配旧 target 的构建路线，但不证明 13 可运行。
+
+采集主机确为 arm64 macOS 14.8.9 / Xcode 15.4 / Swift 5.10。第一轮在采集脚本的窗口筛选链式表达式处发生 Swift 类型检查超时；未启动应用，不能归为上游运行失败。已拆为显式循环并通过本机类型检查；工作流支持复用已有构建产物、只补跑采集。
+
+补跑采集：[39946674436](https://github.com/Torrekie/Bern/actions/runs/39946674436)，脚本提交 `377b488810db926a2486ef2a75c58ca0dc628a2f`，复用第一轮的同一应用归档，构建 job 跳过。采集通过：真实窗口为 920×668 点/像素、1 倍缩放；浅色初始音量 50，CLI 提交后为 73、通知关闭；重新启动后的深色初始值仍为 50。三张原始 PNG 已逐张检查，未编辑或缩放。屏幕录制权限预检通过。
+
+**该 runner 开启了减少动态效果和减少透明度。** 因此本次只建立这些设置下的颜色/布局与 CLI 状态参考，不能作为普通透明材质或动画的完整证据；也未验证真实鼠标拖动、键盘、输入法或手势。第一阶段仍未等效完成。
+
+保留的证据约 260 KB：
+
+- [浅色初始窗口](../Evidence/macOS14-reference/controls-light.png)
+- [浅色提交后窗口](../Evidence/macOS14-reference/controls-light-after-commit.png)
+- [深色初始窗口](../Evidence/macOS14-reference/controls-dark.png)
+- [源码、环境、截图校验与完整 CLI 结果](../Evidence/macOS14-reference/reference.json)
+
+构建应用未下载到本机；本机仅保存上述原始参考图和合并后的文本记录，已清理传输归档、重复证据副本与完成的编译缓存。
