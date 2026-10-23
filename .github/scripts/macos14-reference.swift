@@ -265,6 +265,12 @@ func motion(_ name: String, process: Process, change: () throws -> Void) throws 
 func showcaseSlices(process: Process, session: String) throws {
     report["showcase_extra_slices"] = "Light appearance only; main window at 920 x 668 outer points. Screenshots are evidence for comparison, not an automatic visual-equivalence verdict."
 
+    for page in ["Text", "Buttons", "Inputs"] {
+        try selectPage(page, session: session)
+        try pause(0.3)
+        try capture(page.lowercased() + "-light", process: process, session: session)
+    }
+
     // Editing before mounting Library guarantees that the first answer has
     // no previous rows. Editing an already-ready Query deliberately retains
     // those rows with an error banner instead of the full unavailable view.
