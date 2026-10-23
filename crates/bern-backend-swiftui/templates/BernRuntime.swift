@@ -2022,9 +2022,9 @@ private struct BernRuntimeUnavailable<Actions: View>: View {
         if #available(macOS 14, *) { native } else {
             VStack(spacing: 12) {
                 Image(systemName: systemImage)
-                    .font(.system(size: 40, weight: .regular)).foregroundStyle(.secondary)
+                    .font(.system(size: 40, weight: .regular)).foregroundStyle(.tertiary)
                     .accessibilityHidden(true)
-                Text(verbatim: title).font(.title2.weight(.bold)).multilineTextAlignment(.center)
+                Text(verbatim: title).font(.largeTitle.weight(.bold)).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 if let message { Text(verbatim: message).foregroundStyle(.secondary).multilineTextAlignment(.center) }
                 actions
             }
