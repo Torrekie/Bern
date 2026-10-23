@@ -167,6 +167,15 @@ func capture(_ name: String, process: Process, session: String) throws {
 
 do {
     try save()
+    if let profile = environment["BERN_REFERENCE_PROFILE"] {
+        let reduced = profile == "reduced"
+        guard ["normal", "reduced"].contains(profile),
+              NSWorkspace.shared.accessibilityDisplayShouldReduceMotion == reduced,
+              NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency == reduced else {
+            throw Failure(description: "Effective accessibility preferences do not match requested profile \(profile)")
+        }
+        report["appearance_profile"] = profile
+    }
     guard ProcessInfo.processInfo.operatingSystemVersion.majorVersion == 14 else {
         throw Failure(description: "Reference capture must run on macOS 14")
     }

@@ -128,6 +128,23 @@ impl<'a> Generator<'a> {
         &self.app.types
     }
 
+    /// Reference observation is Combine on macOS 13 and Observation on UIKit.
+    fn environment_object(&self, out: &mut Out, ty: &str, name: &str) {
+        if self.platform == Platform::Macos {
+            out.line(format!("@EnvironmentObject private var {name}: {ty}"));
+        } else {
+            out.line(format!("@Environment({ty}.self) private var {name}"));
+        }
+    }
+
+    /// Localization and runtime color lookups must invalidate their owning view.
+    fn observe_presentation(&self, out: &mut Out) {
+        if self.platform == Platform::Macos {
+            out.line("@ObservedObject private var bernLanguage = BernLanguage.shared");
+            out.line("@ObservedObject private var bernTheme = BernThemeState.shared");
+        }
+    }
+
     /// The platform's name in `style!`.
     fn style_platform(&self) -> &'static str {
         match self.platform {

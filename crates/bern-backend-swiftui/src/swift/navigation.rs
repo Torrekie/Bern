@@ -369,7 +369,7 @@ impl Generator<'_> {
             .map(|value| format!("Optional({})", self.expr(value)))
             .unwrap_or_else(|| "visible.first".into());
         out.line(format!(
-            ".onChange(of: {}, initial: true) {{ _, visible in if !visible.contains({selection}), let value = {target} {{ {selection} = value }} }}",
+            ".bernOnChange(of: {}, initial: true) {{ _, visible in if !visible.contains({selection}), let value = {target} {{ {selection} = value }} }}",
             self.nav_values(&element.children, kind, &ty)
         ));
     }

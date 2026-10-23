@@ -1,7 +1,7 @@
 //! The values the views read: enums and records, and the engine and
 //! session state that holds them.
 
-use super::Out;
+use super::{Out, Platform};
 use crate::names::{self, case, double, member, string, value_type};
 use bern_ir::Application;
 use bern_protocol::{EnumDef, RecordDef, Type, TypeTable, Value};
@@ -309,20 +309,29 @@ pub(super) fn generate_record(out: &mut Out, def: &RecordDef) {
     }
 }
 
-pub(super) fn generate_engine(out: &mut Out, app: &Application) {
+pub(super) fn generate_engine(out: &mut Out, app: &Application, platform: Platform) {
     let protocol = &app.protocol;
     out.line(format!(
         "/// Read-only state of the `{}` engine, mirrored from Rust.",
         protocol.namespace
     ));
     out.line("@MainActor");
-    out.line("@Observable");
-    out.open("final class BernEngine {");
+    if platform != Platform::Macos {
+        out.line("@Observable");
+    }
+    out.open(if platform == Platform::Macos {
+        "final class BernEngine: BernObservableObject {"
+    } else {
+        "final class BernEngine {"
+    });
     out.line("static let shared = BernEngine()");
     out.line("");
     for field in &protocol.state {
         if !field.doc.is_empty() {
             out.line(format!("/// {}", field.doc.replace('\n', " ")));
+        }
+        if platform == Platform::Macos {
+            out.line("@Published");
         }
         out.line(format!(
             "private(set) var {}: {} = {}",
@@ -388,7 +397,7 @@ pub(super) fn session_var(name: &str) -> String {
     names::session_variable(name)
 }
 
-pub(super) fn generate_sessions(out: &mut Out, app: &Application) {
+pub(super) fn generate_sessions(out: &mut Out, app: &Application, platform: Platform) {
     for (index, session) in app.sessions.iter().enumerate() {
         let class = session_class(&session.name);
         out.line(format!(
@@ -396,15 +405,24 @@ pub(super) fn generate_sessions(out: &mut Out, app: &Application) {
             session.name
         ));
         out.line("@MainActor");
-        out.line("@Observable");
+        if platform != Platform::Macos {
+            out.line("@Observable");
+        }
         out.open(format!("final class {class}: BernSessionState {{"));
         out.line(format!("static let bernIndex: UInt32 = {index}"));
-        out.line("@ObservationIgnored weak var window: BernWindowContext?");
+        out.line(if platform == Platform::Macos {
+            "weak var window: BernWindowContext?"
+        } else {
+            "@ObservationIgnored weak var window: BernWindowContext?"
+        });
         for (field_index, field) in session.fields.iter().enumerate() {
             let name = member(&field.name);
             let storage = format!("bern_{}", field.name);
             let ty = swift_type(&field.ty);
             out.line("");
+            if platform == Platform::Macos {
+                out.line("@Published");
+            }
             out.line(format!(
                 "private var {storage}: {ty} = {}",
                 value_literal(&field.initial, &field.ty, &app.types)

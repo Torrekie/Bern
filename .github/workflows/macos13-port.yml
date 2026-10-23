@@ -1,0 +1,118 @@
+name: macOS 13 SwiftUI port
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Exact port commit to build from this fork
+        required: true
+        type: string
+      app:
+        description: Example to compile
+        type: choice
+        options: [showcase, gallery]
+        default: showcase
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: macos13-port-${{ inputs.app }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+      CARGO_INCREMENTAL: "0"
+      CARGO_BUILD_JOBS: "2"
+      CARGO_TERM_COLOR: never
+      MACOSX_DEPLOYMENT_TARGET: "13.0"
+      EXAMPLE: ${{ inputs.app }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.source_ref }}
+          path: source
+          persist-credentials: false
+      - name: Record source and compiler
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$EXAMPLE" in showcase) product=Showcase ;; gallery) product=Gallery ;; *) exit 1 ;; esac
+          echo "PRODUCT=$product" >> "$GITHUB_ENV"
+          mkdir -p evidence
+          {
+            printf 'source_repository=%s\nsource_sha=%s\nharness_sha=%s\n' "$GITHUB_REPOSITORY" "$(git -C source rev-parse HEAD)" "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+          } 2>&1 | tee evidence/environment.txt
+          test "$(uname -m)" = arm64
+          rustup toolchain install 1.99.0 --profile minimal
+          rustc +1.99.0 -Vv >> evidence/environment.txt
+      - uses: actions/cache/restore@v4
+        id: rust-cache
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            source/target
+          key: bern-macos13-cargo-v1-${{ hashFiles('source/Cargo.lock') }}
+      - name: Build the genuine SwiftUI macos_modern target
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source
+          cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest "examples/$EXAMPLE/Bern.toml" --target macos_modern --release > ../evidence/build.log 2>&1 || {
+            # Keep the complete log in the short-lived artifact; report a compact excerpt.
+            python3 - <<'PY'
+          import re
+          from pathlib import Path
+          lines=Path('../evidence/build.log').read_text().splitlines()
+          first=next((i for i,l in enumerate(lines) if re.search(r'error:|error\[E',l)),max(0,len(lines)-80))
+          print('\n'.join(lines[max(0,first-2):first+100]))
+          PY
+            exit 1
+          }
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('target/bern/macos_modern/build.json').read_text())
+          assert d['ui']=='swiftui-modern',d
+          assert d['minimum_macos']=='13.0',d
+          PY
+          app="target/bern/macos_modern/$PRODUCT.app"
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - "$app/Contents/Info.plist")" = 13.0
+          test "$(xcrun vtool -show-build "$app/Contents/MacOS/$PRODUCT" | awk '/minos/ {print $2;exit}')" = 13.0
+          {
+            xcrun vtool -show-build "$app/Contents/MacOS/$PRODUCT"
+            xcrun otool -L "$app/Contents/MacOS/$PRODUCT"
+            codesign --verify --deep --strict "$app"
+          } 2>&1 | tee ../evidence/binary.txt
+          cp target/bern/macos_modern/build.json ../evidence/build.json
+          tar -czf "../evidence/$EXAMPLE.tar.gz" -C target/bern/macos_modern "$PRODUCT.app" "bin/$EXAMPLE"
+          cd ../evidence
+          shasum -a 256 "$EXAMPLE.tar.gz" > "$EXAMPLE.tar.gz.sha256"
+      - name: Keep one reusable Rust cache even when Swift compilation fails
+        if: ${{ !cancelled() && steps.rust-cache.outputs.cache-hit != 'true' }}
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            source/target
+          key: ${{ steps.rust-cache.outputs.cache-primary-key }}
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos13-${{ inputs.app }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0

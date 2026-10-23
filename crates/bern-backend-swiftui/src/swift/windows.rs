@@ -26,6 +26,9 @@ impl Generator<'_> {
             "/// Generated from the `{}` component.",
             component.name
         ));
+        if self.platform == Platform::Macos {
+            out.line("@MainActor");
+        }
         out.open(format!("struct {name}: View {{"));
         let mut sessions = Vec::new();
         let mut client = false;
@@ -44,16 +47,13 @@ impl Generator<'_> {
             }
         }
         if client || self.uses_engine(&[&component.body]) {
-            out.line("@Environment(BernEngine.self) private var bernEngine");
+            self.environment_object(out, "BernEngine", "bernEngine");
         }
         for session in &sessions {
-            out.line(format!(
-                "@Environment({}.self) private var {}",
-                session_class(session),
-                session_var(session)
-            ));
+            self.environment_object(out, &session_class(session), &session_var(session));
         }
-        out.line("@Environment(BernWindowContext.self) private var bernWindow");
+        self.environment_object(out, "BernWindowContext", "bernWindow");
+        self.observe_presentation(out);
         out.line("");
         out.open("var body: some View {");
         let ctx = Ctx {
@@ -68,6 +68,9 @@ impl Generator<'_> {
 
     pub(super) fn window(&self, out: &mut Out, index: usize, window: &WindowDef) {
         out.line(format!("/// Root of the `{}` window.", window.id));
+        if self.platform == Platform::Macos {
+            out.line("@MainActor");
+        }
         out.open(format!("struct BernWindow{index}: View {{"));
         let sessions: Vec<String> = window
             .sessions
@@ -75,12 +78,14 @@ impl Generator<'_> {
             .map(|session| format!("{}()", session_class(session)))
             .collect();
         out.line(format!(
-            "@State private var context = BernWindowContext(kind: {index}, kindID: {}, isSettings: {}, sessions: [{}])",
+            "{} private var context = BernWindowContext(kind: {index}, kindID: {}, isSettings: {}, sessions: [{}])",
+            if self.platform == Platform::Macos { "@StateObject" } else { "@State" },
             string(&window.id),
             window.role == WindowRole::Settings,
             sessions.join(", ")
         ));
-        out.line("@Environment(BernEngine.self) private var bernEngine");
+        self.environment_object(out, "BernEngine", "bernEngine");
+        self.observe_presentation(out);
         // Content written inline in the window sees the same names as a
         // component body: the window and its sessions.
         out.line("private var bernWindow: BernWindowContext { context }");
@@ -144,7 +149,7 @@ impl Generator<'_> {
         }
         for session in &window.sessions {
             out.line(format!(
-                ".environment(context.session({}.self))",
+                ".bernEnvironment(context.session({}.self))",
                 session_class(session)
             ));
         }

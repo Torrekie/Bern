@@ -6,6 +6,9 @@
 // answer once AppKit is done.
 
 import AppKit
+import Combine
+import CoreVideo
+import QuartzCore
 import AVKit
 import SwiftUI
 
@@ -25,11 +28,10 @@ final class BernWindowPlatform {
 /// SwiftUI's window actions, which the host opens windows with, and the
 /// dialog windows shown as sheets over the primary window, bottom first.
 @MainActor
-@Observable
-final class BernHostPlatform {
-    @ObservationIgnored var openWindow: OpenWindowAction?
-    @ObservationIgnored var openSettings: OpenSettingsAction?
-    var dialogs: [String] = []
+final class BernHostPlatform: BernObservableObject {
+    var openWindow: OpenWindowAction?
+    var openSettings: (@MainActor () -> Void)?
+    @Published var dialogs: [String] = []
 }
 
 extension BernWindowContext {
@@ -121,9 +123,12 @@ extension BernHost {
     /// Every window can be asked to close.
     func checkClosable(_ context: BernWindowContext) throws {}
 
-    func registerActions(openWindow: OpenWindowAction, openSettings: OpenSettingsAction) {
+    func registerActions(openWindow: OpenWindowAction) {
         platform.openWindow = openWindow
-        platform.openSettings = openSettings
+    }
+
+    func registerSettingsAction(_ action: @escaping @MainActor () -> Void) {
+        platform.openSettings = action
     }
 
     /// Open a window kind, or bring its instance forward.
@@ -132,11 +137,15 @@ extension BernHost {
         if kind.isDialog {
             if !platform.dialogs.contains(kindID) { platform.dialogs.append(kindID) }
         } else if kind.isSettings {
-            platform.openSettings?()
+            if let action = platform.openSettings {
+                action()
+            } else if !NSApplication.shared.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil) {
+                _ = NSApplication.shared.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+            }
         } else {
             platform.openWindow?(id: kindID)
         }
-        NSApplication.shared.activate()
+        NSApplication.shared.activate(options: [.activateIgnoringOtherApps])
     }
 
     /// Reopen the primary window, as clicking the Dock icon does.
@@ -336,9 +345,11 @@ func bernTabShowsIcon(_ window: BernWindowContext) -> Bool {
 
 /// The dialog window at `depth` as a sheet over the one below it, the
 /// first over the primary window.
+@MainActor
 struct BernDialogs<Window: View>: ViewModifier {
     let depth: Int
     let window: (String) -> Window
+    @ObservedObject private var platform = BernHost.shared.platform
 
     init(depth: Int, @ViewBuilder window: @escaping (String) -> Window) {
         self.depth = depth
@@ -346,7 +357,6 @@ struct BernDialogs<Window: View>: ViewModifier {
     }
 
     func body(content: Content) -> some View {
-        let platform = BernHost.shared.platform
         content.sheet(
             item: Binding(
                 get: { platform.dialogs.count > depth ? BernDialogItem(id: platform.dialogs[depth]) : nil },
@@ -358,7 +368,7 @@ struct BernDialogs<Window: View>: ViewModifier {
                 })
         ) { item in
             window(item.id)
-                .environment(BernEngine.shared)
+                .bernEnvironment(BernEngine.shared)
                 .modifier(BernDialogs(depth: depth + 1, window: window))
         }
     }
@@ -608,10 +618,10 @@ func bernShowPrimaryWindow() {
 
 /// The window root's AppKit part: finds the NSWindow and keeps SwiftUI's
 /// window actions for the host.
+@MainActor
 struct BernWindowPlatformModifier: ViewModifier {
     let context: BernWindowContext
     @Environment(\.openWindow) private var openWindow
-    @Environment(\.openSettings) private var openSettings
 
     func body(content: Content) -> some View {
         content
@@ -624,9 +634,241 @@ struct BernWindowPlatformModifier: ViewModifier {
             .onAppear {
                 BernSnapshot.applyAppearance()
                 BernSnapshot.installWindowSignals()
-                BernHost.shared.registerActions(openWindow: openWindow, openSettings: openSettings)
+                BernHost.shared.registerActions(openWindow: openWindow)
             }
+            .modifier(BernSettingsActionRegistration())
     }
+}
+
+/// Keep the macOS 14 environment key outside every macOS 13 view layout.
+@MainActor
+private struct BernSettingsActionRegistration: ViewModifier {
+    @ViewBuilder func body(content: Content) -> some View {
+        if #available(macOS 14.0, *) {
+            content.modifier(BernModernSettingsAction())
+        } else {
+            content
+        }
+    }
+}
+
+@available(macOS 14.0, *)
+@MainActor
+private struct BernModernSettingsAction: ViewModifier {
+    @Environment(\.openSettings) private var openSettings
+    func body(content: Content) -> some View {
+        content.onAppear { BernHost.shared.registerSettingsAction { openSettings() } }
+    }
+}
+
+// MARK: - Display-synchronized kernel clock
+
+/// CADisplayLink's contract on both deployment baselines. The legacy driver
+/// receives real CoreVideo vblanks and delivers them on the caller's run loop,
+/// so a media kernel never moves onto the main thread or a fixed-rate timer.
+final class BernDisplayLink: NSObject, @unchecked Sendable {
+    private final class LegacyState: @unchecked Sendable {
+        let lock = NSLock()
+        weak var owner: BernDisplayLink?
+        var loop: CFRunLoop?
+        var mode = RunLoop.Mode.common
+        var active = false
+        var visible = true
+        var pending = false
+        var now = 0.0
+        var next = 0.0
+
+        func enqueue(_ time: CVTimeStamp) {
+            let frequency = CVGetHostClockFrequency()
+            let target = time.hostTime > 0 && frequency > 0
+                ? Double(time.hostTime) / frequency : CACurrentMediaTime()
+            let duration = time.videoTimeScale > 0 && time.videoRefreshPeriod > 0
+                ? Double(time.videoRefreshPeriod) / Double(time.videoTimeScale) : 0
+            lock.lock()
+            guard active, visible, let loop else { lock.unlock(); return }
+            next = target
+            now = duration > 0 ? target - duration : target
+            if pending { lock.unlock(); return }
+            pending = true
+            let mode = self.mode
+            lock.unlock()
+            CFRunLoopPerformBlock(loop, mode.rawValue as CFString) { [weak self] in
+                guard let self else { return }
+                self.lock.lock()
+                self.pending = false
+                let active = self.active && self.visible, owner = self.owner
+                let now = self.now, next = self.next
+                self.lock.unlock()
+                if active { owner?.fire(now: now, next: next) }
+            }
+            CFRunLoopWakeUp(loop)
+        }
+    }
+
+    private final class Proxy: NSObject {
+        weak var owner: BernDisplayLink?
+        @objc func step(_ link: AnyObject) {
+            if #available(macOS 14.0, *), let native = link as? CADisplayLink {
+                owner?.fire(now: native.timestamp, next: native.targetTimestamp)
+            }
+        }
+    }
+
+    private let condition = NSCondition()
+    private let driverLock = NSLock()
+    private weak var target: NSObject?
+    private let selector: Selector
+    private let proxy = Proxy()
+    private let legacy = LegacyState()
+    private var native: AnyObject?
+    private var coreVideo: CVDisplayLink?
+    private var callbackContext: UnsafeMutableRawPointer?
+    private var screenObservers: [NSObjectProtocol] = []
+    private var displayID: CGDirectDisplayID
+    private var invalidated = false
+    private var inFlight = 0
+    private var callbackThread: Thread?
+    private var currentTimestamp = 0.0
+    private var nextTimestamp = 0.0
+
+    var timestamp: Double {
+        condition.lock(); defer { condition.unlock() }
+        return currentTimestamp
+    }
+    var targetTimestamp: Double {
+        condition.lock(); defer { condition.unlock() }
+        return nextTimestamp
+    }
+
+    @MainActor
+    init(view: NSView? = nil, target: NSObject, selector: Selector) {
+        self.target = target
+        self.selector = selector
+        displayID = Self.display(view?.window?.screen ?? NSScreen.main)
+        super.init()
+        proxy.owner = self
+        legacy.owner = self
+        if #available(macOS 14.0, *) {
+            if let view {
+                native = view.displayLink(target: proxy, selector: #selector(Proxy.step(_:)))
+            } else {
+                native = NSScreen.main?.displayLink(target: proxy, selector: #selector(Proxy.step(_:)))
+            }
+        } else if let view {
+            update(view: view)
+            let names: [Notification.Name] = [
+                NSWindow.didChangeScreenNotification, NSWindow.didMiniaturizeNotification,
+                NSWindow.didDeminiaturizeNotification, NSWindow.didChangeOcclusionStateNotification,
+                NSApplication.didHideNotification, NSApplication.didUnhideNotification,
+            ]
+            screenObservers = names.map { name in
+                NotificationCenter.default.addObserver(forName: name, object: nil, queue: .main) {
+                    [weak self, weak view] notification in
+                    MainActor.assumeIsolated {
+                        guard let view else { return }
+                        if let window = notification.object as? NSWindow, window !== view.window { return }
+                        self?.update(view: view)
+                    }
+                }
+            }
+        }
+    }
+
+    @MainActor
+    private static func display(_ screen: NSScreen?) -> CGDirectDisplayID {
+        (screen?.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? NSNumber)?.uint32Value
+            ?? CGMainDisplayID()
+    }
+
+    @MainActor
+    func bind(to screen: NSScreen?) {
+        let display = Self.display(screen)
+        driverLock.lock(); defer { driverLock.unlock() }
+        guard display != displayID else { return }
+        displayID = display
+        if let coreVideo {
+            let status = CVDisplayLinkSetCurrentCGDisplay(coreVideo, display)
+            if status != kCVReturnSuccess { NSLog("Bern: display-link screen update failed (%d)", status) }
+        }
+    }
+
+    @MainActor
+    func update(view: NSView) {
+        bind(to: view.window?.screen)
+        legacy.lock.lock()
+        legacy.visible = view.window?.screen != nil && view.window?.isVisible == true
+            && view.window?.isMiniaturized == false && !NSApplication.shared.isHidden
+            && !view.isHiddenOrHasHiddenAncestor
+        legacy.lock.unlock()
+    }
+
+    func add(to runLoop: RunLoop, forMode mode: RunLoop.Mode) {
+        driverLock.lock(); defer { driverLock.unlock() }
+        condition.lock(); let stopped = invalidated; condition.unlock()
+        guard !stopped else { return }
+        if #available(macOS 14.0, *), let link = native as? CADisplayLink {
+            link.add(to: runLoop, forMode: mode)
+            return
+        }
+        guard coreVideo == nil else { return }
+        var link: CVDisplayLink?
+        let created = CVDisplayLinkCreateWithCGDisplay(displayID, &link)
+        precondition(created == kCVReturnSuccess && link != nil, "CoreVideo could not create Bern's display clock")
+        guard let link else { return }
+        legacy.lock.lock()
+        legacy.loop = runLoop.getCFRunLoop(); legacy.mode = mode; legacy.active = true
+        legacy.lock.unlock()
+        let context = Unmanaged.passRetained(legacy).toOpaque()
+        callbackContext = context
+        let callback = CVDisplayLinkSetOutputCallback(link, { _, _, output, _, _, context in
+            guard let context else { return kCVReturnError }
+            let state = Unmanaged<LegacyState>.fromOpaque(context).takeUnretainedValue()
+            state.enqueue(output.pointee)
+            return kCVReturnSuccess
+        }, context)
+        precondition(callback == kCVReturnSuccess, "CoreVideo could not install Bern's frame callback")
+        coreVideo = link
+        precondition(CVDisplayLinkStart(link) == kCVReturnSuccess, "CoreVideo could not start Bern's display clock")
+    }
+
+    private func fire(now: Double, next: Double) {
+        condition.lock()
+        guard !invalidated, let target else { condition.unlock(); return }
+        currentTimestamp = now; nextTimestamp = next
+        inFlight += 1; callbackThread = Thread.current
+        condition.unlock()
+        _ = target.perform(selector, with: self)
+        condition.lock()
+        inFlight -= 1
+        if inFlight == 0 { callbackThread = nil; condition.broadcast() }
+        condition.unlock()
+    }
+
+    func invalidate() {
+        condition.lock()
+        invalidated = true
+        // Invalidating from inside the target itself must not wait on itself.
+        while inFlight > 0 && callbackThread !== Thread.current { condition.wait() }
+        condition.unlock()
+        driverLock.lock(); defer { driverLock.unlock() }
+        if #available(macOS 14.0, *), let link = native as? CADisplayLink { link.invalidate() }
+        native = nil
+        legacy.lock.lock()
+        legacy.active = false; legacy.loop = nil
+        legacy.lock.unlock()
+        if let coreVideo { CVDisplayLinkStop(coreVideo) }
+        coreVideo = nil
+        // Stop has joined the driver callback; queued run-loop deliveries
+        // retain/check their own state and cannot reach the target anymore.
+        if let context = callbackContext {
+            callbackContext = nil
+            Unmanaged<LegacyState>.fromOpaque(context).release()
+        }
+        for observer in screenObservers { NotificationCenter.default.removeObserver(observer) }
+        screenObservers.removeAll()
+    }
+
+    deinit { invalidate() }
 }
 
 // MARK: - Video presenter
@@ -713,6 +955,7 @@ final class BernKernelView: NSView {
     /// Called when the size on screen changes.
     var resized: ((BernSurfaceSize) -> Void)?
     private var reported: BernSurfaceSize?
+    weak var bernDisplayLink: BernDisplayLink?
 
     init() {
         super.init(frame: .zero)
@@ -742,12 +985,24 @@ final class BernKernelView: NSView {
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
+        bernDisplayLink?.update(view: self)
         report()
     }
 
     override func viewDidChangeBackingProperties() {
         super.viewDidChangeBackingProperties()
+        bernDisplayLink?.update(view: self)
         report()
+    }
+
+    override func viewDidHide() {
+        super.viewDidHide()
+        bernDisplayLink?.update(view: self)
+    }
+
+    override func viewDidUnhide() {
+        super.viewDidUnhide()
+        bernDisplayLink?.update(view: self)
     }
 
     private func report() {
@@ -804,7 +1059,8 @@ struct BernKernelVideoSurface: NSViewRepresentable {
         coordinator.window = window
         let frames = BernKernelFrames(token: token)
         // The view's display link follows the window to other screens.
-        let link = view.displayLink(target: frames, selector: #selector(BernKernelFrames.step(_:)))
+        let link = BernDisplayLink(view: view, target: frames, selector: #selector(BernKernelFrames.step(_:)))
+        view.bernDisplayLink = link
         view.resized = { size in BernMedia.shared.resizeKernel(token: token, size: size) }
         BernMedia.shared.attachKernel(
             view.metalLayer, size: view.size, fit: fit, token: token, player: playerID, window: window,
@@ -975,8 +1231,9 @@ extension View {
 /// under a transparent title bar; `immersive` hides the title bar, its
 /// controls and the toolbar, and the pointer once it rests; `idleAfter`
 /// turns `idle` on after that many seconds without input in the window.
+@MainActor
 struct BernWindowBehavior: ViewModifier {
-    let context: BernWindowContext
+    @ObservedObject var context: BernWindowContext
     let unified: Bool
     let idleAfter: Double?
     let immersive: Bool
@@ -995,14 +1252,14 @@ struct BernWindowBehavior: ViewModifier {
                 }
             }
             .onDisappear { monitor.stop() }
-            .onChange(of: immersive) { apply(attempts: 20) }
-            .onChange(of: idleEnabled) {
+            .bernOnChange(of: immersive) { apply(attempts: 20) }
+            .bernOnChange(of: idleEnabled) {
                 monitor.stop()
                 context.idle = false
                 if idleEnabled, let idleAfter { monitor.start(context: context, after: idleAfter) }
                 apply(attempts: 20)
             }
-            .onChange(of: context.idle) { _, idle in
+            .bernOnChange(of: context.idle) { _, idle in
                 apply(attempts: 20)
                 if idle && immersive {
                     NSCursor.setHiddenUntilMouseMoves(true)
@@ -1107,9 +1364,10 @@ func bernEndEditing() {
 
 /// `idle_area`: the window goes idle only while the pointer rests over
 /// this view (or another `idle_area`), after `seconds`.
+@MainActor
 struct BernIdleArea: ViewModifier {
     let seconds: Double
-    @Environment(BernWindowContext.self) private var window
+    @EnvironmentObject private var window: BernWindowContext
     @State private var id = UUID()
 
     func body(content: Content) -> some View {

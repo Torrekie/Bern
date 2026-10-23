@@ -520,7 +520,11 @@ impl Generator<'_> {
             out.open("SwiftUI.Group {");
             self.nodes(out, &element.children, &content_ctx);
             out.close("}");
-            out.line(".scrollTargetLayout()");
+            out.line(if self.platform == Platform::Macos {
+                ".bernScrollTargetLayout()"
+            } else {
+                ".scrollTargetLayout()"
+            });
             if snap.is_some() {
                 out.line(".bernSnapContent()");
             }
@@ -569,9 +573,25 @@ impl Generator<'_> {
         // fraction of the view.
         if let Some(at) = element.number("open_at") {
             out.line(if horizontal {
-                format!(".defaultScrollAnchor(UnitPoint(x: {}, y: 0))", double(at))
+                format!(
+                    ".{}(UnitPoint(x: {}, y: 0))",
+                    if self.platform == Platform::Macos {
+                        "bernDefaultScrollAnchor"
+                    } else {
+                        "defaultScrollAnchor"
+                    },
+                    double(at)
+                )
             } else {
-                format!(".defaultScrollAnchor(UnitPoint(x: 0, y: {}))", double(at))
+                format!(
+                    ".{}(UnitPoint(x: 0, y: {}))",
+                    if self.platform == Platform::Macos {
+                        "bernDefaultScrollAnchor"
+                    } else {
+                        "defaultScrollAnchor"
+                    },
+                    double(at)
+                )
             });
         }
         self.toolbar(out, &element.children, ctx);

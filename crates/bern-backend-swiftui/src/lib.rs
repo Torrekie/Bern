@@ -31,7 +31,7 @@ pub use swift::{Generator, Platform};
 pub use tvos::{MINIMUM_TVOS, SwiftUiTvos};
 
 /// Minimum deployment target of the original `swiftui-modern` generator.
-pub const MINIMUM_MACOS: &str = "14.0";
+pub const MINIMUM_MACOS: &str = "13.0";
 
 /// Launch Services' tool, which registers an app bundle and its icon.
 const LSREGISTER: &str = "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister";
@@ -115,6 +115,7 @@ pub(crate) const FEATURES: &[&str] = &[
 ];
 
 const RUNTIME: &str = include_str!("../templates/BernRuntime.swift");
+pub(crate) const COMPATIBILITY: &str = include_str!("../templates/BernCompatibility.swift");
 
 /// The runtime template with the extensions of each file kind from the
 /// shared table, so pickers, drops and the Info.plist agree.
@@ -144,6 +145,7 @@ const APPKIT: &str = include_str!("../templates/BernAppKit.swift");
 
 /// Swift sources compiled into the app, in order.
 const SOURCES: &[&str] = &[
+    "BernCompatibility.swift",
     "BernRuntime.swift",
     "BernMedia.swift",
     "BernStyle.swift",
@@ -267,6 +269,7 @@ impl Target for SwiftUiMacos {
         let product = product_name(app);
         let bundle = PathBuf::from(format!("{product}.app"));
         let mut files = vec![
+            GeneratedFile::text("Sources/BernCompatibility.swift", COMPATIBILITY),
             GeneratedFile::text(
                 "Sources/BernRuntime.swift",
                 crate::runtime_with_svg(app, RUNTIME),
@@ -423,6 +426,14 @@ impl Target for SwiftUiMacos {
             "AVFoundation".into(),
             "-framework".into(),
             "AVKit".into(),
+            "-framework".into(),
+            "CoreVideo".into(),
+            "-framework".into(),
+            "Metal".into(),
+            "-framework".into(),
+            "MetalKit".into(),
+            "-framework".into(),
+            "CoreImage".into(),
             "-module-cache-path".into(),
             context
                 .workspace_dir

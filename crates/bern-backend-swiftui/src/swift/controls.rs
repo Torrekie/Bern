@@ -195,7 +195,7 @@ impl Generator<'_> {
                     } else if !ctx.toolbar {
                         match element.keyword("prominence") {
                             Some("plain") => out.line(".bernButtonLook(.flat)"),
-                            Some("prominent") => out.line(".bernButtonLook(.prominent).buttonBorderShape(.roundedRectangle(radius: 12))"),
+                            Some("prominent") => out.line(if self.platform == Platform::Macos { ".bernButtonLook(.prominent).bernRoundedButtonBorder(radius: 12)" } else { ".bernButtonLook(.prominent).buttonBorderShape(.roundedRectangle(radius: 12))" }),
                             _ => out.line(".bernButtonLook(.icon)"),
                         }
                     }
@@ -215,7 +215,12 @@ impl Generator<'_> {
                 if let Some(style) = &style {
                     if let Some(size) = style.size() {
                         out.line(format!(
-                            ".controlSize({})",
+                            ".{}({})",
+                            if self.platform == Platform::Macos {
+                                "bernControlSize"
+                            } else {
+                                "controlSize"
+                            },
                             crate::style::control_size(size)
                         ));
                     }
@@ -372,7 +377,11 @@ impl Generator<'_> {
         }
         let action = element.action.as_ref().map(|a| match element.clearing() {
             // The draft empties and the keyboard goes back to the window.
-            Some(clear) => format!("{}; {}; bernEndEditing()", self.action(a), self.action(&clear)),
+            Some(clear) => format!(
+                "{}; {}; bernEndEditing()",
+                self.action(a),
+                self.action(&clear)
+            ),
             None => self.action(a),
         });
         if let Some(action) = &action {

@@ -17,6 +17,9 @@ impl Generator<'_> {
             Platform::Ios | Platform::Tvos => "import UIKit",
         });
         out.line("import SwiftUI");
+        if self.platform == Platform::Macos {
+            out.line("import Combine");
+        }
         out.line("");
         out.line("// MARK: - Values");
         out.line("");
@@ -102,10 +105,10 @@ impl Generator<'_> {
         }
         out.line("// MARK: - Engine state");
         out.line("");
-        generate_engine(&mut out, app);
+        generate_engine(&mut out, app, self.platform);
         out.line("// MARK: - Session state");
         out.line("");
-        generate_sessions(&mut out, app);
+        generate_sessions(&mut out, app, self.platform);
         out.line("// MARK: - Components");
         out.line("");
         for component in &app.components {
@@ -224,7 +227,7 @@ impl Generator<'_> {
             if window.role == WindowRole::Settings {
                 out.open("SwiftUI.Settings {");
                 out.line(format!("BernWindow{index}()"));
-                out.line("    .environment(BernEngine.shared)");
+                out.line("    .bernEnvironment(BernEngine.shared)");
                 out.close("}");
             } else {
                 out.open(format!(
@@ -235,7 +238,7 @@ impl Generator<'_> {
                 if window.id == app.windows.primary {
                     self.dialogs(out);
                 }
-                out.line("    .environment(BernEngine.shared)");
+                out.line("    .bernEnvironment(BernEngine.shared)");
                 if window.id == app.windows.primary && !initial.is_empty() {
                     out.line(format!(
                         "    .task {{ BernHost.shared.openInitial([{}]) }}",
@@ -361,7 +364,7 @@ impl Generator<'_> {
         out.line("    SwiftUI.EmptyView()");
         out.close("}");
         out.close("}");
-        out.line(".environment(BernEngine.shared)");
+        out.line(".bernEnvironment(BernEngine.shared)");
         scene_modifiers(out, primary);
         if let Some(settings) = app
             .windows
@@ -393,7 +396,7 @@ impl Generator<'_> {
                     string(&window.title.key)
                 ));
             }
-            out.line("    .environment(BernEngine.shared)");
+            out.line("    .bernEnvironment(BernEngine.shared)");
             scene_modifiers(out, window);
         }
     }
@@ -419,7 +422,7 @@ impl Generator<'_> {
         out.line("    SwiftUI.EmptyView()");
         out.close("}");
         out.close("}");
-        out.line(".environment(BernEngine.shared)");
+        out.line(".bernEnvironment(BernEngine.shared)");
         out.close("}");
     }
 

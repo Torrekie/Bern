@@ -1,6 +1,6 @@
 //! `Canvas` drawings: shapes, series and patterns.
 
-use super::{Generator, Out};
+use super::{Generator, Out, Platform};
 use crate::names::{double, string};
 use bern_ir::{Element, Node};
 use bern_protocol::Type;
@@ -9,6 +9,9 @@ impl Generator<'_> {
     /// A `Canvas`: its drawing runs on values captured when the view is
     /// built, so state the drawing reads still updates the view.
     pub(super) fn canvas(&self, out: &mut Out, element: &Element) {
+        if self.platform == Platform::Macos {
+            out.open("BernCanvasState {");
+        }
         let mut captures = Vec::new();
         let mut body = Out {
             indent: out.indent + 1,
@@ -56,6 +59,9 @@ impl Generator<'_> {
         // the other layers, without making the stack larger.
         if element.prop("width").is_none() && element.prop("height").is_none() {
             out.line(".bernFillsLayers()");
+        }
+        if self.platform == Platform::Macos {
+            out.close("}");
         }
     }
 

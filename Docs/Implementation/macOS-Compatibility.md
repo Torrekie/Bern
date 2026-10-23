@@ -13,7 +13,11 @@
 | 3：SwiftUI → Objective-C | 以阶段 2 的真实 SwiftUI 实现为参照，逐个控件与交互移植。尽可能使用系统 AppKit 控件。 | 相同输入、状态、尺寸、语言和外观下的界面及交互一致；必要自定义组件明确说明。旧实验实现须重新对照，不能自动视作通过。 |
 | 4：iOS | 暂不实现、构建或下载运行时。 | 本机空间充足且存在可调用的 iOS 17 模拟器，再建立 SwiftUI 基准并开始对照。 |
 
-阶段 1 当前状态：**本表所列有限源码审查与本机编译尝试完成；已获得 macOS 14 在减少动态效果/透明度设置下的运行参考。等效移植尚未开始，普通材质和动画的证据仍待补足。**
+阶段 1 当前状态：**macOS 13 兼容首轮实现已写入，正在统一编译；尚未通过本机运行与等效验收。已补得普通动态效果/透明度设置下的 macOS 14 参考，动画和真实输入仍须专门验证。**
+
+当前仅推进 macOS 13。macOS 11 / Swift 5.3、Objective-C 与 iOS 不进入本轮。新增的复用视图只用于确实缺失的系统能力：变化观察、Inspector、滚动协调、按键协调，以及旧系统 PQ/HLG 图片的系统 MTKView EDR 呈现；普通控件和页面继续使用 SwiftUI。系统显示时钟使用 CoreVideo 垂直同步，不替换为固定计时器。
+
+首轮已通过 5 项后端 Rust 单元检查、1 项现有 Canvas/叠层布局生成检查，以及公共兼容文件在本机 target 13 的类型检查。它们尚不能代替使用新 SDK 编译完整应用。13 的吸附目前在原生惯性结束后校正，轨迹与 14 原生吸附不同；Inspector、额外大控件、焦点环、滚动相位和 EDR 画面仍待实际对照。
 
 ## 本机实际工具与组合尝试
 
@@ -98,3 +102,14 @@ GitHub 官方现仍列出 arm64 `macos-14`，但将于 **2026-11-02** 退役；2
 - [源码、环境、截图校验与完整 CLI 结果](../Evidence/macOS14-reference/reference.json)
 
 构建应用未下载到本机；本机仅保存上述原始参考图和合并后的文本记录，已清理传输归档、重复证据副本与完成的编译缓存。
+
+### 普通外观参考
+
+[39956399796](https://github.com/Torrekie/Bern/actions/runs/39956399796) 复用同一上游构建，已在可丢弃的 CI 主机上关闭减少动态效果和减少透明度，并由 `NSWorkspace` 检查生效。三张真实窗口采集通过：
+
+- [浅色](../Evidence/macOS14-reference-normal/controls-light.png)
+- [浅色提交后](../Evidence/macOS14-reference-normal/controls-light-after-commit.png)
+- [深色](../Evidence/macOS14-reference-normal/controls-dark.png)
+- [环境、校验与命令记录](../Evidence/macOS14-reference-normal/reference.json)
+
+它补足普通设置下的静态材质/颜色参考；单张截图仍不能证明动画时序或真实鼠标拖动行为。没有修改本机的辅助功能偏好。

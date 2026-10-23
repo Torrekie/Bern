@@ -11,6 +11,8 @@
 import SwiftUI
 #if os(macOS)
 import AppKit
+import Combine
+import QuartzCore
 #else
 import UIKit
 #endif
@@ -346,12 +348,16 @@ struct BernShadow: Sendable {
     let opacity: Double
 }
 
+/// Declarative control sizes are values even where SwiftUI has no matching
+/// system case yet. The rendering helper supplies the older-system geometry.
+enum BernStyleSize: Sendable { case mini, small, regular, large, extraLarge }
+
 /// A control's style overrides from `style!`.
 struct BernStyle: Sendable {
     var base = BernLook()
     var corner: Double?
     var padding: Double?
-    var size: ControlSize?
+    var size: BernStyleSize?
     var hover: BernLook?
     var pressed: BernLook?
     var selected: BernLook?
@@ -467,6 +473,9 @@ struct BernButtonStyle: ButtonStyle {
 }
 
 private struct BernStyledButton: View {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     let configuration: ButtonStyle.Configuration
     let style: BernStyle
     @Environment(\.isEnabled) private var enabled
@@ -501,6 +510,9 @@ struct BernContentButtonStyle: ButtonStyle {
 }
 
 private struct BernContentButton: View {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     let configuration: ButtonStyle.Configuration
     let style: BernStyle?
     @Environment(\.isEnabled) private var enabled
@@ -857,14 +869,14 @@ private struct BernSystemButtonLook: ViewModifier {
             switch look {
             case .secondary: content.buttonStyle(.glass).bernPrimaryLabel()
             case .prominent: content.buttonStyle(.glassProminent).bernAccentTint()
-            case .icon: content.buttonStyle(.glass).buttonBorderShape(.circle).bernPrimaryLabel()
+            case .icon: content.buttonStyle(.glass).bernCircleBorderShape().bernPrimaryLabel()
             case .flat: content.buttonStyle(.borderless).foregroundStyle(.secondary)
             }
         } else {
             switch look {
             case .secondary: content.buttonStyle(.bordered).bernPrimaryLabel()
             case .prominent: content.buttonStyle(.borderedProminent).bernAccentTint()
-            case .icon: content.buttonStyle(.bordered).buttonBorderShape(.circle).bernPrimaryLabel()
+            case .icon: content.buttonStyle(.bordered).bernCircleBorderShape().bernPrimaryLabel()
             case .flat: content.buttonStyle(.borderless).foregroundStyle(.secondary)
             }
         }
@@ -900,6 +912,9 @@ struct BernControlGroup<Content: View>: View {
 }
 
 private struct BernGlassCapsule: ViewModifier {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     var prominent = false
     @Environment(\.bernAccent) private var accent
     @ViewBuilder func body(content: Content) -> some View {
@@ -957,9 +972,14 @@ struct BernSidebarLabel: View {
 /// The accent the application chose at run time, read by the `accent`
 /// role; views that draw with it follow its changes.
 @MainActor
+#if !os(macOS)
 @Observable
-final class BernThemeState {
+#endif
+final class BernThemeState: BernObservableObject {
     static let shared = BernThemeState()
+    #if os(macOS)
+    @Published
+    #endif
     var accent: BernColor?
 }
 
@@ -974,9 +994,9 @@ struct BernThemeChoice: ViewModifier {
     func body(content: Content) -> some View {
         content
             .environment(\.bernAccent, accent?.color)
-            .onChange(of: accent, initial: true) { BernThemeState.shared.accent = accent }
+            .bernOnChange(of: accent, initial: true) { BernThemeState.shared.accent = accent }
         #if os(macOS)
-            .onChange(of: appearance, initial: true) {
+            .bernOnChange(of: appearance, initial: true) {
                 switch appearance?.lowercased() {
                 case "light": NSApplication.shared.appearance = NSAppearance(named: .aqua)
                 case "dark": NSApplication.shared.appearance = NSAppearance(named: .darkAqua)
@@ -1124,10 +1144,7 @@ struct BernSplitButton<Content: View>: View {
                 // A popover also on iPhone, which would make it a sheet,
                 // drawn in the appearance of where it opens, as the
                 // content is.
-                .presentationCompactAdaptation(.popover)
-                .presentationBackground {
-                    Rectangle().fill(.regularMaterial).environment(\.colorScheme, scheme)
-                }
+                .bernPopoverMaterial(scheme: scheme)
                 .environment(\.colorScheme, scheme)
                 .environment(\.bernControlGroupHeight, nil)
         }
@@ -1260,22 +1277,32 @@ private struct BernSidebarNavigation<Value: Hashable>: ViewModifier {
     let values: [Value]
     @FocusState private var focused: Bool
 
-    func body(content: Content) -> some View {
-        content
-            .focusable()
-            .focused($focused)
-            .focusEffectDisabled()
+    @ViewBuilder func body(content: Content) -> some View {
+        #if os(macOS)
+        if #available(macOS 14, *) {
+            content.focusable().focused($focused).focusEffectDisabled()
+                .simultaneousGesture(TapGesture().onEnded { focused = true })
+                .onKeyPress(.upArrow) { move(-1) ? .handled : .ignored }
+                .onKeyPress(.downArrow) { move(1) ? .handled : .ignored }
+        } else {
+            content.focusable().focused($focused)
+                .simultaneousGesture(TapGesture().onEnded { focused = true })
+                .background(BernLegacySidebarKeys(enabled: focused, move: move))
+        }
+        #else
+        content.focusable().focused($focused).focusEffectDisabled()
             .simultaneousGesture(TapGesture().onEnded { focused = true })
-            .onKeyPress(.upArrow) { move(-1) }
-            .onKeyPress(.downArrow) { move(1) }
+            .onKeyPress(.upArrow) { move(-1) ? .handled : .ignored }
+            .onKeyPress(.downArrow) { move(1) ? .handled : .ignored }
+        #endif
     }
 
-    private func move(_ offset: Int) -> KeyPress.Result {
-        guard !values.isEmpty else { return .ignored }
+    private func move(_ offset: Int) -> Bool {
+        guard !values.isEmpty else { return false }
         let current = values.firstIndex(of: selection) ?? (offset > 0 ? -1 : values.count)
         let next = min(max(current + offset, 0), values.count - 1)
         selection = values[next]
-        return .handled
+        return true
     }
 }
 
@@ -1288,6 +1315,9 @@ extension View {
 /// A sidebar destination the style draws: hover, press and selection
 /// follow the style instead of the system's highlight.
 struct BernSidebarRow<Value: Hashable>: View {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     let label: String
     let systemImage: String?
     let value: Value
@@ -1775,6 +1805,9 @@ extension View {
 }
 
 private struct BernMark: ViewModifier {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     let color: BernColor
 
     func body(content: Content) -> some View {
@@ -1879,12 +1912,23 @@ private struct BernScrollEffect: ViewModifier {
             content
         } else {
             let (scale, opacity, anchor) = (scale, opacity, anchor)
+            #if os(macOS)
+            if #available(macOS 14, *) {
+                content.scrollTransition(.interactive.threshold(.centered)) { effect, phase in
+                    let near = 1 - min(abs(phase.value), 1)
+                    return effect.scaleEffect(1 + (scale - 1) * near, anchor: anchor)
+                        .opacity(opacity + (1 - opacity) * near)
+                }
+            } else {
+                content.modifier(BernLegacyScrollEffect(scale: scale, opacity: opacity, anchor: anchor))
+            }
+            #else
             content.scrollTransition(.interactive.threshold(.centered)) { effect, phase in
                 let near = 1 - min(abs(phase.value), 1)
-                return effect
-                    .scaleEffect(1 + (scale - 1) * near, anchor: anchor)
+                return effect.scaleEffect(1 + (scale - 1) * near, anchor: anchor)
                     .opacity(opacity + (1 - opacity) * near)
             }
+            #endif
         }
     }
 }
@@ -1893,7 +1937,11 @@ private struct BernScrollEffect: ViewModifier {
 /// the content, read while the platform picks where a scroll stops (which
 /// may be off the main thread), and the largest size, which sets the
 /// margins that let the first and last item reach the center.
-final class BernSnapItems: @unchecked Sendable {
+final class BernSnapItems: BernObservableObject, @unchecked Sendable {
+    #if os(macOS)
+    let objectWillChange = ObservableObjectPublisher()
+    private var largestChanges: AnyCancellable?
+    #endif
     /// The largest item, which views follow.
     let largest: BernSnapLargest
     private let lock = NSLock()
@@ -1902,6 +1950,9 @@ final class BernSnapItems: @unchecked Sendable {
     @MainActor
     init() {
         largest = BernSnapLargest()
+        #if os(macOS)
+        largestChanges = largest.objectWillChange.sink { [weak self] _ in self?.objectWillChange.send() }
+        #endif
     }
 
     func report(_ id: UUID, _ frame: CGRect) {
@@ -1934,8 +1985,13 @@ final class BernSnapItems: @unchecked Sendable {
 }
 
 @MainActor
+#if !os(macOS)
 @Observable
-final class BernSnapLargest {
+#endif
+final class BernSnapLargest: BernObservableObject {
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var size: CGSize = .zero
 
     func grow(_ next: CGSize) {
@@ -1960,6 +2016,7 @@ private let bernSnapSpace = "bern.snap"
 /// Stops a scroll with the item nearest the anchor at it, wherever the
 /// platform would have stopped it, so a fling still carries on to a later
 /// item.
+@available(macOS 14, iOS 17, tvOS 17, *)
 private struct BernSnapBehavior: ScrollTargetBehavior {
     let items: BernSnapItems
     let center: Bool
@@ -1977,20 +2034,39 @@ private struct BernSnapBehavior: ScrollTargetBehavior {
 private struct BernSnap: ViewModifier {
     let center: Bool
     let axis: Axis
+    @BernReducedMotion private var reduce
+    #if os(macOS)
+    @StateObject private var items = BernSnapItems()
+    #else
     @State private var items = BernSnapItems()
+    #endif
     @State private var viewport: CGFloat = 0
 
     func body(content: Content) -> some View {
         let horizontal = axis == .horizontal
         let item = horizontal ? items.largest.size.width : items.largest.size.height
         let margin = center ? max(0, (viewport - item) / 2) : 0
-        content
-            .environment(\.bernSnapItems, items)
-            .scrollTargetBehavior(BernSnapBehavior(items: items, center: center, axis: axis))
-            .contentMargins(horizontal ? .horizontal : .vertical, margin, for: .scrollContent)
-            .onGeometryChange(for: CGFloat.self) { horizontal ? $0.size.width : $0.size.height } action: {
-                viewport = $0
+        Group {
+            #if os(macOS)
+            if #available(macOS 14, *) {
+                content
+                    .scrollTargetBehavior(BernSnapBehavior(items: items, center: center, axis: axis))
+                    .contentMargins(horizontal ? .horizontal : .vertical, margin, for: .scrollContent)
+            } else {
+                content.background(BernLegacyScrollProbe(
+                    axis: axis, margin: margin, reduce: reduce || bernForcedReduceMotion,
+                    snap: { start, length in items.rest(start, length: length, axis: axis, center: center) }))
             }
+            #else
+            content
+                .scrollTargetBehavior(BernSnapBehavior(items: items, center: center, axis: axis))
+                .contentMargins(horizontal ? .horizontal : .vertical, margin, for: .scrollContent)
+            #endif
+        }
+        .environment(\.bernSnapItems, items)
+        .onGeometryChange(for: CGFloat.self) { horizontal ? $0.size.width : $0.size.height } action: {
+            viewport = $0
+        }
     }
 }
 
@@ -2014,16 +2090,37 @@ extension View {
     func bernSnapContent() -> some View {
         coordinateSpace(.named(bernSnapSpace))
     }
+
+    /// On macOS 13 the per-item bernSnapItem/bernScrollItem geometry
+    /// registrations provide the target layout consumed by the AppKit probe.
+    @ViewBuilder func bernScrollTargetLayout() -> some View {
+        #if os(macOS)
+        if #available(macOS 14, *) { scrollTargetLayout() } else { self }
+        #else
+        scrollTargetLayout()
+        #endif
+    }
 }
 
 /// Where the keyed items of a scroll view are, in its visible area, and
 /// which one is nearest its anchor.
 @MainActor
+#if !os(macOS)
 @Observable
-final class BernScrollItems {
-    @ObservationIgnored private var frames: [AnyHashable: CGRect] = [:]
-    @ObservationIgnored private let accepts: (AnyHashable) -> Bool
-    @ObservationIgnored private var settling = false
+#endif
+final class BernScrollItems: BernObservableObject {
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var frames: [AnyHashable: CGRect] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private let accepts: (AnyHashable) -> Bool
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var settling = false
 
     init<ID: Hashable>(keyType: ID.Type) {
         accepts = { $0.base is ID }
@@ -2031,21 +2128,51 @@ final class BernScrollItems {
 
     func tracks(_ key: AnyHashable) -> Bool { accepts(key) }
 
-    @ObservationIgnored var anchor = UnitPoint.center
-    @ObservationIgnored var viewport = CGSize.zero
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var anchor = UnitPoint.center
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var viewport = CGSize.zero
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var nearest: AnyHashable?
     /// The nudge an item gives when setting the position scrolled to it.
-    @ObservationIgnored var arrival: BernMotion?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var arrival: BernMotion?
     /// The item the position last scrolled to, and how many arrivals there
     /// have been.
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var arrived: AnyHashable?
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var arrivals = 0
     /// How many scrolls to a set position have come to rest.
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var stops = 0
     /// The item being scrolled to; it arrives once it has stopped moving.
-    @ObservationIgnored private var coming: AnyHashable?
-    @ObservationIgnored private var nudges = false
-    @ObservationIgnored private var watch = 0
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var coming: AnyHashable?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var nudges = false
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var watch = 0
 
     /// Setting the position scrolls to `key`: it arrives once it stops,
     /// with a nudge unless it is where the view starts.
@@ -2057,10 +2184,16 @@ final class BernScrollItems {
 
     /// Set while the position clears itself to scroll again to the same
     /// item, which is not the person scrolling.
-    @ObservationIgnored var clearing = false
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var clearing = false
     /// The value the person's scrolling last wrote to the position; when it
     /// comes back as a change, there is nothing to scroll to.
-    @ObservationIgnored var followed: AnyHashable?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var followed: AnyHashable?
 
     /// The person took over the scrolling; nothing arrives.
     func cancelArrival() {
@@ -2142,19 +2275,28 @@ private struct BernScrollItem: ViewModifier {
     let key: AnyHashable
     @Environment(\.bernScrollItems) private var items
 
+    @ViewBuilder func body(content: Content) -> some View {
+        if let items { content.modifier(BernTrackedScrollItem(key: key, items: items)) }
+        else { content }
+    }
+}
+
+private struct BernTrackedScrollItem: ViewModifier {
+    let key: AnyHashable
+    #if os(macOS)
+    @ObservedObject var items: BernScrollItems
+    #else
+    let items: BernScrollItems
+    #endif
+
     func body(content: Content) -> some View {
-        let tracked = items?.tracks(key) == true
+        let tracked = items.tracks(key)
         return content
-            .modifier(
-                BernNudgeEffect(
-                    count: items?.arrived == key ? items?.arrivals ?? 0 : 0,
-                    motion: items?.arrival))
+            .modifier(BernNudgeEffect(count: items.arrived == key ? items.arrivals : 0, motion: items.arrival))
             .onGeometryChange(for: CGRect.self) {
                 tracked ? $0.frame(in: .named(bernScrollSpace)) : .null
-            } action: { frame in
-                items?.report(key, frame)
-            }
-            .onDisappear { items?.remove(key) }
+            } action: { frame in items.report(key, frame) }
+            .onDisappear { items.remove(key) }
     }
 }
 
@@ -2174,14 +2316,44 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
     /// Set once the view stands at the first position, after its first
     /// layout has measured the margins.
     @State private var placed = false
+    #if os(macOS)
+    @State private var legacyPositioned = false
+    #endif
+    #if os(macOS)
+    @StateObject private var items = BernScrollItems(keyType: ID.self)
+    #else
     @State private var items = BernScrollItems(keyType: ID.self)
+    #endif
     @BernReducedMotion private var reduce
 
     func body(content: Content) -> some View {
+        #if os(macOS)
+        if #available(macOS 14, *) {
+            tracked(content.scrollPosition(id: $target, anchor: anchor))
+        } else {
+            ScrollViewReader { proxy in
+                tracked(content.background(BernLegacyScrollProbe(userScroll: {
+                    items.cancelArrival()
+                    target = nil
+                })))
+                .bernOnChange(of: target, initial: true) { _, wanted in
+                    if let wanted {
+                        let animation = legacyPositioned && !reduce && !bernForcedReduceMotion ? motion.animation : nil
+                        withAnimation(animation) { proxy.scrollTo(wanted, anchor: anchor) }
+                        legacyPositioned = true
+                    }
+                }
+            }
+        }
+        #else
+        tracked(content.scrollPosition(id: $target, anchor: anchor))
+        #endif
+    }
+
+    private func tracked<Tracked: View>(_ content: Tracked) -> some View {
         content
             .environment(\.bernScrollItems, items)
             .coordinateSpace(.named(bernScrollSpace))
-            .scrollPosition(id: $target, anchor: anchor)
             .onGeometryChange(for: CGSize.self) { $0.size } action: { size in
                 items.anchor = anchor
                 items.arrival = arrival
@@ -2195,12 +2367,12 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
             }
             // Once there, the platform's position lets go, so that the
             // person's next scroll comes to rest on an item as any other.
-            .onChange(of: items.stops) { _, _ in
+            .bernOnChange(of: items.stops) { _, _ in
                 items.clearing = true
                 target = nil
                 Task { @MainActor in items.clearing = false }
             }
-            .onChange(of: position.wrappedValue) { _, wanted in
+            .bernOnChange(of: position.wrappedValue) { _, wanted in
                 if AnyHashable(wanted) == items.followed {
                     items.followed = nil
                     return
@@ -2208,8 +2380,8 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
                 guard wanted != target, target != nil || AnyHashable(wanted) != items.nearest else { return }
                 scroll(to: wanted)
             }
-            .onChange(of: items.nearest) { _, _ in follow() }
-            .onChange(of: target) { _, current in
+            .bernOnChange(of: items.nearest) { _, _ in follow() }
+            .bernOnChange(of: target) { _, current in
                 if current == nil { items.cancelArrival() }
                 follow()
             }
@@ -2274,7 +2446,7 @@ private struct BernNudge: ViewModifier {
     func body(content: Content) -> some View {
         content
             .modifier(BernNudgeEffect(count: count, motion: motion))
-            .onChange(of: when) { _, now in
+            .bernOnChange(of: when) { _, now in
                 if now { count += 1 }
             }
     }
@@ -2291,7 +2463,7 @@ private struct BernNudgeEffect: ViewModifier {
     func body(content: Content) -> some View {
         content
             .scaleEffect(scale)
-            .onChange(of: count) { old, new in
+            .bernOnChange(of: count) { old, new in
                 guard new > old, let motion, !(reduce || bernForcedReduceMotion) else { return }
                 withAnimation(.easeOut(duration: 0.08)) { scale = 1.06 } completion: {
                     withAnimation(motion.animation) { scale = 1 }
@@ -2308,27 +2480,34 @@ private struct BernPinch: ViewModifier {
 
     func body(content: Content) -> some View {
         #if os(tvOS)
-        // A television has no touch screen to pinch: only the adjustment
-        // of assistive technologies.
-        content
-            .accessibilityAdjustableAction { direction in bernAdjust(value, range, direction, commit) }
+        content.accessibilityAdjustableAction { direction in bernAdjust(value, range, direction, commit) }
         #else
-        content
-            .contentShape(Rectangle())
-            .simultaneousGesture(
-                MagnifyGesture()
-                    .onChanged { gesture in
-                        let from = start ?? value.wrappedValue
-                        start = from
-                        value.wrappedValue = min(max(from * gesture.magnification, range.lowerBound), range.upperBound)
-                    }
-                    .onEnded { _ in
-                        start = nil
-                        commit()
-                    })
+        content.contentShape(Rectangle()).simultaneousGesture(pinch)
             .accessibilityAdjustableAction { direction in bernAdjust(value, range, direction, commit) }
         #endif
     }
+
+    #if !os(tvOS)
+    private var pinch: some Gesture {
+        #if os(macOS)
+        MagnificationGesture()
+            .onChanged { magnification in
+                let from = start ?? value.wrappedValue
+                start = from
+                value.wrappedValue = min(max(from * magnification, range.lowerBound), range.upperBound)
+            }
+            .onEnded { _ in start = nil; commit() }
+        #else
+        MagnifyGesture()
+            .onChanged { gesture in
+                let from = start ?? value.wrappedValue
+                start = from
+                value.wrappedValue = min(max(from * gesture.magnification, range.lowerBound), range.upperBound)
+            }
+            .onEnded { _ in start = nil; commit() }
+        #endif
+    }
+    #endif
 }
 
 private struct BernSwipe: ViewModifier {
@@ -2536,7 +2715,11 @@ struct BernEntrance: ViewModifier {
     let motion: BernMotion?
     let clock: BernStaggerClock?
     let delay: Double?
+    #if os(macOS)
+    @EnvironmentObject private var window: BernWindowContext
+    #else
     @Environment(BernWindowContext.self) private var window
+    #endif
     @BernReducedMotion private var reduce
     @Environment(\.layoutDirection) private var direction
     @State private var shown = false
@@ -2926,10 +3109,7 @@ struct BernPopoverButton<Content: View>: View {
                 .frame(minWidth: 240, alignment: .leading)
                 // A popover also on iPhone, drawn in the appearance of
                 // where it opens.
-                .presentationCompactAdaptation(.popover)
-                .presentationBackground {
-                    Rectangle().fill(.regularMaterial).environment(\.colorScheme, scheme)
-                }
+                .bernPopoverMaterial(scheme: scheme)
                 .environment(\.colorScheme, scheme)
                 .environment(\.bernControlGroupHeight, nil)
         }
@@ -2943,26 +3123,84 @@ struct BernPopoverButton<Content: View>: View {
 
 // MARK: - Window search palette
 /// One model per window, shared by the toolbar trigger and the overlay.
-@MainActor @Observable final class BernPaletteState {
+@MainActor
+#if !os(macOS)
+@Observable
+#endif
+final class BernPaletteState: BernObservableObject {
+    #if os(macOS)
+    @Published
+    #endif
     var presented = false
+    #if os(macOS)
+    @Published
+    #endif
     var expanded = false
+    #if os(macOS)
+    @Published
+    #endif
     var target = ""
+    #if os(macOS)
+    @Published
+    #endif
     var prompt = ""
+    #if os(macOS)
+    @Published
+    #endif
     var text: Binding<String> = .constant("")
+    #if os(macOS)
+    @Published
+    #endif
     var results: AnyView = AnyView(EmptyView())
+    #if os(macOS)
+    @Published
+    #endif
     var source = CGRect.zero
+    #if os(macOS)
+    @Published
+    #endif
     var detail = CGRect.zero
+    #if os(macOS)
+    @Published
+    #endif
     var width: CGFloat = 640
+    #if os(macOS)
+    @Published
+    #endif
     var height: CGFloat = 480
+    #if os(macOS)
+    @Published
+    #endif
     var resultHeight: CGFloat = 420
+    #if os(macOS)
+    @Published
+    #endif
     var selection: String?
+    #if os(macOS)
+    @Published
+    #endif
     var navigationRevision = 0
+    #if os(macOS)
+    @Published
+    #endif
     var entries: [BernPaletteEntry] = []
+    #if os(macOS)
+    @Published
+    #endif
     var restoreFocus: (() -> Void)?
+    #if os(macOS)
+    @Published
+    #endif
     var reduceMotion = false
+    #if os(macOS)
+    @Published
+    #endif
     var closing = false
     /// The results of a search field in the page, not an overlay: choosing
     /// one runs it at once.
+    #if os(macOS)
+    @Published
+    #endif
     var inline = false
 
     init(inline: Bool = false) { self.inline = inline }
@@ -3035,7 +3273,11 @@ private struct BernPaletteHeight: PreferenceKey {
 
 struct BernSearchPaletteHost<Content: View>: View {
     @ViewBuilder let content: () -> Content
+    #if os(macOS)
+    @StateObject private var palette = BernPaletteState()
+    #else
     @State private var palette = BernPaletteState()
+    #endif
     @Environment(\.colorScheme) private var scheme
     @BernReducedMotion private var reduceMotion
 
@@ -3068,8 +3310,8 @@ struct BernSearchPaletteHost<Content: View>: View {
                 .ignoresSafeArea()
             }
         }
-        .environment(palette)
-        .onChange(of: reduceMotion, initial: true) { palette.reduceMotion = reduceMotion }
+        .bernEnvironment(palette)
+        .bernOnChange(of: reduceMotion, initial: true) { palette.reduceMotion = reduceMotion }
     }
 
     private func panelBounds(in geometry: GeometryProxy) -> CGRect {
@@ -3121,12 +3363,12 @@ struct BernSearchPaletteHost<Content: View>: View {
                         .id("bern-palette-results")
                 }
                 .scrollIndicators(.hidden)
-                .onChange(of: palette.navigationRevision) {
+                .bernOnChange(of: palette.navigationRevision) {
                     if let selection = palette.selection {
                         withAnimation(reduceMotion ? nil : .easeOut(duration: 0.15)) { scroll.scrollTo(selection) }
                     }
                 }
-                .onChange(of: palette.text.wrappedValue) {
+                .bernOnChange(of: palette.text.wrappedValue) {
                     scroll.scrollTo("bern-palette-results", anchor: .top)
                 }
             }
@@ -3151,7 +3393,7 @@ struct BernSearchPaletteHost<Content: View>: View {
             palette.entries = entries
             if !entries.contains(where: { $0.id == palette.selection }) { palette.selection = entries.first?.id }
         }
-        .onChange(of: palette.text.wrappedValue) { palette.selection = palette.entries.first?.id }
+        .bernOnChange(of: palette.text.wrappedValue) { palette.selection = palette.entries.first?.id }
         #if os(macOS)
         .onExitCommand { palette.close() }
         #endif
@@ -3211,7 +3453,11 @@ struct BernSearchPalette<Results: View>: View {
     let height: CGFloat
     var shortcut: BernKeyboardShortcut? = nil
     @ViewBuilder let results: () -> Results
+    #if os(macOS)
+    @EnvironmentObject private var palette: BernPaletteState
+    #else
     @Environment(BernPaletteState.self) private var palette
+    #endif
     @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
     @Environment(\.bernReduceMotion) private var appReduceMotion
     @State private var source = CGRect.zero
@@ -3249,9 +3495,15 @@ struct BernSearchPalette<Results: View>: View {
         .buttonStyle(.plain)
         .focused($focused)
         .background(GeometryReader { geometry in
-            Color.clear.onChange(of: geometry.frame(in: .global), initial: true) { source = geometry.frame(in: .global) }
+            Color.clear.bernOnChange(of: geometry.frame(in: .global), initial: true) { source = geometry.frame(in: .global) }
         })
         .bernHiddenShortcut(shortcut, action: open)
+        .bernOnChange(of: text.wrappedValue) {
+            if palette.presented && palette.target == target {
+                palette.results = AnyView(results())
+                palette.selection = nil
+            }
+        }
         .bernControl(target, role: "search", label: prompt,
                      actions: BernControlActions(activate: open, edit: { text.wrappedValue = $0 },
                                                  submit: { palette.activate() }, value: { text.wrappedValue }, focus: open))
@@ -3260,10 +3512,14 @@ struct BernSearchPalette<Results: View>: View {
 
 /// Registers the content column's geometry without participating in layout.
 struct BernPaletteDetail: ViewModifier {
+    #if os(macOS)
+    @EnvironmentObject private var palette: BernPaletteState
+    #else
     @Environment(BernPaletteState.self) private var palette
+    #endif
     func body(content: Content) -> some View {
         content.background(GeometryReader { geo in
-            Color.clear.onChange(of: geo.frame(in: .global), initial: true) { palette.detail = geo.frame(in: .global) }
+            Color.clear.bernOnChange(of: geo.frame(in: .global), initial: true) { palette.detail = geo.frame(in: .global) }
         })
     }
 }
@@ -3274,7 +3530,11 @@ struct BernSearchItem<Content: View>: View {
     let navigation: Bool
     let actions: BernControlActions
     @ViewBuilder let content: () -> Content
+    #if os(macOS)
+    @EnvironmentObject private var palette: BernPaletteState
+    #else
     @Environment(BernPaletteState.self) private var palette
+    #endif
     @Environment(\.bernItemKeys) private var keys
     @Environment(\.colorScheme) private var scheme
     @State private var hovered = false
@@ -3343,7 +3603,11 @@ struct BernSearchField<Results: View>: View {
     var suggest = false
     var submit: (() -> Void)? = nil
     @ViewBuilder let results: () -> Results
+    #if os(macOS)
+    @StateObject private var palette = BernPaletteState(inline: true)
+    #else
     @State private var palette = BernPaletteState(inline: true)
+    #endif
     @State private var editing = false
     @State private var focusRequest = 0
 
@@ -3365,10 +3629,10 @@ struct BernSearchField<Results: View>: View {
                         palette.entries = entries
                         if !entries.contains(where: { $0.id == palette.selection }) { palette.selection = entries.first?.id }
                     }
-                    .onChange(of: text.wrappedValue) { palette.selection = palette.entries.first?.id }
+                    .bernOnChange(of: text.wrappedValue) { palette.selection = palette.entries.first?.id }
             }
         }
-        .environment(palette)
+        .bernEnvironment(palette)
         .bernControl(target, role: "search", label: prompt,
                      actions: BernControlActions(edit: { text.wrappedValue = $0 }, submit: choose,
                                                  value: { text.wrappedValue }, focus: { focusRequest += 1 }))
@@ -3519,6 +3783,9 @@ struct BernPaletteInput: View {
 
 /// A decorative surface keeps its children as native controls.
 struct BernSurface: ViewModifier {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     let style: BernStyle
     @ViewBuilder
     func body(content: Content) -> some View {
@@ -3541,6 +3808,9 @@ struct BernSurface: ViewModifier {
 /// Keeps a chip's off state neutral and its selected label legible,
 /// using the same native glass surface as neighboring capsule controls.
 struct BernCapsuleToggleStyle: ToggleStyle {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     let height: CGFloat
     func makeBody(configuration: Configuration) -> some View {
         Button { configuration.isOn.toggle() } label: { configuration.label }
@@ -3558,6 +3828,9 @@ extension View {
 }
 
 private struct BernCircleControl: ViewModifier {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     @Environment(\.bernAccent) private var accent
     @Environment(\.bernOnBar) private var onBar
     let diameter: CGFloat
@@ -3678,6 +3951,9 @@ private struct BernFocusShape: View {
 #endif
 
 private struct BernCapsuleControl: ViewModifier {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     @Environment(\.bernAccent) private var accent
     let height: CGFloat
     let prominent: Bool
@@ -3720,7 +3996,14 @@ private struct BernCapsuleControl: ViewModifier {
 /// content at small window sizes. The caller disables the background tree.
 struct BernModal<Content: View>: View {
     @BernReducedMotion private var reduce
+    #if os(macOS)
+    @State private var windowRevision = 0
+    #endif
+    #if os(macOS)
+    @Environment(\.bernOptionalWindow) private var window
+    #else
     @Environment(BernWindowContext.self) private var window: BernWindowContext?
+    #endif
     /// A modal declared in a scaled scene shows at the scene's scale.
     @Environment(\.bernSceneScale) private var scale
     let width: CGFloat
@@ -3730,12 +4013,20 @@ struct BernModal<Content: View>: View {
     @ViewBuilder var content: Content
     var presentation: (AnyView) -> AnyView = { $0 }
     var body: some View {
-        Color.clear.frame(width: 0, height: 0)
+        #if os(macOS)
+        let _ = windowRevision
+        #endif
+        return Color.clear.frame(width: 0, height: 0)
             .preference(key: BernModalContent.self, value: AnyView(
                 BernModalLayer(width: width, height: height, covers: cover && window?.compact == true,
                                scale: scale, content: content, presentation: presentation)
                     .environment(\.bernReduceMotion, reduce)
                     .environment(\.bernSceneScaled, scale != 1)))
+            #if os(macOS)
+            .onReceive(window?.objectWillChange.eraseToAnyPublisher() ?? Empty<Void, Never>().eraseToAnyPublisher()) { _ in
+                DispatchQueue.main.async { windowRevision &+= 1 }
+            }
+            #endif
     }
 }
 
@@ -4316,6 +4607,9 @@ extension EnvironmentValues {
 /// The rows of a section take the form's row background and insets, when
 /// it gives them.
 struct BernFormRows: ViewModifier {
+    #if os(macOS)
+    @ObservedObject private var theme = BernThemeState.shared
+    #endif
     @Environment(\.bernFormRow) private var row
     @Environment(\.bernFormInsets) private var insets
     @ViewBuilder func body(content: Content) -> some View {
@@ -4328,4 +4622,378 @@ struct BernFormRows: ViewModifier {
             filled
         }
     }
+}
+
+#if os(macOS)
+// The SwiftUI scroll view and its content remain intact. This probe observes
+// its public AppKit scrolling surface on macOS 13. AppKit exposes no public
+// proposed-deceleration target, so legacy snapping corrects the resting point
+// after live/momentum scrolling ends; macOS 14 keeps its native target behavior.
+private struct BernLegacyScrollProbe: NSViewRepresentable {
+    var axis: Axis = .vertical
+    var margin: CGFloat? = nil
+    var reduce = false
+    var snap: ((CGFloat, CGFloat) -> CGFloat?)? = nil
+    var userScroll: (() -> Void)? = nil
+    var phase: ((Double) -> Void)? = nil
+    var initialAnchor: UnitPoint? = nil
+
+    func makeNSView(context: Context) -> Probe {
+        let view = Probe()
+        view.observer = context.coordinator
+        context.coordinator.view = view
+        return view
+    }
+    func makeCoordinator() -> Observer { Observer(self) }
+    func updateNSView(_ view: Probe, context: Context) {
+        context.coordinator.configuration = self
+        context.coordinator.scheduleRefresh()
+    }
+    static func dismantleNSView(_ view: Probe, coordinator: Observer) { coordinator.dismantle() }
+
+    final class Probe: NSView {
+        weak var observer: Observer?
+        override func hitTest(_ point: NSPoint) -> NSView? { nil }
+        override func viewDidMoveToWindow() { super.viewDidMoveToWindow(); observer?.scheduleRefresh() }
+        override func layout() { super.layout(); observer?.scheduleRefresh() }
+    }
+
+    @MainActor final class Observer: NSObject {
+        var configuration: BernLegacyScrollProbe
+        weak var view: Probe?
+        weak var scroll: NSScrollView?
+        private var observations: [NSObjectProtocol] = []
+        private var monitor: Any?
+        private var pending: DispatchWorkItem?
+        private var refreshQueued = false
+        private var dismantled = false
+        private var live = false
+        private var baseInsets: NSEdgeInsets?
+        private var baseAutomaticInsets = true
+        private var initiallyPositioned = false
+        private var layoutRetries = 0
+        init(_ configuration: BernLegacyScrollProbe) { self.configuration = configuration }
+
+        func scheduleRefresh() {
+            guard !refreshQueued, !dismantled else { return }
+            refreshQueued = true
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                self.refreshQueued = false
+                self.refresh()
+            }
+        }
+        private func locate() -> NSScrollView? {
+            guard let view, view.window != nil else { return nil }
+            if let enclosing = view.enclosingScrollView { return enclosing }
+            // A background of ScrollView can be a sibling of its NSScrollView.
+            // Search only the smallest containing branch before moving outward.
+            var ancestor = view.superview
+            for _ in 0..<6 {
+                guard let root = ancestor else { break }
+                var queue = root.subviews
+                var scanned = 0
+                while !queue.isEmpty && scanned < 256 {
+                    let child = queue.removeFirst(); scanned += 1
+                    if let candidate = child as? NSScrollView { return candidate }
+                    if child !== view { queue.append(contentsOf: child.subviews) }
+                }
+                ancestor = root.superview
+            }
+            return nil
+        }
+        func refresh() {
+            guard !dismantled else { return }
+            let found = locate()
+            if found !== scroll { stop(); scroll = found; install() }
+            guard let scroll else { return }
+            if let margin = configuration.margin {
+                if baseInsets == nil {
+                    baseInsets = scroll.contentInsets
+                    baseAutomaticInsets = scroll.automaticallyAdjustsContentInsets
+                }
+                var insets = baseInsets ?? NSEdgeInsets()
+                if configuration.axis == .horizontal { insets.left += margin; insets.right += margin }
+                else { insets.top += margin; insets.bottom += margin }
+                scroll.automaticallyAdjustsContentInsets = false
+                let old = scroll.contentInsets
+                if old.top != insets.top || old.left != insets.left || old.bottom != insets.bottom || old.right != insets.right {
+                    scroll.contentInsets = insets
+                }
+            }
+            if let anchor = configuration.initialAnchor, !initiallyPositioned {
+                let clip = scroll.contentView
+                if let document = scroll.documentView, clip.bounds.width > 0, clip.bounds.height > 0,
+                   document.frame.width > 0, document.frame.height > 0 {
+                    let inset = scroll.contentInsets
+                    let x = -inset.left + max(0, document.frame.width + inset.left + inset.right - clip.bounds.width) * anchor.x
+                    let y = -inset.top + max(0, document.frame.height + inset.top + inset.bottom - clip.bounds.height) * anchor.y
+                    clip.scroll(to: CGPoint(x: x, y: y))
+                    scroll.reflectScrolledClipView(clip)
+                    initiallyPositioned = true
+                } else if layoutRetries < 8 {
+                    layoutRetries += 1
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) { [weak self] in self?.scheduleRefresh() }
+                }
+            }
+            reportPhase()
+        }
+        private func install() {
+            guard let scroll else { return }
+            scroll.contentView.postsBoundsChangedNotifications = true
+            for name in [NSView.boundsDidChangeNotification, NSScrollView.willStartLiveScrollNotification,
+                         NSScrollView.didEndLiveScrollNotification] {
+                let object: AnyObject = name == NSView.boundsDidChangeNotification ? scroll.contentView : scroll
+                observations.append(NotificationCenter.default.addObserver(forName: name, object: object, queue: .main) { [weak self] note in
+                    MainActor.assumeIsolated {
+                        guard let self else { return }
+                        if note.name == NSScrollView.willStartLiveScrollNotification {
+                            self.live = true
+                            self.pending?.cancel()
+                            self.configuration.userScroll?()
+                        } else if note.name == NSScrollView.didEndLiveScrollNotification {
+                            self.live = false
+                            self.scheduleSnap()
+                        } else {
+                            self.scheduleRefresh()
+                            if !self.live { self.scheduleSnap() }
+                        }
+                    }
+                })
+            }
+            monitor = NSEvent.addLocalMonitorForEvents(matching: .scrollWheel) { [weak self] event in
+                MainActor.assumeIsolated {
+                    guard let self, let scroll = self.scroll, event.window === scroll.window else { return }
+                    let clip = scroll.contentView
+                    guard clip.bounds.contains(clip.convert(event.locationInWindow, from: nil)) else { return }
+                    if event.phase == .began || event.momentumPhase == .began || (event.phase.isEmpty && event.momentumPhase.isEmpty) {
+                        self.configuration.userScroll?()
+                    }
+                    if event.momentumPhase == .ended || event.momentumPhase == .cancelled {
+                        self.live = false
+                        self.scheduleSnap()
+                    }
+                }
+                return event
+            }
+        }
+        private func reportPhase() {
+            guard let callback = configuration.phase, let view, let scroll else { return }
+            let clip = scroll.contentView
+            let frame = view.convert(view.bounds, to: clip)
+            let viewport = clip.bounds
+            let horizontal = (scroll.documentView?.bounds.width ?? 0) > viewport.width + 1
+            let distance = horizontal ? frame.midX - viewport.midX : frame.midY - viewport.midY
+            let extent = horizontal ? (frame.width + viewport.width) / 2 : (frame.height + viewport.height) / 2
+            callback(Double(max(-1, min(1, distance / max(1, extent)))))
+        }
+        private func scheduleSnap() {
+            guard configuration.snap != nil else { return }
+            pending?.cancel()
+            let work = DispatchWorkItem { [weak self] in MainActor.assumeIsolated { self?.settle() } }
+            pending = work
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.16, execute: work)
+        }
+        private func settle() {
+            guard !live, let scroll, let document = scroll.documentView, let snap = configuration.snap else { return }
+            let clip = scroll.contentView
+            let horizontal = configuration.axis == .horizontal
+            let bounds = clip.bounds
+            let start = horizontal ? bounds.minX : bounds.minY
+            let length = horizontal ? bounds.width : bounds.height
+            guard let wanted = snap(start, length) else { return }
+            let insets = scroll.contentInsets
+            let minimum = horizontal ? -insets.left : -insets.top
+            let maximum = max(minimum, (horizontal ? document.frame.width + insets.right : document.frame.height + insets.bottom) - length)
+            let clamped = max(minimum, min(maximum, wanted))
+            guard abs(clamped - start) > 0.5 else { return }
+            var point = bounds.origin
+            if horizontal { point.x = clamped } else { point.y = clamped }
+            if configuration.reduce {
+                clip.scroll(to: point)
+                scroll.reflectScrolledClipView(clip)
+            } else {
+                NSAnimationContext.runAnimationGroup { context in
+                    context.duration = 0.18
+                    context.timingFunction = CAMediaTimingFunction(name: .easeOut)
+                    clip.animator().setBoundsOrigin(point)
+                } completionHandler: { [weak scroll] in
+                    MainActor.assumeIsolated {
+                        if let scroll { scroll.reflectScrolledClipView(scroll.contentView) }
+                    }
+                }
+            }
+        }
+        func dismantle() { dismantled = true; stop() }
+        func stop() {
+            pending?.cancel(); pending = nil
+            for token in observations { NotificationCenter.default.removeObserver(token) }
+            observations.removeAll()
+            if let monitor { NSEvent.removeMonitor(monitor) }; monitor = nil
+            if let scroll, let insets = baseInsets {
+                scroll.contentInsets = insets
+                scroll.automaticallyAdjustsContentInsets = baseAutomaticInsets
+            }
+            baseInsets = nil
+            scroll = nil
+        }
+    }
+}
+
+private struct BernLegacyScrollEffect: ViewModifier {
+    let scale: Double
+    let opacity: Double
+    let anchor: UnitPoint
+    @State private var phase = 0.0
+    func body(content: Content) -> some View {
+        let near = 1 - min(abs(phase), 1)
+        content
+            .scaleEffect(1 + (scale - 1) * near, anchor: anchor)
+            .opacity(opacity + (1 - opacity) * near)
+            .background(BernLegacyScrollProbe(phase: { next in
+                if abs(next - phase) > 0.0001 { phase = next }
+            }))
+    }
+}
+#endif
+
+extension View {
+    @ViewBuilder func bernCircleBorderShape() -> some View {
+        #if os(macOS)
+        if #available(macOS 14, *) { buttonBorderShape(.circle) }
+        else { buttonStyle(BernLegacyShapedButton(circle: true, prominent: false)) }
+        #else
+        buttonBorderShape(.circle)
+        #endif
+    }
+    #if os(macOS)
+    @ViewBuilder func bernRoundedButtonBorder(radius: CGFloat) -> some View {
+        if #available(macOS 14, *) { buttonBorderShape(.roundedRectangle(radius: radius)) }
+        else { buttonStyle(BernLegacyShapedButton(circle: false, prominent: true, radius: radius)) }
+    }
+
+    @ViewBuilder func bernInspector<Panel: View>(
+        isPresented: Binding<Bool>, width: CGFloat?, @ViewBuilder content: @escaping () -> Panel
+    ) -> some View {
+        if #available(macOS 14, *) {
+            inspector(isPresented: isPresented) {
+                if let width { content().inspectorColumnWidth(min: width * 0.8, ideal: width, max: width * 1.5) }
+                else { content() }
+            }
+        } else {
+            // HSplitView is SwiftUI's system split-view container on macOS 13;
+            // it preserves the detail and supports resizing with the divider.
+            HSplitView {
+                self.frame(maxWidth: .infinity, maxHeight: .infinity)
+                if isPresented.wrappedValue {
+                    VStack(spacing: 0) {
+                        HStack {
+                            Spacer()
+                            Button { isPresented.wrappedValue = false } label: { Image(systemName: "xmark") }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel(Text(verbatim: BernText.string("bern.window.close")))
+                        }.padding(8)
+                        content()
+                    }
+                    .frame(minWidth: (width ?? 300) * 0.8, idealWidth: width ?? 300, maxWidth: (width ?? 300) * 1.5,
+                           maxHeight: .infinity)
+                }
+            }
+        }
+    }
+    #endif
+}
+
+#if os(macOS)
+/// Only the unavailable border shapes are supplied here; Button continues to
+/// own activation, keyboard, disabled and accessibility behavior.
+private struct BernLegacyShapedButton: ButtonStyle {
+    @ObservedObject private var theme = BernThemeState.shared
+    let circle: Bool
+    let prominent: Bool
+    var radius: CGFloat = 12
+    @Environment(\.isEnabled) private var enabled
+    @Environment(\.bernAccent) private var accent
+    func makeBody(configuration: Configuration) -> some View {
+        let shape = circle ? AnyShape(Circle()) : AnyShape(RoundedRectangle(cornerRadius: radius))
+        configuration.label
+            .padding(.horizontal, circle ? 8 : 12)
+            .padding(.vertical, 6)
+            .frame(minWidth: circle ? 32 : nil, minHeight: 32)
+            .foregroundStyle(prominent ? BernColor.role("on_accent").color : .primary)
+            .background {
+                if prominent { shape.fill(accent ?? .accentColor) }
+                else { shape.fill(.regularMaterial) }
+            }
+            .overlay(shape.stroke(Color.primary.opacity(0.12), lineWidth: 0.5))
+            .brightness(configuration.isPressed ? -0.08 : 0)
+            .opacity(enabled ? 1 : 0.45)
+    }
+}
+
+private struct BernLegacySidebarKeys: NSViewRepresentable {
+    let enabled: Bool
+    let move: (Int) -> Bool
+    func makeNSView(context: Context) -> Keys { Keys() }
+    func updateNSView(_ view: Keys, context: Context) { view.enabled = enabled; view.move = move; view.install() }
+    static func dismantleNSView(_ view: Keys, coordinator: ()) { view.stop() }
+    final class Keys: NSView {
+        var enabled = false
+        var move: ((Int) -> Bool)?
+        private var monitor: Any?
+        override func hitTest(_ point: NSPoint) -> NSView? { nil }
+        override func viewDidMoveToWindow() { super.viewDidMoveToWindow(); if window == nil { stop() } else { install() } }
+        func install() {
+            guard window != nil, monitor == nil else { return }
+            focusRingType = .none
+            monitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+                let consumed = MainActor.assumeIsolated { () -> Bool in
+                    guard let self, self.enabled, event.window === self.window,
+                          event.modifierFlags.intersection([.command, .control, .option, .shift]).isEmpty else { return false }
+                    if let editor = self.window?.firstResponder as? NSTextView, editor.hasMarkedText() { return false }
+                    if event.keyCode == 126 { return self.move?(-1) ?? false }
+                    if event.keyCode == 125 { return self.move?(1) ?? false }
+                    return false
+                }
+                return consumed ? nil : event
+            }
+        }
+        func stop() { if let monitor { NSEvent.removeMonitor(monitor) }; monitor = nil }
+    }
+}
+#endif
+
+extension View {
+    @ViewBuilder fileprivate func bernPopoverMaterial(scheme: ColorScheme) -> some View {
+        #if os(macOS)
+        if #available(macOS 13.3, *) {
+            presentationCompactAdaptation(.popover)
+                .presentationBackground { Rectangle().fill(.regularMaterial).environment(\.colorScheme, scheme) }
+        } else {
+            // macOS popovers do not adapt to sheets. Before presentationBackground,
+            // put the same system material behind the popover's SwiftUI content.
+            background(Rectangle().fill(.regularMaterial)).environment(\.colorScheme, scheme)
+        }
+        #else
+        presentationCompactAdaptation(.popover)
+            .presentationBackground { Rectangle().fill(.regularMaterial).environment(\.colorScheme, scheme) }
+        #endif
+    }
+    #if os(macOS)
+    @ViewBuilder func bernDefaultScrollAnchor(_ anchor: UnitPoint) -> some View {
+        if #available(macOS 14, *) { defaultScrollAnchor(anchor) }
+        else { background(BernLegacyScrollProbe(initialAnchor: anchor)) }
+    }
+    @ViewBuilder func bernControlSize(_ size: BernStyleSize) -> some View {
+        switch size {
+        case .mini: controlSize(.mini)
+        case .small: controlSize(.small)
+        case .regular: controlSize(.regular)
+        case .large: controlSize(.large)
+        case .extraLarge:
+            if #available(macOS 14, *) { controlSize(.extraLarge) }
+            else { controlSize(.large).font(.system(size: 17)).padding(.horizontal, 6).padding(.vertical, 4) }
+        }
+    }
+    #endif
 }

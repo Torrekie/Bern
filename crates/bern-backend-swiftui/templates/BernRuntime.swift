@@ -11,6 +11,12 @@
 
 import ImageIO
 import SwiftUI
+#if os(macOS)
+import Combine
+import AppKit
+import CoreImage
+import MetalKit
+#endif
 import UniformTypeIdentifiers
 
 // MARK: - Binary values
@@ -259,14 +265,28 @@ struct BernTextParser {
 /// The session's interface language. Every localized text reads its
 /// strings through it, so switching re-renders them in one update while
 /// drafts, navigation and windows stay. Changed on the main actor only.
+#if !os(macOS)
 @Observable
-final class BernLanguage: @unchecked Sendable {
+#endif
+final class BernLanguage: BernObservableObject, @unchecked Sendable {
     static let shared = BernLanguage()
 
     /// The languages the bundle is localized for.
     let supported: [String]
+    #if os(macOS)
+    // Publish the locale and its resource bundle as one validated change.
+    // Views must never format in the new locale using the previous bundle.
+    private struct Selection {
+        let current: String
+        let bundle: Bundle
+    }
+    @Published private var selection: Selection
+    var current: String { selection.current }
+    var bundle: Bundle { selection.bundle }
+    #else
     private(set) var current: String
     private(set) var bundle: Bundle
+    #endif
 
     private init() {
         // The bundle lists a language once per source of localizations.
@@ -276,8 +296,12 @@ final class BernLanguage: @unchecked Sendable {
         }
         supported = declared
         let initial = Bundle.main.preferredLocalizations.first ?? declared.first ?? "en"
+        #if os(macOS)
+        selection = Selection(current: initial, bundle: Self.bundle(for: initial))
+        #else
         current = initial
         bundle = Self.bundle(for: initial)
+        #endif
     }
 
     private static func bundle(for language: String) -> Bundle {
@@ -288,8 +312,13 @@ final class BernLanguage: @unchecked Sendable {
     @discardableResult
     func select(_ language: String) -> Bool {
         guard supported.contains(language) else { return false }
+        #if os(macOS)
+        guard language != current else { return true }
+        selection = Selection(current: language, bundle: Self.bundle(for: language))
+        #else
         bundle = Self.bundle(for: language)
         current = language
+        #endif
         return true
     }
 
@@ -467,53 +496,111 @@ enum BernText {
 // MARK: - Session state
 
 /// Implemented by generated session state classes.
+#if os(macOS)
+@MainActor
+protocol BernSessionState: BernObservableObject where ObjectWillChangePublisher == ObservableObjectPublisher {
+    static var bernIndex: UInt32 { get }
+    var window: BernWindowContext? { get set }
+    func load(_ reader: inout BernReader) throws
+}
+#else
 @MainActor
 protocol BernSessionState: AnyObject {
     static var bernIndex: UInt32 { get }
     var window: BernWindowContext? { get set }
     func load(_ reader: inout BernReader) throws
 }
+#endif
 
 /// One window instance: its kind, generation and session drafts.
 @MainActor
+#if !os(macOS)
 @Observable
-final class BernWindowContext {
+#endif
+final class BernWindowContext: BernObservableObject {
     let kind: UInt32
     let kindID: String
     let isSettings: Bool
-    @ObservationIgnored let sessions: [any BernSessionState]
-    @ObservationIgnored var dismiss: DismissAction?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    let sessions: [any BernSessionState]
+    #if os(macOS)
+    // Inline window expressions read session drafts through this context.
+    // Forward invalidation without owning the window from a subscription.
+    private var sessionChanges: [AnyCancellable] = []
+    #endif
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var dismiss: DismissAction?
     /// The window's declared close check, set by the generated window root.
-    @ObservationIgnored var closeCheck: BernCloseCheck? {
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var closeCheck: BernCloseCheck? {
         didSet { closeCheckChanged() }
     }
     /// The close confirmation shown as this window's dialog. While it is
     /// pending, the window's controls are blocked for every entry.
+    #if os(macOS)
+    @Published
+    #endif
     var pendingClose: BernPendingClose?
     /// What the platform keeps about the window: the system window on
     /// macOS, the presentation on iOS.
-    @ObservationIgnored let platform = BernWindowPlatform()
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    let platform = BernWindowPlatform()
     /// Set while a window command runs, so the facts it causes are
     /// reported as caused by a command rather than by the user.
-    @ObservationIgnored var commandInFlight = false
-    @ObservationIgnored var allowsClose = false
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var commandInFlight = false
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var allowsClose = false
     /// Whether the window had no input for its `idle_after` seconds.
+    #if os(macOS)
+    @Published
+    #endif
     var idle = false
     /// The `idle_area` elements on screen, and the seconds of those the
     /// pointer is over: while there are any, the window goes idle only
     /// while the pointer rests over one, after its seconds.
     /// `idleAreasChanged` restarts the count.
-    @ObservationIgnored var idleAreas: Set<UUID> = []
-    @ObservationIgnored var idleAreasHovered: [UUID: Double] = [:]
-    @ObservationIgnored var idleAreasChanged: (() -> Void)?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var idleAreas: Set<UUID> = []
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var idleAreasHovered: [UUID: Double] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var idleAreasChanged: (() -> Void)?
     /// The width of the window's content, for `window.compact` and its
     /// siblings; 0 until its first layout measures it.
+    #if os(macOS)
+    @Published
+    #endif
     var width: CGFloat = 0
     /// The height of the window's content, for `window.short`; 0 until
     /// measured.
+    #if os(macOS)
+    @Published
+    #endif
     var height: CGFloat = 0
     /// Whether the window has shown its first frame: elements appearing
     /// after it move in, those of the first frame do not.
+    #if os(macOS)
+    @Published
+    #endif
     var settled = false
 
     private var size: String { bernAppBreakpoints.size(of: layoutWidth) }
@@ -525,7 +612,13 @@ final class BernWindowContext {
     var short: Bool { layoutHeight < bernAppBreakpoints.compact }
     /// On a television: `window.tv`.
     var tv: Bool { bernTelevision }
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var generation: UInt64 = 0
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var id: String = ""
 
     init(kind: UInt32, kindID: String, isSettings: Bool, sessions: [any BernSessionState]) {
@@ -534,6 +627,13 @@ final class BernWindowContext {
         self.isSettings = isSettings
         self.sessions = sessions
         for session in sessions { session.window = self }
+        #if os(macOS)
+        sessionChanges = sessions.map { session in
+            session.objectWillChange.sink { [weak self] in
+                MainActor.assumeIsolated { self?.objectWillChange.send() }
+            }
+        }
+        #endif
     }
 
     /// The window's title in the interface language.
@@ -661,7 +761,11 @@ private struct BernControl: ViewModifier {
     let label: String
     let enabled: Bool
     let actions: BernControlActions
+    #if os(macOS)
+    @EnvironmentObject private var window: BernWindowContext
+    #else
     @Environment(BernWindowContext.self) private var window
+    #endif
     @Environment(\.bernItemKeys) private var keys
     @State private var mount = BernControlMount()
 
@@ -695,7 +799,7 @@ private struct BernControl: ViewModifier {
                 mount.mounted = true
                 register()
             }
-            .onChange(of: "\(window.id)|\(target)|\(label)|\(enabled)") {
+            .bernOnChange(of: "\(window.id)|\(target)|\(label)|\(enabled)") {
                 if mount.mounted { register() }
             }
             .onDisappear {
@@ -770,7 +874,11 @@ struct BernAdaptive<Content: View>: View {
     let content: (String) -> Content
     @State private var width: CGFloat?
     @State private var current = Current()
+    #if os(macOS)
+    @Environment(\.bernOptionalWindow) private var window
+    #else
     @Environment(BernWindowContext.self) private var window: BernWindowContext?
+    #endif
 
     init(
         breakpoints: BernBreakpoints, declared: [String], target: String?,
@@ -799,7 +907,7 @@ struct BernAdaptive<Content: View>: View {
         let chosen = content(BernBreakpoints.layout(for: size, declared: declared))
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
-            .onChange(of: size, initial: true) { current.size = size }
+            .bernOnChange(of: size, initial: true) { current.size = size }
         if let target {
             let current = self.current
             chosen.bernControl(
@@ -900,26 +1008,73 @@ enum BernMediaPost {
 }
 
 @MainActor
+#if !os(macOS)
 @Observable
-final class BernHost {
+#endif
+final class BernHost: BernObservableObject {
     static let shared = BernHost()
 
-    @ObservationIgnored private(set) var handle: OpaquePointer?
-    @ObservationIgnored private var replies: [UInt64: BernPendingReply] = [:]
-    @ObservationIgnored private var nextToken: UInt64 = 1
-    @ObservationIgnored private var revision: UInt64 = 0
-    @ObservationIgnored private var apply: ((UInt32, inout BernReader) throws -> Void)?
-    @ObservationIgnored private(set) var kinds: [BernWindowKind] = []
-    @ObservationIgnored private(set) var primary = ""
-    @ObservationIgnored private(set) var windows: [String: BernWindowContext] = [:]
-    @ObservationIgnored private var pendingOpens: [String: [UInt64]] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private(set) var handle: OpaquePointer?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var replies: [UInt64: BernPendingReply] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var nextToken: UInt64 = 1
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var revision: UInt64 = 0
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var apply: ((UInt32, inout BernReader) throws -> Void)?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private(set) var kinds: [BernWindowKind] = []
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private(set) var primary = ""
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private(set) var windows: [String: BernWindowContext] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var pendingOpens: [String: [UInt64]] = [:]
     /// How the platform presents windows.
-    @ObservationIgnored let platform = BernHostPlatform()
-    @ObservationIgnored private var openedInitial = false
-    @ObservationIgnored private var queries: [UInt64: @MainActor ([UInt8]) -> Void] = [:]
-    @ObservationIgnored let controls = BernControls()
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    let platform = BernHostPlatform()
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var openedInitial = false
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var queries: [UInt64: @MainActor ([UInt8]) -> Void] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    let controls = BernControls()
 
+    #if os(macOS)
+    @Published
+    #endif
     var failure: BernFailure?
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var startupError: String?
     private(set) var engineID = ""
     private(set) var channel = ""
@@ -1599,18 +1754,50 @@ final class BernQueryOwner: @unchecked Sendable {
 /// request and forwards only the answer for the current version, and
 /// states older than the last one shown are ignored here as well.
 @MainActor
+#if !os(macOS)
 @Observable
-final class BernQuery<Data: BernCodable> {
+#endif
+final class BernQuery<Data: BernCodable>: BernObservableObject {
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var phase: BernQueryPhase<Data> = .idle
-    @ObservationIgnored let index: UInt32
-    @ObservationIgnored private var version: UInt64 = 0
-    @ObservationIgnored private var lastReady: Data?
-    @ObservationIgnored private let owner = BernQueryOwner()
-    @ObservationIgnored private var generation: UInt64 = 0
-    @ObservationIgnored private var requested: [UInt8]?
-    @ObservationIgnored private var wanted: (window: BernWindowContext, params: [UInt8], target: String)?
-    @ObservationIgnored private var scheduled = false
-    @ObservationIgnored var count: ((Data) -> Int)?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    let index: UInt32
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var version: UInt64 = 0
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var lastReady: Data?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private let owner = BernQueryOwner()
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var generation: UInt64 = 0
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var requested: [UInt8]?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var wanted: (window: BernWindowContext, params: [UInt8], target: String)?
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var scheduled = false
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    var count: ((Data) -> Int)?
 
     init(index: UInt32) {
         self.index = index
@@ -1744,8 +1931,17 @@ struct BernQueryView<Data: BernCodable, Shown, Content: View>: View {
     let failed: String
     let shown: (Data) -> Shown?
     let content: (Shown) -> Content
+    #if os(macOS)
+    @EnvironmentObject private var window: BernWindowContext
+    #else
     @Environment(BernWindowContext.self) private var window
+    #endif
+    #if os(macOS)
+    @StateObject private var query: BernQuery<Data>
+    @ObservedObject private var language = BernLanguage.shared
+    #else
     @State private var query: BernQuery<Data>
+    #endif
 
     init(
         query index: UInt32, target: String, params: [UInt8], loading: String, empty: String?,
@@ -1762,7 +1958,11 @@ struct BernQueryView<Data: BernCodable, Shown, Content: View>: View {
         self.content = content
         let query = BernQuery<Data>(index: index)
         query.count = count
+        #if os(macOS)
+        _query = StateObject(wrappedValue: query)
+        #else
         _query = State(initialValue: query)
+        #endif
     }
 
     var body: some View {
@@ -1784,11 +1984,7 @@ struct BernQueryView<Data: BernCodable, Shown, Content: View>: View {
                 BernQueryFailureRow(title: failed, message: message) { query.retry() }
                 presented(previous)
             } else {
-                ContentUnavailableView {
-                    Label(failed, systemImage: "exclamationmark.triangle")
-                } description: {
-                    Text(verbatim: message)
-                } actions: {
+                BernRuntimeUnavailable(failed, systemImage: "exclamationmark.triangle", message: message) {
                     Button(BernText.string("bern.query.retry")) { query.retry() }
                 }
                 .frame(maxWidth: .infinity)
@@ -1800,9 +1996,60 @@ struct BernQueryView<Data: BernCodable, Shown, Content: View>: View {
         if let value = shown(data) {
             content(value)
         } else if let empty {
-            ContentUnavailableView(empty, systemImage: emptyIcon)
+            BernRuntimeUnavailable(empty, systemImage: emptyIcon)
                 .frame(maxWidth: .infinity)
         }
+    }
+}
+
+// Keep the native unavailable presentation wherever the OS supplies it.
+// Ventura uses the same semantic content and real actions in SwiftUI views.
+private struct BernRuntimeUnavailable<Actions: View>: View {
+    let title: String
+    let systemImage: String
+    let message: String?
+    let actions: Actions
+
+    init(_ title: String, systemImage: String, message: String? = nil, @ViewBuilder actions: () -> Actions) {
+        self.title = title
+        self.systemImage = systemImage
+        self.message = message
+        self.actions = actions()
+    }
+
+    @ViewBuilder var body: some View {
+        #if os(macOS)
+        if #available(macOS 14, *) { native } else {
+            VStack(spacing: 12) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 40, weight: .regular)).foregroundStyle(.secondary)
+                    .accessibilityHidden(true)
+                Text(verbatim: title).font(.title2.weight(.bold)).multilineTextAlignment(.center)
+                if let message { Text(verbatim: message).foregroundStyle(.secondary).multilineTextAlignment(.center) }
+                actions
+            }
+            .padding(24)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .accessibilityElement(children: .contain)
+        }
+        #else
+        native
+        #endif
+    }
+
+    @available(macOS 14, *)
+    private var native: some View {
+        ContentUnavailableView {
+            Label(title, systemImage: systemImage)
+        } description: {
+            if let message { Text(verbatim: message) }
+        } actions: { actions }
+    }
+}
+
+private extension BernRuntimeUnavailable where Actions == EmptyView {
+    init(_ title: String, systemImage: String, message: String? = nil) {
+        self.init(title, systemImage: systemImage, message: message) { EmptyView() }
     }
 }
 
@@ -1865,24 +2112,32 @@ struct BernRenderActive: ViewModifier {
 }
 
 struct BernWindowRoot<Content: View>: View {
+    #if os(macOS)
+    @ObservedObject var context: BernWindowContext
+    @ObservedObject private var host = BernHost.shared
+    @ObservedObject private var language = BernLanguage.shared
+    #else
     let context: BernWindowContext
+    private var host: BernHost { BernHost.shared }
+    private var language: BernLanguage { BernLanguage.shared }
+    #endif
     let content: Content
     @Environment(\.dismiss) private var dismiss
 
     init(context: BernWindowContext, @ViewBuilder content: () -> Content) {
+        #if os(macOS)
+        _context = ObservedObject(wrappedValue: context)
+        #else
         self.context = context
+        #endif
         self.content = content()
     }
 
     var body: some View {
-        let host = BernHost.shared
         Group {
             if let error = host.startupError {
-                ContentUnavailableView {
-                    Label(BernText.string("bern.startup.failed"), systemImage: "exclamationmark.triangle")
-                } description: {
-                    Text(verbatim: error)
-                }
+                BernRuntimeUnavailable(
+                    BernText.string("bern.startup.failed"), systemImage: "exclamationmark.triangle", message: error)
             } else {
                 content
             }
@@ -1928,11 +2183,11 @@ struct BernWindowRoot<Content: View>: View {
             await Task.yield()
             context.settled = true
         }
-        .environment(context)
+        .bernEnvironment(context)
         // The interface language, not the system's, picks localized symbol
         // variants (for example `textformat` is “Aa” in English and “格式”
         // in Chinese) and formats numbers and dates.
-        .environment(\.locale, Locale(identifier: BernLanguage.shared.current))
+        .environment(\.locale, Locale(identifier: language.current))
         .onAppear {
             context.dismiss = dismiss
             host.attach(context)
@@ -1963,6 +2218,117 @@ enum BernImageFit {
 /// HDR pictures show in high dynamic range where the display has headroom:
 /// a JPEG or HEIC with a gain map decodes to HDR (macOS 15 and iOS 18 and
 /// later), a PQ or HLG PNG keeps its range; elsewhere they are tone mapped.
+#if os(macOS)
+/// Ventura's ordinary image layers cannot opt into EDR. Keep PQ/HLG pixels
+/// in their declared transfer-function color space on a system Metal view;
+/// Core Animation performs display conversion instead of clamping to SDR.
+/// Normal images, template symbols and macOS 14+ retain SwiftUI.Image.
+private struct BernLegacyEDRImage: NSViewRepresentable {
+    let picture: BernImage.Picture
+
+    @MainActor private static let device = MTLCreateSystemDefaultDevice()
+    @MainActor private static let queue = device?.makeCommandQueue()
+    @MainActor static var available: Bool { device != nil && queue != nil }
+
+    func makeNSView(context: Context) -> BernEDRImageView {
+        BernEDRImageView(device: Self.device!, queue: Self.queue!)
+    }
+
+    func updateNSView(_ view: BernEDRImageView, context: Context) {
+        view.show(picture)
+    }
+
+    static func dismantleNSView(_ view: BernEDRImageView, coordinator: ()) {
+        view.isPaused = true
+        view.releaseDrawables()
+    }
+}
+
+@MainActor
+private final class BernEDRImageView: MTKView {
+    private let imageContext: CIContext
+    private let commands: any MTLCommandQueue
+    private var picture: BernImage.Picture?
+
+    init(device: any MTLDevice, queue: any MTLCommandQueue) {
+        commands = queue
+        imageContext = CIContext(mtlDevice: device, options: [.cacheIntermediates: false])
+        super.init(frame: .zero, device: device)
+        colorPixelFormat = .rgba16Float
+        framebufferOnly = false
+        isPaused = true
+        enableSetNeedsDisplay = true
+        clearColor = MTLClearColorMake(0, 0, 0, 0)
+        if let surface = layer as? CAMetalLayer {
+            surface.isOpaque = false
+            surface.wantsExtendedDynamicRangeContent = true
+        }
+    }
+
+    @available(*, unavailable)
+    required init(coder: NSCoder) { fatalError("Bern image views are created programmatically") }
+
+    override var acceptsFirstResponder: Bool { false }
+    override var isOpaque: Bool { false }
+    override func hitTest(_ point: NSPoint) -> NSView? { nil }
+
+    func show(_ next: BernImage.Picture) {
+        guard picture?.image !== next.image || picture?.orientation != next.orientation else { return }
+        picture = next
+        // PQ/HLG tagging is retained through the texture and compositor.
+        // No guessed luminance metadata or custom tone curve is applied.
+        (layer as? CAMetalLayer)?.colorspace = next.image.colorSpace
+        needsDisplay = true
+    }
+
+    override func viewDidChangeBackingProperties() {
+        super.viewDidChangeBackingProperties()
+        needsDisplay = true
+    }
+
+    override func draw(_ dirtyRect: NSRect) {
+        guard let picture, let colorSpace = picture.image.colorSpace,
+              let drawable = currentDrawable, let command = commands.makeCommandBuffer() else { return }
+        let exif: Int32 = switch picture.orientation {
+        case .up: 1
+        case .upMirrored: 2
+        case .down: 3
+        case .downMirrored: 4
+        case .leftMirrored: 5
+        case .right: 6
+        case .rightMirrored: 7
+        case .left: 8
+        @unknown default: 1
+        }
+        var image = CIImage(cgImage: picture.image).oriented(forExifOrientation: exif)
+        guard image.extent.width > 0, image.extent.height > 0 else { return }
+        image = image.transformed(by: CGAffineTransform(translationX: -image.extent.minX, y: -image.extent.minY))
+        let size = CGSize(width: CGFloat(drawable.texture.width), height: CGFloat(drawable.texture.height))
+        image = image.transformed(by: CGAffineTransform(scaleX: size.width / image.extent.width, y: size.height / image.extent.height))
+        let destination = CIRenderDestination(mtlTexture: drawable.texture, commandBuffer: command)
+        destination.colorSpace = colorSpace
+        destination.isFlipped = true
+        do {
+            _ = try imageContext.startTask(toRender: image, to: destination)
+            command.present(drawable)
+            command.commit()
+        } catch {
+            NSLog("Bern HDR image rendering failed: %@", String(describing: error))
+        }
+    }
+}
+#endif
+
+private extension View {
+    @ViewBuilder func bernImageDynamicRange() -> some View {
+        #if os(macOS)
+        if #available(macOS 14, *) { allowedDynamicRange(.high) } else { self }
+        #else
+        allowedDynamicRange(.high)
+        #endif
+    }
+}
+
 struct BernImage: View {
     /// A declared resource, or
     var name: String? = nil
@@ -1979,6 +2345,11 @@ struct BernImage: View {
     var heroMotion = BernMotion(period: 0.48, damping: 0.86)
     var heroCorner: CGFloat = 0
     @State private var fetched: Picture?
+    #if os(macOS)
+    @ObservedObject private var pictures = BernPictures.shared
+    #else
+    private var pictures: BernPictures { BernPictures.shared }
+    #endif
 
     struct Picture: @unchecked Sendable {
         let image: CGImage
@@ -2029,23 +2400,43 @@ struct BernImage: View {
         return Picture(image: image, orientation: orientation, ratio: w > 0 && h > 0 ? w / h : 1)
     }
 
+    @ViewBuilder private func standardImage(_ picture: Picture) -> some View {
+        let image = SwiftUI.Image(decorative: picture.image, scale: 1, orientation: picture.orientation)
+            .renderingMode(rendering)
+        switch fit {
+        case .contain: image.resizable().aspectRatio(contentMode: .fit)
+        case .cover: image.resizable().aspectRatio(contentMode: .fill)
+        case .fill: image.resizable()
+        }
+    }
+
     var body: some View {
-        let picture = name.flatMap(Self.picture) ?? fetched ?? url.flatMap { BernPictures.shared.cached($0) }
+        let picture = name.flatMap(Self.picture) ?? fetched ?? url.flatMap { pictures.cached($0) }
         let ratio = picture?.ratio ?? 1
         let content = Group {
             if let picture {
-                let image = SwiftUI.Image(decorative: picture.image, scale: 1, orientation: picture.orientation)
-                    .renderingMode(rendering)
-                switch fit {
-                case .contain: image.resizable().aspectRatio(contentMode: .fit)
-                case .cover: image.resizable().aspectRatio(contentMode: .fill)
-                case .fill: image.resizable()
+                #if os(macOS)
+                if #available(macOS 14, *) {
+                    standardImage(picture)
+                } else if rendering == .original,
+                          let colorSpace = picture.image.colorSpace,
+                          CGColorSpaceUsesITUR_2100TF(colorSpace), BernLegacyEDRImage.available {
+                    switch fit {
+                    case .contain: BernLegacyEDRImage(picture: picture).aspectRatio(picture.ratio, contentMode: .fit)
+                    case .cover: BernLegacyEDRImage(picture: picture).aspectRatio(picture.ratio, contentMode: .fill)
+                    case .fill: BernLegacyEDRImage(picture: picture)
+                    }
+                } else {
+                    standardImage(picture)
                 }
+                #else
+                standardImage(picture)
+                #endif
             } else {
                 Color.clear
             }
         }
-        .allowedDynamicRange(.high)
+        .bernImageDynamicRange()
         let shown = Group {
             if let aspect {
                 Color.clear
@@ -2062,7 +2453,7 @@ struct BernImage: View {
         }
         .task(id: url) {
             guard let url else { return }
-            fetched = await BernPictures.shared.load(url)
+            fetched = await pictures.load(url)
         }
         .modifier(BernPictureHero(id: hero, picture: picture, fit: fit, corner: heroCorner, motion: heroMotion))
         if let label {
@@ -2076,12 +2467,23 @@ struct BernImage: View {
 /// Pictures loaded from files and http(s) URLs, kept while the app runs,
 /// with the average color of each for fills drawn from a picture.
 @MainActor
+#if !os(macOS)
 @Observable
-final class BernPictures {
+#endif
+final class BernPictures: BernObservableObject {
     static let shared = BernPictures()
-    @ObservationIgnored private var pictures: [String: BernImage.Picture] = [:]
-    @ObservationIgnored private var loading: [String: Task<BernImage.Picture?, Never>] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var pictures: [String: BernImage.Picture] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var loading: [String: Task<BernImage.Picture?, Never>] = [:]
     /// Average colors as 0xRRGGBB, by URL; observed, so fills follow.
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var averages: [String: UInt32] = [:]
 
     func cached(_ url: String) -> BernImage.Picture? { pictures[url] }
@@ -2242,7 +2644,7 @@ struct BernDrop: ViewModifier {
                 delegate: BernDropDelegate(
                     kinds: kinds, inside: $inside, accepted: $accepted, give: give))
             #endif
-            .onChange(of: accepted) { _, accepted in
+            .bernOnChange(of: accepted) { _, accepted in
                 if over?.wrappedValue != accepted { over?.wrappedValue = accepted }
             }
     }
@@ -2385,7 +2787,7 @@ struct BernControlledSlider: View {
         .modifier(BernSliderLabelHidden(hidden: labelHidden))
         .bernAccentTint()
         .onAppear { preview = value }
-        .onChange(of: value) { _, newValue in if !editing { preview = newValue } }
+        .bernOnChange(of: value) { _, newValue in if !editing { preview = newValue } }
     }
     private func edit(_ active: Bool) {
         editing = active
@@ -2414,14 +2816,14 @@ struct BernMarquee<Content: View>: View {
                 let time = elapsed + (paused ? 0 : clock.date.timeIntervalSince(start))
                 let progress = (phase + time / max(1, duration)).truncatingRemainder(dividingBy: 1)
                 content().fixedSize()
-                    .background(GeometryReader { size in Color.clear.onAppear { textWidth = size.size.width }.onChange(of: size.size.width) { _, width in textWidth = width } })
+                    .background(GeometryReader { size in Color.clear.onAppear { textWidth = size.size.width }.bernOnChange(of: size.size.width) { _, width in textWidth = width } })
                     .shadow(color: .black, radius: 1, y: 1)
                     .offset(x: (reduceMotion || systemReduceMotion) ? geometry.size.width * 0.28 : geometry.size.width - (geometry.size.width + textWidth) * progress)
             }
         }
         .opacity(min(1, max(0, opacity)))
         .clipped()
-        .onChange(of: paused) { _, nowPaused in
+        .bernOnChange(of: paused) { _, nowPaused in
             if nowPaused { elapsed += Date().timeIntervalSince(start) }
             else { start = Date() }
         }

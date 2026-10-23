@@ -61,16 +61,30 @@ impl Generator<'_> {
             return;
         };
         let presented = self.field(panel, "presented").expect("bool field");
-        out.open(format!(
-            ".inspector(isPresented: {}) {{",
-            self.binding_of(&presented)
-        ));
+        if self.platform == Platform::Macos {
+            let width = panel
+                .number("width")
+                .map(double)
+                .unwrap_or_else(|| "nil".into());
+            out.open(format!(
+                ".bernInspector(isPresented: {}, width: {width}) {{",
+                self.binding_of(&presented)
+            ));
+        } else {
+            out.open(format!(
+                ".inspector(isPresented: {}) {{",
+                self.binding_of(&presented)
+            ));
+        }
         out.open("SwiftUI.VStack(alignment: .leading, spacing: 12) {");
         self.nodes(out, &panel.children, ctx);
         out.close("}");
         out.line(".padding(16)");
         out.line(".frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)");
-        if let Some(width) = panel.number("width") {
+        if let Some(width) = panel
+            .number("width")
+            .filter(|_| self.platform != Platform::Macos)
+        {
             out.line(format!(
                 ".inspectorColumnWidth(min: {}, ideal: {}, max: {})",
                 double(width * 0.8),

@@ -32,6 +32,7 @@ const HEADER: &str = include_str!("../templates/bern.h");
 
 /// Swift sources compiled into the app, in order.
 const SOURCES: &[&str] = &[
+    "BernCompatibility.swift",
     "BernRuntime.swift",
     "BernMedia.swift",
     "BernStyle.swift",
@@ -115,6 +116,7 @@ impl Target for SwiftUiIos {
         let product = product_name(app);
         let bundle = PathBuf::from(format!("{product}.app"));
         let mut files = vec![
+            GeneratedFile::text("Sources/BernCompatibility.swift", crate::COMPATIBILITY),
             GeneratedFile::text(
                 "Sources/BernRuntime.swift",
                 crate::runtime_with_svg(app, RUNTIME),

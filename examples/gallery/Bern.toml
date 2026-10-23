@@ -38,6 +38,11 @@ paths = ["media/tides.mp4", "media/poster.jpg"]
 platform = "macos"
 channels = ["ipc"]
 
+[targets.macos_modern]
+platform = "macos"
+ui = "swiftui-modern"
+channels = ["ipc"]
+
 [targets.ios]
 platform = "ios"
 channels = ["ipc"]

@@ -9,6 +9,11 @@ on:
         description: Run containing a completed upstream build; empty builds upstream again
         type: string
         default: ""
+      profile:
+        description: Accessibility appearance used for the reference
+        type: choice
+        options: [normal, reduced]
+        default: normal
 
 permissions:
   contents: read
@@ -152,7 +157,24 @@ jobs:
           cp build/environment.txt evidence/runtime/build-environment.txt
           cp build/binary.txt evidence/runtime/build-binary.txt
           cp build/reference-app.tar.gz.sha256 evidence/runtime/
+      - name: Set the reference appearance on this disposable runner
+        env:
+          REFERENCE_PROFILE: ${{ inputs.profile }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$REFERENCE_PROFILE" in
+            normal) reduced=false ;;
+            reduced) reduced=true ;;
+            *) exit 1 ;;
+          esac
+          defaults write com.apple.universalaccess reduceMotion -bool "$reduced"
+          defaults write com.apple.universalaccess reduceTransparency -bool "$reduced"
+          # A fresh observer process below checks NSWorkspace's effective values.
+          killall cfprefsd || true
       - name: Capture actual light and dark windows and exercise controls
+        env:
+          BERN_REFERENCE_PROFILE: ${{ inputs.profile }}
         shell: bash
         run: |
           set -euo pipefail

@@ -15,6 +15,9 @@
 import AVFoundation
 import AVKit
 import SwiftUI
+#if os(macOS)
+import Combine
+#endif
 
 // MARK: - Merged player state
 
@@ -89,15 +92,29 @@ enum BernMediaCommand: UInt32 {
 
 /// Player identities, merged states and the commands of the media hub.
 @MainActor
+#if !os(macOS)
 @Observable
-final class BernMedia {
+#endif
+final class BernMedia: BernObservableObject {
     static let shared = BernMedia()
 
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var players: [String: BernPlayerState] = [:]
-    @ObservationIgnored private var revision: UInt64 = 0
-    @ObservationIgnored let backend = BernMediaBackend()
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var revision: UInt64 = 0
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    let backend = BernMediaBackend()
     /// The kind of surface video views give the application's media
     /// kernel; nil while AVFoundation plays.
+    #if os(macOS)
+    @Published
+    #endif
     private(set) var kernel: BernSurfaceKind?
 
     func receive(_ bytes: [UInt8]) {
@@ -191,7 +208,10 @@ final class BernMedia {
     }
 
     /// Views presenting a player, by attachment token.
-    @ObservationIgnored private var surfaces: [String: (view: BernPlayerView, window: String)] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var surfaces: [String: (view: BernPlayerView, window: String)] = [:]
 
     func attach(_ view: BernPlayerView, token: String, player: String, window: String) {
         view.player = backend.player(player).player
@@ -226,13 +246,16 @@ final class BernMedia {
     }
 
     /// Kernel surfaces by attachment token.
-    @ObservationIgnored private var kernelSurfaces: [String: (window: String, link: CADisplayLink, frames: BernKernelFrames)] = [:]
+    #if !os(macOS)
+    @ObservationIgnored
+    #endif
+    private var kernelSurfaces: [String: (window: String, link: BernDisplayLink, frames: BernKernelFrames)] = [:]
 
     /// Give the kernel `layer` to show `player` in, with its frame clock
     /// `link`, whose target is `frames`; the hub counts the view.
     func attachKernel(
         _ layer: CAMetalLayer, size: BernSurfaceSize, fit: BernVideoFit, token: String, player: String,
-        window: String, link: CADisplayLink, frames: BernKernelFrames
+        window: String, link: BernDisplayLink, frames: BernKernelFrames
     ) {
         kernelSurfaces[token] = (window, link, frames)
         var view = BernWriter()
@@ -619,10 +642,20 @@ struct BernVideo: View {
     /// Rounds the picture; a change moves with `cornerMotion`.
     var corner: Double = 0
     var cornerMotion: BernMotion? = nil
+    #if os(macOS)
+    @EnvironmentObject private var window: BernWindowContext
+    #else
     @Environment(BernWindowContext.self) private var window
+    #endif
     @Environment(\.bernSceneScale) private var sceneScale
     @BernReducedMotion private var reduce
     @State private var owner = BernPlayerOwner()
+    #if os(macOS)
+    @ObservedObject private var media = BernMedia.shared
+    @ObservedObject private var language = BernLanguage.shared
+    #else
+    private var media: BernMedia { BernMedia.shared }
+    #endif
 
     private var playerID: String {
         switch binding {
@@ -639,11 +672,11 @@ struct BernVideo: View {
     }
 
     var body: some View {
-        let state = BernMedia.shared.players[playerID]
+        let state = media.players[playerID]
         VStack(spacing: 6) {
             ZStack {
                 if state != nil {
-                    if BernMedia.shared.kernel != nil {
+                    if media.kernel != nil {
                         BernKernelVideoSurface(
                             playerID: playerID, window: window.id, fit: fit, corner: corner,
                             cornerMotion: reduce || bernForcedReduceMotion ? nil : cornerMotion,
@@ -711,25 +744,59 @@ struct BernVideo: View {
     }
 }
 
+private struct BernMediaUnavailable: View {
+    let title: String
+    let systemImage: String
+    var message: String? = nil
+
+    @ViewBuilder var body: some View {
+        #if os(macOS)
+        if #available(macOS 14, *) { native } else {
+            VStack(spacing: 12) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 40, weight: .regular)).foregroundStyle(.secondary)
+                    .accessibilityHidden(true)
+                Text(verbatim: title).font(.title2.weight(.bold)).multilineTextAlignment(.center)
+                if let message { Text(verbatim: message).foregroundStyle(.secondary).multilineTextAlignment(.center) }
+            }
+            .padding(24)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .accessibilityElement(children: .contain)
+        }
+        #else
+        native
+        #endif
+    }
+
+    @available(macOS 14, *)
+    private var native: some View {
+        ContentUnavailableView {
+            Label(title, systemImage: systemImage)
+        } description: {
+            if let message { Text(verbatim: message) }
+        }
+    }
+}
+
 /// What the video area shows while there is no picture.
 struct BernVideoStatus: View {
     let state: BernPlayerState?
+    #if os(macOS)
+    @ObservedObject private var language = BernLanguage.shared
+    #endif
 
     var body: some View {
         switch state?.phase {
         case .loading:
             ProgressView()
         case .failed:
-            ContentUnavailableView {
-                Label(BernText.string("bern.media.failed"), systemImage: "exclamationmark.triangle")
-            } description: {
-                Text(verbatim: state?.error ?? "")
-            }
+            BernMediaUnavailable(
+                title: BernText.string("bern.media.failed"), systemImage: "exclamationmark.triangle", message: state?.error)
         case .unavailable, nil:
-            ContentUnavailableView(
-                BernText.string("bern.media.unavailable"), systemImage: "play.slash")
+            BernMediaUnavailable(
+                title: BernText.string("bern.media.unavailable"), systemImage: "play.slash")
         case .idle:
-            ContentUnavailableView(BernText.string("bern.media.empty"), systemImage: "play.rectangle")
+            BernMediaUnavailable(title: BernText.string("bern.media.empty"), systemImage: "play.rectangle")
         default:
             EmptyView()
         }
@@ -744,9 +811,16 @@ struct BernVideoControls: View {
     let target: String
     let playerID: String
     let state: BernPlayerState?
+    #if os(macOS)
+    @EnvironmentObject private var window: BernWindowContext
+    #else
     @Environment(BernWindowContext.self) private var window
+    #endif
     @State private var scrubbing: Double?
     @State private var volumePreview: Double?
+    #if os(macOS)
+    @ObservedObject private var language = BernLanguage.shared
+    #endif
 
     private static func playable(_ state: BernPlayerState?) -> Bool {
         guard let state, state.sourceURL != nil else { return false }
@@ -992,12 +1066,12 @@ final class BernKernelClock: NSObject, @unchecked Sendable {
         lock.unlock()
     }
 
-    func start(_ link: CADisplayLink) {
+    func start(_ link: BernDisplayLink) {
         perform(#selector(add(_:)), on: clockThread(), with: link, waitUntilDone: false)
     }
 
     /// No frame of `frames` reaches the app after this returns.
-    func stop(_ link: CADisplayLink, _ frames: BernKernelFrames) {
+    func stop(_ link: BernDisplayLink, _ frames: BernKernelFrames) {
         lock.lock()
         frames.active = false
         lock.unlock()
@@ -1013,11 +1087,11 @@ final class BernKernelClock: NSObject, @unchecked Sendable {
         }
     }
 
-    @objc private func add(_ link: CADisplayLink) {
+    @objc private func add(_ link: BernDisplayLink) {
         link.add(to: .current, forMode: .common)
     }
 
-    @objc private func remove(_ link: CADisplayLink) {
+    @objc private func remove(_ link: BernDisplayLink) {
         link.invalidate()
     }
 
@@ -1048,7 +1122,7 @@ final class BernKernelFrames: NSObject, @unchecked Sendable {
         self.token = Array(token.utf8)
     }
 
-    @objc func step(_ link: CADisplayLink) {
+    @objc func step(_ link: BernDisplayLink) {
         BernKernelClock.shared.step(self, now: link.timestamp, target: link.targetTimestamp)
     }
 }
