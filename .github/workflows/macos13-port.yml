@@ -42,8 +42,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          case "$EXAMPLE" in showcase) product=Showcase ;; gallery) product=Gallery ;; *) exit 1 ;; esac
-          echo "PRODUCT=$product" >> "$GITHUB_ENV"
+          case "$EXAMPLE" in showcase) PRODUCT=Showcase ;; gallery) PRODUCT=Gallery ;; *) exit 1 ;; esac
+          echo "PRODUCT=$PRODUCT" >> "$GITHUB_ENV"
           mkdir -p evidence
           {
             printf 'source_repository=%s\nsource_sha=%s\nharness_sha=%s\n' "$GITHUB_REPOSITORY" "$(git -C source rev-parse HEAD)" "$GITHUB_SHA"
@@ -70,6 +70,15 @@ jobs:
           set -euo pipefail
           cd source
           cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest "examples/$EXAMPLE/Bern.toml" --target macos_modern --release > ../evidence/build.log 2>&1 || {
+            # The compiling driver can stop after the first primary file.
+            # A whole-module diagnostic pass exposes independent errors without
+            # linking, suppressing availability checks or changing the source.
+            if test -f target/bern/macos_modern/Sources/BernGenerated.swift; then
+              xcrun swiftc -typecheck -swift-version 6 -parse-as-library -module-name "$PRODUCT" \
+                -target arm64-apple-macos13.0 -import-objc-header target/bern/macos_modern/Sources/bern.h \
+                -module-cache-path target/bern-swift-module-cache \
+                target/bern/macos_modern/Sources/*.swift > ../evidence/typecheck.log 2>&1 || true
+            fi
             # Keep the complete log in the short-lived artifact; report a compact excerpt.
             python3 - <<'PY'
           import re

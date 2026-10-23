@@ -57,8 +57,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p evidence/build
-          case "$EXAMPLE" in showcase) product=Showcase ;; gallery) product=Gallery ;; *) exit 1 ;; esac
-          echo "PRODUCT=$product" >> "$GITHUB_ENV"
+          case "$EXAMPLE" in showcase) PRODUCT=Showcase ;; gallery) PRODUCT=Gallery ;; *) exit 1 ;; esac
+          echo "PRODUCT=$PRODUCT" >> "$GITHUB_ENV"
           {
             printf 'source_repository=AimesSoft/Bern\nsource_sha=%s\nharness_sha=%s\n' "$REFERENCE_SHA" "$GITHUB_SHA"
             printf 'runner_arch=%s\nimage_os=%s\nimage_version=%s\n' "$RUNNER_ARCH" "${ImageOS:-unknown}" "${ImageVersion:-unknown}"
@@ -148,8 +148,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p reference evidence/runtime
-          case "$EXAMPLE" in showcase) product=Showcase ;; gallery) product=Gallery ;; *) exit 1 ;; esac
-          echo "PRODUCT=$product" >> "$GITHUB_ENV"
+          case "$EXAMPLE" in showcase) PRODUCT=Showcase ;; gallery) PRODUCT=Gallery ;; *) exit 1 ;; esac
+          echo "PRODUCT=$PRODUCT" >> "$GITHUB_ENV"
           {
             printf 'source_sha=%s\nharness_sha=%s\n' "$REFERENCE_SHA" "$GITHUB_SHA"
             printf 'runner_arch=%s\nimage_os=%s\nimage_version=%s\n' "$RUNNER_ARCH" "${ImageOS:-unknown}" "${ImageVersion:-unknown}"
