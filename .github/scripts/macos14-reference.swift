@@ -262,6 +262,34 @@ func motion(_ name: String, process: Process, change: () throws -> Void) throws 
     try save()
 }
 
+func waitForStaticWindow(_ name: String, process: Process) throws {
+    let start = ProcessInfo.processInfo.systemUptime
+    var previous: Data?
+    var identical = 0
+    var samples = 0
+    while ProcessInfo.processInfo.systemUptime - start < 8 {
+        guard process.isRunning, let info = visibleWindow(process.processIdentifier),
+              let number = info[kCGWindowNumber as String] as? NSNumber,
+              let image = CGWindowListCreateImage(.null, .optionIncludingWindow, CGWindowID(number.uint32Value), [.boundsIgnoreFraming, .bestResolution]),
+              let bytes = image.dataProvider?.data else {
+            throw Failure(description: "Cannot observe settled window for \(name)")
+        }
+        let data = bytes as Data
+        samples += 1
+        identical = data == previous ? identical + 1 : 0
+        previous = data
+        if identical >= 4 {
+            checks.append(["description": "Stable WindowServer pixels: " + name, "samples": samples,
+                           "consecutive_equal_comparisons": identical,
+                           "elapsed_seconds": ProcessInfo.processInfo.systemUptime - start])
+            try save()
+            return
+        }
+        try pause(0.1)
+    }
+    throw Failure(description: "Window did not become pixel-stable within 8 seconds for \(name)")
+}
+
 func showcaseSlices(process: Process, session: String) throws {
     report["showcase_extra_slices"] = "Light appearance only; main window at 920 x 668 outer points. Screenshots are evidence for comparison, not an automatic visual-equivalence verdict."
 
@@ -405,15 +433,17 @@ do {
             try motion("gallery-inspector-\(appearance)", process: process) {
                 _ = try cli(["ui", "set-bool", "--target", toggle["target"] as! String, "--value", "true"], session: session)
             }
+            try waitForStaticWindow("inspector-" + appearance, process: process)
             try capture("gallery-inspector-\(appearance)", process: process, session: session)
             _ = try cli(["ui", "set-bool", "--target", toggle["target"] as! String, "--value", "false"], session: session)
             _ = try cli(["ui", "select", "--target", sidebar["target"] as! String, "--option", "Film"], session: session)
-            try pause(1)
+            try waitForStaticWindow("film-initial-" + appearance, process: process)
             try capture("gallery-film-\(appearance)", process: process, session: session)
             let last = try control(inspect(session), suffix: ".to_last", role: "button")
             try motion("gallery-scroll-last-\(appearance)", process: process) {
                 _ = try cli(["ui", "activate", "--target", last["target"] as! String], session: session)
             }
+            try waitForStaticWindow("film-last-" + appearance, process: process)
             try capture("gallery-film-last-\(appearance)", process: process, session: session)
             continue
         }
