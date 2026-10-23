@@ -183,6 +183,7 @@ impl Generator<'_> {
                 out.line(
                     "@NSApplicationDelegateAdaptor(BernAppDelegate.self) private var delegate",
                 );
+                out.line("@ObservedObject private var bernLanguage = BernLanguage.shared");
                 out.line("");
             }
             // The orientations a window asks of the phone.

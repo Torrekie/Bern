@@ -145,7 +145,11 @@ extension BernHost {
         } else {
             platform.openWindow?(id: kindID)
         }
-        NSApplication.shared.activate(options: [.activateIgnoringOtherApps])
+        if #available(macOS 14.0, *) {
+            NSApplication.shared.activate()
+        } else {
+            NSApplication.shared.activate(ignoringOtherApps: true)
+        }
     }
 
     /// Reopen the primary window, as clicking the Dock icon does.
@@ -785,11 +789,14 @@ final class BernDisplayLink: NSObject, @unchecked Sendable {
         let display = Self.display(screen)
         driverLock.lock(); defer { driverLock.unlock() }
         guard display != displayID else { return }
-        displayID = display
         if let coreVideo {
             let status = CVDisplayLinkSetCurrentCGDisplay(coreVideo, display)
-            if status != kCVReturnSuccess { NSLog("Bern: display-link screen update failed (%d)", status) }
+            guard status == kCVReturnSuccess else {
+                NSLog("Bern: display-link screen update failed (%d)", status)
+                return
+            }
         }
+        displayID = display
     }
 
     @MainActor
@@ -1124,6 +1131,7 @@ struct BernScrubberShape: View {
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.controlActiveState) private var activeState
     @State private var dragging = false
+    @FocusState private var focused: Bool
 
     private static let knob = CGSize(width: 20, height: 16)
     private static let track: CGFloat = 6
@@ -1134,15 +1142,15 @@ struct BernScrubberShape: View {
         value = min(max(next, range.lowerBound), range.upperBound)
     }
 
-    private func nudge(_ steps: Double) -> KeyPress.Result {
-        guard isEnabled else { return .ignored }
+    private func nudge(_ steps: Double) -> Bool {
+        guard isEnabled else { return false }
         onEditingChanged(true)
         set(value + steps * step)
         onEditingChanged(false)
-        return .handled
+        return true
     }
 
-    var body: some View {
+    private var scrubberTrack: some View {
         GeometryReader { geometry in
             let travel = max(geometry.size.width - Self.knob.width, 0)
             let fraction = min(max((value - range.lowerBound) / span, 0), 1)
@@ -1179,6 +1187,7 @@ struct BernScrubberShape: View {
                 DragGesture(minimumDistance: 0)
                     .onChanged { drag in
                         if !dragging {
+                            focused = true
                             dragging = true
                             onEditingChanged(true)
                         }
@@ -1194,11 +1203,69 @@ struct BernScrubberShape: View {
             .animation(.easeOut(duration: 0.15), value: dragging)
         }
         .frame(height: 22)
-        .focusable(isEnabled)
-        .onKeyPress(.leftArrow) { nudge(-1) }
-        .onKeyPress(.downArrow) { nudge(-1) }
-        .onKeyPress(.rightArrow) { nudge(1) }
-        .onKeyPress(.upArrow) { nudge(1) }
+    }
+
+    @ViewBuilder var body: some View {
+        if #available(macOS 14.0, *) {
+            scrubberTrack.focusable(isEnabled).focused($focused)
+                .onKeyPress(.leftArrow) { nudge(-1) ? .handled : .ignored }
+                .onKeyPress(.downArrow) { nudge(-1) ? .handled : .ignored }
+                .onKeyPress(.rightArrow) { nudge(1) ? .handled : .ignored }
+                .onKeyPress(.upArrow) { nudge(1) ? .handled : .ignored }
+        } else {
+            scrubberTrack.focusable(isEnabled).focused($focused)
+                .background(BernLegacyScrubberKeys(enabled: isEnabled && focused, nudge: nudge))
+        }
+    }
+}
+
+/// SwiftUI exposes key presses from macOS 14. Keep the same focused
+/// scrubber's arrow-key editing on 13, without intercepting text editors.
+private struct BernLegacyScrubberKeys: NSViewRepresentable {
+    let enabled: Bool
+    let nudge: (Double) -> Bool
+
+    func makeNSView(context: Context) -> Keys { Keys() }
+    func updateNSView(_ view: Keys, context: Context) {
+        view.enabled = enabled
+        view.nudge = nudge
+        view.install()
+    }
+    static func dismantleNSView(_ view: Keys, coordinator: ()) { view.stop() }
+
+    final class Keys: NSView {
+        var enabled = false
+        var nudge: ((Double) -> Bool)?
+        private var monitor: Any?
+
+        override func hitTest(_ point: NSPoint) -> NSView? { nil }
+        override func viewDidMoveToWindow() {
+            super.viewDidMoveToWindow()
+            if window == nil { stop() } else { install() }
+        }
+
+        func install() {
+            guard window != nil, monitor == nil else { return }
+            monitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+                let consumed = MainActor.assumeIsolated { () -> Bool in
+                    guard let self, self.enabled, event.window === self.window,
+                        event.modifierFlags.intersection([.command, .control, .option, .shift]).isEmpty,
+                        !(self.window?.firstResponder is NSTextView)
+                    else { return false }
+                    switch event.keyCode {
+                    case 123, 125: return self.nudge?(-1) ?? false
+                    case 124, 126: return self.nudge?(1) ?? false
+                    default: return false
+                    }
+                }
+                return consumed ? nil : event
+            }
+        }
+
+        func stop() {
+            if let monitor { NSEvent.removeMonitor(monitor) }
+            monitor = nil
+        }
     }
 }
 

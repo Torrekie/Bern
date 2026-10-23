@@ -3,7 +3,9 @@
 use super::values::{session_class, session_var, swift_type};
 use super::{Ctx, Generator, Out, Platform};
 use crate::names::{self, double, member, string};
-use bern_ir::{Action, ComponentDef, Expr, Node, ParamKind, WindowDef, WindowRole};
+use bern_ir::{
+    Action, Binding, ComponentDef, Expr, ExprKind, Node, ParamKind, WindowDef, WindowRole,
+};
 
 impl Generator<'_> {
     fn uses_engine(&self, nodes: &[&Node]) -> bool {
@@ -203,12 +205,26 @@ impl Generator<'_> {
     /// Lines that bind the sessions and engine an expression reads.
     fn locals(&self, out: &mut Out, exprs: &[&Expr]) {
         let mut sessions = Vec::new();
+        let mut window = false;
         for expr in exprs {
+            expr.walk(&mut |expr| {
+                if let ExprKind::Binding {
+                    binding: Binding::Window { .. },
+                } = &expr.kind
+                {
+                    window = true;
+                }
+            });
             for session in expr.sessions() {
                 if !sessions.contains(&session) {
                     sessions.push(session);
                 }
             }
+        }
+        if window {
+            // Resolve window reads through the closure's weakly captured
+            // context rather than implicitly retaining the generated View.
+            out.line("let bernWindow = context");
         }
         for session in sessions {
             out.line(format!(
@@ -231,18 +247,21 @@ impl Generator<'_> {
             out.line("let bernEngine = self.bernEngine");
         }
         out.open("return BernCloseCheck(");
-        out.open("needsConfirmation: {");
+        out.open("needsConfirmation: { [weak context] in");
+        out.line("guard let context else { return false }");
         self.locals(out, &[&close.when]);
         out.line(format!("return {}", self.expr(&close.when)));
         out.close("},");
-        out.open("message: {");
+        out.open("message: { [weak context] in");
+        out.line("guard let context else { return \"\" }");
         self.locals(out, &close.message.exprs());
         out.line(format!("return {}", self.text(&close.message)));
         out.close("},");
         match &close.save {
             Some(Action::Engine { command, args }) => {
                 let spec = &self.app.protocol.commands[*command];
-                out.open("save: { done in");
+                out.open("save: { [weak context] done in");
+                out.line("guard let context else { done(BernCommandFailure(code: \"stale_window\", message: \"The hosting window has closed\")); return }");
                 self.locals(out, &args.iter().collect::<Vec<_>>());
                 let mut values: Vec<_> = args.iter().map(|arg| self.expr(arg)).collect();
                 values.push("from: context".into());
