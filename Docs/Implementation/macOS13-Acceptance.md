@@ -11,12 +11,17 @@
 | 原上游 A 与迁移 B，同在 macOS 14.8.9 运行 | 21 张 PNG：17 张 RGB 像素完全相同；3 张分别只有 12/35/76 个像素相差 1 级 | 余下图片页首个 section 多 1 点，后续内容随之下移；尚未把原因归给任何观察机制 |
 | 13 系统圆形图标按钮 | 实际应用中的 AX 对齐尺寸为 20×20 点，位置与 14 参考一致 | 使用系统 `NSButton.circular`，没有自画 bezel；实际 AXPress 一次只运行一次引擎命令 |
 | 13 Query 错误占位页 | 实际截图的图标、标题、两行说明、按钮与 14 参考的边界差不超过 1 点 | 错误卡高约 226.5 点，14 为 227；重试按钮绘制边界相同 |
+| 13 Film 明确 Last 落点 | 浅、深两种外观中，放大卡片四边相对14差值为 [0, -0.5, +1, +0.5] 点 | 原始2x截图，无图像缩放补偿；初始Film身份仍不同，见未通过项 |
+| 13 默认侧栏与宽度恢复 | 真正整应用、干净独立 defaults 首开210；AX调为260后，页面重建和进程重启均保留260 | 仅为隔离改变bundle ID及临时签名，可执行文件字节与CI产物相同；没有清用户窗口历史 |
+| 空白与媒体占位、语言切换 | 空白/错误媒体占位测量边界均在1pt内；Ready→Failed→Ready恢复后原始画面像素相同；中英文切换及取消关闭保留草稿 | 状态切换通过实际控件绑定，语言测试不冒称真实输入法或菜单点击 |
 | 原生交互 | 通知 AXPress 改变会话草稿；音量 AXIncrement 从 50 到 60，只产生一次引擎提交；Command-Comma 打开原生 Settings scene | 这些不是鼠标拖动验证；CLI 状态与原生 AX 操作分别记录 |
 
-第二轮已验证源码为 `0f5226d0dcdf2c7cbd50db3e1745d58d5d1a6532`：
+第三轮完整应用已验证源码为 `46a286245c1e4c1380ea0e2285587cfe6225a3f8`：
 
-- [Showcase 构建](https://github.com/Torrekie/Bern/actions/runs/39969189803)
-- [Gallery 构建](https://github.com/Torrekie/Bern/actions/runs/39969189761)
+- [Showcase 构建](https://github.com/Torrekie/Bern/actions/runs/39975026355)
+- [Gallery 构建](https://github.com/Torrekie/Bern/actions/runs/39975025096)
+
+Gallery 的第三轮本机证据为两种外观各新进程、活动窗口、连续 5 次相同 WindowServer 缓冲后的 8 张原始 2x PNG。Showcase 当前保留的占位页、按钮、媒体证据来自第二轮 `0f5226d`，其 [Showcase 构建](https://github.com/Torrekie/Bern/actions/runs/39969189803) 与 [Gallery 构建](https://github.com/Torrekie/Bern/actions/runs/39969189761) 均通过；它们不能冒充第三轮重拍。
 
 macOS 14 上的 A/B 对照使用此前的 `fa820f706e5faf1bae8b8f07e23545842a1648b7`；此后的按钮、占位页和滚动相位校准均限制在 13 分支。不要把旧源码的对照扩充成新源码已经在 14 再验收。
 
@@ -28,6 +33,7 @@ macOS 14 上的 A/B 对照使用此前的 `fa820f706e5faf1bae8b8f07e23545842a164
 |---|---|
 | [Showcase 原始参考](../Evidence/macOS14-reference-normal/reference.json) | 13 张 WindowServer PNG，涵盖浅/深色控件、Text、Buttons、Inputs、Query 错误/空白/恢复、图片、Video 状态；[采集](https://github.com/Torrekie/Bern/actions/runs/39961818954) |
 | [Gallery 原始参考](../Evidence/macOS14-gallery-normal/reference.json) | 8 张浅/深色 PNG，4 个 Inspector/滚动 GIF；[采集](https://github.com/Torrekie/Bern/actions/runs/39964126654) |
+| [本机13候选证据](../Evidence/macOS13-candidate/reference.json) | 14张原始窗口PNG，分开注明0f/46源码版本；[Gallery量化](../Evidence/macOS13-candidate/gallery-comparison.json)、[侧栏宽度](../Evidence/macOS13-candidate/sidebar-width.json)、[语言/关闭](../Evidence/macOS13-candidate/language-close.json) |
 | [同系统迁移比较](../Evidence/macOS14-port-comparison/comparison.json) | 每张图片的 RGB 比较、原始文件哈希、不同 PNG、图片页差异测量；相同图片复用 A 的原图，避免重复保存 |
 
 Gallery 的外观由它自己的 Light/Dark 动作设置，不能只给进程环境变量，因为示例会显式恢复 System。最终静态 Gallery 参考在连续 5 次 WindowServer 缓冲相同后采集。早期误标深色的图片不作为深色依据。
@@ -39,7 +45,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 ## 必要的局部复用组件
 
 - `BernCompatibility.swift` 保留 ObservableObject 所有权、对象环境及旧 onChange 的当前闭包和 old/new 语义。
-- 13 Inspector 复用 `HSplitView`，内容仍为原 SwiftUI；滚动仍为系统 SwiftUI ScrollView。
+- 13 Inspector 复用 `HSplitView`，内容仍为原 SwiftUI；滚动仍为系统 SwiftUI ScrollView。居中边距使用真实SwiftUI内容padding，并按滚动视图作用域隔离，避免直接改变NSScrollView insets造成LazyHStack原生/绘制坐标分离。相位使用14实窗校准的有效viewport及easeInOut Bezier曲线。
 - 缺失的按键监听只作用于当前窗口和焦点，不全局吞键；文本编辑与输入法仍需单独实测。
 - 普通无显式尺寸的圆形 IconButton 复用 `NSButton`。toolbar、bar/group、显式宽高、plain/prominent、custom look、cancel 保留原路径；destructive、enabled、快捷键、AX ID 与最新 action 转接系统属性。
 - PQ/HLG 使用系统 MTKView/CoreImage/EDR 图层；普通 SDR 仍使用 SwiftUI Image。gain-map 的系统能力分支保持原逻辑。
@@ -51,13 +57,14 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 
 | 项目 | 当前证据与后续条件 |
 |---|---|
-| Film 滚动相位 | 14 的独立真实窗口校准已确认有效 viewport、居中阈值与 easeInOut 曲线。13 整应用发现 NSView 探针坐标与 SwiftUI 实际绘制相差内容边距，导致相邻卡片被放大；必须修复并重拍，不能减去一个固定 item 当成修复。 |
+| Film 初始身份 | 第三轮已经修复原生探针/SwiftUI绘制坐标分离，并通过9种居中/缩放/减少动态效果小样例；整应用Last几何在1pt内。但是同样Inspector关闭后首次进入Film，14参考为Glen，13为声明初始值3对应Madras。尚未确定14的初始布局/侧栏时序，不硬改为4。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
-| 默认侧栏宽度 | 同一范围偏好 min180/ideal210/max320，在 13 新窗口选择180，而14为210；额外 frame 无效。单参数210会锁死调整范围，已排除。比较内容时可记录并通过原生 AX 把实际宽度设为210，但这不算默认行为已修复。 |
-| 图片页 1 点差 | 14 A/B 对齐后 footer、Layers、gain-map 完全相同；PQ 残差最大2级。下一步连拍并记录首个 section 高度，区分稳定测高与时序，不能用负 padding 抵销。 |
+| 图片页首卡高度 | A14/B14/C13首卡分别124/125/129pt。图片均在y108…198，caption墨迹只差0.5pt；后续HDR卡均147pt，仅继承首卡偏移。三个13图片包装结构的公开Column/Grid框均109pt，尚缺14同一公开框测量；不能归因字体或用负padding抵消。 |
+| PQ/HLG 色彩 | 13对合法自定义ICC的ITUR2100识别会失败，当前整应用PQ两亮度都压白。严格cICP识别及系统等价色空间转换已在独立样例得到SDR229/255，接近14参考228.93/254.83；完整应用适配仍在验证，暂不算修复通过。 |
 | 真正鼠标拖动 | 当前自动化鼠标没有把拖动送达；尚未证明“拖动时只预览，松手仅提交一次”。AXIncrement 单次提交不替代它。 |
-| 物理 HDR、输入法、完整动画时序 | 未验收。当前屏幕可用 EDR 为1，潜在为2；SDR 截图不能证明 HDR 亮度等效。 |
+| 物理 HDR、输入法、完整动画时序 | 未验收。屏幕潜在EDR为2，实际值会随HDR surface启动从1升到约2；不能把启动前的1当作设备不支持HDR，也不能用SDR截图证明物理HDR亮度等效。 |
+| 原生材质配色 | ICC归一后的活动窗口背景仍有差异，可能受桌面染色等本机原生材质条件与14虚拟屏幕条件影响，尚未隔离归因。raised panel可相同，但整窗口颜色尚不能宣称等效；不以固定RGB抵销未经隔离的环境差异。 |
 
 GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的故意失败时段，并计划11月2日退役：[官方公告](https://github.com/actions/runner-images/issues/13518)。已取得的普通外观参考继续可用；该时段的 runner 失败不能归为源码失败。
 

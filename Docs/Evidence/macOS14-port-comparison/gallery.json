@@ -999,5 +999,23 @@
   "capture_run": "https://github.com/Torrekie/Bern/actions/runs/39965290443",
   "build_run": "https://github.com/Torrekie/Bern/actions/runs/39964335758",
   "environment": "source_sha=fa820f706e5faf1bae8b8f07e23545842a1648b7\nharness_sha=14eb79a5feaabc5afdf4c8296518afd3aff87c34\nProductName:\t\tmacOS\nProductVersion:\t\t14.8.9\nBuildVersion:\t\t23J631\narm64\nXcode 15.4\nBuild version 15F31d\n",
-  "retention_note": "Pixel-identical PNGs reuse the committed upstream reference; only the differing candidate PNG is duplicated. GIFs are timing samples, not frame-rate or gesture acceptance."
+  "retention_note": "Pixel-identical PNGs reuse the committed upstream reference; differing candidate PNGs and all timing GIFs are retained or reference a byte-identical retained source. GIFs do not prove frame rate, physical gestures, or peak nudge.",
+  "retained_motion": {
+    "gallery-scroll-last-light.gif": {
+      "retained_file": "gallery-gallery-scroll-last-light.gif",
+      "sha256": "a842d8448787c9ca4ec56bf24593e38eeab646435184df0fea03a0ef6d42d4a7"
+    },
+    "gallery-scroll-last-dark.gif": {
+      "retained_file": "gallery-gallery-scroll-last-dark.gif",
+      "sha256": "4dc4af8a7737ee448a72468d60f3df6f79ee35a5ca8ff9f6046194348dc237f2"
+    },
+    "gallery-inspector-light.gif": {
+      "retained_file": "gallery-gallery-inspector-light.gif",
+      "sha256": "adb9ec3e0cbbd3853b27fe59533e39b3a9ee6b2284d0695ad8e3521600cb98fb"
+    },
+    "gallery-inspector-dark.gif": {
+      "retained_file": "gallery-gallery-inspector-dark.gif",
+      "sha256": "4b3245069e2606bc66292da8ddb17e6e4d08270cfa5f562bf0c02e0281d4f301"
+    }
+  }
 }

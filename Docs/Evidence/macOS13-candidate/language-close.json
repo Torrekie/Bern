@@ -1,0 +1,127 @@
+{
+  "source_sha": "0f5226d0dcdf2c7cbd50db3e1745d58d5d1a6532",
+  "input": "Documented UI command bindings; not physical typing or menu selection.",
+  "commands": [
+    {
+      "arguments": [
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Inputs"
+      ],
+      "status": 0,
+      "stdout": "null\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ui",
+        "edit",
+        "--target",
+        "inputs_page.notes",
+        "--value",
+        "Bern compatibility draft"
+      ],
+      "status": 0,
+      "stdout": "null\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ui",
+        "set-language",
+        "--language",
+        "zh-Hans"
+      ],
+      "status": 0,
+      "stdout": "null\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"名字\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.name\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"备注\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.notes\",\n    \"value\": \"Bern compatibility draft\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"密码\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.password\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"输入框\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Inputs\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"搜索\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "window",
+        "close",
+        "--window",
+        "main#1"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"confirmation\": \"main#1:c1\",\n  \"decisions\": [\n    \"Discard\",\n    \"Cancel\"\n  ],\n  \"draft_revision\": 13,\n  \"message\": \"要放弃备注吗？\",\n  \"outcome\": \"ConfirmationRequired\",\n  \"reason\": null,\n  \"window\": \"main#1\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "window",
+        "confirm-close",
+        "--window",
+        "main#1",
+        "--confirmation",
+        "main#1:c1",
+        "--decision",
+        "Cancel"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"confirmation\": null,\n  \"decisions\": [],\n  \"draft_revision\": 13,\n  \"message\": null,\n  \"outcome\": \"Rejected\",\n  \"reason\": \"cancelled\",\n  \"window\": \"main#1\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"名字\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.name\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"备注\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.notes\",\n    \"value\": \"Bern compatibility draft\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"密码\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.password\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"输入框\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Inputs\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"搜索\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "status": 0,
+      "stdout": "null\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Name\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.name\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Notes\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.notes\",\n    \"value\": \"Bern compatibility draft\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Password\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.password\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Text Fields\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Inputs\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "ui",
+        "edit",
+        "--target",
+        "inputs_page.notes",
+        "--value",
+        ""
+      ],
+      "status": 0,
+      "stdout": "null\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": [
+    "Language change en→zh-Hans→en preserves notes and navigation",
+    "Close confirmation uses current localized text and current draft",
+    "Cancel rejects close with reason cancelled, keeping the same window and draft",
+    "Test-only notes cleared after verification"
+  ],
+  "success": true
+}

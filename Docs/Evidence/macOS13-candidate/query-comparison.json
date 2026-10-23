@@ -1,0 +1,247 @@
+{
+  "scope": "Actual window screenshots only. Detail-card comparison; temporary toolbar styling excluded. Both embedded ICCs converted to sRGB. Ink bounds are half-open and divided by capture scale without resampling. Card bottom located at constant x400 away from ink/corner, by transition through border to page background. The old13 and new13 identifiers are the build labels supplied by root.",
+  "samples": {
+    "A14": {
+      "source": "../macOS14-reference-normal/query-failed-light.png",
+      "sha256": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243",
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "scale": 1,
+      "card_bounds_points": [
+        161,
+        98,
+        900,
+        325
+      ],
+      "card_size_points": [
+        739,
+        227
+      ],
+      "regions": {
+        "icon": {
+          "ink_bounds_points": [
+            512.0,
+            130.0,
+            549.0,
+            164.0
+          ],
+          "ink_y_bands_points": [
+            [
+              130.0,
+              164.0
+            ]
+          ],
+          "background_srgb": [
+            230,
+            230,
+            230
+          ],
+          "modal_ink_srgb": [
+            170,
+            170,
+            170
+          ]
+        },
+        "title": {
+          "ink_bounds_points": [
+            449.0,
+            193.0,
+            611.0,
+            214.0
+          ],
+          "ink_y_bands_points": [
+            [
+              193.0,
+              214.0
+            ]
+          ],
+          "background_srgb": [
+            230,
+            230,
+            230
+          ],
+          "modal_ink_srgb": [
+            115,
+            115,
+            115
+          ]
+        },
+        "description": {
+          "ink_bounds_points": [
+            368.0,
+            233.0,
+            694.0,
+            263.0
+          ],
+          "ink_y_bands_points": [
+            [
+              233.0,
+              247.0
+            ],
+            [
+              250.0,
+              263.0
+            ]
+          ],
+          "background_srgb": [
+            230,
+            230,
+            230
+          ],
+          "modal_ink_srgb": [
+            115,
+            115,
+            115
+          ]
+        },
+        "button": {
+          "ink_bounds_points": [
+            493.0,
+            274.0,
+            568.0,
+            296.0
+          ],
+          "ink_y_bands_points": [
+            [
+              274.0,
+              296.0
+            ]
+          ],
+          "background_srgb": [
+            230,
+            230,
+            230
+          ],
+          "modal_ink_srgb": [
+            255,
+            255,
+            255
+          ]
+        }
+      }
+    },
+    "C13_0f5226d": {
+      "source": "query-failed-light.png",
+      "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+      "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+      "scale": 2,
+      "card_bounds_points": [
+        161,
+        98,
+        900,
+        324.5
+      ],
+      "card_size_points": [
+        739,
+        226.5
+      ],
+      "regions": {
+        "icon": {
+          "ink_bounds_points": [
+            512.0,
+            130.5,
+            549.0,
+            164.0
+          ],
+          "ink_y_bands_points": [
+            [
+              130.5,
+              164.0
+            ]
+          ],
+          "background_srgb": [
+            235,
+            233,
+            234
+          ],
+          "modal_ink_srgb": [
+            174,
+            173,
+            173
+          ]
+        },
+        "title": {
+          "ink_bounds_points": [
+            449.5,
+            193.5,
+            611.0,
+            214.0
+          ],
+          "ink_y_bands_points": [
+            [
+              193.5,
+              214.0
+            ]
+          ],
+          "background_srgb": [
+            235,
+            233,
+            234
+          ],
+          "modal_ink_srgb": [
+            118,
+            117,
+            117
+          ]
+        },
+        "description": {
+          "ink_bounds_points": [
+            367.5,
+            233.0,
+            693.0,
+            262.0
+          ],
+          "ink_y_bands_points": [
+            [
+              233.0,
+              246.0
+            ],
+            [
+              249.5,
+              262.0
+            ]
+          ],
+          "background_srgb": [
+            235,
+            233,
+            234
+          ],
+          "modal_ink_srgb": [
+            118,
+            117,
+            117
+          ]
+        },
+        "button": {
+          "ink_bounds_points": [
+            493.0,
+            274.0,
+            568.0,
+            296.0
+          ],
+          "ink_y_bands_points": [
+            [
+              274.0,
+              296.0
+            ]
+          ],
+          "background_srgb": [
+            235,
+            233,
+            234
+          ],
+          "modal_ink_srgb": [
+            255,
+            255,
+            255
+          ]
+        }
+      }
+    }
+  },
+  "acceptance": {
+    "detail_card_geometry": "All measured new13 ink edges within1pt of14; no further geometry patch recommended. Card bottom differs0.5pt; retry painted bounds exactly equal.",
+    "description": "Two lines and same word break as14; old13 was one line.",
+    "colors": "Semantic foreground colors retained. ICC-corrected page/card backgrounds remain different native OS material colors; no fixed RGB compensation.",
+    "limit": "This verifies the Query failed state. Empty state and Media unavailable require their own actual-window screenshots; shared constants alone are not acceptance."
+  }
+}
