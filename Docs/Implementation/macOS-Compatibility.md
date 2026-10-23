@@ -80,4 +80,6 @@ GitHub 官方现仍列出 arm64 `macos-14`，但将于 **2026-11-02** 退役；2
 
 本机已通过工作流 YAML、内嵌 shell 语法和采集脚本的 Swift 类型检查；这些检查不等于远程运行通过。用户已授权创建公开 [Torrekie/Bern](https://github.com/Torrekie/Bern) fork、发布两个 CI 文件并运行一次。远程默认分支仅比创建时的上游增加这两个采集文件，未发布本地旧实验后端。
 
-首次采集：[39943744831](https://github.com/Torrekie/Bern/actions/runs/39943744831)，采集脚本提交 `69af5582318d33c734b84ba5d13c538efd05ea53`。应用源码仍为固定的 `ffbdbdf`。结果待确认，不进入下一阶段。
+首次采集：[39943744831](https://github.com/Torrekie/Bern/actions/runs/39943744831)，采集脚本提交 `69af5582318d33c734b84ba5d13c538efd05ea53`。应用源码仍为固定的 `ffbdbdf`。
+
+构建 job 已通过：arm64 macOS 26.6.2 / Xcode 26.6 / SDK 26.5 / Swift 6.3.3 / Rust 1.99.0；生成应用的 Info.plist 与 Mach-O 均为最低 macOS 14.0，签名验证通过。这确认了新 SDK 配旧 target 的构建路线，但不证明 13 可运行。macOS 14 运行 job 仍在等待 runner；没有运行截图或等效验收结论，不进入下一阶段。
