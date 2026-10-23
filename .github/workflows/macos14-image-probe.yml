@@ -11,9 +11,9 @@ on:
         type: boolean
         default: false
       builder:
-        description: Official ARM64 build pool with an SDK 26 toolchain
+        description: Official SDK 26 build pool; output remains ARM64 on every host
         type: choice
-        options: [macos-26, macos-15]
+        options: [macos-26, macos-15, macos-26-intel]
         default: macos-26
 
 permissions:
@@ -47,7 +47,7 @@ jobs:
             xcrun swiftc -version
             shasum -a 256 .github/scripts/image-layout-probe.swift
           } > evidence/build/environment.txt 2>&1
-          test "$(uname -m)" = arm64
+          case "$(uname -m)" in arm64|x86_64) ;; *) exit 1 ;; esac
           sdk="$(xcrun --sdk macosx --show-sdk-version)"
           test "${sdk%%.*}" -ge 26
           xcrun swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos13.0 \
@@ -57,6 +57,7 @@ jobs:
             .github/scripts/image-layout-probe.swift -o work/probe/ImageLayoutProbe > evidence/build/compile.log 2>&1
           codesign --force --sign - work/probe/ImageLayoutProbe
           codesign --verify --strict work/probe/ImageLayoutProbe
+          test "$(xcrun lipo -archs work/probe/ImageLayoutProbe)" = arm64
           test "$(xcrun vtool -show-build work/probe/ImageLayoutProbe | awk '/minos/ {print $2; exit}')" = 13.0
           xcrun vtool -show-build work/probe/ImageLayoutProbe > evidence/build/binary.txt
           cp .github/scripts/image-layout-probe.swift work/probe/
