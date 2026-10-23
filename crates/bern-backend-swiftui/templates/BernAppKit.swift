@@ -768,9 +768,10 @@ final class BernDisplayLink: NSObject, @unchecked Sendable {
             screenObservers = names.map { name in
                 NotificationCenter.default.addObserver(forName: name, object: nil, queue: .main) {
                     [weak self, weak view] notification in
+                    let window = notification.object as? NSWindow
                     MainActor.assumeIsolated {
                         guard let view else { return }
-                        if let window = notification.object as? NSWindow, window !== view.window { return }
+                        if let window, window !== view.window { return }
                         self?.update(view: view)
                     }
                 }

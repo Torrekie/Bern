@@ -253,8 +253,24 @@ impl Generator<'_> {
         out.line(format!("return {}", self.expr(&close.when)));
         out.close("},");
         out.open("message: { [weak context] in");
-        out.line("guard let context else { return \"\" }");
-        self.locals(out, &close.message.exprs());
+        let message_exprs = close.message.exprs();
+        let mut message_uses_context = false;
+        for expr in &message_exprs {
+            expr.walk(&mut |expr| {
+                message_uses_context |= matches!(
+                    &expr.kind,
+                    ExprKind::Binding {
+                        binding: Binding::Window { .. } | Binding::Session { .. }
+                    }
+                );
+            });
+        }
+        out.line(if message_uses_context {
+            "guard let context else { return \"\" }"
+        } else {
+            "guard context != nil else { return \"\" }"
+        });
+        self.locals(out, &message_exprs);
         out.line(format!("return {}", self.text(&close.message)));
         out.close("},");
         match &close.save {
