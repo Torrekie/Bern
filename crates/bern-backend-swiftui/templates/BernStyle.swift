@@ -2088,7 +2088,16 @@ extension View {
     /// The content of a scroll view that comes to rest on its items: the
     /// space their frames are measured in.
     func bernSnapContent() -> some View {
-        coordinateSpace(.named(bernSnapSpace))
+        bernNamedCoordinateSpace(bernSnapSpace)
+    }
+
+    @ViewBuilder private func bernNamedCoordinateSpace<Name: Hashable>(_ name: Name) -> some View {
+        #if os(macOS)
+        if #available(macOS 14, *) { coordinateSpace(.named(name)) }
+        else { coordinateSpace(name: name) }
+        #else
+        coordinateSpace(.named(name))
+        #endif
     }
 
     /// On macOS 13 the per-item bernSnapItem/bernScrollItem geometry
@@ -2353,7 +2362,7 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
     private func tracked<Tracked: View>(_ content: Tracked) -> some View {
         content
             .environment(\.bernScrollItems, items)
-            .coordinateSpace(.named(bernScrollSpace))
+            .bernNamedCoordinateSpace(bernScrollSpace)
             .onGeometryChange(for: CGSize.self) { $0.size } action: { size in
                 items.anchor = anchor
                 items.arrival = arrival
@@ -2459,18 +2468,99 @@ private struct BernNudgeEffect: ViewModifier {
     let motion: BernMotion?
     @State private var scale = 1.0
     @BernReducedMotion private var reduce
+    #if os(macOS)
+    @State private var legacyRequest = 0
+    @State private var legacyProgress = 0.0
+    @State private var legacyExpanding = false
+    @State private var legacyMounted = false
+    @State private var legacyReturnMotion: BernMotion?
+    #endif
 
     func body(content: Content) -> some View {
-        content
-            .scaleEffect(scale)
+        scaled(content)
             .bernOnChange(of: count) { old, new in
                 guard new > old, let motion, !(reduce || bernForcedReduceMotion) else { return }
+                #if os(macOS)
+                if #available(macOS 14, *) {
+                    withAnimation(.easeOut(duration: 0.08)) { scale = 1.06 } completion: {
+                        withAnimation(motion.animation) { scale = 1 }
+                    }
+                } else {
+                    legacyRequest += 1
+                    legacyExpanding = true
+                    legacyReturnMotion = motion
+                    withAnimation(.easeOut(duration: 0.08)) {
+                        scale = 1.06
+                        legacyProgress = Double(legacyRequest)
+                    }
+                }
+                #else
                 withAnimation(.easeOut(duration: 0.08)) { scale = 1.06 } completion: {
                     withAnimation(motion.animation) { scale = 1 }
                 }
+                #endif
             }
     }
+
+    @ViewBuilder private func scaled(_ content: Content) -> some View {
+        #if os(macOS)
+        if #available(macOS 14, *) { content.scaleEffect(scale) }
+        else { legacyScaled(content) }
+        #else
+        content.scaleEffect(scale)
+        #endif
+    }
+
+    #if os(macOS)
+    private func legacyScaled(_ content: Content) -> some View {
+        let request = legacyRequest
+        return content.modifier(BernLegacyNudgeScale(
+            scale: scale, progress: legacyProgress, targetProgress: Double(request), completion: {
+                guard legacyMounted, legacyExpanding, legacyRequest == request, let motion = legacyReturnMotion else { return }
+                legacyExpanding = false
+                withAnimation(motion.animation) { scale = 1 }
+            }))
+            .onAppear { legacyMounted = true }
+            .onDisappear {
+                legacyMounted = false
+                legacyExpanding = false
+                legacyReturnMotion = nil
+                legacyRequest += 1
+                var transaction = Transaction(animation: nil)
+                transaction.disablesAnimations = true
+                withTransaction(transaction) {
+                    scale = 1
+                    legacyProgress = Double(legacyRequest)
+                }
+            }
+    }
+    #endif
 }
+
+#if os(macOS)
+/// macOS 13 has no SwiftUI transaction completion callback. Observe the
+/// presented scale instead. The per-request progress also animates so a repeat
+/// at the same peak still has a distinct completion, without a wall-clock timer.
+private struct BernLegacyNudgeScale: AnimatableModifier {
+    nonisolated var scale: Double
+    nonisolated var progress: Double
+    let targetProgress: Double
+    let completion: @MainActor @Sendable () -> Void
+
+    nonisolated var animatableData: AnimatablePair<Double, Double> {
+        get { AnimatablePair(scale, progress) }
+        set {
+            scale = newValue.first
+            progress = newValue.second
+            guard scale == 1.06, progress == targetProgress else { return }
+            let completion = completion
+            DispatchQueue.main.async { completion() }
+        }
+    }
+
+    func body(content: Content) -> some View { content.scaleEffect(scale) }
+}
+#endif
 
 private struct BernPinch: ViewModifier {
     let value: Binding<Double>
@@ -3484,7 +3574,7 @@ struct BernSearchPalette<Results: View>: View {
                 Text(verbatim: prompt).font(.system(size: 13)).lineLimit(1)
                 Spacer(minLength: 4)
                 #if !os(tvOS)
-                if let shortcut { Text(shortcut.key == "k" ? "⌘K" : "").font(.system(size: 11.5, weight: .medium)) }
+                if let shortcut { Text(shortcut.key.character == "k" ? "⌘K" : "").font(.system(size: 11.5, weight: .medium)) }
                 #endif
             }
             .foregroundStyle(.secondary)
