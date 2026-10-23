@@ -5,6 +5,11 @@ run-name: image layout calibration
 # Build on26 with a new SDK; the14 job only runs the exact packaged binary.
 on:
   workflow_dispatch:
+    inputs:
+      build_only:
+        description: Build and retain the probe while macOS 14 runtime is unavailable
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -66,6 +71,7 @@ jobs:
 
   measure:
     needs: build
+    if: ${{ !inputs.build_only }}
     runs-on: macos-14
     timeout-minutes: 10
     steps:
