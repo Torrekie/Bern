@@ -1,0 +1,116 @@
+name: macOS 14 image layout calibration
+run-name: image layout calibration
+
+# Manual only. Dispatch after the macos-14 brownout window has ended.
+# Build on26 with a new SDK; the14 job only runs the exact packaged binary.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: macos14-image-probe-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 10
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Build the standalone probe for macOS 13 and later
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/probe/images evidence/build
+          {
+            printf 'harness_sha=%s\n' "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+            shasum -a 256 .github/scripts/image-layout-probe.swift
+          } > evidence/build/environment.txt 2>&1
+          test "$(uname -m)" = arm64
+          sdk="$(xcrun --sdk macosx --show-sdk-version)"
+          test "${sdk%%.*}" -ge 26
+          xcrun swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos13.0 \
+            -module-cache-path work/module-cache \
+            -framework SwiftUI -framework AppKit -framework ImageIO -framework ColorSync \
+            -framework CoreText -framework CryptoKit \
+            .github/scripts/image-layout-probe.swift -o work/probe/ImageLayoutProbe > evidence/build/compile.log 2>&1
+          codesign --force --sign - work/probe/ImageLayoutProbe
+          codesign --verify --strict work/probe/ImageLayoutProbe
+          test "$(xcrun vtool -show-build work/probe/ImageLayoutProbe | awk '/minos/ {print $2; exit}')" = 13.0
+          xcrun vtool -show-build work/probe/ImageLayoutProbe > evidence/build/binary.txt
+          cp .github/scripts/image-layout-probe.swift work/probe/
+          cp examples/showcase/images/{landscape.jpg,bern.png,hdr-gainmap.jpg,hdr-pq.png} work/probe/images/
+          (cd work/probe && shasum -a 256 ImageLayoutProbe image-layout-probe.swift images/* > SHA256SUMS)
+          tar -czf evidence/build/image-layout-probe.tar.gz -C work/probe .
+          (cd evidence/build && shasum -a 256 image-layout-probe.tar.gz > image-layout-probe.tar.gz.sha256)
+          rm -rf work/module-cache
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-image-probe-build
+          path: evidence/build/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+
+  measure:
+    needs: build
+    runs-on: macos-14
+    timeout-minutes: 10
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos14-image-probe-build
+          path: build
+      - name: Verify and run without rebuilding on macOS 14
+        env:
+          BERN_PROBE_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p probe evidence/runtime
+          {
+            printf 'harness_sha=%s\n' "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+          } > evidence/runtime/environment.txt 2>&1
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+          (cd build && shasum -a 256 -c image-layout-probe.tar.gz.sha256)
+          tar -xzf build/image-layout-probe.tar.gz -C probe
+          (cd probe && shasum -a 256 -c SHA256SUMS)
+          codesign --verify --strict probe/ImageLayoutProbe
+          cp build/environment.txt evidence/runtime/build-environment.txt
+          cp build/binary.txt evidence/runtime/build-binary.txt
+          cp build/image-layout-probe.tar.gz.sha256 evidence/runtime/
+          probe/ImageLayoutProbe "$PWD/probe/images" "$PWD/evidence/runtime" --show-window --require-windowserver > evidence/runtime/runtime.log 2>&1
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('evidence/runtime/report.json').read_text())
+          assert d['success'] is True, d.get('error')
+          assert len(d['cases']) == 9, len(d['cases'])
+          assert all(c['three_image_cards_pixel_detection_complete'] for c in d['cases'])
+          assert all(len(c['phases']) == 3 for c in d['cases'])
+          assert len(list(Path('evidence/runtime').glob('*.png'))) == 27
+          PY
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-image-layout-evidence
+          path: evidence/runtime/
+          if-no-files-found: error
+          retention-days: 3
