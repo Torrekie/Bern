@@ -87,28 +87,52 @@ struct BernCanvasState<Content: View>: View {
 /// SwiftUI-owned storage, without recreating or identifying the content.
 @MainActor
 private struct BernLegacyOnChange<Value: Equatable>: ViewModifier {
+    @MainActor
+    private final class ActionBox {
+        var value: Value
+        var initial: Bool
+        var action: @MainActor (Value, Value) -> Void
+
+        init(value: Value, initial: Bool, action: @escaping @MainActor (Value, Value) -> Void) {
+            self.value = value
+            self.initial = initial
+            self.action = action
+        }
+    }
+
     let value: Value
     let initial: Bool
     let action: @MainActor (Value, Value) -> Void
     @State private var previous: Value
+    @State private var latest: ActionBox
 
     init(value: Value, initial: Bool, action: @escaping @MainActor (Value, Value) -> Void) {
         self.value = value
         self.initial = initial
         self.action = action
         _previous = State(initialValue: value)
+        _latest = State(initialValue: ActionBox(value: value, initial: initial, action: action))
     }
 
     func body(content: Content) -> some View {
-        content
+        // The legacy callback retains the old view's closure. Its stable box
+        // must therefore be refreshed while evaluating the new view, before
+        // SwiftUI delivers that callback. Updating it does not publish a change
+        // or replace the content's identity.
+        let latest = latest
+        latest.value = value
+        latest.initial = initial
+        latest.action = action
+        return content
             .onAppear {
-                previous = value
-                if initial { action(value, value) }
+                let current = latest.value
+                previous = current
+                if latest.initial { latest.action(current, current) }
             }
             .onChange(of: value) { next in
                 let old = previous
                 previous = next
-                action(old, next)
+                latest.action(old, next)
             }
     }
 }

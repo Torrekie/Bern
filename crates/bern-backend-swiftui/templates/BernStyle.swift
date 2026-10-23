@@ -4655,6 +4655,7 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
         weak var observer: Observer?
         override func hitTest(_ point: NSPoint) -> NSView? { nil }
         override func viewDidMoveToWindow() { super.viewDidMoveToWindow(); observer?.scheduleRefresh() }
+        override func viewDidMoveToSuperview() { super.viewDidMoveToSuperview(); observer?.scheduleRefresh() }
         override func layout() { super.layout(); observer?.scheduleRefresh() }
     }
 
@@ -4669,7 +4670,10 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
         private var dismantled = false
         private var live = false
         private var baseInsets: NSEdgeInsets?
+        private var baseSafeAreaInsets: NSEdgeInsets?
         private var baseAutomaticInsets = true
+        private weak var insetWindow: NSWindow?
+        private var windowLayoutObservation: NSKeyValueObservation?
         private var initiallyPositioned = false
         private var layoutRetries = 0
         init(_ configuration: BernLegacyScrollProbe) { self.configuration = configuration }
@@ -4707,19 +4711,28 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             let found = locate()
             if found !== scroll { stop(); scroll = found; install() }
             guard let scroll else { return }
+            observeWindow(configuration.margin == nil ? nil : scroll.window)
             if let margin = configuration.margin {
                 if baseInsets == nil {
+                    scroll.layoutSubtreeIfNeeded()
                     baseInsets = scroll.contentInsets
+                    baseSafeAreaInsets = scroll.safeAreaInsets
                     baseAutomaticInsets = scroll.automaticallyAdjustsContentInsets
                 }
-                var insets = baseInsets ?? NSEdgeInsets()
+                var insets = unmodifiedInsets(for: scroll) ?? NSEdgeInsets()
                 if configuration.axis == .horizontal { insets.left += margin; insets.right += margin }
                 else { insets.top += margin; insets.bottom += margin }
-                scroll.automaticallyAdjustsContentInsets = false
+                // Manual margins and AppKit's automatic inset writer would
+                // overwrite each other. Keep the original non-safe-area
+                // contribution, but follow the current safe-area delta above.
+                // Only changing actual inset values prevents layout feedback.
+                if scroll.automaticallyAdjustsContentInsets { scroll.automaticallyAdjustsContentInsets = false }
                 let old = scroll.contentInsets
                 if old.top != insets.top || old.left != insets.left || old.bottom != insets.bottom || old.right != insets.right {
                     scroll.contentInsets = insets
                 }
+            } else if baseInsets != nil {
+                restoreInsets(for: scroll)
             }
             if let anchor = configuration.initialAnchor, !initiallyPositioned {
                 let clip = scroll.contentView
@@ -4738,10 +4751,41 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             }
             reportPhase()
         }
+        private func observeWindow(_ window: NSWindow?) {
+            guard window !== insetWindow else { return }
+            windowLayoutObservation = nil
+            insetWindow = window
+            // contentLayoutRect is publicly KVO-compliant and changes when
+            // the titlebar/toolbar obscures a different portion of the content.
+            windowLayoutObservation = window?.observe(\.contentLayoutRect, options: [.new]) { [weak self] _, _ in
+                guard let self else { return }
+                DispatchQueue.main.async { self.scheduleRefresh() }
+            }
+        }
+        private func unmodifiedInsets(for scroll: NSScrollView) -> NSEdgeInsets? {
+            guard var insets = baseInsets else { return nil }
+            if baseAutomaticInsets, let original = baseSafeAreaInsets {
+                let current = scroll.safeAreaInsets
+                insets.top += current.top - original.top
+                insets.left += current.left - original.left
+                insets.bottom += current.bottom - original.bottom
+                insets.right += current.right - original.right
+            }
+            return insets
+        }
+        private func restoreInsets(for scroll: NSScrollView) {
+            if let insets = unmodifiedInsets(for: scroll) { scroll.contentInsets = insets }
+            if scroll.automaticallyAdjustsContentInsets != baseAutomaticInsets {
+                scroll.automaticallyAdjustsContentInsets = baseAutomaticInsets
+            }
+            baseInsets = nil
+            baseSafeAreaInsets = nil
+        }
         private func install() {
             guard let scroll else { return }
             scroll.contentView.postsBoundsChangedNotifications = true
-            for name in [NSView.boundsDidChangeNotification, NSScrollView.willStartLiveScrollNotification,
+            scroll.postsFrameChangedNotifications = true
+            for name in [NSView.boundsDidChangeNotification, NSView.frameDidChangeNotification, NSScrollView.willStartLiveScrollNotification,
                          NSScrollView.didEndLiveScrollNotification] {
                 let object: AnyObject = name == NSView.boundsDidChangeNotification ? scroll.contentView : scroll
                 observations.append(NotificationCenter.default.addObserver(forName: name, object: object, queue: .main) { [weak self] note in
@@ -4756,7 +4800,7 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
                             self.scheduleSnap()
                         } else {
                             self.scheduleRefresh()
-                            if !self.live { self.scheduleSnap() }
+                            if note.name == NSView.boundsDidChangeNotification, !self.live { self.scheduleSnap() }
                         }
                     }
                 })
@@ -4830,11 +4874,15 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             for token in observations { NotificationCenter.default.removeObserver(token) }
             observations.removeAll()
             if let monitor { NSEvent.removeMonitor(monitor) }; monitor = nil
-            if let scroll, let insets = baseInsets {
-                scroll.contentInsets = insets
-                scroll.automaticallyAdjustsContentInsets = baseAutomaticInsets
-            }
+            windowLayoutObservation = nil
+            insetWindow = nil
+            if let scroll, baseInsets != nil { restoreInsets(for: scroll) }
             baseInsets = nil
+            baseSafeAreaInsets = nil
+            baseAutomaticInsets = true
+            live = false
+            initiallyPositioned = false
+            layoutRetries = 0
             scroll = nil
         }
     }
@@ -4886,15 +4934,7 @@ extension View {
             HSplitView {
                 self.frame(maxWidth: .infinity, maxHeight: .infinity)
                 if isPresented.wrappedValue {
-                    VStack(spacing: 0) {
-                        HStack {
-                            Spacer()
-                            Button { isPresented.wrappedValue = false } label: { Image(systemName: "xmark") }
-                                .buttonStyle(.plain)
-                                .accessibilityLabel(Text(verbatim: BernText.string("bern.window.close")))
-                        }.padding(8)
-                        content()
-                    }
+                    content()
                     .frame(minWidth: (width ?? 300) * 0.8, idealWidth: width ?? 300, maxWidth: (width ?? 300) * 1.5,
                            maxHeight: .infinity)
                 }
