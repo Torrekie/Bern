@@ -4878,19 +4878,19 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             for name in [NSView.boundsDidChangeNotification, NSView.frameDidChangeNotification, NSScrollView.willStartLiveScrollNotification,
                          NSScrollView.didEndLiveScrollNotification] {
                 let object: AnyObject = name == NSView.boundsDidChangeNotification ? scroll.contentView : scroll
-                observations.append(NotificationCenter.default.addObserver(forName: name, object: object, queue: .main) { [weak self] note in
+                observations.append(NotificationCenter.default.addObserver(forName: name, object: object, queue: .main) { [weak self] _ in
                     MainActor.assumeIsolated {
                         guard let self else { return }
-                        if note.name == NSScrollView.willStartLiveScrollNotification {
+                        if name == NSScrollView.willStartLiveScrollNotification {
                             self.live = true
                             self.pending?.cancel()
                             self.configuration.userScroll?()
-                        } else if note.name == NSScrollView.didEndLiveScrollNotification {
+                        } else if name == NSScrollView.didEndLiveScrollNotification {
                             self.live = false
                             self.scheduleSnap()
                         } else {
                             self.scheduleRefresh()
-                            if note.name == NSView.boundsDidChangeNotification, !self.live { self.scheduleSnap() }
+                            if name == NSView.boundsDidChangeNotification, !self.live { self.scheduleSnap() }
                         }
                     }
                 })
