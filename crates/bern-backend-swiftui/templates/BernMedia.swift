@@ -752,14 +752,20 @@ private struct BernMediaUnavailable: View {
     @ViewBuilder var body: some View {
         #if os(macOS)
         if #available(macOS 14, *) { native } else {
-            VStack(spacing: 12) {
-                Image(systemName: systemImage)
-                    .font(.system(size: 40, weight: .regular)).foregroundStyle(.tertiary)
-                    .accessibilityHidden(true)
-                Text(verbatim: title).font(.largeTitle.weight(.bold)).foregroundStyle(.secondary).multilineTextAlignment(.center)
-                if let message { Text(verbatim: message).foregroundStyle(.secondary).multilineTextAlignment(.center) }
+            VStack(spacing: 11) {
+                VStack(spacing: 22) {
+                    Image(systemName: systemImage)
+                        .font(.system(size: 36, weight: .regular)).foregroundStyle(.tertiary)
+                        .accessibilityHidden(true)
+                    Text(verbatim: title).font(.largeTitle.weight(.bold)).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                }
+                if let message {
+                    Text(verbatim: message).font(.body).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        .frame(maxWidth: 340).fixedSize(horizontal: false, vertical: true)
+                }
             }
-            .padding(24)
+            .padding(.bottom, 12)
+            .padding(20)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .accessibilityElement(children: .contain)
         }

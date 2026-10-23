@@ -1270,6 +1270,128 @@ private struct BernLegacyScrubberKeys: NSViewRepresentable {
     }
 }
 
+// MARK: - Circular icon buttons
+
+/// SwiftUI's circular border shape starts at macOS 14. AppKit already has
+/// that system bezel on 13: its regular alignment rect is 20 pt, with the
+/// native drawing/focus margins outside it. Bars keep their SwiftUI style.
+@MainActor
+struct BernCircularIconButton<Fallback: View>: View {
+    let systemImage: String
+    let label: String
+    let target: String
+    let shortcut: KeyboardShortcut?
+    let fontSize: CGFloat?
+    let destructive: Bool
+    let defaultFocus: Bool
+    let action: @MainActor () -> Void
+    @ViewBuilder let fallback: Fallback
+    @Environment(\.bernOnBar) private var onBar
+    @Environment(\.bernControlGroupHeight) private var groupHeight
+
+    @ViewBuilder var body: some View {
+        if #available(macOS 14.0, *) {
+            fallback
+        } else if onBar || groupHeight != nil {
+            fallback
+        } else {
+            BernCircularIconControl(
+                systemImage: systemImage, label: label, target: target, shortcut: shortcut,
+                fontSize: fontSize, destructive: destructive, defaultFocus: defaultFocus, action: action)
+                .fixedSize()
+        }
+    }
+}
+
+@MainActor
+private struct BernCircularIconControl: NSViewRepresentable {
+    let systemImage: String
+    let label: String
+    let target: String
+    let shortcut: KeyboardShortcut?
+    let fontSize: CGFloat?
+    let destructive: Bool
+    let defaultFocus: Bool
+    let action: @MainActor () -> Void
+    @Environment(\.isEnabled) private var enabled
+    @Environment(\.controlSize) private var controlSize
+    @Environment(\.bernItemKeys) private var keys
+
+    func makeCoordinator() -> Coordinator { Coordinator() }
+
+    func makeNSView(context: Context) -> Button {
+        let button = Button(frame: .zero)
+        button.title = ""
+        button.setButtonType(.momentaryPushIn)
+        button.bezelStyle = .circular
+        button.imagePosition = .imageOnly
+        button.target = context.coordinator
+        button.action = #selector(Coordinator.activate(_:))
+        return button
+    }
+
+    func updateNSView(_ button: Button, context: Context) {
+        context.coordinator.action = action
+        switch controlSize {
+        case .mini: button.controlSize = .mini
+        case .small: button.controlSize = .small
+        case .large: button.controlSize = .large
+        default: button.controlSize = .regular
+        }
+        button.font = NSFont.systemFont(ofSize: fontSize ?? NSFont.systemFontSize(for: button.controlSize))
+        button.image = NSImage(systemSymbolName: systemImage, accessibilityDescription: label)
+        button.hasDestructiveAction = destructive
+        button.isEnabled = enabled
+        button.toolTip = label
+        button.setAccessibilityLabel(label)
+        button.setAccessibilityIdentifier(target + keys)
+        button.keyEquivalent = shortcut.map { String($0.key.character) } ?? ""
+        var modifiers: NSEvent.ModifierFlags = []
+        if let shortcut {
+            if shortcut.modifiers.contains(.command) { modifiers.insert(.command) }
+            if shortcut.modifiers.contains(.control) { modifiers.insert(.control) }
+            if shortcut.modifiers.contains(.option) { modifiers.insert(.option) }
+            if shortcut.modifiers.contains(.shift) { modifiers.insert(.shift) }
+        }
+        button.keyEquivalentModifierMask = modifiers
+        button.defaultFocus = defaultFocus
+        button.requestDefaultFocus()
+    }
+
+    static func dismantleNSView(_ button: Button, coordinator: Coordinator) {
+        button.target = nil
+        coordinator.action = nil
+    }
+
+    @MainActor
+    final class Coordinator: NSObject {
+        var action: (@MainActor () -> Void)?
+        @objc func activate(_ sender: NSButton) {
+            guard sender.isEnabled else { return }
+            action?()
+        }
+    }
+
+    final class Button: NSButton {
+        var defaultFocus = false
+        private var requestedFocus = false
+
+        override func viewDidMoveToWindow() {
+            super.viewDidMoveToWindow()
+            requestDefaultFocus()
+        }
+
+        func requestDefaultFocus() {
+            guard defaultFocus, !requestedFocus, isEnabled, let window else { return }
+            requestedFocus = true
+            DispatchQueue.main.async { [weak self, weak window] in
+                guard let self, let window, self.window === window, self.isEnabled else { return }
+                window.makeFirstResponder(self)
+            }
+        }
+    }
+}
+
 // MARK: - Tab accessory
 
 extension View {

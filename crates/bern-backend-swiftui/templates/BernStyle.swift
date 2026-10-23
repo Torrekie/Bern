@@ -4915,8 +4915,17 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             guard let callback = configuration.phase, let view, let scroll else { return }
             let clip = scroll.contentView
             let frame = view.convert(view.bounds, to: clip)
-            let viewport = clip.bounds
-            let horizontal = (scroll.documentView?.bounds.width ?? 0) > viewport.width + 1
+            let horizontal = (scroll.documentView?.bounds.width ?? 0) > clip.bounds.width + 1
+            // Scroll transitions use the content region, while AppKit's clip
+            // bounds also include the margins through which neighbors peek.
+            // The macOS 14 WindowServer calibration with a 709pt viewport and
+            // 240pt item confirms this for 0/100/234.5pt content margins.
+            let insets = scroll.contentInsets
+            var viewport = clip.bounds
+            viewport.origin.x += insets.left
+            viewport.origin.y += clip.isFlipped ? insets.top : insets.bottom
+            viewport.size.width = max(0, viewport.width - insets.left - insets.right)
+            viewport.size.height = max(0, viewport.height - insets.top - insets.bottom)
             let distance = horizontal ? frame.midX - viewport.midX : frame.midY - viewport.midY
             let extent = horizontal ? (frame.width + viewport.width) / 2 : (frame.height + viewport.height) / 2
             callback(Double(max(-1, min(1, distance / max(1, extent)))))
@@ -4978,13 +4987,33 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
     }
 }
 
+/// UnitCurve.easeInOut is unavailable on macOS 13. Its documented Bezier
+/// control points are (0.42, 0) and (0.58, 1). Solve x(t), then evaluate y(t),
+/// rather than treating the parameter t itself as elapsed progress.
+/// https://developer.apple.com/documentation/swiftui/unitcurve/easeinout
+private func bernLegacyScrollEaseInOut(_ progress: Double) -> Double {
+    let progress = max(0, min(1, progress))
+    guard progress > 0, progress < 1 else { return progress }
+    var lower = 0.0
+    var upper = 1.0
+    for _ in 0..<24 {
+        let t = (lower + upper) / 2
+        let x = t * (1.26 + t * (-0.78 + 0.52 * t))
+        if x < progress { lower = t } else { upper = t }
+    }
+    let t = (lower + upper) / 2
+    return t * t * (3 - 2 * t)
+}
+
 private struct BernLegacyScrollEffect: ViewModifier {
     let scale: Double
     let opacity: Double
     let anchor: UnitPoint
     @State private var phase = 0.0
     func body(content: Content) -> some View {
-        let near = 1 - min(abs(phase), 1)
+        // Interactive transitions ease from hidden to the centered threshold;
+        // their default UnitCurve is easeInOut, not a linear distance mapping.
+        let near = bernLegacyScrollEaseInOut(1 - min(abs(phase), 1))
         content
             .scaleEffect(1 + (scale - 1) * near, anchor: anchor)
             .opacity(opacity + (1 - opacity) * near)

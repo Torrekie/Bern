@@ -73,6 +73,27 @@ impl Generator<'_> {
             Some("cancel") => "role: .cancel, ",
             _ => "",
         };
+        let style = self.style_of(element);
+        let circular_bridge = self.platform == Platform::Macos
+            && element.kind == "IconButton"
+            && element.icon("icon").is_some()
+            && !ctx.toolbar
+            && element.prop("height").is_none()
+            && element.prop("width").is_none()
+            && element.keyword("role") != Some("cancel")
+            && !matches!(element.keyword("prominence"), Some("plain" | "prominent"))
+            && !style.as_ref().is_some_and(|style| style.draws_look());
+        if circular_bridge {
+            out.open(format!(
+                "BernCircularIconButton(systemImage: {}, label: {label}, target: {}, shortcut: {}, fontSize: {}, destructive: {}, defaultFocus: {}, action: {{ {action} }}) {{",
+                string(element.icon("icon").expect("icon")),
+                self.target(element, ctx),
+                self.shortcut(element).unwrap_or_else(|| "nil".into()),
+                element.number("font_size").map(double).unwrap_or_else(|| "nil".into()),
+                element.keyword("role") == Some("destructive"),
+                element.keyword("default_focus") == Some("true")
+            ));
+        }
         out.open(format!("SwiftUI.Button({role}action: {{"));
         out.line(&action);
         out.close("}) {");
@@ -85,7 +106,6 @@ impl Generator<'_> {
                 out.line(".frame(maxWidth: .infinity)");
             }
             out.close("}");
-            let style = self.style_of(element);
             match &style {
                 // A capsule is the platform's button around the content,
                 // as it is around a label.
@@ -169,7 +189,9 @@ impl Generator<'_> {
             out.line(".frame(maxWidth: .infinity)");
         }
         out.close("}");
-        let style = self.style_of(element);
+        if circular_bridge {
+            out.close("}");
+        }
         match &style {
             // The style draws the button; its transforms follow the
             // button's own pressed state.
