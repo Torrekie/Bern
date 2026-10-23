@@ -1,5 +1,5 @@
-// A bounded external observer of the pristine upstream application. No source
-// injection, TCC changes, offscreen view rendering or screenshot fallback.
+// A bounded external observer of the supplied, separately built application.
+// No source injection, TCC changes, offscreen rendering or screenshot fallback.
 import AppKit
 import ApplicationServices
 import CoreGraphics
@@ -18,9 +18,11 @@ let product = appURL.deletingPathExtension().lastPathComponent
 let cliURL = URL(fileURLWithPath: CommandLine.arguments[2])
 let output = URL(fileURLWithPath: CommandLine.arguments[3], isDirectory: true)
 try files.createDirectory(at: output, withIntermediateDirectories: true)
-let deadline = Date().addingTimeInterval(100)
+let timeLimit: TimeInterval = 160
+let deadline = Date().addingTimeInterval(timeLimit)
 var report: [String: Any] = [
-    "source_sha": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+    "source_sha": ProcessInfo.processInfo.environment["BERN_SOURCE_SHA"] ?? "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+    "application": product,
     "harness_sha": ProcessInfo.processInfo.environment["GITHUB_SHA"] ?? "unknown",
     "os": ProcessInfo.processInfo.operatingSystemVersionString,
     "capture": "CGWindowListCreateImage / WindowServer",
@@ -28,9 +30,11 @@ var report: [String: Any] = [
     "requested_outer_size_points": ["width": 920, "height": 668],
     "geometry_scope": "Outer frame normalized through window.resize; CLI does not expose the content rect, and PNGs include system window chrome",
     "commands": [[String: Any]](), "windows": [[String: Any]](),
+    "checks": [[String: Any]](),
 ]
 var commands = [[String: Any]]()
 var windows = [[String: Any]]()
+var checks = [[String: Any]]()
 var environment = ProcessInfo.processInfo.environment
 var sequence = 0
 report["accessibility_trusted"] = AXIsProcessTrusted()
@@ -47,14 +51,14 @@ report["system_preferences"] = [
 ]
 
 func save() throws {
-    report["commands"] = commands; report["windows"] = windows
+    report["commands"] = commands; report["windows"] = windows; report["checks"] = checks
     let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
     try data.write(to: output.appendingPathComponent("result.json"), options: .atomic)
 }
 func pause(_ seconds: TimeInterval) throws {
     let end = Date().addingTimeInterval(seconds)
     while Date() < end {
-        guard Date() < deadline else { throw Failure(description: "Capture exceeded its 100 second limit") }
+        guard Date() < deadline else { throw Failure(description: "Capture exceeded its \(Int(timeLimit)) second limit") }
         RunLoop.current.run(until: Date().addingTimeInterval(0.025))
         Thread.sleep(forTimeInterval: 0.01)
     }
@@ -110,6 +114,60 @@ func control(_ rows: [[String: Any]], suffix: String, role: String) throws -> [S
         throw Failure(description: "Expected one enabled \(role) ending in \(suffix); found \(matches.count)")
     }
     return matches[0]
+}
+func waitForValue(_ session: String, suffix: String, role: String, description: String,
+                  matching: (String) -> Bool) throws -> [String: Any] {
+    let end = min(Date().addingTimeInterval(8), deadline)
+    var last = "not mounted"
+    repeat {
+        let rows = try inspect(session)
+        let matches = rows.filter { ($0["target"] as? String)?.hasSuffix(suffix) == true && $0["role"] as? String == role }
+        guard matches.count <= 1 else { throw Failure(description: "Ambiguous \(role) ending in \(suffix)") }
+        if let row = matches.first {
+            last = row["value"] as? String ?? "nil"
+            if row["enabled"] as? Bool == true, matching(last) {
+                checks.append(["check": description, "target": row["target"] ?? "", "observed_value": last,
+                               "appearance": environment["BERN_APPEARANCE"] ?? "unknown", "passed": true])
+                try save()
+                return row
+            }
+        }
+        try pause(0.12)
+    } while Date() < end
+    throw Failure(description: "Timed out waiting for \(description): \(last)")
+}
+func queryVersion(_ row: [String: Any]) throws -> UInt64 {
+    let words = (row["value"] as? String ?? "").split(separator: " ")
+    guard words.count >= 2, words[1].first == "v", let version = UInt64(words[1].dropFirst()) else {
+        throw Failure(description: "Query summary lacks its documented request version: \(row)")
+    }
+    return version
+}
+func selectPage(_ page: String, session: String) throws {
+    let sidebar = try control(inspect(session), suffix: ".pages", role: "sidebar")
+    _ = try cli(["ui", "select", "--target", sidebar["target"] as! String, "--option", page], session: session)
+    _ = try waitForValue(session, suffix: ".pages", role: "sidebar", description: "Selected \(page)") { $0 == page }
+}
+func editSearch(_ value: String, session: String) throws {
+    let search = try control(inspect(session), suffix: ".sidebar_search", role: "search")
+    _ = try cli(["ui", "edit", "--target", search["target"] as! String, "--value", value], session: session)
+    _ = try waitForValue(session, suffix: ".sidebar_search", role: "search", description: "Search draft committed") { $0 == value }
+}
+func imageInputs() throws {
+    var assets = [[String: Any]]()
+    for name in ["images/landscape.jpg", "images/bern.png", "images/hdr-gainmap.jpg", "images/hdr-pq.png"] {
+        let url = appURL.appendingPathComponent("Contents/Resources").appendingPathComponent(name)
+        guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
+              let image = CGImageSourceCreateImageAtIndex(source, 0, nil), image.width > 0, image.height > 0 else {
+            throw Failure(description: "Bundled image cannot be decoded: \(name)")
+        }
+        assets.append(["resource": name, "pixel_width": image.width, "pixel_height": image.height,
+                       "color_space": image.colorSpace?.name as String? ?? "unknown"])
+    }
+    report["image_assets"] = assets
+    report["image_verification_scope"] = "Inputs decode with ImageIO; the Layout PNG requires visual comparison for image presence, fit, clipping and color. No HDR luminance or EDR equivalence is asserted."
+    checks.append(["check": "Four bundled image inputs decode", "passed": true])
+    try save()
 }
 func visibleWindow(_ pid: pid_t) -> [String: Any]? {
     let rows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
@@ -204,6 +262,73 @@ func motion(_ name: String, process: Process, change: () throws -> Void) throws 
     try save()
 }
 
+func showcaseSlices(process: Process, session: String) throws {
+    report["showcase_extra_slices"] = "Light appearance only; main window at 920 x 668 outer points. Screenshots are evidence for comparison, not an automatic visual-equivalence verdict."
+
+    // Editing before mounting Library guarantees that the first answer has
+    // no previous rows. Editing an already-ready Query deliberately retains
+    // those rows with an error banner instead of the full unavailable view.
+    try selectPage("Text", session: session)
+    try editSearch("!", session: session)
+    try selectPage("Library", session: session)
+    let failed = try waitForValue(session, suffix: ".library_results", role: "query",
+                                 description: "Initial query failed without previous results") {
+        $0.hasPrefix("failed v") && $0.contains(" invalid_search:")
+            && $0.range(of: #"\([0-9]+\)$"#, options: .regularExpression) == nil
+    }
+    try pause(0.3)
+    try capture("query-failed-light", process: process, session: session)
+    let failedVersion = try queryVersion(failed)
+    // The documented Query control invokes the same retry operation as its
+    // visible Retry button; this does not claim a mouse-click acceptance test.
+    _ = try cli(["ui", "activate", "--target", failed["target"] as! String], session: session)
+    _ = try waitForValue(session, suffix: ".library_results", role: "query", description: "Retry issued a new failing request") {
+        guard $0.hasPrefix("failed v"), $0.contains(" invalid_search:"),
+              let version = try? queryVersion(["value": $0]) else { return false }
+        return version > failedVersion
+    }
+
+    try editSearch("zzzzzz", session: session)
+    _ = try waitForValue(session, suffix: ".library_results", role: "query", description: "Query returned zero results") {
+        $0.hasPrefix("ready v") && $0.hasSuffix(" (0)")
+    }
+    try pause(0.3)
+    try capture("query-empty-light", process: process, session: session)
+    try editSearch("", session: session)
+    _ = try waitForValue(session, suffix: ".library_results", role: "query", description: "Query recovered with results") {
+        $0.hasPrefix("ready v") && $0.range(of: #" \([1-9][0-9]*\)$"#, options: .regularExpression) != nil
+    }
+    let links = try inspect(session).filter { $0["role"] as? String == "link" && ($0["target"] as? String)?.contains(".item_link") == true }
+    guard !links.isEmpty else { throw Failure(description: "Recovered query has no mounted library links") }
+    try pause(0.3)
+    try capture("query-recovered-light", process: process, session: session)
+
+    try selectPage("Layout", session: session)
+    try imageInputs()
+    try pause(0.8)
+    try capture("images-layout-light", process: process, session: session)
+
+    try selectPage("Media", session: session)
+    let playable: (String) -> Bool = { value in
+        ["Ready ", "Playing ", "Paused ", "Buffering "].contains { value.hasPrefix($0) }
+    }
+    _ = try waitForValue(session, suffix: ".featured", role: "video", description: "Initial featured clip is playable", matching: playable)
+    try pause(0.3)
+    try capture("video-ready-light", process: process, session: session)
+    let damaged = try control(inspect(session), suffix: ".damaged", role: "button")
+    _ = try cli(["ui", "activate", "--target", damaged["target"] as! String], session: session)
+    _ = try waitForValue(session, suffix: ".featured", role: "video", description: "Damaged clip reaches failed state") {
+        $0.hasPrefix("Failed ")
+    }
+    try pause(0.3)
+    try capture("video-failed-light", process: process, session: session)
+    let pattern = try control(inspect(session), suffix: ".pattern", role: "button")
+    _ = try cli(["ui", "activate", "--target", pattern["target"] as! String], session: session)
+    _ = try waitForValue(session, suffix: ".featured", role: "video", description: "Featured clip recovers after replacing damaged source", matching: playable)
+    try pause(0.3)
+    try capture("video-recovered-light", process: process, session: session)
+}
+
 do {
     try save()
     if let profile = environment["BERN_REFERENCE_PROFILE"] {
@@ -295,6 +420,7 @@ do {
             }
             try pause(0.4)
             try capture("controls-light-after-commit", process: process, session: session)
+            try showcaseSlices(process: process, session: session)
         }
     }
     report["success"] = true
