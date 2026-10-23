@@ -1,0 +1,109 @@
+name: Gallery Frame A/B on macOS 14
+run-name: Locked Gallery Frame volume reference
+
+# Runtime-only paired comparison. Never dispatch automatically during runner brownout.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: macos14-frame-compare
+  cancel-in-progress: true
+
+jobs:
+  capture:
+    runs-on: macos-14
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos14-reference-build
+          path: build-a
+          run-id: 39959549054
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos13-gallery
+          path: build-b
+          run-id: 39991406873
+          github-token: ${{ github.token }}
+      - name: Verify both locked applications without rebuilding
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p a b evidence/a evidence/b
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          test "$(sed -n 's/^source_sha=//p' build-a/environment.txt)" = ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee
+          test "$(sed -n 's/^source_sha=//p' build-b/environment.txt)" = f9e08b1d55bed4b9d880b19934abe48281057bb3
+          (cd build-a && shasum -a 256 -c reference-app.tar.gz.sha256)
+          (cd build-b && shasum -a 256 -c gallery.tar.gz.sha256)
+          tar -xzf build-a/reference-app.tar.gz -C a
+          tar -xzf build-b/gallery.tar.gz -C b
+          for side in a b; do
+            test -x "$side/Gallery.app/Contents/MacOS/Gallery"
+            test -x "$side/bin/gallery"
+            test "$(lipo -archs "$side/Gallery.app/Contents/MacOS/Gallery")" = arm64
+            test "$(lipo -archs "$side/bin/gallery")" = arm64
+            codesign --verify --deep --strict "$side/Gallery.app"
+            cp "build-$side/environment.txt" "evidence/$side/build-environment.txt"
+            cp "build-$side/build.json" "evidence/$side/build.json"
+            xcrun vtool -show-build "$side/Gallery.app/Contents/MacOS/Gallery" > "evidence/$side/binary.txt"
+          done
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - a/Gallery.app/Contents/Info.plist)" = 14.0
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - b/Gallery.app/Contents/Info.plist)" = 13.0
+          test "$(awk '/minos/ {print $2;exit}' evidence/a/binary.txt)" = 14.0
+          test "$(awk '/minos/ {print $2;exit}' evidence/b/binary.txt)" = 13.0
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          # A's historical manifest names the original backend swiftui; B split it into swiftui-modern.
+          for side, ui, minimum in [('a','swiftui','14.0'),('b','swiftui-modern','13.0')]:
+              d=json.loads(Path(f'evidence/{side}/build.json').read_text())
+              assert d['ui']==ui and d['minimum_macos']==minimum, d
+              assert d['platform']=='macos' and d['architecture']=='arm64' and d['app_bundle']=='Gallery.app', d
+          PY
+          cp build-a/reference-app.tar.gz.sha256 evidence/a/
+          cp build-b/gallery.tar.gz.sha256 evidence/b/
+          { sw_vers; uname -m; xcodebuild -version; xcrun swiftc -version; shasum -a 256 .github/scripts/gallery-frame-reference.swift; } > evidence/environment.txt 2>&1
+      - name: Set the normal profile on this disposable runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          defaults write com.apple.universalaccess increaseContrast -bool false
+          killall cfprefsd || true
+      - name: Observe A then B on the same WindowServer
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcrun swift -swift-version 5 .github/scripts/gallery-frame-reference.swift "$PWD/a/Gallery.app" "$PWD/a/bin/gallery" "$PWD/evidence/a" 14 A ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee 2>&1 | tee evidence/a/capture.log
+          xcrun swift -swift-version 5 .github/scripts/gallery-frame-reference.swift "$PWD/b/Gallery.app" "$PWD/b/bin/gallery" "$PWD/evidence/b" 14 B f9e08b1d55bed4b9d880b19934abe48281057bb3 2>&1 | tee evidence/b/capture.log
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          reports = [json.loads(Path(f'evidence/{side}/report.json').read_text()) for side in ['a','b']]
+          for d in reports:
+              assert d['success'] is True, d.get('failure')
+              assert d['heartbeat_ci_only'] is True and len(d['heartbeat_events']) >= 6
+              assert len(d['captures']) == 3
+              assert [len(c['window_ids']) for c in d['captures']] == [1,2,1]
+              assert all(c['stable_equal_comparisons'] >= 4 for c in d['captures'])
+              assert d['stages'][-1]['stage'] == 'dismissed'
+          assert reports[0]['bundled_tides_sha256'] == reports[1]['bundled_tides_sha256']
+          assert reports[0]['display_bounds_points'] == reports[1]['display_bounds_points']
+          Path('evidence/pair.json').write_text(json.dumps({'same_runner':True,'same_media_bytes':True,'a':'a/report.json','b':'b/report.json','scope':'Frame closed/open geometry and pixels; no automatic visual-equivalence verdict'},indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-frame-paired-evidence
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 3

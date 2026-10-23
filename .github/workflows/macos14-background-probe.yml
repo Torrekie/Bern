@@ -1,0 +1,147 @@
+name: macOS 14 native background calibration
+run-name: Native background calibration
+
+# This diagnostic owns its window and uses no downloaded resources or product code.
+on:
+  workflow_dispatch:
+    inputs:
+      build_only:
+        description: Retain the ARM64 probe without starting the macOS 14 runtime job
+        type: boolean
+        default: true
+      builder:
+        description: SDK 26 build pool; Intel cross-compiles and never runs the ARM64 probe
+        type: choice
+        options: [macos-26-intel, macos-26, macos-15]
+        default: macos-26-intel
+
+permissions:
+  contents: read
+concurrency:
+  group: macos14-background-probe-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ${{ inputs.builder || 'macos-26-intel' }}
+    timeout-minutes: 10
+    env:
+      DEVELOPER_DIR: ${{ inputs.builder == 'macos-15' && '/Applications/Xcode_26.3.app/Contents/Developer' || '/Applications/Xcode_26.6.app/Contents/Developer' }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Cross-build and package the native background probe
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/probe evidence/build
+          trap 'rm -rf work/module-cache' EXIT
+          probe_source_sha="$(shasum -a 256 .github/scripts/window-background-probe.swift | awk '{print $1}')"
+          {
+            printf 'harness_sha=%s\nprobe_source_sha256=%s\n' "$GITHUB_SHA" "$probe_source_sha"
+            printf 'runner_arch=%s\nimage_os=%s\nimage_version=%s\n' "$RUNNER_ARCH" "${ImageOS:-unknown}" "${ImageVersion:-unknown}"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+          } > evidence/build/environment.txt 2>&1
+          case "$(uname -m)" in arm64|x86_64) ;; *) exit 1 ;; esac
+          sdk="$(xcrun --sdk macosx --show-sdk-version)"
+          test "${sdk%%.*}" -ge 26
+          xcrun swiftc -O -swift-version 5 -parse-as-library -target arm64-apple-macos13.0 \
+            -module-cache-path work/module-cache \
+            -framework SwiftUI -framework AppKit -framework ImageIO -framework CryptoKit \
+            .github/scripts/window-background-probe.swift -o work/probe/WindowBackgroundProbe \
+            > evidence/build/compile.log 2>&1
+          test "$(lipo -archs work/probe/WindowBackgroundProbe)" = arm64
+          test "$(xcrun vtool -show-build work/probe/WindowBackgroundProbe | awk '/minos/ {print $2; exit}')" = 13.0
+          codesign --force --sign - work/probe/WindowBackgroundProbe
+          codesign --verify --strict work/probe/WindowBackgroundProbe
+          codesign --display --verbose=4 work/probe/WindowBackgroundProbe > evidence/build/signature.txt 2>&1
+          xcrun vtool -show-build work/probe/WindowBackgroundProbe > evidence/build/binary.txt
+          cp .github/scripts/window-background-probe.swift work/probe/
+          cp evidence/build/signature.txt work/probe/
+          (cd work/probe && shasum -a 256 WindowBackgroundProbe window-background-probe.swift signature.txt > SHA256SUMS)
+          tar -czf evidence/build/window-background-probe.tar.gz -C work/probe .
+          (cd evidence/build && shasum -a 256 window-background-probe.tar.gz > window-background-probe.tar.gz.sha256)
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-background-probe-build
+          path: evidence/build/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+
+  measure:
+    needs: build
+    if: ${{ needs.build.result == 'success' && !inputs.build_only }}
+    runs-on: macos-14
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos14-background-probe-build
+          path: build
+      - name: Run the exact ARM64 binary on macOS 14 without activating it
+        env:
+          BERN_PROBE_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p probe evidence/runtime
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+          (cd build && shasum -a 256 -c window-background-probe.tar.gz.sha256)
+          tar -xzf build/window-background-probe.tar.gz -C probe
+          (cd probe && shasum -a 256 -c SHA256SUMS)
+          test "$(lipo -archs probe/WindowBackgroundProbe)" = arm64
+          test "$(xcrun vtool -show-build probe/WindowBackgroundProbe | awk '/minos/ {print $2; exit}')" = 13.0
+          codesign --verify --strict probe/WindowBackgroundProbe
+          export BERN_PROBE_SOURCE_SHA256="$(shasum -a 256 probe/window-background-probe.swift | awk '{print $1}')"
+          test "$(sed -n 's/^probe_source_sha256=//p' build/environment.txt)" = "$BERN_PROBE_SOURCE_SHA256"
+          cp build/environment.txt evidence/runtime/build-environment.txt
+          cp build/binary.txt evidence/runtime/build-binary.txt
+          cp build/signature.txt build/window-background-probe.tar.gz.sha256 probe/SHA256SUMS probe/window-background-probe.swift evidence/runtime/
+          {
+            printf 'harness_sha=%s\nprobe_source_sha256=%s\nexpected_os_major=14\n' "$GITHUB_SHA" "$BERN_PROBE_SOURCE_SHA256"
+            sw_vers
+            uname -m
+            shasum -a 256 probe/WindowBackgroundProbe probe/window-background-probe.swift
+          } > evidence/runtime/environment.txt
+          # The executable and packaged source remain byte-identical to the build artifact.
+          probe/WindowBackgroundProbe "$PWD/evidence/runtime" 14 > evidence/runtime/runtime.log 2>&1
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          root = Path('evidence/runtime')
+          d = json.loads((root/'report.json').read_text())
+          assert d['success'] is True, d.get('error')
+          assert d['expected_os_major'] == d['actual_os_major'] == 14
+          assert d['harness_sha'] == d['probe_source_sha'] == os.environ['GITHUB_SHA']
+          assert d['probe_source_sha256'] == d['probe_swift_sha256'] == os.environ['BERN_PROBE_SOURCE_SHA256']
+          assert d['probe_source_sha256_method'] == 'adjacent packaged source bytes'
+          assert d['activation_calls'] == 0 and d['frontmost_before'] == d['frontmost_after']
+          assert d['window_seconds'] < 9
+          assert [g['name'] for g in d['groups']] == ['native-nsview','swiftui-color','canvas-role','split-transparent','split-explicit-role']
+          assert len(list(root.glob('*.png'))) == 5
+          assert len({g['capture_icc_sha256'] for g in d['groups']}) == 1
+          for g in d['groups']:
+              assert (root/g['png']).is_file()
+              assert len(g['stable_buffers']) >= 2
+              assert len({b['rgba8_srgb_sha256'] for b in g['stable_buffers']}) == 1
+              assert all(b['key'] is False and b['active'] is False for b in g['stable_buffers'])
+              assert all(b['frontmost_pid'] == d['frontmost_before'] for b in g['stable_buffers'])
+          # Recorded values are measurements, not fixed RGB expectations or whole-app acceptance.
+          PY
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-background-evidence
+          path: evidence/runtime/
+          if-no-files-found: error
+          retention-days: 3
