@@ -1,0 +1,82 @@
+{
+  "source_sha256": "daa7e0e16bf374b35ef9e431d65cb22eaff3b251dfe6c7336c4bac16bacec6e1",
+  "workflow_sha256": "cd6ecc053cc2130ae90e11fd463714f09e24fe16dff4924fb360d196eeb04ba7",
+  "validation": "Local macOS13.7.8, Swift5.9.2 SDK14.2 target13: compile/link and actual own-window WindowServer capture, all9cases/27PNG pass. YAML and each shell block syntax checked. No remote dispatch. SDK26 compiler branch remains for CI.",
+  "success": true,
+  "cases": 9,
+  "pngs": 27,
+  "elapsed_seconds": 20.686522960662842,
+  "frontmost_before": 75891,
+  "frontmost_after": 75891,
+  "card_heights": {
+    "upstream-minrow-inherited": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    },
+    "upstream-minrow-0": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    },
+    "upstream-minrow-150": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    },
+    "standardHelper-minrow-inherited": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    },
+    "standardHelper-minrow-0": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    },
+    "standardHelper-minrow-150": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    },
+    "availabilityWrapper-minrow-inherited": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    },
+    "availabilityWrapper-minrow-0": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    },
+    "availabilityWrapper-minrow-150": {
+      "fixed109": 129,
+      "hdr": 147,
+      "images": 129,
+      "layers": 200,
+      "single_caption": 36
+    }
+  },
+  "cache_removed": true,
+  "only_new_tracked_source_files": [
+    ".github/scripts/image-layout-probe.swift",
+    ".github/workflows/macos14-image-probe.yml"
+  ],
+  "workflow_changed_after_validation": "Root added the build_only dispatch input and measure guard after this local source validation. Runtime source unchanged. SDK26 branch pending CI."
+}
