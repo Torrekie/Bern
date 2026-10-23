@@ -1,0 +1,103 @@
+name: macOS 14 exact probe runtime
+run-name: ${{ inputs.probe }} runtime from build ${{ inputs.build_run }}
+
+# Manual runtime-only continuation of a successful build-only calibration.
+# Reuses the binary already checked on13, without another build or paid runner.
+on:
+  workflow_dispatch:
+    inputs:
+      probe:
+        description: Probe artifact to run after the macOS 14 brownout
+        type: choice
+        options: [image, hdr]
+        required: true
+      build_run:
+        description: Successful build-only run ID from this repository
+        type: string
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: macos14-exact-probe-${{ inputs.probe }}
+  cancel-in-progress: false
+
+jobs:
+  measure:
+    runs-on: macos-14
+    timeout-minutes: 10
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: ${{ inputs.probe == 'image' && 'macos14-image-probe-build' || 'macos14-hdr-probe-build' }}
+          run-id: ${{ inputs.build_run }}
+          github-token: ${{ github.token }}
+          path: build
+      - name: Verify and run the exact retained ARM64 binary
+        env:
+          PROBE_KIND: ${{ inputs.probe }}
+          PROBE_BUILD_RUN: ${{ inputs.build_run }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$PROBE_KIND" in image|hdr) ;; *) exit 1 ;; esac
+          [[ "$PROBE_BUILD_RUN" =~ ^[0-9]+$ ]]
+          mkdir -p probe evidence/runtime
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          export BERN_PROBE_SHA="$(sed -n 's/^harness_sha=//p' build/environment.txt)"
+          [[ "$BERN_PROBE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          {
+            printf 'runtime_workflow_sha=%s\n' "$GITHUB_SHA"
+            printf 'build_run=%s\nbuild_harness_sha=%s\n' "$PROBE_BUILD_RUN" "$BERN_PROBE_SHA"
+            sw_vers
+            uname -m
+          } > evidence/runtime/environment.txt
+          cp build/environment.txt evidence/runtime/build-environment.txt
+          cp build/binary.txt evidence/runtime/build-binary.txt
+          if test "$PROBE_KIND" = image; then
+            archive=image-layout-probe.tar.gz
+            executable=ImageLayoutProbe
+          else
+            archive=hdr-tone-probe.tar.gz
+            executable=HDRToneProbe
+          fi
+          (cd build && shasum -a 256 -c "$archive.sha256")
+          cp "build/$archive.sha256" evidence/runtime/
+          tar -xzf "build/$archive" -C probe
+          (cd probe && shasum -a 256 -c SHA256SUMS)
+          cp probe/SHA256SUMS evidence/runtime/build-SHA256SUMS
+          test "$(lipo -archs "probe/$executable")" = arm64
+          test "$(xcrun vtool -show-build "probe/$executable" | awk '/minos/ {print $2; exit}')" = 13.0
+          codesign --verify --strict "probe/$executable"
+          if test "$PROBE_KIND" = image; then
+            probe/ImageLayoutProbe "$PWD/probe/images" "$PWD/evidence/runtime" --show-window --require-windowserver > evidence/runtime/runtime.log 2>&1
+          else
+            probe/HDRToneProbe "$PWD/probe/hdr-pq.png" "$PWD/evidence/runtime" > evidence/runtime/runtime.log 2>&1
+          fi
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          d = json.loads(Path('evidence/runtime/report.json').read_text())
+          assert d['success'] is True, d.get('error')
+          assert d.get('probe_source_sha', d.get('harness_sha')) == os.environ['BERN_PROBE_SHA']
+          if os.environ['PROBE_KIND'] == 'image':
+              assert len(d['cases']) == 9
+              assert all(c['three_image_cards_pixel_detection_complete'] and len(c['phases']) == 3 for c in d['cases'])
+              assert len(list(Path('evidence/runtime').glob('*.png'))) == 27
+          else:
+              assert d['native_allowed_dynamic_range_high'] is True
+              assert len(d['sources']) == 2 and len(d['patches']) == 10 and len(d['captures']) == 4
+              assert len({c['rgba8_srgb_sha256'] for c in d['captures']}) == 1
+              assert all(c['key'] is False and abs(c['current_headroom']-1) < .0001 for c in d['captures'])
+              assert len(list(Path('evidence/runtime').glob('*.png'))) == 6
+          PY
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-${{ inputs.probe }}-exact-runtime
+          path: evidence/runtime/
+          if-no-files-found: error
+          retention-days: 3
