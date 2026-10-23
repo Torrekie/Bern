@@ -6,6 +6,7 @@
 //! imports a concrete target, and disabling one target leaves the others
 //! buildable.
 
+pub mod apple_documents;
 pub mod brand_assets;
 pub mod glue;
 pub mod icon;
@@ -374,6 +375,9 @@ pub struct TargetConfig {
     pub name: String,
     pub platform: String,
     pub ui: Option<String>,
+    /// Apple mobile build destination: simulator (default) or device.
+    /// A device build creates a local bundle; it never provisions or installs it.
+    pub destination: Option<String>,
     /// Web build mode: `app` (engine in the page) or `ui` (separate engine).
     pub web_mode: Option<String>,
     pub channels: Vec<String>,
@@ -698,6 +702,7 @@ mod tests {
             name: "t".into(),
             platform: platform.into(),
             ui: ui.map(String::from),
+            destination: None,
             web_mode: None,
             channels: vec![],
             frontends: vec![],

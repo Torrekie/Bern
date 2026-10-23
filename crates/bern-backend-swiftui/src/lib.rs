@@ -1,11 +1,11 @@
-//! The `swiftui + macos` target, and with it the `swiftui + ios` and
-//! `swiftui + tvos` targets.
+//! SwiftUI targets for macOS, iOS and tvOS.
 //!
-//! Generates idiomatic SwiftUI from the shared IR: standard scenes,
-//! containers and controls, which keep the system styles and colors
-//! unless the app declares style overrides. The engine runs in the app
-//! process; the build links it as a static library.
+//! The default macOS/iOS targets use Swift 5.3 representable hosts around
+//! the shared Darwin 20 native renderer. The original all-SwiftUI generator
+//! remains available as `swiftui-modern`, preserving its newer-system
+//! implementation. tvOS continues to use the original generator.
 
+mod darwin20;
 mod glue;
 pub mod ios;
 mod names;
@@ -23,11 +23,14 @@ use bern_target_api::{
 };
 use std::path::PathBuf;
 
+pub use darwin20::{
+    DARWIN20_MINIMUM_IOS, DARWIN20_MINIMUM_MACOS, SwiftUiDarwin20Ios, SwiftUiDarwin20Macos,
+};
 pub use ios::{MINIMUM_IOS, SwiftUiIos};
 pub use swift::{Generator, Platform};
 pub use tvos::{MINIMUM_TVOS, SwiftUiTvos};
 
-/// Minimum deployment target, chosen in the design document.
+/// Minimum deployment target of the original `swiftui-modern` generator.
 pub const MINIMUM_MACOS: &str = "14.0";
 
 /// Launch Services' tool, which registers an app bundle and its icon.
@@ -149,6 +152,7 @@ const SOURCES: &[&str] = &[
 ];
 const HEADER: &str = include_str!("../templates/bern.h");
 
+/// The original generator, selected by `ui = "swiftui-modern"`.
 pub struct SwiftUiMacos;
 
 pub(crate) fn component_names() -> &'static [&'static str] {
@@ -209,8 +213,8 @@ impl Target for SwiftUiMacos {
             text_marks: true,
             dynamic_items: true,
             features: FEATURES,
-            id: "swiftui-macos",
-            ui: "swiftui",
+            id: "swiftui-modern-macos",
+            ui: "swiftui-modern",
             platforms: &["macos"],
             version: env!("CARGO_PKG_VERSION"),
             ir_versions: IR_VERSION..=IR_VERSION,
@@ -336,7 +340,7 @@ impl Target for SwiftUiMacos {
             });
         let manifest = serde_json::json!({
             "target": self.descriptor().id,
-            "ui": "swiftui",
+            "ui": self.descriptor().ui,
             "platform": "macos",
             "ir_version": app.ir_version,
             "generator": "bern-backend-swiftui",

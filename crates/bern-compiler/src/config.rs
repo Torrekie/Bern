@@ -263,6 +263,7 @@ struct RawUi {
 struct RawTarget {
     platform: String,
     ui: Option<String>,
+    destination: Option<String>,
     web_mode: Option<String>,
     application_transport: Option<String>,
     application_codec: Option<String>,
@@ -988,6 +989,21 @@ fn app_sources(
 /// Check one `[targets.<name>]` table and turn it into its configuration.
 fn target_config(name: String, target: RawTarget, errors: &mut Vec<Diagnostic>) -> TargetConfig {
     check_web_mode(&name, &target, errors);
+    if let Some(destination) = target.destination.as_deref() {
+        if target.platform != "ios" {
+            errors.push(Diagnostic::error(format!(
+                "target `{name}`: `destination` applies to iOS targets only"
+            )));
+        } else if !matches!(destination, "simulator" | "device") {
+            errors.push(Diagnostic::error(format!(
+                "target `{name}`: unknown destination `{destination}`; use `simulator` or `device`"
+            )));
+        } else if destination == "device" && target.ui.as_deref() == Some("swiftui-modern") {
+            errors.push(Diagnostic::error(format!(
+                "target `{name}`: `swiftui-modern` currently builds simulator apps only; use `swiftui` or `uikit` for a device bundle"
+            )));
+        }
+    }
     let frontends = windows_frontends(&name, &target.platform, target.frontends, errors);
     for channel in &target.channels {
         if channel != "ipc" {
@@ -1000,6 +1016,7 @@ fn target_config(name: String, target: RawTarget, errors: &mut Vec<Diagnostic>) 
         name,
         platform: target.platform,
         ui: target.ui,
+        destination: target.destination,
         web_mode: target.web_mode,
         channels: target.channels,
         frontends,
@@ -1508,6 +1525,30 @@ fn canonical(dir: PathBuf) -> PathBuf {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn apple_destination_is_checked_before_generating_a_build() {
+        for (platform, ui, destination, valid) in [
+            ("ios", "uikit", "device", true),
+            ("ios", "swiftui", "simulator", true),
+            ("ios", "swiftui-modern", "device", false),
+            ("macos", "appkit", "device", false),
+            ("ios", "uikit", "phone", false),
+        ] {
+            let raw: RawTarget = toml::from_str(&format!(
+                "platform = {platform:?}\nui = {ui:?}\ndestination = {destination:?}\n"
+            ))
+            .unwrap();
+            let mut errors = vec![];
+            let config = target_config("apple".into(), raw, &mut errors);
+            assert_eq!(
+                errors.is_empty(),
+                valid,
+                "{platform}/{ui}/{destination}: {errors:?}"
+            );
+            assert_eq!(config.destination.as_deref(), Some(destination));
+        }
+    }
 
     #[test]
     fn language_tags_are_validated() {

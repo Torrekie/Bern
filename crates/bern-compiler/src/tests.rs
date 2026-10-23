@@ -697,6 +697,7 @@ mod independent_target {
                     name: "outline".into(),
                     platform: "test".into(),
                     ui: None,
+                    destination: None,
                     web_mode: None,
                     channels: vec![],
                     frontends: vec![],
@@ -724,6 +725,7 @@ mod independent_target {
                 name: "outline".into(),
                 platform: "test".into(),
                 ui: Some("outline".into()),
+                destination: None,
                 web_mode: None,
                 channels: vec![],
                 frontends: vec![],
@@ -2081,7 +2083,10 @@ fn window_expressions_read_only_sessions_the_window_owns() {
         };
         let error = errors
             .iter()
-            .find(|e| e.message.contains("reads `Draft`, which this window does not own"))
+            .find(|e| {
+                e.message
+                    .contains("reads `Draft`, which this window does not own")
+            })
             .unwrap_or_else(|| panic!("{errors:?}"));
         assert!(error.message.starts_with("window `about`"), "{error:?}");
         assert!(error.location.is_some(), "{error:?}");
@@ -3158,7 +3163,12 @@ fn a_composer_clears_its_draft_after_sending() {
         });
     }
     assert_eq!(clearing, 2);
-    assert!(errors(&format!("Button(id: send, {label}, clears: draft.on) => app.add(1)")).contains("bool"));
+    assert!(
+        errors(&format!(
+            "Button(id: send, {label}, clears: draft.on) => app.add(1)"
+        ))
+        .contains("bool")
+    );
 }
 
 #[test]

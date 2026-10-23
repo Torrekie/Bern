@@ -1,3 +1,7 @@
+> 此分支新增 Darwin 20（macOS 11 / iOS 14）兼容与纯 Objective-C AppKit/UIKit 入口。
+> SwiftUI 兼容入口与 Objective-C 入口共享原生渲染组件；原有生成器可用 `swiftui-modern` 选择。
+> 实现与验证边界见 [Darwin 20 说明](Docs/Implementation/Darwin20.md)，示例见 [Darwin20 Demo](examples/darwin20-demo)。下文上游性能数据不代表新后端的实测结果。
+
 <div align="center">
 
 <img src="Docs/Assets/logo/bern-logo.svg" width="128" alt="Bern 的标志">

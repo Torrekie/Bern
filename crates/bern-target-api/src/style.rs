@@ -201,3 +201,100 @@ pub fn for_platforms<'a>(app: &'a Application, platforms: &[&str]) -> Cow<'a, Ap
         Cow::Owned(owned)
     }
 }
+
+use crate::StyleSupport;
+use bern_ir::style::StyleState::{Disabled, Focus, Hover, Pressed, Selected};
+
+const BUTTON_STATES: &[&str] = &[
+    "background",
+    "foreground",
+    "border",
+    "scale",
+    "offset",
+    "opacity",
+    "shadow",
+    "system",
+    "none",
+];
+const ROW_STATES: &[&str] = &[
+    "background",
+    "foreground",
+    "scale",
+    "offset",
+    "opacity",
+    "system",
+    "none",
+];
+
+/// Style contract shared by the Apple native and modern SwiftUI renderers.
+pub const APPLE_NATIVE_SUPPORT: &[StyleSupport] = &[
+    StyleSupport {
+        component: "Stack",
+        base: &["background", "foreground", "corner"],
+        states: &[],
+    },
+    // A form's background is its rows'.
+    StyleSupport {
+        component: "Form",
+        base: &["background"],
+        states: &[],
+    },
+    StyleSupport {
+        component: "Button",
+        base: &[
+            "background",
+            "foreground",
+            "border",
+            "corner",
+            "padding",
+            "size",
+            "shadow",
+        ],
+        states: &[
+            (Hover, BUTTON_STATES),
+            (Pressed, BUTTON_STATES),
+            (Focus, &["system", "none"]),
+            (Disabled, BUTTON_STATES),
+        ],
+    },
+    StyleSupport {
+        component: "IconButton",
+        base: &[
+            "background",
+            "foreground",
+            "border",
+            "corner",
+            "padding",
+            "size",
+            "shadow",
+        ],
+        states: &[
+            (Hover, BUTTON_STATES),
+            (Pressed, BUTTON_STATES),
+            (Focus, &["system", "none"]),
+            (Disabled, BUTTON_STATES),
+        ],
+    },
+    StyleSupport {
+        component: "SidebarItem",
+        base: &["background", "foreground", "corner", "padding"],
+        states: &[
+            (Hover, ROW_STATES),
+            (Pressed, ROW_STATES),
+            (
+                Selected,
+                &[
+                    "fill",
+                    "indicator",
+                    "background",
+                    "foreground",
+                    "scale",
+                    "offset",
+                    "opacity",
+                    "system",
+                    "none",
+                ],
+            ),
+        ],
+    },
+];

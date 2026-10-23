@@ -6,8 +6,9 @@ use std::process::Command;
 
 /// The oldest Rust that builds Bern.
 const RUST: (u32, u32) = (1, 99);
-/// The oldest macOS SDK the SwiftUI target compiles against (Xcode 26).
-const MACOS_SDK: (u32, u32) = (26, 0);
+/// Shared AppKit/UIKit renderer and Swift 5.3 shell (Xcode 12).
+const MACOS_SDK: (u32, u32) = (11, 0);
+const MODERN_SDK: (u32, u32) = (26, 0);
 const GTK: (u32, u32) = (4, 14);
 const LIBADWAITA: (u32, u32) = (1, 5);
 const WASM_TARGET: &str = "wasm32-unknown-unknown";
@@ -41,12 +42,17 @@ type Spec = (
 const SPECS: &[Spec] = &[
     ("Rust", &[], None, rust),
     (
-        "macOS · SwiftUI",
+        "macOS · SwiftUI / AppKit",
         &["macos"],
         Some(("macos", "macOS")),
         macos,
     ),
-    ("iOS · SwiftUI", &["ios"], Some(("macos", "macOS")), ios),
+    (
+        "iOS · SwiftUI / UIKit",
+        &["ios"],
+        Some(("macos", "macOS")),
+        ios,
+    ),
     ("tvOS · SwiftUI", &["tvos"], Some(("macos", "macOS")), tvos),
     (
         "Windows · WinUI 3",
@@ -83,6 +89,42 @@ pub fn check(platform: &str) -> Option<Check> {
         .iter()
         .find(|(_, platforms, _, _)| platforms.contains(&platform))
         .map(run)
+}
+
+/// Tool requirements follow the selected frontend and destination.
+pub fn check_target(target: &bern_target_api::TargetConfig) -> Option<Check> {
+    if !matches!(target.platform.as_str(), "macos" | "ios") {
+        return check(&target.platform);
+    }
+    let modern = target.ui.as_deref() == Some("swiftui-modern");
+    let title = match (target.platform.as_str(), target.ui.as_deref()) {
+        ("macos", Some("appkit")) => "macOS · Objective-C AppKit",
+        ("macos", Some("swiftui-modern")) => "macOS · modern SwiftUI",
+        ("macos", _) => "macOS · SwiftUI",
+        (_, Some("uikit")) => "iOS · Objective-C UIKit",
+        (_, Some("swiftui-modern")) => "iOS · modern SwiftUI",
+        _ => "iOS · SwiftUI",
+    };
+    let status = if std::env::consts::OS != "macos" {
+        Status::Elsewhere("macOS")
+    } else if target.platform == "macos" {
+        apple_macos(modern, target.ui.as_deref() != Some("appkit"))
+    } else if target.destination.as_deref() == Some("device") {
+        apple_mobile("iOS", "iphoneos", "aarch64-apple-ios", (14, 0), false)
+    } else if modern {
+        simulator("iOS", "iphonesimulator", "ios", MODERN_SDK)
+    } else {
+        ios()
+    };
+    Some(Check {
+        title,
+        platforms: if target.platform == "macos" {
+            &["macos"]
+        } else {
+            &["ios"]
+        },
+        status,
+    })
 }
 
 pub fn print(checks: &[Check]) {
@@ -148,18 +190,33 @@ fn rust() -> Status {
 }
 
 fn macos() -> Status {
-    let fix = "install Xcode 26 or newer from the App Store, then run\nsudo xcode-select --switch /Applications/Xcode.app";
+    apple_macos(false, true)
+}
+
+fn apple_macos(modern: bool, needs_swift: bool) -> Status {
+    let needed = if modern { MODERN_SDK } else { MACOS_SDK };
+    let fix = if modern {
+        "select Xcode 26 or newer for swiftui-modern"
+    } else {
+        "select Xcode 12 or newer (macOS 11 SDK and Swift 5.3)"
+    };
     let Some(sdk) = output("xcrun", &["--sdk", "macosx", "--show-sdk-version"]) else {
         return Status::Missing("no macOS SDK".into(), fix.into());
     };
-    if version(&sdk).is_none_or(|found| found < MACOS_SDK) {
+    if version(&sdk).is_none_or(|found| found < needed) {
         return Status::Missing(
             format!(
-                "macOS SDK {sdk}; SwiftUI needs SDK {}.{} or newer",
-                MACOS_SDK.0, MACOS_SDK.1
+                "macOS SDK {sdk}; this frontend needs SDK {}.{} or newer",
+                needed.0, needed.1
             ),
             fix.into(),
         );
+    }
+    if !needs_swift {
+        return match output("xcrun", &["clang", "--version"]) {
+            Some(_) => Status::Ready(format!("macOS SDK {sdk}, Objective-C compiler")),
+            None => Status::Missing("no Objective-C compiler".into(), fix.into()),
+        };
     }
     let Some(swift) = output("xcrun", &["swiftc", "--version"]) else {
         return Status::Missing("no Swift compiler".into(), fix.into());
@@ -173,44 +230,66 @@ fn macos() -> Status {
                 .next()
         })
         .unwrap_or("found");
+    let minimum_swift = if modern { (6, 0) } else { (5, 3) };
+    if version(swift).is_none_or(|found| found < minimum_swift) {
+        return Status::Missing(
+            format!(
+                "Swift {swift}; this frontend needs Swift {}.{} or newer",
+                minimum_swift.0, minimum_swift.1
+            ),
+            fix.into(),
+        );
+    }
     Status::Ready(format!("macOS SDK {sdk}, Swift {swift}"))
 }
 
 /// The iOS simulator SDK and the Rust target for the simulator. A
 /// simulator to run in is `bern run`'s concern, not the build's.
 fn ios() -> Status {
-    simulator("iOS", "iphonesimulator", "ios")
+    simulator("iOS", "iphonesimulator", "ios", (14, 0))
 }
 
 /// The tvOS simulator SDK and the Rust target for the Apple TV simulator,
 /// whose standard library rustup ships (tier 2).
 fn tvos() -> Status {
-    simulator("tvOS", "appletvsimulator", "tvos")
+    simulator("tvOS", "appletvsimulator", "tvos", MODERN_SDK)
 }
 
 /// The simulator SDK `sdk` of `system` and the Rust target for its
 /// simulator on this Mac.
-fn simulator(system: &str, sdk: &str, os: &str) -> Status {
-    let fix = format!(
-        "install Xcode 26 or newer from the App Store with the {system} platform, then run\nsudo xcode-select --switch /Applications/Xcode.app"
-    );
-    let Some(version_found) = output("xcrun", &["--sdk", sdk, "--show-sdk-version"]) else {
-        return Status::Missing(format!("no {system} simulator SDK"), fix);
-    };
-    if version(&version_found).is_none_or(|found| found < MACOS_SDK) {
-        return Status::Missing(
-            format!(
-                "{system} SDK {version_found}; SwiftUI needs SDK {}.{} or newer",
-                MACOS_SDK.0, MACOS_SDK.1
-            ),
-            fix,
-        );
-    }
-    let simulator = if std::env::consts::ARCH == "x86_64" {
+fn simulator(system: &str, sdk: &str, os: &str, needed: (u32, u32)) -> Status {
+    let target = if std::env::consts::ARCH == "x86_64" {
         format!("x86_64-apple-{os}")
     } else {
         format!("aarch64-apple-{os}-sim")
     };
+    apple_mobile(system, sdk, &target, needed, true)
+}
+
+fn apple_mobile(
+    system: &str,
+    sdk: &str,
+    target: &str,
+    needed: (u32, u32),
+    simulator: bool,
+) -> Status {
+    let place = if simulator { "simulator" } else { "device" };
+    let fix = format!(
+        "select Xcode with the {system} {place} SDK {}.{} or newer",
+        needed.0, needed.1
+    );
+    let Some(version_found) = output("xcrun", &["--sdk", sdk, "--show-sdk-version"]) else {
+        return Status::Missing(format!("no {system} {place} SDK"), fix);
+    };
+    if version(&version_found).is_none_or(|found| found < needed) {
+        return Status::Missing(
+            format!(
+                "{system} SDK {version_found}; this frontend needs SDK {}.{} or newer",
+                needed.0, needed.1
+            ),
+            fix,
+        );
+    }
     let Some(sysroot) = output("rustc", &["--print", "sysroot"]) else {
         return Status::Missing(
             "rustc is not installed".into(),
@@ -219,16 +298,16 @@ fn simulator(system: &str, sdk: &str, os: &str) -> Status {
     };
     if !Path::new(&sysroot)
         .join("lib/rustlib")
-        .join(&simulator)
+        .join(target)
         .is_dir()
     {
         return Status::Missing(
-            format!("the {simulator} target is not installed"),
-            format!("rustup target add {simulator}"),
+            format!("the {target} target is not installed"),
+            format!("rustup target add {target}"),
         );
     }
     Status::Ready(format!(
-        "{system} simulator SDK {version_found}, the {simulator} target"
+        "{system} {place} SDK {version_found}, the {target} target"
     ))
 }
 

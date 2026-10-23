@@ -45,6 +45,24 @@ channels = ["ipc"]
 platform = "ios"
 channels = ["ipc"]
 
+# The same declaration and renderer, with no Swift runtime in the app.
+[targets.macos_objc]
+platform = "macos"
+ui = "appkit"
+channels = ["ipc"]
+
+[targets.ios_objc]
+platform = "ios"
+ui = "uikit"
+channels = ["ipc"]
+
+# Build an arm64 iOS 14+ device bundle locally, without installing it or
+# contacting Apple provisioning services.
+# [targets.ios_device]
+# platform = "ios"
+# ui = "uikit"
+# destination = "device"
+
 [targets.windows]
 platform = "windows"
 channels = ["ipc"]

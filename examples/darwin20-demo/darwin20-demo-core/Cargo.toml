@@ -1,0 +1,12 @@
+[package]
+workspace = ".."
+name = "darwin20-demo-core"
+description = "Darwin20 Demo: the engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+bern.workspace = true
+darwin20-demo-protocol.workspace = true

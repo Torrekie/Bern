@@ -1,4 +1,4 @@
-//! The `swiftui + ios` target.
+//! The original `swiftui-modern + ios` target.
 //!
 //! The same generated SwiftUI as on macOS, in the one scene an iOS app has:
 //! windows are virtual, the primary filling the scene and the others shown
@@ -42,6 +42,7 @@ const SOURCES: &[&str] = &[
 /// The asset catalog with the application icon, outside the bundle.
 const ASSETS: &str = "Assets.xcassets";
 
+/// The original generator, selected by `ui = "swiftui-modern"`.
 pub struct SwiftUiIos;
 
 /// The simulator's architecture as Swift and Rust name it, and the Rust
@@ -66,8 +67,8 @@ impl Target for SwiftUiIos {
             text_marks: true,
             dynamic_items: true,
             features: crate::FEATURES,
-            id: "swiftui-ios",
-            ui: "swiftui",
+            id: "swiftui-modern-ios",
+            ui: "swiftui-modern",
             platforms: &["ios"],
             version: env!("CARGO_PKG_VERSION"),
             ir_versions: IR_VERSION..=IR_VERSION,
@@ -204,7 +205,7 @@ impl Target for SwiftUiIos {
             });
         let manifest = serde_json::json!({
             "target": self.descriptor().id,
-            "ui": "swiftui",
+            "ui": self.descriptor().ui,
             "platform": "ios",
             "destination": "simulator",
             "ir_version": app.ir_version,

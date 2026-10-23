@@ -26,6 +26,26 @@ root = "app"
 [targets.macos]
 platform = "macos"
 
+[targets.macos_objc]
+platform = "macos"
+ui = "appkit"
+
+[targets.ios]
+platform = "ios"
+
+[targets.ios_objc]
+platform = "ios"
+ui = "uikit"
+
+[targets.ios_device]
+platform = "ios"
+ui = "uikit"
+destination = "device"
+
+[targets.macos_modern]
+platform = "macos"
+ui = "swiftui-modern"
+
 [targets.linux]
 platform = "linux"
 

@@ -162,6 +162,10 @@ fn parse_args(mut args: impl Iterator<Item = String>) -> Result<Options, String>
 
 fn registry() -> Registry {
     let mut registry = Registry::new();
+    registry.register(Box::new(bern_backend_swiftui::SwiftUiDarwin20Macos));
+    registry.register(Box::new(bern_backend_swiftui::SwiftUiDarwin20Ios));
+    registry.register(Box::new(bern_backend_objc::AppKitMacos));
+    registry.register(Box::new(bern_backend_objc::UIKitIos));
     registry.register(Box::new(bern_backend_swiftui::SwiftUiMacos));
     registry.register(Box::new(bern_backend_swiftui::SwiftUiIos));
     registry.register(Box::new(bern_backend_swiftui::SwiftUiTvos));
@@ -170,6 +174,31 @@ fn registry() -> Registry {
     registry.register(Box::new(bern_backend_winui3::WinUi3Windows));
     registry.register(Box::new(bern_backend_compose::ComposeAndroid));
     registry
+}
+
+#[cfg(test)]
+mod apple_target_tests {
+    use super::*;
+    #[test]
+    fn default_and_explicit_apple_frontends_resolve_without_ambiguity() {
+        let registry = registry();
+        for (platform, ui, id) in [
+            ("macos", None, "swiftui-macos"),
+            ("ios", None, "swiftui-ios"),
+            ("macos", Some("appkit"), "appkit-macos"),
+            ("ios", Some("uikit"), "uikit-ios"),
+            ("macos", Some("swiftui-modern"), "swiftui-modern-macos"),
+            ("ios", Some("swiftui-modern"), "swiftui-modern-ios"),
+        ] {
+            let config = bern_target_api::TargetConfig {
+                name: "selected".into(),
+                platform: platform.into(),
+                ui: ui.map(String::from),
+                ..Default::default()
+            };
+            assert_eq!(registry.resolve(&config).unwrap().descriptor().id, id);
+        }
+    }
 }
 
 fn find_manifest(start: &Path) -> Option<PathBuf> {
@@ -588,16 +617,14 @@ fn doctor(options: &Options) -> ExitCode {
         }
     }
     for target in &config.targets {
-        let check = checks
-            .iter()
-            .find(|check| check.platforms.contains(&target.platform.as_str()));
-        let state = match check.map(|check| &check.status) {
+        let check = doctor::check_target(target);
+        let state = match check.as_ref().map(|check| &check.status) {
             Some(doctor::Status::Ready(_)) => "\x1b[32mbuilds here\x1b[0m".to_string(),
             Some(doctor::Status::Missing(..)) => {
                 failed = true;
                 format!(
                     "\x1b[31mneeds {}, see above\x1b[0m",
-                    check.map_or("", |check| check.title)
+                    check.as_ref().map_or("", |check| check.title)
                 )
             }
             Some(doctor::Status::Elsewhere(os)) => format!("\x1b[2mbuilds on {os}\x1b[0m"),
@@ -723,7 +750,7 @@ fn build(options: &Options) -> ExitCode {
                 title,
                 status: doctor::Status::Missing(problem, fix),
                 ..
-            }) = doctor::check(&target_config.platform)
+            }) = doctor::check_target(target_config)
             {
                 eprintln!(
                     "   \x1b[1;33mSkipping\x1b[0m {}: needs {title}: {problem}",
@@ -817,7 +844,7 @@ fn build(options: &Options) -> ExitCode {
         let needs = options
             .target
             .as_ref()
-            .and_then(|_| doctor::check(&target_config.platform));
+            .and_then(|_| doctor::check_target(target_config));
         match needs.map(|check| (check.title, check.status)) {
             Some((title, doctor::Status::Missing(problem, fix))) => {
                 eprintln!(

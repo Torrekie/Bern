@@ -1,0 +1,12 @@
+[workspace]
+resolver = "3"
+members = ["darwin20-demo-protocol", "darwin20-demo-core", "darwin20-demo-ui"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+
+[workspace.dependencies]
+bern = { path = "../../crates/bern" }
+darwin20-demo-protocol = { path = "darwin20-demo-protocol" }

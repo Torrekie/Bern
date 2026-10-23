@@ -58,6 +58,28 @@ channels = ["ipc"]
 platform = "ios"
 channels = ["ipc"]
 
+# Darwin 20 native renderer with a pure Objective-C application host.
+[targets.macos_objc]
+platform = "macos"
+ui = "appkit"
+channels = ["ipc"]
+
+[targets.ios_objc]
+platform = "ios"
+ui = "uikit"
+channels = ["ipc"]
+
+[targets.ios_device]
+platform = "ios"
+ui = "uikit"
+destination = "device"
+
+# The original generator is retained as an explicit modern choice.
+[targets.macos_modern]
+platform = "macos"
+ui = "swiftui-modern"
+channels = ["ipc"]
+
 # Apple TV, built for the simulator; `bern run --target tvos` starts it in
 # the Apple TV simulator that is running.
 [targets.tvos]

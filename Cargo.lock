@@ -229,9 +229,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "bern-backend-objc"
+version = "0.1.0"
+dependencies = [
+ "bern-compiler",
+ "bern-ir",
+ "bern-media",
+ "bern-protocol",
+ "bern-target-api",
+ "serde_json",
+]
+
+[[package]]
 name = "bern-backend-swiftui"
 version = "0.1.0"
 dependencies = [
+ "bern-backend-objc",
  "bern-compiler",
  "bern-ir",
  "bern-media",
@@ -272,6 +285,7 @@ version = "0.1.0"
 dependencies = [
  "bern-backend-compose",
  "bern-backend-gtk",
+ "bern-backend-objc",
  "bern-backend-swiftui",
  "bern-backend-web",
  "bern-backend-winui3",
