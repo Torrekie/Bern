@@ -1,4 +1,5 @@
 name: macOS 13 port on macOS 14
+run-name: ${{ inputs.app }} from build ${{ inputs.build_run }}
 
 on:
   workflow_dispatch:
