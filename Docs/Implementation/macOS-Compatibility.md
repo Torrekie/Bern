@@ -72,4 +72,8 @@ Rust 仍保留上游 1.99 要求。本机仅为运行生成器检查使用已安
 
 GitHub 官方现仍列出 arm64 `macos-14`，但将于 **2026-11-02** 退役；2026-10-23 北京时间 **22:00 至次日 08:00** 有故意失败时段。不能将这类失败归为 Bern 回归。依据：[镜像列表](https://github.com/actions/runner-images#available-images)、[退役公告](https://github.com/actions/runner-images/issues/13518)。
 
-本地账号对上游只有读取权限，尚未发现可复用的 Bern fork。先准备可审查的手动 CI 工作流，发布到哪个用户仓库及是否创建 fork 另行明确；目前没有远程写入或触发任务。
+手动工作流见 [macos14-reference.yml](../../.github/workflows/macos14-reference.yml)，采集脚本见 [macos14-reference.swift](../../.github/scripts/macos14-reference.swift)。它分离上游源码与采集脚本，用新 SDK 构建 target 14，然后把同一个产物送到 macOS 14；不在旧运行主机重新构建。采集固定外框的 light/dark 控件页及 CLI 状态变化，记录显示缩放、色彩空间、强调色与辅助功能偏好。CLI 未暴露内容区精确尺寸；鼠标、键盘与动画仍须后续实际验证。
+
+本机已通过工作流 YAML、内嵌 shell 语法和采集脚本的 Swift 类型检查；这些检查不等于远程运行通过。用户已授权创建公开 [Torrekie/Bern](https://github.com/Torrekie/Bern) fork、发布两个 CI 文件并运行一次。远程默认分支仅比创建时的上游增加这两个采集文件，未发布本地旧实验后端。
+
+首次采集：[39943744831](https://github.com/Torrekie/Bern/actions/runs/39943744831)，采集脚本提交 `69af5582318d33c734b84ba5d13c538efd05ea53`。应用源码仍为固定的 `ffbdbdf`。结果待确认，不进入下一阶段。
