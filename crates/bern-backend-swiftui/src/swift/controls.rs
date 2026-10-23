@@ -286,8 +286,25 @@ impl Generator<'_> {
             .field(element, "presented")
             .map(|field| self.binding_of(&field))
             .unwrap_or_else(|| "nil".into());
+        let native_circular = self.platform == Platform::Macos
+            && element.icon("icon").is_some()
+            && !ctx.toolbar
+            && element.prop("height").is_none()
+            && element.prop("width").is_none()
+            && !self
+                .style_of(element)
+                .as_ref()
+                .is_some_and(|style| style.draws_look());
+        let native = if native_circular {
+            format!(
+                ", nativeCircular: true, shortcut: {}",
+                self.shortcut(element).unwrap_or_else(|| "nil".into())
+            )
+        } else {
+            String::new()
+        };
         out.open(format!(
-            "BernPopoverButton(label: {label}, systemImage: {icon}, presented: {presented}, target: {}) {{",
+            "BernPopoverButton(label: {label}, systemImage: {icon}, presented: {presented}, target: {}{native}) {{",
             self.target(element, ctx)
         ));
         self.nodes(out, &element.children, ctx);

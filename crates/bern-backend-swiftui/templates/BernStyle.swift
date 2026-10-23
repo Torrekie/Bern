@@ -3267,6 +3267,10 @@ struct BernPopoverButton<Content: View>: View {
     let systemImage: String?
     let presented: Binding<Bool>?
     let target: String
+    #if os(macOS)
+    var nativeCircular = false
+    var shortcut: KeyboardShortcut? = nil
+    #endif
     @ViewBuilder let content: () -> Content
     @Environment(\.colorScheme) private var scheme
     @State private var local = false
@@ -3275,10 +3279,9 @@ struct BernPopoverButton<Content: View>: View {
         presented ?? $local
     }
 
-    var body: some View {
-        let showing = isPresented
+    private var standardTrigger: some View {
         Button {
-            showing.wrappedValue.toggle()
+            isPresented.wrappedValue.toggle()
         } label: {
             if let systemImage {
                 Label(label, systemImage: systemImage).labelStyle(.iconOnly)
@@ -3286,6 +3289,32 @@ struct BernPopoverButton<Content: View>: View {
                 Text(verbatim: label)
             }
         }
+    }
+
+    @MainActor @ViewBuilder private var trigger: some View {
+        #if os(macOS)
+        if #available(macOS 14, *) {
+            standardTrigger
+        } else if nativeCircular, let systemImage {
+            // Requested by the generator only for an unstyled, unconstrained
+            // icon outside a toolbar. The native control owns its press.
+            BernCircularIconButton(
+                systemImage: systemImage, label: label, target: target, shortcut: shortcut,
+                fontSize: nil, destructive: false, defaultFocus: false,
+                action: { isPresented.wrappedValue.toggle() }) {
+                    standardTrigger
+                }
+        } else {
+            standardTrigger
+        }
+        #else
+        standardTrigger
+        #endif
+    }
+
+    var body: some View {
+        let showing = isPresented
+        trigger
         .help(label)
         .bernPopover(isPresented: showing) {
             VStack(alignment: .leading, spacing: 12) { content() }
