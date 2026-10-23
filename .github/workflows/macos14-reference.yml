@@ -14,6 +14,11 @@ on:
         type: choice
         options: [normal, reduced]
         default: normal
+      app:
+        description: Upstream example to capture
+        type: choice
+        options: [showcase, gallery]
+        default: showcase
 
 permissions:
   contents: read
@@ -29,6 +34,7 @@ env:
   CARGO_BUILD_JOBS: "2"
   CARGO_TERM_COLOR: never
   MACOSX_DEPLOYMENT_TARGET: "14.0"
+  EXAMPLE: ${{ inputs.app }}
 
 jobs:
   build:
@@ -51,6 +57,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p evidence/build
+          case "$EXAMPLE" in showcase) product=Showcase ;; gallery) product=Gallery ;; *) exit 1 ;; esac
+          echo "PRODUCT=$product" >> "$GITHUB_ENV"
           {
             printf 'source_repository=AimesSoft/Bern\nsource_sha=%s\nharness_sha=%s\n' "$REFERENCE_SHA" "$GITHUB_SHA"
             printf 'runner_arch=%s\nimage_os=%s\nimage_version=%s\n' "$RUNNER_ARCH" "${ImageOS:-unknown}" "${ImageVersion:-unknown}"
@@ -85,25 +93,25 @@ jobs:
           cd source
           # At this SHA, macos is the original SwiftUI generator, not the
           # later shared native backend. Do not copy harness code into source.
-          cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest examples/showcase/Bern.toml --target macos --release 2>&1 | tee ../evidence/build/build.log
+          cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest "examples/$EXAMPLE/Bern.toml" --target macos --release 2>&1 | tee ../evidence/build/build.log
           test "$(git rev-parse HEAD)" = "$REFERENCE_SHA"
           git diff --exit-code
-          app=target/bern/macos/Showcase.app
-          test -x "$app/Contents/MacOS/Showcase"
-          test -x target/bern/macos/bin/showcase
+          app="target/bern/macos/$PRODUCT.app"
+          test -x "$app/Contents/MacOS/$PRODUCT"
+          test -x "target/bern/macos/bin/$EXAMPLE"
           minimum="$(plutil -extract LSMinimumSystemVersion raw -o - "$app/Contents/Info.plist")"
           test "$minimum" = 14.0
-          test "$(xcrun vtool -show-build "$app/Contents/MacOS/Showcase" | awk '/minos/ { print $2; exit }')" = 14.0
+          test "$(xcrun vtool -show-build "$app/Contents/MacOS/$PRODUCT" | awk '/minos/ { print $2; exit }')" = 14.0
           {
             printf 'minimum_macos=%s\n' "$minimum"
-            file "$app/Contents/MacOS/Showcase"
-            xcrun vtool -show-build "$app/Contents/MacOS/Showcase"
-            xcrun otool -L "$app/Contents/MacOS/Showcase"
+            file "$app/Contents/MacOS/$PRODUCT"
+            xcrun vtool -show-build "$app/Contents/MacOS/$PRODUCT"
+            xcrun otool -L "$app/Contents/MacOS/$PRODUCT"
             codesign --verify --deep --strict "$app"
           } 2>&1 | tee ../evidence/build/binary.txt
           cp target/bern/macos/build.json ../evidence/build/build.json
           cp target/bern/macos/glue/Cargo.lock ../evidence/build/generated-glue-Cargo.lock
-          tar -czf ../evidence/build/reference-app.tar.gz -C target/bern/macos Showcase.app bin/showcase
+          tar -czf ../evidence/build/reference-app.tar.gz -C target/bern/macos "$PRODUCT.app" "bin/$EXAMPLE"
           cd ../evidence/build
           shasum -a 256 reference-app.tar.gz > reference-app.tar.gz.sha256
       - name: Keep build provenance and the exact application
@@ -140,6 +148,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p reference evidence/runtime
+          case "$EXAMPLE" in showcase) product=Showcase ;; gallery) product=Gallery ;; *) exit 1 ;; esac
+          echo "PRODUCT=$product" >> "$GITHUB_ENV"
           {
             printf 'source_sha=%s\nharness_sha=%s\n' "$REFERENCE_SHA" "$GITHUB_SHA"
             printf 'runner_arch=%s\nimage_os=%s\nimage_version=%s\n' "$RUNNER_ARCH" "${ImageOS:-unknown}" "${ImageVersion:-unknown}"
@@ -153,7 +163,7 @@ jobs:
           test "$(sed -n 's/^source_sha=//p' build/environment.txt)" = "$REFERENCE_SHA"
           (cd build && shasum -a 256 -c reference-app.tar.gz.sha256)
           tar -xzf build/reference-app.tar.gz -C reference
-          codesign --verify --deep --strict reference/Showcase.app
+          codesign --verify --deep --strict "reference/$PRODUCT.app"
           cp build/environment.txt evidence/runtime/build-environment.txt
           cp build/binary.txt evidence/runtime/build-binary.txt
           cp build/reference-app.tar.gz.sha256 evidence/runtime/
@@ -180,7 +190,7 @@ jobs:
           set -euo pipefail
           # This script uses WindowServer capture, not BERN_SNAPSHOT_DIR.
           # Missing Screen Recording permission is an explicit failure.
-          xcrun swift -swift-version 5 harness/.github/scripts/macos14-reference.swift "$PWD/reference/Showcase.app" "$PWD/reference/bin/showcase" "$PWD/evidence/runtime" 2>&1 | tee evidence/runtime/capture.log
+          xcrun swift -swift-version 5 harness/.github/scripts/macos14-reference.swift "$PWD/reference/$PRODUCT.app" "$PWD/reference/bin/$EXAMPLE" "$PWD/evidence/runtime" 2>&1 | tee evidence/runtime/capture.log
       - name: Keep reference PNGs, command results and failure diagnostics
         if: always()
         uses: actions/upload-artifact@v5

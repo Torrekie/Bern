@@ -1,6 +1,7 @@
 // A bounded external observer of the pristine upstream application. No source
 // injection, TCC changes, offscreen view rendering or screenshot fallback.
 import AppKit
+import ApplicationServices
 import CoreGraphics
 import Darwin
 import Foundation
@@ -13,6 +14,7 @@ guard CommandLine.arguments.count == 4 else {
     exit(2)
 }
 let appURL = URL(fileURLWithPath: CommandLine.arguments[1])
+let product = appURL.deletingPathExtension().lastPathComponent
 let cliURL = URL(fileURLWithPath: CommandLine.arguments[2])
 let output = URL(fileURLWithPath: CommandLine.arguments[3], isDirectory: true)
 try files.createDirectory(at: output, withIntermediateDirectories: true)
@@ -22,7 +24,7 @@ var report: [String: Any] = [
     "harness_sha": ProcessInfo.processInfo.environment["GITHUB_SHA"] ?? "unknown",
     "os": ProcessInfo.processInfo.operatingSystemVersionString,
     "capture": "CGWindowListCreateImage / WindowServer",
-    "interaction_scope": "Generated CLI bindings only; mouse, keyboard and animation behavior are not verified",
+    "interaction_scope": "Generated CLI bindings. Motion files record programmatic transitions; mouse/keyboard paths and transition equivalence are not asserted",
     "requested_outer_size_points": ["width": 920, "height": 668],
     "geometry_scope": "Outer frame normalized through window.resize; CLI does not expose the content rect, and PNGs include system window chrome",
     "commands": [[String: Any]](), "windows": [[String: Any]](),
@@ -31,6 +33,8 @@ var commands = [[String: Any]]()
 var windows = [[String: Any]]()
 var environment = ProcessInfo.processInfo.environment
 var sequence = 0
+report["accessibility_trusted"] = AXIsProcessTrusted()
+report["post_event_access"] = CGPreflightPostEventAccess()
 report["displays"] = NSScreen.screens.map { screen -> [String: Any] in
     ["frame_points": NSStringFromRect(screen.frame), "scale": screen.backingScaleFactor,
      "color_space": screen.colorSpace?.localizedName ?? "unknown"]
@@ -137,9 +141,11 @@ func capture(_ name: String, process: Process, session: String) throws {
         throw Failure(description: "The reference application is not active at capture time")
     }
     let bounds = info[kCGWindowBounds as String] as? [String: NSNumber] ?? [:]
-    guard abs((bounds["Width"]?.doubleValue ?? 0) - 920) <= 1,
-          abs((bounds["Height"]?.doubleValue ?? 0) - 668) <= 1 else {
-        throw Failure(description: "WindowServer frame differs from the requested 920 x 668 point outer size")
+    if product == "Showcase" {
+        guard abs((bounds["Width"]?.doubleValue ?? 0) - 920) <= 1,
+              abs((bounds["Height"]?.doubleValue ?? 0) - 668) <= 1 else {
+            throw Failure(description: "WindowServer frame differs from the requested 920 x 668 point outer size")
+        }
     }
     let permission = CGPreflightScreenCaptureAccess()
     report["screen_recording_preflight"] = permission
@@ -162,6 +168,39 @@ func capture(_ name: String, process: Process, session: String) throws {
                     "pixel_width": image.width, "pixel_height": image.height,
                     "color_space": image.colorSpace?.name as String? ?? "unknown",
                     "session_windows": try cli(["window", "list"], session: session) ?? NSNull()])
+    try save()
+}
+
+func motion(_ name: String, process: Process, change: () throws -> Void) throws {
+    guard let info = visibleWindow(process.processIdentifier),
+          let number = info[kCGWindowNumber as String] as? NSNumber else {
+        throw Failure(description: "No window for transition capture")
+    }
+    // Keep the WindowServer sampling canvas stable while an inspector resizes the window.
+    let canvas = CGDisplayBounds(CGMainDisplayID())
+    let path = output.appendingPathComponent(name + ".gif")
+    let count = 16
+    guard let destination = CGImageDestinationCreateWithURL(path as CFURL, "com.compuserve.gif" as CFString, count, nil) else {
+        throw Failure(description: "Cannot create transition image")
+    }
+    CGImageDestinationSetProperties(destination, [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFLoopCount: 0]] as CFDictionary)
+    let start = ProcessInfo.processInfo.systemUptime
+    var times = [Double]()
+    for index in 0..<count {
+        if index == 1 { try change() }
+        guard process.isRunning, let image = CGWindowListCreateImage(canvas, .optionIncludingWindow, CGWindowID(number.uint32Value), [.boundsIgnoreFraming, .bestResolution]) else {
+            throw Failure(description: "Transition capture failed")
+        }
+        times.append(ProcessInfo.processInfo.systemUptime - start)
+        CGImageDestinationAddImage(destination, image, [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFDelayTime: 0.05]] as CFDictionary)
+        try pause(0.05)
+    }
+    guard CGImageDestinationFinalize(destination) else { throw Failure(description: "Cannot save transition image") }
+    var recordings = report["motion"] as? [[String: Any]] ?? []
+    recordings.append(["file": path.lastPathComponent, "frame_times_seconds": times,
+                       "canvas_points": NSStringFromRect(canvas),
+                       "scope": "WindowServer frames; GIF is for motion, original PNGs are the color reference"])
+    report["motion"] = recordings
     try save()
 }
 
@@ -190,7 +229,7 @@ do {
         try files.createDirectory(at: ipc, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
         environment["BERN_IPC_DIR"] = ipc.path; environment["BERN_APPEARANCE"] = appearance
         environment.removeValue(forKey: "BERN_SNAPSHOT_DIR")
-        let process = Process(); process.executableURL = appURL.appendingPathComponent("Contents/MacOS/Showcase")
+        let process = Process(); process.executableURL = appURL.appendingPathComponent("Contents/MacOS/" + product)
         process.arguments = ["-AppleLanguages", "(en)", "-AppleLocale", "en_US"]
         process.environment = environment
         let appLog = try logHandle("\(appearance)-application.log")
@@ -215,6 +254,25 @@ do {
         }
         _ = try cli(["window", "resize", "--window", identifier, "--width", "920", "--height", "668"], session: session)
         let sidebar = try control(inspect(session), suffix: ".pages", role: "sidebar")
+        if product == "Gallery" {
+            try pause(0.8)
+            try capture("gallery-patterns-\(appearance)", process: process, session: session)
+            let toggle = try control(inspect(session), suffix: ".show_details", role: "switch")
+            try motion("gallery-inspector-\(appearance)", process: process) {
+                _ = try cli(["ui", "set-bool", "--target", toggle["target"] as! String, "--value", "true"], session: session)
+            }
+            try capture("gallery-inspector-\(appearance)", process: process, session: session)
+            _ = try cli(["ui", "set-bool", "--target", toggle["target"] as! String, "--value", "false"], session: session)
+            _ = try cli(["ui", "select", "--target", sidebar["target"] as! String, "--option", "Film"], session: session)
+            try pause(1)
+            try capture("gallery-film-\(appearance)", process: process, session: session)
+            let last = try control(inspect(session), suffix: ".to_last", role: "button")
+            try motion("gallery-scroll-last-\(appearance)", process: process) {
+                _ = try cli(["ui", "activate", "--target", last["target"] as! String], session: session)
+            }
+            try capture("gallery-film-last-\(appearance)", process: process, session: session)
+            continue
+        }
         _ = try cli(["ui", "select", "--target", sidebar["target"] as! String, "--option", "Controls"], session: session)
         try pause(0.8)
         let before = try inspect(session)
