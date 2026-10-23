@@ -1,0 +1,619 @@
+{
+  "activation_calls": 0,
+  "capture_success": true,
+  "cicp_normalization_same_as_product_named_pq": true,
+  "comparisons": {
+    "product-standard-ffb vs native-swiftui-named": {
+      "patch_mean_rgb_deltas": {
+        "blue812": [
+          0.032795,
+          -0.033053,
+          -0.320141
+        ],
+        "cool812": [
+          -4.32366,
+          -0.326065,
+          -0.022665
+        ],
+        "green812": [
+          2.760989,
+          -0.018372,
+          1.184238
+        ],
+        "pastel812": [
+          -0.174021,
+          -1.882469,
+          -1.297218
+        ],
+        "red812": [
+          -0.175738,
+          0.801168,
+          0.658568
+        ],
+        "warm406": [
+          -0.174021,
+          -4.758585,
+          -3.20158
+        ],
+        "warm812": [
+          -0.174021,
+          -4.755237,
+          -3.601047
+        ],
+        "white203": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white812": [
+          0.0,
+          0.0,
+          0.060783
+        ],
+        "yellow812": [
+          0.0,
+          0.0,
+          1.873541
+        ]
+      },
+      "patch_mean_rgb_mae_codes": 1.0869991666666674,
+      "patch_mean_rgb_max_absolute_delta_codes": 4.758585000000011,
+      "ramp_column_count": 632,
+      "ramp_mean_column_rgb_mae_codes": 0.2416600738396622,
+      "ramp_mean_column_rgb_max_absolute_delta_codes": 0.8125,
+      "whole_image_rgb_pixels_exactly_equal": false
+    },
+    "product-standard-ffb vs product-standard-named": {
+      "patch_mean_rgb_deltas": {
+        "blue812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cool812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "green812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pastel812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "red812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warm406": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warm812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white203": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "yellow812": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patch_mean_rgb_mae_codes": 0.0,
+      "patch_mean_rgb_max_absolute_delta_codes": 0.0,
+      "ramp_column_count": 632,
+      "ramp_mean_column_rgb_mae_codes": 0.0,
+      "ramp_mean_column_rgb_max_absolute_delta_codes": 0.0,
+      "whole_image_rgb_pixels_exactly_equal": true
+    },
+    "product-standard-named vs native-swiftui-named": {
+      "patch_mean_rgb_deltas": {
+        "blue812": [
+          0.032795,
+          -0.033053,
+          -0.320141
+        ],
+        "cool812": [
+          -4.32366,
+          -0.326065,
+          -0.022665
+        ],
+        "green812": [
+          2.760989,
+          -0.018372,
+          1.184238
+        ],
+        "pastel812": [
+          -0.174021,
+          -1.882469,
+          -1.297218
+        ],
+        "red812": [
+          -0.175738,
+          0.801168,
+          0.658568
+        ],
+        "warm406": [
+          -0.174021,
+          -4.758585,
+          -3.20158
+        ],
+        "warm812": [
+          -0.174021,
+          -4.755237,
+          -3.601047
+        ],
+        "white203": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white812": [
+          0.0,
+          0.0,
+          0.060783
+        ],
+        "yellow812": [
+          0.0,
+          0.0,
+          1.873541
+        ]
+      },
+      "patch_mean_rgb_mae_codes": 1.0869991666666674,
+      "patch_mean_rgb_max_absolute_delta_codes": 4.758585000000011,
+      "ramp_column_count": 632,
+      "ramp_mean_column_rgb_mae_codes": 0.2416600738396622,
+      "ramp_mean_column_rgb_max_absolute_delta_codes": 0.8125,
+      "whole_image_rgb_pixels_exactly_equal": false
+    }
+  },
+  "current_headrooms": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "edr_requests": [
+    false,
+    false
+  ],
+  "frontmost_after": 75891,
+  "frontmost_before": 75891,
+  "limitations": [
+    "Product Standard vs macOS13 native namedPQ only; no macOS14 runtime, High, HLG, arbitrary metadata/ICC/alpha/EXIF or physical brightness equivalence.",
+    "Color atlas includes out-of-output-gamut BT.2020 patches; compare complete native pipelines rather than inferring a unique scalar mapper."
+  ],
+  "littlecms": "2.19",
+  "measurement": "One native WindowServer capture; source and output images are640x360 pixels; ICC->sRGB with Pillow ImageCms perceptual intent0 flags0.10patch means over112x104-pixel interiors; gray ramp columns4..635 over80rows y260..339. No rescaling or phase fitting. Encoded8-bit sRGB code values, not linear EDR or physical nits.",
+  "outcome": "Both product Standard sources agree exactly in measured image pixels; native13 namedPQ remains different in color and gray-ramp output. No native-equivalence pass.",
+  "patches": [
+    {
+      "input_nit": [
+        203,
+        203,
+        203
+      ],
+      "name": "white203",
+      "pq_u16": [
+        38055,
+        38055,
+        38055
+      ],
+      "quantized_nit": [
+        202.98678823087127,
+        202.98678823087127,
+        202.98678823087127
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "input_nit": [
+        812,
+        812,
+        812
+      ],
+      "name": "white812",
+      "pq_u16": [
+        47785,
+        47785,
+        47785
+      ],
+      "quantized_nit": [
+        812.0552724503983,
+        812.0552724503983,
+        812.0552724503983
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 128,
+        "y": 0
+      }
+    },
+    {
+      "input_nit": [
+        812,
+        0,
+        0
+      ],
+      "name": "red812",
+      "pq_u16": [
+        47785,
+        0,
+        0
+      ],
+      "quantized_nit": [
+        812.0552724503983,
+        0,
+        0
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 256,
+        "y": 0
+      }
+    },
+    {
+      "input_nit": [
+        0,
+        812,
+        0
+      ],
+      "name": "green812",
+      "pq_u16": [
+        0,
+        47785,
+        0
+      ],
+      "quantized_nit": [
+        0,
+        812.0552724503983,
+        0
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 384,
+        "y": 0
+      }
+    },
+    {
+      "input_nit": [
+        0,
+        0,
+        812
+      ],
+      "name": "blue812",
+      "pq_u16": [
+        0,
+        0,
+        47785
+      ],
+      "quantized_nit": [
+        0,
+        0,
+        812.0552724503983
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 512,
+        "y": 0
+      }
+    },
+    {
+      "input_nit": [
+        812,
+        812,
+        0
+      ],
+      "name": "yellow812",
+      "pq_u16": [
+        47785,
+        47785,
+        0
+      ],
+      "quantized_nit": [
+        812.0552724503983,
+        812.0552724503983,
+        0
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 0,
+        "y": 120
+      }
+    },
+    {
+      "input_nit": [
+        812,
+        406,
+        203
+      ],
+      "name": "warm812",
+      "pq_u16": [
+        47785,
+        42871,
+        38055
+      ],
+      "quantized_nit": [
+        812.0552724503983,
+        405.97614805042076,
+        202.98678823087127
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 128,
+        "y": 120
+      }
+    },
+    {
+      "input_nit": [
+        203,
+        406,
+        812
+      ],
+      "name": "cool812",
+      "pq_u16": [
+        38055,
+        42871,
+        47785
+      ],
+      "quantized_nit": [
+        202.98678823087127,
+        405.97614805042076,
+        812.0552724503983
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 256,
+        "y": 120
+      }
+    },
+    {
+      "input_nit": [
+        406,
+        203,
+        101.5
+      ],
+      "name": "warm406",
+      "pq_u16": [
+        42871,
+        38055,
+        33395
+      ],
+      "quantized_nit": [
+        405.97614805042076,
+        202.98678823087127,
+        101.50160900373143
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 384,
+        "y": 120
+      }
+    },
+    {
+      "input_nit": [
+        812,
+        609,
+        406
+      ],
+      "name": "pastel812",
+      "pq_u16": [
+        47785,
+        45737,
+        42871
+      ],
+      "quantized_nit": [
+        812.0552724503983,
+        608.9724227864563,
+        405.97614805042076
+      ],
+      "source_rect": {
+        "height": 120,
+        "width": 128,
+        "x": 512,
+        "y": 120
+      }
+    }
+  ],
+  "pillow": "12.3.0",
+  "product_commit": "e06e080665a0c774843762ca132edf31bcb82d77",
+  "product_equals_native_named_pq": false,
+  "runtime_sha256": "1ec700f09c9b2488f0253beed0b2134e08b651bd5c6936f0e8e70abad454ac0f",
+  "scope": "Current product macOS13 Standard helper for two same-code PQ atlas files vs native macOS13 SwiftUI namedPQ Image; no product edits, no High or macOS14 equivalence",
+  "stopped_metal_views": 2,
+  "views": {
+    "native-swiftui-named": {
+      "mean_srgb_rgb_by_patch": {
+        "blue812": [
+          0.135903,
+          0.129722,
+          255.0
+        ],
+        "cool812": [
+          92.491758,
+          255.0,
+          255.0
+        ],
+        "green812": [
+          0.0,
+          255.0,
+          0.0
+        ],
+        "pastel812": [
+          255.0,
+          245.185096,
+          200.932091
+        ],
+        "red812": [
+          255.0,
+          0.0,
+          0.0
+        ],
+        "warm406": [
+          255.0,
+          208.696085,
+          149.918527
+        ],
+        "warm812": [
+          255.0,
+          223.059409,
+          160.176511
+        ],
+        "white203": [
+          228.928142,
+          228.933551,
+          228.917926
+        ],
+        "white812": [
+          254.893887,
+          254.899554,
+          254.827438
+        ],
+        "yellow812": [
+          254.891655,
+          254.899639,
+          0.0
+        ]
+      }
+    },
+    "product-standard-ffb": {
+      "mean_srgb_rgb_by_patch": {
+        "blue812": [
+          0.168698,
+          0.096669,
+          254.679859
+        ],
+        "cool812": [
+          88.168098,
+          254.673935,
+          254.977335
+        ],
+        "green812": [
+          2.760989,
+          254.981628,
+          1.184238
+        ],
+        "pastel812": [
+          254.825979,
+          243.302627,
+          199.634873
+        ],
+        "red812": [
+          254.824262,
+          0.801168,
+          0.658568
+        ],
+        "warm406": [
+          254.825979,
+          203.9375,
+          146.716947
+        ],
+        "warm812": [
+          254.825979,
+          218.304172,
+          156.575464
+        ],
+        "white203": [
+          228.928142,
+          228.933551,
+          228.917926
+        ],
+        "white812": [
+          254.893887,
+          254.899554,
+          254.888221
+        ],
+        "yellow812": [
+          254.891655,
+          254.899639,
+          1.873541
+        ]
+      }
+    },
+    "product-standard-named": {
+      "mean_srgb_rgb_by_patch": {
+        "blue812": [
+          0.168698,
+          0.096669,
+          254.679859
+        ],
+        "cool812": [
+          88.168098,
+          254.673935,
+          254.977335
+        ],
+        "green812": [
+          2.760989,
+          254.981628,
+          1.184238
+        ],
+        "pastel812": [
+          254.825979,
+          243.302627,
+          199.634873
+        ],
+        "red812": [
+          254.824262,
+          0.801168,
+          0.658568
+        ],
+        "warm406": [
+          254.825979,
+          203.9375,
+          146.716947
+        ],
+        "warm812": [
+          254.825979,
+          218.304172,
+          156.575464
+        ],
+        "white203": [
+          228.928142,
+          228.933551,
+          228.917926
+        ],
+        "white812": [
+          254.893887,
+          254.899554,
+          254.888221
+        ],
+        "yellow812": [
+          254.891655,
+          254.899639,
+          1.873541
+        ]
+      }
+    }
+  },
+  "window_seconds": 0.8470309972763062
+}

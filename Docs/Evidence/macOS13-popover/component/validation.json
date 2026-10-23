@@ -1,0 +1,37 @@
+{
+  "product_commit": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+  "compiler": "Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0",
+  "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+  "target": "arm64-apple-macos13.0",
+  "swift_language_mode": "5",
+  "typecheck_exit_code": 0,
+  "typecheck_diagnostics_empty": true,
+  "native_run_success": true,
+  "baseline_run_success": true,
+  "native_inputs": "NSButton.performClick and NSWindow.performKeyEquivalent inside the fixture only",
+  "foreground_activations": 0,
+  "product_source_sha256": {
+    "crates/bern-backend-swiftui/templates/BernStyle.swift": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f",
+    "crates/bern-backend-swiftui/templates/BernAppKit.swift": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598",
+    "crates/bern-backend-swiftui/templates/BernRuntime.swift": "1ec700f09c9b2488f0253beed0b2134e08b651bd5c6936f0e8e70abad454ac0f",
+    "crates/bern-backend-swiftui/src/swift/controls.rs": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+  },
+  "limits": [
+    "Partial component typecheck with unused SDK26 style names adapted; not a whole-app build.",
+    "No physical mouse or keyboard delivered.",
+    "Runtime gate cases explicitly provide the generator request flag; generator guards are covered by product source and parent CI.",
+    "onDisappear is not used as a visual dismissal oracle; both original and native cached window objects remain temporarily visible while CGWindowAlpha is zero."
+  ],
+  "typecheck_command": "xcrun swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos13.0 -typecheck -module-cache-path <private-module-cache> VolumePopoverProbe.swift",
+  "typecheck_fixture_sha256": "a61679388e56c519ef7a5486bff3035f1d74bf14f63fed06df4e6e29be8637a1",
+  "unchanged_general_circle": {
+    "@ViewBuilder func bernCircleBorderShape()": {
+      "byte_identical_to_parent": true,
+      "sha256": "3ab3dfb18fa25a27ae409da0b23de23fc1739f41d7e8002d5cd1d759dbee74a1"
+    },
+    "private struct BernLegacyShapedButton:": {
+      "byte_identical_to_parent": true,
+      "sha256": "a0d62619c649348be690269409b5583ee36e7ca0fb82506d99c416935461507d"
+    }
+  }
+}

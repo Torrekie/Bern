@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "EXPERIMENTAL CANDIDATE; NOT INTEGRATED INTO PRODUCT; NOT GENERAL APPLE14 HIGH/COLOR/METADATA EQUIVALENCE",
+  "scope": "Annex5 candidate is experimental and not integrated. Includes separately scoped native13 color baselines, existing e06 Standard helper comparison, and an incomplete native Standard headroom attempt. No general Apple14 High/color/metadata equivalence.",
   "created_utc": "2026-10-23T16:38:49.733389+00:00",
   "upstream_source_commit": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
   "latest_product_build_source_commit": "52264541ea584745bde514ea43e98e337a24772a",
@@ -120,12 +120,12 @@
     ],
     "high_back_to_standard_matches_initial": true
   },
-  "file_count": 32,
+  "file_count": 67,
   "files": [
     {
       "path": "README.md",
-      "bytes": 2586,
-      "sha256": "8bd2fa1d940ce0877097def919264a0adcd64d6516a417b82d7db570f27cb18b"
+      "bytes": 3524,
+      "sha256": "5ae7759b76880e59e203d764701fd18c561ef85de89ba7923fbacc8c4530eb7f"
     },
     {
       "path": "color-probe13/binary.txt",
@@ -176,6 +176,116 @@
       "path": "color-probe13/validation.json",
       "bytes": 14008,
       "sha256": "11f5708aabdb4713197abd53cc235abdb46d67bb39707aeeb12f47ab08243a23"
+    },
+    {
+      "path": "native-sdr-components13/README.md",
+      "bytes": 2174,
+      "sha256": "f7678f469676210a01c15c89b791d989f3986c0653f487d833ca1d7a32b5b46d"
+    },
+    {
+      "path": "native-sdr-components13/SHA256SUMS",
+      "bytes": 547,
+      "sha256": "76204948f0221aeb0180486590ac2a0ddc06112549196d095d9a0aa188fe22ed"
+    },
+    {
+      "path": "native-sdr-components13/analyze.py",
+      "bytes": 4446,
+      "sha256": "7478530bbfcd5dc04777f3431f66d3cfa8fbe44db6b23926d963021574568865"
+    },
+    {
+      "path": "native-sdr-components13/binary.txt",
+      "bytes": 155,
+      "sha256": "cffb59408610f0c26fc3a86194f280d2006e5d1e47ac04257eb5b6f90eb97a5a"
+    },
+    {
+      "path": "native-sdr-components13/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native-sdr-components13/capture.png",
+      "bytes": 248855,
+      "sha256": "5f32300f0a1325342e94c18a873dcb9ed5efc07d4c6dd1dd768b2c2a5ec87b8c"
+    },
+    {
+      "path": "native-sdr-components13/environment.txt",
+      "bytes": 271,
+      "sha256": "01c2ec1921c20e1bfa8a21bbe8a05d2616e0dbb37f62a756294fc5394132a83f"
+    },
+    {
+      "path": "native-sdr-components13/main.swift",
+      "bytes": 14353,
+      "sha256": "62e57db5891bf8853aaf4eda005524835957ad8d1810bbf4f0794d97853c8a68"
+    },
+    {
+      "path": "native-sdr-components13/ramp-columns.npz",
+      "bytes": 8592,
+      "sha256": "fa330e21a4437cd34c7e73edd82e54896ea7d5abfd36a0fdc2abda0206cc2727"
+    },
+    {
+      "path": "native-sdr-components13/report.json",
+      "bytes": 4623,
+      "sha256": "e417c5a71cc35c651b82ba4dafeb65efaab5125841f450081329d924733fd64d"
+    },
+    {
+      "path": "native-sdr-components13/run.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native-sdr-components13/validation.json",
+      "bytes": 12589,
+      "sha256": "91a99406ad7780b7218ee3725d7c2247d8c8d1f6f686704aa75caaa4c2349715"
+    },
+    {
+      "path": "native-sdr-headroom13/README.md",
+      "bytes": 1375,
+      "sha256": "b78478d91bc0d411bf4fcba7d0e2ecb6a482511483894b88cef00332b3bf4d80"
+    },
+    {
+      "path": "native-sdr-headroom13/SHA256SUMS",
+      "bytes": 397,
+      "sha256": "4d35bfeb8c3a540565609629a6aeca998be75cefe6c7a51ad9db40d443c76a41"
+    },
+    {
+      "path": "native-sdr-headroom13/binary.txt",
+      "bytes": 155,
+      "sha256": "cffb59408610f0c26fc3a86194f280d2006e5d1e47ac04257eb5b6f90eb97a5a"
+    },
+    {
+      "path": "native-sdr-headroom13/build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native-sdr-headroom13/environment.txt",
+      "bytes": 271,
+      "sha256": "01c2ec1921c20e1bfa8a21bbe8a05d2616e0dbb37f62a756294fc5394132a83f"
+    },
+    {
+      "path": "native-sdr-headroom13/headroom1-initial.png",
+      "bytes": 249078,
+      "sha256": "68c194417f51b86abf3479bb94b5e01343c7f74182df883ac17460378acb093e"
+    },
+    {
+      "path": "native-sdr-headroom13/main.swift",
+      "bytes": 17439,
+      "sha256": "ab60a90143534e16fcb3c6598446e02e680f65e2d9cafde9af2ff7631bcdfc60"
+    },
+    {
+      "path": "native-sdr-headroom13/report.json",
+      "bytes": 2986,
+      "sha256": "a73a5471e6d92a63c535e306f7c080a8bb2763c43c9c0c6009d47e3afb018815"
+    },
+    {
+      "path": "native-sdr-headroom13/run.log",
+      "bytes": 121,
+      "sha256": "83f09940e0d9926571b34bfcadf4eba65304281bf8ad0a02bd77cce94d7e76fc"
+    },
+    {
+      "path": "native-sdr-headroom13/validation.json",
+      "bytes": 1771,
+      "sha256": "14bbec000b677f2c415239fa996278baef4a0a3a10b65b73ac90955b0c32d180"
     },
     {
       "path": "numeric/REPORT.md",
@@ -281,7 +391,77 @@
       "path": "prototype/summary.json",
       "bytes": 2521,
       "sha256": "29ebc35389ef0f886c101becb7c7054058b61354c6447d98ab003b4bf20749da"
+    },
+    {
+      "path": "standard-color-e06/README.md",
+      "bytes": 2351,
+      "sha256": "5fa58a1280846c031ea662e9484f3a95352ae88154126c892a0d0d7293ee64d9"
+    },
+    {
+      "path": "standard-color-e06/SHA256SUMS",
+      "bytes": 629,
+      "sha256": "55cc2b0639a33cb34fb5bdc1bd73df8778fca50bc74229d0f5665a103fa05a12"
+    },
+    {
+      "path": "standard-color-e06/analyze.py",
+      "bytes": 4052,
+      "sha256": "e680c838b2c6d46c6ff409769d4c353da27eaff1de09a30d6cdd316a8d731f5c"
+    },
+    {
+      "path": "standard-color-e06/binary.txt",
+      "bytes": 155,
+      "sha256": "cffb59408610f0c26fc3a86194f280d2006e5d1e47ac04257eb5b6f90eb97a5a"
+    },
+    {
+      "path": "standard-color-e06/build.log",
+      "bytes": 313,
+      "sha256": "717c12d3b9787d5b631eff1bd0bc92ec8892db481609113d86d178b067982ed6"
+    },
+    {
+      "path": "standard-color-e06/capture.png",
+      "bytes": 279622,
+      "sha256": "b47411ea7bef4891d580c09ce536d3f04f60d6e4b4eac16a3df937f5d934e7b0"
+    },
+    {
+      "path": "standard-color-e06/environment.txt",
+      "bytes": 271,
+      "sha256": "01c2ec1921c20e1bfa8a21bbe8a05d2616e0dbb37f62a756294fc5394132a83f"
+    },
+    {
+      "path": "standard-color-e06/extraction.json",
+      "bytes": 802,
+      "sha256": "b08592817f1a13118dff09981acb2bd5917b67751304ed1036e1c52aae1f849e"
+    },
+    {
+      "path": "standard-color-e06/main.swift",
+      "bytes": 23722,
+      "sha256": "0b9ae6fe1a6f8756a78d2eca4049800a91f538786b0db77f1b996836fbbfc325"
+    },
+    {
+      "path": "standard-color-e06/ramp-columns.npz",
+      "bytes": 10145,
+      "sha256": "07b2fc595f4ba158c29d8baa5985f2ace067509bba90652ddc176b76eccc6038"
+    },
+    {
+      "path": "standard-color-e06/report.json",
+      "bytes": 4154,
+      "sha256": "db48cde2b723eaeeec8c817f7eef9ae2d831fde0f26a0d098afa6faa00cf169a"
+    },
+    {
+      "path": "standard-color-e06/run.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "standard-color-e06/validation.json",
+      "bytes": 12383,
+      "sha256": "4dc735bf3b10c59f400092665a97840544f67b2998fa5152e20207ab1dc4c7fc"
     }
   ],
-  "additional_color_probe13": "Native13 baseline only; validation.json owns its source/run provenance. Not an Annex5 integration or macOS14 color equivalence result."
+  "additional_color_probe13": "Native13 baseline only; validation.json owns its source/run provenance. Not an Annex5 integration or macOS14 color equivalence result.",
+  "additional_checks": {
+    "standard-color-e06": "standard-color-e06/validation.json",
+    "native-sdr-components13": "native-sdr-components13/validation.json",
+    "native-sdr-headroom13": "native-sdr-headroom13/validation.json"
+  }
 }

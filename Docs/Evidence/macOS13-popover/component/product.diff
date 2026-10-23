@@ -1,0 +1,92 @@
+diff --git a/crates/bern-backend-swiftui/src/swift/controls.rs b/crates/bern-backend-swiftui/src/swift/controls.rs
+index 5e136ec..0e9d1ca 100644
+--- a/crates/bern-backend-swiftui/src/swift/controls.rs
++++ b/crates/bern-backend-swiftui/src/swift/controls.rs
+@@ -286,8 +286,25 @@ impl Generator<'_> {
+             .field(element, "presented")
+             .map(|field| self.binding_of(&field))
+             .unwrap_or_else(|| "nil".into());
++        let native_circular = self.platform == Platform::Macos
++            && element.icon("icon").is_some()
++            && !ctx.toolbar
++            && element.prop("height").is_none()
++            && element.prop("width").is_none()
++            && !self
++                .style_of(element)
++                .as_ref()
++                .is_some_and(|style| style.draws_look());
++        let native = if native_circular {
++            format!(
++                ", nativeCircular: true, shortcut: {}",
++                self.shortcut(element).unwrap_or_else(|| "nil".into())
++            )
++        } else {
++            String::new()
++        };
+         out.open(format!(
+-            "BernPopoverButton(label: {label}, systemImage: {icon}, presented: {presented}, target: {}) {{",
++            "BernPopoverButton(label: {label}, systemImage: {icon}, presented: {presented}, target: {}{native}) {{",
+             self.target(element, ctx)
+         ));
+         self.nodes(out, &element.children, ctx);
+diff --git a/crates/bern-backend-swiftui/templates/BernStyle.swift b/crates/bern-backend-swiftui/templates/BernStyle.swift
+index 684a5e4..d7c5331 100644
+--- a/crates/bern-backend-swiftui/templates/BernStyle.swift
++++ b/crates/bern-backend-swiftui/templates/BernStyle.swift
+@@ -3267,6 +3267,10 @@ struct BernPopoverButton<Content: View>: View {
+     let systemImage: String?
+     let presented: Binding<Bool>?
+     let target: String
++    #if os(macOS)
++    var nativeCircular = false
++    var shortcut: KeyboardShortcut? = nil
++    #endif
+     @ViewBuilder let content: () -> Content
+     @Environment(\.colorScheme) private var scheme
+     @State private var local = false
+@@ -3275,10 +3279,9 @@ struct BernPopoverButton<Content: View>: View {
+         presented ?? $local
+     }
+ 
+-    var body: some View {
+-        let showing = isPresented
++    private var standardTrigger: some View {
+         Button {
+-            showing.wrappedValue.toggle()
++            isPresented.wrappedValue.toggle()
+         } label: {
+             if let systemImage {
+                 Label(label, systemImage: systemImage).labelStyle(.iconOnly)
+@@ -3286,6 +3289,32 @@ struct BernPopoverButton<Content: View>: View {
+                 Text(verbatim: label)
+             }
+         }
++    }
++
++    @MainActor @ViewBuilder private var trigger: some View {
++        #if os(macOS)
++        if #available(macOS 14, *) {
++            standardTrigger
++        } else if nativeCircular, let systemImage {
++            // Requested by the generator only for an unstyled, unconstrained
++            // icon outside a toolbar. The native control owns its press.
++            BernCircularIconButton(
++                systemImage: systemImage, label: label, target: target, shortcut: shortcut,
++                fontSize: nil, destructive: false, defaultFocus: false,
++                action: { isPresented.wrappedValue.toggle() }) {
++                    standardTrigger
++                }
++        } else {
++            standardTrigger
++        }
++        #else
++        standardTrigger
++        #endif
++    }
++
++    var body: some View {
++        let showing = isPresented
++        trigger
+         .help(label)
+         .bernPopover(isPresented: showing) {
+             VStack(alignment: .leading, spacing: 12) { content() }

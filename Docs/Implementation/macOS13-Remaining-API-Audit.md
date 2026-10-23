@@ -2,6 +2,8 @@
 
 审计源码：`outputs/Bern`，最终快照 `5226454`（原始上游 `ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee`）。只读检查了 modern SwiftUI 的所有共享 Swift 模板、Mac AppKit 模板及 Rust Swift 生成器；未以旧 Objective-C 原型作为基线。没有 Rust 构建、UI 运行、下载或远程操作。
 
+后续进展：`f9e08b1` 已为生成器选中的普通图标 PopoverButton 复用系统 `NSButton`，保留手写 helper 默认行为及有样式/显式尺寸/toolbar 等排除条件；未修改通用圆形样式或 Menu。独立窗口的 native action 检查已通过，该版两整应用已构建并在13启动，Gallery Frame绑定打开/编辑已通过；14/13 Frame实图对照仍待验收。以下正文保留 `5226454` 审计时的发现；当前状态以[验收记录](macOS13-Acceptance.md)为准。
+
 唯一获另行授权的产品修改是 `BernPinch`：14 恢复原 `MagnifyGesture`，13 使用 `MagnificationGesture`，倍率与提交公式不变；已由父任务提交。局部 Swift5.9.2/SDK14.2 target13 类型检查通过，夹具用 `@MainActor` 模拟产品构建的默认 MainActor 隔离；完整新源码 CI 仍是独立门槛。
 
 下面的“差距”区分 **确定采用近似实现** 与 **实际交互尚未验收**。仅有不同 API 不直接等于已复现缺陷。源码行号均为当前快照。所有 `Style`/`Runtime`/`Media`/`AppKit`/`Compatibility` 缩写指 `crates/bern-backend-swiftui/templates/Bern*.swift`；生成器路径以 `crates/bern-backend-swiftui/src/swift/` 为根。

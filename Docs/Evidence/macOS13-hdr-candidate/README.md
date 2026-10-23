@@ -19,3 +19,11 @@
 即便假设已知Annex5的SDR函数`T1`，理想203/812nit在Hd2时，后乘2得到`1.566915/1.998871`，先除2再映射并乘2得到`0.992081/1.911780`，均不等于直接目标406nit的`1/1.996624`。这是已有候选函数的数学反例，**不是额外执行的系统CI组合实验**；不能将前后曝光包装成已等同的High。
 
 另有[13原生彩色probe](color-probe13/validation.json)，仅记录13的已知输入/输出和稳定截图，不是Annex5产品实现或14彩色等同证明；对应14采集尚待完成。
+
+## 当前产品与原生组件的彩色补证
+
+- [e06 Standard实际helper](standard-color-e06/validation.json)：相同atlas的自定义ICC经cICP规范化后，与命名PQ在产品路径中输出完全相同；对13原生SwiftUI的10色块通道均值MAE约1.087/255，最大约4.759/255。灰阶接近不能替代彩色验收。
+- [系统NSImageView候选](native-sdr-components13/validation.json)：正确设置图像逻辑尺寸后，真实Hd1下与13原生SwiftUI整幅图逐像素相同；CGContext8位sRGB路径仍有约5级色块均值差。这是可复用组件候选，未修改产品。
+- [余量切换的有限尝试](native-sdr-headroom13/validation.json)：7.5秒采集上限内仅取得初始Hd1两张相同buffer，其它阶段未完成，不推断失败原因或动态Standard恒定性。
+
+以上补证均为本机13独立窗口，非激活状态，不是14彩色采集或一般High等同证明。原exe/cache已清。

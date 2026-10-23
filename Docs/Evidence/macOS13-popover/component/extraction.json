@@ -1,0 +1,21 @@
+{
+  "product_files": [
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f"
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "sha256": "1ec700f09c9b2488f0253beed0b2134e08b651bd5c6936f0e8e70abad454ac0f"
+    }
+  ],
+  "adaptations": [
+    "Unused SDK26 glass type names replaced by corresponding pre26 style names solely to typecheck on SDK14.2; branch not executed on13.",
+    "Unrelated theme/host types are minimal fixture adapters.",
+    "Popover, native circular bridge, control registry and mount modifier extracted verbatim."
+  ]
+}

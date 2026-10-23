@@ -1,0 +1,83 @@
+{
+  "activation_calls" : 0,
+  "cgcontext_bits_per_component" : 8,
+  "cgcontext_output_color" : {
+    "icc_sha256" : "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+    "is_pq" : false,
+    "name" : "kCGColorSpaceSRGB",
+    "uses_2100" : false
+  },
+  "completed_phases" : 1,
+  "error" : "Failure(message: \"7.5-second collection deadline; actual headroom transition incomplete\")",
+  "frontmost_pid_after" : 75891,
+  "frontmost_pid_before" : 75891,
+  "named_pq_copy_provider_bytes_unchanged" : true,
+  "os" : "Version 13.7.8 (Build 22H730)",
+  "scope" : "Public native macOS13 NSImageView and native SwiftUI namedPQ under actual current headroom1->potential->1, fixture-only constant linear2 request; no product mapper\/High or macOS14 equivalence",
+  "sources" : [
+    {
+      "bitmap_info" : 4099,
+      "bits_per_component" : 16,
+      "decoded_color" : {
+        "cicp_hex" : "636963700000000009100001",
+        "icc_sha256" : "63cd9f4a8443c71df3633aa0a2ec4594aa8fbca23b1a3231b517bc726a567b16",
+        "is_pq" : false,
+        "name" : "unnamed",
+        "uses_2100" : false
+      },
+      "file" : "source-ffb-icc.png",
+      "file_sha256" : "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e",
+      "height" : 360,
+      "normalized_space" : "kCGColorSpaceITUR_2100_PQ",
+      "provider_sha256" : "825a2d25eb2b74a596730fc1beb0003c2be29ebdde22d9a23e8e954bde261e7c",
+      "width" : 640
+    },
+    {
+      "bitmap_info" : 4099,
+      "bits_per_component" : 16,
+      "decoded_color" : {
+        "icc_sha256" : "6f756c9ba8ab35eab3ca429edaa3f468a7f8389121da6455ff47cbf1ae89b91a",
+        "is_pq" : true,
+        "name" : "kCGColorSpaceITUR_2100_PQ",
+        "uses_2100" : true
+      },
+      "file" : "source-named-pq.png",
+      "file_sha256" : "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+      "height" : 360,
+      "normalized_space" : "kCGColorSpaceITUR_2100_PQ",
+      "provider_sha256" : "825a2d25eb2b74a596730fc1beb0003c2be29ebdde22d9a23e8e954bde261e7c",
+      "width" : 640
+    }
+  ],
+  "stages" : [
+    {
+      "capture_buffers" : [
+        {
+          "active" : false,
+          "current_headroom" : 1,
+          "frontmost_pid" : 75891,
+          "key" : false,
+          "potential_headroom" : 2,
+          "rgba8_srgb_sha256" : "b6593483f06e0e41d9652d065a962441e743d3a1fbf27c81fb92b843a97892df"
+        },
+        {
+          "active" : false,
+          "current_headroom" : 1,
+          "frontmost_pid" : 75891,
+          "key" : false,
+          "potential_headroom" : 2,
+          "rgba8_srgb_sha256" : "b6593483f06e0e41d9652d065a962441e743d3a1fbf27c81fb92b843a97892df"
+        }
+      ],
+      "current_headroom" : 1,
+      "elapsed_seconds" : 0.37491905689239502,
+      "phase" : "headroom1-initial",
+      "png" : "headroom1-initial.png",
+      "potential_headroom" : 2
+    }
+  ],
+  "stopped_metal_views" : 0,
+  "stopped_software_views" : 1,
+  "success" : false,
+  "window_seconds" : 7.6838990449905396
+}
