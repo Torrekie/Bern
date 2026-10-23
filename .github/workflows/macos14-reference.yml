@@ -1,0 +1,158 @@
+# Manual reference capture only. The application is built from pristine
+# upstream source; this checkout supplies only the capture harness.
+name: macOS 14 upstream reference
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: macos14-reference-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  REFERENCE_SHA: ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee
+  CARGO_INCREMENTAL: "0"
+  CARGO_BUILD_JOBS: "2"
+  CARGO_TERM_COLOR: never
+  MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+jobs:
+  build:
+    name: Build upstream SwiftUI with SDK 26
+    runs-on: macos-26
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - name: Check out upstream application source
+        uses: actions/checkout@v5
+        with:
+          repository: AimesSoft/Bern
+          ref: ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee
+          path: source
+          persist-credentials: false
+      - name: Record source and SDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/build
+          {
+            printf 'source_repository=AimesSoft/Bern\nsource_sha=%s\nharness_sha=%s\n' "$REFERENCE_SHA" "$GITHUB_SHA"
+            printf 'runner_arch=%s\nimage_os=%s\nimage_version=%s\n' "$RUNNER_ARCH" "${ImageOS:-unknown}" "${ImageVersion:-unknown}"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+          } 2>&1 | tee evidence/build/environment.txt
+          test "$(git -C source rev-parse HEAD)" = "$REFERENCE_SHA"
+          test ! -e source/crates/bern-backend-objc
+          git -C source diff --exit-code
+          test "$(uname -m)" = arm64
+          sdk="$(xcrun --sdk macosx --show-sdk-version)"
+          test "${sdk%%.*}" -ge 26
+      - name: Install the exact upstream Rust toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd evidence/build
+          curl --fail --location --retry 2 --max-time 60 https://static.rust-lang.org/dist/channel-rust-1.99.0.toml -o channel-rust-1.99.0.toml
+          curl --fail --location --retry 2 --max-time 60 https://static.rust-lang.org/dist/channel-rust-1.99.0.toml.sha256 -o channel-rust-1.99.0.toml.sha256
+          shasum -a 256 -c channel-rust-1.99.0.toml.sha256
+          rustup toolchain install 1.99.0 --profile minimal 2>&1 | tee rust-install.log
+          rustc +1.99.0 -Vv | tee rust-version.txt
+          cargo +1.99.0 -V | tee cargo-version.txt
+          rustc +1.99.0 -V | grep '^rustc 1\.99\.0 '
+      - name: Build the unmodified upstream macos target
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source
+          # At this SHA, macos is the original SwiftUI generator, not the
+          # later shared native backend. Do not copy harness code into source.
+          cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest examples/showcase/Bern.toml --target macos --release 2>&1 | tee ../evidence/build/build.log
+          test "$(git rev-parse HEAD)" = "$REFERENCE_SHA"
+          git diff --exit-code
+          app=target/bern/macos/Showcase.app
+          test -x "$app/Contents/MacOS/Showcase"
+          test -x target/bern/macos/bin/showcase
+          minimum="$(plutil -extract LSMinimumSystemVersion raw -o - "$app/Contents/Info.plist")"
+          test "$minimum" = 14.0
+          test "$(xcrun vtool -show-build "$app/Contents/MacOS/Showcase" | awk '/minos/ { print $2; exit }')" = 14.0
+          {
+            printf 'minimum_macos=%s\n' "$minimum"
+            file "$app/Contents/MacOS/Showcase"
+            xcrun vtool -show-build "$app/Contents/MacOS/Showcase"
+            xcrun otool -L "$app/Contents/MacOS/Showcase"
+            codesign --verify --deep --strict "$app"
+          } 2>&1 | tee ../evidence/build/binary.txt
+          cp target/bern/macos/build.json ../evidence/build/build.json
+          cp target/bern/macos/glue/Cargo.lock ../evidence/build/generated-glue-Cargo.lock
+          tar -czf ../evidence/build/reference-app.tar.gz -C target/bern/macos Showcase.app bin/showcase
+          cd ../evidence/build
+          shasum -a 256 reference-app.tar.gz > reference-app.tar.gz.sha256
+      - name: Keep build provenance and the exact application
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: macos14-reference-build
+          path: evidence/build/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+
+  capture:
+    name: Run that application on macOS 14
+    needs: build
+    runs-on: macos-14
+    timeout-minutes: 10
+    steps:
+      - name: Check out only the review harness
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          path: harness
+          persist-credentials: false
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos14-reference-build
+          path: build
+      - name: Verify and unpack the application without rebuilding
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reference evidence/runtime
+          {
+            printf 'source_sha=%s\nharness_sha=%s\n' "$REFERENCE_SHA" "$GITHUB_SHA"
+            printf 'runner_arch=%s\nimage_os=%s\nimage_version=%s\n' "$RUNNER_ARCH" "${ImageOS:-unknown}" "${ImageVersion:-unknown}"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun swift -version
+          } 2>&1 | tee evidence/runtime/environment.txt
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          (cd build && shasum -a 256 -c reference-app.tar.gz.sha256)
+          tar -xzf build/reference-app.tar.gz -C reference
+          codesign --verify --deep --strict reference/Showcase.app
+          cp build/environment.txt evidence/runtime/build-environment.txt
+          cp build/binary.txt evidence/runtime/build-binary.txt
+          cp build/reference-app.tar.gz.sha256 evidence/runtime/
+      - name: Capture actual light and dark windows and exercise controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          # This script uses WindowServer capture, not BERN_SNAPSHOT_DIR.
+          # Missing Screen Recording permission is an explicit failure.
+          xcrun swift -swift-version 5 harness/.github/scripts/macos14-reference.swift "$PWD/reference/Showcase.app" "$PWD/reference/bin/showcase" "$PWD/evidence/runtime" 2>&1 | tee evidence/runtime/capture.log
+      - name: Keep reference PNGs, command results and failure diagnostics
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: macos14-reference-evidence
+          path: evidence/runtime/
+          if-no-files-found: error
+          retention-days: 3
