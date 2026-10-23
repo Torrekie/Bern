@@ -1,0 +1,1108 @@
+{
+  "accessibility_trusted": true,
+  "appearance_profile": "normal",
+  "application": "Gallery",
+  "capture": "CGWindowListCreateImage / WindowServer",
+  "checks": [
+    {
+      "actual": "Light",
+      "description": "Gallery application appearance",
+      "expected": "light"
+    },
+    {
+      "consecutive_equal_comparisons": 4,
+      "description": "Stable WindowServer pixels: inspector-light",
+      "elapsed_seconds": 0.7669465833333362,
+      "samples": 5
+    },
+    {
+      "consecutive_equal_comparisons": 4,
+      "description": "Stable WindowServer pixels: film-initial-light",
+      "elapsed_seconds": 1.0072973333333266,
+      "samples": 7
+    },
+    {
+      "consecutive_equal_comparisons": 4,
+      "description": "Stable WindowServer pixels: film-last-light",
+      "elapsed_seconds": 0.6958219583333403,
+      "samples": 5
+    },
+    {
+      "actual": "Dark",
+      "description": "Gallery application appearance",
+      "expected": "dark"
+    },
+    {
+      "consecutive_equal_comparisons": 4,
+      "description": "Stable WindowServer pixels: inspector-dark",
+      "elapsed_seconds": 0.6600289583333421,
+      "samples": 5
+    },
+    {
+      "consecutive_equal_comparisons": 4,
+      "description": "Stable WindowServer pixels: film-initial-dark",
+      "elapsed_seconds": 0.8407119583333298,
+      "samples": 6
+    },
+    {
+      "consecutive_equal_comparisons": 4,
+      "description": "Stable WindowServer pixels: film-last-dark",
+      "elapsed_seconds": 0.5955215833333369,
+      "samples": 5
+    }
+  ],
+  "commands": [
+    {
+      "appearance": "light",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 3,
+      "stderr": "error: no running engine was found; start the application with its control channel enabled\n",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"session_id\": \"64429110050c00-ui\",\n    \"windows\": []\n  }\n]\n",
+      "stdout_sha256": "9396d97a2313bd85b16eb12ee31c6c10156293514fcdd4d3909312d3e486b63e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Gingham\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Tartan\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Madras\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Glen\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Houndstooth\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Windowpane\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"About\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.about\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Choose Poster…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.choose_poster\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Clear Favorites\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.clear_favorites\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Close\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.close_details\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Crimson\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.crimson\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Dark\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.dark\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search Patterns\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.find\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Follow the System\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.follow_system\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Light\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.light\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Look\",\n    \"reason\": null,\n    \"role\": \"menu\",\n    \"target\": \"main_window.look\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Neon\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.neon\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Video\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.open_file\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Patterns\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Patterns\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search “check”\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_check\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Delete a Letter\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Details\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"main_window.show_details\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Ultramarine\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.ultramarine\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Card size\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"wall.card_size\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Scale the cards\",\n    \"reason\": null,\n    \"role\": \"pinch\",\n    \"target\": \"wall.pinch_cards\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "activate",
+        "--target",
+        "main_window.light"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "state"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "{\n  \"revision\": \"1\",\n  \"values\": {\n    \"accent\": \"Crimson\",\n    \"appearance\": \"Light\",\n    \"caption\": true,\n    \"clip\": {\n      \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Gallery.app/Contents/Resources/media/tides.mp4\"\n    },\n    \"favorites\": [],\n    \"notice\": null,\n    \"notice_id\": 0,\n    \"opened\": 0,\n    \"opened_name\": \"\",\n    \"poster\": {\n      \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Gallery.app/Contents/Resources/media/poster.jpg\"\n    },\n    \"swatches\": [\n      {\n        \"at\": 0.0,\n        \"favorite\": false,\n        \"id\": 1,\n        \"name\": \"Gingham\"\n      },\n      {\n        \"at\": 0.2,\n        \"favorite\": false,\n        \"id\": 2,\n        \"name\": \"Tartan\"\n      },\n      {\n        \"at\": 0.4,\n        \"favorite\": false,\n        \"id\": 3,\n        \"name\": \"Madras\"\n      },\n      {\n        \"at\": 0.6,\n        \"favorite\": false,\n        \"id\": 4,\n        \"name\": \"Glen\"\n      },\n      {\n        \"at\": 0.8,\n        \"favorite\": false,\n        \"id\": 5,\n        \"name\": \"Houndstooth\"\n      },\n      {\n        \"at\": 1.0,\n        \"favorite\": false,\n        \"id\": 6,\n        \"name\": \"Windowpane\"\n      }\n    ]\n  }\n}\n",
+      "stdout_sha256": "d400ec973b51d1e1f35f80119f811c3f725a57af05b1dda32cc52e545341b11c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 652.0,\n      \"width\": 900.0,\n      \"x\": 510.0,\n      \"y\": 158.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "b381c1511ea5af86a5fcb25f29a1310f4ed513fb817921c2f96b741fc8b421bc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "{\n  \"actions\": [\n    \"Activate\",\n    \"Close\",\n    \"Minimize\",\n    \"Maximize\",\n    \"Move\",\n    \"Resize\"\n  ],\n  \"changed_by\": \"Command\",\n  \"focused\": true,\n  \"frame\": {\n    \"height\": 668.0,\n    \"width\": 920.0,\n    \"x\": 510.0,\n    \"y\": 158.0\n  },\n  \"kind\": \"main\",\n  \"lifecycle\": \"Open\",\n  \"presentation\": \"Native\",\n  \"size\": \"Normal\",\n  \"version\": 4,\n  \"visibility\": \"Visible\",\n  \"window\": \"main#1\"\n}\n",
+      "stdout_sha256": "608a03658b786ac43fc5fdd6977e650515e652867f2a7aa5f765f9f70fe24f6b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Gingham\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Tartan\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Madras\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Glen\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Houndstooth\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Windowpane\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"About\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.about\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Choose Poster…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.choose_poster\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Clear Favorites\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.clear_favorites\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Close\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.close_details\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Crimson\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.crimson\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Dark\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.dark\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search Patterns\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.find\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Follow the System\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.follow_system\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Light\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.light\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Look\",\n    \"reason\": null,\n    \"role\": \"menu\",\n    \"target\": \"main_window.look\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Neon\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.neon\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Video\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.open_file\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Patterns\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Patterns\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search “check”\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_check\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Delete a Letter\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Details\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"main_window.show_details\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Ultramarine\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.ultramarine\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Card size\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"wall.card_size\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Scale the cards\",\n    \"reason\": null,\n    \"role\": \"pinch\",\n    \"target\": \"wall.pinch_cards\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 158.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "1e9d375bb6dda1144fe60a0950041e9d263d8b09f4332333e7a8357c019e15b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Gingham\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Tartan\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Madras\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Glen\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Houndstooth\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Windowpane\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"About\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.about\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Choose Poster…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.choose_poster\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Clear Favorites\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.clear_favorites\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Close\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.close_details\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Crimson\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.crimson\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Dark\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.dark\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search Patterns\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.find\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Follow the System\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.follow_system\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Light\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.light\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Look\",\n    \"reason\": null,\n    \"role\": \"menu\",\n    \"target\": \"main_window.look\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Neon\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.neon\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Video\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.open_file\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Patterns\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Patterns\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search “check”\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_check\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Delete a Letter\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Details\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"main_window.show_details\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Ultramarine\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.ultramarine\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Card size\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"wall.card_size\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Scale the cards\",\n    \"reason\": null,\n    \"role\": \"pinch\",\n    \"target\": \"wall.pinch_cards\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "main_window.show_details",
+        "--value",
+        "true"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 158.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "1e9d375bb6dda1144fe60a0950041e9d263d8b09f4332333e7a8357c019e15b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "main_window.show_details",
+        "--value",
+        "false"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Film"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 158.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "1e9d375bb6dda1144fe60a0950041e9d263d8b09f4332333e7a8357c019e15b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"film.film_controls\",\n    \"value\": \"medium\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Drag up or down\",\n    \"reason\": null,\n    \"role\": \"swipe\",\n    \"target\": \"film.level\",\n    \"value\": \"0.5\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"First\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"film.to_first\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Last\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"film.to_last\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"About\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.about\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Choose Poster…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.choose_poster\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Clear Favorites\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.clear_favorites\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Close\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.close_details\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Crimson\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.crimson\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Dark\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.dark\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search Patterns\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.find\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Follow the System\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.follow_system\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Light\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.light\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Look\",\n    \"reason\": null,\n    \"role\": \"menu\",\n    \"target\": \"main_window.look\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Neon\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.neon\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Video\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.open_file\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Film\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Film\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search “check”\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_check\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Delete a Letter\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Details\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"main_window.show_details\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Ultramarine\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.ultramarine\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "ui",
+        "activate",
+        "--target",
+        "film.to_last"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "64429110050c00-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 158.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "1e9d375bb6dda1144fe60a0950041e9d263d8b09f4332333e7a8357c019e15b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 3,
+      "stderr": "error: no running engine was found; start the application with its control channel enabled\n",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"session_id\": \"bd8a54d305c300-ui\",\n    \"windows\": [\n      \"main#1\"\n    ]\n  }\n]\n",
+      "stdout_sha256": "46e4cb7d25786634810d997aa13ffe9f4b0396a3dd98769857a47f6c0acd8b35",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Gingham\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Tartan\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Madras\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Glen\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Houndstooth\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Windowpane\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"About\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.about\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Choose Poster…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.choose_poster\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Clear Favorites\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.clear_favorites\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Close\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.close_details\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Crimson\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.crimson\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Dark\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.dark\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search Patterns\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.find\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Follow the System\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.follow_system\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Light\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.light\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Look\",\n    \"reason\": null,\n    \"role\": \"menu\",\n    \"target\": \"main_window.look\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Neon\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.neon\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Video\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.open_file\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Patterns\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Patterns\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search “check”\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_check\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Delete a Letter\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Details\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"main_window.show_details\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Ultramarine\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.ultramarine\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Card size\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"wall.card_size\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Scale the cards\",\n    \"reason\": null,\n    \"role\": \"pinch\",\n    \"target\": \"wall.pinch_cards\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "activate",
+        "--target",
+        "main_window.dark"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "state"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "{\n  \"revision\": \"1\",\n  \"values\": {\n    \"accent\": \"Crimson\",\n    \"appearance\": \"Dark\",\n    \"caption\": true,\n    \"clip\": {\n      \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Gallery.app/Contents/Resources/media/tides.mp4\"\n    },\n    \"favorites\": [],\n    \"notice\": null,\n    \"notice_id\": 0,\n    \"opened\": 0,\n    \"opened_name\": \"\",\n    \"poster\": {\n      \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Gallery.app/Contents/Resources/media/poster.jpg\"\n    },\n    \"swatches\": [\n      {\n        \"at\": 0.0,\n        \"favorite\": false,\n        \"id\": 1,\n        \"name\": \"Gingham\"\n      },\n      {\n        \"at\": 0.2,\n        \"favorite\": false,\n        \"id\": 2,\n        \"name\": \"Tartan\"\n      },\n      {\n        \"at\": 0.4,\n        \"favorite\": false,\n        \"id\": 3,\n        \"name\": \"Madras\"\n      },\n      {\n        \"at\": 0.6,\n        \"favorite\": false,\n        \"id\": 4,\n        \"name\": \"Glen\"\n      },\n      {\n        \"at\": 0.8,\n        \"favorite\": false,\n        \"id\": 5,\n        \"name\": \"Houndstooth\"\n      },\n      {\n        \"at\": 1.0,\n        \"favorite\": false,\n        \"id\": 6,\n        \"name\": \"Windowpane\"\n      }\n    ]\n  }\n}\n",
+      "stdout_sha256": "c97c607c0f0f7d367e4d241315278e3236f1d7236eac029980fcb065da769f85",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 106.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "b076e680b8878154d5b212a7a20344f6656f9723b8039b68eaf102b431f48283",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "{\n  \"actions\": [\n    \"Activate\",\n    \"Close\",\n    \"Minimize\",\n    \"Maximize\",\n    \"Move\",\n    \"Resize\"\n  ],\n  \"changed_by\": \"System\",\n  \"focused\": true,\n  \"frame\": {\n    \"height\": 668.0,\n    \"width\": 920.0,\n    \"x\": 510.0,\n    \"y\": 106.0\n  },\n  \"kind\": \"main\",\n  \"lifecycle\": \"Open\",\n  \"presentation\": \"Native\",\n  \"size\": \"Normal\",\n  \"version\": 4,\n  \"visibility\": \"Visible\",\n  \"window\": \"main#1\"\n}\n",
+      "stdout_sha256": "ef7357965c8c2469742b2aa3b0f90e90a5768a82adfeb184325c16bb5237cf88",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Gingham\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Tartan\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Madras\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Glen\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Houndstooth\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Windowpane\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"About\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.about\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Choose Poster…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.choose_poster\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Clear Favorites\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.clear_favorites\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Close\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.close_details\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Crimson\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.crimson\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Dark\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.dark\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search Patterns\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.find\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Follow the System\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.follow_system\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Light\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.light\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Look\",\n    \"reason\": null,\n    \"role\": \"menu\",\n    \"target\": \"main_window.look\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Neon\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.neon\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Video\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.open_file\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Patterns\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Patterns\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search “check”\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_check\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Delete a Letter\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Details\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"main_window.show_details\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Ultramarine\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.ultramarine\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Card size\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"wall.card_size\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Scale the cards\",\n    \"reason\": null,\n    \"role\": \"pinch\",\n    \"target\": \"wall.pinch_cards\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 106.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "b076e680b8878154d5b212a7a20344f6656f9723b8039b68eaf102b431f48283",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.favorite[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Gingham\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Tartan\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Madras\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Glen\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Houndstooth\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Windowpane\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"card.open_swatch[6]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"About\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.about\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Choose Poster…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.choose_poster\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Clear Favorites\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.clear_favorites\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Close\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.close_details\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Crimson\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.crimson\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Dark\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.dark\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search Patterns\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.find\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Follow the System\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.follow_system\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Light\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.light\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Look\",\n    \"reason\": null,\n    \"role\": \"menu\",\n    \"target\": \"main_window.look\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Neon\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.neon\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Video\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.open_file\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Patterns\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Patterns\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search “check”\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_check\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Delete a Letter\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Details\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"main_window.show_details\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Ultramarine\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.ultramarine\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Card size\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"wall.card_size\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Scale the cards\",\n    \"reason\": null,\n    \"role\": \"pinch\",\n    \"target\": \"wall.pinch_cards\",\n    \"value\": \"180\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "main_window.show_details",
+        "--value",
+        "true"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 106.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "b076e680b8878154d5b212a7a20344f6656f9723b8039b68eaf102b431f48283",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "main_window.show_details",
+        "--value",
+        "false"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Film"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 106.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "b076e680b8878154d5b212a7a20344f6656f9723b8039b68eaf102b431f48283",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"film.film_controls\",\n    \"value\": \"medium\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Drag up or down\",\n    \"reason\": null,\n    \"role\": \"swipe\",\n    \"target\": \"film.level\",\n    \"value\": \"0.5\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"First\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"film.to_first\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Last\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"film.to_last\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"About\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.about\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Choose Poster…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.choose_poster\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Clear Favorites\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.clear_favorites\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Close\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.close_details\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Crimson\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.crimson\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Dark\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.dark\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search Patterns\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.find\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Follow the System\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.follow_system\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Light\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.light\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Look\",\n    \"reason\": null,\n    \"role\": \"menu\",\n    \"target\": \"main_window.look\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Neon\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.neon\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Video\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.open_file\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Film\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Film\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search “check”\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_check\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Delete a Letter\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.search_delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Details\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"main_window.show_details\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Ultramarine\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"main_window.ultramarine\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "ui",
+        "activate",
+        "--target",
+        "film.to_last"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "--session",
+        "bd8a54d305c300-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 510.0,\n      \"y\": 106.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 4,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "b076e680b8878154d5b212a7a20344f6656f9723b8039b68eaf102b431f48283",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "displays": [
+    {
+      "color_space": "Apple Virtual",
+      "frame_points": "{{0, 0}, {1920, 1080}}",
+      "scale": 1
+    }
+  ],
+  "geometry_scope": "Outer frame normalized through window.resize; CLI does not expose the content rect, and PNGs include system window chrome",
+  "harness_sha": "d56b367ac03ec3ee2a575cae8bab62423b72b46f",
+  "interaction_scope": "Generated CLI bindings. Motion files record programmatic transitions; mouse/keyboard paths and transition equivalence are not asserted",
+  "motion": [
+    {
+      "canvas_points": "{{0, 0}, {1920, 1080}}",
+      "file": "gallery-inspector-light.gif",
+      "frame_times_seconds": [
+        0.0004683333333304063,
+        0.2675002916666642,
+        0.38323420833333444,
+        0.532231083333329,
+        0.6822180416666725,
+        0.8251830416666621,
+        0.9403506249999936,
+        1.0608686666666642,
+        1.1789317083333373,
+        1.3208617916666725,
+        1.466742416666662,
+        1.6100597916666715,
+        1.760919208333334,
+        1.8936866666666674,
+        2.0153717083333333,
+        2.0891527916666632
+      ],
+      "scope": "WindowServer frames; GIF is for motion, original PNGs are the color reference",
+      "sha256": "80ac7ae45d127aacaf09fd1ddd69cfe175c5ce3c45f2b37f265fd553adacfedd"
+    },
+    {
+      "canvas_points": "{{0, 0}, {1920, 1080}}",
+      "file": "gallery-scroll-last-light.gif",
+      "frame_times_seconds": [
+        0.001329499999997097,
+        0.28470508333332134,
+        0.42944979166665576,
+        0.557145416666657,
+        0.7000395416666549,
+        0.8367010833333239,
+        0.9542275833333207,
+        1.0885843333333298,
+        1.2353877083333202,
+        1.383055083333332,
+        1.5499841666666612,
+        1.6841986249999934,
+        1.8066207499999933,
+        1.946296916666654,
+        2.016351874999998,
+        2.1196816249999983
+      ],
+      "scope": "WindowServer frames; GIF is for motion, original PNGs are the color reference",
+      "sha256": "98d985aa43259ed621de2c422274a83319d31304747b45a4f1c5a6abfaad6faf"
+    },
+    {
+      "canvas_points": "{{0, 0}, {1920, 1080}}",
+      "file": "gallery-inspector-dark.gif",
+      "frame_times_seconds": [
+        0.0006523749999871598,
+        0.25722283333332996,
+        0.3849861249999975,
+        0.5240812083333282,
+        0.6686064999999957,
+        0.8122072500000002,
+        0.952295791666657,
+        1.084042249999996,
+        1.235386874999989,
+        1.3830255833333212,
+        1.5330783333333216,
+        1.683906791666658,
+        1.827312374999991,
+        1.9693886249999935,
+        2.07400741666666,
+        2.1893305416666635
+      ],
+      "scope": "WindowServer frames; GIF is for motion, original PNGs are the color reference",
+      "sha256": "5ed45108629db252d4a0aa1b1e4f8da61921cf3ac123706410ea6d7047b8b234"
+    },
+    {
+      "canvas_points": "{{0, 0}, {1920, 1080}}",
+      "file": "gallery-scroll-last-dark.gif",
+      "frame_times_seconds": [
+        0.0007341250000081345,
+        0.19371562500001005,
+        0.30474262500000293,
+        0.4425404583333403,
+        0.5835084166666746,
+        0.7327655416666659,
+        0.8835659166666687,
+        1.0192951249999993,
+        1.1699107499999997,
+        1.2904885416666758,
+        1.4027067916666738,
+        1.5490635833333357,
+        1.650670583333337,
+        1.778298541666672,
+        1.9128342916666696,
+        2.0538415833333374
+      ],
+      "scope": "WindowServer frames; GIF is for motion, original PNGs are the color reference",
+      "sha256": "332357fd71e3c4646b3d23e236385ffd7d2fd143fe6a844874f6bc2e77adbf0f"
+    }
+  ],
+  "os": "Version 14.8.9 (Build 23J631)",
+  "post_event_access": true,
+  "requested_outer_size_points": {
+    "height": 668,
+    "width": 920
+  },
+  "screen_recording_preflight": true,
+  "source_sha": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+  "success": true,
+  "system_preferences": {
+    "accent": "default",
+    "increase_contrast": false,
+    "reduce_motion": false,
+    "reduce_transparency": false
+  },
+  "windows": [
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "color_space": "unknown",
+      "pid": 1292,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "gallery-patterns-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Patterns",
+      "window_number": 24,
+      "sha256": "47ab356d87d9f29b4f325c8bec916baef31e167cf3b6a74ab7404430a6c82e7b"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "color_space": "unknown",
+      "pid": 1292,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "gallery-inspector-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Patterns",
+      "window_number": 24,
+      "sha256": "32fa9167b52332c97260e8064548bc6cb19f50bb5c502b8e5fd7582660f8521c"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "color_space": "unknown",
+      "pid": 1292,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "gallery-film-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Film",
+      "window_number": 24,
+      "sha256": "1c2d96eb82cc551530e28aba0997180384e6c3fdada225345f5c3177ff58f4ce"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "color_space": "unknown",
+      "pid": 1292,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "gallery-film-last-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Film",
+      "window_number": 24,
+      "sha256": "670c924b22ed45cf22c4c361ca8f9eb16d9090a3bb63c8dda74924579b985d4f"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "color_space": "unknown",
+      "pid": 1475,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "gallery-patterns-dark.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "System",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 106
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Patterns",
+      "window_number": 32,
+      "sha256": "43f00076e2243bb2a8102b611780d8de0dbb1f25eec130199dc928b9bc83fa04"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "color_space": "unknown",
+      "pid": 1475,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "gallery-inspector-dark.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "System",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 106
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Patterns",
+      "window_number": 32,
+      "sha256": "078a9ec502467f1ce27771973a1ff1b81364c61c17b2fbf75e71bac2fc8244da"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "color_space": "unknown",
+      "pid": 1475,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "gallery-film-dark.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "System",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 106
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Film",
+      "window_number": 32,
+      "sha256": "dc32dc3578eb69f57c99e5f9cda89007acfd3de965a7eb1424d2a7fd9d519127"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "color_space": "unknown",
+      "pid": 1475,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "gallery-film-last-dark.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "System",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 106
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Film",
+      "window_number": 32,
+      "sha256": "3e89f383585cfe2067901b14ca8c0b7750714872b353f323bd4839668ac9aecc"
+    }
+  ],
+  "capture_run": "https://github.com/Torrekie/Bern/actions/runs/39964126654",
+  "build_run": "https://github.com/Torrekie/Bern/actions/runs/39959549054",
+  "evidence_format": "CLI stdout/stderr embedded verbatim; original WindowServer media retained without editing",
+  "runtime_environment": "source_sha=ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee\nharness_sha=d56b367ac03ec3ee2a575cae8bab62423b72b46f\nrunner_arch=ARM64\nimage_os=macos14\nimage_version=20260831.0302.1\nProductName:\t\tmacOS\nProductVersion:\t\t14.8.9\nBuildVersion:\t\t23J631\narm64\nXcode 15.4\nBuild version 15F31d\nswift-driver version: 1.90.11.1 Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)\nTarget: arm64-apple-macosx14.0\n",
+  "build_environment": "source_repository=AimesSoft/Bern\nsource_sha=ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee\nharness_sha=2c07369b8f768db745a6c678267937a2b16ce4cb\nrunner_arch=ARM64\nimage_os=macos26\nimage_version=20261013.0424.1\nProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\narm64\nXcode 26.6\nBuild version 17F113\n26.5\nswift-driver version: 1.148.6 Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0\n",
+  "build_binary": "minimum_macos=14.0\ntarget/bern/macos/Gallery.app/Contents/MacOS/Gallery: Mach-O 64-bit executable arm64\ntarget/bern/macos/Gallery.app/Contents/MacOS/Gallery:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 14.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\ntarget/bern/macos/Gallery.app/Contents/MacOS/Gallery:\n\t/System/Library/Frameworks/Security.framework/Versions/A/Security (compatibility version 1.0.0, current version 61901.120.67)\n\t/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5026.5.4)\n\t/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI (compatibility version 1.0.0, current version 7.5.3)\n\t/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2685.60.104)\n\t/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)\n\t/System/Library/Frameworks/AVKit.framework/Versions/A/AVKit (compatibility version 1.0.0, current version 1.0.0)\n\t/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)\n\t/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork (compatibility version 1.0.0, current version 3860.255.21)\n\t/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 1965.5.1)\n\t/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia (compatibility version 1.0.0, current version 3320.8.5)\n\t/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5026.5.4)\n\t/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)\n\t/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore (compatibility version 1.2.0, current version 1195.14.4)\n\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)\n\t/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2420.7.1, weak)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 411.255.0, weak)\n\t/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0)\n\t/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 2.2.0, weak)\n\t/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)\n\t/usr/lib/swift/libswiftCoreMedia.dylib (compatibility version 1.0.0, current version 3320.8.5)\n\t/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 377.120.8)\n\t/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1542.100.32)\n\t/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 373.2.0, weak)\n\t/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)\n\t/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 951.7.0)\n\t/usr/lib/swift/libswiftObservation.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)\n\t/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 877.5.1)\n\t/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 128.120.2, weak)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1082.0.0)\n\t/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 23.0.0, weak)\n\t/usr/lib/swift/libswiftCoreGraphics.dylib (compatibility version 1.0.0, current version 1.0.0)\n",
+  "source_archive_sha256": "52cc1f1c9b9a05422070cbf7d00b016758476095089c64c66ff693df2cd9f3e3  reference-app.tar.gz\n",
+  "retained_media_sha256": {
+    "gallery-inspector-light.png": "32fa9167b52332c97260e8064548bc6cb19f50bb5c502b8e5fd7582660f8521c",
+    "gallery-inspector-dark.png": "078a9ec502467f1ce27771973a1ff1b81364c61c17b2fbf75e71bac2fc8244da",
+    "gallery-scroll-last-light.gif": "98d985aa43259ed621de2c422274a83319d31304747b45a4f1c5a6abfaad6faf",
+    "gallery-patterns-light.png": "47ab356d87d9f29b4f325c8bec916baef31e167cf3b6a74ab7404430a6c82e7b",
+    "gallery-film-last-dark.png": "3e89f383585cfe2067901b14ca8c0b7750714872b353f323bd4839668ac9aecc",
+    "gallery-scroll-last-dark.gif": "332357fd71e3c4646b3d23e236385ffd7d2fd143fe6a844874f6bc2e77adbf0f",
+    "gallery-film-last-light.png": "670c924b22ed45cf22c4c361ca8f9eb16d9090a3bb63c8dda74924579b985d4f",
+    "gallery-patterns-dark.png": "43f00076e2243bb2a8102b611780d8de0dbb1f25eec130199dc928b9bc83fa04",
+    "gallery-film-light.png": "1c2d96eb82cc551530e28aba0997180384e6c3fdada225345f5c3177ff58f4ce",
+    "gallery-inspector-light.gif": "80ac7ae45d127aacaf09fd1ddd69cfe175c5ce3c45f2b37f265fd553adacfedd",
+    "gallery-inspector-dark.gif": "5ed45108629db252d4a0aa1b1e4f8da61921cf3ac123706410ea6d7047b8b234",
+    "gallery-film-dark.png": "dc32dc3578eb69f57c99e5f9cda89007acfd3de965a7eb1424d2a7fd9d519127"
+  }
+}

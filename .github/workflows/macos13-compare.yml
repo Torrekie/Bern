@@ -1,0 +1,88 @@
+name: macOS 13 port on macOS 14
+run-name: ${{ inputs.app }} from build ${{ inputs.build_run }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_run:
+        description: Completed macos13-port run containing the application
+        required: true
+        type: string
+      app:
+        description: Example contained in that run
+        type: choice
+        options: [showcase, gallery]
+        default: showcase
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: macos13-compare-${{ inputs.app }}
+  cancel-in-progress: true
+
+jobs:
+  capture:
+    runs-on: macos-14
+    timeout-minutes: 10
+    env:
+      EXAMPLE: ${{ inputs.app }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos13-${{ inputs.app }}
+          path: build
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.build_run }}
+      - name: Verify the exact macOS 13 application without rebuilding
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p candidate evidence
+          case "$EXAMPLE" in showcase) PRODUCT=Showcase ;; gallery) PRODUCT=Gallery ;; *) exit 1 ;; esac
+          echo "PRODUCT=$PRODUCT" >> "$GITHUB_ENV"
+          source_sha="$(sed -n 's/^source_sha=//p' build/environment.txt)"
+          [[ "$source_sha" =~ ^[0-9a-f]{40}$ ]]
+          echo "BERN_SOURCE_SHA=$source_sha" >> "$GITHUB_ENV"
+          (cd build && shasum -a 256 -c "$EXAMPLE.tar.gz.sha256")
+          tar -xzf "build/$EXAMPLE.tar.gz" -C candidate
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - "candidate/$PRODUCT.app/Contents/Info.plist")" = 13.0
+          codesign --verify --deep --strict "candidate/$PRODUCT.app"
+          cp build/environment.txt evidence/build-environment.txt
+          cp build/build.json evidence/build.json
+          cp build/binary.txt evidence/build-binary.txt
+          cp "build/$EXAMPLE.tar.gz.sha256" evidence/
+          {
+            printf 'source_sha=%s\nharness_sha=%s\n' "$source_sha" "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+          } > evidence/environment.txt
+      - name: Use the same ordinary appearance as the upstream reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          killall cfprefsd || true
+      - name: Capture with the same external observer
+        env:
+          BERN_REFERENCE_PROFILE: normal
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcrun swift -swift-version 5 harness/.github/scripts/macos14-reference.swift "$PWD/candidate/$PRODUCT.app" "$PWD/candidate/bin/$EXAMPLE" "$PWD/evidence" 2>&1 | tee evidence/capture.log
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos13-${{ inputs.app }}-on-14
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 3

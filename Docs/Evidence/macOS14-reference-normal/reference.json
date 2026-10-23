@@ -1,6 +1,133 @@
 {
+  "accessibility_trusted": true,
   "appearance_profile": "normal",
+  "application": "Showcase",
   "capture": "CGWindowListCreateImage / WindowServer",
+  "checks": [
+    {
+      "appearance": "light",
+      "check": "Selected Text",
+      "observed_value": "Text",
+      "passed": true,
+      "target": "main_window.pages"
+    },
+    {
+      "appearance": "light",
+      "check": "Selected Buttons",
+      "observed_value": "Buttons",
+      "passed": true,
+      "target": "main_window.pages"
+    },
+    {
+      "appearance": "light",
+      "check": "Selected Inputs",
+      "observed_value": "Inputs",
+      "passed": true,
+      "target": "main_window.pages"
+    },
+    {
+      "appearance": "light",
+      "check": "Selected Text",
+      "observed_value": "Text",
+      "passed": true,
+      "target": "main_window.pages"
+    },
+    {
+      "appearance": "light",
+      "check": "Search draft committed",
+      "observed_value": "!",
+      "passed": true,
+      "target": "main_window.sidebar_search"
+    },
+    {
+      "appearance": "light",
+      "check": "Selected Library",
+      "observed_value": "Library",
+      "passed": true,
+      "target": "main_window.pages"
+    },
+    {
+      "appearance": "light",
+      "check": "Initial query failed without previous results",
+      "observed_value": "failed v1 invalid_search: search text cannot start with `!`; search operators are not supported",
+      "passed": true,
+      "target": "library_page.library_results"
+    },
+    {
+      "appearance": "light",
+      "check": "Retry issued a new failing request",
+      "observed_value": "failed v2 invalid_search: search text cannot start with `!`; search operators are not supported",
+      "passed": true,
+      "target": "library_page.library_results"
+    },
+    {
+      "appearance": "light",
+      "check": "Search draft committed",
+      "observed_value": "zzzzzz",
+      "passed": true,
+      "target": "main_window.sidebar_search"
+    },
+    {
+      "appearance": "light",
+      "check": "Query returned zero results",
+      "observed_value": "ready v3 (0)",
+      "passed": true,
+      "target": "library_page.library_results"
+    },
+    {
+      "appearance": "light",
+      "check": "Search draft committed",
+      "observed_value": "",
+      "passed": true,
+      "target": "main_window.sidebar_search"
+    },
+    {
+      "appearance": "light",
+      "check": "Query recovered with results",
+      "observed_value": "ready v4 (5)",
+      "passed": true,
+      "target": "library_page.library_results"
+    },
+    {
+      "appearance": "light",
+      "check": "Selected Layout",
+      "observed_value": "Layout",
+      "passed": true,
+      "target": "main_window.pages"
+    },
+    {
+      "check": "Four bundled image inputs decode",
+      "passed": true
+    },
+    {
+      "appearance": "light",
+      "check": "Selected Media",
+      "observed_value": "Media",
+      "passed": true,
+      "target": "main_window.pages"
+    },
+    {
+      "appearance": "light",
+      "check": "Initial featured clip is playable",
+      "observed_value": "Ready 0:00 / 0:08",
+      "passed": true,
+      "target": "media_page.featured"
+    },
+    {
+      "appearance": "light",
+      "check": "Damaged clip reaches failed state",
+      "observed_value": "Failed 0:00 / --:--",
+      "passed": true,
+      "target": "media_page.featured"
+    },
+    {
+      "appearance": "light",
+      "check": "Featured clip recovers after replacing damaged source",
+      "observed_value": "Ready 0:00 / 0:08",
+      "passed": true,
+      "target": "media_page.featured"
+    }
+  ],
   "commands": [
     {
       "appearance": "light",
@@ -9,7 +136,9 @@
       ],
       "status": 3,
       "stderr": "error: no running engine was found; start the application with its control channel enabled\n",
-      "stdout": ""
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
     },
     {
       "appearance": "light",
@@ -18,18 +147,15 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "session_id": "5ff5542304df00-ui",
-          "windows": []
-        }
-      ]
+      "stdout": "[\n  {\n    \"session_id\": \"2eedbf91054800-ui\",\n    \"windows\": []\n  }\n]\n",
+      "stdout_sha256": "682c9fff7ab1869eec17ad253d17a1469582206d961bf238994481df3e88a804",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "ui",
         "set-language",
         "--language",
@@ -37,51 +163,29 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": ""
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "window",
         "list"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "actions": [
-            "Activate",
-            "Close",
-            "Minimize",
-            "Maximize",
-            "Move",
-            "Resize"
-          ],
-          "changed_by": "System",
-          "focused": true,
-          "frame": {
-            "height": 640.0,
-            "width": 920.0,
-            "x": 500.0,
-            "y": 190.0
-          },
-          "kind": "main",
-          "lifecycle": "Open",
-          "presentation": "Native",
-          "size": "Normal",
-          "version": 2,
-          "visibility": "Visible",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 640.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 2,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "a139fe442f264d72daea67041329dbceea08c327d578f1d8a7be135804462461",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "window",
         "resize",
         "--window",
@@ -93,68 +197,29 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": {
-        "actions": [
-          "Activate",
-          "Close",
-          "Minimize",
-          "Maximize",
-          "Move",
-          "Resize"
-        ],
-        "changed_by": "Command",
-        "focused": true,
-        "frame": {
-          "height": 668.0,
-          "width": 920.0,
-          "x": 500.0,
-          "y": 190.0
-        },
-        "kind": "main",
-        "lifecycle": "Open",
-        "presentation": "Native",
-        "size": "Normal",
-        "version": 3,
-        "visibility": "Visible",
-        "window": "main#1"
-      }
+      "stdout": "{\n  \"actions\": [\n    \"Activate\",\n    \"Close\",\n    \"Minimize\",\n    \"Maximize\",\n    \"Move\",\n    \"Resize\"\n  ],\n  \"changed_by\": \"Command\",\n  \"focused\": true,\n  \"frame\": {\n    \"height\": 668.0,\n    \"width\": 920.0,\n    \"x\": 500.0,\n    \"y\": 190.0\n  },\n  \"kind\": \"main\",\n  \"lifecycle\": \"Open\",\n  \"presentation\": \"Native\",\n  \"size\": \"Normal\",\n  \"version\": 3,\n  \"visibility\": \"Visible\",\n  \"window\": \"main#1\"\n}\n",
+      "stdout_sha256": "f28094766b1fbd139b28b8b993b37861db98ffbc1249af22e91e9de50353f4bf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "ui",
         "inspect"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "enabled": true,
-          "label": "Text",
-          "reason": null,
-          "role": "sidebar",
-          "target": "main_window.pages",
-          "value": "Text",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Search",
-          "reason": null,
-          "role": "search",
-          "target": "main_window.sidebar_search",
-          "value": "",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Text\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Text\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "d64189193f2cc9f704c38806d65f5c48fdd31248e7ff09338750c3d8c90989b2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "ui",
         "select",
         "--target",
@@ -164,181 +229,43 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": ""
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "ui",
         "inspect"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "enabled": true,
-          "label": "Save automatically",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.autosave",
-          "value": "true",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Brightness",
-          "reason": null,
-          "role": "slider",
-          "target": "controls_page.brightness",
-          "value": "0.6",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.density",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.density_chips",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Notifications",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.notifications",
-          "value": "true",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.strip_density",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.strip_filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Sync",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.sync",
-          "value": "false",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.toolbar_filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Volume",
-          "reason": null,
-          "role": "slider",
-          "target": "controls_page.volume",
-          "value": "50",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Switches & Sliders",
-          "reason": null,
-          "role": "sidebar",
-          "target": "main_window.pages",
-          "value": "Controls",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Search",
-          "reason": null,
-          "role": "search",
-          "target": "main_window.sidebar_search",
-          "value": "",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Save automatically\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.autosave\",\n    \"value\": \"true\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Brightness\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"controls_page.brightness\",\n    \"value\": \"0.6\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.density\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.density_chips\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Notifications\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.notifications\",\n    \"value\": \"true\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.strip_density\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.strip_filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Sync\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.sync\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.toolbar_filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"controls_page.volume\",\n    \"value\": \"50\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Switches & Sliders\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Controls\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "902e70ae372d6f621f71ec8668710ef2dff319b1145a28a0b28c80c3a57d2ad0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "window",
         "list"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "actions": [
-            "Activate",
-            "Close",
-            "Minimize",
-            "Maximize",
-            "Move",
-            "Resize"
-          ],
-          "changed_by": "Command",
-          "focused": true,
-          "frame": {
-            "height": 668.0,
-            "width": 920.0,
-            "x": 500.0,
-            "y": 190.0
-          },
-          "kind": "main",
-          "lifecycle": "Open",
-          "presentation": "Native",
-          "size": "Normal",
-          "version": 3,
-          "visibility": "Visible",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "ui",
         "set-bool",
         "--target",
@@ -348,13 +275,15 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": ""
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "ui",
         "set-number",
         "--target",
@@ -364,7 +293,9 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": ""
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
@@ -373,229 +304,881 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": {
-        "revision": "1",
-        "values": {
-          "activations": 0,
-          "display_name": "",
-          "featured": "Pattern",
-          "featured_source": {
-            "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4"
-          },
-          "items": [
-            {
-              "clip": {
-                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4"
-              },
-              "count": 12,
-              "id": 1,
-              "kind": "Documents"
-            },
-            {
-              "clip": {
-                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/tides.mp4"
-              },
-              "count": 248,
-              "id": 2,
-              "kind": "Photos"
-            },
-            {
-              "clip": {
-                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4"
-              },
-              "count": 37,
-              "id": 3,
-              "kind": "Music"
-            },
-            {
-              "clip": {
-                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/tides.mp4"
-              },
-              "count": 5,
-              "id": 4,
-              "kind": "Movies"
-            },
-            {
-              "clip": {
-                "url": "file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4"
-              },
-              "count": 19,
-              "id": 5,
-              "kind": "Downloads"
-            }
-          ],
-          "last_action": null,
-          "volume": 73.0
-        }
-      }
+      "stdout": "{\n  \"revision\": \"1\",\n  \"values\": {\n    \"activations\": 0,\n    \"display_name\": \"\",\n    \"featured\": \"Pattern\",\n    \"featured_source\": {\n      \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4\"\n    },\n    \"items\": [\n      {\n        \"clip\": {\n          \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4\"\n        },\n        \"count\": 12,\n        \"id\": 1,\n        \"kind\": \"Documents\"\n      },\n      {\n        \"clip\": {\n          \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/tides.mp4\"\n        },\n        \"count\": 248,\n        \"id\": 2,\n        \"kind\": \"Photos\"\n      },\n      {\n        \"clip\": {\n          \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4\"\n        },\n        \"count\": 37,\n        \"id\": 3,\n        \"kind\": \"Music\"\n      },\n      {\n        \"clip\": {\n          \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/tides.mp4\"\n        },\n        \"count\": 5,\n        \"id\": 4,\n        \"kind\": \"Movies\"\n      },\n      {\n        \"clip\": {\n          \"url\": \"file:///Users/runner/work/Bern/Bern/reference/Showcase.app/Contents/Resources/media/aurora.mp4\"\n        },\n        \"count\": 19,\n        \"id\": 5,\n        \"kind\": \"Downloads\"\n      }\n    ],\n    \"last_action\": null,\n    \"volume\": 73.0\n  }\n}\n",
+      "stdout_sha256": "17dd88d1c8a8b71fe5ae0c44c251f7b8a599c38ea3ee090bff87f2aa74f22b9e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "ui",
         "inspect"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "enabled": true,
-          "label": "Save automatically",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.autosave",
-          "value": "true",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Brightness",
-          "reason": null,
-          "role": "slider",
-          "target": "controls_page.brightness",
-          "value": "0.6",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.density",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.density_chips",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Notifications",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.notifications",
-          "value": "false",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.strip_density",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.strip_filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Sync",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.sync",
-          "value": "false",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.toolbar_filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Volume",
-          "reason": null,
-          "role": "slider",
-          "target": "controls_page.volume",
-          "value": "73",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Switches & Sliders",
-          "reason": null,
-          "role": "sidebar",
-          "target": "main_window.pages",
-          "value": "Controls",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Search",
-          "reason": null,
-          "role": "search",
-          "target": "main_window.sidebar_search",
-          "value": "",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Save automatically\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.autosave\",\n    \"value\": \"true\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Brightness\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"controls_page.brightness\",\n    \"value\": \"0.6\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.density\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.density_chips\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Notifications\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.notifications\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.strip_density\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.strip_filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Sync\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.sync\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.toolbar_filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"controls_page.volume\",\n    \"value\": \"73\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Switches & Sliders\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Controls\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "8318638014310fdcf08b99aa982c9c4ebe5d995d82c7cb9ce28f7c005e8c5793",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "light",
       "arguments": [
         "--session",
-        "5ff5542304df00-ui",
+        "2eedbf91054800-ui",
         "window",
         "list"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "actions": [
-            "Activate",
-            "Close",
-            "Minimize",
-            "Maximize",
-            "Move",
-            "Resize"
-          ],
-          "changed_by": "Command",
-          "focused": true,
-          "frame": {
-            "height": 668.0,
-            "width": 920.0,
-            "x": 500.0,
-            "y": 190.0
-          },
-          "kind": "main",
-          "lifecycle": "Open",
-          "presentation": "Native",
-          "size": "Normal",
-          "version": 3,
-          "visibility": "Visible",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Save automatically\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.autosave\",\n    \"value\": \"true\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Brightness\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"controls_page.brightness\",\n    \"value\": \"0.6\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.density\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.density_chips\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Notifications\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.notifications\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.strip_density\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.strip_filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Sync\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.sync\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.toolbar_filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"controls_page.volume\",\n    \"value\": \"73\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Switches & Sliders\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Controls\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "8318638014310fdcf08b99aa982c9c4ebe5d995d82c7cb9ce28f7c005e8c5793",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Text"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Text\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Text\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "d64189193f2cc9f704c38806d65f5c48fdd31248e7ff09338750c3d8c90989b2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Text\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Text\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "d64189193f2cc9f704c38806d65f5c48fdd31248e7ff09338750c3d8c90989b2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Buttons"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Delete\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.favorite\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Settings…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.open_settings\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Borderless\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.plain\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Primary\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.primary\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Share\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.share\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Standard\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.standard\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Toolbar Button\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.toolbar_add\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Move to Trash\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.trash\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Unavailable Button\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"buttons_page.unavailable\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Buttons\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Buttons\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "e731677f57b572ab4ee3101597f50e527615529e898b126649493d6e11e32f22",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Delete\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.delete\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Favorite\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.favorite\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Open Settings…\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.open_settings\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Borderless\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.plain\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Primary\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.primary\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Share\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.share\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Standard\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.standard\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Toolbar Button\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.toolbar_add\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Move to Trash\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"buttons_page.trash\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Unavailable Button\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"buttons_page.unavailable\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Buttons\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Buttons\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "e731677f57b572ab4ee3101597f50e527615529e898b126649493d6e11e32f22",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Inputs"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Name\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.name\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Notes\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.notes\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Password\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.password\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Text Fields\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Inputs\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "fc47d94a1db60db98abfec92c931fa6b80182833d2aed05dc7e70b475056f939",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Name\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.name\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Notes\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.notes\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Password\",\n    \"reason\": null,\n    \"role\": \"text_input\",\n    \"target\": \"inputs_page.password\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Text Fields\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Inputs\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "fc47d94a1db60db98abfec92c931fa6b80182833d2aed05dc7e70b475056f939",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Text"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Text\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Text\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "d64189193f2cc9f704c38806d65f5c48fdd31248e7ff09338750c3d8c90989b2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Text\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Text\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "d64189193f2cc9f704c38806d65f5c48fdd31248e7ff09338750c3d8c90989b2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "edit",
+        "--target",
+        "main_window.sidebar_search",
+        "--value",
+        "!"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Text\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Text\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"!\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "91dd7b1b66c18a8ffe320136f1032e2c893810a86818a9fca71c1c754a7d40fb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Text\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Text\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"!\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "91dd7b1b66c18a8ffe320136f1032e2c893810a86818a9fca71c1c754a7d40fb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Library"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"loading v1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"!\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "3077bb26495fcf9f8a342a0e2b1179dde6b97578985800240cc933e582b29be6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"failed v1 invalid_search: search text cannot start with `!`; search operators are not supported\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"!\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "d15a8de68fe279eabf882d1dc4abc582b14290f8b270cd54d18c7f0a5f5d1837",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "activate",
+        "--target",
+        "library_page.library_results"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"failed v2 invalid_search: search text cannot start with `!`; search operators are not supported\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"!\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "ee54514978da863df9bb5ec0813241d30db17769455c17fed29272cf3b498e2a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"failed v2 invalid_search: search text cannot start with `!`; search operators are not supported\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"!\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "ee54514978da863df9bb5ec0813241d30db17769455c17fed29272cf3b498e2a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "edit",
+        "--target",
+        "main_window.sidebar_search",
+        "--value",
+        "zzzzzz"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"loading v3\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"zzzzzz\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "81311e294656fe62825ce626d35a0470dc235296cabdf9d1b0bf1e39adb7178f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"loading v3\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"zzzzzz\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "81311e294656fe62825ce626d35a0470dc235296cabdf9d1b0bf1e39adb7178f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"ready v3 (0)\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"zzzzzz\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "1a2166112b0fb86fe2ab09484082f2d24568bef53c0452a446a76c7397f057e3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"ready v3 (0)\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"zzzzzz\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "1a2166112b0fb86fe2ab09484082f2d24568bef53c0452a446a76c7397f057e3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "edit",
+        "--target",
+        "main_window.sidebar_search",
+        "--value",
+        ""
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"refreshing v4 (0)\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "94e0894ab35b0695431390954cc922b61e9c4c17895314dbad06e0881c4b1ffa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"refreshing v4 (0)\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "94e0894ab35b0695431390954cc922b61e9c4c17895314dbad06e0881c4b1ffa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Documents\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Photos\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Music\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Movies\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Downloads\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"ready v4 (5)\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "2ba2aebec8ca47b82b4e140b216e23312ca2c3675556c6e61787ab95323fd383",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Documents\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Photos\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Music\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Movies\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Downloads\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"ready v4 (5)\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "2ba2aebec8ca47b82b4e140b216e23312ca2c3675556c6e61787ab95323fd383",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Add Item\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"library_page.add_item\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Documents\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[1]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Photos\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[2]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Music\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[3]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Movies\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[4]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Downloads\",\n    \"reason\": null,\n    \"role\": \"link\",\n    \"target\": \"library_page.item_link[5]\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"navigation\",\n    \"target\": \"library_page.library\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": \"ready v4 (5)\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"List & Detail\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Library\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "2ba2aebec8ca47b82b4e140b216e23312ca2c3675556c6e61787ab95323fd383",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Layout"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Brightness\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"layout_page.layout_brightness\",\n    \"value\": \"0.6\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"query\",\n    \"target\": \"library_page.library_results\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Images & Layout\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Layout\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "dbedc8632c766182c575a3749ea9ff4402e4cabec2fdc0fc1de7f952f45f8973",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Brightness\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"layout_page.layout_brightness\",\n    \"value\": \"0.6\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Images & Layout\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Layout\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "d8d2a3bac99ada31eeae3715f6aa9a868a880bf92f9af9125c79cea4c2597641",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Media"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Video\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Media\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Color Bars\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.bars\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"media_page.clip_choice\",\n    \"value\": \"expanded\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Damaged File\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.damaged\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Featured clip\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.featured\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Mute\",\n    \"reason\": \"disabled\",\n    \"role\": \"switch\",\n    \"target\": \"media_page.featured.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.featured.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Volume\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Test Pattern\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.pattern\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Preview player\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.preview\",\n    \"value\": \"Idle 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.preview.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.preview.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "292ecbb3ea0f696bdbbe3ce3b64dec577437e048ce103432a910bb4b1e4e63b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Video\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Media\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Color Bars\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.bars\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"media_page.clip_choice\",\n    \"value\": \"expanded\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Damaged File\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.damaged\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Featured clip\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.featured\",\n    \"value\": \"Loading 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.featured.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Play\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.featured.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Test Pattern\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.pattern\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Preview player\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.preview\",\n    \"value\": \"Idle 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.preview.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.preview.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "69f727b61bdaa4896a02317993e61198c0a64209c97d7883d9ebfe267ce95c83",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Video\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Media\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Color Bars\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.bars\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"media_page.clip_choice\",\n    \"value\": \"expanded\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Damaged File\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.damaged\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Featured clip\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.featured\",\n    \"value\": \"Loading 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.featured.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Play\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.featured.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Test Pattern\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.pattern\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Preview player\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.preview\",\n    \"value\": \"Idle 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.preview.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.preview.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "69f727b61bdaa4896a02317993e61198c0a64209c97d7883d9ebfe267ce95c83",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Video\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Media\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Color Bars\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.bars\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"media_page.clip_choice\",\n    \"value\": \"expanded\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Damaged File\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.damaged\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Featured clip\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.featured\",\n    \"value\": \"Ready 0:00 / 0:08\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.featured.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Play\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.featured.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Playback Position\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Test Pattern\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.pattern\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Preview player\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.preview\",\n    \"value\": \"Idle 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.preview.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.preview.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "684cd785e2cf2d1e307db42836dca6e0267e8582be7f7ce48cb458b513cf79c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Video\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Media\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Color Bars\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.bars\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"media_page.clip_choice\",\n    \"value\": \"expanded\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Damaged File\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.damaged\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Featured clip\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.featured\",\n    \"value\": \"Ready 0:00 / 0:08\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.featured.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Play\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.featured.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Playback Position\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Test Pattern\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.pattern\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Preview player\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.preview\",\n    \"value\": \"Idle 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.preview.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.preview.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "684cd785e2cf2d1e307db42836dca6e0267e8582be7f7ce48cb458b513cf79c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "activate",
+        "--target",
+        "media_page.damaged"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Video\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Media\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Color Bars\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.bars\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"media_page.clip_choice\",\n    \"value\": \"expanded\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Damaged File\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.damaged\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Featured clip\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.featured\",\n    \"value\": \"Failed 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.featured.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.featured.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Test Pattern\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.pattern\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Preview player\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.preview\",\n    \"value\": \"Idle 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.preview.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.preview.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "6dc6df58e55b4aecd1dcbff505f367b96ec68f38498e99ac383f9c6115bf6b21",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Video\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Media\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Color Bars\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.bars\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"media_page.clip_choice\",\n    \"value\": \"expanded\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Damaged File\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.damaged\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Featured clip\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.featured\",\n    \"value\": \"Failed 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.featured.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.featured.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Test Pattern\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.pattern\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Preview player\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.preview\",\n    \"value\": \"Idle 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.preview.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.preview.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "6dc6df58e55b4aecd1dcbff505f367b96ec68f38498e99ac383f9c6115bf6b21",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "activate",
+        "--target",
+        "media_page.pattern"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "ui",
+        "inspect"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Video\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Media\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Color Bars\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.bars\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"\",\n    \"reason\": null,\n    \"role\": \"adaptive\",\n    \"target\": \"media_page.clip_choice\",\n    \"value\": \"expanded\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Damaged File\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.damaged\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Featured clip\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.featured\",\n    \"value\": \"Ready 0:00 / 0:08\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.featured.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Play\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.featured.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Playback Position\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.featured.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Test Pattern\",\n    \"reason\": null,\n    \"role\": \"button\",\n    \"target\": \"media_page.pattern\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Preview player\",\n    \"reason\": null,\n    \"role\": \"video\",\n    \"target\": \"media_page.preview\",\n    \"value\": \"Idle 0:00 / --:--\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Mute\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"media_page.preview.mute\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Play\",\n    \"reason\": \"disabled\",\n    \"role\": \"button\",\n    \"target\": \"media_page.preview.play_pause\",\n    \"value\": null,\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": false,\n    \"label\": \"Playback Position\",\n    \"reason\": \"disabled\",\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.position\",\n    \"value\": \"0\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"media_page.preview.volume\",\n    \"value\": \"1\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "684cd785e2cf2d1e307db42836dca6e0267e8582be7f7ce48cb458b513cf79c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "appearance": "light",
+      "arguments": [
+        "--session",
+        "2eedbf91054800-ui",
+        "window",
+        "list"
+      ],
+      "status": 0,
+      "stderr": "",
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"Command\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "bd9f756dbe3bb1535ce99c5e9cf3d19cf22e9608677ca7af66c8c1724ba9575e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "dark",
@@ -604,7 +1187,9 @@
       ],
       "status": 3,
       "stderr": "error: no running engine was found; start the application with its control channel enabled\n",
-      "stdout": ""
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
     },
     {
       "appearance": "dark",
@@ -613,20 +1198,15 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "session_id": "7bac5bf4050200-ui",
-          "windows": [
-            "main#1"
-          ]
-        }
-      ]
+      "stdout": "[\n  {\n    \"session_id\": \"431619e5064d00-ui\",\n    \"windows\": []\n  }\n]\n",
+      "stdout_sha256": "b332f8d9f9924502965dfb3596a88e6a9723b343168ae830cd7a440a2e80228b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "dark",
       "arguments": [
         "--session",
-        "7bac5bf4050200-ui",
+        "431619e5064d00-ui",
         "ui",
         "set-language",
         "--language",
@@ -634,51 +1214,29 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": ""
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "dark",
       "arguments": [
         "--session",
-        "7bac5bf4050200-ui",
+        "431619e5064d00-ui",
         "window",
         "list"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "actions": [
-            "Activate",
-            "Close",
-            "Minimize",
-            "Maximize",
-            "Move",
-            "Resize"
-          ],
-          "changed_by": "System",
-          "focused": true,
-          "frame": {
-            "height": 668.0,
-            "width": 920.0,
-            "x": 500.0,
-            "y": 190.0
-          },
-          "kind": "main",
-          "lifecycle": "Open",
-          "presentation": "Native",
-          "size": "Normal",
-          "version": 3,
-          "visibility": "Visible",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "54f0c90b5b2b6ecea77e5b334c9c5432353089af188f5cd8ae3e622bdedc0bed",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "dark",
       "arguments": [
         "--session",
-        "7bac5bf4050200-ui",
+        "431619e5064d00-ui",
         "window",
         "resize",
         "--window",
@@ -690,68 +1248,29 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": {
-        "actions": [
-          "Activate",
-          "Close",
-          "Minimize",
-          "Maximize",
-          "Move",
-          "Resize"
-        ],
-        "changed_by": "System",
-        "focused": true,
-        "frame": {
-          "height": 668.0,
-          "width": 920.0,
-          "x": 500.0,
-          "y": 190.0
-        },
-        "kind": "main",
-        "lifecycle": "Open",
-        "presentation": "Native",
-        "size": "Normal",
-        "version": 3,
-        "visibility": "Visible",
-        "window": "main#1"
-      }
+      "stdout": "{\n  \"actions\": [\n    \"Activate\",\n    \"Close\",\n    \"Minimize\",\n    \"Maximize\",\n    \"Move\",\n    \"Resize\"\n  ],\n  \"changed_by\": \"System\",\n  \"focused\": true,\n  \"frame\": {\n    \"height\": 668.0,\n    \"width\": 920.0,\n    \"x\": 500.0,\n    \"y\": 190.0\n  },\n  \"kind\": \"main\",\n  \"lifecycle\": \"Open\",\n  \"presentation\": \"Native\",\n  \"size\": \"Normal\",\n  \"version\": 3,\n  \"visibility\": \"Visible\",\n  \"window\": \"main#1\"\n}\n",
+      "stdout_sha256": "a4a6b957a32a7140c563c30c9ed5734a39df3e526f028dfa811cfeb2b30c68b2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "dark",
       "arguments": [
         "--session",
-        "7bac5bf4050200-ui",
+        "431619e5064d00-ui",
         "ui",
         "inspect"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "enabled": true,
-          "label": "Text",
-          "reason": null,
-          "role": "sidebar",
-          "target": "main_window.pages",
-          "value": "Text",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Search",
-          "reason": null,
-          "role": "search",
-          "target": "main_window.sidebar_search",
-          "value": "",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Text\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Text\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "d64189193f2cc9f704c38806d65f5c48fdd31248e7ff09338750c3d8c90989b2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "dark",
       "arguments": [
         "--session",
-        "7bac5bf4050200-ui",
+        "431619e5064d00-ui",
         "ui",
         "select",
         "--target",
@@ -761,175 +1280,37 @@
       ],
       "status": 0,
       "stderr": "",
-      "stdout": ""
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "dark",
       "arguments": [
         "--session",
-        "7bac5bf4050200-ui",
+        "431619e5064d00-ui",
         "ui",
         "inspect"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "enabled": true,
-          "label": "Save automatically",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.autosave",
-          "value": "true",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Brightness",
-          "reason": null,
-          "role": "slider",
-          "target": "controls_page.brightness",
-          "value": "0.6",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.density",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.density_chips",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Notifications",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.notifications",
-          "value": "true",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Density",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.strip_density",
-          "value": "Regular",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.strip_filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Sync",
-          "reason": null,
-          "role": "switch",
-          "target": "controls_page.sync",
-          "value": "false",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Show",
-          "reason": null,
-          "role": "picker",
-          "target": "controls_page.toolbar_filter",
-          "value": "All",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Volume",
-          "reason": null,
-          "role": "slider",
-          "target": "controls_page.volume",
-          "value": "50",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Switches & Sliders",
-          "reason": null,
-          "role": "sidebar",
-          "target": "main_window.pages",
-          "value": "Controls",
-          "window": "main#1"
-        },
-        {
-          "enabled": true,
-          "label": "Search",
-          "reason": null,
-          "role": "search",
-          "target": "main_window.sidebar_search",
-          "value": "",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"enabled\": true,\n    \"label\": \"Save automatically\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.autosave\",\n    \"value\": \"true\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Brightness\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"controls_page.brightness\",\n    \"value\": \"0.6\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.density\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.density_chips\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Notifications\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.notifications\",\n    \"value\": \"true\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Density\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.strip_density\",\n    \"value\": \"Regular\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.strip_filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Sync\",\n    \"reason\": null,\n    \"role\": \"switch\",\n    \"target\": \"controls_page.sync\",\n    \"value\": \"false\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Show\",\n    \"reason\": null,\n    \"role\": \"picker\",\n    \"target\": \"controls_page.toolbar_filter\",\n    \"value\": \"All\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Volume\",\n    \"reason\": null,\n    \"role\": \"slider\",\n    \"target\": \"controls_page.volume\",\n    \"value\": \"50\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Switches & Sliders\",\n    \"reason\": null,\n    \"role\": \"sidebar\",\n    \"target\": \"main_window.pages\",\n    \"value\": \"Controls\",\n    \"window\": \"main#1\"\n  },\n  {\n    \"enabled\": true,\n    \"label\": \"Search\",\n    \"reason\": null,\n    \"role\": \"search\",\n    \"target\": \"main_window.sidebar_search\",\n    \"value\": \"\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "902e70ae372d6f621f71ec8668710ef2dff319b1145a28a0b28c80c3a57d2ad0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "appearance": "dark",
       "arguments": [
         "--session",
-        "7bac5bf4050200-ui",
+        "431619e5064d00-ui",
         "window",
         "list"
       ],
       "status": 0,
       "stderr": "",
-      "stdout": [
-        {
-          "actions": [
-            "Activate",
-            "Close",
-            "Minimize",
-            "Maximize",
-            "Move",
-            "Resize"
-          ],
-          "changed_by": "System",
-          "focused": true,
-          "frame": {
-            "height": 668.0,
-            "width": 920.0,
-            "x": 500.0,
-            "y": 190.0
-          },
-          "kind": "main",
-          "lifecycle": "Open",
-          "presentation": "Native",
-          "size": "Normal",
-          "version": 3,
-          "visibility": "Visible",
-          "window": "main#1"
-        }
-      ]
+      "stdout": "[\n  {\n    \"actions\": [\n      \"Activate\",\n      \"Close\",\n      \"Minimize\",\n      \"Maximize\",\n      \"Move\",\n      \"Resize\"\n    ],\n    \"changed_by\": \"System\",\n    \"focused\": true,\n    \"frame\": {\n      \"height\": 668.0,\n      \"width\": 920.0,\n      \"x\": 500.0,\n      \"y\": 190.0\n    },\n    \"kind\": \"main\",\n    \"lifecycle\": \"Open\",\n    \"presentation\": \"Native\",\n    \"size\": \"Normal\",\n    \"version\": 3,\n    \"visibility\": \"Visible\",\n    \"window\": \"main#1\"\n  }\n]\n",
+      "stdout_sha256": "54f0c90b5b2b6ecea77e5b334c9c5432353089af188f5cd8ae3e622bdedc0bed",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ],
   "displays": [
@@ -940,14 +1321,43 @@
     }
   ],
   "geometry_scope": "Outer frame normalized through window.resize; CLI does not expose the content rect, and PNGs include system window chrome",
-  "harness_sha": "57524de6cde24cab42526056e6f88eb91ea33230",
-  "interaction_scope": "Generated CLI bindings only; mouse, keyboard and animation behavior are not verified",
+  "harness_sha": "025fe097eb8d3bd3fe4f58f4233172a629c9e4f9",
+  "image_assets": [
+    {
+      "color_space": "kCGColorSpaceSRGB",
+      "pixel_height": 360,
+      "pixel_width": 640,
+      "resource": "images/landscape.jpg"
+    },
+    {
+      "color_space": "kCGColorSpaceSRGB",
+      "pixel_height": 256,
+      "pixel_width": 256,
+      "resource": "images/bern.png"
+    },
+    {
+      "color_space": "kCGColorSpaceDisplayP3",
+      "pixel_height": 360,
+      "pixel_width": 640,
+      "resource": "images/hdr-gainmap.jpg"
+    },
+    {
+      "color_space": "kCGColorSpaceITUR_2100_PQ",
+      "pixel_height": 360,
+      "pixel_width": 640,
+      "resource": "images/hdr-pq.png"
+    }
+  ],
+  "image_verification_scope": "Inputs decode with ImageIO; the Layout PNG requires visual comparison for image presence, fit, clipping and color. No HDR luminance or EDR equivalence is asserted.",
+  "interaction_scope": "Generated CLI bindings. Motion files record programmatic transitions; mouse/keyboard paths and transition equivalence are not asserted",
   "os": "Version 14.8.9 (Build 23J631)",
+  "post_event_access": true,
   "requested_outer_size_points": {
     "height": 668,
     "width": 920
   },
   "screen_recording_preflight": true,
+  "showcase_extra_slices": "Light appearance only; main window at 920 x 668 outer points. Screenshots are evidence for comparison, not an automatic visual-equivalence verdict.",
   "source_sha": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
   "success": true,
   "system_preferences": {
@@ -965,7 +1375,7 @@
         "Y": 190
       },
       "color_space": "unknown",
-      "pid": 1247,
+      "pid": 1352,
       "pixel_height": 668,
       "pixel_width": 920,
       "png": "controls-light.png",
@@ -1008,7 +1418,7 @@
         "Y": 190
       },
       "color_space": "unknown",
-      "pid": 1247,
+      "pid": 1352,
       "pixel_height": 668,
       "pixel_width": 920,
       "png": "controls-light-after-commit.png",
@@ -1051,7 +1461,437 @@
         "Y": 190
       },
       "color_space": "unknown",
-      "pid": 1282,
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "text-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Text",
+      "window_number": 24,
+      "sha256": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "buttons-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Buttons",
+      "window_number": 24,
+      "sha256": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "inputs-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Text Fields",
+      "window_number": 24,
+      "sha256": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "query-failed-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "List & Detail",
+      "window_number": 24,
+      "sha256": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "query-empty-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "List & Detail",
+      "window_number": 24,
+      "sha256": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "query-recovered-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "List & Detail",
+      "window_number": 24,
+      "sha256": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "images-layout-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Images & Layout",
+      "window_number": 24,
+      "sha256": "ed55052080e78d477d6d995bc951f6aee55c7b0e4dd2f8c102ab9ee8a6c176cf"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "video-ready-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Video",
+      "window_number": 24,
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "video-failed-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Video",
+      "window_number": 24,
+      "sha256": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1352,
+      "pixel_height": 668,
+      "pixel_width": 920,
+      "png": "video-recovered-light.png",
+      "session_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 500,
+            "y": 190
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 3,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "title": "Video",
+      "window_number": 24,
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+    },
+    {
+      "bounds_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 500,
+        "Y": 190
+      },
+      "color_space": "unknown",
+      "pid": 1613,
       "pixel_height": 668,
       "pixel_width": 920,
       "png": "controls-dark.png",
@@ -1087,10 +1927,26 @@
       "sha256": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e"
     }
   ],
-  "capture_run": "https://github.com/Torrekie/Bern/actions/runs/39956399796",
+  "capture_run": "https://github.com/Torrekie/Bern/actions/runs/39961818954",
   "build_run": "https://github.com/Torrekie/Bern/actions/runs/39943744831",
-  "runtime_environment": "source_sha=ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee\nharness_sha=57524de6cde24cab42526056e6f88eb91ea33230\nrunner_arch=ARM64\nimage_os=macos14\nimage_version=20260831.0302.1\nProductName:\t\tmacOS\nProductVersion:\t\t14.8.9\nBuildVersion:\t\t23J631\narm64\nXcode 15.4\nBuild version 15F31d\nswift-driver version: 1.90.11.1 Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)\nTarget: arm64-apple-macosx14.0\n",
+  "evidence_format": "CLI stdout/stderr embedded verbatim; original WindowServer media retained without editing",
+  "runtime_environment": "source_sha=ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee\nharness_sha=025fe097eb8d3bd3fe4f58f4233172a629c9e4f9\nrunner_arch=ARM64\nimage_os=macos14\nimage_version=20260831.0302.1\nProductName:\t\tmacOS\nProductVersion:\t\t14.8.9\nBuildVersion:\t\t23J631\narm64\nXcode 15.4\nBuild version 15F31d\nswift-driver version: 1.90.11.1 Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)\nTarget: arm64-apple-macosx14.0\n",
   "build_environment": "source_repository=AimesSoft/Bern\nsource_sha=ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee\nharness_sha=69af5582318d33c734b84ba5d13c538efd05ea53\nrunner_arch=ARM64\nimage_os=macos26\nimage_version=20261013.0424.1\nProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\narm64\nXcode 26.6\nBuild version 17F113\n26.5\nswift-driver version: 1.148.6 Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0\n",
   "build_binary": "minimum_macos=14.0\ntarget/bern/macos/Showcase.app/Contents/MacOS/Showcase: Mach-O 64-bit executable arm64\ntarget/bern/macos/Showcase.app/Contents/MacOS/Showcase:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 14.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\ntarget/bern/macos/Showcase.app/Contents/MacOS/Showcase:\n\t/System/Library/Frameworks/Security.framework/Versions/A/Security (compatibility version 1.0.0, current version 61901.120.67)\n\t/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5026.5.4)\n\t/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI (compatibility version 1.0.0, current version 7.5.3)\n\t/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2685.60.104)\n\t/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)\n\t/System/Library/Frameworks/AVKit.framework/Versions/A/AVKit (compatibility version 1.0.0, current version 1.0.0)\n\t/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)\n\t/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork (compatibility version 1.0.0, current version 3860.255.21)\n\t/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 1965.5.1)\n\t/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia (compatibility version 1.0.0, current version 3320.8.5)\n\t/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5026.5.4)\n\t/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)\n\t/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore (compatibility version 1.2.0, current version 1195.14.4)\n\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)\n\t/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2420.7.1, weak)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 411.255.0, weak)\n\t/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0)\n\t/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 2.2.0, weak)\n\t/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)\n\t/usr/lib/swift/libswiftCoreMedia.dylib (compatibility version 1.0.0, current version 3320.8.5)\n\t/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 377.120.8)\n\t/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1542.100.32)\n\t/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 373.2.0, weak)\n\t/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)\n\t/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 951.7.0)\n\t/usr/lib/swift/libswiftObservation.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)\n\t/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 877.5.1)\n\t/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 128.120.2, weak)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1082.0.0)\n\t/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 23.0.0, weak)\n\t/usr/lib/swift/libswiftCoreGraphics.dylib (compatibility version 1.0.0, current version 1.0.0)\n",
-  "source_archive_sha256": "099269fa653d0e11e1622c722b891312674a5c5ccfee50fbbd18884dc45b9652"
+  "source_archive_sha256": "099269fa653d0e11e1622c722b891312674a5c5ccfee50fbbd18884dc45b9652  reference-app.tar.gz\n",
+  "retained_media_sha256": {
+    "controls-light-after-commit.png": "f8bc92c12960dc94bffe727aaf3f7363e0a128a04eedda7567efdbaf28f3373a",
+    "inputs-light.png": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519",
+    "images-layout-light.png": "ed55052080e78d477d6d995bc951f6aee55c7b0e4dd2f8c102ab9ee8a6c176cf",
+    "video-recovered-light.png": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5",
+    "buttons-light.png": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9",
+    "query-empty-light.png": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef",
+    "query-failed-light.png": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243",
+    "video-failed-light.png": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9",
+    "controls-light.png": "49479af56bfba53146b3f50d35929dcdbfb849fb0e4b7e5c5fc2ffdd8bb95929",
+    "query-recovered-light.png": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5",
+    "text-light.png": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572",
+    "controls-dark.png": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e",
+    "video-ready-light.png": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+  }
 }
