@@ -1,0 +1,125 @@
+name: macOS 14 HDR tone calibration
+run-name: HDR tone calibration
+
+# Manual, build-only capable. No runtime rebuild and no paid runner labels.
+on:
+  workflow_dispatch:
+    inputs:
+      build_only:
+        description: Retain the ARM64 probe without running during macOS 14 brownout
+        type: boolean
+        default: false
+      builder:
+        description: Official pool with SDK 26; Intel cross-compiles without running
+        type: choice
+        options: [macos-26, macos-26-intel, macos-15]
+        default: macos-26-intel
+
+permissions:
+  contents: read
+concurrency:
+  group: macos14-hdr-probe-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ${{ inputs.builder || 'macos-26-intel' }}
+    timeout-minutes: 10
+    env:
+      DEVELOPER_DIR: ${{ inputs.builder == 'macos-15' && '/Applications/Xcode_26.3.app/Contents/Developer' || '/Applications/Xcode_26.6.app/Contents/Developer' }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Cross-build and package the fixed source probe
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/probe evidence/build
+          {
+            printf 'harness_sha=%s\n' "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+            shasum -a 256 .github/scripts/hdr-tone-probe.swift examples/showcase/images/hdr-pq.png
+          } > evidence/build/environment.txt 2>&1
+          case "$(uname -m)" in arm64|x86_64) ;; *) exit 1 ;; esac
+          sdk="$(xcrun --sdk macosx --show-sdk-version)"
+          test "${sdk%%.*}" -ge 26
+          xcrun swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos13.0 \
+            -module-cache-path work/module-cache \
+            -framework SwiftUI -framework AppKit -framework ImageIO -framework ColorSync -framework CryptoKit \
+            .github/scripts/hdr-tone-probe.swift -o work/probe/HDRToneProbe > evidence/build/compile.log 2>&1
+          test "$(lipo -archs work/probe/HDRToneProbe)" = arm64
+          test "$(xcrun vtool -show-build work/probe/HDRToneProbe | awk '/minos/ {print $2; exit}')" = 13.0
+          codesign --force --sign - work/probe/HDRToneProbe
+          codesign --verify --strict work/probe/HDRToneProbe
+          xcrun vtool -show-build work/probe/HDRToneProbe > evidence/build/binary.txt
+          cp .github/scripts/hdr-tone-probe.swift examples/showcase/images/hdr-pq.png work/probe/
+          (cd work/probe && shasum -a 256 HDRToneProbe hdr-tone-probe.swift hdr-pq.png > SHA256SUMS)
+          tar -czf evidence/build/hdr-tone-probe.tar.gz -C work/probe .
+          (cd evidence/build && shasum -a 256 hdr-tone-probe.tar.gz > hdr-tone-probe.tar.gz.sha256)
+          rm -rf work/module-cache
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-hdr-probe-build
+          path: evidence/build/
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+
+  measure:
+    needs: build
+    if: ${{ !inputs.build_only }}
+    runs-on: macos-14
+    timeout-minutes: 10
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos14-hdr-probe-build
+          path: build
+      - name: Capture the exact binary on macOS 14 virtual SDR
+        env:
+          BERN_PROBE_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p probe evidence/runtime
+          {
+            printf 'harness_sha=%s\n' "$GITHUB_SHA"
+            sw_vers
+            uname -m
+          } > evidence/runtime/environment.txt
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+          (cd build && shasum -a 256 -c hdr-tone-probe.tar.gz.sha256)
+          tar -xzf build/hdr-tone-probe.tar.gz -C probe
+          (cd probe && shasum -a 256 -c SHA256SUMS)
+          test "$(lipo -archs probe/HDRToneProbe)" = arm64
+          codesign --verify --strict probe/HDRToneProbe
+          cp build/environment.txt evidence/runtime/build-environment.txt
+          cp build/binary.txt evidence/runtime/build-binary.txt
+          probe/HDRToneProbe "$PWD/probe/hdr-pq.png" "$PWD/evidence/runtime" > evidence/runtime/runtime.log 2>&1
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('evidence/runtime/report.json').read_text())
+          assert d['success'] is True, d.get('error')
+          assert d['native_allowed_dynamic_range_high'] is True
+          assert len(d['sources']) == 2 and len(d['patches']) == 10
+          assert len(d['captures']) == 4
+          assert len({c['rgba8_srgb_sha256'] for c in d['captures']}) == 1
+          assert all(c['key'] is False and abs(c['current_headroom']-1) < 0.0001 for c in d['captures'])
+          assert len(list(Path('evidence/runtime').glob('*.png'))) == 6
+          PY
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-hdr-tone-evidence
+          path: evidence/runtime/
+          if-no-files-found: error
+          retention-days: 3
