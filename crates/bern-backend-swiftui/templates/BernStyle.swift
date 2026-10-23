@@ -1842,6 +1842,53 @@ private struct BernMarkRenderer: TextRenderer {
 
 // MARK: - Linked to scrolling and gestures
 
+#if os(macOS)
+private struct BernScrollAxisKey: EnvironmentKey {
+    static let defaultValue: Axis = .vertical
+}
+
+extension EnvironmentValues {
+    /// The nearest declared ScrollView supplies its axis even when its
+    /// content fits the viewport and no document overflow can reveal it.
+    var bernScrollAxis: Axis {
+        get { self[BernScrollAxisKey.self] }
+        set { self[BernScrollAxisKey.self] = newValue }
+    }
+
+    /// macOS 13 expresses scroll-content margins as actual SwiftUI layout.
+    /// A nested scroll view resets this value before applying its own snap.
+    var bernLegacyScrollMargin: CGFloat {
+        get { self[BernLegacyScrollMarginKey.self] }
+        set { self[BernLegacyScrollMarginKey.self] = newValue }
+    }
+}
+
+private struct BernLegacyScrollMarginKey: EnvironmentKey {
+    static let defaultValue: CGFloat = 0
+}
+
+private struct BernLegacyScrollMarginPreference: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = nextValue() }
+}
+
+private struct BernLegacySnapContent: ViewModifier {
+    @Environment(\.bernScrollAxis) private var axis
+    @Environment(\.bernLegacyScrollMargin) private var margin
+
+    func body(content: Content) -> some View {
+        // Keep the named coordinate space outside the padding: snap frames
+        // then share the actual AppKit document origin, including the margin.
+        // ScrollView lays out multiple direct children as a vertical stack.
+        // Aggregate Group's children before padding, so the margin is added
+        // once around the content rather than once around every child.
+        VStack { content }
+            .padding(axis == .horizontal ? .horizontal : .vertical, margin)
+            .coordinateSpace(name: bernSnapSpace)
+    }
+}
+#endif
+
 extension View {
     /// Follows scrolling: `scale` at the center of the scroll view around
     /// it, 1 at its edges; `opacity` at its edges, 1 at the center. The
@@ -1968,8 +2015,8 @@ final class BernSnapItems: BernObservableObject, @unchecked Sendable {
     func rest(_ start: CGFloat, length: CGFloat, axis: Axis, center: Bool) -> CGFloat? {
         lock.withLock {
             let horizontal = axis == .horizontal
-            // The target and the frames share the content's origin; the
-            // margins lie before it.
+            // The target and the frames share the content's origin. On
+            // macOS 13 the measured content includes its SwiftUI padding.
             let point = { (frame: CGRect) -> CGFloat in
                 let from = horizontal ? frame.minX : frame.minY
                 let size = horizontal ? frame.width : frame.height
@@ -2053,9 +2100,12 @@ private struct BernSnap: ViewModifier {
                     .scrollTargetBehavior(BernSnapBehavior(items: items, center: center, axis: axis))
                     .contentMargins(horizontal ? .horizontal : .vertical, margin, for: .scrollContent)
             } else {
+                let legacyMargin = item > 0 ? margin : 0
                 content.background(BernLegacyScrollProbe(
-                    axis: axis, margin: margin, reduce: reduce || bernForcedReduceMotion,
+                    axis: axis, reduce: reduce || bernForcedReduceMotion,
                     snap: { start, length in items.rest(start, length: length, axis: axis, center: center) }))
+                    .environment(\.bernLegacyScrollMargin, legacyMargin)
+                    .preference(key: BernLegacyScrollMarginPreference.self, value: legacyMargin)
             }
             #else
             content
@@ -2087,9 +2137,29 @@ private struct BernSnapItem: ViewModifier {
 extension View {
     /// The content of a scroll view that comes to rest on its items: the
     /// space their frames are measured in.
-    func bernSnapContent() -> some View {
+    @ViewBuilder func bernSnapContent() -> some View {
+        #if os(macOS)
+        if #available(macOS 14, *) { bernNamedCoordinateSpace(bernSnapSpace) }
+        else { modifier(BernLegacySnapContent()) }
+        #else
         bernNamedCoordinateSpace(bernSnapSpace)
+        #endif
     }
+
+    #if os(macOS)
+    /// A scroll view owns both its downward layout environment and its
+    /// upward margin notification. Applied after its position listener, this
+    /// boundary lets that listener read its own margin, then hides it from
+    /// any enclosing scroll view's listener.
+    @ViewBuilder func bernScrollScope(axis: Axis) -> some View {
+        let scoped = environment(\.bernScrollAxis, axis)
+            .environment(\.bernLegacyScrollMargin, 0)
+        if #available(macOS 14, *) { scoped }
+        else {
+            scoped.transformPreference(BernLegacyScrollMarginPreference.self) { $0 = 0 }
+        }
+    }
+    #endif
 
     @ViewBuilder fileprivate func bernNamedCoordinateSpace<Name: Hashable>(_ name: Name) -> some View {
         #if os(macOS)
@@ -2327,6 +2397,7 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
     @State private var placed = false
     #if os(macOS)
     @State private var legacyPositioned = false
+    @State private var legacyMargin: CGFloat = 0
     #endif
     #if os(macOS)
     @StateObject private var items = BernScrollItems(keyType: ID.self)
@@ -2345,6 +2416,14 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
                     items.cancelArrival()
                     target = nil
                 })))
+                .onPreferenceChange(BernLegacyScrollMarginPreference.self) { margin in
+                    guard margin != legacyMargin else { return }
+                    legacyMargin = margin
+                    // Initial item measurements and a viewport resize change
+                    // the real content padding. Reapply a still-owned target;
+                    // once the person takes over, target is nil and stays so.
+                    if let wanted = target { proxy.scrollTo(wanted, anchor: anchor) }
+                }
                 .bernOnChange(of: target, initial: true) { _, wanted in
                     if let wanted {
                         let animation = legacyPositioned && !reduce && !bernForcedReduceMotion ? motion.animation : nil
@@ -4721,7 +4800,7 @@ struct BernFormRows: ViewModifier {
 // after live/momentum scrolling ends; macOS 14 keeps its native target behavior.
 private struct BernLegacyScrollProbe: NSViewRepresentable {
     var axis: Axis = .vertical
-    var margin: CGFloat? = nil
+    var margin: CGFloat = 0
     var reduce = false
     var snap: ((CGFloat, CGFloat) -> CGFloat?)? = nil
     var userScroll: (() -> Void)? = nil
@@ -4759,11 +4838,6 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
         private var refreshQueued = false
         private var dismantled = false
         private var live = false
-        private var baseInsets: NSEdgeInsets?
-        private var baseSafeAreaInsets: NSEdgeInsets?
-        private var baseAutomaticInsets = true
-        private weak var insetWindow: NSWindow?
-        private var windowLayoutObservation: NSKeyValueObservation?
         private var initiallyPositioned = false
         private var layoutRetries = 0
         init(_ configuration: BernLegacyScrollProbe) { self.configuration = configuration }
@@ -4801,29 +4875,6 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             let found = locate()
             if found !== scroll { stop(); scroll = found; install() }
             guard let scroll else { return }
-            observeWindow(configuration.margin == nil ? nil : scroll.window)
-            if let margin = configuration.margin {
-                if baseInsets == nil {
-                    scroll.layoutSubtreeIfNeeded()
-                    baseInsets = scroll.contentInsets
-                    baseSafeAreaInsets = scroll.safeAreaInsets
-                    baseAutomaticInsets = scroll.automaticallyAdjustsContentInsets
-                }
-                var insets = unmodifiedInsets(for: scroll) ?? NSEdgeInsets()
-                if configuration.axis == .horizontal { insets.left += margin; insets.right += margin }
-                else { insets.top += margin; insets.bottom += margin }
-                // Manual margins and AppKit's automatic inset writer would
-                // overwrite each other. Keep the original non-safe-area
-                // contribution, but follow the current safe-area delta above.
-                // Only changing actual inset values prevents layout feedback.
-                if scroll.automaticallyAdjustsContentInsets { scroll.automaticallyAdjustsContentInsets = false }
-                let old = scroll.contentInsets
-                if old.top != insets.top || old.left != insets.left || old.bottom != insets.bottom || old.right != insets.right {
-                    scroll.contentInsets = insets
-                }
-            } else if baseInsets != nil {
-                restoreInsets(for: scroll)
-            }
             if let anchor = configuration.initialAnchor, !initiallyPositioned {
                 let clip = scroll.contentView
                 if let document = scroll.documentView, clip.bounds.width > 0, clip.bounds.height > 0,
@@ -4840,36 +4891,6 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
                 }
             }
             reportPhase()
-        }
-        private func observeWindow(_ window: NSWindow?) {
-            guard window !== insetWindow else { return }
-            windowLayoutObservation = nil
-            insetWindow = window
-            // contentLayoutRect is publicly KVO-compliant and changes when
-            // the titlebar/toolbar obscures a different portion of the content.
-            windowLayoutObservation = window?.observe(\.contentLayoutRect, options: [.new]) { [weak self] _, _ in
-                guard let self else { return }
-                DispatchQueue.main.async { self.scheduleRefresh() }
-            }
-        }
-        private func unmodifiedInsets(for scroll: NSScrollView) -> NSEdgeInsets? {
-            guard var insets = baseInsets else { return nil }
-            if baseAutomaticInsets, let original = baseSafeAreaInsets {
-                let current = scroll.safeAreaInsets
-                insets.top += current.top - original.top
-                insets.left += current.left - original.left
-                insets.bottom += current.bottom - original.bottom
-                insets.right += current.right - original.right
-            }
-            return insets
-        }
-        private func restoreInsets(for scroll: NSScrollView) {
-            if let insets = unmodifiedInsets(for: scroll) { scroll.contentInsets = insets }
-            if scroll.automaticallyAdjustsContentInsets != baseAutomaticInsets {
-                scroll.automaticallyAdjustsContentInsets = baseAutomaticInsets
-            }
-            baseInsets = nil
-            baseSafeAreaInsets = nil
         }
         private func install() {
             guard let scroll else { return }
@@ -4915,7 +4936,7 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             guard let callback = configuration.phase, let view, let scroll else { return }
             let clip = scroll.contentView
             let frame = view.convert(view.bounds, to: clip)
-            let horizontal = (scroll.documentView?.bounds.width ?? 0) > clip.bounds.width + 1
+            let horizontal = configuration.axis == .horizontal
             // Scroll transitions use the content region, while AppKit's clip
             // bounds also include the margins through which neighbors peek.
             // The macOS 14 WindowServer calibration with a 709pt viewport and
@@ -4926,6 +4947,15 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             viewport.origin.y += clip.isFlipped ? insets.top : insets.bottom
             viewport.size.width = max(0, viewport.width - insets.left - insets.right)
             viewport.size.height = max(0, viewport.height - insets.top - insets.bottom)
+            // The compatibility margin is SwiftUI content padding, not a
+            // native inset. Shrink only its semantic transition container.
+            if horizontal {
+                viewport.origin.x += configuration.margin
+                viewport.size.width = max(0, viewport.width - 2 * configuration.margin)
+            } else {
+                viewport.origin.y += configuration.margin
+                viewport.size.height = max(0, viewport.height - 2 * configuration.margin)
+            }
             let distance = horizontal ? frame.midX - viewport.midX : frame.midY - viewport.midY
             let extent = horizontal ? (frame.width + viewport.width) / 2 : (frame.height + viewport.height) / 2
             callback(Double(max(-1, min(1, distance / max(1, extent)))))
@@ -4973,12 +5003,6 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {
             for token in observations { NotificationCenter.default.removeObserver(token) }
             observations.removeAll()
             if let monitor { NSEvent.removeMonitor(monitor) }; monitor = nil
-            windowLayoutObservation = nil
-            insetWindow = nil
-            if let scroll, baseInsets != nil { restoreInsets(for: scroll) }
-            baseInsets = nil
-            baseSafeAreaInsets = nil
-            baseAutomaticInsets = true
             live = false
             initiallyPositioned = false
             layoutRetries = 0
@@ -5009,6 +5033,8 @@ private struct BernLegacyScrollEffect: ViewModifier {
     let scale: Double
     let opacity: Double
     let anchor: UnitPoint
+    @Environment(\.bernScrollAxis) private var axis
+    @Environment(\.bernLegacyScrollMargin) private var margin
     @State private var phase = 0.0
     func body(content: Content) -> some View {
         // Interactive transitions ease from hidden to the centered threshold;
@@ -5017,7 +5043,7 @@ private struct BernLegacyScrollEffect: ViewModifier {
         content
             .scaleEffect(1 + (scale - 1) * near, anchor: anchor)
             .opacity(opacity + (1 - opacity) * near)
-            .background(BernLegacyScrollProbe(phase: { next in
+            .background(BernLegacyScrollProbe(axis: axis, margin: margin, phase: { next in
                 if abs(next - phase) > 0.0001 { phase = next }
             }))
     }

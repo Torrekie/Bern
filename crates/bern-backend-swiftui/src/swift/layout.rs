@@ -594,6 +594,9 @@ impl Generator<'_> {
                 )
             });
         }
+        if self.platform == Platform::Macos {
+            out.line(format!(".bernScrollScope(axis: {axis})"));
+        }
         self.toolbar(out, &element.children, ctx);
     }
 

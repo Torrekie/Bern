@@ -102,6 +102,7 @@ extension BernHost {
             "ApplePersistenceIgnoreState": true,
             "NSQuitAlwaysKeepsWindows": false,
         ])
+        BernSidebarWidthStartup.capture()
     }
 
     func platformDidStart() {
@@ -662,6 +663,74 @@ private struct BernModernSettingsAction: ViewModifier {
     @Environment(\.openSettings) private var openSettings
     func body(content: Content) -> some View {
         content.onAppear { BernHost.shared.registerSettingsAction { openSettings() } }
+    }
+}
+
+// MARK: - Initial sidebar width
+
+/// Capture before any Scene is built: a new split view immediately writes
+/// its own frame record, which must not be mistaken for an older choice.
+@MainActor
+private enum BernSidebarWidthStartup {
+    static var canPrimeIdeal = false
+    static var primedWindows: Set<String> = []
+
+    static func capture() {
+        guard let identifier = Bundle.main.bundleIdentifier else { return }
+        let defaults = UserDefaults.standard
+        let saved = defaults.persistentDomain(forName: identifier) ?? [:]
+        // Both prefixes are the frame records observed on macOS 13. Be
+        // conservative across all windows, including profiles with only a
+        // saved window frame. If session restoration was enabled, abstain.
+        canPrimeIdeal = defaults.bool(forKey: "ApplePersistenceIgnoreState")
+            && !saved.keys.contains {
+                $0.hasPrefix("NSSplitView Subview Frames ") || $0.hasPrefix("NSWindow Frame ")
+            }
+    }
+}
+
+extension View {
+    @ViewBuilder func bernSidebarColumnWidth(minimum: CGFloat, ideal: CGFloat, maximum: CGFloat) -> some View {
+        if #available(macOS 14.0, *) {
+            navigationSplitViewColumnWidth(min: minimum, ideal: ideal, max: maximum)
+        } else {
+            modifier(BernLegacySidebarWidth(minimum: minimum, ideal: ideal, maximum: maximum))
+        }
+    }
+}
+
+/// On 13 the ideal is ignored at first layout. Prime it once, then release
+/// the original minimum without replacing the List or fixing its width.
+@MainActor
+private struct BernLegacySidebarWidth: ViewModifier {
+    let minimum: CGFloat
+    let ideal: CGFloat
+    let maximum: CGFloat
+    @EnvironmentObject private var window: BernWindowContext
+    @State private var released = false
+    private var warm: Bool {
+        BernSidebarWidthStartup.canPrimeIdeal && !released
+            && !BernSidebarWidthStartup.primedWindows.contains(window.kindID)
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .navigationSplitViewColumnWidth(min: warm ? ideal : minimum, ideal: ideal, max: maximum)
+            .background(GeometryReader { geometry in
+                Color.clear
+                    .onAppear { release(geometry.size.width) }
+                    .bernOnChange(of: geometry.size.width) { release($0) }
+            })
+    }
+
+    private func release(_ width: CGFloat) {
+        guard BernSidebarWidthStartup.canPrimeIdeal, !released, width >= ideal - 0.5 else { return }
+        DispatchQueue.main.async {
+            // A later view instance in this window kind must respect the
+            // width the user chose after its original initialization.
+            BernSidebarWidthStartup.primedWindows.insert(window.kindID)
+            released = true
+        }
     }
 }
 

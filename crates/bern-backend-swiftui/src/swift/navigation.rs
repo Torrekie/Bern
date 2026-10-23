@@ -19,6 +19,13 @@ impl Generator<'_> {
             return;
         };
         let selection = self.field(sidebar, "selection").expect("selection field");
+        let mut sidebar_has_search = false;
+        for node in &sidebar.children {
+            node.walk(&mut |node| {
+                sidebar_has_search |=
+                    matches!(node, Node::Element(element) if element.kind == "Search");
+            });
+        }
         out.open("SwiftUI.NavigationSplitView {");
         // Styled items draw their own selection: the list keeps none, and
         // each row selects itself.
@@ -62,6 +69,8 @@ impl Generator<'_> {
                 ".navigationSplitViewColumnWidth(min: {width}, ideal: {width}, max: {width})"
             ));
             out.line(format!(".frame(minWidth: {width}, maxWidth: {width})"));
+        } else if self.platform == Platform::Macos && !sidebar_has_search {
+            out.line(".bernSidebarColumnWidth(minimum: 180, ideal: 210, maximum: 320)");
         } else {
             out.line(".navigationSplitViewColumnWidth(min: 180, ideal: 210, max: 320)");
         }
