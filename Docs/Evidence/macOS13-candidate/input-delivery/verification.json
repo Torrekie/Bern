@@ -1,0 +1,185 @@
+{
+  "scope": "Isolated native NSSlider control, not Bern. Test fixture also receives no real mouseDown from MCP drag; AXIncrement does invoke native action.",
+  "drag": {
+    "from": [
+      640,
+      508
+    ],
+    "to": [
+      740,
+      508
+    ],
+    "axSliderFrame": {
+      "x": 440,
+      "y": 495,
+      "width": 400,
+      "height": 30
+    },
+    "axKnobFrame": {
+      "x": 628,
+      "y": 496,
+      "width": 24,
+      "height": 28
+    },
+    "mouseDowns": 0,
+    "valueBefore": 50,
+    "valueAfter": 50
+  },
+  "accessibilityIncrement": {
+    "valueBefore": 50,
+    "valueAfter": 55,
+    "actions": 1
+  },
+  "snapshot": {
+    "revision": "d3c347c7",
+    "elements": [
+      {
+        "depth": 0,
+        "frame": {
+          "y": 392,
+          "height": 208,
+          "width": 480,
+          "x": 400
+        },
+        "role": "standard window",
+        "title": "Bern native slider input probe",
+        "windowIndex": 0,
+        "settable": false,
+        "path": [],
+        "actions": [
+          "AXRaise"
+        ],
+        "index": 0
+      },
+      {
+        "depth": 1,
+        "elementDescription": "Input probe volume",
+        "enabled": true,
+        "frame": {
+          "y": 495,
+          "height": 30,
+          "width": 400,
+          "x": 440
+        },
+        "role": "slider",
+        "windowIndex": 0,
+        "settable": true,
+        "value": "50",
+        "path": [
+          0
+        ],
+        "actions": [
+          "AXIncrement",
+          "AXDecrement"
+        ],
+        "index": 1
+      },
+      {
+        "depth": 2,
+        "frame": {
+          "y": 496,
+          "height": 28,
+          "width": 24,
+          "x": 628
+        },
+        "role": "valueindicator",
+        "windowIndex": 0,
+        "settable": true,
+        "value": "50",
+        "path": [
+          0,
+          0
+        ],
+        "actions": [],
+        "index": 2
+      },
+      {
+        "depth": 1,
+        "enabled": true,
+        "frame": {
+          "y": 398,
+          "height": 16,
+          "width": 14,
+          "x": 407
+        },
+        "role": "close button",
+        "windowIndex": 0,
+        "settable": false,
+        "path": [
+          1
+        ],
+        "actions": [
+          "AXPress"
+        ],
+        "index": 3
+      },
+      {
+        "depth": 1,
+        "enabled": false,
+        "frame": {
+          "y": 398,
+          "height": 16,
+          "width": 14,
+          "x": 447
+        },
+        "role": "zoom button",
+        "windowIndex": 0,
+        "settable": false,
+        "path": [
+          2
+        ],
+        "actions": [
+          "AXPress",
+          "AXShowMenu"
+        ],
+        "index": 4
+      },
+      {
+        "depth": 1,
+        "enabled": false,
+        "frame": {
+          "y": 398,
+          "height": 16,
+          "width": 14,
+          "x": 427
+        },
+        "role": "minimize button",
+        "windowIndex": 0,
+        "settable": false,
+        "path": [
+          3
+        ],
+        "actions": [
+          "AXPress"
+        ],
+        "index": 5
+      },
+      {
+        "depth": 1,
+        "enabled": true,
+        "frame": {
+          "y": 397,
+          "height": 16,
+          "width": 195,
+          "x": 542
+        },
+        "role": "text",
+        "windowIndex": 0,
+        "settable": false,
+        "value": "Bern native slider input probe",
+        "path": [
+          4
+        ],
+        "actions": [],
+        "index": 6
+      }
+    ],
+    "app": "SliderProbe",
+    "elementCount": 7,
+    "bundleIdentifier": "dev.bern.fixture.native-slider-input",
+    "timestamp": 814464231.121594,
+    "windowTitle": "Bern native slider input probe",
+    "pid": 3239
+  },
+  "acceptance": "Environment input delivery limitation reproduced independently; does not verify release-only slider commits or physical drag behavior."
+}

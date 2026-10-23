@@ -2651,22 +2651,26 @@ private struct BernPinch: ViewModifier {
         #if os(tvOS)
         content.accessibilityAdjustableAction { direction in bernAdjust(value, range, direction, commit) }
         #else
-        content.contentShape(Rectangle()).simultaneousGesture(pinch)
+        pinching(content)
             .accessibilityAdjustableAction { direction in bernAdjust(value, range, direction, commit) }
         #endif
     }
 
     #if !os(tvOS)
-    private var pinch: some Gesture {
+    @ViewBuilder private func pinching(_ content: Content) -> some View {
         #if os(macOS)
-        MagnificationGesture()
-            .onChanged { magnification in
-                let from = start ?? value.wrappedValue
-                start = from
-                value.wrappedValue = min(max(from * magnification, range.lowerBound), range.upperBound)
-            }
-            .onEnded { _ in start = nil; commit() }
+        if #available(macOS 14, *) {
+            content.contentShape(Rectangle()).simultaneousGesture(pinch)
+        } else {
+            content.contentShape(Rectangle()).simultaneousGesture(legacyPinch)
+        }
         #else
+        content.contentShape(Rectangle()).simultaneousGesture(pinch)
+        #endif
+    }
+
+    @available(macOS 14, *)
+    private var pinch: some Gesture {
         MagnifyGesture()
             .onChanged { gesture in
                 let from = start ?? value.wrappedValue
@@ -2674,8 +2678,19 @@ private struct BernPinch: ViewModifier {
                 value.wrappedValue = min(max(from * gesture.magnification, range.lowerBound), range.upperBound)
             }
             .onEnded { _ in start = nil; commit() }
-        #endif
     }
+
+    #if os(macOS)
+    private var legacyPinch: some Gesture {
+        MagnificationGesture()
+            .onChanged { magnification in
+                let from = start ?? value.wrappedValue
+                start = from
+                value.wrappedValue = min(max(from * magnification, range.lowerBound), range.upperBound)
+            }
+            .onEnded { _ in start = nil; commit() }
+    }
+    #endif
     #endif
 }
 
