@@ -1,6 +1,6 @@
 # macOS 13 现代 SwiftUI 移植验收
 
-本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。
+本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
 
 ## 已有可复核结果
 
@@ -59,9 +59,10 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 |---|---|
 | Film 初始身份 | 第三轮已经修复原生探针/SwiftUI绘制坐标分离，并通过9种居中/缩放/减少动态效果小样例；整应用Last几何在1pt内。但是同样Inspector关闭后首次进入Film，14参考为Glen，13为声明初始值3对应Madras。尚未确定14的初始布局/侧栏时序，不硬改为4。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
+| 未覆盖控件变体 | Gallery Frame的volume PopoverButton和icon风格Menu仍可能进入13自画圆形ButtonStyle，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
 | 图片页首卡高度 | A14/B14/C13首卡分别124/125/129pt。图片均在y108…198，caption墨迹只差0.5pt；后续HDR卡均147pt，仅继承首卡偏移。三个13图片包装结构的公开Column/Grid框均109pt，[13独立公开框探针](../Evidence/macOS13-image-layout/reference.json)的9组合/27截图确认固定109pt行卡也为129pt，最小行高24/0/150均未改变卡高。尚缺14同一公开框测量；不能归因字体或用负padding抵消。 |
-| PQ/HLG 色彩 | `e06e080`补足严格cICP识别、系统SDR转换、无Metal备用及真实余量通知更新。独立真实窗口SDR约228.93/254.89，与14虚拟SDR参考接近；真实OS通知观察到1→2→1→2， paused Metal view会重绘。但High仍缺14引入的自适应全局tone mapper，current2截图两半255，尚不能通过。完整应用CI仍待；[原始证据与范围](../Evidence/macOS13-hdr/reference.json)。 |
+| PQ/HLG 色彩 | `e06e080`补足严格cICP识别、系统SDR转换、无Metal备用及真实余量通知更新。独立真实窗口SDR约228.93/254.89，与14虚拟SDR参考接近；真实OS通知观察到1→2→1→2， paused Metal view会重绘。但High仍缺14引入的自适应全局tone mapper，current2截图两半255，尚不能通过。完整应用CI仍待；后续`5226454`还恢复了14的原生MagnifyGesture，13保留MagnificationGesture兼容路径，局部target13类型检查通过，触控板手势尚未实测。[原始证据与范围](../Evidence/macOS13-hdr/reference.json)。 |
 | 真正鼠标拖动 | 独立系统NSSlider也未收到自动化drag的mouseDown，值仍50；同控件AXIncrement能产生一次action并变55，因而已在Bern外复现输入交付限制。尚未证明“拖动时只预览，松手仅提交一次”。AXIncrement 单次提交不替代它。 |
 | 物理 HDR、输入法、完整动画时序 | 未验收。屏幕潜在EDR为2，实际值会随HDR surface启动从1升到约2；不能把启动前的1当作设备不支持HDR，也不能用SDR截图证明物理HDR亮度等效。 |
 | 原生材质配色 | ICC归一后的活动窗口背景仍有差异，可能受桌面染色等本机原生材质条件与14虚拟屏幕条件影响，尚未隔离归因。raised panel可相同，但整窗口颜色尚不能宣称等效；不以固定RGB抵销未经隔离的环境差异。 |
