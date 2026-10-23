@@ -434,6 +434,8 @@ impl Target for SwiftUiMacos {
             "MetalKit".into(),
             "-framework".into(),
             "CoreImage".into(),
+            "-framework".into(),
+            "ColorSync".into(),
             "-module-cache-path".into(),
             context
                 .workspace_dir
