@@ -71,18 +71,21 @@ func handle(_ name: String) throws -> FileHandle {
     return try FileHandle(forWritingTo: url)
 }
 func cli(_ args: [String], _ session: String? = nil, allowFailure: Bool = false,
-         observe: (() -> Void)? = nil) throws -> Any? {
+         until cutoff: Double? = nil, observe: (() -> Void)? = nil) throws -> Any? {
     let stem = String(format: "%03d", commands.count + 1)
     let out = try handle(stem + "-stdout.json"), err = try handle(stem + "-stderr.txt")
     defer { out.closeFile(); err.closeFile() }
     let p = Process(); p.executableURL = cliURL
     p.arguments = (session.map { ["--session", $0] } ?? []) + args
     p.environment = environment; p.standardOutput = out; p.standardError = err
-    let start = now(); try p.run()
+    let start = now(), callDeadline = min(deadline, min(cutoff ?? deadline, now() + 8)); try p.run()
     while p.isRunning || (observe != nil && now() - start < 1) {
-        if now() - start >= 8 || now() >= deadline {
-            if p.isRunning { kill(p.processIdentifier, SIGKILL) }
-            throw Failure(description: "CLI exceeded its 8 second limit")
+        if now() >= callDeadline {
+            if p.isRunning { kill(p.processIdentifier, SIGKILL); p.waitUntilExit() }
+            commands.append(["arguments": p.arguments ?? [], "start_uptime": start, "end_uptime": now(),
+                "deadline_uptime": callDeadline, "timeout": true, "stdout": stem + "-stdout.json", "stderr": stem + "-stderr.txt"])
+            try save()
+            throw Failure(description: "CLI exceeded its bounded deadline")
         }
         if now() - start < 1 { observe?() }
         try pause(0.03)
@@ -249,11 +252,31 @@ do {
         var session: String?
         let ready = now() + 15
         while session == nil && p.isRunning && now() < ready {
-            let entries = try cli(["sessions"], allowFailure: true) as? [[String: Any]] ?? []
+            let entries = try cli(["sessions"], allowFailure: true, until: ready) as? [[String: Any]] ?? []
             if entries.count == 1 { session = entries[0]["session_id"] as? String }
             if session == nil { try pause(0.1) }
         }
         guard let id = session else { throw Failure(description: "No unique UI session") }
+        // The transport session can precede SwiftUI's first native window.
+        // Keep the original absolute startup deadline; do not inspect controls
+        // or request foreground before both registries contain the own window.
+        var startupSamples = [[String: Any]](), startupReady = false
+        while p.isRunning && now() < ready {
+            let listed = try cli(["window", "list"], id, allowFailure: true, until: ready) as? [[String: Any]] ?? []
+            let native = try? window(p.processIdentifier)
+            let alpha = (native?[kCGWindowAlpha as String] as? NSNumber)?.doubleValue ?? 0
+            startupSamples.append(["uptime": now(), "windows": listed, "own_native_window": native as Any? ?? NSNull(), "own_native_window_alpha": alpha])
+            var startup = report["startup_readiness"] as? [[String: Any]] ?? []
+            let sample: [String: Any] = ["scenario": scenario, "pid": p.processIdentifier,
+                "deadline_uptime": ready, "samples": startupSamples]
+            if startup.last?["pid"] as? Int32 == p.processIdentifier { startup[startup.count - 1] = sample } else { startup.append(sample) }
+            report["startup_readiness"] = startup; try save()
+            if now() < ready, listed.contains(where: { $0["kind"] as? String == "main" }), native != nil, alpha >= 0.99 {
+                startupReady = true; break
+            }
+            try pause(min(0.08, max(0, ready - now())))
+        }
+        guard startupReady else { throw Failure(description: "Startup did not register a main window and visible owned CG window within the original 15 second deadline") }
         if observation == "active" {
             let beforeActivation = frontState(p.processIdentifier)
             let activationOptions: NSApplication.ActivationOptions = expectedOS == 13
