@@ -1,0 +1,553 @@
+{
+  "assembled_SHA256": "7a1370ba75066d83015114f653154e2a68a37ae5ed0176877a16ad842026dfe6",
+  "binary_actual_before_cleanup": {
+    "bytes": 614208,
+    "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cg-direct13/HeroCGDirectProbe",
+    "scope": "Actual binary bytes hashed before root cleanup; no native/signing command",
+    "sha256": "be263dfbd54a965003c8adc82c2294475963cb9463fc86c6daedcc89a09d8fd0"
+  },
+  "build_saved_records": {
+    "arch": "arm64",
+    "exit_code": 0,
+    "minos": "13.0",
+    "scope": "Saved actual root build/signature records; no fresh signing command by reviewer.",
+    "sdk": "14.2",
+    "source_provenance_sha256": "b1e1e20e93e72560a25dc7ec7ef2f0e2303d452fdaf9251badc81fbd3fe424e4",
+    "strict_codesign_verify_exit": 0,
+    "swift": "5.9.2"
+  },
+  "complete": true,
+  "four_part_assembly_exact": true,
+  "gate_replay": {
+    "actual_outputs": [
+      {
+        "full_original_and_additive_native_gates": "PASS",
+        "mode": "default",
+        "own_pid": 41469,
+        "pixel_geometry_acceptance": "separate, not inferred from native gate",
+        "raw_bytes_equal_frozen_on": true,
+        "window_seconds": 1.717992901802063
+      },
+      {
+        "full_original_and_additive_native_gates": "PASS",
+        "mode": "direct",
+        "own_pid": 41501,
+        "pixel_geometry_acceptance": "separate, not inferred from native gate",
+        "raw_bytes_equal_frozen_on": true,
+        "window_seconds": 1.6573930978775024
+      }
+    ],
+    "additive_SHA256": "80b0b45bad4af69a576525341891ab319adfc0a2ec65fc9ec5193821547d7301",
+    "base_SHA256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00",
+    "only_in_memory_adaptation": {
+      "hashlib.sha256((D/'HeroCGDirectProbe').read_bytes()).hexdigest()": "'be263dfbd54a965003c8adc82c2294475963cb9463fc86c6daedcc89a09d8fd0'"
+    },
+    "reason": "Exe read before cleanup; substitute that actual observation for the later file rehash only. All assertions and unchanged base subprocess call retained. No implementation/gate file edit."
+  },
+  "input_files": {
+    "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/report.json": {
+      "bytes": 76692,
+      "sha256": "c69c68a2d348b3aaecfbcfe08d89899181403b52c71b45e1eab0d7344ad73172"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/snapshot-custom.bin": {
+      "bytes": 1843200,
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/snapshot-named.bin": {
+      "bytes": 1843200,
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    "work/hero-cg-direct13/CGDirect.swift.inc": {
+      "bytes": 7426,
+      "sha256": "0184e7efa7b67f30b1dc6569db12f893ae95253833e48c8eb4f76bcbb2327a26"
+    },
+    "work/hero-cg-direct13/Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "work/hero-cg-direct13/Driver.swift.inc": {
+      "bytes": 31106,
+      "sha256": "d4609b9379e53974993b6ff81dbf0f59d6d23cf652cc37bcfce9885263b896c2"
+    },
+    "work/hero-cg-direct13/FloatCapture.swift.inc": {
+      "bytes": 14458,
+      "sha256": "849277777da4eb496cb62f43a42292dbf76864ee3c0375a80fbc4cf512022293"
+    },
+    "work/hero-cg-direct13/ProductHero.base.swift": {
+      "bytes": 15230,
+      "sha256": "e82e73e3cd1956fd2f68a4e55895c37e485bc2871551a1e27715f1be2e467385"
+    },
+    "work/hero-cg-direct13/ProductHero.clock-adapted.swift": {
+      "bytes": 15726,
+      "sha256": "e9078417ea71967cb64b012893654704e11f7354a88f09538079d913ae2f000a"
+    },
+    "work/hero-cg-direct13/ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "work/hero-cg-direct13/ProductHero.swift": {
+      "bytes": 68719,
+      "sha256": "7a1370ba75066d83015114f653154e2a68a37ae5ed0176877a16ad842026dfe6"
+    },
+    "work/hero-cg-direct13/ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "work/hero-cg-direct13/ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "work/hero-cg-direct13/ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "work/hero-cg-direct13/ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "work/hero-cg-direct13/assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "work/hero-cg-direct13/assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "work/hero-cg-direct13/build-fingerprint.json": {
+      "bytes": 5039,
+      "sha256": "4d1db86a0949738a94cedce816eb0676d82a94e11b09532f8093e07c7f3bd5fa"
+    },
+    "work/hero-cg-direct13/build.log": {
+      "bytes": 467,
+      "sha256": "e94559344640df8785e27c50aed3d6a4ba2b6e33f029489c9587228c570de6b4"
+    },
+    "work/hero-cg-direct13/build.py": {
+      "bytes": 2615,
+      "sha256": "e3d95a3a7e05911e667298f5b4199f07c9ea5e5b5a013079bdafa8566a359a93"
+    },
+    "work/hero-cg-direct13/compare-control.py": {
+      "bytes": 3444,
+      "sha256": "a8f71b071c7183d4629533068d6f20f71edd4a5a0549325f6242b1d325b2b5e4"
+    },
+    "work/hero-cg-direct13/local-image-imports-and-sdk14.patch": {
+      "bytes": 1225,
+      "sha256": "accf273f917d98447768b76a28d738b530c4efca9f430120dc051d23b3db75c5"
+    },
+    "work/hero-cg-direct13/local-sdk14-clock.patch": {
+      "bytes": 917,
+      "sha256": "a3877802ec1f894517db7af9cc8f5c128fcf1d6622319f65b1d6f92b032fe585"
+    },
+    "work/hero-cg-direct13/preparation-cg-direct.patch": {
+      "bytes": 18902,
+      "sha256": "2e1a0a3b803c11869a4fc3d81533bae91196c0b8d555041e43d555def35a8a94"
+    },
+    "work/hero-cg-direct13/preparation-provenance.json": {
+      "bytes": 2389,
+      "sha256": "8a14cbfd1c4947cf9c5343e853270916bcea9c79da22c193f3764651a8aea137"
+    },
+    "work/hero-cg-direct13/run-one.py": {
+      "bytes": 1654,
+      "sha256": "d093db8c5210a2d8495e0b3143c55f398781b7a4f48eefcd971ad6b1dfc5e5c3"
+    },
+    "work/hero-cg-direct13/runtime13-default/progress-0.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/hero-cg-direct13/runtime13-default/progress-1.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/hero-cg-direct13/runtime13-default/report.json": {
+      "bytes": 78843,
+      "sha256": "dc2e24dd4e5c836b0dacae58dcd0d782d6aad53a124b8a90de0f91bd5d5b0038"
+    },
+    "work/hero-cg-direct13/runtime13-default/run-receipt.json": {
+      "bytes": 944,
+      "sha256": "28360f234ac023ae8f70728d260db9c589d6c6f5a341f3b0a1eeaf73b099a480"
+    },
+    "work/hero-cg-direct13/runtime13-default/runtime.log": {
+      "bytes": 2189,
+      "sha256": "c5d78f81902f349f80517151f5289504b20ae1e4ce667997674d348e6a743e0a"
+    },
+    "work/hero-cg-direct13/runtime13-default/snapshot-custom.bin": {
+      "bytes": 1843200,
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    "work/hero-cg-direct13/runtime13-default/snapshot-named.bin": {
+      "bytes": 1843200,
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    "work/hero-cg-direct13/runtime13-direct/progress-0.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/hero-cg-direct13/runtime13-direct/progress-1.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/hero-cg-direct13/runtime13-direct/report.json": {
+      "bytes": 79198,
+      "sha256": "e8199c19b7894ba237098132df1c6987ae5ee4d2be7052c8b4057ebe4abce034"
+    },
+    "work/hero-cg-direct13/runtime13-direct/run-receipt.json": {
+      "bytes": 942,
+      "sha256": "9e7adc1012997f77be225bd5ff1d7f6030ed8cd5288c3d4537214a17bc6e92b5"
+    },
+    "work/hero-cg-direct13/runtime13-direct/runtime.log": {
+      "bytes": 2189,
+      "sha256": "3e645054a81cee3994ac1a563a561945dc3a4d4d2c4d3cb1600ee98b3d799272"
+    },
+    "work/hero-cg-direct13/runtime13-direct/snapshot-custom.bin": {
+      "bytes": 1843200,
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    "work/hero-cg-direct13/runtime13-direct/snapshot-named.bin": {
+      "bytes": 1843200,
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    "work/hero-cg-direct13/sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    },
+    "work/hero-cg-direct13/source-provenance.json": {
+      "bytes": 4640,
+      "sha256": "b1e1e20e93e72560a25dc7ec7ef2f0e2303d452fdaf9251badc81fbd3fe424e4"
+    },
+    "work/hero-cg-direct13/validate-base.py": {
+      "bytes": 8018,
+      "sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00"
+    },
+    "work/hero-cg-direct13/validate-direct.py": {
+      "bytes": 3208,
+      "sha256": "80b0b45bad4af69a576525341891ab319adfc0a2ec65fc9ec5193821547d7301"
+    }
+  },
+  "limits": [
+    "Object identity linkage is within each process; pointers are not compared across processes.",
+    "Paired save/defer restore and CG draw flags are recorded source paths/issued calls, not GPU/display execution proof.",
+    "Reported explicit provider copy count2 and held-after-export0 concern fixture export/refs, not all internal provider access or image deallocation.",
+    "WindowServer five-equal hashes are report evidence; PNG/raw file bytes were hashed without pixel decoding.",
+    "No independent pixel, global-white/transparent-corner coverage, fault injection, full-flight, mac11/Swift5.3/ObjC/iOS acceptance.",
+    "Inherited try? report write suppression and hard watchdog bypass remain as source review states."
+  ],
+  "processes": {
+    "default": {
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "owner_pid": 41469,
+          "phase": "progress-0",
+          "png": "progress-0.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10708
+        },
+        {
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "owner_pid": 41469,
+          "phase": "progress-1",
+          "png": "progress-1.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10708
+        }
+      ],
+      "cg_direct": {
+        "associations": [
+          {
+            "association": "snapshot_NSImage_created_from_this_same_renderer_return_CGImage",
+            "key": "baseline-body-named",
+            "native_image_identity": "ObjectIdentifier(0x0000600003ec0dc0)",
+            "original_cgimage_identity": "ObjectIdentifier(0x000000013d70e790)"
+          },
+          {
+            "association": "snapshot_NSImage_created_from_this_same_renderer_return_CGImage",
+            "key": "baseline-body-custom",
+            "native_image_identity": "ObjectIdentifier(0x0000600003ec0f00)",
+            "original_cgimage_identity": "ObjectIdentifier(0x000000013d70fdb0)"
+          }
+        ],
+        "checked_phases": [
+          0,
+          1
+        ],
+        "draw_callback_counts": {
+          "0": 2,
+          "1": 1
+        },
+        "draws": [
+          {
+            "bounds": {
+              "height": 180,
+              "width": 320,
+              "x": 0,
+              "y": 0
+            },
+            "context_observed": false,
+            "flight_identity": "ObjectIdentifier(0x000000013d70ea80)",
+            "native_image_identity": "ObjectIdentifier(0x0000600003ec0dc0)",
+            "original_cgimage_identity": "ObjectIdentifier(0x000000013d70e790)",
+            "path": "default",
+            "phase": 0,
+            "progress": 0,
+            "source_over_alphas": [
+              1,
+              0
+            ]
+          },
+          {
+            "bounds": {
+              "height": 180,
+              "width": 320,
+              "x": 0,
+              "y": 0
+            },
+            "context_observed": false,
+            "flight_identity": "ObjectIdentifier(0x000000013d70ea80)",
+            "native_image_identity": "ObjectIdentifier(0x0000600003ec0dc0)",
+            "original_cgimage_identity": "ObjectIdentifier(0x000000013d70e790)",
+            "path": "default",
+            "phase": 1,
+            "progress": 1,
+            "source_over_alphas": [
+              1,
+              1
+            ]
+          }
+        ],
+        "error": null,
+        "pixel_acceptance": "not performed; issued calls and binding gates are not visible-image proof",
+        "post_teardown_float_success": true,
+        "prepared": true,
+        "requested": "default",
+        "selected": "default",
+        "success": true,
+        "target": "flight-named"
+      },
+      "float_counts": {
+        "cleanup_observation_count": 2,
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 2,
+        "retained_primary_peak_count": 2,
+        "total_raw_bytes": 3686400
+      },
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "full_original_and_additive_gate": "PASS",
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 41469,
+      "window_seconds": 1.717992901802063,
+      "wrapper_elapsed_seconds": 2.0953457499854267
+    },
+    "direct": {
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "owner_pid": 41501,
+          "phase": "progress-0",
+          "png": "progress-0.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10709
+        },
+        {
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "owner_pid": 41501,
+          "phase": "progress-1",
+          "png": "progress-1.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10709
+        }
+      ],
+      "cg_direct": {
+        "associations": [
+          {
+            "association": "snapshot_NSImage_created_from_this_same_renderer_return_CGImage",
+            "key": "baseline-body-named",
+            "native_image_identity": "ObjectIdentifier(0x00006000035b0b40)",
+            "original_cgimage_identity": "ObjectIdentifier(0x000000015bf1fa70)"
+          },
+          {
+            "association": "snapshot_NSImage_created_from_this_same_renderer_return_CGImage",
+            "key": "baseline-body-custom",
+            "native_image_identity": "ObjectIdentifier(0x00006000035b17c0)",
+            "original_cgimage_identity": "ObjectIdentifier(0x000000015bf2af40)"
+          }
+        ],
+        "checked_phases": [
+          0,
+          1
+        ],
+        "draw_callback_counts": {
+          "0": 2,
+          "1": 1
+        },
+        "draws": [
+          {
+            "blend_mode": "normal_source_over",
+            "bounds": {
+              "height": 180,
+              "width": 320,
+              "x": 0,
+              "y": 0
+            },
+            "cg_draw_calls_issued": 2,
+            "context_observed": true,
+            "flight_identity": "ObjectIdentifier(0x000000015bf29c90)",
+            "local_y_flip": true,
+            "native_image_identity": "ObjectIdentifier(0x00006000035b0b40)",
+            "original_cgimage_identity": "ObjectIdentifier(0x000000015bf1fa70)",
+            "path": "direct",
+            "phase": 0,
+            "progress": 0,
+            "source_over_alphas": [
+              1,
+              0
+            ],
+            "state_restore": "paired_save_defer_restore_source_path"
+          },
+          {
+            "blend_mode": "normal_source_over",
+            "bounds": {
+              "height": 180,
+              "width": 320,
+              "x": 0,
+              "y": 0
+            },
+            "cg_draw_calls_issued": 2,
+            "context_observed": true,
+            "flight_identity": "ObjectIdentifier(0x000000015bf29c90)",
+            "local_y_flip": true,
+            "native_image_identity": "ObjectIdentifier(0x00006000035b0b40)",
+            "original_cgimage_identity": "ObjectIdentifier(0x000000015bf1fa70)",
+            "path": "direct",
+            "phase": 1,
+            "progress": 1,
+            "source_over_alphas": [
+              1,
+              1
+            ],
+            "state_restore": "paired_save_defer_restore_source_path"
+          }
+        ],
+        "error": null,
+        "pixel_acceptance": "not performed; issued calls and binding gates are not visible-image proof",
+        "post_teardown_float_success": true,
+        "prepared": true,
+        "requested": "direct",
+        "selected": "direct",
+        "success": true,
+        "target": "flight-named"
+      },
+      "float_counts": {
+        "cleanup_observation_count": 2,
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 2,
+        "retained_primary_peak_count": 2,
+        "total_raw_bytes": 3686400
+      },
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "full_original_and_additive_gate": "PASS",
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 41501,
+      "window_seconds": 1.6573930978775024,
+      "wrapper_elapsed_seconds": 1.8853379999636672
+    }
+  },
+  "raw_comparisons": [
+    {
+      "bytes": 1843200,
+      "key": "baseline-body-named",
+      "mode": "default",
+      "old_same_key_exact_SHA_and_length": true,
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    {
+      "bytes": 1843200,
+      "key": "baseline-body-custom",
+      "mode": "default",
+      "old_same_key_exact_SHA_and_length": true,
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    {
+      "bytes": 1843200,
+      "key": "baseline-body-named",
+      "mode": "direct",
+      "old_same_key_exact_SHA_and_length": true,
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    {
+      "bytes": 1843200,
+      "key": "baseline-body-custom",
+      "mode": "direct",
+      "old_same_key_exact_SHA_and_length": true,
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    }
+  ],
+  "scope": "Offline saved native/ICC/semantics/additive gates, source/build records, object-ID reports and file hashes only; no application/compiler/CI/provider recapture/pixel decoding or source edits.",
+  "source_inputs_verified": 24
+}

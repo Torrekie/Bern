@@ -1,0 +1,210 @@
+{
+  "assembled_ProductHero_sha256": "7a1370ba75066d83015114f653154e2a68a37ae5ed0176877a16ad842026dfe6",
+  "blocking_findings": [],
+  "checks": [
+    {
+      "area": "ownership/binding",
+      "evidence": "observe retains original CGImage in same Held array; snapshot binds the immediately constructed NSImage weakly+scalar ObjectIdentifier. Both default/direct force float on; namedFlight is weak; helper dictionaries contain scalar/string values.",
+      "result": "PASS (source)"
+    },
+    {
+      "area": "CG access",
+      "evidence": "withOriginalSnapshot is synchronous implicit-nonescaping closure and returns Void after key/weak identity checks. Current callers discard image, store identity strings, or issue synchronous CGContext draws; no second CGImage container/provider query/NSImage recache added.",
+      "result": "PASS (actual call sites)"
+    },
+    {
+      "area": "default path",
+      "evidence": "Original clip and two NSImage.sourceOver draw calls are byte-preserved. Default hook validates association/records identity then returns false without accessing CGContext; custom is unmarked and retains original draw.",
+      "result": "PASS (source)"
+    },
+    {
+      "area": "direct draw",
+      "evidence": "Named320x180/corner0/isFlipped/same-from-to endpoint checks; original clip precedes hook; local translate(height)/scaleY(-1), blend normal and alpha1 then clamped endpoint alpha, two same-CGImage calls, one save/defer-restore. No image reconstruction, color conversion or interpolation/intent override.",
+      "result": "PASS (source paths only)"
+    },
+    {
+      "area": "failure behavior",
+      "evidence": "Marked draw failure records sticky flag and returns handled=true (no NSImage fallback); checks throw into Driver catch, export and CG finalization flags force nonzero main exit. Invalid modes/OS are rejected before window creation.",
+      "result": "PASS for draw/binding/precondition/export failures"
+    },
+    {
+      "area": "release",
+      "evidence": "Float freezePrimary-through-finish suffix remains byte-identical, including held.removeAll and reported zero held after export; Driver closes window, calls original finish, then afterExport. CG report retains IDs/counters only, not images.",
+      "result": "PASS for ordinary defer paths"
+    },
+    {
+      "area": "local assembly/validators",
+      "evidence": "Frozen11-member preparation manifest,24-input local map and exact4-part LF assembly match. Driver already contains Backing and no second Backing file is assembled. validate-base is byte-identical663026... and additive invokes it with float on/13 before separate adapter/raw-identity checks. Four Python ASTs parse; none executed.",
+      "result": "PASS (static)"
+    }
+  ],
+  "execution": "Read-only text/hash/assembly/Python-AST validation only; no source edits/compile/UI/CI/runtime/pixel operations. Only this3-file review is written.",
+  "frozen_preparation_members_verified": 11,
+  "input_files": {
+    "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/tools/hero-cgsemantics-runtime-validate.py": {
+      "bytes": 8018,
+      "sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00"
+    },
+    "work/hero-cg-direct-preparation/CGDirect.swift.inc": {
+      "bytes": 7426,
+      "sha256": "0184e7efa7b67f30b1dc6569db12f893ae95253833e48c8eb4f76bcbb2327a26"
+    },
+    "work/hero-cg-direct-preparation/Driver.swift.inc": {
+      "bytes": 31106,
+      "sha256": "d4609b9379e53974993b6ff81dbf0f59d6d23cf652cc37bcfce9885263b896c2"
+    },
+    "work/hero-cg-direct-preparation/FloatCapture.swift.inc": {
+      "bytes": 14458,
+      "sha256": "849277777da4eb496cb62f43a42292dbf76864ee3c0375a80fbc4cf512022293"
+    },
+    "work/hero-cg-direct-preparation/ProductHero.base.swift": {
+      "bytes": 15230,
+      "sha256": "e82e73e3cd1956fd2f68a4e55895c37e485bc2871551a1e27715f1be2e467385"
+    },
+    "work/hero-cg-direct-preparation/README.md": {
+      "bytes": 4017,
+      "sha256": "3122d1d575d3c06e7d0674c16db2989207e3ffc9d115023ccfe64ba94dccae4b"
+    },
+    "work/hero-cg-direct-preparation/SHA256SUMS": {
+      "bytes": 952,
+      "sha256": "55f34c766bfbdde4dc91c7dcb310b532b394cbf7ec0dd060c7f97aa493f6f364"
+    },
+    "work/hero-cg-direct-preparation/base-source-hashes.json": {
+      "bytes": 3255,
+      "sha256": "c11277d1e94ea547de0c76377d2a0e39d5ebf637b486b308eb7f5710936e0651"
+    },
+    "work/hero-cg-direct-preparation/base/Driver.swift.inc": {
+      "bytes": 29683,
+      "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d"
+    },
+    "work/hero-cg-direct-preparation/base/FloatCapture.swift.inc": {
+      "bytes": 11944,
+      "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff"
+    },
+    "work/hero-cg-direct-preparation/base/ProductHero.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "work/hero-cg-direct-preparation/cg-direct.patch": {
+      "bytes": 18902,
+      "sha256": "2e1a0a3b803c11869a4fc3d81533bae91196c0b8d555041e43d555def35a8a94"
+    },
+    "work/hero-cg-direct-preparation/provenance.json": {
+      "bytes": 2389,
+      "sha256": "8a14cbfd1c4947cf9c5343e853270916bcea9c79da22c193f3764651a8aea137"
+    },
+    "work/hero-cg-direct13/CGDirect.swift.inc": {
+      "bytes": 7426,
+      "sha256": "0184e7efa7b67f30b1dc6569db12f893ae95253833e48c8eb4f76bcbb2327a26"
+    },
+    "work/hero-cg-direct13/Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "work/hero-cg-direct13/Driver.swift.inc": {
+      "bytes": 31106,
+      "sha256": "d4609b9379e53974993b6ff81dbf0f59d6d23cf652cc37bcfce9885263b896c2"
+    },
+    "work/hero-cg-direct13/FloatCapture.swift.inc": {
+      "bytes": 14458,
+      "sha256": "849277777da4eb496cb62f43a42292dbf76864ee3c0375a80fbc4cf512022293"
+    },
+    "work/hero-cg-direct13/ProductHero.base.swift": {
+      "bytes": 15230,
+      "sha256": "e82e73e3cd1956fd2f68a4e55895c37e485bc2871551a1e27715f1be2e467385"
+    },
+    "work/hero-cg-direct13/ProductHero.clock-adapted.swift": {
+      "bytes": 15726,
+      "sha256": "e9078417ea71967cb64b012893654704e11f7354a88f09538079d913ae2f000a"
+    },
+    "work/hero-cg-direct13/ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "work/hero-cg-direct13/ProductHero.swift": {
+      "bytes": 68719,
+      "sha256": "7a1370ba75066d83015114f653154e2a68a37ae5ed0176877a16ad842026dfe6"
+    },
+    "work/hero-cg-direct13/ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "work/hero-cg-direct13/ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "work/hero-cg-direct13/ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "work/hero-cg-direct13/ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "work/hero-cg-direct13/assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "work/hero-cg-direct13/assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "work/hero-cg-direct13/build.py": {
+      "bytes": 2615,
+      "sha256": "e3d95a3a7e05911e667298f5b4199f07c9ea5e5b5a013079bdafa8566a359a93"
+    },
+    "work/hero-cg-direct13/compare-control.py": {
+      "bytes": 3444,
+      "sha256": "a8f71b071c7183d4629533068d6f20f71edd4a5a0549325f6242b1d325b2b5e4"
+    },
+    "work/hero-cg-direct13/local-image-imports-and-sdk14.patch": {
+      "bytes": 1225,
+      "sha256": "accf273f917d98447768b76a28d738b530c4efca9f430120dc051d23b3db75c5"
+    },
+    "work/hero-cg-direct13/local-sdk14-clock.patch": {
+      "bytes": 917,
+      "sha256": "a3877802ec1f894517db7af9cc8f5c128fcf1d6622319f65b1d6f92b032fe585"
+    },
+    "work/hero-cg-direct13/preparation-cg-direct.patch": {
+      "bytes": 18902,
+      "sha256": "2e1a0a3b803c11869a4fc3d81533bae91196c0b8d555041e43d555def35a8a94"
+    },
+    "work/hero-cg-direct13/preparation-provenance.json": {
+      "bytes": 2389,
+      "sha256": "8a14cbfd1c4947cf9c5343e853270916bcea9c79da22c193f3764651a8aea137"
+    },
+    "work/hero-cg-direct13/run-one.py": {
+      "bytes": 1654,
+      "sha256": "d093db8c5210a2d8495e0b3143c55f398781b7a4f48eefcd971ad6b1dfc5e5c3"
+    },
+    "work/hero-cg-direct13/sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    },
+    "work/hero-cg-direct13/source-provenance.json": {
+      "bytes": 4640,
+      "sha256": "b1e1e20e93e72560a25dc7ec7ef2f0e2303d452fdaf9251badc81fbd3fe424e4"
+    },
+    "work/hero-cg-direct13/validate-base.py": {
+      "bytes": 8018,
+      "sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00"
+    },
+    "work/hero-cg-direct13/validate-direct.py": {
+      "bytes": 3208,
+      "sha256": "80b0b45bad4af69a576525341891ab319adfc0a2ec65fc9ec5193821547d7301"
+    }
+  },
+  "limits": [
+    "No UI, drawing, failure injection, Swift typecheck/compiler/signing or validator runtime was performed by this reviewer. Root reported its separate successful build; this review binds source bytes, not that binary.",
+    "Nonescaping closure does not intrinsically prohibit CGImage reference escape. No reviewed call site stores/returns it, but CoreGraphics/NSImage/system ownership or post-call internal retention is not excluded.",
+    "Direct flip/blend/save-restore flags and issued calls do not establish rendered orientation/color/UI equivalence, presentation timing, cause/fix, or zero observer effect. Default/CG controls still need actual acquisition and pixel review.",
+    "Ordinary failure coverage excludes inherited try? report serialization/write suppression; validators must require the actual report and hashes. The independent watchdog _exit124 bypasses defer/finish and cannot provide ordinary release evidence.",
+    "Fixture remains local13/static opaque aspect-matched320x180/corner0 endpoints, with inherited SDK14.2 gain-map/unused-clock adaptations. No actual coordinator/lifecycle, mac11/Swift5.3/ObjC/iOS acceptance is implied.",
+    "Additive validator intentionally stops if raw differs from the old frozen on cohort and uses its previously observed intent/interpolate/nil-decode values as local fixture controls; these are not general API guarantees."
+  ],
+  "local_source_inputs_verified": 24,
+  "local_source_provenance_sha256": "b1e1e20e93e72560a25dc7ec7ef2f0e2303d452fdaf9251badc81fbd3fe424e4",
+  "preparation_manifest_sha256": "55f34c766bfbdde4dc91c7dcb310b532b394cbf7ec0dd060c7f97aa493f6f364",
+  "preparation_provenance_sha256": "8a14cbfd1c4947cf9c5343e853270916bcea9c79da22c193f3764651a8aea137",
+  "verdict": "No blocking source finding for the bounded default/direct local13 fixture"
+}

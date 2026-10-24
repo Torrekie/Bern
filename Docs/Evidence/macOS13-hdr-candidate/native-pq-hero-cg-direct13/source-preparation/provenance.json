@@ -1,0 +1,64 @@
+{
+  "README_sha256": "3122d1d575d3c06e7d0674c16db2989207e3ffc9d115023ccfe64ba94dccae4b",
+  "assembly": [
+    "ProductHero.base.swift",
+    "FloatCapture.swift.inc",
+    "CGDirect.swift.inc",
+    "Driver.swift.inc"
+  ],
+  "backing_observation_already_in_driver": true,
+  "base_copies": {
+    "Driver.swift.inc": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d",
+    "FloatCapture.swift.inc": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff",
+    "ProductHero.base.swift": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+  },
+  "base_directory": "outputs/Bern/.github/scripts/hero-cgsemantics-probe",
+  "base_source_hash_inventory_sha256": "c11277d1e94ea547de0c76377d2a0e39d5ebf637b486b308eb7f5710936e0651",
+  "canonical_patch_sha256": "2e1a0a3b803c11869a4fc3d81533bae91196c0b8d555041e43d555def35a8a94",
+  "derived_files": {
+    "CGDirect.swift.inc": {
+      "bytes": 7426,
+      "sha256": "0184e7efa7b67f30b1dc6569db12f893ae95253833e48c8eb4f76bcbb2327a26"
+    },
+    "Driver.swift.inc": {
+      "bytes": 31106,
+      "sha256": "d4609b9379e53974993b6ff81dbf0f59d6d23cf652cc37bcfce9885263b896c2"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 14458,
+      "sha256": "849277777da4eb496cb62f43a42292dbf76864ee3c0375a80fbc4cf512022293"
+    },
+    "ProductHero.base.swift": {
+      "bytes": 15230,
+      "sha256": "e82e73e3cd1956fd2f68a4e55895c37e485bc2871551a1e27715f1be2e467385"
+    }
+  },
+  "kind": "private_original_snapshot_cg_adapter_pair_source",
+  "modes": {
+    "default": "default",
+    "environment": "BERN_HERO_CG_DIRECT",
+    "required_backing": "off",
+    "required_float": "on",
+    "required_os": 13,
+    "values": [
+      "default",
+      "direct"
+    ]
+  },
+  "no_execution": [
+    "compile/typecheck",
+    "UI",
+    "CI",
+    "provider read/image processing",
+    "repo/index/archive writes"
+  ],
+  "ownership": "Existing Held remains sole fixture CGImage holder; adds weak NSImage/scalar identity only; helper/Flight never store CGImage; closure borrow only. NSImage/system ownership not excluded.",
+  "report_dictionary": "cg_direct",
+  "static_validation": {
+    "all_baseline_files_unchanged": true,
+    "canonical_patch_zero_fuzz_exact": true,
+    "float_from_freezePrimary_to_end_byte_identical": true,
+    "provider_copy_call_sites_unchanged": true,
+    "two_direct_draws_one_save_defer_restore": true
+  }
+}

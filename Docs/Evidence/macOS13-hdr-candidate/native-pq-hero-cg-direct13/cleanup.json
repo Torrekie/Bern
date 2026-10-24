@@ -1,0 +1,160 @@
+{
+  "all7_work_paths_replaced_by_archive_symlinks": true,
+  "artifact_receipt": "fixture/artifact-cleanup.json",
+  "byte_verified_work_duplicate_logical_bytes": 13585553,
+  "created_utc": "2026-10-24T19:12:28.200764+00:00",
+  "duplicates": [
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/fixture",
+      "byte_verified": true,
+      "files": 46,
+      "logical_bytes": 10414426,
+      "work": "work/hero-cg-direct13"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/source-preparation",
+      "byte_verified": true,
+      "files": 12,
+      "logical_bytes": 154400,
+      "work": "work/hero-cg-direct-preparation"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/code-review",
+      "byte_verified": true,
+      "files": 3,
+      "logical_bytes": 13978,
+      "work": "work/hero-cg-direct-code-review"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/native-review",
+      "byte_verified": true,
+      "files": 6,
+      "logical_bytes": 28174,
+      "work": "work/hero-cg-direct-native-review"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/geometry-plan",
+      "byte_verified": true,
+      "files": 2,
+      "logical_bytes": 4065,
+      "work": "work/hero-cg-direct-geometry-plan"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/pixel-analysis",
+      "byte_verified": true,
+      "files": 32,
+      "logical_bytes": 2967032,
+      "work": "work/hero-cg-direct-pixel-analysis"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/next-sdr-plan",
+      "byte_verified": true,
+      "files": 2,
+      "logical_bytes": 3478,
+      "work": "work/hero-cg-direct-next-sdr-plan"
+    }
+  ],
+  "internal_equal_byte_hardlinks": [
+    {
+      "alias": "fixture/runtime13-default/progress-1.png",
+      "bytes": 638869,
+      "representative": "fixture/runtime13-default/progress-0.png",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "alias": "fixture/runtime13-direct/progress-0.png",
+      "bytes": 638869,
+      "representative": "fixture/runtime13-default/progress-0.png",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "alias": "fixture/runtime13-direct/progress-1.png",
+      "bytes": 638869,
+      "representative": "fixture/runtime13-default/progress-0.png",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "alias": "fixture/runtime13-direct/snapshot-custom.bin",
+      "bytes": 1843200,
+      "representative": "fixture/runtime13-default/snapshot-custom.bin",
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    {
+      "alias": "fixture/runtime13-direct/snapshot-named.bin",
+      "bytes": 1843200,
+      "representative": "fixture/runtime13-default/snapshot-named.bin",
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    {
+      "alias": "pixel-analysis/result/default.stderr.log",
+      "bytes": 0,
+      "representative": "pixel-analysis/result/default-crosshost.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "alias": "pixel-analysis/result/direct-analysis/ramp-column-means.json.gz",
+      "bytes": 24166,
+      "representative": "pixel-analysis/result/default-analysis/ramp-column-means.json.gz",
+      "sha256": "b52779ea6965af8fc3e9e6480e9d6cb4bbb5334f50c59fbe7e993f28aa8e7b66"
+    },
+    {
+      "alias": "pixel-analysis/result/direct-crosshost.stderr.log",
+      "bytes": 0,
+      "representative": "pixel-analysis/result/default-crosshost.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "alias": "pixel-analysis/result/direct.stderr.log",
+      "bytes": 0,
+      "representative": "pixel-analysis/result/default-crosshost.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "alias": "pixel-analysis/result/reference14.stderr.log",
+      "bytes": 0,
+      "representative": "pixel-analysis/result/default-crosshost.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "alias": "source-preparation/CGDirect.swift.inc",
+      "bytes": 7426,
+      "representative": "fixture/CGDirect.swift.inc",
+      "sha256": "0184e7efa7b67f30b1dc6569db12f893ae95253833e48c8eb4f76bcbb2327a26"
+    },
+    {
+      "alias": "source-preparation/Driver.swift.inc",
+      "bytes": 31106,
+      "representative": "fixture/Driver.swift.inc",
+      "sha256": "d4609b9379e53974993b6ff81dbf0f59d6d23cf652cc37bcfce9885263b896c2"
+    },
+    {
+      "alias": "source-preparation/FloatCapture.swift.inc",
+      "bytes": 14458,
+      "representative": "fixture/FloatCapture.swift.inc",
+      "sha256": "849277777da4eb496cb62f43a42292dbf76864ee3c0375a80fbc4cf512022293"
+    },
+    {
+      "alias": "source-preparation/ProductHero.base.swift",
+      "bytes": 15230,
+      "representative": "fixture/ProductHero.base.swift",
+      "sha256": "e82e73e3cd1956fd2f68a4e55895c37e485bc2871551a1e27715f1be2e467385"
+    },
+    {
+      "alias": "source-preparation/cg-direct.patch",
+      "bytes": 18902,
+      "representative": "fixture/preparation-cg-direct.patch",
+      "sha256": "2e1a0a3b803c11869a4fc3d81533bae91196c0b8d555041e43d555def35a8a94"
+    },
+    {
+      "alias": "source-preparation/provenance.json",
+      "bytes": 2389,
+      "representative": "fixture/preparation-provenance.json",
+      "sha256": "8a14cbfd1c4947cf9c5343e853270916bcea9c79da22c193f3764651a8aea137"
+    }
+  ],
+  "no_download_or_new_CI_or_toolchain_or_simulator": true,
+  "no_hardlinks_to_work_or_other_archives": true,
+  "nominal_internal_hardlink_duplicate_bytes": 5716684,
+  "not_an_apfs_actual_recovery_or_disk_delta_claim": true,
+  "owned_exe_and_cache_logical_bytes": 57500008
+}

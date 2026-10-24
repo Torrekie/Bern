@@ -1,0 +1,98 @@
+{
+  "all16_internal_hardlink_aliases_verified_no_external_hardlink": true,
+  "all4_phase_source_full30_channels_unchanged": true,
+  "all7_work_symlinks_verified": true,
+  "all9_frozen_submanifests_and_external_inputs_verified": [
+    {
+      "path": "code-review/SHA256SUMS",
+      "sha256": "39b630eae7f4e794270f02f7054b9ce07d32d3eb3c6345414799dca374a32b62",
+      "verified_entries": 2
+    },
+    {
+      "path": "geometry-plan/SHA256SUMS",
+      "sha256": "69ff875bd1cb798f078cfb3309e33ab5d646dd4cf6eb2fdef5b13d55d6e65779",
+      "verified_entries": 1
+    },
+    {
+      "path": "native-review/SHA256SUMS",
+      "sha256": "7e337e75faacecc2f52a61cb36e0be7b51cced484e9d19724efc82b527d48e87",
+      "verified_entries": 2
+    },
+    {
+      "path": "native-review/SHA256SUMS.addendum",
+      "sha256": "dafbe5b9b28a56858f37c8f23226ba3218995acbf84ac77da97f7c4d5d14fb9c",
+      "verified_entries": 2
+    },
+    {
+      "path": "next-sdr-plan/SHA256SUMS",
+      "sha256": "4691bf7eb0bb4ffafef66e7d08f8de68466213c0dea87db253ee9b2124332522",
+      "verified_entries": 1
+    },
+    {
+      "path": "pixel-analysis/INPUT-SHA256SUMS",
+      "sha256": "287a1cdfcde25c4eb3a0b9a853fa7be70e59427e35a2fab181a61d2be6857298",
+      "verified_entries": 16
+    },
+    {
+      "path": "pixel-analysis/PREPARED-SHA256SUMS",
+      "sha256": "a969412bd224202a297619373c2fecf67627207cecedb6b54c92c6a975fb3e7c",
+      "verified_entries": 7
+    },
+    {
+      "path": "pixel-analysis/SHA256SUMS",
+      "sha256": "5ae9c5785da3d7053069d2daa68da017e74d79ee8992657a4acb72e59e688b0d",
+      "verified_entries": 31
+    },
+    {
+      "path": "source-preparation/SHA256SUMS",
+      "sha256": "55f34c766bfbdde4dc91c7dcb310b532b394cbf7ec0dd060c7f97aa493f6f364",
+      "verified_entries": 11
+    }
+  ],
+  "build_saved_arch_minos_sdk_signature_checks_PASS": true,
+  "created_utc": "2026-10-24T19:17:33.269643+00:00",
+  "default_to_old_on_and_direct_to_default_all12ROI_raw_srgb_exact": true,
+  "exe_and_module_cache_removed_per_receipt": true,
+  "independent_native_all_current_inputs_verified": true,
+  "independent_native_current_input_count": 44,
+  "initial_native_review_cleanup_assumption_corrected_with_original_frozen_files_preserved": true,
+  "native_addendum_unchanged_actual_binary_gates_PASS": true,
+  "new_product_change": false,
+  "new_remote_CI": false,
+  "next_native_sdr_plan_implemented_or_run": false,
+  "pixel_result_reference14_complete_recomputation_equal": true,
+  "root_original_images_geometry": "Both phases visual-only; limitations preserved. No tuple/per-pixel/subpixel coverage proof.",
+  "scope_only_archive_and_two_checkpoints": true,
+  "source24_and_exact4part_assembly_verified": true,
+  "staged_whitespace_check": {
+    "all_other_staged_paths_exit_code": 0,
+    "exact_output": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/fixture/preparation-cg-direct.patch:16: trailing whitespace.\n+ \nDocs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/fixture/preparation-cg-direct.patch:87: trailing whitespace.\n+ \nDocs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/fixture/validate-base.py:121: new blank line at EOF.\nDocs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/source-preparation/cg-direct.patch:16: trailing whitespace.\n+ \nDocs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/source-preparation/cg-direct.patch:87: trailing whitespace.\n+ \n",
+    "exceptions": [
+      {
+        "lines": {
+          "16": "Frozen canonical unified-diff empty context.",
+          "87": "Frozen canonical unified-diff empty context."
+        },
+        "path": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/fixture/preparation-cg-direct.patch",
+        "sha256": "2e1a0a3b803c11869a4fc3d81533bae91196c0b8d555041e43d555def35a8a94"
+      },
+      {
+        "lines": {
+          "16": "Frozen canonical unified-diff empty context.",
+          "87": "Frozen canonical unified-diff empty context."
+        },
+        "path": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/source-preparation/cg-direct.patch",
+        "sha256": "2e1a0a3b803c11869a4fc3d81533bae91196c0b8d555041e43d555def35a8a94"
+      },
+      {
+        "lines": {
+          "121": "Inherited byte-exact gate extra terminal LF, independently documented in prior cohort; do not alter original validator."
+        },
+        "path": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/fixture/validate-base.py",
+        "sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00"
+      }
+    ],
+    "full_exit_code": 2
+  },
+  "whole_macos13_goal_complete": false
+}

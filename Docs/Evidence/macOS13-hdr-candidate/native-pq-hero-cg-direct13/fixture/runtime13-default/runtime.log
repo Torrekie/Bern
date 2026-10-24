@@ -1,0 +1,22 @@
+2026-10-25 03:00:48.501 HeroCGDirectProbe[41469:5444407] NSWindow warning: adding an unknown subview: <_TtC17HeroCGDirectProbeP33_19647E0BB6DC8C0BA0A59F672081963E15BernHeroOverlay: 0x13e80dfc0>. Break on NSLog to debug.
+2026-10-25 03:00:48.523 HeroCGDirectProbe[41469:5444407] Call stack:
+(
+	0   AppKit                              0x00000001a0a3a004 -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x00000001a0a39ce4 -[NSView addSubview:positioned:relativeTo:] + 176
+	2   AppKit                              0x00000001a0a39bb0 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroCGDirectProbe                   0x0000000104a1e584 $s17HeroCGDirectProbe21BernWindowImageHeroesC14prepareOverlay33_19647E0BB6DC8C0BA0A59F672081963ELLSbyF + 308
+	4   HeroCGDirectProbe                   0x0000000104a1c168 $s17HeroCGDirectProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 432
+	5   HeroCGDirectProbe                   0x0000000104a2656c $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x000000019d556874 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x000000019d558400 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x000000019d566bf8 _dispatch_main_queue_drain + 928
+	9   libdispatch.dylib                   0x000000019d566848 _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x000000019d827b24 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x000000019d7e52a4 __CFRunLoopRun + 1992
+	12  CoreFoundation                      0x000000019d7e4388 CFRunLoopRunSpecific + 612
+	13  Foundation                          0x000000019e762de8 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212
+	14  Foundation                          0x000000019e7d71a4 -[NSRunLoop(NSRunLoop) runUntilDate:] + 100
+	15  HeroCGDirectProbe                   0x0000000104a3c908 $s17HeroCGDirectProbe0A12BaselineMain33_19647E0BB6DC8C0BA0A59F672081963ELLO3runs5Int32VyFZTf4d_n + 12296
+	16  HeroCGDirectProbe                   0x0000000104a26a44 main + 12
+	17  dyld                                0x000000019d3affd8 start + 2412
+)

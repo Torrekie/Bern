@@ -1,0 +1,76 @@
+{
+  "adaptations_this_pass": [],
+  "binary_after": {
+    "bytes": 614208,
+    "sha256": "be263dfbd54a965003c8adc82c2294475963cb9463fc86c6daedcc89a09d8fd0"
+  },
+  "binary_before": {
+    "bytes": 614208,
+    "sha256": "be263dfbd54a965003c8adc82c2294475963cb9463fc86c6daedcc89a09d8fd0"
+  },
+  "binary_was_present_for_both_original_validators": true,
+  "cleanup_receipt_before_root_deletion": {
+    "binary_removed": false,
+    "module_cache_removed": true,
+    "scope": "Observed snapshot before these validations and root final exe deletion; no final-cleanup status assertion."
+  },
+  "complete": true,
+  "correction": "The prior review incorrectly assumed exe had already been deleted after cleanup permission. Only modules had been removed; the614208B binary remained. The prior in-memory substitution was unnecessary. This addendum records fresh execution against the actual retained file.",
+  "gate_runs": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cg-direct13/validate-direct.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cg-direct13/runtime13-default",
+        "default"
+      ],
+      "exit_code": 0,
+      "finished_utc": "2026-10-24T19:10:10.555697+00:00",
+      "mode": "default",
+      "started_utc": "2026-10-24T19:10:10.481530+00:00",
+      "stderr": "",
+      "stdout": {
+        "full_original_and_additive_native_gates": "PASS",
+        "mode": "default",
+        "own_pid": 41469,
+        "pixel_geometry_acceptance": "separate, not inferred from native gate",
+        "raw_bytes_equal_frozen_on": true,
+        "window_seconds": 1.717992901802063
+      }
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cg-direct13/validate-direct.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cg-direct13/runtime13-direct",
+        "direct"
+      ],
+      "exit_code": 0,
+      "finished_utc": "2026-10-24T19:10:10.624031+00:00",
+      "mode": "direct",
+      "started_utc": "2026-10-24T19:10:10.555757+00:00",
+      "stderr": "",
+      "stdout": {
+        "full_original_and_additive_native_gates": "PASS",
+        "mode": "direct",
+        "own_pid": 41501,
+        "pixel_geometry_acceptance": "separate, not inferred from native gate",
+        "raw_bytes_equal_frozen_on": true,
+        "window_seconds": 1.6573930978775024
+      }
+    }
+  ],
+  "gate_scope": "Direct execution of original additive validator bytes; each calls original full base bytes with float on/13. No substitutions, removed assertions, native app/compiler/UI/CI or pixel algorithm run.",
+  "historical_review_note": "Original3 files/manifest intentionally retained as historical evidence, including the now-corrected cleanup assumption; this addendum supersedes only that assumption and unnecessary adaptation rationale.",
+  "original_frozen_files_unchanged": {
+    "README.md": "ebc621ebcaf997c45e188b420b434ad1ba41ab49294e9be9e53061d6e2e98c65",
+    "SHA256SUMS": "7e337e75faacecc2f52a61cb36e0be7b51cced484e9d19724efc82b527d48e87",
+    "review.json": "75a3c7ab3634accb8e32a8e6055b319e20b242494e0e2ad76ead22599a71686c"
+  },
+  "original_gate_files": {
+    "validate-base.py": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00",
+    "validate-direct.py": "80b0b45bad4af69a576525341891ab319adfc0a2ec65fc9ec5193821547d7301"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-10-24T19:02:04.205965+00:00",
+  "phases": [
+    {
+      "evidence": "root-original-png-visual-only",
+      "limits": "Alpha255/frame alone do not prove coverage. White parts blend with the white background; no every-pixel coverage/subpixel-edge proof. No tuple algorithm, flip/registration/search or image editing.",
+      "metadata": {
+        "host_top_left_points": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 244
+        },
+        "screenshot_pixels": {
+          "height": 360,
+          "width": 640,
+          "x": 32,
+          "y": 544
+        }
+      },
+      "original_png": "work/hero-cg-direct13/runtime13-direct/progress-0.png",
+      "phase": "progress-0",
+      "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+      "upright_nonempty": "pass, fixed pane has two discrete patch rows above the bottom left-to-right ramp",
+      "visible_extent": "pass for visible structure only; preset rows/columns reach intended pane boundaries, no visible shift/crop/blank band or spill"
+    },
+    {
+      "evidence": "root-original-png-visual-only",
+      "limits": "Alpha255/frame alone do not prove coverage. White parts blend with the white background; no every-pixel coverage/subpixel-edge proof. No tuple algorithm, flip/registration/search or image editing.",
+      "metadata": {
+        "host_top_left_points": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 244
+        },
+        "screenshot_pixels": {
+          "height": 360,
+          "width": 640,
+          "x": 32,
+          "y": 544
+        }
+      },
+      "original_png": "work/hero-cg-direct13/runtime13-direct/progress-1.png",
+      "phase": "progress-1",
+      "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+      "upright_nonempty": "pass, fixed pane has two discrete patch rows above the bottom left-to-right ramp",
+      "visible_extent": "pass for visible structure only; preset rows/columns reach intended pane boundaries, no visible shift/crop/blank band or spill"
+    }
+  ],
+  "pixel_colour_comparison_scope": "Basic twelve-ROI equality was checked before this visual inspection. Full D13-minus-D14 interpretation may run only after these metadata/visual gates.",
+  "plan_sha256": "aef01e69917f0d6f64c0d9f0f4f2d434511978624d052e432a6cdd800eecc0b3",
+  "source_support": "Original opaque source atlas hashes; same snapshot full-bounds320x180/corner0; source-reviewed single localYflip/no xmirror/two normal sourceOver draws with original alpha order. Actual visible extent inspected separately."
+}

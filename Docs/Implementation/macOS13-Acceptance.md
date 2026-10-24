@@ -261,3 +261,13 @@ root已目检两张原p0，candidate named内容实际可见。control→candida
 四组旧float→新off及off→on控制各12图像ROI原RGB/ICC intent0归一sRGB均exact，同host嵌入ICC保持。四份新raw分别与旧同host/key长度及SHA逐字相同，因此先前独立语义结果仍适用。它们排除了本例四项已读显式属性不同的解释，没有解决主色差、证明全部CGImage/目标context相同或指定唯一根因。本轮仅补观察，无产品修复合入。
 
 下一[单一检查点](../Evidence/macOS14-hero-cgsemantics-40119614788/next-direct-plan/README.md)已冻结但未实施：本机13对相同原snapshot/retention做默认NSImage.draw与scoped CG direct配对，先复现default和完整方向/extent门槛，再完整比较D13−D14，不能把body颜色当目标。没有新增widget/cache/layer/曲线组合或额外14CI。原binary/tar844797B及逐字归档work重复8742890B已清理，归档内部22同字文件硬链接去重名义2765989B；均非APFS实际回收或磁盘净变化。完整颜色、动画和其它未通过项保持，goal active，11/Swift5.3/Objective-C/iOS继续延期。
+
+## 同一原 CGImage 直接绘制未改变结果（2026-10-25）
+
+上节[本机13 default/direct 对照](../Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/README.md)已完成。SDK14.2/Swift5.9.2、语言模式5、O/j2、arm64/min13首次构建成功，原linker ad-hoc严格签名binary `be263dfb…09d8fd0`运行两模式。继承不可达gain-map/静态unused-clock编译条件；不是新的跨host同binary或真实coordinator构建。两mode共用原held与释放范围，只增加weak NSImage绑定和同步CGImage借用；default仍是原两行NSImage.draw，direct仅named在当前context中保存/恢复状态、一次局部y反转，以normal/sourceOver和原alpha顺序画同一CGImage两次。custom保持，缺绑定不回退成功，原float freeze/export/finish/release逐字不变。
+
+完整原gate与附加gate均通过，窗口1.717993/1.657393秒、前台9292保持，normal/cache/五报告buffer/noMTK/managerFlight0/timernil保持。default先复现旧on全部12ROI原RGB/归一sRGB；direct随后全部12ROI也exact，四raw直接bytes比较同旧同key。root逐p0/p1原PNG目检方向、非空及完整可见extent通过，但white/background同色处不证明每像素覆盖，未跑tuple或真实flight。独立native首次错误预期exe已删的复核方法另有addendum更正：exe保留时，两模式原字节validator及完整base均独立退出0，无UI重采。
+
+完整十patch/ramp算法在绑定几何门槛后单次执行；保留14参考重算的全部68comparisons/16primary/ROI/ramp SHA与冻结结果一致。named/custom每phase30通道的改善0/恶化0/不变30，全部signed变化与ramp aggregate变化均0；named的mean absolute(D13−D14)仍p0 5.210863095/p1 5.224399038，最大112.616328984/113.048334478。该适配变量未改善主差，停止此路线、不合产品，不唯一归因NSImage/context/系统或显示环境。
+
+下一[唯一固定原生SDR表示候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/next-sdr-plan/README.md)尚未实施：actual snapshot经CoreImage→RGBA8/sRGB，再用原NSImage双draw，区别于旧cached-PQ→RGBAh；不假定toneMap Bool对extendedSRGB已生效，不重标记/拟合。exe及module cache57500008B和逐字work重复13585553B已清理，内部16同字别名硬链接去重名义5716684B，均非APFS实际回收。颜色、完整动画与其它未通过项保持，goal active，后续11/Swift5.3/Objective-C/iOS阶段继续延期。

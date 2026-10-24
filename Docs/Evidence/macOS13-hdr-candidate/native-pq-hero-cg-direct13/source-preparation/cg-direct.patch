@@ -1,0 +1,312 @@
+--- a/ProductHero.base.swift
++++ b/ProductHero.base.swift
+@@ -98,7 +98,9 @@
+         renderer.scale = window?.backingScaleFactor ?? 2
+         guard let pixels = renderer.cgImage else { return nil }
+         fixtureObserveSnapshotCGImage(pixels, key: key)
+-        return BernHeroPicture(rect: rect, image: NSImage(cgImage: pixels, size: bounds.size),
++        let native = NSImage(cgImage: pixels, size: bounds.size)
++        FixtureSnapshotFloatCapture.bindNativeImage(native, key: key)
++        return BernHeroPicture(rect: rect, image: native,
+             corner: corner * rect.width / bounds.width)
+     }
+ }
+@@ -157,6 +159,7 @@
+ }
+ 
+ private final class BernHeroFlightView: NSView {
++    var fixtureCGDirectKey: String?
+     let from: NSImage
+     let to: NSImage
+     var progress: CGFloat = 0
+@@ -170,6 +173,7 @@
+     override func hitTest(_ point: NSPoint) -> NSView? { nil }
+     override func draw(_ dirtyRect: NSRect) {
+         NSBezierPath(roundedRect: bounds, xRadius: max(0, corner), yRadius: max(0, corner)).addClip()
++        if FixtureCGDirect.drawIfHandled(self) { return }
+         from.draw(in: bounds, from: .zero, operation: .sourceOver, fraction: 1, respectFlipped: true, hints: nil)
+         to.draw(in: bounds, from: .zero, operation: .sourceOver, fraction: min(1, max(0, progress)), respectFlipped: true, hints: nil)
+     }
+--- a/FloatCapture.swift.inc
++++ b/FloatCapture.swift.inc
+@@ -10,6 +10,8 @@
+         let key: String
+         let image: CGImage
+         let retainedAt: TimeInterval
++        weak var nativeImage: NSImage? = nil
++        var nativeIdentity: String? = nil
+     }
+     private static let names = [("baseline-body-named", "snapshot-named.bin"),
+                                 ("baseline-body-custom", "snapshot-custom.bin")]
+@@ -38,6 +40,47 @@
+         }
+         held.append(Held(key: key, image: image, retainedAt: ProcessInfo.processInfo.systemUptime))
+         peakRetained = max(peakRetained, held.count)
++    }
++
++    // Weak identity link only; the original held array remains the sole fixture CGImage holder.
++    static func bindNativeImage(_ image: NSImage, key: String) {
++        guard primary, FixtureFloatCaptureMode.selected == .on else { return }
++        let indices = held.indices.filter { held[$0].key == key }
++        guard indices.count == 1, let index = indices.first, held[index].nativeIdentity == nil else {
++            observationError = "Missing/duplicate original snapshot NSImage binding"
++            return
++        }
++        held[index].nativeImage = image
++        held[index].nativeIdentity = String(describing: ObjectIdentifier(image))
++    }
++    static func withOriginalSnapshot(key: String, nativeImage: NSImage,
++                                     body: (CGImage) throws -> Void) throws {
++        let indices = held.indices.filter { held[$0].key == key }
++        guard FixtureFloatCaptureMode.selected == .on, observationError == nil,
++              indices.count == 1, let index = indices.first,
++              held[index].nativeImage === nativeImage,
++              held[index].nativeIdentity == String(describing: ObjectIdentifier(nativeImage)) else {
++            throw FixtureFailure(message: "Original retained CGImage/weak NSImage association is missing or different")
++        }
++        try body(held[index].image) // Synchronous, nonescaping borrow; no image is returned.
++    }
++    static func bindingRecords() throws -> [[String: Any]] {
++        guard held.count == 2, primaryCount == 2, Set(primaryKeys) == Set(names.map { $0.0 }) else {
++            throw FixtureFailure(message: "Need exactly two primary snapshot bindings")
++        }
++        return try names.map { key, _ in
++            guard let index = held.firstIndex(where: { $0.key == key }),
++                  let native = held[index].nativeImage else {
++                throw FixtureFailure(message: "Primary weak NSImage binding vanished")
++            }
++            var record: [String: Any] = [:]
++            try withOriginalSnapshot(key: key, nativeImage: native) { image in
++                record = ["key": key, "native_image_identity": String(describing: ObjectIdentifier(native)),
++                          "original_cgimage_identity": String(describing: ObjectIdentifier(image)),
++                          "association": "snapshot_NSImage_created_from_this_same_renderer_return_CGImage"]
++            }
++            return record
++        }
+     }
+ 
+     static func freezePrimary() {
+--- a/Driver.swift.inc
++++ b/Driver.swift.inc
+@@ -245,7 +245,7 @@
+ @main private enum HeroBaselineMain {
+     @MainActor static func main() {
+         let status = run()
+-        exit(status == 0 && FixtureSnapshotFloatCapture.finalizationFailed ? 1 : status)
++        exit(status == 0 && (FixtureSnapshotFloatCapture.finalizationFailed || FixtureCGDirect.finalizationFailed) ? 1 : status)
+     }
+     @MainActor private static func run() -> Int32 {
+         guard CommandLine.arguments.count == 4 else { return 2 }
+@@ -253,6 +253,9 @@
+         let output = URL(fileURLWithPath: CommandLine.arguments[3], isDirectory: true)
+         let expectedOS = Int(ProcessInfo.processInfo.environment["BERN_HERO_EXPECT_OS"] ?? "13") ?? -1
+         let actualOS = ProcessInfo.processInfo.operatingSystemVersion.majorVersion
++        guard !["report.json", "progress-0.png", "progress-1.png", "snapshot-named.bin", "snapshot-custom.bin"].contains(where: {
++            FileManager.default.fileExists(atPath: output.appendingPathComponent($0).path)
++        }) else { FileHandle.standardError.write(Data("Refuse to overwrite existing evidence\n".utf8)); return 2 }
+         let front = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
+         var window: NSWindow?, root: FixtureRoot?, began: Date?, watchdog: DispatchSourceTimer?
+         var samples: [[String: Any]] = [], captures: [[String: Any]] = []
+@@ -264,6 +267,7 @@
+             "image_equality_collection_gate": false,
+             "snapshot_cgimage_metadata": "Fixture-only public CGImage scalar descriptors and color-space reference at the actual renderer.cgImage result; classification/ICC hash/bounded profile serialization only after all PNG captures and original window teardown. The v2 metadata observer retains no image; separate opt-in raw capture lifetime/provider reads are reported in snapshot_float_capture. No NSImage recache, conversion or relabel. Not a zero-observer-effect claim."
+         ]
++        report["cg_direct"] = FixtureCGDirect.report()
+         report["backing_observation"] = FixtureBackingObservation.initial()
+         defer {
+             FixtureSnapshotFloatCapture.freezePrimary()
+@@ -283,6 +287,12 @@
+             report["os"] = ProcessInfo.processInfo.operatingSystemVersionString
+             let floatCapture = FixtureSnapshotFloatCapture.finish(output: output, acquisitionSucceeded: report["success"] as? Bool == true)
+             report["snapshot_float_capture"] = floatCapture
++            FixtureCGDirect.afterExport(floatCapture)
++            report["cg_direct"] = FixtureCGDirect.report()
++            if FixtureCGDirect.finalizationFailed {
++                report["success"] = false
++                if report["error"] == nil { report["error"] = "CG adapter incomplete; see cg_direct.error" }
++            }
+             if floatCapture["success"] as? Bool != true {
+                 report["success"] = false
+                 if report["error"] == nil { report["error"] = floatCapture["error"] }
+@@ -292,6 +302,8 @@
+         }
+         do {
+             try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
++            try FixtureCGDirect.validate()
++            guard expectedOS == 13, actualOS == 13 else { throw FixtureFailure(message: "This adapter experiment is macOS13 only") }
+             guard FixtureBackingMode.selected != nil else {
+                 throw FixtureFailure(message: "Invalid BERN_HERO_LAYER_OBSERVE; off/on required before window creation")
+             }
+@@ -365,6 +377,7 @@
+                 RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.08))
+                 let views = fixtureDescendants(r), anchors = views.compactMap { $0 as? BernPictureHeroAnchor }
+                 let metal = views.filter { $0 is MTKView }.count
++                if snapshotTaken { try FixtureCGDirect.check(flights) }
+                 let infos = CGWindowListCopyWindowInfo(.optionIncludingWindow, CGWindowID(w.windowNumber)) as? [[String: Any]] ?? []
+                 guard let info = infos.first, info[kCGWindowOwnerPID as String] as? pid_t == getpid(),
+                       info[kCGWindowNumber as String] as? Int == w.windowNumber,
+@@ -386,8 +399,10 @@
+                         anchorInfo.append(metadata)
+                         let f = BernHeroFlightView(from: p.image, to: p.image)
+                         f.corner = p.corner; f.frame = CGRect(x: xs[i], y: bottomY, width: 320, height: 180)
++                        try FixtureCGDirect.prepare(f, index: i, picture: p, source: before[urls[i].lastPathComponent] as? [String: Any])
+                         r.addSubview(f); flights.append(f); regions[i == 0 ? "flight-named" : "flight-custom"] = f
+                     }
++                    try FixtureCGDirect.check(flights)
+                     report["snapshots"] = anchorInfo; snapshotTaken = true; phaseBegan = Date(); continue
+                 }
+                 guard (manager.fixtureState["flight_count"] as? Int) == 0,
+@@ -395,6 +410,7 @@
+                     throw FixtureFailure(message: "Unique keys unexpectedly started coordinator flight")
+                 }
+                 guard Date().timeIntervalSince(phaseBegan) >= 0.24 else { continue }
++                try FixtureCGDirect.check(flights, phase: phase)
+                 guard let screen = w.screen,
+                       let shot = CGWindowListCreateImage(.null, .optionIncludingWindow, CGWindowID(w.windowNumber), .boundsIgnoreFraming),
+                       let buffer = shot.dataProvider?.data else { throw FixtureFailure(message: "Own raw window capture unavailable") }
+@@ -432,6 +448,7 @@
+                     try fixtureSavePNG(shot, url)
+                     var capture = sample; capture["png"] = filename
+                     capture["png_sha256"] = fixtureHash(try Data(contentsOf: url)); captures.append(capture)
++                    try FixtureCGDirect.check(flights, phase: phase)
+                     phase += 1; identical = 0; previousHash = ""; phaseBegan = Date()
+                     for f in flights { f.progress = CGFloat(phase); f.needsDisplay = true }
+                 }
+@@ -446,8 +463,10 @@
+                 throw FixtureFailure(message: "Cache/normal/foreground final contract failed")
+             }
+             report["backing_observation"] = try FixtureBackingObservation.finish(flights, root: r, manager: manager, window: w)
++            try FixtureCGDirect.check(flights)
+             report["success"] = true; return 0
+         } catch {
++            FixtureCGDirect.fail(error)
+             var backing = report["backing_observation"] as? [String: Any] ?? FixtureBackingObservation.initial()
+             if backing["success"] as? Bool != true { backing["error"] = String(describing: error) }
+             report["backing_observation"] = backing
+--- /dev/null
++++ b/CGDirect.swift.inc
+@@ -0,0 +1,124 @@
++// Fixture only: the display adapter changes, never the retained snapshot.
++private enum FixtureCGDirectMode: String {
++    case original = "default", direct
++    static let requested = ProcessInfo.processInfo.environment["BERN_HERO_CG_DIRECT"]
++    static let selected = FixtureCGDirectMode(rawValue: requested ?? "default")
++}
++@MainActor private enum FixtureCGDirect {
++    private static let key = "baseline-body-named"
++    private static weak var namedFlight: BernHeroFlightView?
++    private static var prepared = false, completed = false
++    private static var error: String?
++    private static var associations: [[String: Any]] = []
++    private static var firstDraw: [Int: [String: Any]] = [:]
++    private static var drawCounts: [Int: Int] = [:]
++    private static var checkedPhases: [Int] = []
++    private static var floatCompleted: Bool?
++    private(set) static var finalizationFailed = false
++    static func fail(_ problem: Error) {
++        if error == nil { error = String(describing: problem) }
++        finalizationFailed = true
++    }
++    static func validate() throws {
++        guard FixtureCGDirectMode.selected != nil, FixtureFloatCaptureMode.selected == .on,
++              FixtureBackingMode.selected == "off" else {
++            throw FixtureFailure(message: "CG adapter requires default/direct, float on and backing off")
++        }
++    }
++    static func prepare(_ flight: BernHeroFlightView, index: Int, picture: BernHeroPicture,
++                        source: [String: Any]?) throws {
++        guard index == 0 else { return }
++        guard !prepared, source?["orientation"] as? String == "up",
++              let ratio = source?["ratio"] as? CGFloat, abs(ratio - 16.0 / 9.0) < 0.000000001,
++              picture.corner == 0, flight.corner == 0,
++              flight.from === picture.image, flight.to === picture.image,
++              picture.image.size == NSSize(width: 320, height: 180),
++              flight.bounds == NSRect(x: 0, y: 0, width: 320, height: 180) else {
++            throw FixtureFailure(message: "Named adapter requires opaque-atlas/up/same-aspect/corner0/320x180 identity scope")
++        }
++        try FixtureSnapshotFloatCapture.withOriginalSnapshot(key: key, nativeImage: picture.image) { _ in }
++        flight.fixtureCGDirectKey = key; namedFlight = flight; prepared = true
++    }
++    // true means handled, including failure: never silently fall back after a bad binding/draw.
++    static func drawIfHandled(_ flight: BernHeroFlightView) -> Bool {
++        guard let marked = flight.fixtureCGDirectKey else { return false }
++        do {
++            guard error == nil, prepared, marked == key, namedFlight === flight,
++                  flight.from === flight.to, flight.corner == 0, flight.isFlipped,
++                  flight.bounds == NSRect(x: 0, y: 0, width: 320, height: 180),
++                  flight.progress.isFinite, let mode = FixtureCGDirectMode.selected else {
++                throw FixtureFailure(message: "Named adapter draw identity/geometry/state failed")
++            }
++            let alpha = min(1, max(0, flight.progress))
++            guard alpha == 0 || alpha == 1 else {
++                throw FixtureFailure(message: "Only fixed opaque endpoint alpha0/1 is in scope")
++            }
++            let phase = alpha == 0 ? 0 : 1
++            var row: [String: Any] = ["phase": phase, "progress": flight.progress,
++                "flight_identity": String(describing: ObjectIdentifier(flight)),
++                "native_image_identity": String(describing: ObjectIdentifier(flight.from)),
++                "bounds": fixtureRect(flight.bounds), "source_over_alphas": [1, alpha],
++                "path": mode.rawValue, "context_observed": false]
++            try FixtureSnapshotFloatCapture.withOriginalSnapshot(key: key, nativeImage: flight.from) { image in
++                row["original_cgimage_identity"] = String(describing: ObjectIdentifier(image))
++                guard mode == .direct else { return } // Original NSImage calls remain below the hook.
++                guard let context = NSGraphicsContext.current?.cgContext else {
++                    throw FixtureFailure(message: "Existing AppKit CGContext unavailable; no fallback")
++                }
++                context.saveGState()
++                defer { context.restoreGState() }
++                context.translateBy(x: 0, y: flight.bounds.height)
++                context.scaleBy(x: 1, y: -1)
++                context.setBlendMode(.normal); context.setAlpha(1)
++                context.draw(image, in: flight.bounds)
++                context.setBlendMode(.normal); context.setAlpha(alpha)
++                context.draw(image, in: flight.bounds)
++                row["context_observed"] = true
++                row["cg_draw_calls_issued"] = 2
++                row["blend_mode"] = "normal_source_over"
++                row["local_y_flip"] = true
++                row["state_restore"] = "paired_save_defer_restore_source_path"
++            }
++            drawCounts[phase, default: 0] += 1
++            if firstDraw[phase] == nil { firstDraw[phase] = row }
++            return mode == .direct
++        } catch { fail(error); return true }
++    }
++    static func check(_ flights: [BernHeroFlightView], phase: Int? = nil) throws {
++        if let error { throw FixtureFailure(message: error) }
++        guard prepared, flights.count == 2, namedFlight === flights[0],
++              flights[0].fixtureCGDirectKey == key, flights[1].fixtureCGDirectKey == nil else {
++            throw FixtureFailure(message: "Named-only adapter binding missing or replaced")
++        }
++        for (index, flight) in flights.enumerated() {
++            guard flight.from === flight.to else { throw FixtureFailure(message: "Endpoint images changed") }
++            try FixtureSnapshotFloatCapture.withOriginalSnapshot(
++                key: index == 0 ? key : "baseline-body-custom", nativeImage: flight.from) { _ in }
++        }
++        associations = try FixtureSnapshotFloatCapture.bindingRecords()
++        if let phase {
++            guard [0, 1].contains(phase), drawCounts[phase, default: 0] > 0 else {
++                throw FixtureFailure(message: "No named adapter callback observed for captured endpoint")
++            }
++            if !checkedPhases.contains(phase) { checkedPhases.append(phase) }
++        }
++    }
++    static func afterExport(_ capture: [String: Any]) {
++        floatCompleted = capture["success"] as? Bool == true
++        completed = true
++        if error == nil && (!prepared || checkedPhases != [0, 1] || floatCompleted != true) {
++            fail(FixtureFailure(message: "Adapter endpoint/post-teardown float completion gate failed"))
++        }
++    }
++    static func report() -> [String: Any] {
++        ["requested": FixtureCGDirectMode.requested.map { $0 as Any } ?? NSNull(),
++         "selected": FixtureCGDirectMode.selected.map { $0.rawValue as Any } ?? NSNull(),
++         "success": completed && error == nil, "error": error.map { $0 as Any } ?? NSNull(),
++         "target": "flight-named", "prepared": prepared, "associations": associations,
++         "draws": [0, 1].compactMap { firstDraw[$0] },
++         "draw_callback_counts": ["0": drawCounts[0, default: 0], "1": drawCounts[1, default: 0]],
++         "checked_phases": checkedPhases,
++         "post_teardown_float_success": floatCompleted.map { $0 as Any } ?? NSNull(),
++         "pixel_acceptance": "not performed; issued calls and binding gates are not visible-image proof"]
++    }
++}

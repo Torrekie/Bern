@@ -49,3 +49,11 @@ filter0 source parser拒绝及pretty JSON体积失败分开保留；成功版本
 两key/两host均为intent0、isMask=false、shouldInterpolate=true、decode=nil；nil独立列空值，非nil/±0/nonfinite分支未运行。完整native/ICC/16字段与时序gate通过，四组旧→off及off→on各12图像ROI原RGB/sRGB exact，四raw与旧同host/key长度/SHA全同。独立审查分别覆盖源码失败传播、原包身份与native记录；不重复采集或将报告buffer一致性当独立捕获。观察耗时与原导出timer边界均保留。
 
 此结果排除了这四项已读属性不同的解释，没有消除可见色差或证明全部对象/绘制context状态相同。下一[唯一计划](../Evidence/macOS14-hero-cgsemantics-40119614788/next-direct-plan/README.md)是13本机相同retention/原snapshot的默认与CG direct配对，尚未实施：原context内只替换named两条sourceOver绘制原语，先验证方向/非空/完整extent，再完整比较D13−D14；不将NSImage边界预定为根因或预测修复。产品没有修改，真实flight/general HDR及完整UI门槛仍未通过，goal active，后续阶段保持延期。
+
+## 原 context 内直接绘制原 CGImage：阴性（2026-10-25）
+
+上述[default/direct 实测](../Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/README.md)已完成。同一SDK14.2/Swift5.9.2原签名arm64/min13 binary、本机13两mode保持同held/weak NSImage绑定与原post-teardown导出/释放；direct只替换named两条绘制原语，局部一次y反转、normal/sourceOver、alpha1/clamp(p)及成对save/defer-restore，custom原样。完整native/ICC/float/semantics及附加gate通过；default→旧on、direct→default各12ROI原RGB/sRGB exact，四raw与旧同key直接bytes相同。
+
+两phase原PNG的固定三行/ramp方向、非空和完整可见extent经root目检通过，保留white/background不可分、无逐像素覆盖及非真实flight限制。绑定这些门槛后，单次原算法完整十patch/ramp比较确认D13−D14全部通道变化0，原14参考完整重算一致。绕过NSImage适配在本夹具中没有改变主差；这不是全部NSImage行为或目标context因果的证明，停止此变量，不加widget变体。
+
+下一[单一原生SDR烘焙表示](../Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/next-sdr-plan/README.md)尚未实施：只对实际renderer-return snapshot做系统CoreImage RGBA8/sRGB显示派生，再原NSImage绘制。旧nativeCI处理的是cached原PQ并输出RGBAh，因此不是等价已测输入；但Bool合同仅保证HDR CGColorSpace时有效，不能从extendedSRGB/>1断言它实际执行tone-map或预测修复。原资源/cache/raw保留，不重标PQ/手写曲线，继续以完整D13−D14及所有控制判读。产品未改，完整目标未通过，goal active，后续平台阶段保持延期。
