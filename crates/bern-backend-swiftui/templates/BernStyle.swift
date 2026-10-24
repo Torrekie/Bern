@@ -2043,6 +2043,7 @@ final class BernSnapLargest: BernObservableObject {
 
     func grow(_ next: CGSize) {
         let grown = CGSize(width: max(size.width, next.width), height: max(size.height, next.height))
+        BernScrollTrace.record(self, "largest.grow") { ["old": [size.width, size.height], "input": [next.width, next.height], "grown": [grown.width, grown.height]] }
         if grown != size { size = grown }
     }
 }
@@ -2093,6 +2094,7 @@ private struct BernSnap: ViewModifier {
         let horizontal = axis == .horizontal
         let item = horizontal ? items.largest.size.width : items.largest.size.height
         let margin = center ? max(0, (viewport - item) / 2) : 0
+        let _ = BernScrollTrace.record(items, "snap.body") { ["viewport": viewport, "item": item, "margin": margin, "horizontal": horizontal, "center": center, "largest_instance": BernScrollTrace.identifier(items.largest)] }
         Group {
             #if os(macOS)
             if #available(macOS 14, *) {
@@ -2114,8 +2116,9 @@ private struct BernSnap: ViewModifier {
             #endif
         }
         .environment(\.bernSnapItems, items)
-        .onGeometryChange(for: CGFloat.self) { horizontal ? $0.size.width : $0.size.height } action: {
-            viewport = $0
+        .onGeometryChange(for: CGFloat.self) { horizontal ? $0.size.width : $0.size.height } action: { next in
+            BernScrollTrace.record(items, "snap.viewport") { ["old": viewport, "new": next] }
+            viewport = next
         }
     }
 }
@@ -2127,6 +2130,7 @@ private struct BernSnapItem: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onGeometryChange(for: CGRect.self) { $0.frame(in: .named(bernSnapSpace)) } action: { frame in
+                if let items { BernScrollTrace.record(items, "snap.item-frame") { ["item_uuid": id.uuidString, "frame": BernScrollTrace.rectangle(frame)] } }
                 items?.report(id, frame)
                 items?.largest.grow(frame.size)
             }
@@ -2183,11 +2187,96 @@ extension View {
 
 /// Where the keyed items of a scroll view are, in its visible area, and
 /// which one is nearest its anchor.
+// Diagnostic-only, non-observable logger. No View modifiers or Binding wrappers.
+@MainActor
+private enum BernScrollTrace {
+    private final class Scope {
+        weak var owner: AnyObject?
+        let id = UUID().uuidString
+        let kind: String
+        init(_ owner: AnyObject) { self.owner = owner; kind = String(reflecting: type(of: owner)) }
+    }
+    private static let directory = ProcessInfo.processInfo.environment["BERN_SCROLL_TRACE_DIR"]
+        .flatMap { $0.isEmpty ? nil : URL(fileURLWithPath: $0, isDirectory: true) }
+    private static var scopes: [ObjectIdentifier: Scope] = [:]
+    private static var scopeMetadata = [[String: String]]()
+    private static var events = [[String: Any]]()
+    private static var dropped = 0
+    private static var firstExpect: Double?
+    private static var written = false
+    static func identifier(_ owner: AnyObject) -> String {
+        guard directory != nil else { return "disabled" }
+        let key = ObjectIdentifier(owner)
+        if let scope = scopes[key], scope.owner === owner { return scope.id }
+        let scope = Scope(owner); scopes[key] = scope
+        scopeMetadata.append(["id": scope.id, "kind": scope.kind])
+        return scope.id
+    }
+    static func record(_ owner: AnyObject, _ event: String, _ fields: () -> [String: Any] = { [:] }) {
+        guard directory != nil, !written else { return }
+        guard events.count < 4096 else { dropped += 1; return }
+        let scope = identifier(owner)
+        events.append(["sequence": events.count, "uptime": ProcessInfo.processInfo.systemUptime,
+            "scope": scope, "event": event, "fields": fields()])
+    }
+    static func arm(_ owner: AnyObject) {
+        guard directory != nil, firstExpect == nil else { return }
+        firstExpect = ProcessInfo.processInfo.systemUptime
+        record(owner, "trace.first-expect")
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(2))
+            flush()
+        }
+    }
+    private static func flush() {
+        guard let directory, !written else { return }
+        written = true
+        let report: [String: Any] = ["schema": 1, "pid": ProcessInfo.processInfo.processIdentifier,
+            "base_source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+            "os": ProcessInfo.processInfo.operatingSystemVersionString,
+            "first_expect_uptime": firstExpect ?? 0, "flush_uptime": ProcessInfo.processInfo.systemUptime,
+            "limit": 4096, "dropped": dropped,
+            "binding_scope": "Original $target Binding unchanged; target.observed is the existing onChange callback, not each native setter invocation.",
+            "scope_relationships": "Weak object-instance IDs; snap and position scopes are not automatically assigned a window or cross-linked.",
+            "scopes": scopeMetadata, "events": events]
+        do {
+            let data = try JSONSerialization.data(withJSONObject: jsonValue(report), options: [.prettyPrinted, .sortedKeys])
+            try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+            try data.write(to: directory.appendingPathComponent("scroll-\(ProcessInfo.processInfo.processIdentifier).json"), options: .atomic)
+        } catch { FileHandle.standardError.write(Data("Bern scroll diagnostic write failed: \(error)\n".utf8)) }
+        events.removeAll(keepingCapacity: false)
+    }
+    static func key(_ value: AnyHashable?) -> Any {
+        guard let value else { return NSNull() }
+        return ["type": String(reflecting: type(of: value.base)), "value": String(describing: value.base)]
+    }
+    static func rectangle(_ r: CGRect) -> [String: Any] {
+        guard [r.minX, r.minY, r.width, r.height].allSatisfy({ $0.isFinite }) else { return ["nonfinite": true] }
+        return ["x": r.minX, "y": r.minY, "width": r.width, "height": r.height]
+    }
+    private static func jsonValue(_ value: Any) -> Any {
+        if let n = value as? NSNumber, !n.doubleValue.isFinite { return ["nonfinite_number": n.stringValue] }
+        if let d = value as? [String: Any] { return d.mapValues { jsonValue($0) } }
+        if let a = value as? [Any] { return a.map { jsonValue($0) } }
+        return value
+    }
+}
+
 @MainActor
 #if !os(macOS)
 @Observable
 #endif
 final class BernScrollItems: BernObservableObject {
+    fileprivate func bernTrace(_ event: String, _ extra: () -> [String: Any] = { [:] }) {
+        BernScrollTrace.record(self, event) {
+            var fields = extra()
+            fields["state"] = ["nearest": BernScrollTrace.key(nearest), "coming": BernScrollTrace.key(coming),
+                "stops": stops, "watch": watch, "clearing": clearing, "followed": BernScrollTrace.key(followed),
+                "settling": settling, "frame_count": frames.count, "viewport": [viewport.width, viewport.height],
+                "anchor": [anchor.x, anchor.y], "arrivals": arrivals, "nudges": nudges]
+            return fields
+        }
+    }
     #if !os(macOS)
     @ObservationIgnored
     #endif
@@ -2256,9 +2345,12 @@ final class BernScrollItems: BernObservableObject {
     /// Setting the position scrolls to `key`: it arrives once it stops,
     /// with a nudge unless it is where the view starts.
     func expect(_ key: AnyHashable, nudge: Bool = true) {
+        bernTrace("expect.enter") { ["key": BernScrollTrace.key(key), "nudge": nudge] }
         coming = key
         nudges = nudge
         wait()
+        bernTrace("expect.exit")
+        BernScrollTrace.arm(self)
     }
 
     /// Set while the position clears itself to scroll again to the same
@@ -2276,25 +2368,31 @@ final class BernScrollItems: BernObservableObject {
 
     /// The person took over the scrolling; nothing arrives.
     func cancelArrival() {
+        bernTrace("cancel.enter")
         if !clearing { coming = nil }
+        bernTrace("cancel.exit")
     }
 
     private func wait() {
         watch += 1
         let current = watch
+        bernTrace("wait.scheduled") { ["current": current] }
         Task { @MainActor [weak self] in
             try? await Task.sleep(for: .milliseconds(150))
             guard let self, current == self.watch, let key = self.coming else { return }
+            self.bernTrace("wait.valid-wake") { ["current": current, "key": BernScrollTrace.key(key)] }
             self.coming = nil
             self.stops += 1
             if self.nudges {
                 self.arrived = key
                 self.arrivals += 1
             }
+            self.bernTrace("wait.stopped")
         }
     }
 
     func report(_ key: AnyHashable, _ frame: CGRect) {
+        bernTrace("report.input") { ["key": BernScrollTrace.key(key), "frame": BernScrollTrace.rectangle(frame)] }
         guard tracks(key), frames[key] != frame else { return }
         frames[key] = frame
         scheduleSettle()
@@ -2302,6 +2400,7 @@ final class BernScrollItems: BernObservableObject {
     }
 
     func remove(_ key: AnyHashable) {
+        bernTrace("remove") { ["key": BernScrollTrace.key(key)] }
         guard frames.removeValue(forKey: key) != nil else { return }
         scheduleSettle()
     }
@@ -2310,16 +2409,19 @@ final class BernScrollItems: BernObservableObject {
     /// rather than scanning all items and publishing intermediate nearest
     /// positions after every individual report.
     private func scheduleSettle() {
+        bernTrace("settle.schedule-request")
         guard !settling else { return }
         settling = true
         Task { @MainActor [weak self] in
             guard let self else { return }
+            self.bernTrace("settle.task")
             self.settling = false
             self.settle()
         }
     }
 
     func settle() {
+        bernTrace("settle.enter")
         let point = CGPoint(x: viewport.width * anchor.x, y: viewport.height * anchor.y)
         let distance = { (frame: CGRect) -> CGFloat in
             let x = frame.minX + frame.width * self.anchor.x - point.x
@@ -2327,7 +2429,9 @@ final class BernScrollItems: BernObservableObject {
             return x * x + y * y
         }
         let found = frames.min { distance($0.value) < distance($1.value) }?.key
+        bernTrace("settle.computed") { ["found": BernScrollTrace.key(found)] }
         if found != nearest { nearest = found }
+        bernTrace("settle.exit")
     }
 }
 
@@ -2413,11 +2517,13 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
         } else {
             ScrollViewReader { proxy in
                 tracked(content.background(BernLegacyScrollProbe(userScroll: {
+                    items.bernTrace("target.assign.user-scroll") { ["old": BernScrollTrace.key(target.map(AnyHashable.init)), "new": NSNull()] }
                     items.cancelArrival()
                     target = nil
                 })))
                 .onPreferenceChange(BernLegacyScrollMarginPreference.self) { margin in
                     guard margin != legacyMargin else { return }
+                    items.bernTrace("legacy.margin") { ["old": legacyMargin, "new": margin, "target": BernScrollTrace.key(target.map(AnyHashable.init))] }
                     legacyMargin = margin
                     // Initial item measurements and a viewport resize change
                     // the real content padding. Reapply a still-owned target;
@@ -2426,6 +2532,7 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
                 }
                 .bernOnChange(of: target, initial: true) { _, wanted in
                     if let wanted {
+                        items.bernTrace("legacy.scroll-to") { ["wanted": BernScrollTrace.key(AnyHashable(wanted)), "legacyPositioned": legacyPositioned] }
                         let animation = legacyPositioned && !reduce && !bernForcedReduceMotion ? motion.animation : nil
                         withAnimation(animation) { proxy.scrollTo(wanted, anchor: anchor) }
                         legacyPositioned = true
@@ -2443,24 +2550,30 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
             .environment(\.bernScrollItems, items)
             .bernNamedCoordinateSpace(bernScrollSpace)
             .onGeometryChange(for: CGSize.self) { $0.size } action: { size in
+                items.bernTrace("position.viewport") { ["new": [size.width, size.height], "target": BernScrollTrace.key(target.map(AnyHashable.init)), "position": BernScrollTrace.key(AnyHashable(position.wrappedValue))] }
                 items.anchor = anchor
                 items.arrival = arrival
                 items.viewport = size
                 items.settle()
             }
             .onAppear {
+                items.bernTrace("position.appear.enter") { ["target": BernScrollTrace.key(target.map(AnyHashable.init)), "position": BernScrollTrace.key(AnyHashable(position.wrappedValue)), "placed": placed] }
                 items.expect(AnyHashable(position.wrappedValue), nudge: false)
+                items.bernTrace("target.assign.appear") { ["old": BernScrollTrace.key(target.map(AnyHashable.init)), "new": BernScrollTrace.key(AnyHashable(position.wrappedValue))] }
                 target = position.wrappedValue
                 placed = true
+                items.bernTrace("position.appear.exit") { ["target": BernScrollTrace.key(target.map(AnyHashable.init)), "placed": placed] }
             }
             // Once there, the platform's position lets go, so that the
             // person's next scroll comes to rest on an item as any other.
             .bernOnChange(of: items.stops) { _, _ in
+                items.bernTrace("target.assign.release") { ["old": BernScrollTrace.key(target.map(AnyHashable.init)), "new": NSNull()] }
                 items.clearing = true
                 target = nil
-                Task { @MainActor in items.clearing = false }
+                Task { @MainActor in items.clearing = false; items.bernTrace("release.clearing-reset") }
             }
-            .bernOnChange(of: position.wrappedValue) { _, wanted in
+            .bernOnChange(of: position.wrappedValue) { previous, wanted in
+                items.bernTrace("position.observed") { ["old": BernScrollTrace.key(AnyHashable(previous)), "new": BernScrollTrace.key(AnyHashable(wanted))] }
                 if AnyHashable(wanted) == items.followed {
                     items.followed = nil
                     return
@@ -2468,8 +2581,12 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
                 guard wanted != target, target != nil || AnyHashable(wanted) != items.nearest else { return }
                 scroll(to: wanted)
             }
-            .bernOnChange(of: items.nearest) { _, _ in follow() }
-            .bernOnChange(of: target) { _, current in
+            .bernOnChange(of: items.nearest) { previous, next in
+                items.bernTrace("nearest.observed") { ["old": BernScrollTrace.key(previous), "new": BernScrollTrace.key(next)] }
+                follow()
+            }
+            .bernOnChange(of: target) { previous, current in
+                items.bernTrace("target.observed") { ["old": BernScrollTrace.key(previous.map(AnyHashable.init)), "new": BernScrollTrace.key(current.map(AnyHashable.init))] }
                 if current == nil { items.cancelArrival() }
                 follow()
             }
@@ -2478,23 +2595,31 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {
     /// While the person scrolls, `position` follows the item nearest the
     /// anchor.
     private func follow() {
+        items.bernTrace("follow.enter") { ["target": BernScrollTrace.key(target.map(AnyHashable.init)), "position": BernScrollTrace.key(AnyHashable(position.wrappedValue)), "placed": placed] }
         guard placed, target == nil, let nearest = items.nearest?.base as? ID,
             nearest != position.wrappedValue
         else { return }
+        items.bernTrace("position.assign.follow") { ["old": BernScrollTrace.key(AnyHashable(position.wrappedValue)), "new": BernScrollTrace.key(AnyHashable(nearest))] }
         items.followed = AnyHashable(nearest)
         position.wrappedValue = nearest
+        items.bernTrace("follow.exit") { ["position": BernScrollTrace.key(AnyHashable(position.wrappedValue))] }
     }
 
     private func scroll(to wanted: ID) {
+        items.bernTrace("scroll.request") { ["wanted": BernScrollTrace.key(AnyHashable(wanted)), "target": BernScrollTrace.key(target.map(AnyHashable.init))] }
         let animation = reduce || bernForcedReduceMotion ? nil : motion.animation
         let items = items
         let go = {
             items.clearing = false
             items.expect(AnyHashable(wanted))
-            withAnimation(animation) { target = wanted }
+            withAnimation(animation) {
+                items.bernTrace("target.assign.go") { ["old": BernScrollTrace.key(target.map(AnyHashable.init)), "new": BernScrollTrace.key(AnyHashable(wanted))] }
+                target = wanted
+            }
         }
         if target == wanted {
             // The platform only scrolls when its position changes.
+            items.bernTrace("target.assign.repeat-reset") { ["old": BernScrollTrace.key(target.map(AnyHashable.init)), "new": NSNull()] }
             items.clearing = true
             target = nil
             Task { @MainActor in go() }
