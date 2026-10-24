@@ -1,0 +1,314 @@
+name: macOS 14 actual hero coordinator app-loop capture
+run-name: actual hero coordinator app-loop capture
+'on':
+  workflow_dispatch: null
+permissions:
+  contents: read
+concurrency:
+  group: macos14-hero-coordinator-app-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 8
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        persist-credentials: false
+    - name: Build exact ARM64/min13 app-loop coordinator package
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p work/probe evidence/build
+        trap 'rm -rf work/hero-module-cache work/probe' EXIT
+        {
+          printf 'harness_sha=%s\n' "$GITHUB_SHA"
+          printf 'product_source_sha=b08db54e01ac2ec54fb84e6f2a70041f1f4c3604\n'
+          sw_vers
+          uname -m
+          xcodebuild -version
+          xcrun --sdk macosx --show-sdk-version
+          xcrun --sdk macosx --show-sdk-path
+          xcrun swiftc -version
+        } > evidence/build/environment.txt 2>&1
+        test -d "$DEVELOPER_DIR"
+        case "$(uname -m)" in arm64|x86_64) ;; *) exit 1 ;; esac
+        sdk="$(xcrun --sdk macosx --show-sdk-version)"
+        test "$sdk" = 26.2
+        ditto .github/scripts/hero-coordinator-app-probe work/probe
+        python3 - <<'PY'
+        import hashlib,json
+        from pathlib import Path
+        p=Path('work/probe'); d=json.loads((p/'source-provenance.json').read_text())
+        assert d['product_source_commit']=='b08db54e01ac2ec54fb84e6f2a70041f1f4c3604'
+        assert d['kind']=='actual_coordinator_app_loop_fixture'
+        assert 'local_static_preflight' not in d and d['local_compile_attempted'] is False
+        assert d['original_hero_sha256']=='8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c'
+        assert d['files']['ProductHero.exact.swift']['sha256']==d['original_hero_sha256']
+        assert d['files']['ProductImage.swift']['sha256']=='8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc'
+        assert d['files']['ProductStyle.swift']['sha256']=='550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984'
+        assert d['files']['Dependencies.swift']['sha256']=='d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9'
+        assert 'Driver.swift.inc' in d['files'] and 'run-one.py' in d['files']
+        assert d['files']['Driver.swift.inc']['sha256']=='571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270'
+        for name,m in d['files'].items():
+            assert hashlib.sha256((p/name).read_bytes()).hexdigest()==m['sha256'],name
+        PY
+        printf 'import AppKit\nimport SwiftUI\n' > work/probe/ProductHero.swift
+        cat work/probe/ProductHero.exact.swift work/probe/Driver.swift.inc >> work/probe/ProductHero.swift
+        cat > evidence/build/command.txt <<'COMMAND'
+        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage -framework ColorSync -framework ImageIO -framework CryptoKit work/probe/Dependencies.swift work/probe/ProductImage.swift work/probe/ProductStyle.swift work/probe/ProductHero.swift -o work/probe/HeroCoordinatorAppProbe
+        COMMAND
+        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 \
+          -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache \
+          -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage \
+          -framework ColorSync -framework ImageIO -framework CryptoKit \
+          work/probe/Dependencies.swift work/probe/ProductImage.swift \
+          work/probe/ProductStyle.swift work/probe/ProductHero.swift \
+          -o work/probe/HeroCoordinatorAppProbe > evidence/build/compile.log 2>&1
+        test "$(xcrun lipo -archs work/probe/HeroCoordinatorAppProbe)" = arm64
+        xcrun vtool -show-build work/probe/HeroCoordinatorAppProbe > evidence/build/binary.txt
+        test "$(awk '/minos/ {print $2; exit}' evidence/build/binary.txt)" = 13.0
+        xcrun otool -L work/probe/HeroCoordinatorAppProbe >> evidence/build/binary.txt
+        codesign --force --sign - work/probe/HeroCoordinatorAppProbe > evidence/build/signature.txt 2>&1
+        codesign --verify --strict --verbose=4 work/probe/HeroCoordinatorAppProbe >> evidence/build/signature.txt 2>&1
+        codesign --display --verbose=4 work/probe/HeroCoordinatorAppProbe >> evidence/build/signature.txt 2>&1
+        mkdir work/probe/build
+        cp evidence/build/{environment.txt,command.txt,compile.log,binary.txt,signature.txt} work/probe/build/
+        python3 - <<'PY'
+        import hashlib
+        from pathlib import Path
+        p=Path('work/probe'); lines=[]
+        for f in sorted(p.rglob('*')):
+            assert not f.is_symlink(),f
+            if f.is_file(): lines.append(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+f.relative_to(p).as_posix()+'\n')
+        (p/'SHA256SUMS').write_text(''.join(lines))
+        PY
+        tar -czf evidence/build/hero-coordinator-app-probe.tar.gz -C work/probe .
+        (cd evidence/build && shasum -a 256 hero-coordinator-app-probe.tar.gz > hero-coordinator-app-probe.tar.gz.sha256)
+        cp work/probe/{source-provenance.json,SHA256SUMS} evidence/build/
+    - uses: actions/upload-artifact@v5
+      if: always()
+      with:
+        name: macos14-hero-coordinator-app-probe-build
+        path: evidence/build/
+        if-no-files-found: error
+        retention-days: 3
+        compression-level: 0
+  measure:
+    needs: build
+    runs-on: macos-14
+    timeout-minutes: 5
+    steps:
+    - uses: actions/download-artifact@v5
+      with:
+        name: macos14-hero-coordinator-app-probe-build
+        path: build
+    - name: Collect one NSApplication.run coordinator process on14 without rebuilding
+      env:
+        BERN_HERO_EXPECT_OS: '14'
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p probe evidence/runtime14
+        trap 'rm -rf probe build' EXIT
+        {
+          printf 'harness_sha=%s\nexpected_os_major=%s\n' "$GITHUB_SHA" "$BERN_HERO_EXPECT_OS"
+          sw_vers
+          uname -m
+        } > evidence/runtime14/environment.txt 2>&1
+        test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+        test "$(uname -m)" = arm64
+        test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+        (cd build && shasum -a 256 -c hero-coordinator-app-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1
+        python3 - <<'PY'
+        from pathlib import PurePosixPath
+        import tarfile
+        with tarfile.open('build/hero-coordinator-app-probe.tar.gz') as t:
+            for m in t.getmembers():
+                p=PurePosixPath(m.name)
+                assert not p.is_absolute() and '..' not in p.parts,m.name
+                assert m.isdir() or m.isfile(),m.name
+        PY
+        tar -xzf build/hero-coordinator-app-probe.tar.gz -C probe
+        (cd probe && shasum -a 256 -c SHA256SUMS) > evidence/runtime14/package-verification.txt 2>&1
+        test "$(xcrun lipo -archs probe/HeroCoordinatorAppProbe)" = arm64
+        codesign --verify --strict --verbose=4 probe/HeroCoordinatorAppProbe > evidence/runtime14/signature-verification.txt 2>&1
+        shasum -a 256 probe/HeroCoordinatorAppProbe > evidence/runtime14/binary-sha256.txt
+        cp build/environment.txt evidence/runtime14/build-environment.txt
+        cp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-coordinator-app-probe.tar.gz.sha256} evidence/runtime14/
+        defaults write com.apple.universalaccess reduceMotion -bool false
+        defaults write com.apple.universalaccess reduceTransparency -bool false
+        defaults write com.apple.universalaccess increaseContrast -bool false
+        killall cfprefsd || true
+        {
+          # Raw defaults absence is diagnostic; effective NSWorkspace flags
+          # remain mandatory before/after in the executable and assertions.
+          defaults read com.apple.universalaccess reduceMotion || true
+          defaults read com.apple.universalaccess reduceTransparency || true
+          defaults read com.apple.universalaccess increaseContrast || true
+        } > evidence/runtime14/requested-normal.txt 2>&1
+        python3 probe/run-one.py "$PWD/probe/HeroCoordinatorAppProbe" "$PWD/probe/assets/source-named-pq.png" \
+          "$PWD/evidence/runtime14" 14
+        python3 - <<'PY'
+        import hashlib,json,math
+        from pathlib import Path
+        def reject_constant(value): raise ValueError('Non-finite JSON token: '+value)
+        p=Path('evidence/runtime14')
+        d=json.loads((p/'report.json').read_text(),parse_constant=reject_constant)
+        receipt=json.loads((p/'run-receipt.json').read_text(),parse_constant=reject_constant)
+        assert d['success'] is True and d.get('error') is None
+        assert d['expected_os_major']==14 and d['actual_os_major']==14
+        assert receipt['exit_code']==0 and not receipt.get('wrapper_timeout',False)
+        assert receipt['expected_os_major']==14 and receipt['timeout_seconds']==15
+        assert receipt['bern_motion_environment']=='unset' and type(receipt['bern_motion_was_present']) is bool
+        assert receipt['binary_sha256']==hashlib.sha256(Path('probe/HeroCoordinatorAppProbe').read_bytes()).hexdigest()
+        asset_sha='3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b'
+        assert receipt['named_asset_sha256']==asset_sha
+        assert d['activation_calls']==0 and 0<d['window_seconds']<7.9
+        assert d['collection_seconds']==7.2 and d['watchdog_seconds']==7.9 and d['preload_seconds_limit']==3
+        assert d['sample_limit']==512 and d['nominal_poll_hz']==60 and d['maximum_pngs']==3
+        assert d['frontmost_before']==d['frontmost_after'] and receipt['own_pid']!=d['frontmost_before']
+        for key in ('normal_before','normal_after'):
+            assert set(d[key])=={'reduce_motion','reduce_transparency','increase_contrast'}
+            assert all(v is False for v in d[key].values())
+        assert d['cache_unchanged'] is True and d['cache_before']==d['cache_after']
+        assert d['cache_before']['file_sha256']==asset_sha and d['cache_before']['orientation']=='up'
+        assert d['pixel_acceptance']=='Not performed; before/mid/settled PNGs require offline visibility/color/timing review'
+        captures=d['captures']; assert isinstance(captures,list) and len(captures)==3
+        assert [c['phase'] for c in captures]==['before','in-flight','settled']
+        assert len(list(p.glob('*.png')))==3
+        window_ids={c['window_id'] for c in captures}
+        assert len(window_ids)==1 and all(type(v) is int and v>0 for v in window_ids)
+        own_window=next(iter(window_ids))
+        def number(value):
+            assert type(value) in (int,float) and math.isfinite(value)
+        def rect(value):
+            assert isinstance(value,dict) and set(value)=={'x','y','width','height'}
+            for v in value.values(): number(v)
+            assert value['width']>0 and value['height']>0
+        def state(value):
+            assert isinstance(value,dict) and isinstance(value['flights'],list)
+            assert type(value['flight_count']) is int and value['flight_count']==len(value['flights'])
+            assert type(value['timer_exists']) is bool
+            assert type(value['temporary_flight_view_count']) is int and value['temporary_flight_view_count']>=0
+            assert set(value['entry_keys']).issubset({'coordinator-one'})
+            for flight in value['flights']:
+                assert flight['key']=='coordinator-one' and flight['parent_is_actual_overlay'] is True
+                assert flight['window_number']==own_window
+                assert isinstance(flight['view_identity'],str) and flight['view_identity']
+                number(flight['progress']); rect(flight['frame']); rect(flight['bounds'])
+                rect(flight['from_rect']); rect(flight['to_rect'])
+                assert flight['from_rect']!=flight['to_rect']
+            return value['flights']
+        def resting(value):
+            assert state(value)==[] and value['timer_exists'] is False
+            assert value['temporary_flight_view_count']==0
+        for c in captures:
+            assert c['owner_pid']==receipt['own_pid'] and c['key'] is False and c['active'] is False
+            assert c['live_metal_count']==0
+            assert c['window_frame']==captures[0]['window_frame']
+            assert c['capture_before_uptime']<=c['capture_after_uptime']
+            for key in ('state_before','state_after'): state(c[key])
+            size=c['capture_size']; assert len(size)==2 and all(type(v) is int and v>0 for v in size)
+            for roi in c['rois'].values():
+                rect(roi['root_points']); pixels=roi['screenshot_pixels']; rect(pixels)
+                assert pixels['x']>=0 and pixels['y']>=0
+                assert pixels['x']+pixels['width']<=size[0] and pixels['y']+pixels['height']<=size[1]
+            assert c['png']==c['phase']+'.png'
+            assert hashlib.sha256((p/c['png']).read_bytes()).hexdigest()==c['png_sha256']
+        for c,role,wanted in ((captures[0],'source',{'x':16,'y':24,'width':320,'height':180}),
+                              (captures[2],'destination',{'x':352,'y':244,'width':320,'height':180})):
+            assert c['consecutive_equal_buffers']>=5
+            resting(c['state_before']); resting(c['state_after'])
+            actual=c['rois'][role]['root_points']
+            assert max(abs(actual[k]-wanted[k]) for k in wanted)<=0.000001
+        samples=d['samples']; assert isinstance(samples,list) and 0<len(samples)<=512
+        assert all(type(v['sample_index']) is int and v['sample_index']==i for i,v in enumerate(samples))
+        mid=captures[1]
+        assert mid['consecutive_equal_buffers_required'] is False
+        sampling=d['midflight_sampling']
+        policy='first_band_arm_then_next_original_loop_sample'
+        assert sampling['policy']==policy and mid['sampling_policy']==policy
+        assert sampling['capture_attempted'] is True and sampling['next_sample_captured'] is True
+        armed=sampling['armed']; captured=sampling['capture_sample']
+        for record in (armed,captured):
+            assert isinstance(record,dict) and set(record)=={'sample_index','state','uptime','progress','flight_identity'}
+            index=record['sample_index']; assert type(index) is int and 0<=index<len(samples)
+            number(record['uptime']); number(record['progress'])
+            value=record['state']; records_live=state(value)
+            assert len(records_live)==1 and value['timer_exists'] is True
+            assert records_live[0]['view_identity']==record['flight_identity']
+            assert records_live[0]['progress']==record['progress'] and value['uptime']==record['uptime']
+            assert samples[index]['stage']=='transition'
+            assert all(samples[index][k]==v for k,v in value.items())
+        assert captured['sample_index']==armed['sample_index']+1
+        assert captured['uptime']>=armed['uptime']
+        assert armed['flight_identity']==captured['flight_identity']
+        assert 0.2<armed['progress']<0.8
+        assert not any(v['flights'] and 0.2<v['flights'][0]['progress']<0.8 for v in samples[:armed['sample_index']])
+        # No captured-progress band assertion: the exact next sample may exceed .8.
+        for flat,key in (('armed_sample_index','sample_index'),('armed_sample_state','state'),
+                         ('armed_sample_uptime','uptime'),('armed_progress','progress'),('armed_flight_identity','flight_identity')):
+            assert mid[flat]==armed[key]
+        for flat,key in (('capture_sample_index','sample_index'),('capture_sample_state','state'),
+                         ('capture_sample_uptime','uptime'),('capture_sample_progress','progress'),('capture_sample_flight_identity','flight_identity')):
+            assert mid[flat]==captured[key]
+        assert mid['trigger_refers_to']=='armed_sample'
+        assert mid['trigger_state']==armed['state'] and mid['trigger_progress']==armed['progress']
+        live=state(armed['state']); assert 'flight' in mid['rois']
+        # Shot bracket states are actual records, not forced to stay live or stable.
+        native=d['native_gates']; assert native['transition_count']==1
+        for key in ('actual_flight_seen','actual_frame_and_progress_changed','midband_armed','next_sample_captured',
+                    'source_no_longer_attached','temporary_view_removed'):
+            assert native[key] is True
+        for key in ('source_detached_observed','source_weak_deallocated'):
+            assert type(native[key]) is bool
+        identities=native['observed_flight_identities']
+        assert isinstance(identities,list) and len(identities)==1 and identities[0]==live[0]['view_identity']
+        assert d['observed_flight_identities']==identities
+        for c in captures:
+            for key in ('state_before','state_after'):
+                assert all(f['view_identity']==identities[0] for f in c[key]['flights'])
+        observed=[]
+        for sample in samples:
+            flights=state(sample)
+            if flights:
+                assert len(flights)==1 and sample['timer_exists'] is True
+                assert flights[0]['view_identity']==identities[0]
+                observed.append(flights[0])
+        assert any(a['frame']!=b['frame'] and a['progress']!=b['progress'] for a,b in zip(observed,observed[1:]))
+        resting(d['before_cleanup_state'])
+        # Append-only app-loop metadata gate; inherited native acquisition gate above is unchanged.
+        execution=d['execution_model']
+        assert execution['kind']=='nsapplication_run_delegate_default_timer'
+        for key in ('launch_completed_count','loop_entry_count','loop_return_count','terminal_count','stop_calls','wake_count'):
+            assert type(execution[key]) is int and execution[key]==1
+        for key in ('sampler_reentrant_callbacks','sampler_callbacks_after_terminal'):
+            assert type(execution[key]) is int and execution[key]==0
+        assert type(execution['sampler_max_depth']) is int and execution['sampler_max_depth']==1
+        assert type(execution['sampler_callback_count']) is int and execution['sampler_callback_count']>0
+        assert isinstance(execution['sampler_mode'],str) and execution['sampler_mode']
+        assert execution['sampler_observed_modes']==[execution['sampler_mode']]
+        number(execution['sampler_interval_seconds'])
+        assert execution['sampler_interval_seconds']==1/60
+        assert execution['sampler_invalidated_before_stop'] is True
+        assert execution['wake_after_terminal'] is True and execution['wake_posted_to_own_app_queue'] is True
+        assert execution['wake_type']=='applicationDefined'
+        times=[execution[key] for key in ('loop_entry_uptime','launch_completed_uptime',
+               'preload_started_uptime','preload_completed_uptime')]
+        times += [captures[0]['capture_before_uptime'],captures[0]['capture_after_uptime'],
+                  captures[2]['capture_before_uptime'],captures[2]['capture_after_uptime'],
+                  execution['terminal_uptime'],execution['loop_return_uptime']]
+        for value in times: number(value)
+        assert 0<=times[0] and times==sorted(times)
+        assert 0<=execution['preload_completed_uptime']-execution['preload_started_uptime']<=d['preload_seconds_limit']
+        PY
+    - uses: actions/upload-artifact@v5
+      if: always()
+      with:
+        name: macos14-hero-coordinator-app-evidence
+        path: evidence/runtime14/
+        if-no-files-found: error
+        retention-days: 3
