@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/runner/work/Bern/Bern/harness/.github/scripts/gallery-film-abba.py", line 311, in main
+    item['geometry'] = validate(json.loads((runtime/'result.json').read_text()), runtime, lock)
+                       ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/runner/work/Bern/Bern/harness/.github/scripts/gallery-film-abba.py", line 193, in validate
+    assert c['first_second_ax'] and not c['settled_ax']['truncated']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,6 @@
+/Users/runner/work/Bern/Bern/harness/.github/scripts/gallery-film-probe.swift:283:42: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+                ? [.activateAllWindows, .activateIgnoringOtherApps] : [.activateAllWindows]
+                                         ^
+/Users/runner/work/Bern/Bern/harness/.github/scripts/gallery-film-probe.swift:122:21: warning: 'CGWindowListCreateImage' was deprecated in macOS 14.0: This API is deprecated. Please use ScreenCaptureKit's captureScreenshot APIs instead.
+          let img = CGWindowListCreateImage(.null, .optionIncludingWindow, id.uint32Value, [.boundsIgnoreFraming, .bestResolution]) else {
+                    ^

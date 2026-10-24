@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "success": false,
+  "order": [
+    "A1",
+    "B1",
+    "B2",
+    "A2"
+  ],
+  "legs": [
+    {
+      "leg": "A1",
+      "source_slot": "A",
+      "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "build_run": 39991406873,
+      "build_harness_sha": "c1900f58bca6fd283bce2d4cf9769f1e6029ebb0",
+      "bundle_id": "dev.bern.film.abba.40073935416.a1.2224040c2e0e4b7ab5b874c9c0dbf74e",
+      "started_epoch": 1792826631.209532,
+      "observer_exit": 0,
+      "ended_epoch": 1792826657.55992,
+      "teardown_samples": []
+    }
+  ],
+  "source_locks": {
+    "A": {
+      "source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "run": 39991406873,
+      "build_harness": "c1900f58bca6fd283bce2d4cf9769f1e6029ebb0",
+      "archive": "18a69e1536065f6722413aaebf26830aee11fa280990e0f7aa8206cf7ce38934",
+      "gui": "887173af876a3f802c68dfff7fef087f318cc6909a61ea4beff69dad536dfd7e"
+    },
+    "B": {
+      "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "run": 40070407306,
+      "build_harness": "25e18cbc7cd760c1c399042f1d7364c3d755a9dc",
+      "archive": "e7ee2c11f7795bf9391b275ec9f6be329feceebf890193ee53434ec0607c3067",
+      "gui": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c"
+    }
+  },
+  "observer_sha256": "79da4a84909a07a6d975cf7606a0cae6d4c22c1c1979a3fdbb0ce0e29aeb0755",
+  "collection_harness_sha": "2c186620c10c98656d1bd530c531c765574249dd",
+  "deadline_epoch": 1792827028.133325,
+  "job_timeout_seconds": 480,
+  "observer_cap_seconds": 120,
+  "scope": "Same VM; four unique bundle identities; each runs the unchanged all/active14 observer. No native logger. No automatic pixel-equivalence claim.",
+  "phase": "observe-A1",
+  "observer_binary_sha256": "684f1fbe6a1035a2186e64d8c6a3c8def1982ef09cf49656992a4919de66ba48",
+  "failure": "AssertionError: ",
+  "cleanup": {
+    "owned_processes_before_cleanup": [],
+    "removed": [
+      {
+        "path": "/Users/runner/work/_temp/bern-film-abba-40073935416-1",
+        "logical_bytes": 62575244
+      },
+      {
+        "path": "/Users/runner/work/Bern/Bern/build-a",
+        "logical_bytes": 2122058
+      },
+      {
+        "path": "/Users/runner/work/Bern/Bern/build-b",
+        "logical_bytes": 2131265
+      }
+    ],
+    "errors": [],
+    "original_full_member_rechecks": {
+      "A": true,
+      "B": true
+    },
+    "owned_processes_after_cleanup": []
+  },
+  "finished_epoch": 1792826658.0038211
+}

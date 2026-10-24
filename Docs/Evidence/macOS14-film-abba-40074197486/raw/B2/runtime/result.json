@@ -1,0 +1,5309 @@
+{
+  "accessibility_trusted" : true,
+  "activation_requests" : [
+    {
+      "accepted" : true,
+      "after" : {
+        "front_bundle" : "dev.bern.film.abba.40074197486.b2.f251807e9d124f109c62e92d6652d1c3",
+        "front_pid" : 2271,
+        "own_pid" : 2271,
+        "uptime" : 159.48950775
+      },
+      "before" : {
+        "front_bundle" : "com.apple.finder",
+        "front_pid" : 303,
+        "own_pid" : 2271,
+        "uptime" : 159.36723708333335
+      },
+      "options" : [
+        "activateAllWindows"
+      ],
+      "pid" : 2271,
+      "samples" : [
+        {
+          "front_bundle" : "com.apple.finder",
+          "front_pid" : 303,
+          "own_pid" : 2271,
+          "uptime" : 159.37193441666668
+        },
+        {
+          "front_bundle" : "dev.bern.film.abba.40074197486.b2.f251807e9d124f109c62e92d6652d1c3",
+          "front_pid" : 2271,
+          "own_pid" : 2271,
+          "uptime" : 159.48897112500001
+        }
+      ],
+      "scenario" : "immediate"
+    },
+    {
+      "accepted" : true,
+      "after" : {
+        "front_bundle" : "dev.bern.film.abba.40074197486.b2.f251807e9d124f109c62e92d6652d1c3",
+        "front_pid" : 2378,
+        "own_pid" : 2378,
+        "uptime" : 167.16700966666667
+      },
+      "before" : {
+        "front_bundle" : "com.apple.finder",
+        "front_pid" : 303,
+        "own_pid" : 2378,
+        "uptime" : 167.04701645833333
+      },
+      "options" : [
+        "activateAllWindows"
+      ],
+      "pid" : 2378,
+      "samples" : [
+        {
+          "front_bundle" : "com.apple.finder",
+          "front_pid" : 303,
+          "own_pid" : 2378,
+          "uptime" : 167.04752566666667
+        },
+        {
+          "front_bundle" : "dev.bern.film.abba.40074197486.b2.f251807e9d124f109c62e92d6652d1c3",
+          "front_pid" : 2378,
+          "own_pid" : 2378,
+          "uptime" : 167.16677454166668
+        }
+      ],
+      "scenario" : "wait"
+    },
+    {
+      "accepted" : true,
+      "after" : {
+        "front_bundle" : "dev.bern.film.abba.40074197486.b2.f251807e9d124f109c62e92d6652d1c3",
+        "front_pid" : 2542,
+        "own_pid" : 2542,
+        "uptime" : 176.95949770833334
+      },
+      "before" : {
+        "front_bundle" : "com.apple.finder",
+        "front_pid" : 303,
+        "own_pid" : 2542,
+        "uptime" : 176.83394137500002
+      },
+      "options" : [
+        "activateAllWindows"
+      ],
+      "pid" : 2542,
+      "samples" : [
+        {
+          "front_bundle" : "com.apple.finder",
+          "front_pid" : 303,
+          "own_pid" : 2542,
+          "uptime" : 176.83444304166667
+        },
+        {
+          "front_bundle" : "dev.bern.film.abba.40074197486.b2.f251807e9d124f109c62e92d6652d1c3",
+          "front_pid" : 2542,
+          "own_pid" : 2542,
+          "uptime" : 176.95923141666668
+        }
+      ],
+      "scenario" : "direct"
+    }
+  ],
+  "appearance_profile" : "normal",
+  "cases" : [
+    {
+      "close_return_uptime" : 163.88126175000002,
+      "controls" : [
+        {
+          "enabled" : true,
+          "label" : "",
+          "reason" : null,
+          "role" : "adaptive",
+          "target" : "film.film_controls",
+          "value" : "medium",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Drag up or down",
+          "reason" : null,
+          "role" : "swipe",
+          "target" : "film.level",
+          "value" : "0.5",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "First",
+          "reason" : null,
+          "role" : "button",
+          "target" : "film.to_first",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Last",
+          "reason" : null,
+          "role" : "button",
+          "target" : "film.to_last",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "About",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.about",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Choose Poster…",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.choose_poster",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Clear Favorites",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.clear_favorites",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Close",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.close_details",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Crimson",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.crimson",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Dark",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.dark",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Search Patterns",
+          "reason" : null,
+          "role" : "search",
+          "target" : "main_window.find",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Follow the System",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.follow_system",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Light",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.light",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Look",
+          "reason" : null,
+          "role" : "menu",
+          "target" : "main_window.look",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Neon",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.neon",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Open Video",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.open_file",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Film",
+          "reason" : null,
+          "role" : "sidebar",
+          "target" : "main_window.pages",
+          "value" : "Film",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Search “check”",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.search_check",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Delete a Letter",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.search_delete",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Details",
+          "reason" : null,
+          "role" : "switch",
+          "target" : "main_window.show_details",
+          "value" : "false",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Ultramarine",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.ultramarine",
+          "value" : null,
+          "window" : "main#1"
+        }
+      ],
+      "film" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 158
+        },
+        "elapsed_seconds" : 1.0920934166666711,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "immediate-film.png",
+        "samples" : 8
+      },
+      "first_second_ax" : [
+        {
+          "elements" : [
+
+          ],
+          "end_uptime" : 164.25342929166666,
+          "matching_elements_missing" : true,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 0,
+          "start_uptime" : 163.88429770833335,
+          "truncated" : true,
+          "visited" : 3
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            }
+          ],
+          "end_uptime" : 164.47974816666667,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 1,
+          "start_uptime" : 164.35845029166668,
+          "truncated" : true,
+          "visited" : 113
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 210
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 257,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 527,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 138.89695701599121,
+                "width" : 246.92792358398447,
+                "x" : 793.53603820800777,
+                "y" : 231.70512531280519
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 144.08606586456298,
+                "width" : 256.1530059814454,
+                "x" : 1058.9234970092773,
+                "y" : 228.64931676864626
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1337,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1607,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 257,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 527,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.461861572265633,
+                "width" : 50.414451065063531,
+                "x" : 793.53603820800777,
+                "y" : 378.83301311492914
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.076867065429695,
+                "width" : 32.019125747680732,
+                "x" : 1058.9234970092773,
+                "y" : 381.27381616592402
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1337,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1607,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 164.62785025000002,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 164.58307837500001,
+          "truncated" : false,
+          "visited" : 174
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 210
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 257,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 527,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 138.89695701599121,
+                "width" : 246.92792358398447,
+                "x" : 793.53603820800777,
+                "y" : 231.70512531280519
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 144.08606586456298,
+                "width" : 256.1530059814454,
+                "x" : 1058.9234970092773,
+                "y" : 228.64931676864626
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1337,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1607,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 257,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 527,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.461861572265633,
+                "width" : 50.414451065063531,
+                "x" : 793.53603820800777,
+                "y" : 378.83301311492914
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.076867065429695,
+                "width" : 32.019125747680732,
+                "x" : 1058.9234970092773,
+                "y" : 381.27381616592402
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1337,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1607,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 164.77208979166667,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 164.73141170833335,
+          "truncated" : false,
+          "visited" : 174
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 210
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 487
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 257,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 527,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 138.89695701599121,
+                "width" : 246.92792358398447,
+                "x" : 793.53603820800777,
+                "y" : 231.70512531280519
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 144.08606586456298,
+                "width" : 256.1530059814454,
+                "x" : 1058.9234970092773,
+                "y" : 228.64931676864626
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1337,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1607,
+                "y" : 234
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 257,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 527,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.461861572265633,
+                "width" : 50.414451065063531,
+                "x" : 793.53603820800777,
+                "y" : 378.83301311492914
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.076867065429695,
+                "width" : 32.019125747680732,
+                "x" : 1058.9234970092773,
+                "y" : 381.27381616592402
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1337,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1607,
+                "y" : 377
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 164.87704991666666,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 164.83313020833333,
+          "truncated" : false,
+          "visited" : 173
+        }
+      ],
+      "inspector" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 158
+        },
+        "elapsed_seconds" : 2.1914847500000008,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "immediate-inspector.png",
+        "samples" : 13
+      },
+      "inspector_ax" : {
+        "elements" : [
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 920,
+              "x" : 510,
+              "y" : 210
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          }
+        ],
+        "end_uptime" : 163.77457354166668,
+        "matching_elements_missing" : false,
+        "pattern_label_count" : 0,
+        "scroll_area_count" : 0,
+        "start_uptime" : 163.65048941666669,
+        "truncated" : true,
+        "visited" : 27
+      },
+      "ipc_dir" : "\/tmp\/bern-film-2270-immediate",
+      "patterns" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 158
+        },
+        "elapsed_seconds" : 1.1822363333333215,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "immediate-patterns.png",
+        "samples" : 8
+      },
+      "pid" : 2271,
+      "scenario" : "immediate",
+      "select_start_uptime" : 163.88126820833335,
+      "session" : "23570c6d08df00-ui",
+      "settled_ax" : {
+        "elements" : [
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 920,
+              "x" : 510,
+              "y" : 210
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 580,
+              "width" : 210,
+              "x" : 510,
+              "y" : 210
+            },
+            "role" : "AXScrollArea",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 709,
+              "x" : 721,
+              "y" : 210
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 207,
+              "width" : 240,
+              "x" : 955.5,
+              "y" : 210
+            },
+            "role" : "AXScrollArea",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 43,
+              "x" : 745,
+              "y" : 487
+            },
+            "role" : "AXStaticText",
+            "text" : "Gingham",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 31,
+              "x" : 877.20000000000005,
+              "y" : 487
+            },
+            "role" : "AXStaticText",
+            "text" : "Tartan",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 36.000000000000057,
+              "x" : 1009.4000000000001,
+              "y" : 487
+            },
+            "role" : "AXStaticText",
+            "text" : "Madras",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 23,
+              "x" : 1141.5999999999999,
+              "y" : 487
+            },
+            "role" : "AXStaticText",
+            "text" : "Glen",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 63,
+              "x" : 1273.8000000000002,
+              "y" : 487
+            },
+            "role" : "AXStaticText",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 62,
+              "x" : 1406,
+              "y" : 487
+            },
+            "role" : "AXStaticText",
+            "text" : "Windowpane",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 257,
+              "y" : 234
+            },
+            "role" : "AXImage",
+            "text" : "Gingham",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 527,
+              "y" : 234
+            },
+            "role" : "AXImage",
+            "text" : "Tartan",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 138.89695701599121,
+              "width" : 246.92792358398447,
+              "x" : 793.53603820800777,
+              "y" : 231.70512531280519
+            },
+            "role" : "AXImage",
+            "text" : "Madras",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 144.08606586456298,
+              "width" : 256.1530059814454,
+              "x" : 1058.9234970092773,
+              "y" : 228.64931676864626
+            },
+            "role" : "AXImage",
+            "text" : "Glen",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 1337,
+              "y" : 234
+            },
+            "role" : "AXImage",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 1607,
+              "y" : 234
+            },
+            "role" : "AXImage",
+            "text" : "Windowpane",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 58,
+              "x" : 257,
+              "y" : 377
+            },
+            "role" : "AXStaticText",
+            "text" : "Gingham",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 42,
+              "x" : 527,
+              "y" : 377
+            },
+            "role" : "AXStaticText",
+            "text" : "Tartan",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16.461861572265633,
+              "width" : 50.414451065063531,
+              "x" : 793.53603820800777,
+              "y" : 378.83301311492914
+            },
+            "role" : "AXStaticText",
+            "text" : "Madras",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 17.076867065429695,
+              "width" : 32.019125747680732,
+              "x" : 1058.9234970092773,
+              "y" : 381.27381616592402
+            },
+            "role" : "AXStaticText",
+            "text" : "Glen",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 85,
+              "x" : 1337,
+              "y" : 377
+            },
+            "role" : "AXStaticText",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 84,
+              "x" : 1607,
+              "y" : 377
+            },
+            "role" : "AXStaticText",
+            "text" : "Windowpane",
+            "text_attribute" : "AXValue"
+          }
+        ],
+        "end_uptime" : 166.0917015,
+        "matching_elements_missing" : false,
+        "pattern_label_count" : 18,
+        "scroll_area_count" : 2,
+        "start_uptime" : 166.01746004166668,
+        "truncated" : false,
+        "visited" : 172
+      }
+    },
+    {
+      "close_return_uptime" : 171.96153445833335,
+      "closed" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 106
+        },
+        "elapsed_seconds" : 2.2061339999999916,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "wait-closed.png",
+        "samples" : 13
+      },
+      "controls" : [
+        {
+          "enabled" : true,
+          "label" : "",
+          "reason" : null,
+          "role" : "adaptive",
+          "target" : "film.film_controls",
+          "value" : "medium",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Drag up or down",
+          "reason" : null,
+          "role" : "swipe",
+          "target" : "film.level",
+          "value" : "0.5",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "First",
+          "reason" : null,
+          "role" : "button",
+          "target" : "film.to_first",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Last",
+          "reason" : null,
+          "role" : "button",
+          "target" : "film.to_last",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "About",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.about",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Choose Poster…",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.choose_poster",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Clear Favorites",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.clear_favorites",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Close",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.close_details",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Crimson",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.crimson",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Dark",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.dark",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Search Patterns",
+          "reason" : null,
+          "role" : "search",
+          "target" : "main_window.find",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Follow the System",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.follow_system",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Light",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.light",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Look",
+          "reason" : null,
+          "role" : "menu",
+          "target" : "main_window.look",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Neon",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.neon",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Open Video",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.open_file",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Film",
+          "reason" : null,
+          "role" : "sidebar",
+          "target" : "main_window.pages",
+          "value" : "Film",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Search “check”",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.search_check",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Delete a Letter",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.search_delete",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Details",
+          "reason" : null,
+          "role" : "switch",
+          "target" : "main_window.show_details",
+          "value" : "false",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Ultramarine",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.ultramarine",
+          "value" : null,
+          "window" : "main#1"
+        }
+      ],
+      "film" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 106
+        },
+        "elapsed_seconds" : 0.69966054166667391,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "wait-film.png",
+        "samples" : 5
+      },
+      "first_second_ax" : [
+        {
+          "elements" : [
+
+          ],
+          "end_uptime" : 174.37800825000002,
+          "matching_elements_missing" : true,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 0,
+          "start_uptime" : 174.16974379166669,
+          "truncated" : true,
+          "visited" : 13
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 158
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 158
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 158
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            }
+          ],
+          "end_uptime" : 174.66621754166667,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 1,
+          "start_uptime" : 174.48165008333334,
+          "truncated" : true,
+          "visited" : 111
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 158
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 158
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 158
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 158
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 181,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 451,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135.01623744964604,
+                "width" : 240.02886657714839,
+                "x" : 720.9855667114258,
+                "y" : 181.99043794631962
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 150.48831768035888,
+                "width" : 267.53478698730476,
+                "x" : 977.23260650634768,
+                "y" : 172.87910181045527
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1261,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1531,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 181,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 451,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.001924438476578,
+                "width" : 49.005893592834468,
+                "x" : 720.9855667114258,
+                "y" : 325.00763761520375
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.835652465820317,
+                "width" : 33.441848373413109,
+                "x" : 977.23260650634768,
+                "y" : 332.28524572372442
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1261,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1531,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 174.83407862500002,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 174.77300966666667,
+          "truncated" : false,
+          "visited" : 172
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 158
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 158
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 158
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 158
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 181,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 451,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135.01623744964604,
+                "width" : 240.02886657714839,
+                "x" : 720.9855667114258,
+                "y" : 181.99043794631962
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 150.48831768035888,
+                "width" : 267.53478698730476,
+                "x" : 977.23260650634768,
+                "y" : 172.87910181045527
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1261,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1531,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 181,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 451,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.001924438476578,
+                "width" : 49.005893592834468,
+                "x" : 720.9855667114258,
+                "y" : 325.00763761520375
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.835652465820317,
+                "width" : 33.441848373413109,
+                "x" : 977.23260650634768,
+                "y" : 332.28524572372442
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1261,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1531,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 175.00564650000001,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 174.93752654166667,
+          "truncated" : false,
+          "visited" : 172
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 158
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 158
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 158
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 158
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 435
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 181,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 451,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135.01623744964604,
+                "width" : 240.02886657714839,
+                "x" : 720.9855667114258,
+                "y" : 181.99043794631962
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 150.48831768035888,
+                "width" : 267.53478698730476,
+                "x" : 977.23260650634768,
+                "y" : 172.87910181045527
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1261,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1531,
+                "y" : 182
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 181,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 451,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.001924438476578,
+                "width" : 49.005893592834468,
+                "x" : 720.9855667114258,
+                "y" : 325.00763761520375
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.835652465820317,
+                "width" : 33.441848373413109,
+                "x" : 977.23260650634768,
+                "y" : 332.28524572372442
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1261,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1531,
+                "y" : 325
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 175.12251154166668,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 175.07889325000002,
+          "truncated" : false,
+          "visited" : 172
+        }
+      ],
+      "inspector" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 106
+        },
+        "elapsed_seconds" : 2.1808703749999836,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "wait-inspector.png",
+        "samples" : 13
+      },
+      "inspector_ax" : {
+        "elements" : [
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 920,
+              "x" : 510,
+              "y" : 158
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          }
+        ],
+        "end_uptime" : 171.84515479166669,
+        "matching_elements_missing" : false,
+        "pattern_label_count" : 0,
+        "scroll_area_count" : 0,
+        "start_uptime" : 171.72311766666667,
+        "truncated" : true,
+        "visited" : 29
+      },
+      "ipc_dir" : "\/tmp\/bern-film-2270-wait",
+      "patterns" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 106
+        },
+        "elapsed_seconds" : 1.452194333333324,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "wait-patterns.png",
+        "samples" : 9
+      },
+      "pid" : 2378,
+      "scenario" : "wait",
+      "select_start_uptime" : 174.16775783333335,
+      "session" : "0ef7ec4f094a00-ui",
+      "settled_ax" : {
+        "elements" : [
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 920,
+              "x" : 510,
+              "y" : 158
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 580,
+              "width" : 210,
+              "x" : 510,
+              "y" : 158
+            },
+            "role" : "AXScrollArea",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 709,
+              "x" : 721,
+              "y" : 158
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 207,
+              "width" : 240,
+              "x" : 955.5,
+              "y" : 158
+            },
+            "role" : "AXScrollArea",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 43,
+              "x" : 745,
+              "y" : 435
+            },
+            "role" : "AXStaticText",
+            "text" : "Gingham",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 31,
+              "x" : 877.20000000000005,
+              "y" : 435
+            },
+            "role" : "AXStaticText",
+            "text" : "Tartan",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 36.000000000000057,
+              "x" : 1009.4000000000001,
+              "y" : 435
+            },
+            "role" : "AXStaticText",
+            "text" : "Madras",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 23,
+              "x" : 1141.5999999999999,
+              "y" : 435
+            },
+            "role" : "AXStaticText",
+            "text" : "Glen",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 63,
+              "x" : 1273.8000000000002,
+              "y" : 435
+            },
+            "role" : "AXStaticText",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 62,
+              "x" : 1406,
+              "y" : 435
+            },
+            "role" : "AXStaticText",
+            "text" : "Windowpane",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 181,
+              "y" : 182
+            },
+            "role" : "AXImage",
+            "text" : "Gingham",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 451,
+              "y" : 182
+            },
+            "role" : "AXImage",
+            "text" : "Tartan",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135.01623744964604,
+              "width" : 240.02886657714839,
+              "x" : 720.9855667114258,
+              "y" : 181.99043794631962
+            },
+            "role" : "AXImage",
+            "text" : "Madras",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 150.48831768035888,
+              "width" : 267.53478698730476,
+              "x" : 977.23260650634768,
+              "y" : 172.87910181045527
+            },
+            "role" : "AXImage",
+            "text" : "Glen",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 1261,
+              "y" : 182
+            },
+            "role" : "AXImage",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 1531,
+              "y" : 182
+            },
+            "role" : "AXImage",
+            "text" : "Windowpane",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 58,
+              "x" : 181,
+              "y" : 325
+            },
+            "role" : "AXStaticText",
+            "text" : "Gingham",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 42,
+              "x" : 451,
+              "y" : 325
+            },
+            "role" : "AXStaticText",
+            "text" : "Tartan",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16.001924438476578,
+              "width" : 49.005893592834468,
+              "x" : 720.9855667114258,
+              "y" : 325.00763761520375
+            },
+            "role" : "AXStaticText",
+            "text" : "Madras",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 17.835652465820317,
+              "width" : 33.441848373413109,
+              "x" : 977.23260650634768,
+              "y" : 332.28524572372442
+            },
+            "role" : "AXStaticText",
+            "text" : "Glen",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 85,
+              "x" : 1261,
+              "y" : 325
+            },
+            "role" : "AXStaticText",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 84,
+              "x" : 1531,
+              "y" : 325
+            },
+            "role" : "AXStaticText",
+            "text" : "Windowpane",
+            "text_attribute" : "AXValue"
+          }
+        ],
+        "end_uptime" : 175.97167658333333,
+        "matching_elements_missing" : false,
+        "pattern_label_count" : 18,
+        "scroll_area_count" : 2,
+        "start_uptime" : 175.92283316666666,
+        "truncated" : false,
+        "visited" : 172
+      }
+    },
+    {
+      "controls" : [
+        {
+          "enabled" : true,
+          "label" : "",
+          "reason" : null,
+          "role" : "adaptive",
+          "target" : "film.film_controls",
+          "value" : "medium",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Drag up or down",
+          "reason" : null,
+          "role" : "swipe",
+          "target" : "film.level",
+          "value" : "0.5",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "First",
+          "reason" : null,
+          "role" : "button",
+          "target" : "film.to_first",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Last",
+          "reason" : null,
+          "role" : "button",
+          "target" : "film.to_last",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "About",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.about",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Choose Poster…",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.choose_poster",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Clear Favorites",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.clear_favorites",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Close",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.close_details",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Crimson",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.crimson",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Dark",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.dark",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Search Patterns",
+          "reason" : null,
+          "role" : "search",
+          "target" : "main_window.find",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Follow the System",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.follow_system",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Light",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.light",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Look",
+          "reason" : null,
+          "role" : "menu",
+          "target" : "main_window.look",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Neon",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.neon",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Open Video",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.open_file",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Film",
+          "reason" : null,
+          "role" : "sidebar",
+          "target" : "main_window.pages",
+          "value" : "Film",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Search “check”",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.search_check",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Delete a Letter",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.search_delete",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Details",
+          "reason" : null,
+          "role" : "switch",
+          "target" : "main_window.show_details",
+          "value" : "false",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Ultramarine",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.ultramarine",
+          "value" : null,
+          "window" : "main#1"
+        }
+      ],
+      "film" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 54
+        },
+        "elapsed_seconds" : 0.78600120833334586,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "direct-film.png",
+        "samples" : 5
+      },
+      "first_second_ax" : [
+        {
+          "elements" : [
+
+          ],
+          "end_uptime" : 179.09730416666667,
+          "matching_elements_missing" : true,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 0,
+          "start_uptime" : 178.97658587500001,
+          "truncated" : true,
+          "visited" : 4
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            }
+          ],
+          "end_uptime" : 179.32680933333336,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 0,
+          "start_uptime" : 179.20286583333333,
+          "truncated" : true,
+          "visited" : 31
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 106
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 181,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 451,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135.01623744964604,
+                "width" : 240.02886657714839,
+                "x" : 720.9855667114258,
+                "y" : 129.99043794631962
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 150.48831768035888,
+                "width" : 267.53478698730476,
+                "x" : 977.23260650634768,
+                "y" : 120.87910181045527
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1261,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1531,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 181,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 451,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.001924438476578,
+                "width" : 49.005893592834468,
+                "x" : 720.9855667114258,
+                "y" : 273.00763761520375
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.835652465820317,
+                "width" : 33.441848373413109,
+                "x" : 977.23260650634768,
+                "y" : 280.28524572372442
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1261,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1531,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 179.54897366666668,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 179.43391250000002,
+          "truncated" : false,
+          "visited" : 174
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 106
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 181,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 451,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135.01623744964604,
+                "width" : 240.02886657714839,
+                "x" : 720.9855667114258,
+                "y" : 129.99043794631962
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 150.48831768035888,
+                "width" : 267.53478698730476,
+                "x" : 977.23260650634768,
+                "y" : 120.87910181045527
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1261,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1531,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 181,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 451,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.001924438476578,
+                "width" : 49.005893592834468,
+                "x" : 720.9855667114258,
+                "y" : 273.00763761520375
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.835652465820317,
+                "width" : 33.441848373413109,
+                "x" : 977.23260650634768,
+                "y" : 280.28524572372442
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1261,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1531,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 179.69061316666668,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 179.65032266666668,
+          "truncated" : false,
+          "visited" : 174
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 106
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 181,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 451,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135.01623744964604,
+                "width" : 240.02886657714839,
+                "x" : 720.9855667114258,
+                "y" : 129.99043794631962
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 150.48831768035888,
+                "width" : 267.53478698730476,
+                "x" : 977.23260650634768,
+                "y" : 120.87910181045527
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1261,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1531,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 181,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 451,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.001924438476578,
+                "width" : 49.005893592834468,
+                "x" : 720.9855667114258,
+                "y" : 273.00763761520375
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.835652465820317,
+                "width" : 33.441848373413109,
+                "x" : 977.23260650634768,
+                "y" : 280.28524572372442
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1261,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1531,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 179.84186233333335,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 179.79204558333333,
+          "truncated" : false,
+          "visited" : 174
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 580,
+                "width" : 210,
+                "x" : 510,
+                "y" : 106
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 709,
+                "x" : 721,
+                "y" : 106
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 207,
+                "width" : 240,
+                "x" : 955.5,
+                "y" : 106
+              },
+              "role" : "AXScrollArea",
+              "text" : "",
+              "text_attribute" : "missing"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 43,
+                "x" : 745,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 31,
+                "x" : 877.20000000000005,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 36.000000000000057,
+                "x" : 1009.4000000000001,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 23,
+                "x" : 1141.5999999999999,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 63,
+                "x" : 1273.8000000000002,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 13,
+                "width" : 62,
+                "x" : 1406,
+                "y" : 383
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 181,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Gingham",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 451,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Tartan",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135.01623744964604,
+                "width" : 240.02886657714839,
+                "x" : 720.9855667114258,
+                "y" : 129.99043794631962
+              },
+              "role" : "AXImage",
+              "text" : "Madras",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 150.48831768035888,
+                "width" : 267.53478698730476,
+                "x" : 977.23260650634768,
+                "y" : 120.87910181045527
+              },
+              "role" : "AXImage",
+              "text" : "Glen",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1261,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 135,
+                "width" : 240,
+                "x" : 1531,
+                "y" : 130
+              },
+              "role" : "AXImage",
+              "text" : "Windowpane",
+              "text_attribute" : "AXDescription"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 58,
+                "x" : 181,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Gingham",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 42,
+                "x" : 451,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Tartan",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16.001924438476578,
+                "width" : 49.005893592834468,
+                "x" : 720.9855667114258,
+                "y" : 273.00763761520375
+              },
+              "role" : "AXStaticText",
+              "text" : "Madras",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 17.835652465820317,
+                "width" : 33.441848373413109,
+                "x" : 977.23260650634768,
+                "y" : 280.28524572372442
+              },
+              "role" : "AXStaticText",
+              "text" : "Glen",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 85,
+                "x" : 1261,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Houndstooth",
+              "text_attribute" : "AXValue"
+            },
+            {
+              "frame" : {
+                "height" : 16,
+                "width" : 84,
+                "x" : 1531,
+                "y" : 273
+              },
+              "role" : "AXStaticText",
+              "text" : "Windowpane",
+              "text_attribute" : "AXValue"
+            }
+          ],
+          "end_uptime" : 179.96128845833334,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 18,
+          "scroll_area_count" : 2,
+          "start_uptime" : 179.92050983333334,
+          "truncated" : false,
+          "visited" : 174
+        }
+      ],
+      "ipc_dir" : "\/tmp\/bern-film-2270-direct",
+      "patterns" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 54
+        },
+        "elapsed_seconds" : 1.1747946666666849,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "direct-patterns.png",
+        "samples" : 8
+      },
+      "pid" : 2542,
+      "scenario" : "direct",
+      "select_start_uptime" : 178.97574837500002,
+      "session" : "46ddd54909ee00-ui",
+      "settled_ax" : {
+        "elements" : [
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 920,
+              "x" : 510,
+              "y" : 106
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 580,
+              "width" : 210,
+              "x" : 510,
+              "y" : 106
+            },
+            "role" : "AXScrollArea",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 709,
+              "x" : 721,
+              "y" : 106
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 207,
+              "width" : 240,
+              "x" : 955.5,
+              "y" : 106
+            },
+            "role" : "AXScrollArea",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 43,
+              "x" : 745,
+              "y" : 383
+            },
+            "role" : "AXStaticText",
+            "text" : "Gingham",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 31,
+              "x" : 877.20000000000005,
+              "y" : 383
+            },
+            "role" : "AXStaticText",
+            "text" : "Tartan",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 36.000000000000057,
+              "x" : 1009.4000000000001,
+              "y" : 383
+            },
+            "role" : "AXStaticText",
+            "text" : "Madras",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 23,
+              "x" : 1141.5999999999999,
+              "y" : 383
+            },
+            "role" : "AXStaticText",
+            "text" : "Glen",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 63,
+              "x" : 1273.8000000000002,
+              "y" : 383
+            },
+            "role" : "AXStaticText",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 13,
+              "width" : 62,
+              "x" : 1406,
+              "y" : 383
+            },
+            "role" : "AXStaticText",
+            "text" : "Windowpane",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 181,
+              "y" : 130
+            },
+            "role" : "AXImage",
+            "text" : "Gingham",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 451,
+              "y" : 130
+            },
+            "role" : "AXImage",
+            "text" : "Tartan",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135.01623744964604,
+              "width" : 240.02886657714839,
+              "x" : 720.9855667114258,
+              "y" : 129.99043794631962
+            },
+            "role" : "AXImage",
+            "text" : "Madras",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 150.48831768035888,
+              "width" : 267.53478698730476,
+              "x" : 977.23260650634768,
+              "y" : 120.87910181045527
+            },
+            "role" : "AXImage",
+            "text" : "Glen",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 1261,
+              "y" : 130
+            },
+            "role" : "AXImage",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 135,
+              "width" : 240,
+              "x" : 1531,
+              "y" : 130
+            },
+            "role" : "AXImage",
+            "text" : "Windowpane",
+            "text_attribute" : "AXDescription"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 58,
+              "x" : 181,
+              "y" : 273
+            },
+            "role" : "AXStaticText",
+            "text" : "Gingham",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 42,
+              "x" : 451,
+              "y" : 273
+            },
+            "role" : "AXStaticText",
+            "text" : "Tartan",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16.001924438476578,
+              "width" : 49.005893592834468,
+              "x" : 720.9855667114258,
+              "y" : 273.00763761520375
+            },
+            "role" : "AXStaticText",
+            "text" : "Madras",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 17.835652465820317,
+              "width" : 33.441848373413109,
+              "x" : 977.23260650634768,
+              "y" : 280.28524572372442
+            },
+            "role" : "AXStaticText",
+            "text" : "Glen",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 85,
+              "x" : 1261,
+              "y" : 273
+            },
+            "role" : "AXStaticText",
+            "text" : "Houndstooth",
+            "text_attribute" : "AXValue"
+          },
+          {
+            "frame" : {
+              "height" : 16,
+              "width" : 84,
+              "x" : 1531,
+              "y" : 273
+            },
+            "role" : "AXStaticText",
+            "text" : "Windowpane",
+            "text_attribute" : "AXValue"
+          }
+        ],
+        "end_uptime" : 180.87159758333334,
+        "matching_elements_missing" : false,
+        "pattern_label_count" : 18,
+        "scroll_area_count" : 2,
+        "start_uptime" : 180.81925900000002,
+        "truncated" : false,
+        "visited" : 172
+      }
+    }
+  ],
+  "commands" : [
+    {
+      "arguments" : [
+        "sessions"
+      ],
+      "end_uptime" : 158.43947383333335,
+      "start_uptime" : 158.33340933333335,
+      "status" : 3,
+      "stderr" : "001-stderr.txt",
+      "stdout" : "001-stdout.json"
+    },
+    {
+      "arguments" : [
+        "sessions"
+      ],
+      "end_uptime" : 158.71930129166668,
+      "start_uptime" : 158.61377645833335,
+      "status" : 0,
+      "stderr" : "002-stderr.txt",
+      "stdout" : "002-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 158.82515504166668,
+      "start_uptime" : 158.71993262500001,
+      "status" : 0,
+      "stderr" : "003-stderr.txt",
+      "stdout" : "003-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 159.08415854166668,
+      "start_uptime" : 158.9839125,
+      "status" : 0,
+      "stderr" : "004-stderr.txt",
+      "stdout" : "004-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 159.35943137500001,
+      "start_uptime" : 159.24581262500001,
+      "status" : 0,
+      "stderr" : "005-stderr.txt",
+      "stdout" : "005-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "end_uptime" : 159.53179225000002,
+      "start_uptime" : 159.49532620833335,
+      "status" : 0,
+      "stderr" : "006-stderr.txt",
+      "stdout" : "006-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 159.57069579166668,
+      "start_uptime" : 159.53260041666667,
+      "status" : 0,
+      "stderr" : "007-stderr.txt",
+      "stdout" : "007-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "activate",
+        "--target",
+        "main_window.light"
+      ],
+      "end_uptime" : 159.67905808333333,
+      "start_uptime" : 159.57274629166668,
+      "status" : 0,
+      "stderr" : "008-stderr.txt",
+      "stdout" : "008-stdout.json"
+    },
+    {
+      "arguments" : [
+        "state"
+      ],
+      "end_uptime" : 159.78469945833334,
+      "start_uptime" : 159.68015933333334,
+      "status" : 0,
+      "stderr" : "009-stderr.txt",
+      "stdout" : "009-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 159.888929875,
+      "start_uptime" : 159.78572137500001,
+      "status" : 0,
+      "stderr" : "010-stderr.txt",
+      "stdout" : "010-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "end_uptime" : 159.95781541666668,
+      "start_uptime" : 159.88998733333335,
+      "status" : 0,
+      "stderr" : "011-stderr.txt",
+      "stdout" : "011-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 160.06371287500002,
+      "start_uptime" : 159.95851341666668,
+      "status" : 0,
+      "stderr" : "012-stderr.txt",
+      "stdout" : "012-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 160.16786304166666,
+      "start_uptime" : 160.06487616666666,
+      "status" : 0,
+      "stderr" : "013-stderr.txt",
+      "stdout" : "013-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "main_window.show_details",
+        "--value",
+        "true"
+      ],
+      "end_uptime" : 161.45853183333335,
+      "start_uptime" : 161.35759325000001,
+      "status" : 0,
+      "stderr" : "014-stderr.txt",
+      "stdout" : "014-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "main_window.show_details",
+        "--value",
+        "false"
+      ],
+      "end_uptime" : 163.88096525,
+      "start_uptime" : 163.77501125000001,
+      "status" : 0,
+      "stderr" : "015-stderr.txt",
+      "stdout" : "015-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Film"
+      ],
+      "end_uptime" : 164.92367358333334,
+      "start_uptime" : 163.88212558333333,
+      "status" : 0,
+      "stderr" : "016-stderr.txt",
+      "stdout" : "016-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "23570c6d08df00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 166.18423779166667,
+      "start_uptime" : 166.09251870833333,
+      "status" : 0,
+      "stderr" : "017-stderr.txt",
+      "stdout" : "017-stdout.json"
+    },
+    {
+      "arguments" : [
+        "sessions"
+      ],
+      "end_uptime" : 166.39842250000001,
+      "start_uptime" : 166.27924616666667,
+      "status" : 3,
+      "stderr" : "018-stderr.txt",
+      "stdout" : "018-stdout.json"
+    },
+    {
+      "arguments" : [
+        "sessions"
+      ],
+      "end_uptime" : 166.67506825000001,
+      "start_uptime" : 166.56986291666666,
+      "status" : 0,
+      "stderr" : "019-stderr.txt",
+      "stdout" : "019-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 166.77532008333336,
+      "start_uptime" : 166.67560845833336,
+      "status" : 0,
+      "stderr" : "020-stderr.txt",
+      "stdout" : "020-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 167.041340625,
+      "start_uptime" : 166.93444695833335,
+      "status" : 0,
+      "stderr" : "021-stderr.txt",
+      "stdout" : "021-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "end_uptime" : 167.25485875000001,
+      "start_uptime" : 167.16924262500001,
+      "status" : 0,
+      "stderr" : "022-stderr.txt",
+      "stdout" : "022-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 167.35845541666669,
+      "start_uptime" : 167.25538295833334,
+      "status" : 0,
+      "stderr" : "023-stderr.txt",
+      "stdout" : "023-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "activate",
+        "--target",
+        "main_window.light"
+      ],
+      "end_uptime" : 167.46538058333334,
+      "start_uptime" : 167.35918429166668,
+      "status" : 0,
+      "stderr" : "024-stderr.txt",
+      "stdout" : "024-stdout.json"
+    },
+    {
+      "arguments" : [
+        "state"
+      ],
+      "end_uptime" : 167.56731895833335,
+      "start_uptime" : 167.46651858333334,
+      "status" : 0,
+      "stderr" : "025-stderr.txt",
+      "stdout" : "025-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 167.675235125,
+      "start_uptime" : 167.56873670833335,
+      "status" : 0,
+      "stderr" : "026-stderr.txt",
+      "stdout" : "026-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "end_uptime" : 167.77531916666669,
+      "start_uptime" : 167.67581758333336,
+      "status" : 0,
+      "stderr" : "027-stderr.txt",
+      "stdout" : "027-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 167.88057766666668,
+      "start_uptime" : 167.775974125,
+      "status" : 0,
+      "stderr" : "028-stderr.txt",
+      "stdout" : "028-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 167.98344045833335,
+      "start_uptime" : 167.88119254166668,
+      "status" : 0,
+      "stderr" : "029-stderr.txt",
+      "stdout" : "029-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "main_window.show_details",
+        "--value",
+        "true"
+      ],
+      "end_uptime" : 169.54188075000002,
+      "start_uptime" : 169.43651466666668,
+      "status" : 0,
+      "stderr" : "030-stderr.txt",
+      "stdout" : "030-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "main_window.show_details",
+        "--value",
+        "false"
+      ],
+      "end_uptime" : 171.95963575000002,
+      "start_uptime" : 171.85138545833334,
+      "status" : 0,
+      "stderr" : "031-stderr.txt",
+      "stdout" : "031-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Film"
+      ],
+      "end_uptime" : 175.21998970833334,
+      "start_uptime" : 174.16870012500002,
+      "status" : 0,
+      "stderr" : "032-stderr.txt",
+      "stdout" : "032-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "0ef7ec4f094a00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 176.041296125,
+      "start_uptime" : 175.97212366666668,
+      "status" : 0,
+      "stderr" : "033-stderr.txt",
+      "stdout" : "033-stdout.json"
+    },
+    {
+      "arguments" : [
+        "sessions"
+      ],
+      "end_uptime" : 176.20247987500002,
+      "start_uptime" : 176.09701762500001,
+      "status" : 3,
+      "stderr" : "034-stderr.txt",
+      "stdout" : "034-stdout.json"
+    },
+    {
+      "arguments" : [
+        "sessions"
+      ],
+      "end_uptime" : 176.47508283333335,
+      "start_uptime" : 176.37549312500002,
+      "status" : 0,
+      "stderr" : "035-stderr.txt",
+      "stdout" : "035-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 176.57713316666667,
+      "start_uptime" : 176.47565145833335,
+      "status" : 0,
+      "stderr" : "036-stderr.txt",
+      "stdout" : "036-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 176.82711870833333,
+      "start_uptime" : 176.73481383333333,
+      "status" : 0,
+      "stderr" : "037-stderr.txt",
+      "stdout" : "037-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "end_uptime" : 177.06755920833334,
+      "start_uptime" : 176.96254670833335,
+      "status" : 0,
+      "stderr" : "038-stderr.txt",
+      "stdout" : "038-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 177.16679904166668,
+      "start_uptime" : 177.06872829166667,
+      "status" : 0,
+      "stderr" : "039-stderr.txt",
+      "stdout" : "039-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "ui",
+        "activate",
+        "--target",
+        "main_window.light"
+      ],
+      "end_uptime" : 177.27513916666669,
+      "start_uptime" : 177.16756241666667,
+      "status" : 0,
+      "stderr" : "040-stderr.txt",
+      "stdout" : "040-stdout.json"
+    },
+    {
+      "arguments" : [
+        "state"
+      ],
+      "end_uptime" : 177.38208912500002,
+      "start_uptime" : 177.27567712500002,
+      "status" : 0,
+      "stderr" : "041-stderr.txt",
+      "stdout" : "041-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 177.48821170833335,
+      "start_uptime" : 177.38284804166668,
+      "status" : 0,
+      "stderr" : "042-stderr.txt",
+      "stdout" : "042-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "end_uptime" : 177.59185720833335,
+      "start_uptime" : 177.488935,
+      "status" : 0,
+      "stderr" : "043-stderr.txt",
+      "stdout" : "043-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 177.69392833333333,
+      "start_uptime" : 177.59297333333333,
+      "status" : 0,
+      "stderr" : "044-stderr.txt",
+      "stdout" : "044-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 177.80058341666668,
+      "start_uptime" : 177.69482104166667,
+      "status" : 0,
+      "stderr" : "045-stderr.txt",
+      "stdout" : "045-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Film"
+      ],
+      "end_uptime" : 180.02902425000002,
+      "start_uptime" : 178.97609166666669,
+      "status" : 0,
+      "stderr" : "046-stderr.txt",
+      "stdout" : "046-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "46ddd54909ee00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 180.97323533333335,
+      "start_uptime" : 180.872046125,
+      "status" : 0,
+      "stderr" : "047-stderr.txt",
+      "stdout" : "047-stdout.json"
+    }
+  ],
+  "displays" : [
+    {
+      "frame_points" : "{{0, 0}, {1920, 1080}}",
+      "scale" : 1
+    }
+  ],
+  "expected_os_major" : 14,
+  "followup_sequence" : "none",
+  "harness_sha" : "e44cec24fcc54030d52e2e671aec2dd62c13b7c1",
+  "inactive_capture_samples" : [
+
+  ],
+  "ipc_directories" : [
+    "\/tmp\/bern-film-2270-immediate",
+    "\/tmp\/bern-film-2270-wait",
+    "\/tmp\/bern-film-2270-direct"
+  ],
+  "observation_contract" : "Original active visual capture contract.",
+  "observation_mode" : "active",
+  "os" : "Version 14.8.9 (Build 23J631)",
+  "requested_scenario" : "all",
+  "sampling_scope" : "First second after Film select CLI launch, including mounting latency; actual AX-walk timestamps, no assumed sampling frequency.",
+  "scope" : "Light only; each selected scenario uses a fresh process, exact app. AX frames are global screen points. No draft\/target\/nearest introspection; visible labels do not prove a binding write.",
+  "screen_recording_preflight" : true,
+  "source_sha" : "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "startup_readiness" : [
+    {
+      "deadline_uptime" : 173.33284333333333,
+      "pid" : 2271,
+      "samples" : [
+        {
+          "own_native_window" : null,
+          "own_native_window_alpha" : 0,
+          "uptime" : 158.82791658333335,
+          "windows" : [
+            {
+              "actions" : [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by" : "System",
+              "focused" : false,
+              "frame" : {
+                "height" : 600,
+                "width" : 900,
+                "x" : 510,
+                "y" : 210
+              },
+              "kind" : "main",
+              "lifecycle" : "Open",
+              "presentation" : "Native",
+              "size" : "Normal",
+              "version" : 1,
+              "visibility" : "Visible",
+              "window" : "main#1"
+            }
+          ]
+        },
+        {
+          "own_native_window" : null,
+          "own_native_window_alpha" : 0,
+          "uptime" : 159.08550620833336,
+          "windows" : [
+            {
+              "actions" : [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by" : "System",
+              "focused" : false,
+              "frame" : {
+                "height" : 600,
+                "width" : 900,
+                "x" : 510,
+                "y" : 210
+              },
+              "kind" : "main",
+              "lifecycle" : "Open",
+              "presentation" : "Native",
+              "size" : "Normal",
+              "version" : 1,
+              "visibility" : "Visible",
+              "window" : "main#1"
+            }
+          ]
+        },
+        {
+          "own_native_window" : {
+            "kCGWindowAlpha" : 1,
+            "kCGWindowBounds" : {
+              "Height" : 652,
+              "Width" : 900,
+              "X" : 510,
+              "Y" : 158
+            },
+            "kCGWindowIsOnscreen" : true,
+            "kCGWindowLayer" : 0,
+            "kCGWindowMemoryUsage" : 2176,
+            "kCGWindowName" : "Patterns",
+            "kCGWindowNumber" : 68,
+            "kCGWindowOwnerName" : "Gallery",
+            "kCGWindowOwnerPID" : 2271,
+            "kCGWindowSharingState" : 1,
+            "kCGWindowStoreType" : 1
+          },
+          "own_native_window_alpha" : 1,
+          "uptime" : 159.36126745833334,
+          "windows" : [
+            {
+              "actions" : [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by" : "System",
+              "focused" : false,
+              "frame" : {
+                "height" : 600,
+                "width" : 900,
+                "x" : 510,
+                "y" : 210
+              },
+              "kind" : "main",
+              "lifecycle" : "Open",
+              "presentation" : "Native",
+              "size" : "Normal",
+              "version" : 1,
+              "visibility" : "Visible",
+              "window" : "main#1"
+            }
+          ]
+        }
+      ],
+      "scenario" : "immediate"
+    },
+    {
+      "deadline_uptime" : 181.27883791666667,
+      "pid" : 2378,
+      "samples" : [
+        {
+          "own_native_window" : null,
+          "own_native_window_alpha" : 0,
+          "uptime" : 166.77630450000001,
+          "windows" : [
+            {
+              "actions" : [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by" : "System",
+              "focused" : false,
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 158
+              },
+              "kind" : "main",
+              "lifecycle" : "Open",
+              "presentation" : "Native",
+              "size" : "Normal",
+              "version" : 1,
+              "visibility" : "Hidden",
+              "window" : "main#1"
+            }
+          ]
+        },
+        {
+          "own_native_window" : {
+            "kCGWindowAlpha" : 1,
+            "kCGWindowBounds" : {
+              "Height" : 616,
+              "Width" : 920,
+              "X" : 510,
+              "Y" : 158
+            },
+            "kCGWindowIsOnscreen" : true,
+            "kCGWindowLayer" : 0,
+            "kCGWindowMemoryUsage" : 2176,
+            "kCGWindowName" : "Patterns",
+            "kCGWindowNumber" : 75,
+            "kCGWindowOwnerName" : "Gallery",
+            "kCGWindowOwnerPID" : 2378,
+            "kCGWindowSharingState" : 1,
+            "kCGWindowStoreType" : 1
+          },
+          "own_native_window_alpha" : 1,
+          "uptime" : 167.04248404166668,
+          "windows" : [
+            {
+              "actions" : [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by" : "System",
+              "focused" : false,
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 158
+              },
+              "kind" : "main",
+              "lifecycle" : "Open",
+              "presentation" : "Native",
+              "size" : "Normal",
+              "version" : 1,
+              "visibility" : "Hidden",
+              "window" : "main#1"
+            }
+          ]
+        }
+      ],
+      "scenario" : "wait"
+    },
+    {
+      "deadline_uptime" : 191.09671379166667,
+      "pid" : 2542,
+      "samples" : [
+        {
+          "own_native_window" : null,
+          "own_native_window_alpha" : 0,
+          "uptime" : 176.57855575000002,
+          "windows" : [
+            {
+              "actions" : [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by" : "System",
+              "focused" : false,
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 106
+              },
+              "kind" : "main",
+              "lifecycle" : "Open",
+              "presentation" : "Native",
+              "size" : "Normal",
+              "version" : 1,
+              "visibility" : "Hidden",
+              "window" : "main#1"
+            }
+          ]
+        },
+        {
+          "own_native_window" : {
+            "kCGWindowAlpha" : 1,
+            "kCGWindowBounds" : {
+              "Height" : 616,
+              "Width" : 920,
+              "X" : 510,
+              "Y" : 106
+            },
+            "kCGWindowIsOnscreen" : true,
+            "kCGWindowLayer" : 0,
+            "kCGWindowMemoryUsage" : 2176,
+            "kCGWindowName" : "Patterns",
+            "kCGWindowNumber" : 82,
+            "kCGWindowOwnerName" : "Gallery",
+            "kCGWindowOwnerPID" : 2542,
+            "kCGWindowSharingState" : 1,
+            "kCGWindowStoreType" : 1
+          },
+          "own_native_window_alpha" : 1,
+          "uptime" : 176.82943004166668,
+          "windows" : [
+            {
+              "actions" : [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by" : "System",
+              "focused" : false,
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 106
+              },
+              "kind" : "main",
+              "lifecycle" : "Open",
+              "presentation" : "Native",
+              "size" : "Normal",
+              "version" : 1,
+              "visibility" : "Hidden",
+              "window" : "main#1"
+            }
+          ]
+        }
+      ],
+      "scenario" : "direct"
+    }
+  ],
+  "success" : true,
+  "system_preferences" : {
+    "increase_contrast" : false,
+    "reduce_motion" : false,
+    "reduce_transparency" : false
+  },
+  "variant" : "port"
+}

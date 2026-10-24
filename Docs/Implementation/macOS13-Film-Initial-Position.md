@@ -127,3 +127,22 @@ wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001
 该次使用新增startup gate的collector3f434/79da4a84，而旧14参考使用早期版本，因此补了一次[旧f9/current-harness控制run40072273422](../Evidence/macOS14-film-f9-current-harness-40072273422/README.md)。同一当前collector与harness25e下，旧f9的immediate仍为Glen565.0，三组全部6图的frame都与其旧observer记录逐值相同；wait/direct也与e48/current14一致。故startup gate变化单独不足以解释已观测677，但每个跨源码/构建/作业序列只有一次，尚不能给具体补丁或原生机制定因。
 
 两次current14的后续resize记录均从900宽改为920×668，但启动ready采样时e48的CG外框为900×652、f9为900×600；两者wait的ready均920×616、direct均920×668。不能把不同阶段简化成完全相同的首开高度或恢复历史。首个完整AX只出现在Film选择后约.498/.873秒，均已见709/240，前段截断，不能补造当时viewport/insets。13clean的601相对旧14immediate差35/36pt，相对本次e48/14差−76pt，应保留各自证据身份。下一小步是同一14 VM内、独立bundle恢复历史、同observer的有界A/B/B/A配对，先验证差异可重复性；不设补偿常数，不提前改default/nearest或移植到11。
+
+## 同机 ABBA：立即关闭没有固定源码分组
+
+上述配对现已完成。[首次采集40073935416](../Evidence/macOS14-film-abba-attempt-40073935416/README.md)在A1的稳定PNG后，因末态AX遍历超过原120毫秒预算而截断；其余三组未启动，不能形成ABBA。只将这一个末态walk的预算改为已有followup使用的2秒，并更新observer锁定SHA；初始1秒采样、启动、交互和稳定PNG的顺序保持。更长末态walk可能影响后续命令的时刻，故两次运行分开保留。
+
+[完整采集40074197486](../Evidence/macOS14-film-abba-40074197486/README.md)在同一14 VM内按f9→e48→e48→f9运行，使用4个独立新bundleID、12个不同PID/session；normal、active、完整AX六图及稳定buffer合同全部通过。原应用不重建、无native logger，原exact全成员末尾复验相同。495项原始hash及离线总清单500项均由父任务独立复核。
+
+| 组 | immediate Glen中心x / 宽度 | wait与direct Glen中心x / 宽度 | immediate startup-ready尺寸 |
+|---|---|---|---|
+| A1 / f9 | 677 / 256.153006 | 601 / 267.534787 | 900×600 |
+| B1 / e48 | 565 / 268.799753 | 601 / 267.534787 | 900×600 |
+| B2 / e48 | 677 / 256.153006 | 601 / 267.534787 | 900×652 |
+| A2 / f9 | 662 / 259.145764 | 601 / 267.534787 | 900×600 |
+
+四组wait/direct的全部六张图片x/y/width/height逐值相同，最大差0。immediate同源重复自身变化：A1/A2的frame分量最大差16.496379点，B1/B2为118.323373点；跨源码A1/B2却完全相同。因此本轮不支持此前“f9固定565、e48固定677”的映射，不为这个未重复的关联追加9dd中间构建；也不能据四次样本断言源码对分布绝对无影响。
+
+900/920/920的ready宽度均成立，但高度及恢复过程并不恒定；同样900×600已对应三个不同末态。不能从单个ready样本确定原因，仍缺首次窗口恢复/Inspector退出到Film安装期间的native clip/insets/TargetContext观测。13clean在wait/direct的已测几何等效结论保留；immediate、首次Last、加宽、生命周期与物理手势仍未通过。本次没有进行跨组像素/ICC比较。
+
+[源码差异审查](../Evidence/macOS14-film-source-delta-f9-e48/README.md)另列明14仍具有新增Environment属性、共享闭包及Picture结构差异；13-only owner动作不等于14视图/存储无变化。这些是源码事实，并非对本次可变落点的原因认定。远端已清除自有应用、observer/cache及下载目录，未遗留自有进程；本机原始证据只保留一份。

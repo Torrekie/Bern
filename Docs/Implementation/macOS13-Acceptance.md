@@ -125,3 +125,11 @@ GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的�
 ## e48原件在14的补充状态
 
 [新14复核40071892408](../Evidence/macOS14-film-clean-e48fff46-40071892408/README.md)成功且wait/direct全部几何保持；immediate却为Glen677，而旧参考为565/566、13clean为601。为控制新增startup gate，补做[旧f9同collector40072273422](../Evidence/macOS14-film-f9-current-harness-40072273422/README.md)，其immediate仍565，全部frames与旧f9参考一致。当前不能宣称e48的14三路径均保持，也不据单次跨job观测锁定具体源代码原因。即刻关闭路径、firstLast与resize仍未通过，下一门槛为同VM配对与恢复历史控制；goal继续active，后续11/ObjC/iOS阶段保持暂停。
+
+## 同机 Film ABBA 补充验收
+
+[完整run40074197486](../Evidence/macOS14-film-abba-40074197486/README.md)现已完成f9→e48→e48→f9四组、12个fresh进程、72个完整末态图片frame；normal/active/稳定buffer/独立身份/签名与清理门槛均通过。wait/direct八场景的全部六图几何逐值相同。immediate的Glen中心依次为677、565、677、662，两个源码各自重复也变化，未形成固定源码分组；因此此前跨job565/677差异不能指定为e48的固定源码效应，也不为该未重复关联增加中间构建。这不证明源码绝无影响，更不将13的immediate601标记为等效。
+
+ready宽度900/920/920满足，但高度/恢复时序不同；所有末态捕获才统一920×668。首次Last、resize、首次恢复过程及物理手势仍未验收，跨组像素/ICC本轮未测。详见[Film事实与边界](macOS13-Film-Initial-Position.md)。[源码审查](../Evidence/macOS14-film-source-delta-f9-e48/README.md)确认新增属性/共享闭包会改变14结构，不能只凭runtime guard宣称14结构无差异；本轮未指定根因。
+
+[首次ABBA失败记录](../Evidence/macOS14-film-abba-attempt-40073935416/README.md)完整保留：A1稳定截图后末态AX120ms截断，B1/B2/A2未开始。随后仅把该唯一末态walk改为既有followup的2秒预算，完整六图门槛不变，得到本轮完整结果；两轮不拼接。父任务独立核验失败raw166项、成功raw495项及各自离线总清单。远端已清除自有scratch/download/cache，本机work路径改为唯一归档的符号链接，没有重复保留应用。
