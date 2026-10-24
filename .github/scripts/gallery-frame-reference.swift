@@ -46,26 +46,26 @@ func pause(_ seconds: Double, active: Bool = true) throws {
     let end = Date().addingTimeInterval(seconds)
     repeat { try healthy(active); RunLoop.current.run(until:Date().addingTimeInterval(0.02)) } while Date() < end
 }
-func cli(_ words: [String], session scoped: Bool = false, allowFailure: Bool = false) throws -> Any {
+func cli(_ words: [String], session scoped: Bool = false, allowFailure: Bool = false, until stopAt: Date? = nil) throws -> Any {
     let stem = String(format:"%03d",commands.count+1), out = output.appendingPathComponent(stem+"-stdout.json"), err = output.appendingPathComponent(stem+"-stderr.txt")
     _ = fm.createFile(atPath:out.path,contents:nil); _ = fm.createFile(atPath:err.path,contents:nil)
     let oh = try FileHandle(forWritingTo:out), eh = try FileHandle(forWritingTo:err); defer { oh.closeFile(); eh.closeFile() }
     let p = Process(); p.executableURL = cliURL; p.arguments = (scoped ? ["--session",session] : []) + words; p.environment = env
-    p.standardOutput = oh; p.standardError = eh; try p.run(); defer { if p.isRunning { kill(p.processIdentifier,SIGKILL) } }; let end = min(deadline,Date().addingTimeInterval(8))
+    p.standardOutput = oh; p.standardError = eh; try p.run(); defer { if p.isRunning { kill(p.processIdentifier,SIGKILL) } }; let end = min(min(deadline,Date().addingTimeInterval(8)),stopAt ?? deadline)
     while p.isRunning && Date() < end { try pause(0.02,active:process == nil || mainID != 0) }
     if p.isRunning { kill(p.processIdentifier,SIGKILL); throw Failure(description:"CLI timeout: \(words)") }
     commands.append(["arguments":p.arguments ?? [],"status":p.terminationStatus,"stdout":out.lastPathComponent,"stderr":err.lastPathComponent]); try save()
     if p.terminationStatus != 0 { if allowFailure { return NSNull() }; throw Failure(description:"CLI failed: \(words); see \(err.lastPathComponent)") }
     let data = try Data(contentsOf:out); return data.isEmpty ? NSNull() : try JSONSerialization.jsonObject(with:data,options:.fragmentsAllowed)
 }
-func command(_ id: String, _ params: [String:String] = [:], scoped: Bool = false) throws -> Any {
+func command(_ id: String, _ params: [String:String] = [:], scoped: Bool = false, until stopAt: Date? = nil) throws -> Any {
     let found = specs.filter { $0["id"] as? String == id }; try require(found.count == 1,"Missing/ambiguous catalog command \(id)")
     let spec = found[0], names = (spec["params"] as? [[String:Any]] ?? []).compactMap { $0["name"] as? String }
     guard let words = (spec["external"] as? [String:Any])?["cli"] as? [String] else { throw Failure(description:"Missing CLI catalog words for \(id)") }
     try require(Set(names) == Set(params.keys),"Catalog parameters differ for \(id)")
-    return try cli(words + names.flatMap { ["--"+$0.replacingOccurrences(of:"_",with:"-"),params[$0]!] },session:scoped)
+    return try cli(words + names.flatMap { ["--"+$0.replacingOccurrences(of:"_",with:"-"),params[$0]!] },session:scoped,until:stopAt)
 }
-func controls() throws -> [[String:Any]] { try command("ui.inspect",scoped:true) as? [[String:Any]] ?? [] }
+func controls(until stopAt: Date? = nil) throws -> [[String:Any]] { try command("ui.inspect",scoped:true,until:stopAt) as? [[String:Any]] ?? [] }
 func control(_ rows: [[String:Any]], _ suffix: String, _ role: String) throws -> [String:Any] {
     let found = rows.filter { ($0["target"] as? String)?.hasSuffix(suffix) == true && $0["role"] as? String == role }
     try require(found.count == 1 && found.first?["enabled"] as? Bool == true,"Expected one enabled \(role) \(suffix)"); return found[0]
@@ -202,8 +202,19 @@ do {
     try require(!volumeTarget.isEmpty,"Frame volume did not mount; input heartbeat did not wake it")
     guard let values = (try cli(["state"]) as? [String:Any])?["values"] as? [String:Any], let source = (values["clip"] as? [String:Any])?["url"] as? String else { throw Failure(description:"Missing engine clip source") }
     sourceURL = source; try require(values["appearance"] as? String == "Light","Appearance did not commit")
-    let players = try command("media.players") as? [[String:Any]] ?? [], matched = players.filter { $0["owner"] as? String == main && $0["source_bound"] as? Bool == true && ($0["source"] as? [String:Any])?["url"] as? String == source }
-    try require(matched.count == 1,"Cannot identify Frame player from media.players"); playerID = matched[0]["player_id"] as! String; sourceVersion = integer(matched[0]["source_version"])
+    // BernVideo's source-bound identity is window.id + "/" + target in both locked builds.
+    // Its asynchronous .task can create/bind the player after control.onAppear registers the UI.
+    let expectedPlayer = main+"/"+clipTarget, discoveryEnd = min(deadline,Date().addingTimeInterval(8))
+    repeat {
+        let rows = try controls(until:discoveryEnd), volume = try control(rows,".volume","popover_button"), clip = try control(rows,".clip","video")
+        try require(volume["target"] as? String == volumeTarget && clip["target"] as? String == clipTarget && volume["value"] as? String == "closed","Frame unmounted or changed while waiting for its player")
+        let players = try command("media.players",until:discoveryEnd) as? [[String:Any]] ?? [], matched = players.filter { $0["player_id"] as? String == expectedPlayer && $0["owner"] as? String == main && $0["source_bound"] as? Bool == true && ($0["source"] as? [String:Any])?["url"] as? String == source }
+        stages.append(["stage":"player-discovery","elapsed":Date().timeIntervalSince(began),"expected_player_id":expectedPlayer,"volume":volume,"matching_players":matched.count]); try save()
+        try require(matched.count <= 1,"Ambiguous Frame player"); try require(Date() < discoveryEnd,"Frame player did not finish binding within 8 seconds")
+        if let found = matched.first { playerID = found["player_id"] as! String; sourceVersion = integer(found["source_version"]); break }
+        try pause(min(0.1,discoveryEnd.timeIntervalSinceNow))
+    } while Date() < discoveryEnd
+    try require(!playerID.isEmpty,"Frame player did not finish binding within 8 seconds")
     try require(sourceVersion != nil,"Invalid media source_version")
     let videoReady = Date().addingTimeInterval(8)
     while try player()["phase"] as? String != "Ready" { try require(Date() < videoReady,"Clip never reached Ready"); try pause(0.1) }

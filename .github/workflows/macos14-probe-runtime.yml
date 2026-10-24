@@ -35,6 +35,26 @@ jobs:
           run-id: ${{ inputs.build_run }}
           github-token: ${{ github.token }}
           path: build
+      - name: Set and verify the ordinary reference profile on this disposable runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/runtime profile-work
+          trap 'rm -rf profile-work' EXIT
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          defaults write com.apple.universalaccess increaseContrast -bool false
+          killall cfprefsd || true
+          xcrun swift -module-cache-path profile-work/modules -e '
+          import AppKit
+          import Foundation
+          let flags = ["reduce_motion": NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
+                       "reduce_transparency": NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,
+                       "increase_contrast": NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast]
+          guard flags.values.allSatisfy({ !$0 }) else { fputs("Ordinary reference profile did not take effect\n", stderr); exit(1) }
+          let record: [String: Any] = ["appearance_profile": "normal", "effective_flags": flags]
+          FileHandle.standardOutput.write(try JSONSerialization.data(withJSONObject: record, options: [.prettyPrinted, .sortedKeys]))
+          ' > evidence/runtime/profile.json
       - name: Verify and run the exact retained ARM64 binary
         env:
           PROBE_KIND: ${{ inputs.probe }}
@@ -88,10 +108,13 @@ jobs:
           python3 - <<'PY'
           import json, os
           from pathlib import Path
+          profile = json.loads(Path('evidence/runtime/profile.json').read_text())
+          assert profile['appearance_profile'] == 'normal' and all(v is False for v in profile['effective_flags'].values())
           d = json.loads(Path('evidence/runtime/report.json').read_text())
           assert d['success'] is True, d.get('error')
           assert d.get('probe_source_sha', d.get('harness_sha')) == os.environ['BERN_PROBE_SHA']
           if os.environ['PROBE_KIND'] == 'image':
+              assert d['system_preferences'] == profile['effective_flags']
               assert len(d['cases']) == 9
               assert all(c['three_image_cards_pixel_detection_complete'] and len(c['phases']) == 3 for c in d['cases'])
               assert len(list(Path('evidence/runtime').glob('*.png'))) == 27
