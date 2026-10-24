@@ -111,6 +111,58 @@ func axFrame(_ e: AXUIElement) throws -> CGRect {
     try require(AXValueGetValue(p as! AXValue,.cgPoint,&point) && AXValueGetValue(s as! AXValue,.cgSize,&size),"Invalid AX geometry")
     try require(size.width > 0 && size.height > 0,"Empty AX frame"); return CGRect(origin:point,size:size)
 }
+func axFailure(_ id: String, role: String?, found: Int, visited: Int, queued: Int, hashes: Int) throws {
+    guard let p = process else { return }; let root = AXUIElementCreateApplication(p.processIdentifier), end = min(deadline,Date().addingTimeInterval(12))
+    let timeoutCode = AXUIElementSetMessagingTimeout(root,0.25).rawValue
+    func read(_ e: AXUIElement, _ key: String, _ codes: inout [String:Int32]) -> CFTypeRef? {
+        var value: CFTypeRef?; let code = AXUIElementCopyAttributeValue(e,key as CFString,&value); codes[key] = code.rawValue; return code == .success ? value : nil
+    }
+    func summary(_ e: AXUIElement) -> ([String:Any],[AXUIElement],[AXUIElement],AXUIElement?) {
+        var pid: pid_t = 0; let pidCode = AXUIElementGetPid(e,&pid).rawValue
+        var node: [String:Any] = ["pid":pid,"pid_code":pidCode], codes = [String:Int32]()
+        guard pidCode == 0 && pid == p.processIdentifier else { node["skipped_other_process"] = true; return (node,[],[],nil) }
+        for key in [kAXRoleAttribute,kAXSubroleAttribute,kAXIdentifierAttribute,kAXTitleAttribute,kAXDescriptionAttribute] {
+            node[key] = (read(e,key,&codes) as? String).map { String($0.prefix(240)) } ?? ""
+        }
+        let pos = read(e,kAXPositionAttribute,&codes), size = read(e,kAXSizeAttribute,&codes); var point = CGPoint.zero, dimensions = CGSize.zero
+        if let pos = pos, let size = size, CFGetTypeID(pos) == AXValueGetTypeID(), CFGetTypeID(size) == AXValueGetTypeID(),
+           AXValueGetValue(pos as! AXValue,.cgPoint,&point), AXValueGetValue(size as! AXValue,.cgSize,&dimensions) { node["frame_screen_top_left_points"] = rect(CGRect(origin:point,size:dimensions)) }
+        var actions: CFArray?; codes["AXActionNames"] = AXUIElementCopyActionNames(e,&actions).rawValue; node["actions"] = actions as? [String] ?? []
+        let children = read(e,kAXChildrenAttribute,&codes) as? [AXUIElement] ?? [], windows = read(e,kAXWindowsAttribute,&codes) as? [AXUIElement] ?? []
+        let rawParent = read(e,kAXParentAttribute,&codes), parent = rawParent.flatMap { CFGetTypeID($0) == AXUIElementGetTypeID() ? ($0 as! AXUIElement) : nil }
+        node["return_codes"] = codes; node["children_count"] = children.count; node["windows_count"] = windows.count
+        return (node,children,windows,parent)
+    }
+    // This failure-only walk uses CFEqual identities: equal hash values need not identify equal AX objects.
+    var queue = [root], index = 0, elements = [AXUIElement](), nodes = [[String:Any]](), childEdges = [[AXUIElement]](), windowEdges = [[AXUIElement]]()
+    var matching = [[String:Any]](), collisions = 0, hashBuckets = [CFHashCode:[AXUIElement]](), queueClipped = false
+    while index < queue.count && index < 4000 && nodes.count < 512 && Date() < end {
+        let e = queue[index]; index += 1; if elements.contains(where:{ CFEqual($0,e) }) { continue }
+        let hash = CFHash(e); if let bucket = hashBuckets[hash], bucket.contains(where:{ !CFEqual($0,e) }) { collisions += 1 }; hashBuckets[hash,default:[]].append(e)
+        let (details,children,windows,parent) = summary(e); var node = details; node["index"] = nodes.count; node["elapsed"] = Date().timeIntervalSince(began)
+        elements.append(e); childEdges.append(children); windowEdges.append(windows)
+        if node[kAXIdentifierAttribute] as? String == id {
+            var ancestors = [[String:Any]](), current = parent, lineage = [e]
+            for _ in 0..<4 {
+                guard let a = current, !lineage.contains(where:{ CFEqual($0,a) }), Date() < end else { break }; lineage.append(a)
+                let (detail,_,_,next) = summary(a); ancestors.append(detail); current = next
+            }
+            var target = node, related = [[String:Any]](); target["ancestors"] = ancestors
+            for child in children.prefix(32) { if Date() >= end { break }; related.append(summary(child).0); if related.count % 4 == 0 { RunLoop.current.run(until:Date().addingTimeInterval(0.001)) } }
+            target["related_children"] = related; target["related_children_truncated"] = children.count > related.count; matching.append(target)
+        }
+        nodes.append(node); let additions = Array((children+windows).prefix(max(0,4000-queue.count)))
+        if additions.count < children.count+windows.count { queueClipped = true }; queue += additions
+        if nodes.count % 8 == 0 { RunLoop.current.run(until:Date().addingTimeInterval(0.001)) }
+    }
+    for i in nodes.indices {
+        nodes[i]["children_indices"] = childEdges[i].map { child in elements.firstIndex(where:{ CFEqual($0,child) }) ?? -1 }
+        nodes[i]["windows_indices"] = windowEdges[i].map { child in elements.firstIndex(where:{ CFEqual($0,child) }) ?? -1 }
+    }
+    report["ax_failure"] = ["target":id,"required_role":role ?? "any","found_count":found,"original_visited":visited,"original_queued":queued,"original_unique_hashes":hashes,"original_truncated":visited >= 4000,
+        "timeout_set_code":timeoutCode,"diagnostic_visited":index,"diagnostic_nodes":nodes.count,"diagnostic_truncated":queueClipped || index < queue.count,"diagnostic_limits":["nodes":512,"queue":4000,"seconds":12],"hash_collisions_observed":collisions,"matching_identifier_nodes":matching,"tree":nodes]
+    try save()
+}
 func axFind(_ id: String, role: String? = nil) throws -> AXUIElement {
     guard let p = process else { throw Failure(description:"No target") }
     var queue = [AXUIElementCreateApplication(p.processIdentifier)], seen = Set<CFHashCode>(), found = [AXUIElement](), index = 0
@@ -119,7 +171,8 @@ func axFind(_ id: String, role: String? = nil) throws -> AXUIElement {
         if attribute(e,kAXIdentifierAttribute) as? String == id && (role == nil || attribute(e,kAXRoleAttribute) as? String == role) { found.append(e) }
         queue += attribute(e,kAXChildrenAttribute) as? [AXUIElement] ?? []; queue += attribute(e,kAXWindowsAttribute) as? [AXUIElement] ?? []
     }
-    try require(index < 4000 && found.count == 1,"Missing/ambiguous AX identifier \(id) role \(role ?? "any")"); return found[0]
+    if index >= 4000 || found.count != 1 { try axFailure(id,role:role,found:found.count,visited:index,queued:queue.count,hashes:seen.count) }
+    try require(index < 4000 && found.count == 1,"Missing/ambiguous AX identifier \(id) role \(role ?? "any"); found=\(found.count), visited=\(index)"); return found[0]
 }
 func geometry(_ id: String, role: String? = nil) throws -> [String:Any] {
     let e = try axFind(id,role:role), r = try axFrame(e), main = try bounds(mainWindow()); var actions: CFArray?
