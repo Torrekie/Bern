@@ -65,7 +65,7 @@ def macho(path):
         signature_command_blob_excluded_sha256=strict,
         signature_storage_sizes_normalized_sha256=sha(normalized[:lo]+normalized[hi:start]+normalized[end:]))
 
-OBSERVER = '79da4a84909a07a6d975cf7606a0cae6d4c22c1c1979a3fdbb0ce0e29aeb0755'
+OBSERVER = '6c4d5c93c9331ba4dd6427aa18799b6a1e720b6e2e006e036fb908ced4f9e635'
 CLI = '31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5'
 SOURCES = {
     'A': dict(source='f9e08b1d55bed4b9d880b19934abe48281057bb3', run=39991406873,
