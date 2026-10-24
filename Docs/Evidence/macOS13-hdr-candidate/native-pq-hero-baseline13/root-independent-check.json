@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "different_pixels": 159539,
+      "max": 164,
+      "phase": "progress-0",
+      "roi": "flight-named",
+      "srgb_mae": 18.377760416666668
+    },
+    {
+      "different_pixels": 159539,
+      "max": 164,
+      "phase": "progress-0",
+      "roi": "flight-custom",
+      "srgb_mae": 18.38572048611111
+    },
+    {
+      "different_pixels": 159539,
+      "max": 164,
+      "phase": "progress-1",
+      "roi": "flight-named",
+      "srgb_mae": 18.377760416666668
+    },
+    {
+      "different_pixels": 159539,
+      "max": 164,
+      "phase": "progress-1",
+      "roi": "flight-custom",
+      "srgb_mae": 18.38572048611111
+    }
+  ],
+  "input_report_sha256": "9aa77ee8e9b4655ada3445c6aebe69986f87b729617a293811bba32a00a4cf75",
+  "method": "Parent independently decoded original PNGs and normalized their own ICC through Pillow/LittleCMS; integer ROI bounds, PNG SHA, body==oracle, recorded acquisition contracts and nonzero flight difference checked. Runtime collection was not repeated.",
+  "original_source_alpha_extrema": [
+    255,
+    255
+  ],
+  "original_source_size": [
+    640,
+    360
+  ],
+  "scope": "Fixed endpoint measurement only; no unique cause or full flight pass.",
+  "timestamp_utc": "2026-10-24T08:58:18.802024+00:00"
+}

@@ -141,3 +141,11 @@ ready宽度900/920/920满足，但高度/恢复时序不同；所有末态捕获
 首轮因可选AX属性错误而中止于A首页，B未启动；原68项证据保留。修订采集器区分严格Role/Children树完整性与可选属性错误，2秒AX预算和动作/PNG顺序不动；v2完整134项原始hash通过父任务及离线复核。tree_complete=true仍伴随complete=false，不能说所有AX属性完整。八张稳定原图、normal首尾false、前台恢复、原件全成员复验与清理均有记录；effective Light未断言，仅是同机A/B几何比较。
 
 自有应用副本、两轮observer/cache、诊断exact、传输包均清理，原交付9dd/e48精确GUI及严格签名保持。历史静态清单中有意移除的17个artifact成员由收据列出，当前现存证据另有最终清单。goal继续active，Film即刻关闭/首次Last/resize、chrome、图片布局、HDR/hero等未通过项继续保留；不进入11/Objective-C/iOS。
+
+## Standard PQ hero 的真实静态端点
+
+[本机13旧链证据](../Evidence/macOS13-hdr-candidate/native-pq-hero-baseline13/README.md)现已测得真实BernImage非空hero key→实际Probe/Anchor→原snapshot→原FlightView.draw，不再使用identity hero。两源body与同窗原生oracle在raw和ICC→sRGB均逐像素相同；hero固定progress0/1的sRGB fullRGB MAE却为named18.377760、custom18.385720/255，最大差164/255，各159539/230400像素不同，两phase结果相同。所有图均保留原WindowServer PNG/ICC，每phase五次连续相同raw buffer；1.970秒、前台不变、normal三项false、Metal0、原缓存/ICC/provider/identity保持。
+
+该AppKit hero完整区块与锁定上游逐字相同，因此这是13宿主中hero与body不同的证据，尚不能归为移植回归或认定其应改成body颜色。named也失败，不能假定只传cached-derived图已足够修复；已备的optional-display候选尚未应用产品。下一门槛为新SDK编译同一源码、同一个binary在14普通效果与13运行，再比较两宿主的body/hero差值。新增手动[采集工作流](../../.github/workflows/macos14-hero-probe.yml)只构建一次，14不重编。
+
+本轮仅静态端点，manager flight_count0/timer不存在，不声称完整flight、hide/restore、插值、retarget、High/HLG/alpha/EXIF等通过。本机SDK14.2 fixture另有已明示的gain-map编译条件及未使用时钟分支失败保护，原源码和首次失败日志均保留；远程新SDK包移除这两项适配。自有可执行文件及module cache约57.4MB逻辑文件已清理，36项归档hash和父任务独立像素复算通过。goal继续active，后续11/Objective-C/iOS仍暂缓。

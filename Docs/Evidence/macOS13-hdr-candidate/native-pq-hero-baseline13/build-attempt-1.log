@@ -1,0 +1,22 @@
+/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-baseline/ProductImage.swift:49:18: warning: case is already handled by previous patterns; consider removing it
+        @unknown default: 1
+        ~~~~~~~~~^~~~~~~~~~
+/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-baseline/ProductImage.swift:49:9: warning: default will never be executed
+        @unknown default: 1
+        ^
+/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-baseline/ProductHero.swift:257:27: error: 'assumeIsolated(_:file:line:)' is only available in macOS 14.0 or newer
+                MainActor.assumeIsolated { self?.tick() }
+                          ^
+/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-baseline/ProductHero.swift:257:27: note: add 'if #available' version check
+                MainActor.assumeIsolated { self?.tick() }
+                          ^
+/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-baseline/ProductHero.swift:229:10: note: add @available attribute to enclosing instance method
+    func enter(_ anchor: BernPictureHeroAnchor) {
+         ^
+/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-baseline/ProductHero.swift:178:13: note: add @available attribute to enclosing class
+final class BernWindowImageHeroes {
+            ^
+/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-baseline/ProductHero.swift:369:9: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+        result[url.lastPathComponent] = [
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+error: fatalError

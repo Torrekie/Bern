@@ -1,0 +1,75 @@
+{
+  "captures": 2,
+  "command": "python3 work/native-pq-hero-analysis/analyze.py work/native-pq-hero-baseline/runtime13/report.json --output work/native-pq-hero-analysis/baseline-analysis",
+  "comparisons": 68,
+  "exit_code": 0,
+  "finalized_utc": "2026-10-24T08:53:04.529289+00:00",
+  "input_hashes_match_retained_analysis": true,
+  "inputs": [
+    {
+      "bytes": 50738,
+      "path": "work/native-pq-hero-baseline/runtime13/report.json",
+      "sha256": "9aa77ee8e9b4655ada3445c6aebe69986f87b729617a293811bba32a00a4cf75"
+    },
+    {
+      "bytes": 638869,
+      "path": "work/native-pq-hero-baseline/runtime13/progress-0.png",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "bytes": 638869,
+      "path": "work/native-pq-hero-baseline/runtime13/progress-1.png",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "bytes": 29556,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/color-probe13/report.json",
+      "sha256": "873a5a71c2fc0779cb78927e26faa25e08e94380d74180c48d87f3bc97608635"
+    },
+    {
+      "bytes": 15588,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/color-probe13/source-named-pq.png",
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    {
+      "bytes": 15470,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/color-probe13/source-ffb-icc.png",
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    {
+      "bytes": 9522,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-product-body13/analyze.py",
+      "sha256": "b7f9a3188afab1949c02a144fc5257b2c35a16cb7c2397d723b3d3eb6a6b997b"
+    }
+  ],
+  "limits": "Endpoint sourceOver draw with from==to, fixed320x180; not flight lifecycle or14/full-app acceptance; no unique cause assigned.",
+  "new_runtime_or_capture": false,
+  "outputs": [
+    {
+      "bytes": 15813,
+      "path": "analyze.py",
+      "sha256": "98243090f0b45fe18baed3d89d4e382c7d8f7c02662a930cfda8c87c3b0f39d4"
+    },
+    {
+      "bytes": 4157,
+      "path": "atlas-rois.json",
+      "sha256": "39ca622a45c0120d08e90daa7a17a0145be1b79485decb4619a0e5a3f23cadaf"
+    },
+    {
+      "bytes": 4629,
+      "path": "README.md",
+      "sha256": "7b37165f5007a9448546d9b5ecff557206957e1e84744e9611c653f05202d221"
+    },
+    {
+      "bytes": 780435,
+      "path": "baseline-analysis/analysis.json",
+      "sha256": "bd8b04c5691121025d28bfa86cc2d9171e1457bc564c9c3d9b1c3ff5ce534f5d"
+    },
+    {
+      "bytes": 24166,
+      "path": "baseline-analysis/ramp-column-means.json.gz",
+      "sha256": "b52779ea6965af8fc3e9e6480e9d6cb4bbb5334f50c59fbe7e993f28aa8e7b66"
+    }
+  ],
+  "scope": "Offline existing report/PNG reads only; no fixture/report/PNG mutation, NSImage/native object read, compiler, UI or CI."
+}

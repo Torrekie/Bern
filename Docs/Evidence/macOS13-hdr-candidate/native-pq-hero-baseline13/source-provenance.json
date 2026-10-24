@@ -1,0 +1,124 @@
+{
+  "actual_hero_preserved": [
+    "BernPictureHero / BernMotion / BernReducedMotion and environment",
+    "BernPictureHeroProbe / BernPictureHeroAnchor snapshot and capture",
+    "BernViewHero / BernHeroPicture / BernHeroOverlay / BernHeroFlightView",
+    "Complete BernWindowImageHeroes manager, timer and lifecycle"
+  ],
+  "commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "diagnostic_support": [
+    "Combine.ObservableObject alias",
+    "BernColor.fixed enum case"
+  ],
+  "generated_files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductHero.swift": {
+      "bytes": 14982,
+      "sha256": "cbe5217424f9447a817d5cb40636e8012d54115a0d4f2e91b22b5732d96a5d13"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    }
+  },
+  "image_exact_and_adapted_identical_to_prior_fixture": true,
+  "only_product_source_adaptation": "Compiler condition around macOS15+/iOS18+ gainmap decode API unavailable to localSDK14.2; actual13 unreachable. Compiler<6 uses constantnil to avoid introducing a nevermutated-var warning. The original product exhaustive-switch warning remains recorded and unmodified.",
+  "prepare_script_sha256": "8be7e3742cc45866cb0ad01ab3e61ed87ca4d031be0b51a3df744813378a85a7",
+  "prior_adapted_image_sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54",
+  "prior_body_commit": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "prior_body_fixture": "Docs/Evidence/macOS13-hdr-candidate/native-pq-product-body13",
+  "prior_image_exact_sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11",
+  "same_file_driver_rule": "Append root driver to ProductHero.swift without altering original hero block or access control; no driver is supplied by prepare.py.",
+  "scope": "Source extraction only; no main/build scripts, compilation, UI or CI. Endpoint validation is not full-flight validation.",
+  "sources": {
+    "BernAppKit.swift": {
+      "full_source_9dd_sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598",
+      "full_source_identical_to_9dd": true,
+      "full_source_sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598",
+      "git_blob": "260c95069ec6c3bc71c7879f3fbb2ee11a159839",
+      "repository_source": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "slices": [
+        {
+          "end_marker_exclusive": "// MARK: - Search field",
+          "exact_slice_sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c",
+          "first_line": 1767,
+          "identical_to_9dd_slice": true,
+          "last_boundary_line": 2102,
+          "start_marker": "// MARK: - Window-level image heroes",
+          "terminal_newline_convention": "rstrip()+one LF"
+        }
+      ],
+      "working_source_matches_HEAD": true
+    },
+    "BernRuntime.swift": {
+      "full_source_9dd_sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+      "full_source_identical_to_9dd": true,
+      "full_source_sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+      "git_blob": "7e3fb1196511a04d8ab30f11e75e9645e2da39b6",
+      "repository_source": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "slices": [
+        {
+          "end_marker_exclusive": "// MARK: - Files",
+          "exact_slice_sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11",
+          "first_line": 2219,
+          "identical_to_9dd_slice": true,
+          "last_boundary_line": 2759,
+          "start_marker": "enum BernImageFit {",
+          "terminal_newline_convention": "rstrip()+one LF"
+        }
+      ],
+      "working_source_matches_HEAD": true
+    },
+    "BernStyle.swift": {
+      "full_source_9dd_sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f",
+      "full_source_identical_to_9dd": false,
+      "full_source_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+      "git_blob": "ef0afd1fb97d594e30bf9d3e700db200a214c401",
+      "repository_source": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "slices": [
+        {
+          "end_marker_exclusive": "// MARK: - Colors",
+          "exact_slice_sha256": "10e03d91555a881465cd40ee89592a8163ae81207d2ac235964811704fa61556",
+          "first_line": 117,
+          "identical_to_9dd_slice": true,
+          "last_boundary_line": 152,
+          "start_marker": "// MARK: - Motion",
+          "terminal_newline_convention": "rstrip()+one LF"
+        },
+        {
+          "end_marker_exclusive": "// MARK: - Drawing",
+          "exact_slice_sha256": "e3bbadb957e04673536960a27c69b84dcfad0d0a237447d2541e853b698a3ea5",
+          "first_line": 1629,
+          "identical_to_9dd_slice": true,
+          "last_boundary_line": 1660,
+          "start_marker": "/// Images travel above the native split-view columns on macOS.",
+          "terminal_newline_convention": "rstrip()+one LF"
+        }
+      ],
+      "working_source_matches_HEAD": true
+    }
+  }
+}
