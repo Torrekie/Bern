@@ -22,6 +22,7 @@ let originalFront = NSWorkspace.shared.frontmostApplication?.processIdentifier
 let ciHeartbeat = ProcessInfo.processInfo.environment["GITHUB_ACTIONS"] == "true" && ProcessInfo.processInfo.environment["CI"] == "true"
 var env = ProcessInfo.processInfo.environment, process: Process?, timer: Timer?, heartbeatError: String?, mainID: CGWindowID = 0
 var session = "", specs = [[String:Any]](), commands = [[String:Any]](), stages = [[String:Any]](), captures = [[String:Any]](), events = [[String:Any]]()
+var inspectedControls = [[String:Any]]()
 var volumeTarget = "", clipTarget = "", sliderTarget = "", playerID = "", sourceURL = "", sourceVersion: Int64?
 var report: [String:Any] = ["schema":1,"success":false,"label":CommandLine.arguments[5],"source_sha":CommandLine.arguments[6],
     "harness_sha":env["GITHUB_SHA"] ?? "local","expected_os":expectedOS,"os":ProcessInfo.processInfo.operatingSystemVersionString,
@@ -65,7 +66,7 @@ func command(_ id: String, _ params: [String:String] = [:], scoped: Bool = false
     try require(Set(names) == Set(params.keys),"Catalog parameters differ for \(id)")
     return try cli(words + names.flatMap { ["--"+$0.replacingOccurrences(of:"_",with:"-"),params[$0]!] },session:scoped,until:stopAt)
 }
-func controls(until stopAt: Date? = nil) throws -> [[String:Any]] { try command("ui.inspect",scoped:true,until:stopAt) as? [[String:Any]] ?? [] }
+func controls(until stopAt: Date? = nil) throws -> [[String:Any]] { inspectedControls = try command("ui.inspect",scoped:true,until:stopAt) as? [[String:Any]] ?? []; return inspectedControls }
 func control(_ rows: [[String:Any]], _ suffix: String, _ role: String) throws -> [String:Any] {
     let found = rows.filter { ($0["target"] as? String)?.hasSuffix(suffix) == true && $0["role"] as? String == role }
     try require(found.count == 1 && found.first?["enabled"] as? Bool == true,"Expected one enabled \(role) \(suffix)"); return found[0]
@@ -163,6 +164,59 @@ func axFailure(_ id: String, role: String?, found: Int, visited: Int, queued: In
         "timeout_set_code":timeoutCode,"diagnostic_visited":index,"diagnostic_nodes":nodes.count,"diagnostic_truncated":queueClipped || index < queue.count,"diagnostic_limits":["nodes":512,"queue":4000,"seconds":12],"hash_collisions_observed":collisions,"matching_identifier_nodes":matching,"tree":nodes]
     try save()
 }
+func scopedFrameAX(_ id: String, role: String?) throws -> AXUIElement? {
+    guard let p = process, !volumeTarget.isEmpty, !clipTarget.isEmpty,
+          (id == volumeTarget && role == kAXButtonRole) || (id == clipTarget && role == nil) || (!sliderTarget.isEmpty && id == sliderTarget && role == kAXSliderRole) else { return nil }
+    let volume = try control(inspectedControls,".volume","popover_button"), clip = try control(inspectedControls,".clip","video"), page = try control(inspectedControls,".pages","sidebar")
+    try require(volume["target"] as? String == volumeTarget && clip["target"] as? String == clipTarget && page["value"] as? String == "Frame","Frame registry identity changed during AX selection")
+    guard let volumeLabel = volume["label"] as? String, !volumeLabel.isEmpty, let clipLabel = clip["label"] as? String, !clipLabel.isEmpty else { throw Failure(description:"Frame CLI labels unavailable") }
+    func owned(_ e: AXUIElement) -> Bool { var pid: pid_t = 0; return AXUIElementGetPid(e,&pid) == .success && pid == p.processIdentifier }
+    func parent(_ e: AXUIElement) -> AXUIElement? { guard let value = attribute(e,kAXParentAttribute), CFGetTypeID(value) == AXUIElementGetTypeID() else { return nil }; return (value as! AXUIElement) }
+    func near(_ a: CGRect, _ b: CGRect) -> Bool { abs(a.minX-b.minX)<=1 && abs(a.minY-b.minY)<=1 && abs(a.width-b.width)<=1 && abs(a.height-b.height)<=1 }
+    func label(_ e: AXUIElement, _ text: String) -> Bool { attribute(e,kAXDescriptionAttribute) as? String == text || attribute(e,kAXTitleAttribute) as? String == text }
+    func actions(_ e: AXUIElement) -> [String] { var value: CFArray?; return AXUIElementCopyActionNames(e,&value) == .success ? value as? [String] ?? [] : [] }
+    func walk(_ window: AXUIElement) throws -> [AXUIElement] {
+        var queue = [window], index = 0, seen = [AXUIElement](); let end = min(deadline,Date().addingTimeInterval(8))
+        while index < queue.count && index < 4000 && seen.count < 512 && Date() < end {
+            let e = queue[index]; index += 1; if !owned(e) || seen.contains(where:{ CFEqual($0,e) }) { continue }; seen.append(e)
+            queue += attribute(e,kAXChildrenAttribute) as? [AXUIElement] ?? []
+            if seen.count % 8 == 0 { RunLoop.current.run(until:Date().addingTimeInterval(0.001)); try healthy() }
+        }
+        try require(index == queue.count,"Scoped own-window AX walk incomplete"); return seen
+    }
+    func describe(_ e: AXUIElement) throws -> [String:Any] { ["identifier":attribute(e,kAXIdentifierAttribute) as? String ?? "","role":attribute(e,kAXRoleAttribute) as? String ?? "","description":attribute(e,kAXDescriptionAttribute) as? String ?? "","title":attribute(e,kAXTitleAttribute) as? String ?? "","actions":actions(e),"frame_screen_top_left_points":rect(try axFrame(e))] }
+    func selected(_ e: AXUIElement, _ scope: [String:Any]) throws -> AXUIElement {
+        var log = report["ax_selector_trace"] as? [[String:Any]] ?? []; log.append(["elapsed":Date().timeIntervalSince(began),"requested_cli_target":id,"method":"scoped_frame_label","native":try describe(e),"scope":scope]); report["ax_selector_trace"] = log; try save(); return e
+    }
+    let windows = (attribute(AXUIElementCreateApplication(p.processIdentifier),kAXWindowsAttribute) as? [AXUIElement] ?? []).filter { owned($0) && attribute($0,kAXRoleAttribute) as? String == kAXWindowRole }
+    let mainBounds = try bounds(mainWindow()), mains = windows.filter { (try? axFrame($0)).map { near($0,mainBounds) } ?? false }
+    try require(mains.count == 1,"Cannot match one AXWindow to the own CG main window"); let main = mains[0]
+    if id == sliderTarget {
+        let row = try control(inspectedControls,".volume_level","slider")
+        guard volume["value"] as? String == "open", row["target"] as? String == sliderTarget, let text = row["label"] as? String, !text.isEmpty else { throw Failure(description:"Popup slider CLI identity/label unavailable") }
+        var matches = [(AXUIElement,AXUIElement,[String:Any])]()
+        for window in windows where !CFEqual(window,main) {
+            guard let r = try? axFrame(window) else { continue }
+            let cg = ownWindows().filter { windowID($0) != mainID && near(bounds($0),r) && (($0[kCGWindowAlpha as String] as? NSNumber)?.doubleValue ?? 0) >= 0.99 }
+            guard cg.count == 1 else { continue }
+            for e in try walk(window) where attribute(e,kAXRoleAttribute) as? String == kAXSliderRole && label(e,text) {
+                if let f = try? axFrame(e), r.insetBy(dx:-1,dy:-1).contains(f) { matches.append((e,window,cg[0])) }
+            }
+        }
+        try require(matches.count == 1,"Missing/ambiguous labelled AXSlider in a separate owned popup window")
+        let m = matches[0]; return try selected(m.0,["relationship":"unique slider inside a separate own popup AX/CG window","popup_window_id":windowID(m.2),"popup_window":try describe(m.1),"cli_label":text])
+    }
+    let tree = try walk(main), clips = tree.filter { attribute($0,kAXRoleAttribute) as? String == kAXUnknownRole && label($0,clipLabel) }
+    let buttons = tree.filter { attribute($0,kAXRoleAttribute) as? String == kAXButtonRole && label($0,volumeLabel) && actions($0).contains(kAXPressAction) }
+    var pairs = [(AXUIElement,AXUIElement,AXUIElement)]()
+    for c in clips { for v in buttons {
+        guard let cp = parent(c), let vp = parent(v), owned(cp), CFEqual(cp,vp), attribute(cp,kAXRoleAttribute) as? String == kAXGroupRole,
+              let groupFrame = try? axFrame(cp), let cf = try? axFrame(c), let vf = try? axFrame(v), mainBounds.insetBy(dx:-1,dy:-1).contains(groupFrame), groupFrame.insetBy(dx:-1,dy:-1).contains(cf), groupFrame.insetBy(dx:-1,dy:-1).contains(vf) else { continue }
+        pairs.append((c,v,cp))
+    } }
+    try require(pairs.count == 1,"Missing/ambiguous same-parent Frame Clip AXUnknown and Volume AXButton")
+    let pair = pairs[0]; return try selected(id == clipTarget ? pair.0 : pair.1,["relationship":"Clip and Volume share one content AXGroup","main_window_id":mainID,"main_window":try describe(main),"parent":try describe(pair.2),"clip":try describe(pair.0),"volume":try describe(pair.1),"cli_labels":[clipLabel,volumeLabel]])
+}
 func axFind(_ id: String, role: String? = nil) throws -> AXUIElement {
     guard let p = process else { throw Failure(description:"No target") }
     var queue = [AXUIElementCreateApplication(p.processIdentifier)], seen = Set<CFHashCode>(), found = [AXUIElement](), index = 0
@@ -171,13 +225,17 @@ func axFind(_ id: String, role: String? = nil) throws -> AXUIElement {
         if attribute(e,kAXIdentifierAttribute) as? String == id && (role == nil || attribute(e,kAXRoleAttribute) as? String == role) { found.append(e) }
         queue += attribute(e,kAXChildrenAttribute) as? [AXUIElement] ?? []; queue += attribute(e,kAXWindowsAttribute) as? [AXUIElement] ?? []
     }
+    if index < 4000 && found.isEmpty {
+        do { if let selected = try scopedFrameAX(id,role:role) { return selected } }
+        catch { report["ax_scope_failure"] = String(describing:error) }
+    }
     if index >= 4000 || found.count != 1 { try axFailure(id,role:role,found:found.count,visited:index,queued:queue.count,hashes:seen.count) }
     try require(index < 4000 && found.count == 1,"Missing/ambiguous AX identifier \(id) role \(role ?? "any"); found=\(found.count), visited=\(index)"); return found[0]
 }
 func geometry(_ id: String, role: String? = nil) throws -> [String:Any] {
     let e = try axFind(id,role:role), r = try axFrame(e), main = try bounds(mainWindow()); var actions: CFArray?
     _ = AXUIElementCopyActionNames(e,&actions)
-    return ["target":id,"role":attribute(e,kAXRoleAttribute) as? String ?? "","subrole":attribute(e,kAXSubroleAttribute) as? String ?? "",
+    return ["target":id,"actual_ax_identifier":attribute(e,kAXIdentifierAttribute) as? String ?? "","role":attribute(e,kAXRoleAttribute) as? String ?? "","subrole":attribute(e,kAXSubroleAttribute) as? String ?? "",
             "screen_top_left_points":rect(r),"relative_to_main_outer_points":rect(r.offsetBy(dx:-main.minX,dy:-main.minY)),"actions":actions as? [String] ?? [],"enabled":attribute(e,kAXEnabledAttribute) as? Bool ?? false]
 }
 func player() throws -> [String:Any] {
