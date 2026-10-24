@@ -1,0 +1,36 @@
+{
+  "app_bundle": "Gallery.app",
+  "architecture": "arm64",
+  "channels": [
+    "ipc"
+  ],
+  "color_source": "native",
+  "engine_deployment": "in-process",
+  "generator": "bern-backend-swiftui",
+  "generator_version": "0.1.0",
+  "ir_version": 8,
+  "languages": [
+    "zh-Hans",
+    "en"
+  ],
+  "media": {
+    "backend": "avfoundation",
+    "backend_version": "1",
+    "contract": 1,
+    "players": [],
+    "presenter": "avplayerview",
+    "presenter_version": "1"
+  },
+  "minimum_macos": "13.0",
+  "platform": "macos",
+  "profile": "release",
+  "protocol": "gallery",
+  "protocol_fingerprint": "cfa638eac6dad4e6",
+  "resources": [
+    "media/poster.jpg",
+    "media/tides.mp4"
+  ],
+  "target": "swiftui-modern-macos",
+  "ui": "swiftui-modern",
+  "ui_bridge": "c-abi"
+}

@@ -14,6 +14,7 @@
 | 13 Film 明确 Last 落点 | 浅、深两种外观中，放大卡片四边相对14差值为 [0, -0.5, +1, +0.5] 点 | 原始2x截图，无图像缩放补偿；初始Film身份仍不同，见未通过项 |
 | 13 默认侧栏与宽度恢复 | 真正整应用、干净独立 defaults 首开210；AX调为260后，页面重建和进程重启均保留260 | 仅为隔离改变bundle ID及临时签名，可执行文件字节与CI产物相同；没有清用户窗口历史 |
 | 空白与媒体占位、语言切换 | 空白/错误媒体占位测量边界均在1pt内；Ready→Failed→Ready恢复后原始画面像素相同；中英文切换及取消关闭保留草稿 | 状态切换通过实际控件绑定，语言测试不冒称真实输入法或菜单点击 |
+| 14 Frame 原生对照 | f9与固定上游在同一14机器中的视频区/按钮/弹出层/滑块几何一致，Frame detail像素一致，独立音量popup PNG文件相同 | 仅浅色；主窗侧栏选中行仍5284像素灰/蓝差异；13对应验收及物理输入不由此通过 |
 | 原生交互 | 通知 AXPress 改变会话草稿；音量 AXIncrement 从 50 到 60，只产生一次引擎提交；Command-Comma 打开原生 Settings scene | 这些不是鼠标拖动验证；CLI 状态与原生 AX 操作分别记录 |
 
 最新完整应用源码为 `f9e08b1d55bed4b9d880b19934abe48281057bb3`，已包含HDR路由/系统SDR修复、14原生Pinch路径恢复和本轮音量PopoverButton系统按钮复用。两项CI均通过：[Showcase](https://github.com/Torrekie/Bern/actions/runs/39991409277)、[Gallery](https://github.com/Torrekie/Bern/actions/runs/39991406873)，环境为Swift6.2.4、SDK26.2、Rust1.99。两份产物均已在本机13.7.8启动、建立唯一会话并完成window/control inspect；实际Gallery通过原绑定进入Frame、打开音量弹出层并将草稿0.7改为0.55。随后停止自有进程，检查前后的前台应用一致。原始记录见[Showcase](../Evidence/macOS13-popover/full-app/showcase/report.json)和[Gallery](../Evidence/macOS13-popover/full-app/gallery/report.json)。组件内native action与关闭对照见[独立组件记录](../Evidence/macOS13-popover/component/README.md)。整应用绑定操作不替代真实鼠标或14/13 Frame视觉对照。这轮没有重拍全部视觉/交互样本，不能把下述0f/46截图改标为f9。
@@ -66,7 +67,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 |---|---|
 | Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。AX几何并非NSClipView bounds，内部target/nearest仍未观测，不能断言3写回成4。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
-| 未覆盖控件变体 | `f9e08b1`已让生成器选中的普通volume PopoverButton复用系统圆形NSButton，独立native action检查通过（单次触发、快捷键、disabled、外部打开和WindowServer alpha=0的关闭，与原Button配对一致）；整应用该版本构建、本机启动及Frame绑定打开/编辑均通过；14/13 Frame视觉仍待验收。icon风格Menu、显式尺寸等仍有独立路径，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
+| 未覆盖控件变体 | `f9e08b1`已让生成器选中的普通volume PopoverButton复用系统圆形NSButton，独立native action检查通过（单次触发、快捷键、disabled、外部打开和WindowServer alpha=0的关闭，与原Button配对一致）；整应用该版本构建、本机启动及Frame绑定打开/编辑均通过；14浅色Frame detail与原生popup已完成f9/上游配对：内容像素与几何一致，主窗侧栏仍有选中配色差异；13对应视觉仍待。icon风格Menu、显式尺寸等仍有独立路径，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
 | 图片页首卡高度 | 完整应用A14/B14/C13首卡分别124/125/129pt，图片和caption边界接近，后续HDR卡均147pt。新增[同binary14普通效果探针](../Evidence/macOS14-image-layout/validation.json)九组合/27位置中，首卡与fixed109卡均129、HDR147，均与13同binary相同；其它公开坐标仍有最高2.5pt差异。进一步[静态四子节点隔离](../Evidence/macOS13-image-layout/static-children/validation.json)在13和14各1800个公开坐标框均与原ForEach夹具相同，首卡仍129，已排除该单独因素；13全部27 PNG字节相同，14为25/27，未宣称全像素相等。独立probe仍未复现完整应用14首卡124/125，完整Scene及其余简化包装待隔离，不能把probe匹配当整应用修复，也不以负padding抵消。 |
 | PQ/HLG 色彩 | `e06e080`的严格cICP识别、系统SDR转换、无Metal备用与真实余量通知已随`5226454`及最新`f9e08b1`完整构建并启动。原产品High尚未等同；新增独立Annex5候选在已知中性PQ样本上，Hd1完整ramp对14 MAE0.104109/255，Hd2提交linear EDR为1/1.996094，真实通知观察到1→2→1→2。这是未接入产品的有限输入实验，彩色/metadata/HLG及同条件14High未通过。[原系统路径证据](../Evidence/macOS13-hdr/reference.json)、[候选证据与限制](../Evidence/macOS13-hdr-candidate/reference.json)。 |
@@ -96,7 +97,9 @@ GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的�
 
 上游Film[run40062194628](https://github.com/Torrekie/Bern/actions/runs/40062194628)已成功，使用既有Gallery构建39959549054，每组新进程区分立即关闭、等待关闭、从未打开Inspector；[原始证据与分析](../Evidence/macOS14-film-timing/analysis.json)。首次采集40061845578在建立会话前失败，已根据上游100字节socket上限将测试临时路径缩短；该失败没有Film结果。当前f9应用在14的同场景run40062837456也成功，进一步确认身份差异属于13路径，尚未证明内部绑定变化。
 
-Frame仍未采集通过。首跑40062043370视频已Ready→Paused0，但own-PID事件后控件消失；第二跑40062688905事件往返保留窗口编号、CLI仍有音量控件，但AXButton查找失败。完整AX诊断确认native标识被上游覆盖为main_window.find；同父组中的真实Clip/Volume控件存在。严格限定窗口/父组/label/role的选择器在[40064763940](../Evidence/macOS14-frame-volume/attempt-40064763940/README.md)通过3.2秒idle及native几何，随后首张PNG因采集器将NSNumber对象传给要求原始CGWindowID的数组接口而失败。已修正原始ID编码，并在每帧前回读核对窗口ID和所属PID；新paired run40065164350验收中。此前均未进入B，PNG=0，不算视觉或物理输入验收，媒体/idle/AXPress/稳定buffer门槛保持。
+[Frame paired run40065164350](https://github.com/Torrekie/Bern/actions/runs/40065164350)现已成功，[原始A/B与离线复算](../Evidence/macOS14-frame-volume/paired-40065164350/README.md)保留六张原图。两边均通过真实Ready→Paused0、3.2秒idle、native AXPress开关、独立popup窗口、原始ID/ownPID回读及连续四次相同buffer。Frame detail/视频区逐像素相同，Clip/Volume/slider/popup几何完全一致；266×106的独立popup连PNG文件字节也一致。两张主窗均仅侧栏Frame选中行有5284像素灰/蓝差异，捕获时firstResponder未收集，不猜其原因。该结果只覆盖f9/原上游在14的浅色路径，不是13、深色或物理输入验收。
+
+早期Frame40062043370/40062688905/40063364941分别暴露事件窗口身份和AX标识覆盖等采集限制；[40064763940](../Evidence/macOS14-frame-volume/attempt-40064763940/README.md)已通过idle/native几何，首PNG则因NSNumber对象代替原始CGWindowID而失败。这些失败均未进入B、PNG=0。修正仅在外部采集器中，完整成功采集保留原媒体、idle、AXPress及稳定buffer门槛。
 
 背景探针[14 run40063500033](https://github.com/Torrekie/Bern/actions/runs/40063500033)及同一SDK26.5二进制在本机13均完成五组运行，归档见[13](../Evidence/macOS13-window-background/sdk26-content-stable/README.md)和[14](../Evidence/macOS14-window-background/content-stable/README.md)。早期“外框全程不变”断言阻止后两组；诊断已确认原生NavigationSplitView自动加toolbar改变外框，内容尺寸保持。新合同实际通过内容800×520、各variant双buffer像素/几何稳定及不激活条件，并保留真实外框变化。透明detail的跨系统颜色差异已复现，其余四组模式RGB相同；不将手建窗口结果冒充整应用等效。
 

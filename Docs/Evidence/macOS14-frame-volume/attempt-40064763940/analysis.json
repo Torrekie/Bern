@@ -1,0 +1,62 @@
+{
+  "run": 40064763940,
+  "harness_sha": "7684977258e5bbb120f6e06e8e28c9f68abf6fa7",
+  "variant_completed": "none",
+  "variant_observed": "A",
+  "b_started": false,
+  "failure": "WindowServer capture failed",
+  "png_count": 0,
+  "awake_gate_reached_capture": true,
+  "awake_native_checks_elapsed": [
+    6.305123925209045,
+    7.135987997055054,
+    8.006693005561829,
+    8.819671988487244
+  ],
+  "media_all_paused_zero": true,
+  "native_volume_geometry": {
+    "actions": [
+      "AXPress"
+    ],
+    "actual_ax_identifier": "main_window.find",
+    "enabled": true,
+    "relative_to_main_outer_points": {
+      "height": 15,
+      "width": 22,
+      "x": 619,
+      "y": 536
+    },
+    "role": "AXButton",
+    "screen_top_left_points": {
+      "height": 15,
+      "width": 22,
+      "x": 1119,
+      "y": 742
+    },
+    "subrole": "",
+    "target": "frame.volume"
+  },
+  "native_clip_geometry": {
+    "actions": [],
+    "actual_ax_identifier": "main_window.find",
+    "enabled": true,
+    "relative_to_main_outer_points": {
+      "height": 354,
+      "width": 629,
+      "x": 251,
+      "y": 167
+    },
+    "role": "AXUnknown",
+    "screen_top_left_points": {
+      "height": 354,
+      "width": 629,
+      "x": 751,
+      "y": 373
+    },
+    "subrole": "",
+    "target": "frame.clip"
+  },
+  "heartbeat_attempts": 13,
+  "explanation": "Source control flow reached capture after the >=3.2-second awake loop. All four stages preserve controls and current native geometry. Failure is the first multi-window-list capture returning nil, before stable PNGs or opening volume. No B observation or visual equivalence claim.",
+  "minimal_candidate": "Replace NSNumber-backed CFArray with no-callback raw CGWindowID slots; require CGWindowListCreateDescriptionFromArray to round-trip exact ids and own PID before every capture. No screenshot fallback or gate relaxation."
+}

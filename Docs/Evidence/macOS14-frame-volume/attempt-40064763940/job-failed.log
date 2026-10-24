@@ -1,0 +1,29 @@
+capture	Observe A then B on the same WindowServer	﻿2026-10-24T05:03:42.4854700Z ##[group]Run set -euo pipefail
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4855010Z [36;1mset -euo pipefail[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4855750Z [36;1mxcrun swift -swift-version 5 .github/scripts/gallery-frame-reference.swift "$PWD/a/Gallery.app" "$PWD/a/bin/gallery" "$PWD/evidence/a" 14 A ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee 2>&1 | tee evidence/a/capture.log[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4856920Z [36;1mxcrun swift -swift-version 5 .github/scripts/gallery-frame-reference.swift "$PWD/b/Gallery.app" "$PWD/b/bin/gallery" "$PWD/evidence/b" 14 B f9e08b1d55bed4b9d880b19934abe48281057bb3 2>&1 | tee evidence/b/capture.log[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4857600Z [36;1mpython3 - <<'PY'[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4857770Z [36;1mimport json[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4857960Z [36;1mfrom pathlib import Path[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4858320Z [36;1mreports = [json.loads(Path(f'evidence/{side}/report.json').read_text()) for side in ['a','b']][0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4858710Z [36;1mfor d in reports:[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4858940Z [36;1m    assert d['success'] is True, d.get('failure')[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4859340Z [36;1m    assert d['heartbeat_ci_only'] is True and len(d['heartbeat_events']) >= 6[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4859680Z [36;1m    assert len(d['captures']) == 3[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4859960Z [36;1m    assert [len(c['window_ids']) for c in d['captures']] == [1,2,1][0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4860360Z [36;1m    assert all(c['stable_equal_comparisons'] >= 4 for c in d['captures'])[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4860720Z [36;1m    assert d['stages'][-1]['stage'] == 'dismissed'[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4861100Z [36;1massert reports[0]['bundled_tides_sha256'] == reports[1]['bundled_tides_sha256'][0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4861600Z [36;1massert reports[0]['display_bounds_points'] == reports[1]['display_bounds_points'][0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4862450Z [36;1mPath('evidence/pair.json').write_text(json.dumps({'same_runner':True,'same_media_bytes':True,'a':'a/report.json','b':'b/report.json','scope':'Frame closed/open geometry and pixels; no automatic visual-equivalence verdict'},indent=2)+'\n')[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4877510Z [36;1mPY[0m
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4929970Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:42.4930300Z ##[endgroup]
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:49.0054920Z .github/scripts/gallery-frame-reference.swift:262:27: warning: 'init(windowListFromArrayScreenBounds:windowArray:imageOption:)' was deprecated in macOS 14.0: This API is deprecated. Please use ScreenCaptureKit's captureScreenshot APIs instead.
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:49.0056780Z         guard let image = CGImage(windowListFromArrayScreenBounds:canvas,windowArray:ids.map { NSNumber(value:$0) } as CFArray,imageOption:[.boundsIgnoreFraming,.bestResolution]) else { throw Failure(description:"WindowServer capture failed") }
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:49.0057690Z                           ^
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:49.0477890Z .github/scripts/gallery-frame-reference.swift:305:162: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:49.0480760Z     try require(!session.isEmpty,"Expected one UI session"); NSRunningApplication(processIdentifier:p.processIdentifier)?.activate(options:[.activateAllWindows,.activateIgnoringOtherApps])
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:49.0482910Z                                                                                                                                                                  ^
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:59.5283390Z Frame reference failed: WindowServer capture failed
+capture	Observe A then B on the same WindowServer	2026-10-24T05:03:59.6655580Z ##[error]Process completed with exit code 1.

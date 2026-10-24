@@ -1,0 +1,7 @@
+.github/scripts/gallery-frame-reference.swift:262:27: warning: 'init(windowListFromArrayScreenBounds:windowArray:imageOption:)' was deprecated in macOS 14.0: This API is deprecated. Please use ScreenCaptureKit's captureScreenshot APIs instead.
+        guard let image = CGImage(windowListFromArrayScreenBounds:canvas,windowArray:ids.map { NSNumber(value:$0) } as CFArray,imageOption:[.boundsIgnoreFraming,.bestResolution]) else { throw Failure(description:"WindowServer capture failed") }
+                          ^
+.github/scripts/gallery-frame-reference.swift:305:162: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+    try require(!session.isEmpty,"Expected one UI session"); NSRunningApplication(processIdentifier:p.processIdentifier)?.activate(options:[.activateAllWindows,.activateIgnoringOtherApps])
+                                                                                                                                                                 ^
+Frame reference failed: WindowServer capture failed
