@@ -1,0 +1,49 @@
+--- baseline/Driver.swift.inc
++++ diagnostic/Driver.swift.inc
+@@ -5,6 +5,26 @@
+ import UniformTypeIdentifiers
+ import CryptoKit
+ import Darwin
++
++// Diagnostic-only configuration: environment is read exactly once per process.
++private enum FixtureHeroColorMode: String {
++    case systemDefault = "default"
++    case linear
++    case extendedLinear
++    case nonLinear
++
++    static let requested = ProcessInfo.processInfo.environment["BERN_HERO_COLOR_MODE"]
++    static let selected = FixtureHeroColorMode(rawValue: requested ?? "default")
++
++    var rendererMode: ColorRenderingMode? {
++        switch self {
++        case .systemDefault: return nil
++        case .linear: return .linear
++        case .extendedLinear: return .extendedLinear
++        case .nonLinear: return .nonLinear
++        }
++    }
++}
+ 
+ private struct FixtureFailure: Error { let message: String }
+ private func fixtureHash(_ data: Data) -> String {
+@@ -105,6 +125,9 @@
+             "image_equality_collection_gate": false,
+             "snapshot_cgimage_metadata": "Not exposed by actual snapshot; no observer hook or recaching conversion added"
+         ]
++        report["hero_color_mode_environment"] = FixtureHeroColorMode.requested ?? "(unset)"
++        report["hero_color_mode_selected"] = FixtureHeroColorMode.selected?.rawValue ?? "invalid"
++        report["hero_color_mode_assignment_requested"] = FixtureHeroColorMode.selected?.rendererMode != nil
+         defer {
+             report["normal_after"] = ["reduce_motion": NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
+                 "reduce_transparency": NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,
+@@ -121,6 +144,9 @@
+         }
+         do {
+             try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
++            guard FixtureHeroColorMode.selected != nil else {
++                throw FixtureFailure(message: "Unknown BERN_HERO_COLOR_MODE; expected default, linear, extendedLinear or nonLinear")
++            }
+             guard ProcessInfo.processInfo.operatingSystemVersion.majorVersion == 13, CGPreflightScreenCaptureAccess() else {
+                 throw FixtureFailure(message: "Actual13 and existing screen permission required; no prompt")
+             }

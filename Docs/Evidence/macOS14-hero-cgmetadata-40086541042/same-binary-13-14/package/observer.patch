@@ -1,0 +1,101 @@
+--- before-observer/ProductHero.base.swift
++++ observer/ProductHero.base.swift
+@@ -97,6 +97,7 @@
+         let renderer = ImageRenderer(content: fitted.frame(width: bounds.width, height: bounds.height).clipped())
+         renderer.scale = window?.backingScaleFactor ?? 2
+         guard let pixels = renderer.cgImage else { return nil }
++        fixtureObserveSnapshotCGImage(pixels, key: key)
+         return BernHeroPicture(rect: rect, image: NSImage(cgImage: pixels, size: bounds.size),
+             corner: corner * rect.width / bounds.width)
+     }
+--- before-observer/Driver.swift.inc
++++ observer/Driver.swift.inc
+@@ -9,6 +9,67 @@
+ private struct FixtureFailure: Error { let message: String }
+ private func fixtureHash(_ data: Data) -> String {
+     SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
++}
++// Fixture-only observer: hold scalar descriptors and a color-space reference, never an image.
++// ICC export/classification happens only after all PNGs and existing window teardown.
++@MainActor private struct FixtureSnapshotCGImageDescriptor {
++    let scalars: [String: Any]
++    let space: CGColorSpace?
++    func metadata() -> [String: Any] {
++        var record = scalars
++        record["color_space_metadata_stage"] = "after_existing_window_teardown"
++        for field in ["color_space_name", "color_space_model_raw", "color_space_components",
++                      "icc_present", "icc_byte_count", "icc_sha256", "icc_base64",
++                      "icc_base64_omitted_reason", "wide_gamut_rgb",
++                      "uses_extended_range", "uses_itur2100_tf", "is_pq_based", "is_hlg_based"] {
++            record[field] = NSNull()
++        }
++        if let space {
++            if let name = space.name { record["color_space_name"] = name as String }
++            record["color_space_model_raw"] = space.model.rawValue
++            record["color_space_components"] = space.numberOfComponents
++            record["wide_gamut_rgb"] = space.isWideGamutRGB
++            record["uses_extended_range"] = CGColorSpaceUsesExtendedRange(space)
++            record["uses_itur2100_tf"] = CGColorSpaceUsesITUR_2100TF(space)
++            record["is_pq_based"] = CGColorSpaceIsPQBased(space)
++            record["is_hlg_based"] = CGColorSpaceIsHLGBased(space)
++            if let profile = space.copyICCData() {
++                let data = profile as Data
++                record["icc_present"] = true
++                record["icc_byte_count"] = data.count
++                record["icc_sha256"] = fixtureHash(data)
++                if data.count <= 65_536 {
++                    record["icc_base64"] = data.base64EncodedString()
++                } else {
++                    record["icc_base64_omitted_reason"] = "profile_exceeds_65536_bytes"
++                }
++            } else {
++                record["icc_present"] = false
++                record["icc_byte_count"] = 0
++                record["icc_base64_omitted_reason"] = "no_icc_profile"
++            }
++        }
++        return record
++    }
++}
++@MainActor private var fixtureSnapshotCGImageObservations: [FixtureSnapshotCGImageDescriptor] = []
++@MainActor private func fixtureObserveSnapshotCGImage(_ image: CGImage, key: String) {
++    var record: [String: Any] = [:]
++    record["key"] = key
++    record["observation_site"] = "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown"
++    record["width"] = image.width
++    record["height"] = image.height
++    record["bits_per_component"] = image.bitsPerComponent
++    record["bits_per_pixel"] = image.bitsPerPixel
++    record["bytes_per_row"] = image.bytesPerRow
++    record["bitmap_info_raw"] = image.bitmapInfo.rawValue
++    record["alpha_info_raw"] = image.alphaInfo.rawValue
++    record["float_components"] = image.bitmapInfo.contains(.floatComponents)
++    record["byte_order_raw"] = image.byteOrderInfo.rawValue
++    record["pixel_format_raw"] = image.pixelFormatInfo.rawValue
++    let space = image.colorSpace
++    record["color_space_present"] = space != nil
++    fixtureSnapshotCGImageObservations.append(FixtureSnapshotCGImageDescriptor(scalars: record, space: space))
+ }
+ private func fixtureRect(_ r: CGRect) -> [String: Double] {
+     ["x": r.minX, "y": r.minY, "width": r.width, "height": r.height]
+@@ -106,15 +167,19 @@
+             "scope": "Actual BernImage(hero: unique nonnil keys) body/modifier/anchor/manager/snapshot; actual BernHeroFlightView.draw at fixed progress0/1, same opaque image at both endpoints. Static endpoints only, no actual coordinated flight or lifecycle acceptance.",
+             "activation_calls": 0, "collection_seconds": 7.2, "watchdog_seconds": 7.9,
+             "image_equality_collection_gate": false,
+-            "snapshot_cgimage_metadata": "Not exposed by actual snapshot; no observer hook or recaching conversion added"
++            "snapshot_cgimage_metadata": "Fixture-only public CGImage scalar descriptors and color-space reference at the actual renderer.cgImage result; classification/ICC hash/bounded profile serialization only after all PNG captures and original window teardown. No retained image, observer pixel/provider readback, NSImage recache, conversion or relabel. Not a zero-observer-effect claim."
+         ]
+         defer {
++            let observationsBeforeCleanup = fixtureSnapshotCGImageObservations
++            report["snapshot_cgimage_observations_scope"] = "before_existing_window_teardown"
+             report["normal_after"] = ["reduce_motion": NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
+                 "reduce_transparency": NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,
+                 "increase_contrast": NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast]
+             if let r = root { report["metal_count_before_cleanup"] = fixtureDescendants(r).filter { $0 is MTKView }.count }
+             window?.orderOut(nil); window?.contentView = nil; window?.close(); watchdog?.cancel()
+             if let began { report["window_seconds"] = Date().timeIntervalSince(began) }
++            report["snapshot_cgimage_observations"] = observationsBeforeCleanup.map { $0.metadata() }
++            report["snapshot_cgimage_cleanup_observations"] = fixtureSnapshotCGImageObservations.dropFirst(observationsBeforeCleanup.count).map { $0.metadata() }
+             report["samples"] = samples; report["captures"] = captures
+             report["frontmost_before"] = front
+             report["frontmost_after"] = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0

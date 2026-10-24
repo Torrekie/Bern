@@ -1,0 +1,14 @@
+work/native-pq-hero-cgmetadata-local13/ProductImage.swift:49:18: warning: case is already handled by previous patterns; consider removing it
+        @unknown default: 1
+        ~~~~~~~~~^~~~~~~~~~
+work/native-pq-hero-cgmetadata-local13/ProductImage.swift:49:9: warning: default will never be executed
+        @unknown default: 1
+        ^
+work/native-pq-hero-cgmetadata-local13/ProductHero.swift:389:36: error: 'CGColorSpaceIsWideGamutRGB' has been replaced by property 'CGColorSpace.isWideGamutRGB'
+        record["wide_gamut_rgb"] = CGColorSpaceIsWideGamutRGB(space)
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                   space.isWideGamutRGB      
+CoreGraphics.CGColorSpaceIsWideGamutRGB:3:13: note: 'CGColorSpaceIsWideGamutRGB' was obsoleted in Swift 3
+public func CGColorSpaceIsWideGamutRGB(_: CGColorSpace) -> Bool
+            ^
+error: fatalError

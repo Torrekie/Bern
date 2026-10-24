@@ -1,0 +1,25 @@
+--- baseline/snapshot.swift
++++ diagnostic/snapshot.swift
+@@ -83,10 +83,22 @@
+     }
+ 
+     fileprivate func snapshot(in overlay: NSView) -> BernHeroPicture? {
++        guard let backend = FixtureHeroSnapshotBackend.selected else {
++            FixtureNativeCI.fail("Unknown snapshot backend; no fallback"); return nil
++        }
++        if backend == .nativeCI && capturesView {
++            FixtureNativeCI.fail("nativeCI does not support non-image capture"); return nil
++        }
+         if capturesView { return capture(in: overlay) }
+         guard let picture, window != nil, bounds.width > 0, bounds.height > 0 else { return nil }
+         let rect = convert(bounds, to: overlay)
+         guard rect.width > 0, rect.height > 0 else { return nil }
++        if backend == .nativeCI {
++            guard let pixels = FixtureNativeCI.pixels(picture, fit: fit, bounds: bounds, rect: rect,
++                scale: window?.backingScaleFactor ?? 0, corner: corner) else { return nil }
++            return BernHeroPicture(rect: rect, image: NSImage(cgImage: pixels, size: bounds.size),
++                corner: corner * rect.width / bounds.width)
++        }
+         let image = SwiftUI.Image(decorative: picture.image, scale: 1, orientation: picture.orientation).resizable()
+         let fitted: AnyView
+         switch fit {

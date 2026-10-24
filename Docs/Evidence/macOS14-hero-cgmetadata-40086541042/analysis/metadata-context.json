@@ -1,0 +1,602 @@
+{
+  "analysis_scope": "Actual endpoint descriptors plus preserved runtime reports/PNGs only; no new native read or image conversion.",
+  "crosshost_geometry_exclusions": [
+    "bytes_per_row",
+    "height",
+    "width"
+  ],
+  "hosts": {
+    "13": {
+      "ICC_base64_decode_verification": [
+        {
+          "array": "snapshot_cgimage_observations",
+          "decoded_profile_bytes": 3144,
+          "decoded_profile_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named"
+        },
+        {
+          "array": "snapshot_cgimage_observations",
+          "decoded_profile_bytes": 3144,
+          "decoded_profile_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom"
+        },
+        {
+          "array": "snapshot_cgimage_cleanup_observations",
+          "decoded_profile_bytes": 3144,
+          "decoded_profile_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named"
+        },
+        {
+          "array": "snapshot_cgimage_cleanup_observations",
+          "decoded_profile_bytes": 3144,
+          "decoded_profile_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom"
+        }
+      ],
+      "activation_calls": 0,
+      "actual_os_major": 13,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "actual_roi_scales": {
+            "body-custom": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "body-named": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "flight-custom": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "flight-named": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "oracle-bottom": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "oracle-top": {
+              "x": 2.0,
+              "y": 2.0
+            }
+          },
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "capture_space_name": "unnamed",
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "embedded_png_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 57693,
+          "phase": "progress-0",
+          "potential_headroom": 2,
+          "window_id": 10660
+        },
+        {
+          "active": false,
+          "actual_roi_scales": {
+            "body-custom": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "body-named": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "flight-custom": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "flight-named": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "oracle-bottom": {
+              "x": 2.0,
+              "y": 2.0
+            },
+            "oracle-top": {
+              "x": 2.0,
+              "y": 2.0
+            }
+          },
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "capture_space_name": "unnamed",
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "embedded_png_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 57693,
+          "phase": "progress-1",
+          "potential_headroom": 2,
+          "window_id": 10660
+        }
+      ],
+      "collection_seconds": 7.2,
+      "completed_phases": 2,
+      "expected_os_major": 13,
+      "frontmost_after": 1390,
+      "frontmost_before": 1390,
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 13.7.8 (Build 22H730)",
+      "snapshot_cgimage_observations_scope": "before_existing_window_teardown",
+      "snapshot_descriptors": {
+        "snapshot_cgimage_cleanup_observations": [
+          {
+            "alpha_info_raw": 1,
+            "bitmap_info_raw": 4353,
+            "bits_per_component": 16,
+            "bits_per_pixel": 64,
+            "byte_order_raw": 4096,
+            "bytes_per_row": 5120,
+            "color_space_components": 3,
+            "color_space_metadata_stage": "after_existing_window_teardown",
+            "color_space_model_raw": 1,
+            "color_space_name": "kCGColorSpaceExtendedSRGB",
+            "color_space_present": true,
+            "float_components": true,
+            "height": 360,
+            "icc_base64_omitted_reason": null,
+            "icc_byte_count": 3144,
+            "icc_present": true,
+            "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+            "is_hlg_based": false,
+            "is_pq_based": false,
+            "key": "baseline-body-named",
+            "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+            "pixel_format_raw": 0,
+            "uses_extended_range": true,
+            "uses_itur2100_tf": false,
+            "wide_gamut_rgb": true,
+            "width": 640
+          },
+          {
+            "alpha_info_raw": 1,
+            "bitmap_info_raw": 4353,
+            "bits_per_component": 16,
+            "bits_per_pixel": 64,
+            "byte_order_raw": 4096,
+            "bytes_per_row": 5120,
+            "color_space_components": 3,
+            "color_space_metadata_stage": "after_existing_window_teardown",
+            "color_space_model_raw": 1,
+            "color_space_name": "kCGColorSpaceExtendedSRGB",
+            "color_space_present": true,
+            "float_components": true,
+            "height": 360,
+            "icc_base64_omitted_reason": null,
+            "icc_byte_count": 3144,
+            "icc_present": true,
+            "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+            "is_hlg_based": false,
+            "is_pq_based": false,
+            "key": "baseline-body-custom",
+            "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+            "pixel_format_raw": 0,
+            "uses_extended_range": true,
+            "uses_itur2100_tf": false,
+            "wide_gamut_rgb": true,
+            "width": 640
+          }
+        ],
+        "snapshot_cgimage_observations": [
+          {
+            "alpha_info_raw": 1,
+            "bitmap_info_raw": 4353,
+            "bits_per_component": 16,
+            "bits_per_pixel": 64,
+            "byte_order_raw": 4096,
+            "bytes_per_row": 5120,
+            "color_space_components": 3,
+            "color_space_metadata_stage": "after_existing_window_teardown",
+            "color_space_model_raw": 1,
+            "color_space_name": "kCGColorSpaceExtendedSRGB",
+            "color_space_present": true,
+            "float_components": true,
+            "height": 360,
+            "icc_base64_omitted_reason": null,
+            "icc_byte_count": 3144,
+            "icc_present": true,
+            "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+            "is_hlg_based": false,
+            "is_pq_based": false,
+            "key": "baseline-body-named",
+            "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+            "pixel_format_raw": 0,
+            "uses_extended_range": true,
+            "uses_itur2100_tf": false,
+            "wide_gamut_rgb": true,
+            "width": 640
+          },
+          {
+            "alpha_info_raw": 1,
+            "bitmap_info_raw": 4353,
+            "bits_per_component": 16,
+            "bits_per_pixel": 64,
+            "byte_order_raw": 4096,
+            "bytes_per_row": 5120,
+            "color_space_components": 3,
+            "color_space_metadata_stage": "after_existing_window_teardown",
+            "color_space_model_raw": 1,
+            "color_space_name": "kCGColorSpaceExtendedSRGB",
+            "color_space_present": true,
+            "float_components": true,
+            "height": 360,
+            "icc_base64_omitted_reason": null,
+            "icc_byte_count": 3144,
+            "icc_present": true,
+            "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+            "is_hlg_based": false,
+            "is_pq_based": false,
+            "key": "baseline-body-custom",
+            "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+            "pixel_format_raw": 0,
+            "uses_extended_range": true,
+            "uses_itur2100_tf": false,
+            "wide_gamut_rgb": true,
+            "width": 640
+          }
+        ]
+      },
+      "source_ledger_selected_fields": {
+        "source-ffb-icc.png": {
+          "derived_id": "ObjectIdentifier(0x0000000154909580)",
+          "derived_is_pq_based": true,
+          "file_sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e",
+          "legacy_hdr_space_name": "kCGColorSpaceITUR_2100_PQ",
+          "orientation": "up",
+          "original_space_name": "unnamed",
+          "original_uses_2100_tf": false
+        },
+        "source-named-pq.png": {
+          "derived_id": "ObjectIdentifier(0x0000000154c091c0)",
+          "derived_is_pq_based": true,
+          "file_sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+          "legacy_hdr_space_name": "kCGColorSpaceITUR_2100_PQ",
+          "orientation": "up",
+          "original_space_name": "kCGColorSpaceITUR_2100_PQ",
+          "original_uses_2100_tf": true
+        }
+      },
+      "success": true,
+      "watchdog_seconds": 7.9,
+      "window_seconds": 2.41300892829895,
+      "within_host_primary_equals_cleanup": true
+    },
+    "14": {
+      "ICC_base64_decode_verification": [
+        {
+          "array": "snapshot_cgimage_observations",
+          "decoded_profile_bytes": 3144,
+          "decoded_profile_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named"
+        },
+        {
+          "array": "snapshot_cgimage_observations",
+          "decoded_profile_bytes": 3144,
+          "decoded_profile_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom"
+        },
+        {
+          "array": "snapshot_cgimage_cleanup_observations",
+          "decoded_profile_bytes": 3144,
+          "decoded_profile_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named"
+        },
+        {
+          "array": "snapshot_cgimage_cleanup_observations",
+          "decoded_profile_bytes": 3144,
+          "decoded_profile_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom"
+        }
+      ],
+      "activation_calls": 0,
+      "actual_os_major": 14,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "actual_roi_scales": {
+            "body-custom": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "body-named": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "flight-custom": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "flight-named": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "oracle-bottom": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "oracle-top": {
+              "x": 1.0,
+              "y": 1.0
+            }
+          },
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "capture_space_name": "unnamed",
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "embedded_png_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "frontmost_pid": 332,
+          "key": false,
+          "owner_pid": 971,
+          "phase": "progress-0",
+          "potential_headroom": 1,
+          "window_id": 24
+        },
+        {
+          "active": false,
+          "actual_roi_scales": {
+            "body-custom": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "body-named": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "flight-custom": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "flight-named": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "oracle-bottom": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "oracle-top": {
+              "x": 1.0,
+              "y": 1.0
+            }
+          },
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "capture_space_name": "unnamed",
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "embedded_png_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "frontmost_pid": 332,
+          "key": false,
+          "owner_pid": 971,
+          "phase": "progress-1",
+          "potential_headroom": 1,
+          "window_id": 24
+        }
+      ],
+      "collection_seconds": 7.2,
+      "completed_phases": 2,
+      "expected_os_major": 14,
+      "frontmost_after": 332,
+      "frontmost_before": 332,
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 14.8.9 (Build 23J631)",
+      "snapshot_cgimage_observations_scope": "before_existing_window_teardown",
+      "snapshot_descriptors": {
+        "snapshot_cgimage_cleanup_observations": [
+          {
+            "alpha_info_raw": 1,
+            "bitmap_info_raw": 4353,
+            "bits_per_component": 16,
+            "bits_per_pixel": 64,
+            "byte_order_raw": 4096,
+            "bytes_per_row": 2560,
+            "color_space_components": 3,
+            "color_space_metadata_stage": "after_existing_window_teardown",
+            "color_space_model_raw": 1,
+            "color_space_name": "kCGColorSpaceExtendedSRGB",
+            "color_space_present": true,
+            "float_components": true,
+            "height": 180,
+            "icc_base64_omitted_reason": null,
+            "icc_byte_count": 3144,
+            "icc_present": true,
+            "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+            "is_hlg_based": false,
+            "is_pq_based": false,
+            "key": "baseline-body-named",
+            "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+            "pixel_format_raw": 0,
+            "uses_extended_range": true,
+            "uses_itur2100_tf": false,
+            "wide_gamut_rgb": true,
+            "width": 320
+          },
+          {
+            "alpha_info_raw": 1,
+            "bitmap_info_raw": 4353,
+            "bits_per_component": 16,
+            "bits_per_pixel": 64,
+            "byte_order_raw": 4096,
+            "bytes_per_row": 2560,
+            "color_space_components": 3,
+            "color_space_metadata_stage": "after_existing_window_teardown",
+            "color_space_model_raw": 1,
+            "color_space_name": "kCGColorSpaceExtendedSRGB",
+            "color_space_present": true,
+            "float_components": true,
+            "height": 180,
+            "icc_base64_omitted_reason": null,
+            "icc_byte_count": 3144,
+            "icc_present": true,
+            "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+            "is_hlg_based": false,
+            "is_pq_based": false,
+            "key": "baseline-body-custom",
+            "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+            "pixel_format_raw": 0,
+            "uses_extended_range": true,
+            "uses_itur2100_tf": false,
+            "wide_gamut_rgb": true,
+            "width": 320
+          }
+        ],
+        "snapshot_cgimage_observations": [
+          {
+            "alpha_info_raw": 1,
+            "bitmap_info_raw": 4353,
+            "bits_per_component": 16,
+            "bits_per_pixel": 64,
+            "byte_order_raw": 4096,
+            "bytes_per_row": 2560,
+            "color_space_components": 3,
+            "color_space_metadata_stage": "after_existing_window_teardown",
+            "color_space_model_raw": 1,
+            "color_space_name": "kCGColorSpaceExtendedSRGB",
+            "color_space_present": true,
+            "float_components": true,
+            "height": 180,
+            "icc_base64_omitted_reason": null,
+            "icc_byte_count": 3144,
+            "icc_present": true,
+            "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+            "is_hlg_based": false,
+            "is_pq_based": false,
+            "key": "baseline-body-named",
+            "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+            "pixel_format_raw": 0,
+            "uses_extended_range": true,
+            "uses_itur2100_tf": false,
+            "wide_gamut_rgb": true,
+            "width": 320
+          },
+          {
+            "alpha_info_raw": 1,
+            "bitmap_info_raw": 4353,
+            "bits_per_component": 16,
+            "bits_per_pixel": 64,
+            "byte_order_raw": 4096,
+            "bytes_per_row": 2560,
+            "color_space_components": 3,
+            "color_space_metadata_stage": "after_existing_window_teardown",
+            "color_space_model_raw": 1,
+            "color_space_name": "kCGColorSpaceExtendedSRGB",
+            "color_space_present": true,
+            "float_components": true,
+            "height": 180,
+            "icc_base64_omitted_reason": null,
+            "icc_byte_count": 3144,
+            "icc_present": true,
+            "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+            "is_hlg_based": false,
+            "is_pq_based": false,
+            "key": "baseline-body-custom",
+            "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+            "pixel_format_raw": 0,
+            "uses_extended_range": true,
+            "uses_itur2100_tf": false,
+            "wide_gamut_rgb": true,
+            "width": 320
+          }
+        ]
+      },
+      "source_ledger_selected_fields": {
+        "source-ffb-icc.png": {
+          "derived_id": "nil",
+          "derived_is_pq_based": false,
+          "file_sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e",
+          "legacy_hdr_space_name": "kCGColorSpaceITUR_2100_PQ",
+          "orientation": "up",
+          "original_space_name": "kCGColorSpaceITUR_2100_PQ",
+          "original_uses_2100_tf": true
+        },
+        "source-named-pq.png": {
+          "derived_id": "nil",
+          "derived_is_pq_based": false,
+          "file_sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+          "legacy_hdr_space_name": "kCGColorSpaceITUR_2100_PQ",
+          "orientation": "up",
+          "original_space_name": "kCGColorSpaceITUR_2100_PQ",
+          "original_uses_2100_tf": true
+        }
+      },
+      "success": true,
+      "watchdog_seconds": 7.9,
+      "window_seconds": 2.4760600328445435,
+      "within_host_primary_equals_cleanup": true
+    }
+  },
+  "limitations": [
+    "Identical format descriptors/ICC bytes do not imply identical image pixel payloads, UI output or equal host/display headroom.",
+    "Each primary descriptor list was frozen before teardown; ICC classification/export occurred only afterward. Cleanup records are separately retained.",
+    "Historical14 was a different acquisition/process/VM context; exact ROI matches here are observations, not a general no-observer-effect or sole-cause proof."
+  ],
+  "same_distributed_binary_provenance": {
+    "actual_retained_package_binary": {
+      "bytes": 536704,
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgmetadata-ci14-40086541042/package/HeroSnapshotProbe",
+      "sha256": "e4b389d9b91035b42add5725358ae3404ac901a1da5786c4767291e47ac7be14"
+    },
+    "binary_sha256": "e4b389d9b91035b42add5725358ae3404ac901a1da5786c4767291e47ac7be14",
+    "runtime13_receipt": {
+      "bytes": 968,
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgmetadata-ci14-40086541042/runtime13/run-receipt.json",
+      "sha256": "62b6939488de090d452fb6dcff0e939e8dd76d0b6e2f9b519f790f0b9c20da31"
+    },
+    "runtime14_record": {
+      "bytes": 90,
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgmetadata-ci14-40086541042/runtime14/binary-sha256.txt",
+      "sha256": "503f2d0ab919bf149df4476aae8a214c7b8a1bbd42a302fe70b578be33ed2cee"
+    },
+    "scope": "Retained binary file hash and recorded package/run identity chain; this offline analysis does not rerun executable/signature/Mach-O inspections.",
+    "verification_record": {
+      "bytes": 1635,
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgmetadata-ci14-40086541042/root-package-verification.json",
+      "sha256": "ba3b43b32774daae2e5357cdfe175d956905146302505c7a5bc86c1529fe78d0"
+    }
+  },
+  "snapshot_primary_crosshost_equal_excluding_geometry": true
+}

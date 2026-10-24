@@ -1,0 +1,27 @@
+{
+  "actual_build_entry": "root-build.sh",
+  "actual_build_entry_sha256": "3d219518d3cc16a3abc3bfe5c4b57dca1dffab5b58a9e1c862d8b66aa46ea6d2",
+  "built_binary_sha256": "b10872e101db7bdec3fe34eeee57d1d50cc63439d731b86a6f64f846d86ce6d1",
+  "controls": {
+    "runtime13-default-control": {
+      "context_created": false,
+      "exit_code": 0,
+      "own_pid": 63925,
+      "report_sha256": "8e5090df9c6eec80efe7f78b3c5298a2f177fcf60e03579bc9d21f178c215d18",
+      "runtime_gates_pass": true,
+      "window_seconds": 1.622786045074463
+    },
+    "runtime13-nativeCI": {
+      "context_created": true,
+      "exit_code": 0,
+      "own_pid": 64086,
+      "report_sha256": "1674df10ab948b47d45d16df01eebaec7ef0eacef077e49d94eeefccb406f635",
+      "runtime_gates_pass": true,
+      "window_seconds": 6.790791988372803
+    }
+  },
+  "module_cache": "../native-pq-hero-colormode/modules",
+  "prepared_build_entry_executed": false,
+  "reason": "Reuse existing owned SDK14.2 cache instead of duplicating it. Exact compilation options and sources preserved in root-build.sh; source/fingerprint helpers unchanged.",
+  "strict_signature_verified": true
+}

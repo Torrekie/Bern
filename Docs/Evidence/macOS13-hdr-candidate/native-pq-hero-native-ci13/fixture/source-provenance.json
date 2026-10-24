@@ -1,0 +1,90 @@
+{
+  "baseline_archive": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-baseline13",
+  "baseline_build_fingerprint_sha256": "a378f16aed42ca4c2f1b323187fc336846435892802ab5021e166ed48427dbfb",
+  "baseline_driver_sha256": "b737b631acd61680b9a7a5aa6c64f669850b2bf345392f8cd357ceaf6a9ec67d",
+  "baseline_product_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "baseline_successful_combined_sha256": "d9ab86317594873615ecf584e4968dd063b36d754a373c1dbd13bea883759563",
+  "default_path": "Original archived ImageRenderer block byte-preserved after a backend guard/early-branch; does not create CIContext or inspect selected-CI inputs.",
+  "generated_files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.base.swift.inc": {
+      "bytes": 18757,
+      "sha256": "b737b631acd61680b9a7a5aa6c64f669850b2bf345392f8cd357ceaf6a9ec67d"
+    },
+    "Driver.swift.inc": {
+      "bytes": 25578,
+      "sha256": "8143554f11ab4014329ddce3496321efabf0fde75ee86978422d0dbcf63f9d84"
+    },
+    "ProductHero.base.swift": {
+      "bytes": 14982,
+      "sha256": "cbe5217424f9447a817d5cb40636e8012d54115a0d4f2e91b22b5732d96a5d13"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15478,
+      "sha256": "8470cdf4da4423d6e89370c0dc0852ac6120ff6fc76cae681c2d66d3ffe3e842"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductHero.swift": {
+      "bytes": 41771,
+      "sha256": "bc85be29557621adc898dfe738533004b29e85de13f1c46111596c381e6a26b7"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "native-ci-driver.patch": {
+      "bytes": 8962,
+      "sha256": "794cdedd390a72b47aa2d9dd5535c93bf437583d26ae06250af5cee90e2fc946"
+    },
+    "native-ci-snapshot.patch": {
+      "bytes": 1328,
+      "sha256": "d6dbb15b81e93dcafffa2f07a90a51126351155459a967ecbc1a2777aa5de818"
+    },
+    "sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    },
+    "sdk14-unused-clock.patch": {
+      "bytes": 907,
+      "sha256": "af4750a05e089043931ee70c90eebad774842226381fab0303d3249aece10944"
+    },
+    "source-provenance.baseline.json": {
+      "bytes": 5891,
+      "sha256": "2add1ffa450f23febef2491750d34f8b5231546a32ebf477212c57f1f574715f"
+    }
+  },
+  "limits": [
+    "Not a general fit/orientation/alpha/HLG/gainmap/product solution",
+    "No assumption about14 CGImage metadata/cause; compare measured14 baseline",
+    "No filter/exposure/tone curve/custom mapper; system conversion behavior remains to be measured"
+  ],
+  "lock": "Known opaque/up SHA-locked640x360 inputs; fill320x180pt, backingScale2, no transform/corner. Unsupported/unknown fail; no renderer fallback.",
+  "metadata_policy": "Only CGImage scalar fields; no new CopyICCData/color flags/name traversal. Helper registry stores only identity/label, not CGImage/NSImage. Report assembled after original window teardown; original driver ledger/NSImageRep observations unchanged.",
+  "native_ci_helper_sha256": "5546f28f6577506587bcc42c83d713e94251bfa76c32060b57c23ddae0f3ab4b",
+  "prepare_script_sha256": "f65a19e722f310d3d74031440b8ad6a570c0428e8ee3f4e9a16bd959268ec09f",
+  "preserved": [
+    "Actual Image/body/cache/Style",
+    "Same root driver frames/actions/stability/normal/front/cache/noMetal/noTimer/deadlines",
+    "Archived SDK14 gainmap guard and unused clock failguard"
+  ],
+  "scope": "Work-only uncompiled/unrun fixed-input public native-CI conversion diagnostic; no product/other fixture/archive modification.",
+  "selected_path": "Actual cached canonicalPQ CGImage or exact SHA-locked known namedPQ original, explicit input colorSpace, CIContext.createCGImage RGBAh/extendedSRGB; same original NSImage wrapper arguments and Flight.draw."
+}

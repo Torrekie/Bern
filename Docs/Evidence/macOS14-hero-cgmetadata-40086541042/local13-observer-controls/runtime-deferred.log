@@ -1,0 +1,22 @@
+2026-10-24 18:18:19.630 HeroCGMetadataDeferredProbe[52382:4404134] NSWindow warning: adding an unknown subview: <_TtC27HeroCGMetadataDeferredProbeP33_C04E6B0B61A98F52DC4A82877AD0405815BernHeroOverlay: 0x14890b000>. Break on NSLog to debug.
+2026-10-24 18:18:19.649 HeroCGMetadataDeferredProbe[52382:4404134] Call stack:
+(
+	0   AppKit                              0x00000001a0a3a004 -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x00000001a0a39ce4 -[NSView addSubview:positioned:relativeTo:] + 176
+	2   AppKit                              0x00000001a0a39bb0 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroCGMetadataDeferredProbe         0x0000000104986230 $s27HeroCGMetadataDeferredProbe21BernWindowImageHeroesC14prepareOverlay33_C04E6B0B61A98F52DC4A82877AD04058LLSbyF + 308
+	4   HeroCGMetadataDeferredProbe         0x000000010498422c $s27HeroCGMetadataDeferredProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 432
+	5   HeroCGMetadataDeferredProbe         0x000000010498bec0 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x000000019d556874 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x000000019d558400 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x000000019d566bf8 _dispatch_main_queue_drain + 928
+	9   libdispatch.dylib                   0x000000019d566848 _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x000000019d827b24 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x000000019d7e52a4 __CFRunLoopRun + 1992
+	12  CoreFoundation                      0x000000019d7e4388 CFRunLoopRunSpecific + 612
+	13  Foundation                          0x000000019e762de8 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212
+	14  Foundation                          0x000000019e7d71a4 -[NSRunLoop(NSRunLoop) runUntilDate:] + 100
+	15  HeroCGMetadataDeferredProbe         0x0000000104996744 $s27HeroCGMetadataDeferredProbe0A12BaselineMain33_C04E6B0B61A98F52DC4A82877AD04058LLO3runs5Int32VyFZTf4d_n + 9500
+	16  HeroCGMetadataDeferredProbe         0x000000010498c398 main + 12
+	17  dyld                                0x000000019d3affd8 start + 2412
+)

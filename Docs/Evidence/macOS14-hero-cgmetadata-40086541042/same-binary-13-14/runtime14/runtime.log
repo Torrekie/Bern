@@ -1,0 +1,22 @@
+2026-10-24 10:36:35.049 HeroSnapshotProbe[971:5520] NSWindow warning: adding an unknown subview: <_TtC17HeroSnapshotProbeP33_A324D4B1F45E392A0263573A8977E4F815BernHeroOverlay: 0x11ee25420>. Break on NSLog to debug.
+2026-10-24 10:36:35.426 HeroSnapshotProbe[971:5520] Call stack:
+(
+	0   AppKit                              0x000000019770a61c -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x000000019770a190 -[NSView addSubview:positioned:relativeTo:] + 372
+	2   AppKit                              0x0000000197709f98 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroSnapshotProbe                   0x0000000100b05f30 $s17HeroSnapshotProbe21BernWindowImageHeroesC14prepareOverlay33_A324D4B1F45E392A0263573A8977E4F8LLSbyF + 300
+	4   HeroSnapshotProbe                   0x0000000100b04400 $s17HeroSnapshotProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 452
+	5   HeroSnapshotProbe                   0x0000000100b0b850 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x0000000193bf8750 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x0000000193bfa3e8 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x0000000193c08bb8 _dispatch_main_queue_drain + 988
+	9   libdispatch.dylib                   0x0000000193c087cc _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x0000000193ecb834 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x0000000193e88fb8 __CFRunLoopRun + 1996
+	12  CoreFoundation                      0x0000000193e88194 CFRunLoopRunSpecific + 608
+	13  Foundation                          0x0000000194fbe6b8 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212
+	14  Foundation                          0x0000000195033bd0 -[NSRunLoop(NSRunLoop) runUntilDate:] + 100
+	15  HeroSnapshotProbe                   0x0000000100b14694 $s17HeroSnapshotProbe0A12BaselineMain33_A324D4B1F45E392A0263573A8977E4F8LLO3runs5Int32VyFZTf4d_n + 9652
+	16  HeroSnapshotProbe                   0x0000000100b0bc00 main + 12
+	17  dyld                                0x0000000193a1f154 start + 2476
+)

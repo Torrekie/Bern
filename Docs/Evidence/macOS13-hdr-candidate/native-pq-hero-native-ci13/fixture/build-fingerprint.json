@@ -1,0 +1,82 @@
+{
+  "built_at_utc": "2026-10-24T10:40:20.308344+00:00",
+  "codesign": {
+    "argv": [
+      "codesign",
+      "-dvvv",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-native-ci/HeroNativeCIProbe"
+    ],
+    "exit_code": 0,
+    "output": "Executable=/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-native-ci/HeroNativeCIProbe\nIdentifier=HeroNativeCIProbe\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=4202 flags=0x20002(adhoc,linker-signed) hashes=128+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=e7cac669d4144c7f01d3de6e26fbbc698ab35699\nCandidateCDHashFull sha256=e7cac669d4144c7f01d3de6e26fbbc698ab35699a22c5760f668140c607903a7\nHash choices=sha256\nCMSDigest=e7cac669d4144c7f01d3de6e26fbbc698ab35699a22c5760f668140c607903a7\nCMSDigestType=2\nLaunch Constraints:\n\tNone\nCDHash=e7cac669d4144c7f01d3de6e26fbbc698ab35699\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\n"
+  },
+  "codesign_verify": {
+    "argv": [
+      "codesign",
+      "--verify",
+      "--strict",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-native-ci/HeroNativeCIProbe"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  "file": {
+    "argv": [
+      "file",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-native-ci/HeroNativeCIProbe"
+    ],
+    "exit_code": 0,
+    "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-native-ci/HeroNativeCIProbe: Mach-O 64-bit executable arm64\n"
+  },
+  "hashes": {
+    "Dependencies.swift": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9",
+    "Driver.swift.inc": "8143554f11ab4014329ddce3496321efabf0fde75ee86978422d0dbcf63f9d84",
+    "HeroNativeCIProbe": "b10872e101db7bdec3fe34eeee57d1d50cc63439d731b86a6f64f846d86ce6d1",
+    "NativeCI.swift.inc": "5546f28f6577506587bcc42c83d713e94251bfa76c32060b57c23ddae0f3ab4b",
+    "ProductHero.swift": "bc85be29557621adc898dfe738533004b29e85de13f1c46111596c381e6a26b7",
+    "ProductImage.swift": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54",
+    "ProductStyle.swift": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984",
+    "build-environment.txt": "01bfc9c177f9e260a640e0c55de3a5b216abdae9ff89f04630b9c9bae92a1ea8",
+    "build.log": "7a99f52d78a9600fa2b23268234b449526f9dca6323e1d8cc2686aa4cd18759f",
+    "build.sh": "bbce996cc04dcb0847e3494e2de675cac81cfea3ac8114e888ad6f421ed2c040",
+    "fingerprint.py": "7376e6c413b6a3aa7816f66e9e9c2bd2dd4926801908f2697c26b92a12686fd9",
+    "native-ci-driver.patch": "794cdedd390a72b47aa2d9dd5535c93bf437583d26ae06250af5cee90e2fc946",
+    "native-ci-snapshot.patch": "d6dbb15b81e93dcafffa2f07a90a51126351155459a967ecbc1a2777aa5de818",
+    "sdk14-unreachable-gainmap.patch": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf",
+    "sdk14-unused-clock.patch": "af4750a05e089043931ee70c90eebad774842226381fab0303d3249aece10944",
+    "source-provenance.json": "5f19485b305c3ab2f57707165873844b67d42a941aa348779732fae0c95221b3",
+    "verify_sources.py": "9878e874afd50b8b4b5290ae807a8dac2acdf45d11d37ec03630a767e1a8ab16"
+  },
+  "jobs": 2,
+  "language_mode": "5",
+  "mach_build": {
+    "argv": [
+      "xcrun",
+      "vtool",
+      "-show-build",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-native-ci/HeroNativeCIProbe"
+    ],
+    "exit_code": 0,
+    "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-native-ci/HeroNativeCIProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 14.2\n   ntools 1\n     tool LD\n  version 1022.1\n"
+  },
+  "optimization": "O",
+  "sdk": {
+    "argv": [
+      "xcrun",
+      "--show-sdk-version"
+    ],
+    "exit_code": 0,
+    "output": "14.2\n"
+  },
+  "source_policy": "Archived successful default fixture plus fixed-input native-CI early branch/config/report only. Original ImageRenderer default, NSImage wrapper, Flight.draw and inherited SDK14 adaptations retained.",
+  "swift": {
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "swift-driver version: 1.87.3 Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\n"
+  },
+  "target": "arm64-apple-macos13.0",
+  "warning_policy": "No warning suppression or warnings-as-errors assertion; preserve actual compiler log."
+}

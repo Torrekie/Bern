@@ -1,0 +1,103 @@
+{
+  "baseline_archive": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-baseline13",
+  "baseline_build_fingerprint_sha256": "a378f16aed42ca4c2f1b323187fc336846435892802ab5021e166ed48427dbfb",
+  "baseline_compiled_source_sha256": "d9ab86317594873615ecf584e4968dd063b36d754a373c1dbd13bea883759563",
+  "baseline_driver_sha256": "b737b631acd61680b9a7a5aa6c64f669850b2bf345392f8cd357ceaf6a9ec67d",
+  "baseline_product_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "baseline_source_provenance_sha256": "2add1ffa450f23febef2491750d34f8b5231546a32ebf477212c57f1f574715f",
+  "default_policy": "No colorMode setter when env is absent/default. No assumption that explicit nonLinear equals an unset property.",
+  "diagnostic_changes": [
+    "One optional public colorMode assignment after actual renderer creation/scale and before cgImage read.",
+    "One process-cached BERN_HERO_COLOR_MODE enum plus report fields and invalid-mode prewindow failure."
+  ],
+  "generated_files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.base.swift.inc": {
+      "bytes": 18757,
+      "sha256": "b737b631acd61680b9a7a5aa6c64f669850b2bf345392f8cd357ceaf6a9ec67d"
+    },
+    "Driver.swift.inc": {
+      "bytes": 19910,
+      "sha256": "7d02b7d9d21d157f8b5b7e8b36af423bf22a6b52103e423124f27c4d9d4c0b1e"
+    },
+    "ProductHero.base.swift": {
+      "bytes": 14982,
+      "sha256": "cbe5217424f9447a817d5cb40636e8012d54115a0d4f2e91b22b5732d96a5d13"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15478,
+      "sha256": "8470cdf4da4423d6e89370c0dc0852ac6120ff6fc76cae681c2d66d3ffe3e842"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductHero.swift": {
+      "bytes": 35597,
+      "sha256": "c40e9882b83f1e3cfaffd44098b6d2b5b3c2770de34d74c0149aa16dd2ccad34"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "color-mode-driver.patch": {
+      "bytes": 2279,
+      "sha256": "a072d586cd4b8d7873473f7c4f1352544601a6678c341dabebfeff487792ff4e"
+    },
+    "color-mode-snapshot.patch": {
+      "bytes": 712,
+      "sha256": "e19994668a4ba8f485b4efbc81bdefafa28f5c5e72f5361849ee7fd4610c7f3e"
+    },
+    "sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    },
+    "sdk14-unused-clock.patch": {
+      "bytes": 907,
+      "sha256": "af4750a05e089043931ee70c90eebad774842226381fab0303d3249aece10944"
+    },
+    "source-provenance.baseline.json": {
+      "bytes": 5891,
+      "sha256": "2add1ffa450f23febef2491750d34f8b5231546a32ebf477212c57f1f574715f"
+    }
+  },
+  "inherited_adaptations": [
+    "Exact archived compiler condition around SDK14-unavailable gain-map decode.",
+    "Exact archived compiler/availability failguard on unused coordinator clock. Timer must remain absent."
+  ],
+  "input_sources_verified_against_successful_baseline_fingerprint": true,
+  "prepare_script_sha256": "5cb250f77b012d7cc57593d46176ebfe5ed8c4b8800fb2eaf649156314874df4",
+  "public_api": {
+    "ImageRenderer_available_macos": "13.0",
+    "interface_path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Versions/A/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+    "interface_sha256": "f1a9f2592019d14603bacaaba32f782af2f6572cb665646e8246fe29be5de43c",
+    "property": "public MainActor ImageRenderer.colorMode",
+    "public_enum_cases": [
+      "nonLinear",
+      "linear",
+      "extendedLinear"
+    ]
+  },
+  "scope": "Prepared only. No compile/typecheck, UI, CI or product/archive modification. Single-mode process, not a matrix.",
+  "unchanged": [
+    "Actual ProductImage body/decode/cache",
+    "Actual ProductStyle/hero modifier",
+    "Actual NSImage.draw/FlightView",
+    "All window geometry/normal/frontmost/nonkey/noMetal/noTimer/capture/stable-buffer/deadline gates"
+  ]
+}

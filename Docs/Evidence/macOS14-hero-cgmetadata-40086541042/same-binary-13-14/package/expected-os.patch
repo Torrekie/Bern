@@ -1,0 +1,28 @@
+--- original13/Driver.swift.inc
++++ shared13-14/Driver.swift.inc
+@@ -95,11 +95,14 @@
+         guard CommandLine.arguments.count == 4 else { return 2 }
+         let urls = CommandLine.arguments[1...2].map { URL(fileURLWithPath: $0) }
+         let output = URL(fileURLWithPath: CommandLine.arguments[3], isDirectory: true)
++        let expectedOS = Int(ProcessInfo.processInfo.environment["BERN_HERO_EXPECT_OS"] ?? "13") ?? -1
++        let actualOS = ProcessInfo.processInfo.operatingSystemVersion.majorVersion
+         let front = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
+         var window: NSWindow?, root: FixtureRoot?, began: Date?, watchdog: DispatchSourceTimer?
+         var samples: [[String: Any]] = [], captures: [[String: Any]] = []
+         var report: [String: Any] = [
+             "success": false, "product_head": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
++            "expected_os_major": expectedOS, "actual_os_major": actualOS,
+             "scope": "Actual BernImage(hero: unique nonnil keys) body/modifier/anchor/manager/snapshot; actual BernHeroFlightView.draw at fixed progress0/1, same opaque image at both endpoints. Static endpoints only, no actual coordinated flight or lifecycle acceptance.",
+             "activation_calls": 0, "collection_seconds": 7.2, "watchdog_seconds": 7.9,
+             "image_equality_collection_gate": false,
+@@ -121,8 +124,8 @@
+         }
+         do {
+             try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
+-            guard ProcessInfo.processInfo.operatingSystemVersion.majorVersion == 13, CGPreflightScreenCaptureAccess() else {
+-                throw FixtureFailure(message: "Actual13 and existing screen permission required; no prompt")
++            guard (expectedOS == 13 || expectedOS == 14), actualOS == expectedOS, CGPreflightScreenCaptureAccess() else {
++                throw FixtureFailure(message: "Expected13/14 and existing screen permission required; no prompt")
+             }
+             func normal() -> [String: Bool] {
+                 ["reduce_motion": NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,

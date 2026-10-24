@@ -152,4 +152,17 @@ ready宽度900/920/920满足，但高度/恢复时序不同；所有末态捕获
 
 新增[同一binary的13/14 hero基线](../Evidence/macOS14-hero-snapshot-40080838898/README.md)已完成：build40080291082成功，首14 job仅因optional原始defaults键缺失而在应用启动前退出、PNG0；只修改该日志读取为nonfatal后，保留实际NSWorkspace normal首尾门槛，runtime-only40080838898复用原已签名binary成功，没有重编。新SDK26.2/Swift6.2.4的13两phase×六ROI在raw/normalized均逐像素等于旧SDK13；原先SDK14 fixture编译适配不再参与这份同binary证据。
 
-14自身hero也不等于body，因此不能把13hero强制等于live body当作已证实14目标。两宿主的`D=hero−body`十色块均值残差之差，MAE5.210863–5.236956、最大113.048334/255，最差cool812的R；父任务独立重算一致。14 hero跨phase还有max1/2的小差异，13各ROI跨phase不变，显示ICC/倍率/潜在余量不同，未指定唯一原因。13/14窗口分别1.612/2.499秒，normal首尾false、前台不变、Metal0、flight0/timer无、缓存不变均通过。optional-display候选未误合产品，下一步为公开ImageRenderer colorMode的限定诊断，先default control再extendedLinear；不拟合颜色或改上游14行为。新包/传输tar939623逻辑字节已清理，原始失败和成功证据分开保留；hero与整阶段继续未通过。
+14自身hero也不等于body，因此不能把13hero强制等于live body当作已证实14目标。两宿主的`D=hero−body`十色块均值残差之差，MAE5.210863–5.236956、最大113.048334/255，最差cool812的R；父任务独立重算一致。14 hero跨phase还有max1/2的小差异，13各ROI跨phase不变，显示ICC/倍率/潜在余量不同，未指定唯一原因。13/14窗口分别1.612/2.499秒，normal首尾false、前台不变、Metal0、flight0/timer无、缓存不变均通过。optional-display候选未误合产品，公开ImageRenderer colorMode的限定诊断随后已完成，见下节；未拟合颜色或改上游14行为。新包/传输tar939623逻辑字节已清理，原始失败和成功证据分开保留；hero与整阶段继续未通过。
+
+
+## Hero 色彩格式与系统转换的限定排查（2026-10-24）
+
+[公开colorMode实验](../Evidence/macOS13-hdr-candidate/native-pq-hero-colormode13/RESULTS.md)已完成default→extendedLinear两个独立进程，没有额外模式矩阵。default两phase×六ROI的原始RGB与ICC→sRGB均精确复现原13；extendedLinear保持body/oracle与几何不变，仅hero的normalized fullRGB MAE改变named0.004439、custom0.007953/255，max3/255。跨宿主十色块`(hero−body)13−(hero−body)14`的最大差仍为113.048334/255，主要cool812.R未改善。它是阴性诊断，未合入产品。
+
+[元数据采集40086541042](https://github.com/Torrekie/Bern/actions/runs/40086541042)成功构建并运行14，同一原签名二进制`e4b389d9…7be14`已在13运行。[原始证据和分析](../Evidence/macOS14-hero-cgmetadata-40086541042/RESULTS.md)保留实际`renderer.cgImage`之后的一处观察点：绘制期间只记录格式标量和CGColorSpace引用，全部ICC导出/分类在截图及原窗口teardown之后执行，不读新像素或保留CGImage/NSImage。13、14均为16bpc浮点、64bpp、extendedSRGB，完整ICC均3144字节且SHA256为`2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e`；尺寸640×360与320×180跟随实际2×/1×尺度。元数据相同不等于像素、动态范围或显示环境相同，不能把色差归为标签不同。
+
+新13对原13、新14对历史14，各自两phase×六ROI在raw和normalized均精确相同；十色块/灰阶ramp也无差，因此这次观察未改变所测区域。仍不据单次结果宣称普遍零观察效应。最初eager观察版本仅p0有max3/255差、p1精确复现；原图保留，原因未知，不认定ICC查询已被证明是原因。当前deferred版本首尾normal均false、前台不变、无flight/timer/MTKView、原缓存不变；13/14窗口分别2.413/2.476秒。两边截图ICC、倍率及potential headroom仍不同。
+
+[系统Core Image转换实验](../Evidence/macOS13-hdr-candidate/native-pq-hero-native-ci13/RESULTS.md)随后使用SHA锁定的不透明、up、fill640×360→320×180pt@2×输入，仅在实际snapshot边界改用已有cached canonicalPQ→显式源色空间CIImage→RGBAh/extendedSRGB CGImage，保持同一NSImage包装与Flight.draw。默认control仍12ROI全部精确、未创建CIContext；selected分支只改变hero：normalized fullRGB MAE为named0.010739、custom0.018699/255、max3/255，body/oracle全部不变。最大跨宿主残差仍113.048334/255，未解决主色差，未合产品；无自拟tone curve或色块补偿。selected窗口6.791秒，默认1.623秒，均通过既有7.9秒window界限；MTKView=0不意味着CIContext内部没有使用GPU。
+
+以上均只覆盖实际snapshot和固定progress0/1的同图端点，不覆盖完整flight、High/HLG、透明图、其它方向/fit、物理HDR或整应用等效。下一步先审查真实NSImage.draw边界在13可用的公开行为与14变化，只有形成可验证的单一假设才增加运行实验。当前goal继续active，后续macOS11/Swift5.3/Objective-C/iOS阶段仍暂缓；本轮自有缓存与重复构建物的清理见[收据](../Evidence/macOS13-hdr-candidate/hero-color-experiments-cleanup-20261024.json)。

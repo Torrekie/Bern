@@ -1,0 +1,13 @@
+--- baseline/ProductHero.clock-adapted.swift
++++ diagnostic/ProductHero.swift
+@@ -96,6 +96,10 @@
+         }
+         let renderer = ImageRenderer(content: fitted.frame(width: bounds.width, height: bounds.height).clipped())
+         renderer.scale = window?.backingScaleFactor ?? 2
++        // Diagnostic only: default deliberately leaves the actual renderer unset.
++        if let colorMode = FixtureHeroColorMode.selected?.rendererMode {
++            renderer.colorMode = colorMode
++        }
+         guard let pixels = renderer.cgImage else { return nil }
+         return BernHeroPicture(rect: rect, image: NSImage(cgImage: pixels, size: bounds.size),
+             corner: corner * rect.width / bounds.width)
