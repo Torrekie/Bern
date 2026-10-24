@@ -71,7 +71,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 | Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。新增整应用trace已记录14的target始终3，nearest变4，quiet释放后由Bern follow明确写position3→4；13后台trace则nearest保持3。14原生只读快照确认clip709、insets左右234.5、document1638；13使用真实padding。d146诊断候选已使direct初始Glen完整frame对14差小于0.00001pt，默认3及nearest保留。与旧f9同collector对照确认wide约16.5pt偏差旧13已有，First/Last-again/restore候选相对旧13约+0.186pt；首Last仍差且时序/前台条件不同。去插桩的clean修复已提交e48fff46，精确整应用CI40070407306及13三场景运行合同已成功，wait/direct几何吻合，immediate仍差35/36pt且启动恢复/resize历史未分离；不把诊断构建通过套给clean应用，也不改默认值。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
 | 未覆盖控件变体 | `f9e08b1`已让生成器选中的普通volume PopoverButton复用系统圆形NSButton，独立native action检查通过（单次触发、快捷键、disabled、外部打开和WindowServer alpha=0的关闭，与原Button配对一致）；整应用该版本构建、本机启动及Frame绑定打开/编辑均通过；14浅色Frame detail与原生popup已完成f9/上游配对：内容像素与几何一致，主窗侧栏仍有选中配色差异；新增13 active Frame已通过媒体/idle/AX与主要几何，仍有popup/视频色差、Caption/Size宽度约2pt及Size文字约3pt差异。icon风格Menu、显式尺寸等仍有独立路径，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
-| 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
+| 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。新增[完整Showcase标题宿主候选](../Evidence/macOS13-toolbar-title-host-f6/RESULTS.md)仅迁移navigationTitle，四阶段A/B原PNG逐字相同、选定几何最大差0；已停止，不合产品，不追加14CI。仍需其它源级composition或独立原生chrome所有权证据，不能持续争夺delegate/items。 |
 | 图片页首卡高度 | 完整应用A14/B14/C13首卡分别124/125/129pt，图片和caption边界接近，后续HDR卡均147pt。新增[同binary14普通效果探针](../Evidence/macOS14-image-layout/validation.json)九组合/27位置中，首卡与fixed109卡均129、HDR147，均与13同binary相同；其它公开坐标仍有最高2.5pt差异。进一步[静态四子节点隔离](../Evidence/macOS13-image-layout/static-children/validation.json)在13和14各1800个公开坐标框均与原ForEach夹具相同，首卡仍129，已排除该单独因素；13全部27 PNG字节相同，14为25/27，未宣称全像素相等。独立probe仍未复现完整应用14首卡124/125，完整Scene及其余简化包装待隔离，不能把probe匹配当整应用修复，也不以负padding抵消。 |
 | PQ/HLG 色彩 | `e06e080`的严格cICP识别、系统SDR转换、无Metal备用与真实余量通知已随`5226454`及最新`f9e08b1`完整构建并启动。原产品High尚未等同；新增独立Annex5候选在已知中性PQ样本上，Hd1完整ramp对14 MAE0.104109/255，Hd2提交linear EDR为1/1.996094，真实通知观察到1→2→1→2。这是未接入产品的有限输入实验，彩色/metadata/HLG及同条件14High未通过。[原系统路径证据](../Evidence/macOS13-hdr/reference.json)、[候选证据与限制](../Evidence/macOS13-hdr-candidate/reference.json)。 |
 | 真正鼠标拖动 | 独立系统NSSlider也未收到自动化drag的mouseDown，值仍50；同控件AXIncrement能产生一次action并变55，因而已在Bern外复现输入交付限制。尚未证明“拖动时只预览，松手仅提交一次”。AXIncrement 单次提交不替代它。 |
@@ -133,3 +133,11 @@ GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的�
 ready宽度900/920/920满足，但高度/恢复时序不同；所有末态捕获才统一920×668。首次Last、resize、首次恢复过程及物理手势仍未验收，跨组像素/ICC本轮未测。详见[Film事实与边界](macOS13-Film-Initial-Position.md)。[源码审查](../Evidence/macOS14-film-source-delta-f9-e48/README.md)确认新增属性/共享闭包会改变14结构，不能只凭runtime guard宣称14结构无差异；本轮未指定根因。
 
 [首次ABBA失败记录](../Evidence/macOS14-film-abba-attempt-40073935416/README.md)完整保留：A1稳定截图后末态AX120ms截断，B1/B2/A2未开始。随后仅把该唯一末态walk改为既有followup的2秒预算，完整六图门槛不变，得到本轮完整结果；两轮不拼接。父任务独立核验失败raw166项、成功raw495项及各自离线总清单。远端已清除自有scratch/download/cache，本机work路径改为唯一归档的符号链接，没有重复保留应用。
+
+## 工具栏标题宿主的完整应用阴性结果
+
+[诊断source f6 / CI40075331576](../Evidence/macOS13-toolbar-title-host-f6/RESULTS.md)基于已交付9dd，只将动态navigationTitle从detail移到整个NavigationSplitView；显式隐藏标题仍走原路径。这是all-macOS诊断候选，不宣称14保持，未合入产品。与9dd工具链、CLI/资源相同，仅GUI不同。本机active13的Buttons→Text→Controls→Buttons四阶段中，A/B原PNG文件与全部RGBA逐字相同，标题header、两层Toggle、sidebar/detail几何最大差0。因此停止此变量，不为阴性结果再运行14CI。
+
+首轮因可选AX属性错误而中止于A首页，B未启动；原68项证据保留。修订采集器区分严格Role/Children树完整性与可选属性错误，2秒AX预算和动作/PNG顺序不动；v2完整134项原始hash通过父任务及离线复核。tree_complete=true仍伴随complete=false，不能说所有AX属性完整。八张稳定原图、normal首尾false、前台恢复、原件全成员复验与清理均有记录；effective Light未断言，仅是同机A/B几何比较。
+
+自有应用副本、两轮observer/cache、诊断exact、传输包均清理，原交付9dd/e48精确GUI及严格签名保持。历史静态清单中有意移除的17个artifact成员由收据列出，当前现存证据另有最终清单。goal继续active，Film即刻关闭/首次Last/resize、chrome、图片布局、HDR/hero等未通过项继续保留；不进入11/Objective-C/iOS。

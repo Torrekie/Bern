@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "success": true,
+  "order": [
+    "A",
+    "B"
+  ],
+  "locks": {
+    "A": {
+      "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Showcase.app",
+      "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/showcase",
+      "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+      "gui_sha256": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+      "cli_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170"
+    },
+    "B": {
+      "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app",
+      "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase",
+      "source_sha": "f6be9bd95253970ad82429f8b6df107d4447e647",
+      "gui_sha256": "7a1a1f6a51645087b35c60994a331fb8be2ac792aaeec76270363ce353e0c775",
+      "cli_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170"
+    },
+    "observer": {
+      "binary": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/observer-work/ToolbarProbe",
+      "binary_sha256": "8fc8d74a5e4711ac2373f0cd8b556591355fca7131f019afa4651f5a8c4ea63a",
+      "source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-composition-audit/capture/showcase-toolbar-probe.swift",
+      "source_sha256": "bcc2d36a35aad9aa79f3bd1a398600735837025fb9ec2e51657c8aa98ab382ee",
+      "cleanup_owned_work": true
+    }
+  },
+  "groups": [
+    {
+      "variant": "A",
+      "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+      "bundle_id": "dev.bern.toolbar13.a.2bb91ae809564e4b93aebf1384280b54",
+      "start_epoch": 1792829159.891053,
+      "exit_status": 0,
+      "end_epoch": 1792829166.5658329,
+      "front_before": {
+        "bundle": "com.openai.codex",
+        "captured_uptime": 230438.4331024167,
+        "pid": 1390
+      },
+      "front_after": {
+        "front_bundle": "com.openai.codex",
+        "front_pid": 1390,
+        "own_pid": 19224,
+        "uptime": 230444.98736775
+      },
+      "normal_profile_start": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_profile_end": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "collector_success": true,
+      "complete": true
+    },
+    {
+      "variant": "B",
+      "source_sha": "f6be9bd95253970ad82429f8b6df107d4447e647",
+      "bundle_id": "dev.bern.toolbar13.b.202992c2a2ea477f92f17f1bbd935b3e",
+      "start_epoch": 1792829167.251638,
+      "exit_status": 0,
+      "end_epoch": 1792829173.4630668,
+      "front_before": {
+        "bundle": "com.openai.codex",
+        "captured_uptime": 230445.82387183336,
+        "pid": 1390
+      },
+      "front_after": {
+        "front_bundle": "com.openai.codex",
+        "front_pid": 1390,
+        "own_pid": 19299,
+        "uptime": 230451.89757300002
+      },
+      "normal_profile_start": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_profile_end": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "collector_success": true,
+      "complete": true
+    }
+  ],
+  "observer_cap_seconds": 120,
+  "wrapper_work_cap_seconds": 330,
+  "scope": "Two isolated Showcase copies, one root-built observer, active13 four-page sequence; no preferences/TCC changes beyond new own identity domains.",
+  "phase": "observe-B",
+  "cleanup": {
+    "errors": [],
+    "removed": [
+      {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/runtime-work",
+        "logical_bytes": 10226918
+      },
+      {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/observer-work",
+        "logical_bytes": 49831520
+      }
+    ],
+    "original_member_rechecks": {
+      "A": true,
+      "B": true
+    },
+    "processes_before": [],
+    "processes_after": [],
+    "own_preferences_disk_checks": [
+      {
+        "identifier": "dev.bern.toolbar13.a.2bb91ae809564e4b93aebf1384280b54",
+        "absent_at_check": true,
+        "scope": "Own new UUID disk file only; cfprefsd memory domain and later re-creation not asserted."
+      },
+      {
+        "identifier": "dev.bern.toolbar13.b.202992c2a2ea477f92f17f1bbd935b3e",
+        "absent_at_check": true,
+        "scope": "Own new UUID disk file only; cfprefsd memory domain and later re-creation not asserted."
+      }
+    ]
+  },
+  "ended_epoch": 1792829173.91584
+}

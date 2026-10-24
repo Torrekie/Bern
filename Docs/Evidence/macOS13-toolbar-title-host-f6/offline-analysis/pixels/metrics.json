@@ -1,0 +1,1277 @@
+{
+  "aggregate": {
+    "all_decoded_pairs_pixel_identical": true,
+    "all_icc_blobs_same": true,
+    "all_png_pairs_byte_identical": true,
+    "pair_count": 4
+  },
+  "analysis": "Four same-host corresponding A/B PNG pairs only",
+  "capture_context": {
+    "A": {
+      "accessibility_trusted": true,
+      "app_environment_overrides": {
+        "BERN_APPEARANCE": "light",
+        "removed_keys": [
+          "BERN_SNAPSHOT_DIR",
+          "BERN_SCROLL_TRACE_DIR",
+          "BERN_FILM_SCENARIO",
+          "BERN_FILM_FOLLOWUP",
+          "BERN_FILM_OBSERVATION",
+          "BERN_MOTION",
+          "BERN_RENDER",
+          "BERN_DEV_WINDOW_SIGNALS",
+          "DYLD_INSERT_LIBRARIES"
+        ]
+      },
+      "bundle_identifier": "dev.bern.toolbar13.a.2bb91ae809564e4b93aebf1384280b54",
+      "displays": [
+        {
+          "frame_points": "{{0, 0}, {1440, 900}}",
+          "scale": 2
+        }
+      ],
+      "expected_os_major": 13,
+      "locked_cli_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+      "locked_gui_sha256": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+      "normal_profile_end": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_profile_start": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 13.7.8 (Build 22H730)",
+      "pid": 19224,
+      "scope": "Active Showcase; light requested via env, effective appearance not asserted. Intended for same-host A/B geometry only. Programmatic bound sidebar selections, not physical keyboard/mouse/IME. AX frames and focus attributes are external accessibility evidence, not NSView toolbar item frames or a native firstResponder object.",
+      "screen_recording_preflight": true,
+      "session": "429e846f4b1800-ui",
+      "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0"
+    },
+    "B": {
+      "accessibility_trusted": true,
+      "app_environment_overrides": {
+        "BERN_APPEARANCE": "light",
+        "removed_keys": [
+          "BERN_SNAPSHOT_DIR",
+          "BERN_SCROLL_TRACE_DIR",
+          "BERN_FILM_SCENARIO",
+          "BERN_FILM_FOLLOWUP",
+          "BERN_FILM_OBSERVATION",
+          "BERN_MOTION",
+          "BERN_RENDER",
+          "BERN_DEV_WINDOW_SIGNALS",
+          "DYLD_INSERT_LIBRARIES"
+        ]
+      },
+      "bundle_identifier": "dev.bern.toolbar13.b.202992c2a2ea477f92f17f1bbd935b3e",
+      "displays": [
+        {
+          "frame_points": "{{0, 0}, {1440, 900}}",
+          "scale": 2
+        }
+      ],
+      "expected_os_major": 13,
+      "locked_cli_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+      "locked_gui_sha256": "7a1a1f6a51645087b35c60994a331fb8be2ac792aaeec76270363ce353e0c775",
+      "normal_profile_end": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_profile_start": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 13.7.8 (Build 22H730)",
+      "pid": 19299,
+      "scope": "Active Showcase; light requested via env, effective appearance not asserted. Intended for same-host A/B geometry only. Programmatic bound sidebar selections, not physical keyboard/mouse/IME. AX frames and focus attributes are external accessibility evidence, not NSView toolbar item frames or a native firstResponder object.",
+      "screen_recording_preflight": true,
+      "session": "14fd26a94b6300-ui",
+      "source_sha": "f6be9bd95253970ad82429f8b6df107d4447e647"
+    }
+  },
+  "method": {
+    "bbox": "PNG top-left origin; left/top inclusive, right/bottom exclusive; null when no differing pixel",
+    "channel_range": [
+      0,
+      255
+    ],
+    "colour_management": "No ICC transform applied; embedded ICC blobs are inspected and hashed",
+    "comparison": "Direct decoded RGBA channel values and entire PNG bytes",
+    "mae_denominator": "All pixels times stated channel count",
+    "transformations": "No alignment, crop, resampling, compositing or premultiplication"
+  },
+  "pairs": [
+    {
+      "captures": {
+        "A": {
+          "all_samples_geometry_equal": true,
+          "all_samples_own_front": true,
+          "color_space_name": "unnamed",
+          "end_uptime": 230441.31882000001,
+          "equal_comparisons": 4,
+          "expected_window_title": "Buttons",
+          "final_sample_image_metadata": [
+            1840,
+            1336,
+            7424,
+            32,
+            8
+          ],
+          "final_sample_raw_buffer_bytes": 9918464,
+          "measured_pixel_per_point": [
+            2.0,
+            2.0
+          ],
+          "option": "Buttons",
+          "own_window": {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 668,
+              "Width": 920,
+              "X": 260,
+              "Y": 112
+            },
+            "kCGWindowIsOnscreen": true,
+            "kCGWindowLayer": 0,
+            "kCGWindowMemoryUsage": 2288,
+            "kCGWindowName": "Buttons",
+            "kCGWindowNumber": 10204,
+            "kCGWindowOwnerName": "Bern Showcase",
+            "kCGWindowOwnerPID": 19224,
+            "kCGWindowSharingState": 1,
+            "kCGWindowStoreType": 1
+          },
+          "pixels": [
+            1840,
+            1336
+          ],
+          "sample_count": 8,
+          "start_uptime": 230440.41703500002,
+          "window_bounds_points": {
+            "Height": 668,
+            "Width": 920,
+            "X": 260,
+            "Y": 112
+          }
+        },
+        "B": {
+          "all_samples_geometry_equal": true,
+          "all_samples_own_front": true,
+          "color_space_name": "unnamed",
+          "end_uptime": 230448.26389383335,
+          "equal_comparisons": 4,
+          "expected_window_title": "Buttons",
+          "final_sample_image_metadata": [
+            1840,
+            1336,
+            7424,
+            32,
+            8
+          ],
+          "final_sample_raw_buffer_bytes": 9918464,
+          "measured_pixel_per_point": [
+            2.0,
+            2.0
+          ],
+          "option": "Buttons",
+          "own_window": {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 668,
+              "Width": 920,
+              "X": 260,
+              "Y": 112
+            },
+            "kCGWindowIsOnscreen": true,
+            "kCGWindowLayer": 0,
+            "kCGWindowMemoryUsage": 2288,
+            "kCGWindowName": "Buttons",
+            "kCGWindowNumber": 10210,
+            "kCGWindowOwnerName": "Bern Showcase",
+            "kCGWindowOwnerPID": 19299,
+            "kCGWindowSharingState": 1,
+            "kCGWindowStoreType": 1
+          },
+          "pixels": [
+            1840,
+            1336
+          ],
+          "sample_count": 8,
+          "start_uptime": 230447.37971095834,
+          "window_bounds_points": {
+            "Height": 668,
+            "Width": 920,
+            "X": 260,
+            "Y": 112
+          }
+        }
+      },
+      "icc_bytes_equal": true,
+      "images": {
+        "A": {
+          "alpha_values": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            66,
+            67,
+            68,
+            95,
+            96,
+            115,
+            118,
+            120,
+            121,
+            122,
+            130,
+            131,
+            132,
+            148,
+            156,
+            164,
+            165,
+            166,
+            167,
+            180,
+            182,
+            185,
+            186,
+            187,
+            206,
+            207,
+            208,
+            221,
+            223,
+            224,
+            233,
+            234,
+            235,
+            238,
+            240,
+            247,
+            248,
+            249,
+            250,
+            252,
+            254,
+            255
+          ],
+          "decoded_rgba_sha256": "38d6aa6dede84d67b461a38c269c9ea23225a49846b1bc8baddef65c76882745",
+          "exif_bytes": 62,
+          "exif_sha256": "034b99523f07fc8863070e10866a519ff4f2c2e76211533d7a8f1ed979398036",
+          "file_bytes": 169038,
+          "file_sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+          "format": "PNG",
+          "icc_bytes": 4032,
+          "icc_profile_description": "Display",
+          "icc_profile_name": "Display",
+          "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "info_keys": [
+            "exif",
+            "icc_profile"
+          ],
+          "mode": "RGBA",
+          "size_pixels": [
+            1840,
+            1336
+          ]
+        },
+        "B": {
+          "alpha_values": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            66,
+            67,
+            68,
+            95,
+            96,
+            115,
+            118,
+            120,
+            121,
+            122,
+            130,
+            131,
+            132,
+            148,
+            156,
+            164,
+            165,
+            166,
+            167,
+            180,
+            182,
+            185,
+            186,
+            187,
+            206,
+            207,
+            208,
+            221,
+            223,
+            224,
+            233,
+            234,
+            235,
+            238,
+            240,
+            247,
+            248,
+            249,
+            250,
+            252,
+            254,
+            255
+          ],
+          "decoded_rgba_sha256": "38d6aa6dede84d67b461a38c269c9ea23225a49846b1bc8baddef65c76882745",
+          "exif_bytes": 62,
+          "exif_sha256": "034b99523f07fc8863070e10866a519ff4f2c2e76211533d7a8f1ed979398036",
+          "file_bytes": 169038,
+          "file_sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+          "format": "PNG",
+          "icc_bytes": 4032,
+          "icc_profile_description": "Display",
+          "icc_profile_name": "Display",
+          "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "info_keys": [
+            "exif",
+            "icc_profile"
+          ],
+          "mode": "RGBA",
+          "size_pixels": [
+            1840,
+            1336
+          ]
+        }
+      },
+      "index": 0,
+      "metrics": {
+        "decoded_rgba_equal": true,
+        "diff_bbox_pixels_ltrb_exclusive": null,
+        "different_alpha_pixels": 0,
+        "different_pixel_fraction": 0.0,
+        "different_pixels": 0,
+        "different_rgb_pixels": 0,
+        "mae_channels_rgba": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mae_rgb": 0.0,
+        "mae_rgba": 0.0,
+        "max_channel_difference": 0,
+        "max_difference_channels_rgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "total_pixels": 2458240
+      },
+      "png": "00-buttons.png",
+      "png_file_bytes_equal": true
+    },
+    {
+      "captures": {
+        "A": {
+          "all_samples_geometry_equal": true,
+          "all_samples_own_front": true,
+          "color_space_name": "unnamed",
+          "end_uptime": 230442.42406737502,
+          "equal_comparisons": 4,
+          "expected_window_title": "Text",
+          "final_sample_image_metadata": [
+            1840,
+            1336,
+            7424,
+            32,
+            8
+          ],
+          "final_sample_raw_buffer_bytes": 9918464,
+          "measured_pixel_per_point": [
+            2.0,
+            2.0
+          ],
+          "option": "Text",
+          "own_window": {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 668,
+              "Width": 920,
+              "X": 260,
+              "Y": 112
+            },
+            "kCGWindowIsOnscreen": true,
+            "kCGWindowLayer": 0,
+            "kCGWindowMemoryUsage": 2288,
+            "kCGWindowName": "Text",
+            "kCGWindowNumber": 10204,
+            "kCGWindowOwnerName": "Bern Showcase",
+            "kCGWindowOwnerPID": 19224,
+            "kCGWindowSharingState": 1,
+            "kCGWindowStoreType": 1
+          },
+          "pixels": [
+            1840,
+            1336
+          ],
+          "sample_count": 6,
+          "start_uptime": 230441.79045345835,
+          "window_bounds_points": {
+            "Height": 668,
+            "Width": 920,
+            "X": 260,
+            "Y": 112
+          }
+        },
+        "B": {
+          "all_samples_geometry_equal": true,
+          "all_samples_own_front": true,
+          "color_space_name": "unnamed",
+          "end_uptime": 230449.35489112503,
+          "equal_comparisons": 4,
+          "expected_window_title": "Text",
+          "final_sample_image_metadata": [
+            1840,
+            1336,
+            7424,
+            32,
+            8
+          ],
+          "final_sample_raw_buffer_bytes": 9918464,
+          "measured_pixel_per_point": [
+            2.0,
+            2.0
+          ],
+          "option": "Text",
+          "own_window": {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 668,
+              "Width": 920,
+              "X": 260,
+              "Y": 112
+            },
+            "kCGWindowIsOnscreen": true,
+            "kCGWindowLayer": 0,
+            "kCGWindowMemoryUsage": 2288,
+            "kCGWindowName": "Text",
+            "kCGWindowNumber": 10210,
+            "kCGWindowOwnerName": "Bern Showcase",
+            "kCGWindowOwnerPID": 19299,
+            "kCGWindowSharingState": 1,
+            "kCGWindowStoreType": 1
+          },
+          "pixels": [
+            1840,
+            1336
+          ],
+          "sample_count": 6,
+          "start_uptime": 230448.66447145835,
+          "window_bounds_points": {
+            "Height": 668,
+            "Width": 920,
+            "X": 260,
+            "Y": 112
+          }
+        }
+      },
+      "icc_bytes_equal": true,
+      "images": {
+        "A": {
+          "alpha_values": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            66,
+            67,
+            68,
+            95,
+            96,
+            115,
+            118,
+            120,
+            121,
+            122,
+            130,
+            131,
+            132,
+            148,
+            156,
+            164,
+            165,
+            166,
+            167,
+            180,
+            182,
+            185,
+            186,
+            187,
+            206,
+            207,
+            208,
+            221,
+            223,
+            224,
+            233,
+            234,
+            235,
+            238,
+            240,
+            247,
+            248,
+            249,
+            250,
+            252,
+            254,
+            255
+          ],
+          "decoded_rgba_sha256": "6b37b0dd6cf0ec16c8282955fa376782359083c867d36fbd6ee0df0881ef010b",
+          "exif_bytes": 62,
+          "exif_sha256": "034b99523f07fc8863070e10866a519ff4f2c2e76211533d7a8f1ed979398036",
+          "file_bytes": 159842,
+          "file_sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+          "format": "PNG",
+          "icc_bytes": 4032,
+          "icc_profile_description": "Display",
+          "icc_profile_name": "Display",
+          "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "info_keys": [
+            "exif",
+            "icc_profile"
+          ],
+          "mode": "RGBA",
+          "size_pixels": [
+            1840,
+            1336
+          ]
+        },
+        "B": {
+          "alpha_values": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            66,
+            67,
+            68,
+            95,
+            96,
+            115,
+            118,
+            120,
+            121,
+            122,
+            130,
+            131,
+            132,
+            148,
+            156,
+            164,
+            165,
+            166,
+            167,
+            180,
+            182,
+            185,
+            186,
+            187,
+            206,
+            207,
+            208,
+            221,
+            223,
+            224,
+            233,
+            234,
+            235,
+            238,
+            240,
+            247,
+            248,
+            249,
+            250,
+            252,
+            254,
+            255
+          ],
+          "decoded_rgba_sha256": "6b37b0dd6cf0ec16c8282955fa376782359083c867d36fbd6ee0df0881ef010b",
+          "exif_bytes": 62,
+          "exif_sha256": "034b99523f07fc8863070e10866a519ff4f2c2e76211533d7a8f1ed979398036",
+          "file_bytes": 159842,
+          "file_sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+          "format": "PNG",
+          "icc_bytes": 4032,
+          "icc_profile_description": "Display",
+          "icc_profile_name": "Display",
+          "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "info_keys": [
+            "exif",
+            "icc_profile"
+          ],
+          "mode": "RGBA",
+          "size_pixels": [
+            1840,
+            1336
+          ]
+        }
+      },
+      "index": 1,
+      "metrics": {
+        "decoded_rgba_equal": true,
+        "diff_bbox_pixels_ltrb_exclusive": null,
+        "different_alpha_pixels": 0,
+        "different_pixel_fraction": 0.0,
+        "different_pixels": 0,
+        "different_rgb_pixels": 0,
+        "mae_channels_rgba": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mae_rgb": 0.0,
+        "mae_rgba": 0.0,
+        "max_channel_difference": 0,
+        "max_difference_channels_rgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "total_pixels": 2458240
+      },
+      "png": "01-text.png",
+      "png_file_bytes_equal": true
+    },
+    {
+      "captures": {
+        "A": {
+          "all_samples_geometry_equal": true,
+          "all_samples_own_front": true,
+          "color_space_name": "unnamed",
+          "end_uptime": 230443.46850516667,
+          "equal_comparisons": 4,
+          "expected_window_title": "Switches & Sliders",
+          "final_sample_image_metadata": [
+            1840,
+            1336,
+            7424,
+            32,
+            8
+          ],
+          "final_sample_raw_buffer_bytes": 9918464,
+          "measured_pixel_per_point": [
+            2.0,
+            2.0
+          ],
+          "option": "Controls",
+          "own_window": {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 668,
+              "Width": 920,
+              "X": 260,
+              "Y": 112
+            },
+            "kCGWindowIsOnscreen": true,
+            "kCGWindowLayer": 0,
+            "kCGWindowMemoryUsage": 2288,
+            "kCGWindowName": "Switches & Sliders",
+            "kCGWindowNumber": 10204,
+            "kCGWindowOwnerName": "Bern Showcase",
+            "kCGWindowOwnerPID": 19224,
+            "kCGWindowSharingState": 1,
+            "kCGWindowStoreType": 1
+          },
+          "pixels": [
+            1840,
+            1336
+          ],
+          "sample_count": 6,
+          "start_uptime": 230442.74723741668,
+          "window_bounds_points": {
+            "Height": 668,
+            "Width": 920,
+            "X": 260,
+            "Y": 112
+          }
+        },
+        "B": {
+          "all_samples_geometry_equal": true,
+          "all_samples_own_front": true,
+          "color_space_name": "unnamed",
+          "end_uptime": 230450.37808283334,
+          "equal_comparisons": 4,
+          "expected_window_title": "Switches & Sliders",
+          "final_sample_image_metadata": [
+            1840,
+            1336,
+            7424,
+            32,
+            8
+          ],
+          "final_sample_raw_buffer_bytes": 9918464,
+          "measured_pixel_per_point": [
+            2.0,
+            2.0
+          ],
+          "option": "Controls",
+          "own_window": {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 668,
+              "Width": 920,
+              "X": 260,
+              "Y": 112
+            },
+            "kCGWindowIsOnscreen": true,
+            "kCGWindowLayer": 0,
+            "kCGWindowMemoryUsage": 2288,
+            "kCGWindowName": "Switches & Sliders",
+            "kCGWindowNumber": 10210,
+            "kCGWindowOwnerName": "Bern Showcase",
+            "kCGWindowOwnerPID": 19299,
+            "kCGWindowSharingState": 1,
+            "kCGWindowStoreType": 1
+          },
+          "pixels": [
+            1840,
+            1336
+          ],
+          "sample_count": 6,
+          "start_uptime": 230449.665939625,
+          "window_bounds_points": {
+            "Height": 668,
+            "Width": 920,
+            "X": 260,
+            "Y": 112
+          }
+        }
+      },
+      "icc_bytes_equal": true,
+      "images": {
+        "A": {
+          "alpha_values": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            66,
+            67,
+            68,
+            95,
+            96,
+            115,
+            118,
+            120,
+            121,
+            122,
+            130,
+            131,
+            132,
+            148,
+            156,
+            164,
+            165,
+            166,
+            167,
+            180,
+            182,
+            185,
+            186,
+            187,
+            206,
+            207,
+            208,
+            221,
+            223,
+            224,
+            233,
+            234,
+            235,
+            238,
+            240,
+            247,
+            248,
+            249,
+            250,
+            252,
+            254,
+            255
+          ],
+          "decoded_rgba_sha256": "0e9079b953a7867caeca83cadb229504c1cc93c6102afbc2587eef6a9e942e62",
+          "exif_bytes": 62,
+          "exif_sha256": "034b99523f07fc8863070e10866a519ff4f2c2e76211533d7a8f1ed979398036",
+          "file_bytes": 237074,
+          "file_sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+          "format": "PNG",
+          "icc_bytes": 4032,
+          "icc_profile_description": "Display",
+          "icc_profile_name": "Display",
+          "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "info_keys": [
+            "exif",
+            "icc_profile"
+          ],
+          "mode": "RGBA",
+          "size_pixels": [
+            1840,
+            1336
+          ]
+        },
+        "B": {
+          "alpha_values": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            66,
+            67,
+            68,
+            95,
+            96,
+            115,
+            118,
+            120,
+            121,
+            122,
+            130,
+            131,
+            132,
+            148,
+            156,
+            164,
+            165,
+            166,
+            167,
+            180,
+            182,
+            185,
+            186,
+            187,
+            206,
+            207,
+            208,
+            221,
+            223,
+            224,
+            233,
+            234,
+            235,
+            238,
+            240,
+            247,
+            248,
+            249,
+            250,
+            252,
+            254,
+            255
+          ],
+          "decoded_rgba_sha256": "0e9079b953a7867caeca83cadb229504c1cc93c6102afbc2587eef6a9e942e62",
+          "exif_bytes": 62,
+          "exif_sha256": "034b99523f07fc8863070e10866a519ff4f2c2e76211533d7a8f1ed979398036",
+          "file_bytes": 237074,
+          "file_sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+          "format": "PNG",
+          "icc_bytes": 4032,
+          "icc_profile_description": "Display",
+          "icc_profile_name": "Display",
+          "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "info_keys": [
+            "exif",
+            "icc_profile"
+          ],
+          "mode": "RGBA",
+          "size_pixels": [
+            1840,
+            1336
+          ]
+        }
+      },
+      "index": 2,
+      "metrics": {
+        "decoded_rgba_equal": true,
+        "diff_bbox_pixels_ltrb_exclusive": null,
+        "different_alpha_pixels": 0,
+        "different_pixel_fraction": 0.0,
+        "different_pixels": 0,
+        "different_rgb_pixels": 0,
+        "mae_channels_rgba": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mae_rgb": 0.0,
+        "mae_rgba": 0.0,
+        "max_channel_difference": 0,
+        "max_difference_channels_rgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "total_pixels": 2458240
+      },
+      "png": "02-controls.png",
+      "png_file_bytes_equal": true
+    },
+    {
+      "captures": {
+        "A": {
+          "all_samples_geometry_equal": true,
+          "all_samples_own_front": true,
+          "color_space_name": "unnamed",
+          "end_uptime": 230444.6027141667,
+          "equal_comparisons": 4,
+          "expected_window_title": "Buttons",
+          "final_sample_image_metadata": [
+            1840,
+            1336,
+            7424,
+            32,
+            8
+          ],
+          "final_sample_raw_buffer_bytes": 9918464,
+          "measured_pixel_per_point": [
+            2.0,
+            2.0
+          ],
+          "option": "Buttons",
+          "own_window": {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 668,
+              "Width": 920,
+              "X": 260,
+              "Y": 112
+            },
+            "kCGWindowIsOnscreen": true,
+            "kCGWindowLayer": 0,
+            "kCGWindowMemoryUsage": 2288,
+            "kCGWindowName": "Buttons",
+            "kCGWindowNumber": 10204,
+            "kCGWindowOwnerName": "Bern Showcase",
+            "kCGWindowOwnerPID": 19224,
+            "kCGWindowSharingState": 1,
+            "kCGWindowStoreType": 1
+          },
+          "pixels": [
+            1840,
+            1336
+          ],
+          "sample_count": 6,
+          "start_uptime": 230443.88216758336,
+          "window_bounds_points": {
+            "Height": 668,
+            "Width": 920,
+            "X": 260,
+            "Y": 112
+          }
+        },
+        "B": {
+          "all_samples_geometry_equal": true,
+          "all_samples_own_front": true,
+          "color_space_name": "unnamed",
+          "end_uptime": 230451.49622841668,
+          "equal_comparisons": 4,
+          "expected_window_title": "Buttons",
+          "final_sample_image_metadata": [
+            1840,
+            1336,
+            7424,
+            32,
+            8
+          ],
+          "final_sample_raw_buffer_bytes": 9918464,
+          "measured_pixel_per_point": [
+            2.0,
+            2.0
+          ],
+          "option": "Buttons",
+          "own_window": {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 668,
+              "Width": 920,
+              "X": 260,
+              "Y": 112
+            },
+            "kCGWindowIsOnscreen": true,
+            "kCGWindowLayer": 0,
+            "kCGWindowMemoryUsage": 2288,
+            "kCGWindowName": "Buttons",
+            "kCGWindowNumber": 10210,
+            "kCGWindowOwnerName": "Bern Showcase",
+            "kCGWindowOwnerPID": 19299,
+            "kCGWindowSharingState": 1,
+            "kCGWindowStoreType": 1
+          },
+          "pixels": [
+            1840,
+            1336
+          ],
+          "sample_count": 6,
+          "start_uptime": 230450.82402283335,
+          "window_bounds_points": {
+            "Height": 668,
+            "Width": 920,
+            "X": 260,
+            "Y": 112
+          }
+        }
+      },
+      "icc_bytes_equal": true,
+      "images": {
+        "A": {
+          "alpha_values": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            66,
+            67,
+            68,
+            95,
+            96,
+            115,
+            118,
+            120,
+            121,
+            122,
+            130,
+            131,
+            132,
+            148,
+            156,
+            164,
+            165,
+            166,
+            167,
+            180,
+            182,
+            185,
+            186,
+            187,
+            206,
+            207,
+            208,
+            221,
+            223,
+            224,
+            233,
+            234,
+            235,
+            238,
+            240,
+            247,
+            248,
+            249,
+            250,
+            252,
+            254,
+            255
+          ],
+          "decoded_rgba_sha256": "38d6aa6dede84d67b461a38c269c9ea23225a49846b1bc8baddef65c76882745",
+          "exif_bytes": 62,
+          "exif_sha256": "034b99523f07fc8863070e10866a519ff4f2c2e76211533d7a8f1ed979398036",
+          "file_bytes": 169038,
+          "file_sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+          "format": "PNG",
+          "icc_bytes": 4032,
+          "icc_profile_description": "Display",
+          "icc_profile_name": "Display",
+          "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "info_keys": [
+            "exif",
+            "icc_profile"
+          ],
+          "mode": "RGBA",
+          "size_pixels": [
+            1840,
+            1336
+          ]
+        },
+        "B": {
+          "alpha_values": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12,
+            66,
+            67,
+            68,
+            95,
+            96,
+            115,
+            118,
+            120,
+            121,
+            122,
+            130,
+            131,
+            132,
+            148,
+            156,
+            164,
+            165,
+            166,
+            167,
+            180,
+            182,
+            185,
+            186,
+            187,
+            206,
+            207,
+            208,
+            221,
+            223,
+            224,
+            233,
+            234,
+            235,
+            238,
+            240,
+            247,
+            248,
+            249,
+            250,
+            252,
+            254,
+            255
+          ],
+          "decoded_rgba_sha256": "38d6aa6dede84d67b461a38c269c9ea23225a49846b1bc8baddef65c76882745",
+          "exif_bytes": 62,
+          "exif_sha256": "034b99523f07fc8863070e10866a519ff4f2c2e76211533d7a8f1ed979398036",
+          "file_bytes": 169038,
+          "file_sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+          "format": "PNG",
+          "icc_bytes": 4032,
+          "icc_profile_description": "Display",
+          "icc_profile_name": "Display",
+          "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "info_keys": [
+            "exif",
+            "icc_profile"
+          ],
+          "mode": "RGBA",
+          "size_pixels": [
+            1840,
+            1336
+          ]
+        }
+      },
+      "index": 3,
+      "metrics": {
+        "decoded_rgba_equal": true,
+        "diff_bbox_pixels_ltrb_exclusive": null,
+        "different_alpha_pixels": 0,
+        "different_pixel_fraction": 0.0,
+        "different_pixels": 0,
+        "different_rgb_pixels": 0,
+        "mae_channels_rgba": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mae_rgb": 0.0,
+        "mae_rgba": 0.0,
+        "max_channel_difference": 0,
+        "max_difference_channels_rgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "total_pixels": 2458240
+      },
+      "png": "03-buttons.png",
+      "png_file_bytes_equal": true
+    }
+  ],
+  "raw_integrity": {
+    "all_manifest_entries_matched_before_and_after": true,
+    "all_raw_file_hashes_and_names_unchanged_during_analysis": true,
+    "manifest_entries": 134,
+    "original_manifest_sha256": "cfa7992edd0470d64cae8b32b694daaa001e575c6a5caa6512ff23f270012a61",
+    "raw_file_count": 135
+  },
+  "raw_root": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/capture-pair",
+  "schema": 1,
+  "scope": "Recorded active macOS13 A/B snapshots only; effective Light appearance was not asserted by the collector. No native-frame, 13-vs14, physical-input or colour-acceptance verdict.",
+  "software": {
+    "numpy": "2.5.0",
+    "pillow": "12.3.0",
+    "python": "3.14.6"
+  },
+  "source_inputs": {
+    "A/runtime/00-buttons.png": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+    "A/runtime/01-text.png": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+    "A/runtime/02-controls.png": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+    "A/runtime/03-buttons.png": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+    "A/runtime/result.json": "1174c168e9cb42e067cd1c608baee7de9dace2967767009fa8ddf788b47aa79c",
+    "B/runtime/00-buttons.png": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+    "B/runtime/01-text.png": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+    "B/runtime/02-controls.png": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+    "B/runtime/03-buttons.png": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+    "B/runtime/result.json": "8f204b35fac9ca4185ff0434129faf6d230423103b17bcc939782e16af6f510d",
+    "SHA256SUMS": "cfa7992edd0470d64cae8b32b694daaa001e575c6a5caa6512ff23f270012a61",
+    "observer.swift": "bcc2d36a35aad9aa79f3bd1a398600735837025fb9ec2e51657c8aa98ab382ee",
+    "run-locks.json": "aabfe580af1be0d5f2858f2a993c72492cfe844b6356c18c1f7dc6230eb79b4c",
+    "summary.json": "c1f5929e52a57b9acb4cbe9df1f8cd5dec87097143bf9c7153b71267eeac2f54"
+  }
+}

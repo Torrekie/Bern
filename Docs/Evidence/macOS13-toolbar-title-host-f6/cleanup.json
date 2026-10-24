@@ -1,0 +1,11 @@
+{
+  "removed": [
+    {
+      "path": "artifact.zip",
+      "bytes": 2426368,
+      "sha256": "f19a3fa1400cb6a484012e7d3bd0331c5c27432730fee40a7785cfebc6f28db9",
+      "reason": "Validated transport duplicate; all six members retained byte-exact in build/, with ZIP API digest and member hashes recorded."
+    }
+  ],
+  "retained": "CI tar, exact original app/CLI, raw logs/API metadata, static fingerprints; no executable/cache deletion before root runtime handoff."
+}

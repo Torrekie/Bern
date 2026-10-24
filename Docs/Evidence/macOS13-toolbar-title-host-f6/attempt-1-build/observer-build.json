@@ -1,0 +1,61 @@
+{
+  "source_sha256": "2e713cd3513eea2723eaf27af86871749c92302b67c6605649623b441628145e",
+  "binary_sha256": "a0a3027eebabd5d7b7e1b9ffce3900b6c4d8049e6641ea1d087312f9c1d9bc84",
+  "build_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compile_exit": 0,
+  "xcode_bundle_version": "15.2",
+  "metadata_attempt_note": "Initial metadata collection stopped at xcodebuild -version timeout (10 seconds); compile had already completed with exit0. No retry of xcodebuild; version read from installed bundle plist.",
+  "checks": [
+    {
+      "arguments": [
+        "xcrun",
+        "swiftc",
+        "-version"
+      ],
+      "status": 0,
+      "stdout": "Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\n",
+      "stderr": "swift-driver version: 1.87.3 "
+    },
+    {
+      "arguments": [
+        "xcrun",
+        "--show-sdk-path"
+      ],
+      "status": 0,
+      "stdout": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "xcrun",
+        "--show-sdk-version"
+      ],
+      "status": 0,
+      "stdout": "14.2\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/observer-work/ToolbarProbe"
+      ],
+      "status": 0,
+      "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/observer-work/ToolbarProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 14.2\n   ntools 1\n     tool LD\n  version 1022.1\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/observer-work/ToolbarProbe"
+      ],
+      "status": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "scope": "Compile/static only; collector has not run; no UI."
+}

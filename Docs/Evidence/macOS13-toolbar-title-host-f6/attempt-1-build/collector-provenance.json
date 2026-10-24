@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-10-24T07:49:52.640638+00:00",
+  "repository_head_at_preparation": "f59bd7eacddd9f40c15578cd6a436a57daa94dd2",
+  "scope": "Preparation and manual/static text review only. No compile, parse, GUI, launch or CI.",
+  "inputs": [
+    {
+      "path": "outputs/Bern/.github/scripts/gallery-film-probe.swift",
+      "bytes": 23963,
+      "sha256": "6c4d5c93c9331ba4dd6427aa18799b6a1e720b6e2e006e036fb908ced4f9e635"
+    },
+    {
+      "path": "outputs/Bern/examples/showcase/showcase-ui/src/lib.rs",
+      "bytes": 6290,
+      "sha256": "62886e42cc848568e9e5d5f15cc254e7360a9c4d6beb9e55caa061d35681837b"
+    },
+    {
+      "path": "outputs/Bern/examples/showcase/showcase-ui/src/pages.rs",
+      "bytes": 20577,
+      "sha256": "1bb92ffd8d13f7e732baa2668285dd4d4e4524ce04602d89ffba8a532f44b261"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "work/toolbar-composition-audit/capture/showcase-toolbar-probe.swift",
+      "bytes": 26787,
+      "sha256": "2e713cd3513eea2723eaf27af86871749c92302b67c6605649623b441628145e"
+    },
+    {
+      "path": "work/toolbar-composition-audit/capture/README.md",
+      "bytes": 5221,
+      "sha256": "45bd2de69b13070161e0d498ee78d649f1a97ed1104d866cf399ae6342a5cabe"
+    }
+  ],
+  "static_text_checks": {
+    "arguments_app_cli_out": true,
+    "only_macos13": true,
+    "four_programmatic_stages": true,
+    "four_equal_comparisons": true,
+    "ax_budget_2": true,
+    "full_bfs_no_role_name_filter": true,
+    "no_preference_or_tcc_mutation_tokens": true,
+    "cooperative_and_outer_deadline_limit_documented": true,
+    "explicit_wrapper_owned_prefix": true,
+    "effective_light_not_asserted": true,
+    "startup_deadline_from_launch_start": true
+  },
+  "not_performed": [
+    "Swift parse/typecheck/compile/link",
+    "GUI or app launch",
+    "CI",
+    "A/B comparison",
+    "hard wall-clock timeout verification"
+  ],
+  "frozen_utc": "2026-10-24T07:53:01.134045+00:00",
+  "root_review_revisions": {
+    "owned_prefix": "dev.bern.toolbar13.",
+    "prefix_confirmation": "compat_audit confirmation relayed directly by root; wrapper A/B use dev.bern.toolbar13.a.<uuid> and dev.bern.toolbar13.b.<uuid>",
+    "appearance_scope": "light requested via env; effective appearance not asserted; intended for same-host A/B geometry only",
+    "startup_deadline": "min(workDeadline, launchStart + 15), with launchStart recorded before Process.run",
+    "no_other_features": "AX complete-tree/2s gate, normal profile checks and partial-failure behavior unchanged"
+  }
+}

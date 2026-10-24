@@ -1,0 +1,42 @@
+diff --git a/crates/bern-backend-swiftui/src/swift/navigation.rs b/crates/bern-backend-swiftui/src/swift/navigation.rs
+index 29ff093..cd42556 100644
+--- a/crates/bern-backend-swiftui/src/swift/navigation.rs
++++ b/crates/bern-backend-swiftui/src/swift/navigation.rs
+@@ -127,6 +127,14 @@ impl Generator<'_> {
+         // The detail column and the sidebar control are both named after
+         // the selected destination.
+         let title = labeled.then(|| self.nav_label(&selection, &sidebar.children, "SidebarItem"));
++        // Diagnostic only: move the title host on every macOS version.
++        // Explicitly hidden titles retain the original detail path.
++        let title_on_split = self.platform == Platform::Macos
++            && detail
++                .expr("titled")
++                .map(|titled| self.expr(titled))
++                .as_deref()
++                != Some("false");
+         // A compact iOS split view shows the sidebar as the first screen of
+         // a stack, titled like the window.
+         if self.platform.uikit() {
+@@ -139,7 +147,9 @@ impl Generator<'_> {
+         out.close("}");
+         // The detail column is titled by the selected sidebar destination,
+         // as macOS sidebar apps are.
+-        if let Some(title) = &title {
++        if let Some(title) = &title
++            && !title_on_split
++        {
+             out.line(format!(".navigationTitle({title})"));
+             // The page shows its own title: the title bar does not repeat it.
+             if detail
+@@ -154,6 +164,11 @@ impl Generator<'_> {
+         self.toolbar(out, &detail.children, ctx);
+         self.inspector(out, &detail.children, ctx);
+         out.close("}");
++        if title_on_split
++            && let Some(title) = &title
++        {
++            out.line(format!(".navigationTitle({title})"));
++        }
+         // The sidebar is a control of the whole split view, which stays
+         // mounted while a compact layout shows only the detail.
+         if sidebar.id.is_some() {

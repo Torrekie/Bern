@@ -1,0 +1,109 @@
+[
+  {
+    "argv": [
+      "codesign",
+      "--verify",
+      "--deep",
+      "--strict",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  {
+    "argv": [
+      "codesign",
+      "--verify",
+      "--strict",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  {
+    "argv": [
+      "codesign",
+      "--display",
+      "--verbose=4",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app"
+    ],
+    "returncode": 0,
+    "stderr": "Executable=/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app/Contents/MacOS/Showcase\nIdentifier=dev.bern.showcase\nFormat=app bundle with Mach-O thin (arm64)\nCodeDirectory v=20400 size=29034 flags=0x2(adhoc) hashes=901+3 location=embedded\nVersionPlatform=1\nVersionMin=851968\nVersionSDK=1704448\nHash type=sha256 size=32\nCandidateCDHash sha256=7a8726694aca9486949d8ccf4ee918a249f731e3\nCandidateCDHashFull sha256=7a8726694aca9486949d8ccf4ee918a249f731e3635f1ed3b52179de881349c1\nHash choices=sha256\nCMSDigest=7a8726694aca9486949d8ccf4ee918a249f731e3635f1ed3b52179de881349c1\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=3276800\nExecutable Segment flags=0x1\nPage size=4096\nLaunch Constraints:\n\tNone\nCDHash=7a8726694aca9486949d8ccf4ee918a249f731e3\nSignature=adhoc\nInfo.plist entries=14\nTeamIdentifier=not set\nSealed Resources version=2 rules=13 files=12\nInternal requirements count=0 size=12\n",
+    "stdout": ""
+  },
+  {
+    "argv": [
+      "codesign",
+      "--display",
+      "--verbose=4",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase"
+    ],
+    "returncode": 0,
+    "stderr": "Executable=/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase\nIdentifier=showcase-0d9375776c9ad993\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=7096 flags=0x20002(adhoc,linker-signed) hashes=218+0 location=embedded\nVersionPlatform=1\nVersionMin=851968\nVersionSDK=1704448\nHash type=sha256 size=32\nCandidateCDHash sha256=ae62604f6ebade6a3cade1f47c34a99c95dbbfb7\nCandidateCDHashFull sha256=ae62604f6ebade6a3cade1f47c34a99c95dbbfb78a00a4428bd0b1ee8c4a7189\nHash choices=sha256\nCMSDigest=ae62604f6ebade6a3cade1f47c34a99c95dbbfb78a00a4428bd0b1ee8c4a7189\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=835584\nExecutable Segment flags=0x1\nPage size=4096\nLaunch Constraints:\n\tNone\nCDHash=ae62604f6ebade6a3cade1f47c34a99c95dbbfb7\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\n",
+    "stdout": ""
+  },
+  {
+    "argv": [
+      "file",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app/Contents/MacOS/Showcase"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app/Contents/MacOS/Showcase: Mach-O 64-bit executable arm64\n"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "vtool",
+      "-show-build",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app/Contents/MacOS/Showcase"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app/Contents/MacOS/Showcase:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 26.2\n   ntools 1\n     tool LD\n  version 1230.1\n"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "otool",
+      "-L",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app/Contents/MacOS/Showcase"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/Showcase.app/Contents/MacOS/Showcase:\n\t/System/Library/Frameworks/Security.framework/Versions/A/Security (compatibility version 1.0.0, current version 61901.60.40)\n\t/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 4201.0.0)\n\t/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI (compatibility version 1.0.0, current version 7.2.5)\n\t/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2685.30.107)\n\t/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)\n\t/System/Library/Frameworks/AVKit.framework/Versions/A/AVKit (compatibility version 1.0.0, current version 1.0.0)\n\t/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo (compatibility version 1.2.0, current version 726.2.0)\n\t/System/Library/Frameworks/Metal.framework/Versions/A/Metal (compatibility version 1.0.0, current version 370.64.2)\n\t/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit (compatibility version 1.0.0, current version 172.5.0)\n\t/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage (compatibility version 1.0.1, current version 7.0.0)\n\t/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync (compatibility version 1.0.0, current version 3813.2.2)\n\t/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)\n\t/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork (compatibility version 1.0.0, current version 3860.255.31)\n\t/System/Library/Frameworks/Combine.framework/Versions/A/Combine (compatibility version 1.0.0, current version 3023.0.0)\n\t/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 1965.2.3)\n\t/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia (compatibility version 1.0.0, current version 3290.6.5)\n\t/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 4201.0.0)\n\t/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)\n\t/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore (compatibility version 1.2.0, current version 1193.49.3)\n\t/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)\n\t/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2395.6.5, weak)\n\t/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 411.255.11, weak)\n\t/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0)\n\t/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 2.2.0, weak)\n\t/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)\n\t/usr/lib/swift/libswiftCoreMedia.dylib (compatibility version 1.0.0, current version 3290.6.5)\n\t/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 347.40.2)\n\t/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 56.0.0)\n\t/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 370.64.2, weak)\n\t/usr/lib/swift/libswiftMetalKit.dylib (compatibility version 1.0.0, current version 1.2.0, weak)\n\t/usr/lib/swift/libswiftModelIO.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)\n\t/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 951.1.0)\n\t/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)\n\t/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)\n\t/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 877.2.4)\n\t/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 105.0.14, weak)\n\t/usr/lib/swift/libswift_Concurrency.dylib (compatibility version 1.0.0, current version 0.0.0)\n\t/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1076.40.2)\n\t/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 23.0.0, weak)\n\t/usr/lib/swift/libswiftCoreGraphics.dylib (compatibility version 1.0.0, current version 1.0.0)\n"
+  },
+  {
+    "argv": [
+      "file",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase: Mach-O 64-bit executable arm64\n"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "vtool",
+      "-show-build",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 26.2\n   ntools 1\n     tool LD\n  version 1230.1\n"
+  },
+  {
+    "argv": [
+      "xcrun",
+      "otool",
+      "-L",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/exact/bin/showcase:\n\t/System/Library/Frameworks/Security.framework/Versions/A/Security (compatibility version 1.0.0, current version 61901.60.40)\n\t/usr/lib/libiconv.2.dylib (compatibility version 7.0.0, current version 7.0.0)\n\t/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 4201.0.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)\n"
+  }
+]

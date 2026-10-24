@@ -1,0 +1,32 @@
+{
+  "compile_exit": 0,
+  "source_sha256": "bcc2d36a35aad9aa79f3bd1a398600735837025fb9ec2e51657c8aa98ab382ee",
+  "binary_sha256": "8fc8d74a5e4711ac2373f0cd8b556591355fca7131f019afa4651f5a8c4ea63a",
+  "wrapper_sha256": "2155609f04678ac13249125995831ebf26c8331cd00960e1f643517111d150c1",
+  "checks": [
+    {
+      "arguments": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/observer-work/ToolbarProbe"
+      ],
+      "status": 0,
+      "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/observer-work/ToolbarProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 14.2\n   ntools 1\n     tool LD\n  version 1022.1\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-title-host-f6/observer-work/ToolbarProbe"
+      ],
+      "status": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "changes_from_attempt1": "Keep attribute query_failed/complete, add strict AXRole/AXChildren tree_complete and required main title/toolbar/sidebar-toggle finite-positive geometry; Controls display title distinct from enum name. Same interactions, AX budget and PNG order. Own UUID disk-file cleanup only, no defaults delete or cfprefsd operations.",
+  "scope": "Compile/static only; v2 observer not yet run; historical v1 build retained under attempt-1-build."
+}

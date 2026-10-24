@@ -1,0 +1,44 @@
+{
+  "created_utc": "2026-10-24T07:35:13.400797+00:00",
+  "base_commit": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "repository": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern",
+  "repository_file": "crates/bern-backend-swiftui/src/swift/navigation.rs",
+  "base_blob": "29ff09365dc73af97c89f414aa7625f139b3c357",
+  "base_bytes": 29564,
+  "base_sha256": "e9dff9982696510c8d65aa24408e95c481fe5010c14d02aa924506b169b4357b",
+  "scope": "Diagnostic-only all-macOS title-host relocation. No product edit, branch, publish, compile, GUI or CI. Does not preserve macOS14 title host.",
+  "product_hidden_helper_sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f",
+  "static_patch_check": {
+    "command": "GIT_INDEX_FILE=<own temporary index> git apply --cached --check --whitespace=error-all <patch>",
+    "index_source": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+    "status": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "temporary_index_absent": true,
+  "outputs": [
+    {
+      "file": "navigation.rs",
+      "bytes": 30117,
+      "sha256": "844b737c9b6a7f87eb857795cd149b375be1618e47d07466a04d95af08cf461f"
+    },
+    {
+      "file": "navigation-title-host-diagnostic.patch",
+      "bytes": 1805,
+      "sha256": "a47c53116a69e41dcf8250d7498e96c090d10a6cb7bd557af42dc7073c40780d"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3792,
+      "sha256": "2fe7e40f0fbf29a0d52e704e105920bb5b12284deaf633e7e3bd9ab887098662"
+    }
+  ],
+  "not_performed": [
+    "generator execution",
+    "Rust parsing or compilation",
+    "Swift parsing or compilation",
+    "GUI/runtime verification",
+    "CI or publication",
+    "14 preservation acceptance"
+  ]
+}
