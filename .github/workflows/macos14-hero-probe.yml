@@ -48,7 +48,8 @@ jobs:
           p=Path('work/probe'); d=json.loads((p/'source-provenance.json').read_text())
           assert d['product_source_commit']=='b08db54e01ac2ec54fb84e6f2a70041f1f4c3604'
           assert d['all_extracted_product_slices_identical_to_9dd'] is True
-          assert d['product_source_adaptations']==[]
+          assert d['all_extracted_product_slices_identical_to_9dd_scope']=='exact_copies_only'
+          assert d['product_source_adaptations']==['fixture_snapshot_cgimage_metadata_observer_v2_deferred_profiles']
           for name,m in d['files'].items():
               assert hashlib.sha256((p/name).read_bytes()).hexdigest()==m['sha256'],name
           PY
@@ -150,7 +151,7 @@ jobs:
             "$PWD/probe/assets/source-ffb-icc.png" "$PWD/evidence/runtime14" \
             > evidence/runtime14/runtime.log 2>&1
           python3 - <<'PY'
-          import json
+          import base64,hashlib,json
           from pathlib import Path
           p=Path('evidence/runtime14'); d=json.loads((p/'report.json').read_text())
           assert d['success'] is True,d.get('error')
@@ -160,6 +161,43 @@ jobs:
           assert d['frontmost_before']==d['frontmost_after']
           assert all(v is False for k in ('normal_before','normal_after') for v in d[k].values())
           assert {s['key'] for s in d['snapshots']}=={'baseline-body-named','baseline-body-custom'}
+          observations=d['snapshot_cgimage_observations']
+          assert d['snapshot_cgimage_observations_scope']=='before_existing_window_teardown'
+          assert len(observations)==2
+          assert {o['key'] for o in observations}=={'baseline-body-named','baseline-body-custom'}
+          assert isinstance(d['snapshot_cgimage_cleanup_observations'],list)
+          positive=('width','height','bits_per_component','bits_per_pixel','bytes_per_row')
+          nonnegative=('bitmap_info_raw','alpha_info_raw','byte_order_raw','pixel_format_raw')
+          flags=('wide_gamut_rgb','uses_extended_range','uses_itur2100_tf','is_pq_based','is_hlg_based')
+          for o in observations:
+              assert o['observation_site']=='snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown'
+              assert o['color_space_metadata_stage']=='after_existing_window_teardown'
+              assert all(type(o[n]) is int and o[n]>0 for n in positive)
+              assert all(type(o[n]) is int and o[n]>=0 for n in nonnegative)
+              assert type(o['float_components']) is bool and type(o['color_space_present']) is bool
+              assert o['color_space_name'] is None or isinstance(o['color_space_name'],str)
+              if o['color_space_present']:
+                  assert type(o['color_space_model_raw']) is int
+                  assert type(o['color_space_components']) is int and o['color_space_components']>=0
+                  assert all(type(o[n]) is bool for n in flags)
+                  assert type(o['icc_present']) is bool
+                  assert type(o['icc_byte_count']) is int and o['icc_byte_count']>=0
+                  if o['icc_present']:
+                      assert o['icc_byte_count']>0 and len(o['icc_sha256'])==64
+                      assert all(c in '0123456789abcdef' for c in o['icc_sha256'])
+                      if o['icc_byte_count']<=65536:
+                          profile=base64.b64decode(o['icc_base64'],validate=True)
+                          assert len(profile)==o['icc_byte_count']
+                          assert hashlib.sha256(profile).hexdigest()==o['icc_sha256']
+                          assert o['icc_base64_omitted_reason'] is None
+                      else:
+                          assert o['icc_base64'] is None
+                          assert o['icc_base64_omitted_reason']=='profile_exceeds_65536_bytes'
+                  else:
+                      assert o['icc_byte_count']==0 and o['icc_sha256'] is None
+                      assert o['icc_base64'] is None and o['icc_base64_omitted_reason']=='no_icc_profile'
+              else:
+                  assert all(o[n] is None for n in ('color_space_model_raw','color_space_components','icc_present','icc_byte_count','icc_sha256','icc_base64','icc_base64_omitted_reason',*flags))
           assert [c['phase'] for c in d['captures']]==['progress-0','progress-1']
           for c in d['captures']:
               assert c['consecutive_equal_buffers']>=5 and c['live_metal_count']==0

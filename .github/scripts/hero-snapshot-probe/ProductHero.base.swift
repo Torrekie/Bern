@@ -97,6 +97,7 @@ final class BernPictureHeroAnchor: NSView {
         let renderer = ImageRenderer(content: fitted.frame(width: bounds.width, height: bounds.height).clipped())
         renderer.scale = window?.backingScaleFactor ?? 2
         guard let pixels = renderer.cgImage else { return nil }
+        fixtureObserveSnapshotCGImage(pixels, key: key)
         return BernHeroPicture(rect: rect, image: NSImage(cgImage: pixels, size: bounds.size),
             corner: corner * rect.width / bounds.width)
     }
