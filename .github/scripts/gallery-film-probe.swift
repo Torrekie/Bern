@@ -21,14 +21,20 @@ let trusted = AXIsProcessTrusted()
 var environment = ProcessInfo.processInfo.environment
 let expectedOS = Int(environment["BERN_FILM_EXPECTED_OS"] ?? "14") ?? 0
 let requestedScenario = environment["BERN_FILM_SCENARIO"] ?? "all"
+let observation = environment["BERN_FILM_OBSERVATION"] ?? "active"
 let scenarios = requestedScenario == "all" ? ["immediate", "wait", "direct"] : [requestedScenario]
 var commands = [[String: Any]](), cases = [[String: Any]](), activationRequests = [[String: Any]]()
+var inactiveCaptureSamples = [[String: Any]]()
 var ipcPaths = [String]()
 var report: [String: Any] = [
     "source_sha": environment["BERN_SOURCE_SHA"] ?? "unknown",
     "harness_sha": environment["GITHUB_SHA"] ?? "unknown",
     "variant": environment["FILM_VARIANT"] ?? "unknown",
     "expected_os_major": expectedOS, "requested_scenario": requestedScenario,
+    "observation_mode": observation,
+    "observation_contract": observation == "inactive13"
+        ? "Internal diagnostic only: no activate/focus-restore requests; own window must remain visible with alpha>=0.99, inactive, stable raw buffers and bounds. Not active visual acceptance."
+        : "Original active visual capture contract.",
     "appearance_profile": "normal",
     "os": ProcessInfo.processInfo.operatingSystemVersionString,
     "accessibility_trusted": trusted, "screen_recording_preflight": CGPreflightScreenCaptureAccess(),
@@ -49,6 +55,7 @@ func frontState(_ ownPID: pid_t) -> [String: Any] {
 func save() throws {
     report["commands"] = commands; report["cases"] = cases
     report["activation_requests"] = activationRequests
+    report["inactive_capture_samples"] = inactiveCaptureSamples
     report["ipc_directories"] = ipcPaths
     try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
         .write(to: output.appendingPathComponent("result.json"), options: .atomic)
@@ -115,16 +122,36 @@ func image(_ pid: pid_t) throws -> CGImage {
 }
 func stable(_ pid: pid_t, name: String) throws -> [String: Any] {
     var previous: Data?, same = 0, count = 0
+    var previousInactiveGeometry: [Double]?
     let start = now()
     while now() - start < 8 {
-        guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+        var inactiveGeometry: [Double]?
+        if observation == "inactive13" {
+            let info = try window(pid), front = frontState(pid)
+            let bounds = info[kCGWindowBounds as String] as? [String: NSNumber] ?? [:]
+            let alpha = (info[kCGWindowAlpha as String] as? NSNumber)?.doubleValue
+            inactiveCaptureSamples.append(["capture": name, "front": front,
+                "own_window": info, "sample": count])
+            guard NSWorkspace.shared.frontmostApplication?.processIdentifier != pid,
+                  (info[kCGWindowIsOnscreen as String] as? NSNumber)?.boolValue == true,
+                  let alpha, alpha >= 0.99,
+                  let id = info[kCGWindowNumber as String] as? NSNumber,
+                  let x = bounds["X"], let y = bounds["Y"],
+                  let width = bounds["Width"], let height = bounds["Height"] else {
+                throw Failure(description: "Inactive13 requires an inactive, on-screen own window with alpha>=0.99 and complete geometry")
+            }
+            inactiveGeometry = [id.doubleValue, x.doubleValue, y.doubleValue,
+                width.doubleValue, height.doubleValue, alpha]
+        } else if NSWorkspace.shared.frontmostApplication?.processIdentifier != pid {
             report["capture_focus_failure"] = ["capture": name, "actual": frontState(pid)]
             try save()
             throw Failure(description: "Gallery is not active at capture time")
         }
         let img = try image(pid)
         guard let bytes = img.dataProvider?.data else { throw Failure(description: "Missing raw capture buffer") }
-        let data = bytes as Data; same = data == previous ? same + 1 : 0; previous = data; count += 1
+        let data = bytes as Data
+        same = data == previous && inactiveGeometry == previousInactiveGeometry ? same + 1 : 0
+        previous = data; previousInactiveGeometry = inactiveGeometry; count += 1
         if same >= 4 {
             let info = try window(pid), bounds = info[kCGWindowBounds as String] as? [String: NSNumber] ?? [:]
             guard bounds["Width"]?.doubleValue == 920, bounds["Height"]?.doubleValue == 668 else {
@@ -188,7 +215,9 @@ func stop(_ p: Process) {
 }
 do {
     guard [13, 14].contains(expectedOS), ProcessInfo.processInfo.operatingSystemVersion.majorVersion == expectedOS,
-          ["all", "immediate", "wait", "direct"].contains(requestedScenario), CGPreflightScreenCaptureAccess() else {
+          ["all", "immediate", "wait", "direct"].contains(requestedScenario),
+          observation == "active" || observation == "inactive13" && expectedOS == 13,
+          CGPreflightScreenCaptureAccess() else {
         throw Failure(description: "Requires the explicitly selected macOS13/14, valid scenario and existing Screen Recording access; no TCC changes")
     }
     guard !NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
@@ -211,7 +240,7 @@ do {
         defer {
             let ownWasFront = NSWorkspace.shared.frontmostApplication?.processIdentifier == p.processIdentifier
             stop(p); log.closeFile(); try? fm.removeItem(at: ipc)
-            if ownWasFront, NSWorkspace.shared.frontmostApplication?.processIdentifier != originalFront?.processIdentifier {
+            if observation == "active", ownWasFront, NSWorkspace.shared.frontmostApplication?.processIdentifier != originalFront?.processIdentifier {
                 originalFront?.activate(options: [])
             }
         }
@@ -223,19 +252,21 @@ do {
             if session == nil { try pause(0.1) }
         }
         guard let id = session else { throw Failure(description: "No unique UI session") }
-        let beforeActivation = frontState(p.processIdentifier)
-        let activationOptions: NSApplication.ActivationOptions = expectedOS == 13
-            ? [.activateAllWindows, .activateIgnoringOtherApps] : [.activateAllWindows]
-        let accepted = NSRunningApplication(processIdentifier: p.processIdentifier)?.activate(options: activationOptions) ?? false
-        var activationSamples = [frontState(p.processIdentifier)]
-        let activationDeadline = min(deadline, now() + 2)
-        while NSWorkspace.shared.frontmostApplication?.processIdentifier != p.processIdentifier, now() < activationDeadline {
-            try pause(0.05); activationSamples.append(frontState(p.processIdentifier))
+        if observation == "active" {
+            let beforeActivation = frontState(p.processIdentifier)
+            let activationOptions: NSApplication.ActivationOptions = expectedOS == 13
+                ? [.activateAllWindows, .activateIgnoringOtherApps] : [.activateAllWindows]
+            let accepted = NSRunningApplication(processIdentifier: p.processIdentifier)?.activate(options: activationOptions) ?? false
+            var activationSamples = [frontState(p.processIdentifier)]
+            let activationDeadline = min(deadline, now() + 2)
+            while NSWorkspace.shared.frontmostApplication?.processIdentifier != p.processIdentifier, now() < activationDeadline {
+                try pause(0.05); activationSamples.append(frontState(p.processIdentifier))
+            }
+            activationRequests.append(["scenario": scenario, "pid": p.processIdentifier,
+                "before": beforeActivation, "accepted": accepted,
+                "options": expectedOS == 13 ? ["activateAllWindows", "activateIgnoringOtherApps"] : ["activateAllWindows"],
+                "samples": activationSamples, "after": frontState(p.processIdentifier)])
         }
-        activationRequests.append(["scenario": scenario, "pid": p.processIdentifier,
-            "before": beforeActivation, "accepted": accepted,
-            "options": expectedOS == 13 ? ["activateAllWindows", "activateIgnoringOtherApps"] : ["activateAllWindows"],
-            "samples": activationSamples, "after": frontState(p.processIdentifier)])
         try save()
         _ = try cli(["ui", "set-language", "--language", "en"], id)
         _ = try cli(["ui", "activate", "--target", target(id, suffix: ".light")], id)
