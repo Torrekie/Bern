@@ -1,28 +1,47 @@
 {
   "all_extracted_product_slices_identical_to_9dd": true,
+  "all_extracted_product_slices_identical_to_9dd_scope": "exact_copies_only",
+  "before_observer_files": {
+    "Driver.before-observer.swift.inc": "cbb24480a8890f2321a42402a5cc2f8c247175494244ec150d2e1d53f7f53e11",
+    "ProductHero.before-observer.base.swift": "cbe5217424f9447a817d5cb40636e8012d54115a0d4f2e91b22b5732d96a5d13",
+    "source-provenance.before-observer.json": "d8df0a5aa6984ff6e33026f4dd0d71cda97cb18955379f415c621696583e8d0e"
+  },
   "comparison_commit": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "compiled_product_source_adaptation_details": "Exactly one observation call after actual renderer.cgImage succeeds. Snapshot stores image scalar descriptors and CGColorSpace reference only, never an image. All color-space classification, ICC export/hash/bounded base64 serialize after all retained PNGs and original teardown. Existing NSImage construction/draw, default colorMode, actions and acquisition gates remain unchanged.",
   "diagnostic_dependencies": [
     "Combine.ObservableObject alias",
     "BernColor.fixed enum case"
   ],
-  "driver_only_change": "BERN_HERO_EXPECT_OS parses13/14 (default13); expected/actual major recorded; actual13 guard replaced by expected13/14 guard. Snapshot/draw/inputs/frame/actions unchanged.",
+  "driver_before_observer_sha256": "cbb24480a8890f2321a42402a5cc2f8c247175494244ec150d2e1d53f7f53e11",
+  "driver_changes_from_original": [
+    "BERN_HERO_EXPECT_OS parses13/14 (default13); expected/actual recorded and OS guard generalized, as preserved in expected-os.patch.",
+    "Fixture-only CGImage metadata helper and report fields; pre-existing snapshot/draw/window/actions unchanged, as preserved in observer.patch."
+  ],
   "driver_origin": "work/native-pq-hero-baseline/Driver.swift.inc after successful native13 baseline",
   "driver_original_sha256": "b737b631acd61680b9a7a5aa6c64f669850b2bf345392f8cd357ceaf6a9ec67d",
-  "driver_shared_sha256": "cbb24480a8890f2321a42402a5cc2f8c247175494244ec150d2e1d53f7f53e11",
+  "driver_shared_sha256": "02211e8b35cdb469776ae6fde6fe18c8614ccb31ea0866b4d0e543349a69b67a",
   "files": {
     "Dependencies.swift": {
       "bytes": 232,
       "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.before-observer.swift.inc": {
+      "bytes": 19019,
+      "sha256": "cbb24480a8890f2321a42402a5cc2f8c247175494244ec150d2e1d53f7f53e11"
     },
     "Driver.original.swift.inc": {
       "bytes": 18757,
       "sha256": "b737b631acd61680b9a7a5aa6c64f669850b2bf345392f8cd357ceaf6a9ec67d"
     },
     "Driver.swift.inc": {
-      "bytes": 19019,
-      "sha256": "cbb24480a8890f2321a42402a5cc2f8c247175494244ec150d2e1d53f7f53e11"
+      "bytes": 22985,
+      "sha256": "02211e8b35cdb469776ae6fde6fe18c8614ccb31ea0866b4d0e543349a69b67a"
     },
     "ProductHero.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "ProductHero.before-observer.base.swift": {
       "bytes": 14982,
       "sha256": "cbe5217424f9447a817d5cb40636e8012d54115a0d4f2e91b22b5732d96a5d13"
     },
@@ -46,6 +65,10 @@
       "bytes": 2487,
       "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
     },
+    "README.md": {
+      "bytes": 4599,
+      "sha256": "28096d79acc7efa89c5b11112aa9b63777361b4ec61b581a7408ad669e7cc110"
+    },
     "assets/source-ffb-icc.png": {
       "bytes": 15470,
       "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
@@ -57,13 +80,41 @@
     "expected-os.patch": {
       "bytes": 2162,
       "sha256": "12843ee861d86ab9ded6ce7d7e4018963d829312c92a3d05f904e3a1db90107f"
+    },
+    "observer.patch": {
+      "bytes": 6559,
+      "sha256": "13bc9a999d01ae94f51c112957abc1e1bce13cb187ea29591089d4096fb5bace"
+    },
+    "run-runtime13.sh": {
+      "bytes": 954,
+      "sha256": "4ebdae7e6874116d37f50320c83f49ad69ebcd27f28171116867c5f795361c2a"
+    },
+    "source-provenance.before-observer.json": {
+      "bytes": 6078,
+      "sha256": "d8df0a5aa6984ff6e33026f4dd0d71cda97cb18955379f415c621696583e8d0e"
     }
   },
   "imports_added_to_exact_slices": true,
-  "product_source_adaptations": [],
+  "observer_sequencing": "Primary descriptor list frozen before existing teardown; cleanup descriptors retained separately. Both serialize only after teardown; current ICC/flags are descriptors of each retained CGColorSpace, not a source pixel conversion.",
+  "product_source_adaptations": [
+    "fixture_snapshot_cgimage_metadata_observer_v2_deferred_profiles"
+  ],
   "product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
   "runtime_13_sdk14_gainmap_adaptation_removed": "New SDK builds exact original image slice, including original available15 gain-map branch. No compiler guard copied from the old SDK14 diagnostic.",
-  "scope": "Static actual snapshot and native FlightView.draw progress0/1 endpoints; not coordinated flight, lifecycle or visual equality acceptance.",
+  "scope": "Static actual snapshot and native FlightView.draw progress0/1 endpoints with explicit metadata observation; not coordinated flight, lifecycle, visual equality or zero-observer-effect acceptance.",
+  "snapshot_cgimage_observer": {
+    "cleanup_records": "All additional records after the original teardown are separately reported; no zero-count assumption.",
+    "collection_scope": "before_existing_window_teardown",
+    "icc_base64_limit_bytes": 65536,
+    "icc_profile_copy_count_per_observation": 1,
+    "id": "fixture_snapshot_cgimage_metadata_observer_v2_deferred_profiles",
+    "local_control_receipt": "work/native-pq-hero-cgmetadata-local13/root-deferred-observer-control.json; local SDK14 diagnostic adaptations explicitly retained there, not in this new-SDK package.",
+    "max_required_macos_api_version": "12.0; all observed APIs declared in localSDK14.2 and available on13/14.",
+    "observer_effect": "Metadata getters/profile copying may materialize caches/allocate; hashing/base64 take CPU. Descriptor collection retains only scalars and CGColorSpace. Classification/ICC export happen after PNGs and original window teardown. In one localSDK14/min13 deferred-observer control, all12 raw and ICC-normalized ROIs exactly matched the original13 baseline. This is an observation, not a general zero-observer-effect guarantee.",
+    "readback": "Public CGImage format/colorSpace getters and copied ICC-profile data only; no pixel/provider data read in observer.",
+    "site": "snapshot_after_renderer_cgimage_before_NSImage",
+    "storage": "Before teardown: scalar dictionaries and CGColorSpace references only, no CGImage/NSImage. After teardown: metadata value dictionaries, profile SHA/length and complete profile base64 when at most65536bytes. Larger profiles have explicit omission reason, not truncation."
+  },
   "sources": {
     "BernAppKit.swift": {
       "full_source_9dd_sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598",
@@ -131,5 +182,6 @@
       ],
       "working_source_matches_HEAD": true
     }
-  }
+  },
+  "swift_importer_correction": "Use public Swift property CGColorSpace.isWideGamutRGB; SDK14 rejects the C function spelling in Swift. Getter/observation semantics unchanged. First local compiler error retained separately."
 }
