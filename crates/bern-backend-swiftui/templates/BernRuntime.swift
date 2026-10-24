@@ -2496,9 +2496,9 @@ private extension View {
 ///
 /// HDR pictures show in high dynamic range where the display has headroom:
 /// a JPEG or HEIC with a gain map decodes to HDR (macOS 15 and iOS 18 and
-/// later), a PQ or HLG PNG keeps its range. The macOS 13 fallback converts
-/// Standard output through Core Image; High retains HDR pixels but does not
-/// reproduce macOS 14's adaptive ISO HDR tone mapper.
+/// later), a PQ or HLG PNG keeps its range. On macOS 13, explicit Standard PQ
+/// uses the native SwiftUI image surface. Other legacy HDR paths use Core
+/// Image; High does not reproduce macOS 14's adaptive ISO HDR tone mapper.
 
 struct BernImage: View {
     /// A declared resource, or
@@ -2531,6 +2531,9 @@ struct BernImage: View {
         #if os(macOS)
         /// Classified once during decode; the original image and ICC stay intact.
         let legacyHDRColorSpace: CGColorSpace?
+        /// A display-only PQ interpretation for explicit Standard on macOS 13.
+        /// The source image remains available to other picture consumers.
+        let legacyStandardPQImage: CGImage?
         #endif
     }
 
@@ -2575,7 +2578,10 @@ struct BernImage: View {
         let w = CGFloat(turned ? image.height : image.width), h = CGFloat(turned ? image.width : image.height)
         let ratio = w > 0 && h > 0 ? w / h : 1
         #if os(macOS)
-        return Picture(image: image, orientation: orientation, ratio: ratio, legacyHDRColorSpace: legacyHDRColorSpace(image))
+        let legacySpace = legacyHDRColorSpace(image)
+        return Picture(image: image, orientation: orientation, ratio: ratio,
+            legacyHDRColorSpace: legacySpace,
+            legacyStandardPQImage: legacyStandardPQImage(image, colorSpace: legacySpace))
         #else
         return Picture(image: image, orientation: orientation, ratio: ratio)
         #endif
@@ -2603,10 +2609,20 @@ struct BernImage: View {
         else { return nil }
         return CGColorSpace(name: bytes[9] == 16 ? CGColorSpace.itur_2100_PQ : CGColorSpace.itur_2100_HLG)
     }
+
+    private nonisolated static func legacyStandardPQImage(_ image: CGImage, colorSpace: CGColorSpace?) -> CGImage? {
+        if #available(macOS 14, *) { return nil }
+        guard #available(macOS 13, *), let originalSpace = image.colorSpace,
+              let colorSpace, CGColorSpaceIsPQBased(colorSpace) else { return nil }
+        if CGColorSpaceUsesITUR_2100TF(originalSpace) { return image }
+        // The decoder selected this space only after the complete CICP proof
+        // above. Retag a derived image without rewriting or tone-mapping pixels.
+        return image.copy(colorSpace: colorSpace)
+    }
     #endif
 
-    @ViewBuilder private func standardImage(_ picture: Picture) -> some View {
-        let image = SwiftUI.Image(decorative: picture.image, scale: 1, orientation: picture.orientation)
+    @ViewBuilder private func standardImage(_ picture: Picture, displayImage: CGImage? = nil) -> some View {
+        let image = SwiftUI.Image(decorative: displayImage ?? picture.image, scale: 1, orientation: picture.orientation)
             .renderingMode(rendering)
         switch fit {
         case .contain: image.resizable().aspectRatio(contentMode: .fit)
@@ -2623,6 +2639,9 @@ struct BernImage: View {
                 #if os(macOS)
                 if #available(macOS 14, *) {
                     standardImage(picture)
+                } else if dynamicRange == .standard, rendering == .original,
+                          let image = picture.legacyStandardPQImage {
+                    standardImage(picture, displayImage: image)
                 } else if rendering == .original, picture.legacyHDRColorSpace != nil {
                     switch fit {
                     case .contain: BernLegacyEDRImage(picture: picture, dynamicRange: dynamicRange).aspectRatio(picture.ratio, contentMode: .fit)
