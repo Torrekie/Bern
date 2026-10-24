@@ -86,15 +86,21 @@ func heartbeat() {
     guard ciHeartbeat, heartbeatError == nil, let p = process, p.isRunning else { return }
     guard NSWorkspace.shared.frontmostApplication?.processIdentifier == p.processIdentifier,
           let w = ownWindows().first(where:{ windowID($0) == mainID }) else { heartbeatError = "Own target lost foreground/window; heartbeat stopped"; return }
-    let r = bounds(w), point = CGPoint(x:r.midX,y:r.midY)
-    guard let e = CGEvent(mouseEventSource:nil,mouseType:.mouseMoved,mouseCursorPosition:point,mouseButton:.left) else { heartbeatError = "Cannot create own-PID heartbeat"; return }
-    // Public fields (10.7+) associate the mouse event with this known main window.
-    // Delivery is still unproven until Frame remains mounted beyond idle_after.
+    let r = bounds(w), point = CGPoint(x:r.midX,y:r.midY), local = CGPoint(x:r.width/2,y:r.height/2)
+    guard let native = NSEvent.mouseEvent(with:.mouseMoved,location:local,modifierFlags:[],timestamp:ProcessInfo.processInfo.systemUptime,
+        windowNumber:Int(mainID),context:nil,eventNumber:0,clickCount:0,pressure:0), let e = native.cgEvent else { heartbeatError = "Cannot construct window-associated NSEvent heartbeat"; return }
+    let nativeWindow = native.windowNumber
+    e.location = point
     e.setIntegerValueField(.mouseEventWindowUnderMousePointer,value:Int64(mainID))
     e.setIntegerValueField(.mouseEventWindowUnderMousePointerThatCanHandleThisEvent,value:Int64(mainID))
     e.setIntegerValueField(.eventTargetUnixProcessID,value:Int64(p.processIdentifier))
+    let roundTripWindow = NSEvent(cgEvent:e)?.windowNumber
+    var event: [String:Any] = ["elapsed":Date().timeIntervalSince(began),"pid":p.processIdentifier,"window_id":mainID,"window_fields":[e.getIntegerValueField(.mouseEventWindowUnderMousePointer),e.getIntegerValueField(.mouseEventWindowUnderMousePointerThatCanHandleThisEvent)],
+        "nsevent_window_number":nativeWindow,"roundtrip_nsevent_window_number":roundTripWindow ?? -1,"window_bounds_points":rect(r),"point_window_local":[local.x,local.y],"point_screen_top_left":[e.location.x,e.location.y],"sent":false]
+    guard nativeWindow == Int(mainID), roundTripWindow == Int(mainID) else { events.append(event); heartbeatError = "NSEvent windowNumber was not preserved through CGEvent conversion; heartbeat not sent"; return }
+    // Window metadata is only a precondition; delivery must still pass the real idle gate.
     e.postToPid(p.processIdentifier)
-    events.append(["elapsed":Date().timeIntervalSince(began),"pid":p.processIdentifier,"window_id":mainID,"window_fields":[e.getIntegerValueField(.mouseEventWindowUnderMousePointer),e.getIntegerValueField(.mouseEventWindowUnderMousePointerThatCanHandleThisEvent)],"window_bounds_points":rect(r),"point_screen_top_left":[point.x,point.y]])
+    event["sent"] = true; events.append(event)
 }
 func attribute(_ e: AXUIElement, _ key: String) -> CFTypeRef? {
     var value: CFTypeRef?; return AXUIElementCopyAttributeValue(e,key as CFString,&value) == .success ? value : nil

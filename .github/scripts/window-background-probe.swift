@@ -87,11 +87,11 @@ private func effects(_ root:NSView)->[[String:Any]] {
         let publicSourceSHA=packagedSourceSHA ?? suppliedSourceSHA ?? "unavailable"
         let harnessSHA=env["BERN_PROBE_SHA"] ?? env["GITHUB_SHA"] ?? "local"
         let before=NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
-        var window:NSWindow?,began:Date?,stages:[[String:Any]]=[]
+        var window:NSWindow?,began:Date?,stages:[[String:Any]]=[],diagnostics:[[String:Any]]=[]
         var report:[String:Any]=["success":false,"scope":"Five public-background paths in one own inactive/nonkey manually-created NSWindow. Native public controls only; not the whole Gallery App or product acceptance. No preferences/activation/wallpaper/brightness changes.","probe_source_sha":harnessSHA,"probe_swift_sha256":publicSourceSHA,"probe_source_sha256":publicSourceSHA,"probe_source_sha256_method":packagedSourceSHA == nil ? "environment or unavailable":"adjacent packaged source bytes","expected_os_major":expectedOS as Any? ?? NSNull(),"actual_os_major":actualOS,"harness_sha":harnessSHA,"environment":Dictionary(uniqueKeysWithValues:["GITHUB_SHA","GITHUB_RUN_ID","RUNNER_ARCH","ImageOS","ImageVersion","BERN_PROBE_SHA","BERN_PROBE_SOURCE_SHA256"].compactMap { key in env[key].map { (key,$0) } }),"window_limit_seconds":9,"collection_limit_seconds":8.5,"screen_capture_preflight":CGPreflightScreenCaptureAccess(),"os":ProcessInfo.processInfo.operatingSystemVersionString,"roi_content_top_left_points":rect(CGRect(x:680,y:430,width:40,height:40)),"activation_calls":0]
         defer {
             window?.contentView=nil;window?.orderOut(nil);window?.close()
-            report["groups"]=stages;report["frontmost_before"]=before;report["frontmost_after"]=NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
+            report["groups"]=stages;report["diagnostics"]=diagnostics;report["frontmost_before"]=before;report["frontmost_after"]=NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
             if let began {report["window_seconds"]=Date().timeIntervalSince(began)}
             try? JSONSerialization.data(withJSONObject:report,options:[.prettyPrinted,.sortedKeys]).write(to:output.appendingPathComponent("report.json"))
         }
@@ -106,19 +106,39 @@ private func effects(_ root:NSView)->[[String:Any]] {
             began=Date();w.orderBack(nil)
             let deadline=Date(timeIntervalSinceNow:8.5)
             let commonFrame=w.frame
+            func snapshot(_ event:String,_ kind:Kind,_ view:NSView)->[String:Any] {
+                let info=(CGWindowListCopyWindowInfo(.optionIncludingWindow,CGWindowID(w.windowNumber)) as? [[String:Any]])?.first
+                return ["event":event,"variant":kind.rawValue,"elapsed_seconds":Date().timeIntervalSince(began!),"window_frame":rect(w.frame),"expected_window_frame":rect(commonFrame),"frame_matches_expected":w.frame==commonFrame,"content_bounds":rect(view.bounds),"content_layout_rect":rect(w.contentLayoutRect),"root_view_class":NSStringFromClass(type(of:view)),"visible":w.isVisible,"key":w.isKeyWindow,"app_active":app.isActive,"frontmost_pid":NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0,"expected_frontmost_pid":before,"window_number":w.windowNumber,"onscreen":info?[kCGWindowIsOnscreen as String] as? Bool as Any? ?? NSNull()]
+            }
             for kind in Kind.allCases {
                 let view:NSView
                 if kind == .native {view=first}
                 else {view=NSHostingView(rootView:Content(kind:kind))}
+                diagnostics.append(snapshot("before-root-install",kind,w.contentView ?? view))
                 view.frame=CGRect(x:0,y:0,width:800,height:520);view.autoresizingMask=[.width,.height]
                 w.contentView=view;view.needsDisplay=true
+                diagnostics.append(snapshot("after-root-install",kind,view))
                 var equal=0,lastHash:String?,last:CGImage?,buffers:[[String:Any]]=[]
                 while Date()<deadline {
                     view.layoutSubtreeIfNeeded();view.displayIfNeeded()
                     RunLoop.main.run(until:Date(timeIntervalSinceNow:0.12))
-                    guard w.isVisible,!w.isKeyWindow,!app.isActive,w.frame==commonFrame,NSWorkspace.shared.frontmostApplication?.processIdentifier==before,
-                          let info=(CGWindowListCopyWindowInfo(.optionIncludingWindow,CGWindowID(w.windowNumber)) as? [[String:Any]])?.first,info[kCGWindowIsOnscreen as String] as? Bool==true,
-                          let shot=CGWindowListCreateImage(.null,.optionIncludingWindow,CGWindowID(w.windowNumber),.boundsIgnoreFraming) else{throw Failure(message:"Own nonkey capture/frame/foreground contract failed")}
+                    var diagnostic=snapshot("before-shot",kind,view),failed:[String]=[]
+                    if !w.isVisible {failed.append("window_visible")}
+                    if w.isKeyWindow {failed.append("window_nonkey")}
+                    if app.isActive {failed.append("app_inactive")}
+                    if w.frame != commonFrame {failed.append("window_frame_unchanged")}
+                    if NSWorkspace.shared.frontmostApplication?.processIdentifier != before {failed.append("frontmost_unchanged")}
+                    if diagnostic["onscreen"] as? Bool != true {failed.append("window_onscreen")}
+                    diagnostic["failed_conditions"]=failed
+                    guard failed.isEmpty else {
+                        diagnostic["capture_attempted"]=false;diagnostics.append(diagnostic)
+                        throw Failure(message:"Own nonkey capture/frame/foreground contract failed: \(failed.joined(separator:","))")
+                    }
+                    let captured=CGWindowListCreateImage(.null,.optionIncludingWindow,CGWindowID(w.windowNumber),.boundsIgnoreFraming)
+                    diagnostic["capture_attempted"]=true;diagnostic["capture_nil"]=captured == nil
+                    if captured == nil {diagnostic["failed_conditions"]=["capture_non_nil"]}
+                    diagnostics.append(diagnostic)
+                    guard let shot=captured else {throw Failure(message:"Own nonkey capture/frame/foreground contract failed: capture_non_nil")}
                     let hash=sha(try canonical(shot));equal = hash==lastHash ? equal+1:1;lastHash=hash;last=shot
                     if equal==1 {buffers=[]}
                     buffers.append(["rgba8_srgb_sha256":hash,"frontmost_pid":NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0,"key":w.isKeyWindow,"active":app.isActive])
