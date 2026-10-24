@@ -1,0 +1,20 @@
+{
+  "scope": "Synthetic 2x2 binary16 bit-pattern/row-padding and atlas integer-coordinate tests only; no captured report, UI, compiler, CI, native runtime or visual acceptance.",
+  "passed": true,
+  "tested": [
+    "RGBA uint16LE channels",
+    "binary16 subnormal/finite extrema",
+    "negative zero distinct bits",
+    "finite mean excludes NaN/Inf explicitly",
+    "NaN payload uniqueness",
+    "Inf and <0/>1 counters",
+    "padding excluded",
+    "truncated/short stride rejected",
+    "top/bottom coordinate candidates",
+    "fractional atlas boundary rejected",
+    "nonfinite JSON literal rejected",
+    "unsupported bitmap layout rejected before file access"
+  ],
+  "analyzer_sha256": "b616c42b192c13b7fee3d903d90e9553f389c6ac4b6f7da8cc96996877fcca2a",
+  "test_source_sha256": "f4fd2d5b9d91d56565ede127916ba602cfcc506da5f38b38a2df1476f05deba3"
+}

@@ -165,4 +165,18 @@ ready宽度900/920/920满足，但高度/恢复时序不同；所有末态捕获
 
 [系统Core Image转换实验](../Evidence/macOS13-hdr-candidate/native-pq-hero-native-ci13/RESULTS.md)随后使用SHA锁定的不透明、up、fill640×360→320×180pt@2×输入，仅在实际snapshot边界改用已有cached canonicalPQ→显式源色空间CIImage→RGBAh/extendedSRGB CGImage，保持同一NSImage包装与Flight.draw。默认control仍12ROI全部精确、未创建CIContext；selected分支只改变hero：normalized fullRGB MAE为named0.010739、custom0.018699/255、max3/255，body/oracle全部不变。最大跨宿主残差仍113.048334/255，未解决主色差，未合产品；无自拟tone curve或色块补偿。selected窗口6.791秒，默认1.623秒，均通过既有7.9秒window界限；MTKView=0不意味着CIContext内部没有使用GPU。
 
-以上均只覆盖实际snapshot和固定progress0/1的同图端点，不覆盖完整flight、High/HLG、透明图、其它方向/fit、物理HDR或整应用等效。下一步已收敛为[读取原snapshot浮点样本的单一边界诊断](macOS13-Hero-Snapshot-Boundary.md)：先验证新增retain/readback的off/on控制，再比较对应平坦内区的原始half-float；不通过NSImage再缓存或重新渲染取图。现有结果仍不能区分快照前后的差异，诊断尚未执行。当前goal继续active，后续macOS11/Swift5.3/Objective-C/iOS阶段仍暂缓；本轮清除自有缓存/构建/下载59,748,632字节和已逐字归档的work重复副本15,658,753字节，合计约75.4MB逻辑文件；不把它当成APFS实际回收或磁盘总可用量变化。清理见[收据](../Evidence/macOS13-hdr-candidate/hero-color-experiments-cleanup-20261024.json)。
+以上均只覆盖实际snapshot和固定progress0/1的同图端点，不覆盖完整flight、High/HLG、透明图、其它方向/fit、物理HDR或整应用等效。后续采用了[读取原snapshot浮点样本的单一边界诊断](macOS13-Hero-Snapshot-Boundary.md)：先验证新增retain/readback的off/on控制，再比较对应平坦内区的原始half-float；不通过NSImage再缓存或重新渲染取图。该诊断现已执行，结果见下节；现有聚合数据仍不能定位可见主差的来源。当前goal继续active，后续macOS11/Swift5.3/Objective-C/iOS阶段仍暂缓；本轮清除自有缓存/构建/下载59,748,632字节和已逐字归档的work重复副本15,658,753字节，合计约75.4MB逻辑文件；不把它当成APFS实际回收或磁盘总可用量变化。清理见[收据](../Evidence/macOS13-hdr-candidate/hero-color-experiments-cleanup-20261024.json)。
+
+
+## 原始半精度快照与真实容器边界（2026-10-24）
+
+[本机off/on证据](../Evidence/macOS13-hdr-candidate/native-pq-hero-float13/RESULTS.md)先通过既有v2→关闭读取、关闭→开启两组12ROI raw/ICC归一精确复现，再发布[手动CI40091326190](https://github.com/Torrekie/Bern/actions/runs/40091326190)。远程新SDK26.2/min13仅构建一次，原签名binary`38d0bf9b…647a517`在14与13各运行off/on；[同binary完整证据](../Evidence/macOS14-hero-float-40091326190/RESULTS.md)保留四进程、八原PNG、四原raw及全部控制。14既有v2→新off、14off→on、新13v2→off、13off→on四组各12ROI精确相同；不把CI success或单次控制扩大为零观察效应保证。
+
+on只强留原renderer返回的两个CGImage，PNG与原teardown之后各读一次原provider，layout/长度失败即停；没有重画、再取图、色彩转换、relabel或NSImage再缓存。raw严格为RGBA16Little/16float、64bpp、rowbytes×height：13合计3,686,400B，14为921,600B，均在4MiB额度内。导出后fixture保留数0；cleanup只计数不留图。新SDK13 off/on窗口1.609/1.564秒，14为2.201/1.852秒，首尾normal三项false、前台分别9292/322保持、cache/noMTK/noFlight/noTimer/五stable均通过。13与14导出本身约.010/.004秒，属于window teardown后的时间，另有15秒外层进程界限。
+
+13的两份raw逐字复现旧SDK13；14 named/custom两份raw则彼此逐字相同。四图snapshot ICC仍完全相同；全部分量finite、alpha全1，RGB均有负值及>1值。未选择行方向、未重采样或按颜色对齐。只看未定方向的全buffer分布，14−13 named各RGB均值约+.000159264（原half样本数值，非sRGB8位码/nit），>1计数在13比4×14各多120；这种分布差别已在snapshot存储边界出现，但仍含1×/2×采样与环境混杂，不能指定具体色块、唯一系统原因或可见主差来源。
+
+source审查还确认：当前固定端点夹具将真实FlightView挂在FixtureRoot，真实coordinator则挂在window父视图中的BernHeroOverlay。两者的实际图层/祖先状态尚未记录，因而不能把夹具主色差直接称作完整应用flight的同一缺陷。下一步[先只读记录两条容器链与现有layer hint](macOS13-Hero-Backing-Observation.md)，不先设定RGBA8根因或强制新layer。现有产品未加入浮点导出或未证实的色彩修复；goal继续active，整阶段与后续11/Swift5.3/Objective-C/iOS门槛保持。
+
+
+本轮raw证据归档后，已删除自有probe/cache/传输包/临时组装草稿58,261,039B及逐字核验的work重复副本15,427,392B，合计约73.7MB逻辑文件，见[清理收据](../Evidence/macOS13-hdr-candidate/hero-float-experiments-cleanup-20261024.json)。原始raw/PNG、源码和数值报告保留；现存证据有独立最终清单。此数字不代表APFS回收量或磁盘总可用量变化。

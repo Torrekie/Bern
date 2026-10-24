@@ -1,0 +1,291 @@
+{
+  "analysis_complete": true,
+  "binary_sha256": "84efaed4e15e9f24b95d84d0e352131ab3f418ed9e42e158d53c9e0b4f885313",
+  "control_receipt_checks": [
+    {
+      "all12_raw_and_normalized_exact_recorded": true,
+      "baseline_report_SHA_matches_actual_retained_input": true,
+      "candidate_report_SHA_matches_actual": true,
+      "control": "float-off-vs-on13.json",
+      "file": {
+        "bytes": 2877,
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-float-control/float-off-vs-on13.json",
+        "sha256": "a69335d29a2b16dfd85ef44b951249be36b7fbeeadd73663ee4cece497562ae1"
+      },
+      "scope": "Root-computed PNG comparisons retained and checked for current report fingerprints/12 rows/zero metrics. This raw-float task does not rerun ICC image comparison."
+    },
+    {
+      "all12_raw_and_normalized_exact_recorded": true,
+      "baseline_report_SHA_matches_actual_retained_input": true,
+      "candidate_report_SHA_matches_actual": true,
+      "control": "v2-vs-float-off13.json",
+      "file": {
+        "bytes": 2877,
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-float-control/v2-vs-float-off13.json",
+        "sha256": "e8f9ff00c3e4f5c7c49c9857b6769650b7ccc5d190ba6701e2ae683ad9f52908"
+      },
+      "scope": "Root-computed PNG comparisons retained and checked for current report fingerprints/12 rows/zero metrics. This raw-float task does not rerun ICC image comparison.",
+      "verified_baseline_report": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-cgmetadata-40086541042/same-binary-13-14/runtime13/report.json",
+        "sha256": "f71332cdf388ead907f34fa17a92e3dfa0efe31261fae712aa58fbfb0e6e5116"
+      }
+    }
+  ],
+  "limitations": [
+    "Off/on exact PNG controls are root-computed observations, not a general zero-observer-effect guarantee.",
+    "Whole-buffer values/counts are invariant under row reversal, but cannot identify semantic patch boundaries or color/OS cause.",
+    "Raw snapshot ICC is context only. No semantic alignment, transfer-function application, nits or full-flight conclusion."
+  ],
+  "off_raw_records": 0,
+  "on_raw_records": 2,
+  "row_direction": "unknown",
+  "runtime_gates": {
+    "off": {
+      "all_current_runtime_gates_independently_rechecked": true,
+      "captures": 2,
+      "exit_code": 0,
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_elapsed_seconds": 2.9749993700534105e-05,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "maximum_total_raw_bytes": 4194304,
+        "observer_effect": "Changed object lifetime/provider access requires off/on pixel controls; zero observer effect is not claimed",
+        "primary_frozen_at_uptime_seconds": 243450.17112395834,
+        "primary_observation_count": 2,
+        "primary_observation_keys": [
+          "baseline-body-named",
+          "baseline-body-custom"
+        ],
+        "provider_copy_calls": 0,
+        "released_at_uptime_seconds": 243450.18354633334,
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "retention_scope": "on: actual renderer-return object until post-teardown export; off: no CGImage retained; cleanup: no CGImage retained",
+        "row_direction": "unverified",
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 82459,
+      "process_elapsed_seconds": 2.8484131250006612,
+      "samples": 10,
+      "success": true,
+      "window_seconds": 1.839629054069519
+    },
+    "on": {
+      "all_current_runtime_gates_independently_rechecked": true,
+      "captures": 2,
+      "exit_code": 0,
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_elapsed_seconds": 0.033125416666734964,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "maximum_total_raw_bytes": 4194304,
+        "observer_effect": "Changed object lifetime/provider access requires off/on pixel controls; zero observer effect is not claimed",
+        "primary_frozen_at_uptime_seconds": 243480.24527233336,
+        "primary_observation_count": 2,
+        "primary_observation_keys": [
+          "baseline-body-named",
+          "baseline-body-custom"
+        ],
+        "provider_copy_calls": 2,
+        "released_at_uptime_seconds": 243480.28630858334,
+        "requested": "on",
+        "retained_primary_peak_count": 2,
+        "retention_scope": "on: actual renderer-return object until post-teardown export; off: no CGImage retained; cleanup: no CGImage retained",
+        "row_direction": "unverified",
+        "selected": "on",
+        "success": true,
+        "total_raw_bytes": 3686400
+      },
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 89757,
+      "process_elapsed_seconds": 2.593056457990315,
+      "samples": 10,
+      "success": true,
+      "window_seconds": 1.9280400276184082
+    }
+  },
+  "scope": "Actual local13 raw binary16 whole-buffer numeric/bit summaries only. Row direction remains unknown; no semantic patch values, orientation claim or cross-host comparison. No clamp/color conversion/unpremultiplication/nits inference.",
+  "semantic_patch_values_emitted": false,
+  "total_raw_bytes": 3686400,
+  "whole_buffers": [
+    {
+      "RGBA": {
+        "A": {
+          "finite_count": 230400,
+          "finite_numeric_max": 1.0,
+          "finite_numeric_mean": 1.0,
+          "finite_numeric_min": 1.0,
+          "nan_count": 0,
+          "negative_infinity_count": 0,
+          "numeric_equal_one_count": 230400,
+          "numeric_greater_than_one_count": 0,
+          "numeric_less_than_zero_count": 0,
+          "positive_infinity_count": 0,
+          "unique_uint16_bit_pattern_count": 1
+        },
+        "B": {
+          "finite_count": 230400,
+          "finite_numeric_max": 2.58984375,
+          "finite_numeric_mean": 1.2835502624511719,
+          "finite_numeric_min": -0.98388671875,
+          "nan_count": 0,
+          "negative_infinity_count": 0,
+          "numeric_equal_one_count": 0,
+          "numeric_greater_than_one_count": 159480,
+          "numeric_less_than_zero_count": 46080,
+          "positive_infinity_count": 0,
+          "unique_uint16_bit_pattern_count": 635
+        },
+        "G": {
+          "finite_count": 230400,
+          "finite_numeric_max": 2.60546875,
+          "finite_numeric_mean": 1.5538953145345051,
+          "finite_numeric_min": -1.0048828125,
+          "nan_count": 0,
+          "negative_infinity_count": 0,
+          "numeric_equal_one_count": 0,
+          "numeric_greater_than_one_count": 190200,
+          "numeric_less_than_zero_count": 30720,
+          "positive_infinity_count": 0,
+          "unique_uint16_bit_pattern_count": 634
+        },
+        "R": {
+          "finite_count": 230400,
+          "finite_numeric_max": 3.064453125,
+          "finite_numeric_mean": 1.5679578145345052,
+          "finite_numeric_min": -1.96875,
+          "nan_count": 0,
+          "negative_infinity_count": 0,
+          "numeric_equal_one_count": 0,
+          "numeric_greater_than_one_count": 174840,
+          "numeric_less_than_zero_count": 30720,
+          "positive_infinity_count": 0,
+          "unique_uint16_bit_pattern_count": 635
+        }
+      },
+      "alpha_all_numeric_exactly_one": true,
+      "bytes": 1843200,
+      "bytes_per_row": 5120,
+      "file": "snapshot-named.bin",
+      "format": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_order_raw": 4096,
+        "float_components": true,
+        "pixel_format_raw": 0
+      },
+      "height": 360,
+      "key": "baseline-body-named",
+      "padding_byte_count": 0,
+      "pixel_count": 230400,
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+      "width": 640
+    },
+    {
+      "RGBA": {
+        "A": {
+          "finite_count": 230400,
+          "finite_numeric_max": 1.0,
+          "finite_numeric_mean": 1.0,
+          "finite_numeric_min": 1.0,
+          "nan_count": 0,
+          "negative_infinity_count": 0,
+          "numeric_equal_one_count": 230400,
+          "numeric_greater_than_one_count": 0,
+          "numeric_less_than_zero_count": 0,
+          "positive_infinity_count": 0,
+          "unique_uint16_bit_pattern_count": 1
+        },
+        "B": {
+          "finite_count": 230400,
+          "finite_numeric_max": 2.58984375,
+          "finite_numeric_mean": 1.2835493087768555,
+          "finite_numeric_min": -0.98388671875,
+          "nan_count": 0,
+          "negative_infinity_count": 0,
+          "numeric_equal_one_count": 0,
+          "numeric_greater_than_one_count": 159480,
+          "numeric_less_than_zero_count": 46080,
+          "positive_infinity_count": 0,
+          "unique_uint16_bit_pattern_count": 635
+        },
+        "G": {
+          "finite_count": 230400,
+          "finite_numeric_max": 2.60546875,
+          "finite_numeric_mean": 1.5537171045939127,
+          "finite_numeric_min": -1.0048828125,
+          "nan_count": 0,
+          "negative_infinity_count": 0,
+          "numeric_equal_one_count": 0,
+          "numeric_greater_than_one_count": 190200,
+          "numeric_less_than_zero_count": 30720,
+          "positive_infinity_count": 0,
+          "unique_uint16_bit_pattern_count": 633
+        },
+        "R": {
+          "finite_count": 230400,
+          "finite_numeric_max": 3.064453125,
+          "finite_numeric_mean": 1.5677282333374023,
+          "finite_numeric_min": -1.9677734375,
+          "nan_count": 0,
+          "negative_infinity_count": 0,
+          "numeric_equal_one_count": 0,
+          "numeric_greater_than_one_count": 174840,
+          "numeric_less_than_zero_count": 30720,
+          "positive_infinity_count": 0,
+          "unique_uint16_bit_pattern_count": 634
+        }
+      },
+      "alpha_all_numeric_exactly_one": true,
+      "bytes": 1843200,
+      "bytes_per_row": 5120,
+      "file": "snapshot-custom.bin",
+      "format": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_order_raw": 4096,
+        "float_components": true,
+        "pixel_format_raw": 0
+      },
+      "height": 360,
+      "key": "baseline-body-custom",
+      "padding_byte_count": 0,
+      "pixel_count": 230400,
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+      "width": 640
+    }
+  ]
+}

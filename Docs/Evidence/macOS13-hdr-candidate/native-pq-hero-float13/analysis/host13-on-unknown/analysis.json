@@ -1,0 +1,890 @@
+{
+  "actual_os_major": 13,
+  "analysis_complete": true,
+  "analyzer_sha256": "b616c42b192c13b7fee3d903d90e9553f389c6ac4b6f7da8cc96996877fcca2a",
+  "atlas_spec_sha256": "39ca622a45c0120d08e90daa7a17a0145be1b79485decb4619a0e5a3f23cadaf",
+  "capture_context": [
+    {
+      "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+      "capture_size": [
+        2048,
+        936
+      ],
+      "current_headroom": 1,
+      "phase": "progress-0",
+      "potential_headroom": 2
+    },
+    {
+      "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+      "capture_size": [
+        2048,
+        936
+      ],
+      "current_headroom": 1,
+      "phase": "progress-1",
+      "potential_headroom": 2
+    }
+  ],
+  "capture_mode": {
+    "cleanup_observation_count": 2,
+    "error": null,
+    "export_elapsed_seconds": 0.033125416666734964,
+    "export_stage": "after_existing_window_teardown",
+    "fixture_retained_images_after_export": 0,
+    "maximum_total_raw_bytes": 4194304,
+    "observer_effect": "Changed object lifetime/provider access requires off/on pixel controls; zero observer effect is not claimed",
+    "primary_frozen_at_uptime_seconds": 243480.24527233336,
+    "primary_observation_count": 2,
+    "primary_observation_keys": [
+      "baseline-body-named",
+      "baseline-body-custom"
+    ],
+    "provider_copy_calls": 2,
+    "released_at_uptime_seconds": 243480.28630858334,
+    "requested": "on",
+    "retained_primary_peak_count": 2,
+    "retention_scope": "on: actual renderer-return object until post-teardown export; off: no CGImage retained; cleanup: no CGImage retained",
+    "row_direction": "unverified",
+    "selected": "on",
+    "success": true,
+    "total_raw_bytes": 3686400
+  },
+  "context": {
+    "cache_unchanged": true,
+    "frontmost_after": 9292,
+    "frontmost_before": 9292,
+    "normal_after": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "normal_before": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "os": "Version 13.7.8 (Build 22H730)",
+    "window_seconds": 1.9280400276184082
+  },
+  "independent_orientation_evidence": null,
+  "limitations": [
+    "Both row mappings are candidates until independently grounded. Whole-buffer differences cannot identify a semantic patch cause or bypass sampling/scaled-edge limits.",
+    "Descriptor/ICC context and runtime booleans are retained-source claims, not repeated native measurements or a zero-observer-effect guarantee.",
+    "No cross-host semantic patch comparison, expected-value fit, image correction or acceptance threshold is performed.",
+    "Normal-after/teardown timing follows the preserved driver. Cleanup count is reported separately; raw exports cover only the two primary identities."
+  ],
+  "numeric_policy": "Original uint16LE payloads decoded as IEEE754 binary16, RGBA stored premultiplied-last. No clamp, unpremultiplication, color conversion, normalization, rescale, alignment, nits inference or automatic row flip. Min/mean/max use finite numbers only; NaN/Inf counts are separate; <0/>1 counts include infinities but exclude NaNs.",
+  "raw_byte_budget": 4194304,
+  "raw_byte_total": 3686400,
+  "records": [
+    {
+      "candidate_coordinate_mappings_only": {
+        "bottom-up": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              520,
+              248,
+              632,
+              352
+            ],
+            "cool812": [
+              264,
+              128,
+              376,
+              232
+            ],
+            "gray-ramp": [
+              4,
+              20,
+              636,
+              100
+            ],
+            "green812": [
+              392,
+              248,
+              504,
+              352
+            ],
+            "pastel812": [
+              520,
+              128,
+              632,
+              232
+            ],
+            "red812": [
+              264,
+              248,
+              376,
+              352
+            ],
+            "warm406": [
+              392,
+              128,
+              504,
+              232
+            ],
+            "warm812": [
+              136,
+              128,
+              248,
+              232
+            ],
+            "white203": [
+              8,
+              248,
+              120,
+              352
+            ],
+            "white812": [
+              136,
+              248,
+              248,
+              352
+            ],
+            "yellow812": [
+              8,
+              128,
+              120,
+              232
+            ]
+          },
+          "status": "UNRESOLVED_CANDIDATE"
+        },
+        "top-down": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              520,
+              8,
+              632,
+              112
+            ],
+            "cool812": [
+              264,
+              128,
+              376,
+              232
+            ],
+            "gray-ramp": [
+              4,
+              260,
+              636,
+              340
+            ],
+            "green812": [
+              392,
+              8,
+              504,
+              112
+            ],
+            "pastel812": [
+              520,
+              128,
+              632,
+              232
+            ],
+            "red812": [
+              264,
+              8,
+              376,
+              112
+            ],
+            "warm406": [
+              392,
+              128,
+              504,
+              232
+            ],
+            "warm812": [
+              136,
+              128,
+              248,
+              232
+            ],
+            "white203": [
+              8,
+              8,
+              120,
+              112
+            ],
+            "white812": [
+              136,
+              8,
+              248,
+              112
+            ],
+            "yellow812": [
+              8,
+              128,
+              120,
+              232
+            ]
+          },
+          "status": "UNRESOLVED_CANDIDATE"
+        }
+      },
+      "padding": {
+        "byte_count": 0,
+        "excluded_from_pixel_channels": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "raw_record": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_count": 1843200,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 5120,
+        "export_elapsed_seconds": 0.01162845833459869,
+        "export_stage": "after_existing_window_teardown",
+        "file": "snapshot-named.bin",
+        "float_components": true,
+        "height": 360,
+        "key": "baseline-body-named",
+        "pixel_format_raw": 0,
+        "provider_read_at_uptime_seconds": 243480.25336987502,
+        "retained_at_uptime_seconds": 243478.75430016668,
+        "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+        "width": 640
+      },
+      "resolved_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-capture/runtime13-on/snapshot-named.bin",
+      "snapshot_ICC_context": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 5120,
+        "color_space_components": 3,
+        "color_space_metadata_stage": "after_existing_window_teardown",
+        "color_space_model_raw": 1,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "color_space_present": true,
+        "float_components": true,
+        "height": 360,
+        "icc_base64_omitted_reason": null,
+        "icc_byte_count": 3144,
+        "icc_present": true,
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+        "is_hlg_based": false,
+        "is_pq_based": false,
+        "key": "baseline-body-named",
+        "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+        "pixel_format_raw": 0,
+        "uses_extended_range": true,
+        "uses_itur2100_tf": false,
+        "wide_gamut_rgb": true,
+        "width": 640
+      },
+      "whole_active_pixel_buffer": {
+        "RGBA": {
+          "A": {
+            "all_unique_bits_hex_if_at_most_64": [
+              "0x3c00"
+            ],
+            "finite_count": 230400,
+            "finite_numeric_max": 1.0,
+            "finite_numeric_mean": 1.0,
+            "finite_numeric_min": 1.0,
+            "first_32_sorted_unique_bits_hex": [
+              "0x3c00"
+            ],
+            "full_bit_histogram_sha256": "2a414a08470276288f616bf69bfd6e194bc96fa1577614be9a9d53e4bc291152",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 230400,
+            "numeric_greater_than_one_count": 0,
+            "numeric_less_than_zero_count": 0,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 1
+          },
+          "B": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 2.58984375,
+            "finite_numeric_mean": 1.2835502624511719,
+            "finite_numeric_min": -0.98388671875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318d",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f6",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383b",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389e",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3949"
+            ],
+            "full_bit_histogram_sha256": "168ad3fd78a55d586680cc3b9828f4c03f3cc6ad7c6fc9953926a8444ce13439",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 159480,
+            "numeric_less_than_zero_count": 46080,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 635
+          },
+          "G": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 2.60546875,
+            "finite_numeric_mean": 1.5538953145345051,
+            "finite_numeric_min": -1.0048828125,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318d",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f6",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383b",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389e",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3949"
+            ],
+            "full_bit_histogram_sha256": "35613ccfda4d3825249ff0e61c03e6581d19248c48ed615d4503dce0da82e408",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 190200,
+            "numeric_less_than_zero_count": 30720,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 634
+          },
+          "R": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 3.064453125,
+            "finite_numeric_mean": 1.5679578145345052,
+            "finite_numeric_min": -1.96875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318d",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f6",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383b",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389e",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3947"
+            ],
+            "full_bit_histogram_sha256": "c35a4ba725a4785f67c62223480c57de0699a2528596e74711bced471bfd8a4b",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 174840,
+            "numeric_less_than_zero_count": 30720,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 635
+          }
+        },
+        "alpha_all_numeric_exactly_one": true,
+        "alpha_one_uint16_bits": "0x3c00",
+        "pixel_count": 230400,
+        "raw_storage_box_half_open": [
+          0,
+          0,
+          640,
+          360
+        ]
+      }
+    },
+    {
+      "candidate_coordinate_mappings_only": {
+        "bottom-up": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              520,
+              248,
+              632,
+              352
+            ],
+            "cool812": [
+              264,
+              128,
+              376,
+              232
+            ],
+            "gray-ramp": [
+              4,
+              20,
+              636,
+              100
+            ],
+            "green812": [
+              392,
+              248,
+              504,
+              352
+            ],
+            "pastel812": [
+              520,
+              128,
+              632,
+              232
+            ],
+            "red812": [
+              264,
+              248,
+              376,
+              352
+            ],
+            "warm406": [
+              392,
+              128,
+              504,
+              232
+            ],
+            "warm812": [
+              136,
+              128,
+              248,
+              232
+            ],
+            "white203": [
+              8,
+              248,
+              120,
+              352
+            ],
+            "white812": [
+              136,
+              248,
+              248,
+              352
+            ],
+            "yellow812": [
+              8,
+              128,
+              120,
+              232
+            ]
+          },
+          "status": "UNRESOLVED_CANDIDATE"
+        },
+        "top-down": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              520,
+              8,
+              632,
+              112
+            ],
+            "cool812": [
+              264,
+              128,
+              376,
+              232
+            ],
+            "gray-ramp": [
+              4,
+              260,
+              636,
+              340
+            ],
+            "green812": [
+              392,
+              8,
+              504,
+              112
+            ],
+            "pastel812": [
+              520,
+              128,
+              632,
+              232
+            ],
+            "red812": [
+              264,
+              8,
+              376,
+              112
+            ],
+            "warm406": [
+              392,
+              128,
+              504,
+              232
+            ],
+            "warm812": [
+              136,
+              128,
+              248,
+              232
+            ],
+            "white203": [
+              8,
+              8,
+              120,
+              112
+            ],
+            "white812": [
+              136,
+              8,
+              248,
+              112
+            ],
+            "yellow812": [
+              8,
+              128,
+              120,
+              232
+            ]
+          },
+          "status": "UNRESOLVED_CANDIDATE"
+        }
+      },
+      "padding": {
+        "byte_count": 0,
+        "excluded_from_pixel_channels": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "raw_record": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_count": 1843200,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 5120,
+        "export_elapsed_seconds": 0.01735666664899327,
+        "export_stage": "after_existing_window_teardown",
+        "file": "snapshot-custom.bin",
+        "float_components": true,
+        "height": 360,
+        "key": "baseline-body-custom",
+        "pixel_format_raw": 0,
+        "provider_read_at_uptime_seconds": 243480.2688915417,
+        "retained_at_uptime_seconds": 243478.7548910417,
+        "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+        "width": 640
+      },
+      "resolved_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-capture/runtime13-on/snapshot-custom.bin",
+      "snapshot_ICC_context": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 5120,
+        "color_space_components": 3,
+        "color_space_metadata_stage": "after_existing_window_teardown",
+        "color_space_model_raw": 1,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "color_space_present": true,
+        "float_components": true,
+        "height": 360,
+        "icc_base64_omitted_reason": null,
+        "icc_byte_count": 3144,
+        "icc_present": true,
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+        "is_hlg_based": false,
+        "is_pq_based": false,
+        "key": "baseline-body-custom",
+        "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+        "pixel_format_raw": 0,
+        "uses_extended_range": true,
+        "uses_itur2100_tf": false,
+        "wide_gamut_rgb": true,
+        "width": 640
+      },
+      "whole_active_pixel_buffer": {
+        "RGBA": {
+          "A": {
+            "all_unique_bits_hex_if_at_most_64": [
+              "0x3c00"
+            ],
+            "finite_count": 230400,
+            "finite_numeric_max": 1.0,
+            "finite_numeric_mean": 1.0,
+            "finite_numeric_min": 1.0,
+            "first_32_sorted_unique_bits_hex": [
+              "0x3c00"
+            ],
+            "full_bit_histogram_sha256": "2a414a08470276288f616bf69bfd6e194bc96fa1577614be9a9d53e4bc291152",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 230400,
+            "numeric_greater_than_one_count": 0,
+            "numeric_less_than_zero_count": 0,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 1
+          },
+          "B": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 2.58984375,
+            "finite_numeric_mean": 1.2835493087768555,
+            "finite_numeric_min": -0.98388671875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318c",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f5",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383a",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389d",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3949"
+            ],
+            "full_bit_histogram_sha256": "d8cc1d4d288a13dcfcb99e89259bf6cb95fe37b7432fdc0397d007f5986eaaf6",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 159480,
+            "numeric_less_than_zero_count": 46080,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 635
+          },
+          "G": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 2.60546875,
+            "finite_numeric_mean": 1.5537171045939127,
+            "finite_numeric_min": -1.0048828125,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318c",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f5",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383a",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389d",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3949"
+            ],
+            "full_bit_histogram_sha256": "961b19ddcff839e496890b7c17bba291d2c3db52435501a28a35c348f00e474a",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 190200,
+            "numeric_less_than_zero_count": 30720,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 633
+          },
+          "R": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 3.064453125,
+            "finite_numeric_mean": 1.5677282333374023,
+            "finite_numeric_min": -1.9677734375,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318c",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f5",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383a",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389d",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3947"
+            ],
+            "full_bit_histogram_sha256": "7690f9df0c517c9047a364dcbc5ab32915e2c255a008c93c5b55618c9925d262",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 174840,
+            "numeric_less_than_zero_count": 30720,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 634
+          }
+        },
+        "alpha_all_numeric_exactly_one": true,
+        "alpha_one_uint16_bits": "0x3c00",
+        "pixel_count": 230400,
+        "raw_storage_box_half_open": [
+          0,
+          0,
+          640,
+          360
+        ]
+      }
+    }
+  ],
+  "report": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-capture/runtime13-on/report.json",
+  "report_sha256": "f1d27efbed51234f9b0366fbe093489872ac3e84f26e79900c83610831e89fc0",
+  "retained_native_png_hashes": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-capture/runtime13-on/progress-0.png",
+      "phase": "progress-0",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-capture/runtime13-on/progress-1.png",
+      "phase": "progress-1",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    }
+  ],
+  "row_direction": "unknown",
+  "runtime_validation_passed": true,
+  "semantic_patch_values_emitted": false
+}

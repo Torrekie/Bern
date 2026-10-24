@@ -1,0 +1,890 @@
+{
+  "actual_os_major": 14,
+  "analysis_complete": true,
+  "analyzer_sha256": "b616c42b192c13b7fee3d903d90e9553f389c6ac4b6f7da8cc96996877fcca2a",
+  "atlas_spec_sha256": "39ca622a45c0120d08e90daa7a17a0145be1b79485decb4619a0e5a3f23cadaf",
+  "capture_context": [
+    {
+      "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "capture_size": [
+        1024,
+        468
+      ],
+      "current_headroom": 1,
+      "phase": "progress-0",
+      "potential_headroom": 1
+    },
+    {
+      "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "capture_size": [
+        1024,
+        468
+      ],
+      "current_headroom": 1,
+      "phase": "progress-1",
+      "potential_headroom": 1
+    }
+  ],
+  "capture_mode": {
+    "cleanup_observation_count": 2,
+    "error": null,
+    "export_elapsed_seconds": 0.004098583333330907,
+    "export_stage": "after_existing_window_teardown",
+    "fixture_retained_images_after_export": 0,
+    "maximum_total_raw_bytes": 4194304,
+    "observer_effect": "Changed object lifetime/provider access requires off/on pixel controls; zero observer effect is not claimed",
+    "primary_frozen_at_uptime_seconds": 82.74632554166668,
+    "primary_observation_count": 2,
+    "primary_observation_keys": [
+      "baseline-body-named",
+      "baseline-body-custom"
+    ],
+    "provider_copy_calls": 2,
+    "released_at_uptime_seconds": 82.75478729166667,
+    "requested": "on",
+    "retained_primary_peak_count": 2,
+    "retention_scope": "on: actual renderer-return object until post-teardown export; off: no CGImage retained; cleanup: no CGImage retained",
+    "row_direction": "unverified",
+    "selected": "on",
+    "success": true,
+    "total_raw_bytes": 921600
+  },
+  "context": {
+    "cache_unchanged": true,
+    "frontmost_after": 322,
+    "frontmost_before": 322,
+    "normal_after": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "normal_before": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "os": "Version 14.8.9 (Build 23J631)",
+    "window_seconds": 1.85178804397583
+  },
+  "independent_orientation_evidence": null,
+  "limitations": [
+    "Both row mappings are candidates until independently grounded. Whole-buffer differences cannot identify a semantic patch cause or bypass sampling/scaled-edge limits.",
+    "Descriptor/ICC context and runtime booleans are retained-source claims, not repeated native measurements or a zero-observer-effect guarantee.",
+    "No cross-host semantic patch comparison, expected-value fit, image correction or acceptance threshold is performed.",
+    "Normal-after/teardown timing follows the preserved driver. Cleanup count is reported separately; raw exports cover only the two primary identities."
+  ],
+  "numeric_policy": "Original uint16LE payloads decoded as IEEE754 binary16, RGBA stored premultiplied-last. No clamp, unpremultiplication, color conversion, normalization, rescale, alignment, nits inference or automatic row flip. Min/mean/max use finite numbers only; NaN/Inf counts are separate; <0/>1 counts include infinities but exclude NaNs.",
+  "raw_byte_budget": 4194304,
+  "raw_byte_total": 921600,
+  "records": [
+    {
+      "candidate_coordinate_mappings_only": {
+        "bottom-up": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              260,
+              124,
+              316,
+              176
+            ],
+            "cool812": [
+              132,
+              64,
+              188,
+              116
+            ],
+            "gray-ramp": [
+              2,
+              10,
+              318,
+              50
+            ],
+            "green812": [
+              196,
+              124,
+              252,
+              176
+            ],
+            "pastel812": [
+              260,
+              64,
+              316,
+              116
+            ],
+            "red812": [
+              132,
+              124,
+              188,
+              176
+            ],
+            "warm406": [
+              196,
+              64,
+              252,
+              116
+            ],
+            "warm812": [
+              68,
+              64,
+              124,
+              116
+            ],
+            "white203": [
+              4,
+              124,
+              60,
+              176
+            ],
+            "white812": [
+              68,
+              124,
+              124,
+              176
+            ],
+            "yellow812": [
+              4,
+              64,
+              60,
+              116
+            ]
+          },
+          "status": "UNRESOLVED_CANDIDATE"
+        },
+        "top-down": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              260,
+              4,
+              316,
+              56
+            ],
+            "cool812": [
+              132,
+              64,
+              188,
+              116
+            ],
+            "gray-ramp": [
+              2,
+              130,
+              318,
+              170
+            ],
+            "green812": [
+              196,
+              4,
+              252,
+              56
+            ],
+            "pastel812": [
+              260,
+              64,
+              316,
+              116
+            ],
+            "red812": [
+              132,
+              4,
+              188,
+              56
+            ],
+            "warm406": [
+              196,
+              64,
+              252,
+              116
+            ],
+            "warm812": [
+              68,
+              64,
+              124,
+              116
+            ],
+            "white203": [
+              4,
+              4,
+              60,
+              56
+            ],
+            "white812": [
+              68,
+              4,
+              124,
+              56
+            ],
+            "yellow812": [
+              4,
+              64,
+              60,
+              116
+            ]
+          },
+          "status": "UNRESOLVED_CANDIDATE"
+        }
+      },
+      "padding": {
+        "byte_count": 0,
+        "excluded_from_pixel_channels": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "raw_record": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_count": 460800,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 2560,
+        "export_elapsed_seconds": 0.002135000000009768,
+        "export_stage": "after_existing_window_teardown",
+        "file": "snapshot-named.bin",
+        "float_components": true,
+        "height": 180,
+        "key": "baseline-body-named",
+        "pixel_format_raw": 0,
+        "provider_read_at_uptime_seconds": 82.75081079166667,
+        "retained_at_uptime_seconds": 81.04610245833334,
+        "sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+        "width": 320
+      },
+      "resolved_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-ci-40091326190/runtime14/on/snapshot-named.bin",
+      "snapshot_ICC_context": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 2560,
+        "color_space_components": 3,
+        "color_space_metadata_stage": "after_existing_window_teardown",
+        "color_space_model_raw": 1,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "color_space_present": true,
+        "float_components": true,
+        "height": 180,
+        "icc_base64_omitted_reason": null,
+        "icc_byte_count": 3144,
+        "icc_present": true,
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+        "is_hlg_based": false,
+        "is_pq_based": false,
+        "key": "baseline-body-named",
+        "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+        "pixel_format_raw": 0,
+        "uses_extended_range": true,
+        "uses_itur2100_tf": false,
+        "wide_gamut_rgb": true,
+        "width": 320
+      },
+      "whole_active_pixel_buffer": {
+        "RGBA": {
+          "A": {
+            "all_unique_bits_hex_if_at_most_64": [
+              "0x3c00"
+            ],
+            "finite_count": 57600,
+            "finite_numeric_max": 1.0,
+            "finite_numeric_mean": 1.0,
+            "finite_numeric_min": 1.0,
+            "first_32_sorted_unique_bits_hex": [
+              "0x3c00"
+            ],
+            "full_bit_histogram_sha256": "d156024511a8b0e2f1989d2f17f485a646fdf051d6bcabc5f74b0eade88f4ad1",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 57600,
+            "numeric_greater_than_one_count": 0,
+            "numeric_less_than_zero_count": 0,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 57600,
+            "unique_uint16_bit_pattern_count": 1
+          },
+          "B": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 57600,
+            "finite_numeric_max": 2.58984375,
+            "finite_numeric_mean": 1.2837095260620117,
+            "finite_numeric_min": -0.98388671875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x2b6e",
+              "0x3239",
+              "0x343c",
+              "0x3516",
+              "0x35cc",
+              "0x3669",
+              "0x36f6",
+              "0x3776",
+              "0x37ec",
+              "0x382e",
+              "0x3861",
+              "0x3892",
+              "0x38c0",
+              "0x38ec",
+              "0x3917",
+              "0x393f",
+              "0x3966",
+              "0x398c",
+              "0x39b0",
+              "0x39d4",
+              "0x39f6",
+              "0x3a17",
+              "0x3a37",
+              "0x3a57",
+              "0x3a76",
+              "0x3a94",
+              "0x3ab1",
+              "0x3acd",
+              "0x3ae9",
+              "0x3b05",
+              "0x3b20",
+              "0x3b3b"
+            ],
+            "full_bit_histogram_sha256": "5acd1657b8d06746c6d8360cae9b0f34b2ec7066bd3b5cbdd45a0224b5015075",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 39840,
+            "numeric_less_than_zero_count": 11520,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 57600,
+            "unique_uint16_bit_pattern_count": 329
+          },
+          "G": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 57600,
+            "finite_numeric_max": 2.60546875,
+            "finite_numeric_mean": 1.554054578145345,
+            "finite_numeric_min": -1.0048828125,
+            "first_32_sorted_unique_bits_hex": [
+              "0x2b6e",
+              "0x3239",
+              "0x343c",
+              "0x3516",
+              "0x35cc",
+              "0x3669",
+              "0x36f6",
+              "0x3776",
+              "0x37ec",
+              "0x382e",
+              "0x3861",
+              "0x3892",
+              "0x38c0",
+              "0x38ec",
+              "0x3917",
+              "0x393f",
+              "0x3966",
+              "0x398c",
+              "0x39b0",
+              "0x39d4",
+              "0x39f6",
+              "0x3a17",
+              "0x3a37",
+              "0x3a57",
+              "0x3a76",
+              "0x3a94",
+              "0x3ab1",
+              "0x3acd",
+              "0x3ae9",
+              "0x3b05",
+              "0x3b20",
+              "0x3b3b"
+            ],
+            "full_bit_histogram_sha256": "0a39c667470fb21da9249262037cef1cac4657cfc16a7ec036ff1725dfaa5585",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 47520,
+            "numeric_less_than_zero_count": 7680,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 57600,
+            "unique_uint16_bit_pattern_count": 326
+          },
+          "R": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 57600,
+            "finite_numeric_max": 3.064453125,
+            "finite_numeric_mean": 1.568117078145345,
+            "finite_numeric_min": -1.96875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x2b6e",
+              "0x3239",
+              "0x343c",
+              "0x3516",
+              "0x35cc",
+              "0x3669",
+              "0x36f6",
+              "0x3776",
+              "0x37ec",
+              "0x382e",
+              "0x3861",
+              "0x3892",
+              "0x38c0",
+              "0x38ec",
+              "0x3917",
+              "0x393f",
+              "0x3947",
+              "0x3966",
+              "0x398c",
+              "0x39b0",
+              "0x39d4",
+              "0x39f6",
+              "0x3a17",
+              "0x3a37",
+              "0x3a57",
+              "0x3a76",
+              "0x3a94",
+              "0x3ab1",
+              "0x3acd",
+              "0x3ae9",
+              "0x3b05",
+              "0x3b20"
+            ],
+            "full_bit_histogram_sha256": "55c5c010ed487a1a15b2e5624eff27935fb38cdf66fb39c82bdf709fd76079b6",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 43680,
+            "numeric_less_than_zero_count": 7680,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 57600,
+            "unique_uint16_bit_pattern_count": 328
+          }
+        },
+        "alpha_all_numeric_exactly_one": true,
+        "alpha_one_uint16_bits": "0x3c00",
+        "pixel_count": 57600,
+        "raw_storage_box_half_open": [
+          0,
+          0,
+          320,
+          180
+        ]
+      }
+    },
+    {
+      "candidate_coordinate_mappings_only": {
+        "bottom-up": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              260,
+              124,
+              316,
+              176
+            ],
+            "cool812": [
+              132,
+              64,
+              188,
+              116
+            ],
+            "gray-ramp": [
+              2,
+              10,
+              318,
+              50
+            ],
+            "green812": [
+              196,
+              124,
+              252,
+              176
+            ],
+            "pastel812": [
+              260,
+              64,
+              316,
+              116
+            ],
+            "red812": [
+              132,
+              124,
+              188,
+              176
+            ],
+            "warm406": [
+              196,
+              64,
+              252,
+              116
+            ],
+            "warm812": [
+              68,
+              64,
+              124,
+              116
+            ],
+            "white203": [
+              4,
+              124,
+              60,
+              176
+            ],
+            "white812": [
+              68,
+              124,
+              124,
+              176
+            ],
+            "yellow812": [
+              4,
+              64,
+              60,
+              116
+            ]
+          },
+          "status": "UNRESOLVED_CANDIDATE"
+        },
+        "top-down": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              260,
+              4,
+              316,
+              56
+            ],
+            "cool812": [
+              132,
+              64,
+              188,
+              116
+            ],
+            "gray-ramp": [
+              2,
+              130,
+              318,
+              170
+            ],
+            "green812": [
+              196,
+              4,
+              252,
+              56
+            ],
+            "pastel812": [
+              260,
+              64,
+              316,
+              116
+            ],
+            "red812": [
+              132,
+              4,
+              188,
+              56
+            ],
+            "warm406": [
+              196,
+              64,
+              252,
+              116
+            ],
+            "warm812": [
+              68,
+              64,
+              124,
+              116
+            ],
+            "white203": [
+              4,
+              4,
+              60,
+              56
+            ],
+            "white812": [
+              68,
+              4,
+              124,
+              56
+            ],
+            "yellow812": [
+              4,
+              64,
+              60,
+              116
+            ]
+          },
+          "status": "UNRESOLVED_CANDIDATE"
+        }
+      },
+      "padding": {
+        "byte_count": 0,
+        "excluded_from_pixel_channels": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "raw_record": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_count": 460800,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 2560,
+        "export_elapsed_seconds": 0.0016689583333402425,
+        "export_stage": "after_existing_window_teardown",
+        "file": "snapshot-custom.bin",
+        "float_components": true,
+        "height": 180,
+        "key": "baseline-body-custom",
+        "pixel_format_raw": 0,
+        "provider_read_at_uptime_seconds": 82.75302795833333,
+        "retained_at_uptime_seconds": 81.04663375,
+        "sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+        "width": 320
+      },
+      "resolved_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-ci-40091326190/runtime14/on/snapshot-custom.bin",
+      "snapshot_ICC_context": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 2560,
+        "color_space_components": 3,
+        "color_space_metadata_stage": "after_existing_window_teardown",
+        "color_space_model_raw": 1,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "color_space_present": true,
+        "float_components": true,
+        "height": 180,
+        "icc_base64_omitted_reason": null,
+        "icc_byte_count": 3144,
+        "icc_present": true,
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+        "is_hlg_based": false,
+        "is_pq_based": false,
+        "key": "baseline-body-custom",
+        "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+        "pixel_format_raw": 0,
+        "uses_extended_range": true,
+        "uses_itur2100_tf": false,
+        "wide_gamut_rgb": true,
+        "width": 320
+      },
+      "whole_active_pixel_buffer": {
+        "RGBA": {
+          "A": {
+            "all_unique_bits_hex_if_at_most_64": [
+              "0x3c00"
+            ],
+            "finite_count": 57600,
+            "finite_numeric_max": 1.0,
+            "finite_numeric_mean": 1.0,
+            "finite_numeric_min": 1.0,
+            "first_32_sorted_unique_bits_hex": [
+              "0x3c00"
+            ],
+            "full_bit_histogram_sha256": "d156024511a8b0e2f1989d2f17f485a646fdf051d6bcabc5f74b0eade88f4ad1",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 57600,
+            "numeric_greater_than_one_count": 0,
+            "numeric_less_than_zero_count": 0,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 57600,
+            "unique_uint16_bit_pattern_count": 1
+          },
+          "B": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 57600,
+            "finite_numeric_max": 2.58984375,
+            "finite_numeric_mean": 1.2837095260620117,
+            "finite_numeric_min": -0.98388671875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x2b6e",
+              "0x3239",
+              "0x343c",
+              "0x3516",
+              "0x35cc",
+              "0x3669",
+              "0x36f6",
+              "0x3776",
+              "0x37ec",
+              "0x382e",
+              "0x3861",
+              "0x3892",
+              "0x38c0",
+              "0x38ec",
+              "0x3917",
+              "0x393f",
+              "0x3966",
+              "0x398c",
+              "0x39b0",
+              "0x39d4",
+              "0x39f6",
+              "0x3a17",
+              "0x3a37",
+              "0x3a57",
+              "0x3a76",
+              "0x3a94",
+              "0x3ab1",
+              "0x3acd",
+              "0x3ae9",
+              "0x3b05",
+              "0x3b20",
+              "0x3b3b"
+            ],
+            "full_bit_histogram_sha256": "5acd1657b8d06746c6d8360cae9b0f34b2ec7066bd3b5cbdd45a0224b5015075",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 39840,
+            "numeric_less_than_zero_count": 11520,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 57600,
+            "unique_uint16_bit_pattern_count": 329
+          },
+          "G": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 57600,
+            "finite_numeric_max": 2.60546875,
+            "finite_numeric_mean": 1.554054578145345,
+            "finite_numeric_min": -1.0048828125,
+            "first_32_sorted_unique_bits_hex": [
+              "0x2b6e",
+              "0x3239",
+              "0x343c",
+              "0x3516",
+              "0x35cc",
+              "0x3669",
+              "0x36f6",
+              "0x3776",
+              "0x37ec",
+              "0x382e",
+              "0x3861",
+              "0x3892",
+              "0x38c0",
+              "0x38ec",
+              "0x3917",
+              "0x393f",
+              "0x3966",
+              "0x398c",
+              "0x39b0",
+              "0x39d4",
+              "0x39f6",
+              "0x3a17",
+              "0x3a37",
+              "0x3a57",
+              "0x3a76",
+              "0x3a94",
+              "0x3ab1",
+              "0x3acd",
+              "0x3ae9",
+              "0x3b05",
+              "0x3b20",
+              "0x3b3b"
+            ],
+            "full_bit_histogram_sha256": "0a39c667470fb21da9249262037cef1cac4657cfc16a7ec036ff1725dfaa5585",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 47520,
+            "numeric_less_than_zero_count": 7680,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 57600,
+            "unique_uint16_bit_pattern_count": 326
+          },
+          "R": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 57600,
+            "finite_numeric_max": 3.064453125,
+            "finite_numeric_mean": 1.568117078145345,
+            "finite_numeric_min": -1.96875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x2b6e",
+              "0x3239",
+              "0x343c",
+              "0x3516",
+              "0x35cc",
+              "0x3669",
+              "0x36f6",
+              "0x3776",
+              "0x37ec",
+              "0x382e",
+              "0x3861",
+              "0x3892",
+              "0x38c0",
+              "0x38ec",
+              "0x3917",
+              "0x393f",
+              "0x3947",
+              "0x3966",
+              "0x398c",
+              "0x39b0",
+              "0x39d4",
+              "0x39f6",
+              "0x3a17",
+              "0x3a37",
+              "0x3a57",
+              "0x3a76",
+              "0x3a94",
+              "0x3ab1",
+              "0x3acd",
+              "0x3ae9",
+              "0x3b05",
+              "0x3b20"
+            ],
+            "full_bit_histogram_sha256": "55c5c010ed487a1a15b2e5624eff27935fb38cdf66fb39c82bdf709fd76079b6",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 43680,
+            "numeric_less_than_zero_count": 7680,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 57600,
+            "unique_uint16_bit_pattern_count": 328
+          }
+        },
+        "alpha_all_numeric_exactly_one": true,
+        "alpha_one_uint16_bits": "0x3c00",
+        "pixel_count": 57600,
+        "raw_storage_box_half_open": [
+          0,
+          0,
+          320,
+          180
+        ]
+      }
+    }
+  ],
+  "report": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-ci-40091326190/runtime14/on/report.json",
+  "report_sha256": "aac969c3813411271e07f970a22169b508a8829a596a3d483efba1cefc61826b",
+  "retained_native_png_hashes": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-ci-40091326190/runtime14/on/progress-0.png",
+      "phase": "progress-0",
+      "sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-ci-40091326190/runtime14/on/progress-1.png",
+      "phase": "progress-1",
+      "sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294"
+    }
+  ],
+  "row_direction": "unknown",
+  "runtime_validation_passed": true,
+  "semantic_patch_values_emitted": false
+}

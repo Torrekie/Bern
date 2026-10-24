@@ -1,0 +1,97 @@
+{
+  "actual_os_major": 14,
+  "analysis_complete": true,
+  "analyzer_sha256": "b616c42b192c13b7fee3d903d90e9553f389c6ac4b6f7da8cc96996877fcca2a",
+  "atlas_spec_sha256": "39ca622a45c0120d08e90daa7a17a0145be1b79485decb4619a0e5a3f23cadaf",
+  "capture_context": [
+    {
+      "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "capture_size": [
+        1024,
+        468
+      ],
+      "current_headroom": 1,
+      "phase": "progress-0",
+      "potential_headroom": 1
+    },
+    {
+      "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "capture_size": [
+        1024,
+        468
+      ],
+      "current_headroom": 1,
+      "phase": "progress-1",
+      "potential_headroom": 1
+    }
+  ],
+  "capture_mode": {
+    "cleanup_observation_count": 2,
+    "error": null,
+    "export_elapsed_seconds": 4.0833333372347624e-06,
+    "export_stage": "after_existing_window_teardown",
+    "fixture_retained_images_after_export": 0,
+    "maximum_total_raw_bytes": 4194304,
+    "observer_effect": "Changed object lifetime/provider access requires off/on pixel controls; zero observer effect is not claimed",
+    "primary_frozen_at_uptime_seconds": 80.57820587500001,
+    "primary_observation_count": 2,
+    "primary_observation_keys": [
+      "baseline-body-named",
+      "baseline-body-custom"
+    ],
+    "provider_copy_calls": 0,
+    "released_at_uptime_seconds": 80.58336445833334,
+    "requested": "off",
+    "retained_primary_peak_count": 0,
+    "retention_scope": "on: actual renderer-return object until post-teardown export; off: no CGImage retained; cleanup: no CGImage retained",
+    "row_direction": "unverified",
+    "selected": "off",
+    "success": true,
+    "total_raw_bytes": 0
+  },
+  "context": {
+    "cache_unchanged": true,
+    "frontmost_after": 322,
+    "frontmost_before": 322,
+    "normal_after": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "normal_before": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "os": "Version 14.8.9 (Build 23J631)",
+    "window_seconds": 2.200559973716736
+  },
+  "independent_orientation_evidence": null,
+  "limitations": [
+    "Both row mappings are candidates until independently grounded. Whole-buffer differences cannot identify a semantic patch cause or bypass sampling/scaled-edge limits.",
+    "Descriptor/ICC context and runtime booleans are retained-source claims, not repeated native measurements or a zero-observer-effect guarantee.",
+    "No cross-host semantic patch comparison, expected-value fit, image correction or acceptance threshold is performed.",
+    "Normal-after/teardown timing follows the preserved driver. Cleanup count is reported separately; raw exports cover only the two primary identities."
+  ],
+  "numeric_policy": "Original uint16LE payloads decoded as IEEE754 binary16, RGBA stored premultiplied-last. No clamp, unpremultiplication, color conversion, normalization, rescale, alignment, nits inference or automatic row flip. Min/mean/max use finite numbers only; NaN/Inf counts are separate; <0/>1 counts include infinities but exclude NaNs.",
+  "raw_byte_budget": 4194304,
+  "raw_byte_total": 0,
+  "records": [],
+  "report": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-ci-40091326190/runtime14/off/report.json",
+  "report_sha256": "8ab8e98f6de2959148fa48ea4458d7ff4a20576ceae2b05eb03068310d88543a",
+  "retained_native_png_hashes": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-ci-40091326190/runtime14/off/progress-0.png",
+      "phase": "progress-0",
+      "sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-float-ci-40091326190/runtime14/off/progress-1.png",
+      "phase": "progress-1",
+      "sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294"
+    }
+  ],
+  "row_direction": "unknown",
+  "runtime_validation_passed": true,
+  "semantic_patch_values_emitted": false
+}

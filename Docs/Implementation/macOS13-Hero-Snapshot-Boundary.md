@@ -1,6 +1,6 @@
 # Hero 下一边界：读取原 snapshot 的 float 样本
 
-**现有证据尚不能区分 snapshot 内容差异与后续绘制差异。唯一建议的下一步：在原PNG采集及原teardown之后，读取实际 `renderer.cgImage` 返回对象的 provider 原字节。** 本轮仅只读设计；没有编译、UI/CI、执行代码准备或产品/夹具/归档修改。
+**现有证据尚不能区分 snapshot 内容差异与后续绘制差异。唯一建议的下一步：在原PNG采集及原teardown之后，读取实际 `renderer.cgImage` 返回对象的 provider 原字节。** 本段保存制定时的只读设计；该诊断后来已执行，结果与后续范围见末节。
 
 ## 已知边界及公开接口
 
@@ -24,3 +24,10 @@
 - 元数据或API文字本身不能替代上述样本；不新增tone-map组合、跨平台API矩阵或手拟颜色修复。
 
 本机依据：SDK14.2 `CoreGraphics/Headers/CGDataProvider.h:182–188`、`CGImage.h:22–64,219–289`；`AppKit/Headers/NSImage.h:190–218`；`CoreImage/Headers/CIImage.h:101–110`。`CGDataProviderCopyData`保证复制provider数据，不保证任意provider都是可直接按bitmap描述解释的raster，因此保留格式/长度失败门槛。所列头文件位于 `/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/`；本次只读声明，没有做Swift类型检查。
+
+
+## 执行状态（2026-10-24）
+
+已完成[本机SDK14.2 off/on控制](../Evidence/macOS13-hdr-candidate/native-pq-hero-float13/RESULTS.md)以及[新SDK同binary13/14控制与raw导出](../Evidence/macOS14-hero-float-40091326190/RESULTS.md)。所有配对各12个raw/ICC归一区域精确复现，未据此宣称普遍零观察效应。保留完整原provider数据，原始行方向仍未证实；未执行语义色块值的跨宿主比较。
+
+13旧/新SDK的raw各自逐字相同，14的named/custom raw彼此逐字相同。13/14的RGB范围接近而全buffer均值/部分计数有差，实际采样尺寸2×/1×不同；这不足以定位可见主差的原因。原snapshot后的native draw/context/compositor路径仍待分离。[下一观察](macOS13-Hero-Backing-Observation.md)先记录现有flight/root与真正overlay的图层/祖先事实，不假定已有图层或RGBA8，也不将简化父容器中的静态差异冒充完整应用flight缺陷。

@@ -1,0 +1,41 @@
+{
+  "binary_sha256": "38d0bf9bd54ae60bd7699e3e02a149e591968a3f63cce3d3968af0b9e647a517",
+  "checks": [
+    {
+      "command": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "--verbose=4",
+        "work/native-pq-hero-float-ci-40091326190/package/HeroFloatProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "work/native-pq-hero-float-ci-40091326190/package/HeroFloatProbe: valid on disk\nwork/native-pq-hero-float-ci-40091326190/package/HeroFloatProbe: satisfies its Designated Requirement\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo",
+        "-archs",
+        "work/native-pq-hero-float-ci-40091326190/package/HeroFloatProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "arm64\n"
+    },
+    {
+      "command": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/vtool",
+        "-show-build",
+        "work/native-pq-hero-float-ci-40091326190/package/HeroFloatProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "work/native-pq-hero-float-ci-40091326190/package/HeroFloatProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 26.2\n   ntools 1\n     tool LD\n  version 1230.1\n"
+    }
+  ],
+  "harness_sha": "dd0aa9551ce82d318807b2faa4967e22484a64ad",
+  "package_verified_files": 23,
+  "run": 40091326190,
+  "tar_sha256": "fcfdb7616bd1865b76d4524ea281d360d0c679fcfd73ff51d779a6922bc7603f"
+}
