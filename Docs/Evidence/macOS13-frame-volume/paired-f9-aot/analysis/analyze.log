@@ -1,0 +1,93 @@
+{
+  "captures": {
+    "frame-closed-light": {
+      "mean_absolute_rgb_error_255": 4.6003158086001905,
+      "maximum_channel_error_255": 201.75,
+      "fraction_pixels_over_channel_error": {
+        "0": 0.6531030330643062,
+        "1": 0.6332140067690706,
+        "2": 0.6299417469409008,
+        "5": 0.2553338974225462,
+        "10": 0.12753351991668838
+      }
+    },
+    "frame-open-light": {
+      "mean_absolute_rgb_error_255": 4.704112020524169,
+      "maximum_channel_error_255": 201.75,
+      "fraction_pixels_over_channel_error": {
+        "0": 0.6625992580057277,
+        "1": 0.6426451444936214,
+        "2": 0.6391922676386358,
+        "5": 0.28506411090861755,
+        "10": 0.1567495443894819
+      }
+    },
+    "volume-popover-light": {
+      "mean_absolute_rgb_error_255": 4.237938596491228,
+      "maximum_channel_error_255": 204.0,
+      "fraction_pixels_over_channel_error": {
+        "0": 0.6572563484182153,
+        "1": 0.6564051638530288,
+        "2": 0.6526812313803376,
+        "5": 0.6500567456376791,
+        "10": 0.6397715988083416
+      }
+    }
+  },
+  "runtime_C13": {
+    "success": true,
+    "elapsed_seconds": 12.210335969924927,
+    "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+    "bundled_clip_sha256": "145a1b5e572bd3ce16207e2b341c0eecb04b4d1e765bf72f5fe3809a24f34957",
+    "heartbeat_events": 21,
+    "raw_window_id_roundtrips": 15,
+    "awake_source_gate_minimum_seconds": 3.2,
+    "awake_gate_reached_and_passed": true,
+    "awake_stage_elapsed_seconds": [
+      3.9299509525299072,
+      4.497639894485474,
+      5.071378946304321,
+      5.648850917816162,
+      6.243168950080872,
+      6.8160868883132935
+    ],
+    "awake_note": "Stage first/last timestamps alone are not the loop duration; success follows the unchanged bounded3.2second loop.",
+    "ready_then_paused_zero": true,
+    "popup_visually_dismissed": true,
+    "stable_buffer_comparisons_each": [
+      4,
+      4,
+      4
+    ],
+    "composite_popup_fully_opaque_native_pixels": 76844,
+    "composite_popup_opaque_mismatched_pixels": 0,
+    "main_outer_points": {
+      "height": 668,
+      "width": 920,
+      "x": 260,
+      "y": 116
+    },
+    "popup_relative_points": {
+      "x": 497,
+      "y": 553,
+      "width": 266,
+      "height": 106
+    },
+    "frontmost_before": 1390,
+    "frontmost_after": 1390,
+    "capture_frontmost_own_app_enforced_by_source": true,
+    "capture_time_ax_focused_or_first_responder_collected": false
+  },
+  "conclusion": {
+    "clip_popup_slider_point_geometry_equal": true,
+    "volume_visible_bezel_20_by_20_both_with_half_point_x_shift": true,
+    "speaker_glyph_threshold_130_and_160_edges_within_one_point": true,
+    "volume_ax_bounds_equal": false,
+    "caption_and_size_bezel_widths_equal": false,
+    "native_size_label_edges_within_one_point": false,
+    "icc_converted_colors_equal": false,
+    "whole_or_detail_pixels_equal": false,
+    "cause_of_color_differences_established": false,
+    "physical_input_dark_hdr_playback_audio_acceptance": false
+  }
+}

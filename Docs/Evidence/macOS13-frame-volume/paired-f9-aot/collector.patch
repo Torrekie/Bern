@@ -1,0 +1,112 @@
+--- a/gallery-frame-reference.swift
++++ b/gallery-frame-reference.swift
+@@ -1,5 +1,5 @@
+ // External observer only. APP CLI OUTPUT EXPECTED_OS LABEL SOURCE_SHA; no app injection or TCC changes.
+-// Heartbeats are CI-only, process-targeted mouseMoved events, not physical mouse acceptance.
++// Explicit local13/CI heartbeats are own-active-PID mouseMoved events, not physical mouse acceptance.
+ import AppKit
+ import ApplicationServices
+ import CoreGraphics
+@@ -20,14 +20,19 @@
+ let fm = FileManager.default, began = Date(), deadline = Date().addingTimeInterval(75)
+ let originalFront = NSWorkspace.shared.frontmostApplication?.processIdentifier
+ let ciHeartbeat = ProcessInfo.processInfo.environment["GITHUB_ACTIONS"] == "true" && ProcessInfo.processInfo.environment["CI"] == "true"
++let requestedLocalEvents = ProcessInfo.processInfo.environment["BERN_FRAME_LOCAL_EVENTS"] ?? ""
++let localOwnActive13 = expectedOS == 13 && !ciHeartbeat && requestedLocalEvents == "own-pid-active13"
++let sendsHeartbeat = ciHeartbeat || localOwnActive13
+ var env = ProcessInfo.processInfo.environment, process: Process?, timer: Timer?, heartbeatError: String?, mainID: CGWindowID = 0
++var activationRequests = [[String:Any]]()
+ var session = "", specs = [[String:Any]](), commands = [[String:Any]](), stages = [[String:Any]](), captures = [[String:Any]](), events = [[String:Any]]()
+ var inspectedControls = [[String:Any]]()
+ var volumeTarget = "", clipTarget = "", sliderTarget = "", playerID = "", sourceURL = "", sourceVersion: Int64?
+ var report: [String:Any] = ["schema":1,"success":false,"label":CommandLine.arguments[5],"source_sha":CommandLine.arguments[6],
+     "harness_sha":env["GITHUB_SHA"] ?? "local","expected_os":expectedOS,"os":ProcessInfo.processInfo.operatingSystemVersionString,
+-    "app":appURL.path,"interaction_scope":"Generated CLI and AXPress; CI own-PID mouseMoved keeps Frame awake. No physical input claim.",
+-    "heartbeat_ci_only":ciHeartbeat,"frontmost_before":originalFront ?? 0,"accessibility_trusted":AXIsProcessTrusted(),
++    "deadline_seconds":75,"deadline_wall_time":deadline.timeIntervalSince1970,"frontmost_restore_rule":"Restore the captured immediate original PID only when own Gallery was still frontmost at teardown",
++    "app":appURL.path,"interaction_scope":"Generated CLI and AXPress; explicit local13/CI own-active-PID mouseMoved keeps Frame awake. No physical input claim.",
++    "heartbeat_ci_only":ciHeartbeat,"heartbeat_mode":sendsHeartbeat ? (localOwnActive13 ? "local-own-active13" : "ci-own-active") : "disabled","local_events_requested":requestedLocalEvents,"frontmost_before":originalFront ?? 0,"accessibility_trusted":AXIsProcessTrusted(),
+     "screen_recording":CGPreflightScreenCaptureAccess(),"post_event_access":CGPreflightPostEventAccess(),
+     "system_preferences":["reduce_motion":NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,"reduce_transparency":NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,"increase_contrast":NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast],
+     "displays":NSScreen.screens.map { ["frame_points":rect($0.frame),"scale":$0.backingScaleFactor,"color_space":$0.colorSpace?.localizedName ?? "unknown"] as [String:Any] },
+@@ -35,8 +40,15 @@
+ try fm.createDirectory(at:output,withIntermediateDirectories:true)
+ let ipc = URL(fileURLWithPath:"/tmp/bern-frame-\(getpid())-\(UUID().uuidString)",isDirectory:true)
+ func save() throws {
+-    report["commands"] = commands; report["stages"] = stages; report["captures"] = captures; report["heartbeat_events"] = events
++    report["commands"] = commands; report["stages"] = stages; report["captures"] = captures; report["heartbeat_events"] = events; report["activation_requests"] = activationRequests
+     try JSONSerialization.data(withJSONObject:report,options:[.prettyPrinted,.sortedKeys]).write(to:output.appendingPathComponent("report.json"),options:.atomic)
++}
++func requestActivation(_ pid: pid_t, options: NSApplication.ActivationOptions, names: [String], reason: String) {
++    let before = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
++    let accepted = NSRunningApplication(processIdentifier:pid)?.activate(options:options) ?? false
++    activationRequests.append(["elapsed":Date().timeIntervalSince(began),"requested_pid":pid,"reason":reason,"options":names,"accepted":accepted,
++        "frontmost_before":before,"frontmost_immediately_after":NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0])
++    try? save()
+ }
+ func healthy(_ active: Bool = true) throws {
+     try require(Date() < deadline,"Observer exceeded 75 seconds")
+@@ -84,10 +96,12 @@
+     guard let w = ownWindows().first(where:{ windowID($0) == mainID }) else { throw Failure(description:"Main window is not onscreen") }; return w
+ }
+ func heartbeat() {
+-    guard ciHeartbeat, heartbeatError == nil, let p = process, p.isRunning else { return }
++    guard sendsHeartbeat, heartbeatError == nil, let p = process, p.isRunning else { return }
+     guard NSWorkspace.shared.frontmostApplication?.processIdentifier == p.processIdentifier,
+           let w = ownWindows().first(where:{ windowID($0) == mainID }) else { heartbeatError = "Own target lost foreground/window; heartbeat stopped"; return }
+     let r = bounds(w), point = CGPoint(x:r.midX,y:r.midY), local = CGPoint(x:r.width/2,y:r.height/2)
++    guard r.width > 0, r.height > 0, (w[kCGWindowIsOnscreen as String] as? NSNumber)?.boolValue == true,
++          ((w[kCGWindowAlpha as String] as? NSNumber)?.doubleValue ?? 0) >= 0.99 else { heartbeatError = "Own active main window is not fully visible; heartbeat stopped"; return }
+     guard let native = NSEvent.mouseEvent(with:.mouseMoved,location:local,modifierFlags:[],timestamp:ProcessInfo.processInfo.systemUptime,
+         windowNumber:Int(mainID),context:nil,eventNumber:0,clickCount:0,pressure:0), let e = native.cgEvent else { heartbeatError = "Cannot construct window-associated NSEvent heartbeat"; return }
+     let nativeWindow = native.windowNumber
+@@ -296,11 +310,13 @@
+     let ownWasFront = process != nil && NSWorkspace.shared.frontmostApplication?.processIdentifier == process?.processIdentifier
+     if let p = process, p.isRunning { NSRunningApplication(processIdentifier:p.processIdentifier)?.terminate(); let end = Date().addingTimeInterval(2)
+         while p.isRunning && Date() < end { RunLoop.current.run(until:Date().addingTimeInterval(0.02)) }; if p.isRunning { kill(p.processIdentifier,SIGKILL) } }
+-    if ownWasFront, let original = originalFront, NSWorkspace.shared.frontmostApplication?.processIdentifier != original { NSRunningApplication(processIdentifier:original)?.activate(options:[]) }
++    if ownWasFront, let original = originalFront, NSWorkspace.shared.frontmostApplication?.processIdentifier != original { requestActivation(original,options:[],names:[],reason:"restore-immediate-original-after-own-frontmost-teardown") }
+     try? fm.removeItem(at:ipc); report["elapsed_seconds"] = Date().timeIntervalSince(began); report["frontmost_after"] = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0; try? save()
+ }
+ do {
+     try save(); try require(ProcessInfo.processInfo.operatingSystemVersion.majorVersion == expectedOS,"Unexpected runtime OS")
++    try require(requestedLocalEvents.isEmpty || localOwnActive13,"Local events require explicit own-pid-active13 on macOS13 outside CI")
++    try require(sendsHeartbeat,"Requires CI mode or explicit local13 own-PID active mode; no CI impersonation")
+     try require(AXIsProcessTrusted() && CGPreflightScreenCaptureAccess() && CGPreflightPostEventAccess(),"AX/Screen Recording/PostEvent access unavailable; no privacy changes attempted")
+     try require(!NSWorkspace.shared.accessibilityDisplayShouldReduceMotion && !NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency && !NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast,"Expected ordinary motion/transparency/contrast profile")
+     try require(appURL.lastPathComponent == "Gallery.app" && fm.isExecutableFile(atPath:cliURL.path),"Expected supplied Gallery application and CLI")
+@@ -309,11 +325,29 @@
+     let p = Process(); p.executableURL = appURL.appendingPathComponent("Contents/MacOS/Gallery"); p.arguments = ["-AppleLanguages","(en)","-AppleLocale","en_US"]; p.environment = env
+     let log = output.appendingPathComponent("application.log"); _ = fm.createFile(atPath:log.path,contents:nil); let handle = try FileHandle(forWritingTo:log); defer { handle.closeFile() }
+     p.standardOutput = handle; p.standardError = handle; try p.run(); process = p
+-    let ready = Date().addingTimeInterval(18)
+-    repeat { if let s = try cli(["sessions"],allowFailure:true) as? [[String:Any]], s.count == 1 { session = s[0]["session_id"] as? String ?? "" }; if session.isEmpty { try pause(0.1,active:false) } } while session.isEmpty && Date() < ready
+-    try require(!session.isEmpty,"Expected one UI session"); NSRunningApplication(processIdentifier:p.processIdentifier)?.activate(options:[.activateAllWindows,.activateIgnoringOtherApps])
+-    for _ in 0..<40 { if NSWorkspace.shared.frontmostApplication?.processIdentifier == p.processIdentifier, let w = ownWindows().filter({ ($0[kCGWindowLayer as String] as? NSNumber)?.intValue == 0 && bounds($0).width > 500 }).first { mainID = windowID(w); break }; try pause(0.05,active:false) }
+-    try require(mainID != 0,"No frontmost Gallery main window"); heartbeat(); timer = Timer.scheduledTimer(withTimeInterval:0.5,repeats:true) { _ in heartbeat() }
++    let ready = min(deadline,Date().addingTimeInterval(18))
++    repeat { if let s = try cli(["sessions"],allowFailure:true,until:ready) as? [[String:Any]], s.count == 1 { session = s[0]["session_id"] as? String ?? "" }; if session.isEmpty { try pause(0.1,active:false) } } while session.isEmpty && p.isRunning && Date() < ready
++    try require(!session.isEmpty,"Expected one UI session")
++    // Session transport is not UI readiness. No foreground request or control
++    // inspection occurs before one main registry row and one visible own CG window.
++    var startup = [[String:Any]](), startupID: CGWindowID = 0
++    while p.isRunning && Date() < ready {
++        let rows = try cli(["window","list"],session:true,allowFailure:true,until:ready) as? [[String:Any]] ?? []
++        let mains = rows.filter { $0["kind"] as? String == "main" }
++        let native = ownWindows().filter { ($0[kCGWindowLayer as String] as? NSNumber)?.intValue == 0 && bounds($0).width > 500 && bounds($0).height > 0 }
++        startup.append(["elapsed":Date().timeIntervalSince(began),"deadline":ready.timeIntervalSince1970,"pid":p.processIdentifier,"windows":rows,"native_candidates":native])
++        report["startup_readiness"] = startup; try save()
++        if Date() < ready, mains.count == 1, native.count == 1, ((native[0][kCGWindowAlpha as String] as? NSNumber)?.doubleValue ?? 0) >= 0.99 { startupID = windowID(native[0]); break }
++        try pause(min(0.08,max(0,ready.timeIntervalSinceNow)),active:false)
++    }
++    try require(startupID != 0,"Startup main registry and unique visible own CG window were not ready within18 seconds (individual CLI cap8 seconds)")
++    requestActivation(p.processIdentifier,options:[.activateAllWindows,.activateIgnoringOtherApps],names:["activateAllWindows","activateIgnoringOtherApps"],reason:"own-gallery-after-startup-ready")
++    for _ in 0..<40 {
++        let native = ownWindows().filter { ($0[kCGWindowLayer as String] as? NSNumber)?.intValue == 0 && bounds($0).width > 500 && bounds($0).height > 0 }
++        if NSWorkspace.shared.frontmostApplication?.processIdentifier == p.processIdentifier, native.count == 1, windowID(native[0]) == startupID { mainID = startupID; break }
++        try pause(0.05,active:false)
++    }
++    try require(mainID != 0,"No frontmost Gallery main window matching the startup window"); heartbeat(); timer = Timer.scheduledTimer(withTimeInterval:0.5,repeats:true) { _ in heartbeat() }
+     guard let catalog = try cli(["catalog"]) as? [String:Any] else { throw Failure(description:"Invalid command catalog") }
+     specs = (catalog["session_commands"] as? [[String:Any]] ?? []) + (catalog["media_commands"] as? [[String:Any]] ?? [])
+     _ = try command("ui.set_language",["language":"en"],scoped:true); let light = try control(controls(),".light","button")

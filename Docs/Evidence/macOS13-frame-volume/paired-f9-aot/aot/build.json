@@ -1,0 +1,61 @@
+{
+  "architecture": "arm64",
+  "arguments": [
+    "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+    "-swift-version",
+    "5",
+    "-target",
+    "arm64-apple-macos13.0",
+    "-sdk",
+    "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+    "-warnings-as-errors",
+    "-module-cache-path",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame13-acceptance/aot-module-cache",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame13-acceptance/gallery-frame-reference.swift",
+    "-o",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame13-acceptance/aot/FrameObserver"
+  ],
+  "binary_bytes": 432848,
+  "binary_executed": false,
+  "binary_sha256": "1d0e95f11c6f5174fdf65751a8b73be9ef898ec054b787715c3c8f33d954f1d1",
+  "compiler": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+  "compiler_exit_code": 0,
+  "compiler_version": "Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\nswift-driver version: 1.87.3",
+  "cryptokit_linked_normally": true,
+  "elapsed_seconds": 13.400388749985723,
+  "initial_post_build_assertion_failure": {
+    "actual_sdk": "13.0.0",
+    "compiler_had_returned": 0,
+    "expected_sdk": "14.2.0"
+  },
+  "load_build_version": {
+    "minimum": "13.0.0",
+    "platform": 1,
+    "sdk": "13.0.0"
+  },
+  "module_cache_logical_bytes_removed": 49732218,
+  "module_cache_removed": true,
+  "post_build_validation": "completed against existing binary; no compiler rerun or binary execution",
+  "root_film_baseline_compiler_overlap": {
+    "compiler_rerun": false,
+    "overlap": true,
+    "source": "root confirmation; AOT compile started just before old Film baseline",
+    "ui_from_this_task": false
+  },
+  "scope": "AOT compile/link only; no observer/application/CLI/UI execution",
+  "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+  "sdk_version": "14.2",
+  "selected_environment_paths": {
+    "DEVELOPER_DIR": {
+      "path": null,
+      "set": false
+    },
+    "SDKROOT": {
+      "path": null,
+      "set": false
+    }
+  },
+  "source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame13-acceptance/gallery-frame-reference.swift",
+  "source_sha256": "77e4bb6849ea226cb4bcc4bacac7b08197e8f5a18f4aa991752d81cea44c4db8",
+  "strict_signature_valid": true
+}

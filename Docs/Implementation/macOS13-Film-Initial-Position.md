@@ -1,6 +1,6 @@
 # Film 初始卡片：测量、兼容修复与剩余边界
 
-诊断候选已经复现 macOS 14 的初始 Glen 身份与卡片几何；它没有把 Rust 默认值 3 改成 4。父任务已将不含日志的最小 Style 语义补丁提交为 `e48fff46b3a92a28465ad74295bd273a9d69af7d`。**该 clean 源码仍待整应用 CI 与实际 macOS 13 验证**，不能套用诊断构建的通过记录。后续首次 Last 和加宽窗口仍有差异，完整 Film 等同尚未通过。
+诊断候选已经复现 macOS 14 的初始 Glen 身份与卡片几何；它没有把 Rust 默认值 3 改成 4。父任务已将不含日志的最小 Style 语义补丁提交为 `e48fff46b3a92a28465ad74295bd273a9d69af7d`。**该 clean 源码已通过整应用 CI，仍待实际 macOS 13 验证**，不能套用诊断构建的通过记录。后续首次 Last 和加宽窗口仍有差异，完整 Film 等同尚未通过。
 
 ## 原始外部现象与已排除项
 
@@ -101,4 +101,4 @@ Film 恰好 `L=Ve=240`，因此算出 0；没有写死 leading、id4 或 234.5 �
 
 父任务已将上述语义去除全部 logger/nativeSnapshot 后应用为 `e48fff46`，仅修改 Style（119 行增加、10 行删除）。Style SHA256 为 `3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89`。主 Runtime 保留现有 9dd/HDR 修复，未被 f9 诊断版本覆盖。
 
-准备时 `git apply --check`、回调/150–160 毫秒 timer 计数合同及独立只读审查通过；这不是该 clean 整应用已经编译或运行的声明。父任务已单次触发 [Gallery CI 40070407306](https://github.com/Torrekie/Bern/actions/runs/40070407306)（source e48fff46）；本记录尚无该次完成证据。下一门槛是该精确 clean source 的整应用构建通过与一次隔离 macOS 13 实际验证。仍需保留首次 Last、宽度变化、重现/动态目标尺寸及物理手势的未等同边界；不得硬改初始 draft3，或把首次 anchor 变换套到所有后续目标。
+准备时 `git apply --check`、回调/150–160 毫秒 timer 计数合同及独立只读审查通过；这不是该 clean 整应用已经编译或运行的声明。父任务已单次触发 [Gallery CI 40070407306](https://github.com/Torrekie/Bern/actions/runs/40070407306)（source e48fff46）；该次完整构建现已成功（job 120802424623），下一门槛是该精确 clean source 的一次隔离 macOS 13 实际验证。仍需保留首次 Last、宽度变化、重现/动态目标尺寸及物理手势的未等同边界；不得硬改初始 draft3，或把首次 anchor 变换套到所有后续目标。
