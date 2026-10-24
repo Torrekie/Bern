@@ -14,6 +14,15 @@ on:
         description: Successful existing Gallery build run ID in this repository
         type: string
         required: true
+      scenario:
+        description: All three sequences or a fresh first-entry direct sequence
+        type: choice
+        options: [all, direct]
+        default: all
+      capture_trace:
+        description: Require internal logs from a separately built diagnostic port (never a pristine reference)
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -50,6 +59,8 @@ jobs:
         env:
           FILM_VARIANT: ${{ inputs.variant }}
           FILM_BUILD_RUN: ${{ inputs.build_run }}
+          BERN_FILM_SCENARIO: ${{ inputs.scenario || 'all' }}
+          FILM_CAPTURE_TRACE: ${{ inputs.capture_trace }}
         shell: bash
         run: |
           set -euo pipefail
@@ -70,6 +81,10 @@ jobs:
             test "$(sed -n 's/^source_repository=//p' build/environment.txt)" = AimesSoft/Bern
           fi
           mkdir -p exact evidence/runtime observer-work
+          if test "$FILM_CAPTURE_TRACE" = true; then
+            test "$FILM_VARIANT" = port
+            export BERN_SCROLL_TRACE_DIR="$PWD/evidence/runtime"
+          fi
           trap 'rm -rf observer-work' EXIT
           (cd build && shasum -a 256 -c "$archive.sha256")
           tar -xzf "build/$archive" -C exact
@@ -120,14 +135,20 @@ jobs:
           assert d['appearance_profile'] == 'normal'
           assert d['system_preferences']['reduce_motion'] is False and d['system_preferences']['reduce_transparency'] is False
           assert d['system_preferences']['increase_contrast'] is False
-          assert [c['scenario'] for c in d['cases']] == ['immediate', 'wait', 'direct']
-          assert len({c['pid'] for c in d['cases']}) == 3 and len({c['session'] for c in d['cases']}) == 3
+          expected = ['direct'] if os.environ['BERN_FILM_SCENARIO'] == 'direct' else ['immediate', 'wait', 'direct']
+          assert [c['scenario'] for c in d['cases']] == expected
+          assert len({c['pid'] for c in d['cases']}) == len(expected) and len({c['session'] for c in d['cases']}) == len(expected)
           for c in d['cases']:
               assert c['first_second_ax'], c
               assert c['film']['equal_comparisons'] >= 4 and (root/c['film']['png']).is_file()
               assert c['film']['bounds_points']['Width'] == 920 and c['film']['bounds_points']['Height'] == 668
               if not d['accessibility_trusted']:
                   assert all('missing' in s for s in c['first_second_ax'])
+              if os.environ['FILM_CAPTURE_TRACE'] == 'true':
+                  trace = json.loads((root/c['internal_trace']).read_text())
+                  assert trace['pid'] == c['pid'] and trace['dropped'] == 0
+                  assert trace['base_source'] == 'f9e08b1d55bed4b9d880b19934abe48281057bb3'
+                  assert trace['events'] and c['film_after_trace']['equal_comparisons'] >= 4
           # AX absence remains an explicit measurement gap, not invented frames.
           PY
       - uses: actions/upload-artifact@v5
