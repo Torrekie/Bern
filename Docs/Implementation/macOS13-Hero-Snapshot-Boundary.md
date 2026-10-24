@@ -57,3 +57,11 @@ filter0 source parser拒绝及pretty JSON体积失败分开保留；成功版本
 两phase原PNG的固定三行/ramp方向、非空和完整可见extent经root目检通过，保留white/background不可分、无逐像素覆盖及非真实flight限制。绑定这些门槛后，单次原算法完整十patch/ramp比较确认D13−D14全部通道变化0，原14参考完整重算一致。绕过NSImage适配在本夹具中没有改变主差；这不是全部NSImage行为或目标context因果的证明，停止此变量，不加widget变体。
 
 下一[单一原生SDR烘焙表示](../Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/next-sdr-plan/README.md)尚未实施：只对实际renderer-return snapshot做系统CoreImage RGBA8/sRGB显示派生，再原NSImage绘制。旧nativeCI处理的是cached原PQ并输出RGBAh，因此不是等价已测输入；但Bool合同仅保证HDR CGColorSpace时有效，不能从extendedSRGB/>1断言它实际执行tone-map或预测修复。原资源/cache/raw保留，不重标PQ/手写曲线，继续以完整D13−D14及所有控制判读。产品未改，完整目标未通过，goal active，后续平台阶段保持延期。
+
+## 系统 SDR 输出改变显示，但仍有残差与退步（2026-10-25）
+
+上述[actual-snapshot SDR recipe](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)已在本机13完成：named实际renderer-return CGImage经CIImage(true、原空间)→单CIContext→精确extent RGBA8/sRGB/deferred:false，再沿原NSImage双draw；default/custom不转换，原FloatCapture逐字保持。两原native/additive gate、default12ROI复现、candidate其它10ROI控制及四raw逐字相同均通过，实际toneMap仍unknown。输出SRGB8/nonextended，原和派生ICC3144B/SHA相同不能抹去range/format差异。
+
+完整十patch/ramp报告保留全部退步：named p0/p1 meanabs(D13−D14)降至1.525197459/1.567882898，max降至25.754035027/26.186040522，但7/9通道恶化、ramp p1小幅恶化，custom不变。candidate两phase原PNG逐字相同；这些是相对14各phase参考的分类，不证明新phase-dependent转换。方向与完整可见extent为两原PNGvisual-only检查，不能推成逐像素覆盖或全UI等效。此输出边界在本夹具中有作用，尚不能隔离Bool/输出目标各自贡献或确定唯一根因，未合入产品。
+
+一次转换约259ms，且真实Flight.started在同步source/destination snapshot之后。下一[唯一真实flight门槛](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/next-flight-plan/README.md)已冻结但未实现：沿新SDK/min13/原timer/正常AppKit loop做一次Standard named替换，按两实际snapshot而非key合并派生，保留原生命周期及触发前延迟。静态clock guard不能用于真实13timer，产品intent链仍需显式传递，不能靠profile/key猜Standard。其它颜色/动画/UI与后续阶段边界保持，goal active。

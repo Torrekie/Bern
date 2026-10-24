@@ -2,6 +2,8 @@
 
 本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
 
+最新检查点（2026-10-25）：[实际快照的系统SDR候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)已在13完成；named主残差明显下降，但两phase分别有7/9通道及一阶段ramp退步，未合入产品、仍非等效。下一步为新SDK/min13的真实Standard named transition，验证同key两snapshot、进入动画前转换延迟及原生命周期；本轮静态259ms不能替代它。下列整应用交付版本未改变，其它未通过项保留，goal active。
+
 ## 已有可复核结果
 
 | 检查 | 结果 | 范围 |
@@ -271,3 +273,13 @@ root已目检两张原p0，candidate named内容实际可见。control→candida
 完整十patch/ramp算法在绑定几何门槛后单次执行；保留14参考重算的全部68comparisons/16primary/ROI/ramp SHA与冻结结果一致。named/custom每phase30通道的改善0/恶化0/不变30，全部signed变化与ramp aggregate变化均0；named的mean absolute(D13−D14)仍p0 5.210863095/p1 5.224399038，最大112.616328984/113.048334478。该适配变量未改善主差，停止此路线、不合产品，不唯一归因NSImage/context/系统或显示环境。
 
 下一[唯一固定原生SDR表示候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-cg-direct13/next-sdr-plan/README.md)尚未实施：actual snapshot经CoreImage→RGBA8/sRGB，再用原NSImage双draw，区别于旧cached-PQ→RGBAh；不假定toneMap Bool对extendedSRGB已生效，不重标记/拟合。exe及module cache57500008B和逐字work重复13585553B已清理，内部16同字别名硬链接去重名义5716684B，均非APFS实际回收。颜色、完整动画与其它未通过项保持，goal active，后续11/Swift5.3/Objective-C/iOS阶段继续延期。
+
+## 实际快照输出 SDR 的混合结果（2026-10-25）
+
+上节[本机系统SDR recipe](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)已执行。同一SDK14.2/Swift5.9.2、arm64/min13原linker ad-hoc binary `e555781e…365d15dc`先default再baked-named。FloatCapture与原双NSImage.draw逐字保持，只在实际renderer返回对象之后为named一次创建CIImage(true、原空间)→单context→精确extent RGBA8/sRGB/deferred:false派生显示；custom/default不转换。实际toneMap执行仍unknown，不能把Bool请求或8位输出当因果证明。
+
+两完整native/additive gate均通过；default旧on12ROI raw/sRGB exact，candidate仅named两phase变化，其它10ROI exact，四原raw同旧同key直接bytes相同。窗口1.729275/1.868617秒、前台9292保持、normal/cache/五报告buffer/noMTK/静态flight0/timernil保持。一次转换0.258979292秒、17条phase同一derived/display身份；helper和原float引用按各自范围清空，不声称全部对象dealloc。两原PNG方向/非空/完整可见extent目检通过，但white/background及无逐像素覆盖限制保留；candidate两phase PNG本身逐字相同。
+
+单次完整算法与五子命令均0，保留14参考的68comparisons/16primary/所有ROI/ramp SHA严格重算一致。named mean absolute(D13−D14) p0 5.210863095→1.525197459、p1 5.224399038→1.567882898；最大112.616328984→25.754035027、113.048334478→26.186040522。但p0改善5/恶化7，p1改善3/恶化9；最大新增恶化为green812 R约2.43544码值，全部120通道和16恶化项保留。named ramp p0三通道略改善/p1略恶化，custom全不变；不是单调改善，不据均值采用或改阈值验收。
+
+下一[真实Standard named transition门槛](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/next-flight-plan/README.md)尚未实施：新SDK/min13保留实际timer和正常AppKit loop，同key的source/destination必须两次独立snapshot/派生，记录触发→snapshot→Flight.started延迟。静态259ms不证明真实进入动画成本；生产dynamicRange尚未传至Hero链，private Standard不能冒充产品正确门控。本轮无产品改动或新远程CI，exe/cache57485328B及work重复13677124B清理，内部13同字别名硬链接去重名义5077367B，均非APFS实际回收。完整UI/颜色/动画及其它门槛未通过，goal active，后续平台阶段继续延期。

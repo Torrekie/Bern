@@ -1,0 +1,20 @@
+--- sdr/ProductHero.base.swift
++++ local/ProductHero.clock-adapted.swift
+@@ -258,7 +258,17 @@
+         overlay.addSubview(flight.view)
+         if timer == nil {
+             let clock = Timer(timeInterval: 1 / 120.0, repeats: true) { [weak self] _ in
++                #if compiler(>=6.0)
+                 MainActor.assumeIsolated { self?.tick() }
++                #else
++                // Diagnostic SDK14.2 only: this static-endpoint fixture must
++                // never start the coordinator's clock. Keep the actual14 call.
++                if #available(macOS 14, *) {
++                    MainActor.assumeIsolated { self?.tick() }
++                } else {
++                    preconditionFailure("Static endpoint fixture unexpectedly started its excluded timer")
++                }
++                #endif
+             }
+             timer = clock
+             RunLoop.main.add(clock, forMode: .common)

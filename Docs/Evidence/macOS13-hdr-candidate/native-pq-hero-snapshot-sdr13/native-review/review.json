@@ -1,0 +1,734 @@
+{
+  "actual_binary_observation": {
+    "actual_bytes_read_after_both_original_gates": true,
+    "actual_bytes_read_before_original_gate": true,
+    "before_after_sha256_equal": true,
+    "bytes": 597800,
+    "note": "Binary observed while present; root notified only after unchanged two-mode gates and post-gate rehash, so later cleanup does not invalidate this observation.",
+    "path": "work/hero-snapshot-sdr13/HeroSnapshotSDRProbe",
+    "sha256": "e555781e4f3c647243017e33a6ea64f0393e667a8e71e9ce29998dc2365d15dc"
+  },
+  "input_manifest": [
+    {
+      "bytes": 4429,
+      "path": "work/hero-snapshot-sdr13/source-provenance.json",
+      "sha256": "f659213ced0028efc41fb9555ae9aa4ea5068908f73405afbd6fdf72cbebf08f"
+    },
+    {
+      "bytes": 5105,
+      "path": "work/hero-snapshot-sdr13/build-fingerprint.json",
+      "sha256": "8b3dc9cd62bfa31100c13080d92f2d8169db5fa393910dff4d9b2c9c76de8ea4"
+    },
+    {
+      "bytes": 473,
+      "path": "work/hero-snapshot-sdr13/build.log",
+      "sha256": "1c157bc69fa5f13265413b38d3a4d023aea42f2b365c606b874b35f5d499cfcb"
+    },
+    {
+      "bytes": 1644,
+      "path": "work/hero-snapshot-sdr13/run-one.py",
+      "sha256": "35d53d166ed1b387ec64cf911eef311a0980c388e99472570f275811ad9328db"
+    },
+    {
+      "bytes": 8018,
+      "path": "work/hero-snapshot-sdr13/validate-base.py",
+      "sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00"
+    },
+    {
+      "bytes": 4266,
+      "path": "work/hero-snapshot-sdr13/validate-sdr.py",
+      "sha256": "541066abba5cc15f271b9eb9f40c644487856718f26758cbf8f749036c9716e5"
+    },
+    {
+      "bytes": 863,
+      "path": "work/hero-snapshot-sdr-preparation/SHA256SUMS",
+      "sha256": "0449ac10fd59ee63080ed0b21434e0f3425110b39ecc22b72aae974f53aa7718"
+    },
+    {
+      "bytes": 638869,
+      "path": "work/hero-snapshot-sdr13/runtime13-default/progress-0.png",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "bytes": 638869,
+      "path": "work/hero-snapshot-sdr13/runtime13-default/progress-1.png",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "bytes": 1843200,
+      "path": "work/hero-snapshot-sdr13/runtime13-default/snapshot-named.bin",
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    {
+      "bytes": 1843200,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/snapshot-named.bin",
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    {
+      "bytes": 1843200,
+      "path": "work/hero-snapshot-sdr13/runtime13-default/snapshot-custom.bin",
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    {
+      "bytes": 1843200,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/snapshot-custom.bin",
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    {
+      "bytes": 77372,
+      "path": "work/hero-snapshot-sdr13/runtime13-default/report.json",
+      "sha256": "e2a3336d93bb8068ecc148f74c0022ac14ecf6b89f053207c12e46862cb67bed"
+    },
+    {
+      "bytes": 959,
+      "path": "work/hero-snapshot-sdr13/runtime13-default/run-receipt.json",
+      "sha256": "e089a0223eb026f099fb3d9a04b14daf6a58abeeff7d7c8cd4ba67873714f122"
+    },
+    {
+      "bytes": 668372,
+      "path": "work/hero-snapshot-sdr13/runtime13-baked-named/progress-0.png",
+      "sha256": "fe9c353352f63b9ec4558db22a5cb71fc5eb343208b6a27fcb74a0bab56b75bc"
+    },
+    {
+      "bytes": 668372,
+      "path": "work/hero-snapshot-sdr13/runtime13-baked-named/progress-1.png",
+      "sha256": "fe9c353352f63b9ec4558db22a5cb71fc5eb343208b6a27fcb74a0bab56b75bc"
+    },
+    {
+      "bytes": 1843200,
+      "path": "work/hero-snapshot-sdr13/runtime13-baked-named/snapshot-named.bin",
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    {
+      "bytes": 1843200,
+      "path": "work/hero-snapshot-sdr13/runtime13-baked-named/snapshot-custom.bin",
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    {
+      "bytes": 89204,
+      "path": "work/hero-snapshot-sdr13/runtime13-baked-named/report.json",
+      "sha256": "302277f3c7037298f1cd5c33653efc6e32af46c58164aeed25368aadb61e1e84"
+    },
+    {
+      "bytes": 967,
+      "path": "work/hero-snapshot-sdr13/runtime13-baked-named/run-receipt.json",
+      "sha256": "dae3f9c33ef54623b30f12e9fc081b8d00ff9ae5c4744ae3881a9f324fd773dc"
+    }
+  ],
+  "limits": [
+    "PASS refers to original native/raw/metadata and additive SDR schema gates only; it does not establish visual equivalence or actual tone-map execution.",
+    "Public output metadata reports kCGColorSpaceSRGB/nonextended/8-bit; the recorded ICC bytes/hash are preserved without inferring a kernel or explaining the image change.",
+    "Helper-reference clearing and Float held-count zero do not prove deallocation of NSImage/CIContext internals/system references.",
+    "Inherited report try? I/O boundary and hard-watchdog path bypassing defer remain; the inspected root wrapper ensures fresh output directories for these actual runs.",
+    "Original raw equality is a byte comparison only; no raw pixel interpretation or orientation claim is added.",
+    "Root pixel comparisons and visual-only geometry checks are separate evidence; their reported diff exit1 is not a native runtime failure and was not independently recalculated here."
+  ],
+  "not_performed": [
+    "No compiler/typecheck, native application/UI execution or CI run.",
+    "No image/pixel decoding, pixel fitting, semantic patch analysis or fresh geometry/visual acceptance.",
+    "No source, repository, archived evidence or existing runtime file modification."
+  ],
+  "runs": [
+    {
+      "activation_calls": 0,
+      "cache_before_after_equal": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 9292,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 44718,
+          "phase": "progress-0",
+          "png": "progress-0.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_id": 10710
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 9292,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 44718,
+          "phase": "progress-1",
+          "png": "progress-1.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_id": 10710
+        }
+      ],
+      "float_lifetime_summary": {
+        "cleanup_observation_count": 2,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_frozen_at_uptime_seconds": 271699.2763967917,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 2,
+        "released_at_uptime_seconds": 271699.2953159583,
+        "retained_primary_peak_count": 2,
+        "total_raw_bytes": 3686400
+      },
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "mode": "default",
+      "native_original_gate": {
+        "argv": [
+          "python3",
+          "-B",
+          "work/hero-snapshot-sdr13/validate-sdr.py",
+          "work/hero-snapshot-sdr13/runtime13-default",
+          "default"
+        ],
+        "base_invocation": "unchanged validate-base.py runtime on 13, called by unmodified validate-sdr.py",
+        "exit_code": 0,
+        "source_byte_replacement_or_assertion_change": false,
+        "stdout_json": {
+          "full_original_and_additive_native_gates": "PASS",
+          "mode": "default",
+          "own_pid": 44718,
+          "pixel_geometry_acceptance": "separate, not inferred from native gate",
+          "raw_bytes_equal_frozen_on": true,
+          "tone_mapping_applied": "unknown",
+          "window_seconds": 1.7292749881744385
+        }
+      },
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "raw_exports": [
+        {
+          "byte_count": 1843200,
+          "byte_identical": true,
+          "drawing_semantics": {
+            "color_space_components": 3,
+            "color_space_model_raw": 1,
+            "decode_count": 0,
+            "decode_nonfinite_index": null,
+            "decode_present": false,
+            "decode_value_bits": [],
+            "decode_values": [],
+            "decode_values_read": 0,
+            "error": null,
+            "is_mask": false,
+            "observation_elapsed_seconds": 1.1749973054975271e-05,
+            "observed_at_uptime_seconds": 271699.28770383337,
+            "rendering_intent_raw": 0,
+            "should_interpolate": true,
+            "stage": "after_existing_window_teardown_before_primary_release",
+            "success": true
+          },
+          "key": "baseline-body-named",
+          "old_path": "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/snapshot-named.bin",
+          "old_sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+          "path": "work/hero-snapshot-sdr13/runtime13-default/snapshot-named.bin",
+          "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+        },
+        {
+          "byte_count": 1843200,
+          "byte_identical": true,
+          "drawing_semantics": {
+            "color_space_components": 3,
+            "color_space_model_raw": 1,
+            "decode_count": 0,
+            "decode_nonfinite_index": null,
+            "decode_present": false,
+            "decode_value_bits": [],
+            "decode_values": [],
+            "decode_values_read": 0,
+            "error": null,
+            "is_mask": false,
+            "observation_elapsed_seconds": 8.000002708286047e-06,
+            "observed_at_uptime_seconds": 271699.29526983335,
+            "rendering_intent_raw": 0,
+            "should_interpolate": true,
+            "stage": "after_existing_window_teardown_before_primary_release",
+            "success": true
+          },
+          "key": "baseline-body-custom",
+          "old_path": "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/snapshot-custom.bin",
+          "old_sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+          "path": "work/hero-snapshot-sdr13/runtime13-default/snapshot-custom.bin",
+          "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+        }
+      ],
+      "receipt": {
+        "backing_mode": "off",
+        "binary_sha256": "e555781e4f3c647243017e33a6ea64f0393e667a8e71e9ce29998dc2365d15dc",
+        "command": [
+          "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe",
+          "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/assets/source-named-pq.png",
+          "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/assets/source-ffb-icc.png",
+          "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/runtime13-default"
+        ],
+        "elapsed_seconds": 2.1412865829770453,
+        "exit_code": 0,
+        "expected_os_major": 13,
+        "finished_utc": "2026-10-24T19:33:41.398858+00:00",
+        "float_mode": "on",
+        "mode": "default",
+        "own_pid": 44718,
+        "started_utc": "2026-10-24T19:33:39.256289+00:00",
+        "timeout_seconds": 15
+      },
+      "report_path": "work/hero-snapshot-sdr13/runtime13-default/report.json",
+      "snapshot_sdr_display": {
+        "cache_hit_count": 0,
+        "cleanup_passthrough_count": 0,
+        "context_create_count": 0,
+        "conversion_count": 0,
+        "error": null,
+        "helper_references_cleared": true,
+        "metadata_stage": "after_existing_window_teardown",
+        "phase_checks": [],
+        "primary_frozen": true,
+        "records": [],
+        "release_scope": "Only helper-owned derived/context and weak display reference; no deallocation claim",
+        "requested": "default",
+        "selected": "default",
+        "success": true
+      },
+      "success": true,
+      "window_seconds": 1.7292749881744385
+    },
+    {
+      "activation_calls": 0,
+      "cache_before_after_equal": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 9292,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 44746,
+          "phase": "progress-0",
+          "png": "progress-0.png",
+          "png_sha256": "fe9c353352f63b9ec4558db22a5cb71fc5eb343208b6a27fcb74a0bab56b75bc",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "a1450dc8e039a00cedbb89068a349869e19b7477c359310900b4e80b02d45d36",
+          "window_id": 10711
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 9292,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 44746,
+          "phase": "progress-1",
+          "png": "progress-1.png",
+          "png_sha256": "fe9c353352f63b9ec4558db22a5cb71fc5eb343208b6a27fcb74a0bab56b75bc",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "a1450dc8e039a00cedbb89068a349869e19b7477c359310900b4e80b02d45d36",
+          "window_id": 10711
+        }
+      ],
+      "float_lifetime_summary": {
+        "cleanup_observation_count": 2,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_frozen_at_uptime_seconds": 271707.78778070834,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 2,
+        "released_at_uptime_seconds": 271707.8224270417,
+        "retained_primary_peak_count": 2,
+        "total_raw_bytes": 3686400
+      },
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "mode": "baked-named",
+      "native_original_gate": {
+        "argv": [
+          "python3",
+          "-B",
+          "work/hero-snapshot-sdr13/validate-sdr.py",
+          "work/hero-snapshot-sdr13/runtime13-baked-named",
+          "baked-named"
+        ],
+        "base_invocation": "unchanged validate-base.py runtime on 13, called by unmodified validate-sdr.py",
+        "exit_code": 0,
+        "source_byte_replacement_or_assertion_change": false,
+        "stdout_json": {
+          "full_original_and_additive_native_gates": "PASS",
+          "mode": "baked-named",
+          "own_pid": 44746,
+          "pixel_geometry_acceptance": "separate, not inferred from native gate",
+          "raw_bytes_equal_frozen_on": true,
+          "tone_mapping_applied": "unknown",
+          "window_seconds": 1.8686169385910034
+        }
+      },
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "raw_exports": [
+        {
+          "byte_count": 1843200,
+          "byte_identical": true,
+          "drawing_semantics": {
+            "color_space_components": 3,
+            "color_space_model_raw": 1,
+            "decode_count": 0,
+            "decode_nonfinite_index": null,
+            "decode_present": false,
+            "decode_value_bits": [],
+            "decode_values": [],
+            "decode_values_read": 0,
+            "error": null,
+            "is_mask": false,
+            "observation_elapsed_seconds": 1.795834396034479e-05,
+            "observed_at_uptime_seconds": 271707.815182875,
+            "rendering_intent_raw": 0,
+            "should_interpolate": true,
+            "stage": "after_existing_window_teardown_before_primary_release",
+            "success": true
+          },
+          "key": "baseline-body-named",
+          "old_path": "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/snapshot-named.bin",
+          "old_sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+          "path": "work/hero-snapshot-sdr13/runtime13-baked-named/snapshot-named.bin",
+          "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+        },
+        {
+          "byte_count": 1843200,
+          "byte_identical": true,
+          "drawing_semantics": {
+            "color_space_components": 3,
+            "color_space_model_raw": 1,
+            "decode_count": 0,
+            "decode_nonfinite_index": null,
+            "decode_present": false,
+            "decode_value_bits": [],
+            "decode_values": [],
+            "decode_values_read": 0,
+            "error": null,
+            "is_mask": false,
+            "observation_elapsed_seconds": 6.20837090536952e-06,
+            "observed_at_uptime_seconds": 271707.822371125,
+            "rendering_intent_raw": 0,
+            "should_interpolate": true,
+            "stage": "after_existing_window_teardown_before_primary_release",
+            "success": true
+          },
+          "key": "baseline-body-custom",
+          "old_path": "outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime13/on/snapshot-custom.bin",
+          "old_sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+          "path": "work/hero-snapshot-sdr13/runtime13-baked-named/snapshot-custom.bin",
+          "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+        }
+      ],
+      "receipt": {
+        "backing_mode": "off",
+        "binary_sha256": "e555781e4f3c647243017e33a6ea64f0393e667a8e71e9ce29998dc2365d15dc",
+        "command": [
+          "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe",
+          "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/assets/source-named-pq.png",
+          "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/assets/source-ffb-icc.png",
+          "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/runtime13-baked-named"
+        ],
+        "elapsed_seconds": 2.0841094159986824,
+        "exit_code": 0,
+        "expected_os_major": 13,
+        "finished_utc": "2026-10-24T19:33:49.915595+00:00",
+        "float_mode": "on",
+        "mode": "baked-named",
+        "own_pid": 44746,
+        "started_utc": "2026-10-24T19:33:47.830854+00:00",
+        "timeout_seconds": 15
+      },
+      "report_path": "work/hero-snapshot-sdr13/runtime13-baked-named/report.json",
+      "snapshot_sdr_display": {
+        "cache_hit_count": 0,
+        "cleanup_passthrough_count": 2,
+        "context_create_count": 1,
+        "conversion_count": 1,
+        "error": null,
+        "helper_references_cleared": true,
+        "metadata_stage": "after_existing_window_teardown",
+        "phase_checks": [
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 0,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271706.3947710834
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 0,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271706.476102375
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 0,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271706.5576925
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 0,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271706.6584974167
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 0,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271706.76072620833
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 0,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271706.86102558335
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 0,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271706.96125275
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 0,
+            "same_from_to_display_image": true,
+            "stage": "after_png",
+            "uptime_seconds": 271707.0461735
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 1,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271707.12925033335
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 1,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271707.210408375
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 1,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271707.29356670834
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 1,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271707.3933007083
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 1,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271707.4888707917
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 1,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271707.59030800004
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 1,
+            "same_from_to_display_image": true,
+            "stage": "before_capture",
+            "uptime_seconds": 271707.69648183335
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 1,
+            "same_from_to_display_image": true,
+            "stage": "after_png",
+            "uptime_seconds": 271707.77782433335
+          },
+          {
+            "derived_cgimage_id": "ObjectIdentifier(0x000000015662cb90)",
+            "display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "phase": 2,
+            "same_from_to_display_image": true,
+            "stage": "after_final_guards",
+            "uptime_seconds": 271707.78776975
+          }
+        ],
+        "primary_frozen": true,
+        "records": [
+          {
+            "actual_tone_mapping_applied": "unknown",
+            "conversion_elapsed_seconds": 0.2589792917133309,
+            "conversion_started_uptime_seconds": 271706.03624704166,
+            "deferred": false,
+            "derived_display_nsimage_id": "ObjectIdentifier(0x0000600000b08000)",
+            "input_color_space_override": false,
+            "input_extent": {
+              "height": 360,
+              "width": 640,
+              "x": 0,
+              "y": 0
+            },
+            "input_layout": {
+              "alpha_info_raw": 1,
+              "bitmap_info_raw": 4353,
+              "bits_per_component": 16,
+              "bits_per_pixel": 64,
+              "byte_order_raw": 4096,
+              "bytes_per_row": 5120,
+              "color_space_present": true,
+              "float_components": true,
+              "height": 360,
+              "key": "baseline-body-named",
+              "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+              "pixel_format_raw": 0,
+              "width": 640
+            },
+            "input_object_id": "ObjectIdentifier(0x0000000156716410)",
+            "key": "baseline-body-named",
+            "logical_size": [
+              320,
+              180
+            ],
+            "output_metadata": {
+              "alpha_info_raw": 1,
+              "bitmap_info_raw": 1,
+              "bits_per_component": 8,
+              "bits_per_pixel": 32,
+              "byte_order_raw": 0,
+              "bytes_per_row": 2560,
+              "color_space_components": 3,
+              "color_space_metadata_stage": "after_existing_window_teardown",
+              "color_space_model_raw": 1,
+              "color_space_name": "kCGColorSpaceSRGB",
+              "float_components": false,
+              "height": 360,
+              "icc_base64_omitted_reason": null,
+              "icc_byte_count": 3144,
+              "icc_present": true,
+              "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+              "is_hlg_based": false,
+              "is_pq_based": false,
+              "pixel_format_raw": 0,
+              "uses_extended_range": false,
+              "uses_itur2100_tf": false,
+              "wide_gamut_rgb": false,
+              "width": 640
+            },
+            "output_object_id": "ObjectIdentifier(0x000000015662cb90)",
+            "requested_output_color_space": "sRGB",
+            "requested_output_format": "RGBA8",
+            "requested_tone_map_hdr_to_sdr": true
+          }
+        ],
+        "release_scope": "Only helper-owned derived/context and weak display reference; no deallocation claim",
+        "requested": "baked-named",
+        "selected": "baked-named",
+        "success": true
+      },
+      "success": true,
+      "window_seconds": 1.8686169385910034
+    }
+  ],
+  "saved_build_records_verified": {
+    "build_exit_code": 0,
+    "build_fingerprint_path": "work/hero-snapshot-sdr13/build-fingerprint.json",
+    "build_log_sha256": "1c157bc69fa5f13265413b38d3a4d023aea42f2b365c606b874b35f5d499cfcb",
+    "checks_source": "Saved build fingerprint records bound to the actual binary SHA; no fresh compiler or signing commands run.",
+    "fingerprint_sha256": "8b3dc9cd62bfa31100c13080d92f2d8169db5fa393910dff4d9b2c9c76de8ea4",
+    "sdk": "14.2",
+    "signature_kind": "adhoc linker-signed",
+    "strict_signature_record_exit_code": 0,
+    "swift": "5.9.2",
+    "target": "arm64-apple-macos13.0"
+  },
+  "scope": "Independent bounded offline native review of existing local13 default and baked-named SDR runs; no application execution or pixel analysis.",
+  "source": {
+    "assembly_exact": true,
+    "assembly_order": [
+      "ProductHero.clock-adapted.swift",
+      "FloatCapture.swift.inc",
+      "SnapshotSDR.swift.inc",
+      "Driver.swift.inc"
+    ],
+    "assembly_sha256": "267783844e815e44e2c99d1aa0062fa0c4703d1894041ea9ec8377762471a0c4",
+    "base_validator_sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00",
+    "preparation_manifest_sha256": "0449ac10fd59ee63080ed0b21434e0f3425110b39ecc22b72aae974f53aa7718",
+    "source_map_members_checked": 23,
+    "source_provenance_sha256": "f659213ced0028efc41fb9555ae9aa4ea5068908f73405afbd6fdf72cbebf08f",
+    "validator_sha256": "541066abba5cc15f271b9eb9f40c644487856718f26758cbf8f749036c9716e5"
+  },
+  "verdict": "original_base_and_additive_native_gates_pass_both_modes"
+}

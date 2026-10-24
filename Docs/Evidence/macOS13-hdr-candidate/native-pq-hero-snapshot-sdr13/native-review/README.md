@@ -1,0 +1,9 @@
+# Local13 SDR recipe: independent native review
+
+Both unmodified `validate-sdr.py` invocations passed, each calling the unchanged original `validate-base.py` with `on 13`. No expression or assertion was replaced. The actual597800B binary was read before and after the two gates; SHA`e555781e4f3c647243017e33a6ea64f0393e667a8e71e9ce29998dc2365d15dc` matched both times. Root was then notified that binary cleanup could proceed.
+
+The23-source map and exact four-part assembly match their saved provenance. Saved build records identify arm64/min13/SDK14.2/Swift5.9.2 and a successful strict check of the ad-hoc linker signature, bound to the same binary SHA. No compiler, signer or native application was run by this review.
+
+Default PID44718 completed in window1.729274988s with no CI context/conversion. Candidate PID44746 completed in window1.868616939s, creating one context/result in0.258979292s, with17 phase checks holding the same derived CGImage/display NSImage IDs and two cleanup passthroughs. Both kept front PID9292, normal settings/cache, nonkey/inactive windows, two five-stable captures and no live MTK/coordinator flight/timer. Four raw files each match their older same-key source bytes. Candidate output metadata reports640×360,8bpc/32bpp,`kCGColorSpaceSRGB`, nonextended, with3144 ICC bytes SHA`2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e`. Original Float references and helper-owned references are reported released/cleared within their stated scopes.
+
+This is native/raw/schema acceptance only. Actual tone mapping remains unknown; no pixel decoding or visual equivalence was tested here. Root pixel/visual results are separate, and a comparison diff exit1 is not a runtime failure. The inherited silent report-write and hard-watchdog/defer boundaries remain. Only these three small review files were written.

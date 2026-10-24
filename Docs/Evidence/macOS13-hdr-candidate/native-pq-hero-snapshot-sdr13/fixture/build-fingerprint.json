@@ -1,0 +1,129 @@
+{
+  "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+  "argv": [
+    "xcrun",
+    "swiftc",
+    "-O",
+    "-parse-as-library",
+    "-swift-version",
+    "5",
+    "-j",
+    "2",
+    "-target",
+    "arm64-apple-macos13.0",
+    "-module-cache-path",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/modules",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/Dependencies.swift",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/ProductImage.swift",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/ProductStyle.swift",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/ProductHero.swift",
+    "-framework",
+    "AppKit",
+    "-framework",
+    "SwiftUI",
+    "-framework",
+    "MetalKit",
+    "-framework",
+    "CoreImage",
+    "-framework",
+    "ColorSync",
+    "-framework",
+    "ImageIO",
+    "-framework",
+    "CryptoKit",
+    "-o",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe"
+  ],
+  "binary_bytes": 597800,
+  "binary_sha256": "e555781e4f3c647243017e33a6ea64f0393e667a8e71e9ce29998dc2365d15dc",
+  "build_log_sha256": "1c157bc69fa5f13265413b38d3a4d023aea42f2b365c606b874b35f5d499cfcb",
+  "checks": {
+    "codesign_details": {
+      "argv": [
+        "codesign",
+        "-dvvv",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe"
+      ],
+      "exit_code": 0,
+      "output": "Executable=/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe\nIdentifier=HeroSnapshotSDRProbe\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=4749 flags=0x20002(adhoc,linker-signed) hashes=145+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=5c3ac3a7671fbb72d4a1765433383b9c66eaf911\nCandidateCDHashFull sha256=5c3ac3a7671fbb72d4a1765433383b9c66eaf91108511270288dc59046b93bf5\nHash choices=sha256\nCMSDigest=5c3ac3a7671fbb72d4a1765433383b9c66eaf91108511270288dc59046b93bf5\nCMSDigestType=2\nLaunch Constraints:\n\tNone\nCDHash=5c3ac3a7671fbb72d4a1765433383b9c66eaf911\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\n"
+    },
+    "codesign_verify": {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    "file": {
+      "argv": [
+        "file",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe"
+      ],
+      "exit_code": 0,
+      "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe: Mach-O 64-bit executable arm64\n"
+    },
+    "mach_build": {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe"
+      ],
+      "exit_code": 0,
+      "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/HeroSnapshotSDRProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 14.2\n   ntools 1\n     tool LD\n  version 1022.1\n"
+    }
+  },
+  "environment": {
+    "arch": {
+      "argv": [
+        "uname",
+        "-m"
+      ],
+      "exit_code": 0,
+      "output": "arm64\n"
+    },
+    "os": {
+      "argv": [
+        "sw_vers"
+      ],
+      "exit_code": 0,
+      "output": "ProductName:\t\tmacOS\nProductVersion:\t\t13.7.8\nBuildVersion:\t\t22H730\n"
+    },
+    "sdk": {
+      "argv": [
+        "xcrun",
+        "--sdk",
+        "macosx",
+        "--show-sdk-version"
+      ],
+      "exit_code": 0,
+      "output": "14.2\n"
+    },
+    "sdk_path": {
+      "argv": [
+        "xcrun",
+        "--sdk",
+        "macosx",
+        "--show-sdk-path"
+      ],
+      "exit_code": 0,
+      "output": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk\n"
+    },
+    "swift": {
+      "argv": [
+        "xcrun",
+        "swiftc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "swift-driver version: 1.87.3 Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\n"
+    }
+  },
+  "exit_code": 0,
+  "finished_utc": "2026-10-24T19:31:40.135115+00:00",
+  "source_provenance_sha256": "f659213ced0028efc41fb9555ae9aa4ea5068908f73405afbd6fdf72cbebf08f",
+  "started_utc": "2026-10-24T19:31:28.645061+00:00"
+}

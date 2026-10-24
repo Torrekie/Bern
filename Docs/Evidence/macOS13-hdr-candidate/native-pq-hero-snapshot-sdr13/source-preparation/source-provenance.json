@@ -1,0 +1,87 @@
+{
+  "scope": "Private source-only actual renderer snapshot \u2192 fixed RGBA8/sRGB display recipe, named only; not a product change or runtime result.",
+  "base_directory": "outputs/Bern/.github/scripts/hero-cgsemantics-probe",
+  "base_files": {
+    "ProductHero.base.swift": {
+      "path": "outputs/Bern/.github/scripts/hero-cgsemantics-probe/ProductHero.base.swift",
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f",
+      "byte_count": 15038
+    },
+    "FloatCapture.swift.inc": {
+      "path": "outputs/Bern/.github/scripts/hero-cgsemantics-probe/FloatCapture.swift.inc",
+      "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff",
+      "byte_count": 11944
+    },
+    "Driver.swift.inc": {
+      "path": "outputs/Bern/.github/scripts/hero-cgsemantics-probe/Driver.swift.inc",
+      "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d",
+      "byte_count": 29683
+    },
+    "ProductImage.swift": {
+      "path": "outputs/Bern/.github/scripts/hero-cgsemantics-probe/ProductImage.swift",
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc",
+      "byte_count": 24115
+    },
+    "ProductStyle.swift": {
+      "path": "outputs/Bern/.github/scripts/hero-cgsemantics-probe/ProductStyle.swift",
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984",
+      "byte_count": 2487
+    },
+    "Dependencies.swift": {
+      "path": "outputs/Bern/.github/scripts/hero-cgsemantics-probe/Dependencies.swift",
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9",
+      "byte_count": 232
+    }
+  },
+  "plan": {
+    "path": "work/hero-cg-direct-next-sdr-plan/README.md",
+    "sha256": "97522a29a9f01aa57d70cfc6dd2c31d797f4971bc97d7b85601efa1ac842d093"
+  },
+  "assembly_order": [
+    "ProductHero.base.swift",
+    "FloatCapture.swift.inc",
+    "SnapshotSDR.swift.inc",
+    "Driver.swift.inc"
+  ],
+  "other_separate_sources": [
+    "ProductImage.swift",
+    "ProductStyle.swift",
+    "Dependencies.swift"
+  ],
+  "local_sdk_adaptations": [],
+  "note": "Root owns SDK14 gain-map/unused-clock diagnostic adaptations and compilation. Do not concatenate the standalone BackingObservation.swift.inc: Driver already inlines it.",
+  "derived_sources": {
+    "ProductHero.base.swift": {
+      "sha256": "f4a1fdb0d84612d1ccc3c3a70246b79e4be5db32c0a2e8ed5504f85369ad21d2",
+      "byte_count": 15291
+    },
+    "FloatCapture.swift.inc": {
+      "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff",
+      "byte_count": 11944
+    },
+    "SnapshotSDR.swift.inc": {
+      "sha256": "cd04487ee1321e55ee7aa86872805d222a3f0dda34657be079bdb6d16f184118",
+      "byte_count": 9004
+    },
+    "Driver.swift.inc": {
+      "sha256": "082f41834c5f4ce23f997162f8c2d460a9f1b7ab82510b0a06211c6badfa7670",
+      "byte_count": 31206
+    },
+    "snapshot-sdr.patch": {
+      "sha256": "f6ec526bc06280829ee5bfa0c13fbadc8a7ef522fe11a4c44228b51075ab823c",
+      "byte_count": 16281
+    }
+  },
+  "validation": {
+    "float_capture_byte_identical": true,
+    "immutable_base_hero_exact": true,
+    "immutable_base_driver_exact": true,
+    "flight_class_byte_identical": true,
+    "original_renderer_cgimage_getter_count_unchanged": true,
+    "helper_provider_getters_zero": true,
+    "helper_ci_context_constructor_count_one": true,
+    "helper_ci_create_call_count_one": true,
+    "hero_original_observer_precedes_display_conversion": true,
+    "no_compile_or_runtime_performed": true
+  }
+}

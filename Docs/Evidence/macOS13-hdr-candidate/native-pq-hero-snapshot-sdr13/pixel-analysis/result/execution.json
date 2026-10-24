@@ -1,0 +1,69 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/analyze.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/runtime13-default/report.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/default-analysis"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/analyze.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr13/runtime13-baked-named/report.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/baked-named-analysis"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/analyze.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime14/on/report.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/reference14-analysis"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/compare.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/default-analysis/analysis.json",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/reference14-analysis/analysis.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/default-crosshost"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/compare.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/baked-named-analysis/analysis.json",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/reference14-analysis/analysis.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-sdr-pixel-analysis/result/baked-named-crosshost"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "finished_utc": "2026-10-24T19:36:29.974981+00:00",
+  "no_ui_compile_ci_or_input_writes": true,
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 15.0.0 (clang-1500.1.0.2.5)]",
+  "started_utc": "2026-10-24T19:36:27.460959+00:00",
+  "versions": {
+    "littlecms": "2.19",
+    "pillow": "12.3.0"
+  }
+}

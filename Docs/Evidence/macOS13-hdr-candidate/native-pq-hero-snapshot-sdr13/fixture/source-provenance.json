@@ -1,0 +1,121 @@
+{
+  "assembly": [
+    "ProductHero.clock-adapted.swift",
+    "FloatCapture.swift.inc",
+    "SnapshotSDR.swift.inc",
+    "Driver.swift.inc"
+  ],
+  "baseline_fixture": "outputs/Bern/.github/scripts/hero-cgsemantics-probe",
+  "baseline_product_branch_HEAD": "5756a4f444e5239670ea6b80dda633cb760ed463",
+  "diagnostic_only": true,
+  "join": "single LF between byte inputs; no added final LF",
+  "kind": "local_actual_renderer_snapshot_native_sdr_recipe",
+  "legacy_adaptations": "Unchanged prior SDK14 unreachable macOS15 gain-map compiler condition and static-only excluded coordinator-clock guard. No SDK/global edits.",
+  "new_UI_components": false,
+  "new_cache": "modules, owned local build; remove when done",
+  "preparation_manifest_sha256": "0449ac10fd59ee63080ed0b21434e0f3425110b39ecc22b72aae974f53aa7718",
+  "product_changes": false,
+  "product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "runtime_backing_mode": "off",
+  "runtime_float_mode": "on",
+  "runtime_modes": [
+    "default",
+    "baked-named"
+  ],
+  "source_files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.swift.inc": {
+      "bytes": 31206,
+      "sha256": "082f41834c5f4ce23f997162f8c2d460a9f1b7ab82510b0a06211c6badfa7670"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 11944,
+      "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff"
+    },
+    "ProductHero.base.swift": {
+      "bytes": 15291,
+      "sha256": "f4a1fdb0d84612d1ccc3c3a70246b79e4be5db32c0a2e8ed5504f85369ad21d2"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15787,
+      "sha256": "904f7d9bb3c7873c0204ed8085d59eb94320200ff3e53cc14cdfa1221b8ec1e9"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductHero.swift": {
+      "bytes": 67944,
+      "sha256": "267783844e815e44e2c99d1aa0062fa0c4703d1894041ea9ec8377762471a0c4"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "SnapshotSDR.swift.inc": {
+      "bytes": 9004,
+      "sha256": "cd04487ee1321e55ee7aa86872805d222a3f0dda34657be079bdb6d16f184118"
+    },
+    "assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "build.py": {
+      "bytes": 2639,
+      "sha256": "691c7193ce2f805ce8c4ed55bd7316428e45cdace76eae2d5af0f11eed2cfd1e"
+    },
+    "compare-control.py": {
+      "bytes": 3444,
+      "sha256": "a8f71b071c7183d4629533068d6f20f71edd4a5a0549325f6242b1d325b2b5e4"
+    },
+    "local-image-imports-and-sdk14.patch": {
+      "bytes": 1225,
+      "sha256": "accf273f917d98447768b76a28d738b530c4efca9f430120dc051d23b3db75c5"
+    },
+    "local-sdk14-clock.patch": {
+      "bytes": 914,
+      "sha256": "ede1b9428ebfb2869ebe00b65516794f49875bd9443bb677b3120ac63131d461"
+    },
+    "preparation-snapshot-sdr.patch": {
+      "bytes": 16281,
+      "sha256": "f6ec526bc06280829ee5bfa0c13fbadc8a7ef522fe11a4c44228b51075ab823c"
+    },
+    "run-one.py": {
+      "bytes": 1644,
+      "sha256": "35d53d166ed1b387ec64cf911eef311a0980c388e99472570f275811ad9328db"
+    },
+    "sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    },
+    "validate-base.py": {
+      "bytes": 8018,
+      "sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00"
+    },
+    "validate-sdr.py": {
+      "bytes": 4266,
+      "sha256": "541066abba5cc15f271b9eb9f40c644487856718f26758cbf8f749036c9716e5"
+    }
+  },
+  "target": "arm64-apple-macos13.0",
+  "wrapper_requires_output_directory_absent": true
+}

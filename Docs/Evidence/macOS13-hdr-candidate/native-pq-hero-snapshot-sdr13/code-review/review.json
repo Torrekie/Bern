@@ -1,0 +1,133 @@
+{
+  "blocking_findings": [],
+  "checks": [
+    {
+      "area": "Original renderer input",
+      "finding": "Hero lines98-106 pass the same renderer.cgImage to the unchanged original observer/Float hook before the optional conversion; no second ImageRenderer or source-picture substitution."
+    },
+    {
+      "area": "Original retention and drawing",
+      "finding": "FloatCapture is byte-identical to the committed cgsemantics source. Complete Flight class suffix is byte-identical to preparation base, including clip and the two NSImage.draw calls. No new original-image provider access or original-image container is added by SnapshotSDR."
+    },
+    {
+      "area": "Default and custom",
+      "finding": "SnapshotSDR.pixels line24 returns original before new property access/CI creation; binder/checks similarly do nothing in default. Candidate custom key returns original at line26."
+    },
+    {
+      "area": "One fixed conversion",
+      "finding": "Named primary only; known RGB/16float/64bpp/layout and exact extent are checked against the existing descriptor. CIImage uses actual CGImage with toneMapHDRtoSDR=true only, without input-space override, orientation, relabel, resizing or filters. One CIContext renders RGBA8/sRGB with deferred=false; exact geometry and 8-bit/nonfloat output are checked."
+    },
+    {
+      "area": "Named display binding",
+      "finding": "Helper keeps one derived CGImage/context and scalar original input identity. A weak reference identifies the derived display NSImage, not an original-CG to NSImage association. Before capture, after saved PNGs and after final native guards, the same weak display must be both named Flight endpoints with original geometry/corner and exactly one conversion/context."
+    },
+    {
+      "area": "Cleanup and metadata",
+      "finding": "freezePrimary precedes original window teardown. Cleanup snapshots pass through without new conversion/rebinding. Original Float finish/export/release remains before helper finish. Derived public format/color-space/ICC metadata is obtained after window teardown, then helper derived/context/scalar/weak references are cleared."
+    },
+    {
+      "area": "Failures and acquisition bounds",
+      "finding": "Unknown layout/extent, conversion, binding or identity failure becomes sticky with no original-pixel fallback; nil/throw/finalization flag yields nonzero for those paths. Existing collection7.2s, watchdog7.9s, five-equal-buffer, normal/cache/front/nonkey/inactive/noMTK and manager flight/timer guards are retained. Root wrapper independently requires an absent output directory and a15s process bound."
+    }
+  ],
+  "frozen_preparation": {
+    "directory": "work/hero-snapshot-sdr-preparation",
+    "manifest_sha256": "0449ac10fd59ee63080ed0b21434e0f3425110b39ecc22b72aae974f53aa7718",
+    "members_checked": [
+      {
+        "bytes": 31206,
+        "path": "work/hero-snapshot-sdr-preparation/Driver.swift.inc",
+        "sha256": "082f41834c5f4ce23f997162f8c2d460a9f1b7ab82510b0a06211c6badfa7670"
+      },
+      {
+        "bytes": 11944,
+        "path": "work/hero-snapshot-sdr-preparation/FloatCapture.swift.inc",
+        "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff"
+      },
+      {
+        "bytes": 15291,
+        "path": "work/hero-snapshot-sdr-preparation/ProductHero.base.swift",
+        "sha256": "f4a1fdb0d84612d1ccc3c3a70246b79e4be5db32c0a2e8ed5504f85369ad21d2"
+      },
+      {
+        "bytes": 3808,
+        "path": "work/hero-snapshot-sdr-preparation/README.md",
+        "sha256": "81fa27e9b3cca7305c1094057f4b8068e8c78db898b68ec083e1a22e044c2100"
+      },
+      {
+        "bytes": 9004,
+        "path": "work/hero-snapshot-sdr-preparation/SnapshotSDR.swift.inc",
+        "sha256": "cd04487ee1321e55ee7aa86872805d222a3f0dda34657be079bdb6d16f184118"
+      },
+      {
+        "bytes": 29683,
+        "path": "work/hero-snapshot-sdr-preparation/base/Driver.swift.inc",
+        "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d"
+      },
+      {
+        "bytes": 15038,
+        "path": "work/hero-snapshot-sdr-preparation/base/ProductHero.base.swift",
+        "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+      },
+      {
+        "bytes": 16281,
+        "path": "work/hero-snapshot-sdr-preparation/snapshot-sdr.patch",
+        "sha256": "f6ec526bc06280829ee5bfa0c13fbadc8a7ef522fe11a4c44228b51075ab823c"
+      },
+      {
+        "bytes": 3535,
+        "path": "work/hero-snapshot-sdr-preparation/source-provenance.json",
+        "sha256": "0840eafeab85a567a3e19e73eefadee70e27d23cd7eec6b77f7d6771a9ba91dd"
+      },
+      {
+        "bytes": 638,
+        "path": "work/hero-snapshot-sdr-preparation/validation.json",
+        "sha256": "e07d3747207f8543edac91b7d1a4eaad38239a1223cc6115a53ad0ea5899f345"
+      }
+    ]
+  },
+  "limitations": [
+    "Static review only. No compiler/typecheck, build, signature check, application/UI/CI execution, runtime/report/raw/PNG or pixel analysis was performed in this review.",
+    "Inherited Driver try? report writing can silently fail; its CLI has no existing-output guard. The inspected root wrapper supplies the fresh absent-output-directory guard, which does not make all CLI failure reports reliable.",
+    "The hard watchdog _exit path bypasses normal defer/release observations; no universal failure cleanup guarantee is asserted.",
+    "Clearing helper references does not prove NSImage, CIContext internals or system image deallocation, nor a zero observer effect.",
+    "This single recipe combines a tone-map request with output RGBA8/sRGB conversion. Actual tone mapping, visible improvement, macOS14 visual equivalence, product suitability and coordinated-flight/lifecycle parity remain untested here."
+  ],
+  "local_assembly_static_binding": {
+    "assembled_sha256": "267783844e815e44e2c99d1aa0062fa0c4703d1894041ea9ec8377762471a0c4",
+    "assembly_join": "one LF between byte inputs; no extra final LF",
+    "assembly_order": [
+      "ProductHero.clock-adapted.swift",
+      "FloatCapture.swift.inc",
+      "SnapshotSDR.swift.inc",
+      "Driver.swift.inc"
+    ],
+    "build_binary_signature_or_runtime_not_examined": true,
+    "directory": "work/hero-snapshot-sdr13",
+    "sdk14_clock_patch_sha256": "ede1b9428ebfb2869ebe00b65516794f49875bd9443bb677b3120ac63131d461",
+    "source_map_members_verified": 23,
+    "source_provenance_sha256": "f659213ced0028efc41fb9555ae9aa4ea5068908f73405afbd6fdf72cbebf08f",
+    "standalone_backing_appended": false,
+    "wrapper_requires_absent_output_directory": true,
+    "wrapper_sha256": "35d53d166ed1b387ec64cf911eef311a0980c388e99472570f275811ad9328db",
+    "wrapper_timeout_seconds": 15
+  },
+  "scope": "Independent static source/hash review of one local macOS13 actual-snapshot SDR recipe; no product change or runtime acceptance.",
+  "sdk_contract": {
+    "CIContext.h_lines": "338-352",
+    "CIImage.h_lines": "87-110",
+    "create_cgimage": "Public explicit output format/color-space API, deferred=false renders at this call; invalid/unsupported input can return nil.",
+    "headers": [
+      {
+        "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImage.h",
+        "sha256": "17742a08bac9b66878ca60e9f11e948e6bf602f1e825de13c4199faf57d5c41c"
+      },
+      {
+        "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIContext.h",
+        "sha256": "abdf9a79320b1db7d059dab6733e056db7ba67a74868bd6a412a3855b2f5a897"
+      }
+    ],
+    "tone_map_option": "Public Bool option available on macOS11; its documented effect is conditional on an HDR CGColorSpace. Extended values alone do not establish that condition. New helper correctly records actual application as unknown."
+  },
+  "verdict": "no_blocking_source_finding_for_bounded_recipe"
+}

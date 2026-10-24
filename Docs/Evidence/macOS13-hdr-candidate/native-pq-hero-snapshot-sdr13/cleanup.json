@@ -1,0 +1,135 @@
+{
+  "all6_work_paths_replaced_by_archive_symlinks": true,
+  "artifact_receipt": "fixture/artifact-cleanup.json",
+  "byte_verified_work_duplicate_logical_bytes": 13677124,
+  "created_utc": "2026-10-24T19:50:17.447685+00:00",
+  "duplicates": [
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/fixture",
+      "byte_verified": true,
+      "files": 45,
+      "logical_bytes": 10485328,
+      "work": "work/hero-snapshot-sdr13"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/source-preparation",
+      "byte_verified": true,
+      "files": 11,
+      "logical_bytes": 137291,
+      "work": "work/hero-snapshot-sdr-preparation"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/code-review",
+      "byte_verified": true,
+      "files": 3,
+      "logical_bytes": 9718,
+      "work": "work/hero-snapshot-sdr-code-review"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/native-review",
+      "byte_verified": true,
+      "files": 3,
+      "logical_bytes": 32895,
+      "work": "work/hero-snapshot-sdr-native-review"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/pixel-analysis",
+      "byte_verified": true,
+      "files": 34,
+      "logical_bytes": 3007086,
+      "work": "work/hero-snapshot-sdr-pixel-analysis"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/next-flight-plan",
+      "byte_verified": true,
+      "files": 2,
+      "logical_bytes": 4806,
+      "work": "work/hero-snapshot-sdr-next-flight-plan"
+    }
+  ],
+  "internal_equal_byte_hardlinks": [
+    {
+      "alias": "fixture/runtime13-baked-named/progress-1.png",
+      "bytes": 668372,
+      "representative": "fixture/runtime13-baked-named/progress-0.png",
+      "sha256": "fe9c353352f63b9ec4558db22a5cb71fc5eb343208b6a27fcb74a0bab56b75bc"
+    },
+    {
+      "alias": "fixture/runtime13-default/progress-1.png",
+      "bytes": 638869,
+      "representative": "fixture/runtime13-default/progress-0.png",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "alias": "fixture/runtime13-default/snapshot-custom.bin",
+      "bytes": 1843200,
+      "representative": "fixture/runtime13-baked-named/snapshot-custom.bin",
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    {
+      "alias": "fixture/runtime13-default/snapshot-named.bin",
+      "bytes": 1843200,
+      "representative": "fixture/runtime13-baked-named/snapshot-named.bin",
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    {
+      "alias": "pixel-analysis/result/baked-named.stderr.log",
+      "bytes": 0,
+      "representative": "pixel-analysis/result/baked-named-crosshost.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "alias": "pixel-analysis/result/default-crosshost.stderr.log",
+      "bytes": 0,
+      "representative": "pixel-analysis/result/baked-named-crosshost.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "alias": "pixel-analysis/result/default.stderr.log",
+      "bytes": 0,
+      "representative": "pixel-analysis/result/baked-named-crosshost.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "alias": "pixel-analysis/result/reference14.stderr.log",
+      "bytes": 0,
+      "representative": "pixel-analysis/result/baked-named-crosshost.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "alias": "source-preparation/Driver.swift.inc",
+      "bytes": 31206,
+      "representative": "fixture/Driver.swift.inc",
+      "sha256": "082f41834c5f4ce23f997162f8c2d460a9f1b7ab82510b0a06211c6badfa7670"
+    },
+    {
+      "alias": "source-preparation/FloatCapture.swift.inc",
+      "bytes": 11944,
+      "representative": "fixture/FloatCapture.swift.inc",
+      "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff"
+    },
+    {
+      "alias": "source-preparation/ProductHero.base.swift",
+      "bytes": 15291,
+      "representative": "fixture/ProductHero.base.swift",
+      "sha256": "f4a1fdb0d84612d1ccc3c3a70246b79e4be5db32c0a2e8ed5504f85369ad21d2"
+    },
+    {
+      "alias": "source-preparation/SnapshotSDR.swift.inc",
+      "bytes": 9004,
+      "representative": "fixture/SnapshotSDR.swift.inc",
+      "sha256": "cd04487ee1321e55ee7aa86872805d222a3f0dda34657be079bdb6d16f184118"
+    },
+    {
+      "alias": "source-preparation/snapshot-sdr.patch",
+      "bytes": 16281,
+      "representative": "fixture/preparation-snapshot-sdr.patch",
+      "sha256": "f6ec526bc06280829ee5bfa0c13fbadc8a7ef522fe11a4c44228b51075ab823c"
+    }
+  ],
+  "no_download_or_new_remote_CI_or_toolchain_or_simulator": true,
+  "no_hardlinks_to_work_or_other_archives": true,
+  "nominal_internal_hardlink_duplicate_bytes": 5077367,
+  "not_an_apfs_actual_recovery_or_disk_delta_claim": true,
+  "owned_exe_and_cache_logical_bytes": 57485328
+}

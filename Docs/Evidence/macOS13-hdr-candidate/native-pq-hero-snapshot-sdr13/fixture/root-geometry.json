@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-10-24T19:35:49.063697+00:00",
+  "order": "Basic all-ROI candidate difference was observed before this visual gate; full crosshost color interpretation runs only after metadata/geometry gates.",
+  "phases": [
+    {
+      "evidence": "root-original-png-visual-only",
+      "limits": "White areas can merge with white background. Alpha255/frame do not prove every-pixel coverage or subpixel edges; no tuple/flip/alignment search or image editing.",
+      "metadata": {
+        "host_top_left_points": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 244
+        },
+        "screenshot_pixels": {
+          "height": 360,
+          "width": 640,
+          "x": 32,
+          "y": 544
+        }
+      },
+      "original_png": "work/hero-snapshot-sdr13/runtime13-baked-named/progress-0.png",
+      "phase": "progress-0",
+      "png_sha256": "fe9c353352f63b9ec4558db22a5cb71fc5eb343208b6a27fcb74a0bab56b75bc",
+      "upright_nonempty": "pass, fixed pane has two discrete patch rows above bottom horizontal ramp; left/right source organization retained",
+      "visible_extent": "pass for visible structure only; prescribed rows/columns at original pane boundaries, no visible shift/crop/blank band or spill"
+    },
+    {
+      "evidence": "root-original-png-visual-only",
+      "limits": "White areas can merge with white background. Alpha255/frame do not prove every-pixel coverage or subpixel edges; no tuple/flip/alignment search or image editing.",
+      "metadata": {
+        "host_top_left_points": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 244
+        },
+        "screenshot_pixels": {
+          "height": 360,
+          "width": 640,
+          "x": 32,
+          "y": 544
+        }
+      },
+      "original_png": "work/hero-snapshot-sdr13/runtime13-baked-named/progress-1.png",
+      "phase": "progress-1",
+      "png_sha256": "fe9c353352f63b9ec4558db22a5cb71fc5eb343208b6a27fcb74a0bab56b75bc",
+      "upright_nonempty": "pass, fixed pane has two discrete patch rows above bottom horizontal ramp; left/right source organization retained",
+      "visible_extent": "pass for visible structure only; prescribed rows/columns at original pane boundaries, no visible shift/crop/blank band or spill"
+    }
+  ],
+  "plan_sha256": "aef01e69917f0d6f64c0d9f0f4f2d434511978624d052e432a6cdd800eecc0b3",
+  "source_support": "Source-reviewed original two NSImage.draw calls/respectFlipped, full original bounds/corner0/opaque known atlas; CI exact original extent and logical size with no transform or relabel."
+}

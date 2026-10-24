@@ -1,0 +1,134 @@
+{
+  "all13_internal_hardlink_aliases_verified_no_external_hardlink": true,
+  "all6_work_symlinks_verified": true,
+  "all7_frozen_submanifests_and_external_inputs_verified": [
+    {
+      "path": "code-review/SHA256SUMS",
+      "sha256": "9233b78d5369ffa525ac77098d4ce91ba23eb4a337631dc29b235b42a438ab40",
+      "verified_entries": 2
+    },
+    {
+      "path": "native-review/SHA256SUMS",
+      "sha256": "684f94209bef30506f14423f791bc7750f606613d18b269028973e41e57465ec",
+      "verified_entries": 2
+    },
+    {
+      "path": "next-flight-plan/SHA256SUMS",
+      "sha256": "5cf2ccc6f811d5a6179dcc22284aa460c5181fd244bfcbec3bb245dcbf45d617",
+      "verified_entries": 1
+    },
+    {
+      "path": "pixel-analysis/INPUT-SHA256SUMS",
+      "sha256": "65847198061a5efd0be15b53ca505dc9db67754163e6836630c43a40aa5816e9",
+      "verified_entries": 16
+    },
+    {
+      "path": "pixel-analysis/PREPARED-SHA256SUMS",
+      "sha256": "caa59491c4cbd9f29f7d0cf64cbb98270599f3420796d5675ce4d239cb344aad",
+      "verified_entries": 7
+    },
+    {
+      "path": "pixel-analysis/SHA256SUMS",
+      "sha256": "27daa912c836998e6384f8477cc5cbadf8c0c9e1d7abe2e2928c29d39444bc49",
+      "verified_entries": 33
+    },
+    {
+      "path": "source-preparation/SHA256SUMS",
+      "sha256": "0449ac10fd59ee63080ed0b21434e0f3425110b39ecc22b72aae974f53aa7718",
+      "verified_entries": 10
+    }
+  ],
+  "candidate_has_mixed_improvement_and_all_regressions_retained": true,
+  "candidate_named_residual_statistics": [
+    {
+      "baked-named": {
+        "channel_max_absolute_codes": [
+          25.754035027472526,
+          4.504807692307679,
+          2.036143543956044
+        ],
+        "channel_mean_absolute_codes": [
+          2.842977335164836,
+          0.9700120192307657,
+          0.7626030219780205
+        ],
+        "max_absolute_codes": 25.754035027472526,
+        "mean_absolute_codes": 1.5251974587912076
+      },
+      "channel_counts_no_threshold": {
+        "larger_absolute_residual": 7,
+        "smaller_absolute_residual": 5,
+        "unchanged": 18
+      },
+      "default": {
+        "channel_max_absolute_codes": [
+          112.61632898351648,
+          4.504807692307679,
+          16.7890625
+        ],
+        "channel_mean_absolute_codes": [
+          11.317264766483516,
+          0.9029189560439503,
+          3.4124055631868146
+        ],
+        "max_absolute_codes": 112.61632898351648,
+        "mean_absolute_codes": 5.2108630952380945
+      },
+      "phase": "progress-0",
+      "source": "named"
+    },
+    {
+      "baked-named": {
+        "channel_max_absolute_codes": [
+          26.186040521978015,
+          4.403159340659329,
+          2.1556490384615383
+        ],
+        "channel_mean_absolute_codes": [
+          2.9406765109890083,
+          0.9518458104395571,
+          0.8111263736263762
+        ],
+        "max_absolute_codes": 26.186040521978015,
+        "mean_absolute_codes": 1.5678828983516473
+      },
+      "channel_counts_no_threshold": {
+        "larger_absolute_residual": 9,
+        "smaller_absolute_residual": 3,
+        "unchanged": 18
+      },
+      "default": {
+        "channel_max_absolute_codes": [
+          113.04833447802197,
+          4.403159340659329,
+          16.907881181318682
+        ],
+        "channel_mean_absolute_codes": [
+          11.365650755494503,
+          0.8542067307692298,
+          3.4533396291208818
+        ],
+        "max_absolute_codes": 113.04833447802197,
+        "mean_absolute_codes": 5.224399038461538
+      },
+      "phase": "progress-1",
+      "source": "named"
+    }
+  ],
+  "candidate_two_phase_original_PNG_bytes_equal": true,
+  "created_utc": "2026-10-24T19:56:10.752321+00:00",
+  "default12ROI_and_candidate_other10ROI_raw_srgb_exact": true,
+  "exe_and_modules_removed_per_receipt": true,
+  "geometry_scope": "Two original PNG phases visual-only; white/background and no per-pixel/subpixel coverage proof preserved.",
+  "native_actual_exe_before_after_hash_and_unmodified_two_gates_passed": true,
+  "native_independent21_current_inputs_verified": 21,
+  "native_sdr_tone_mapping_actually_applied": "unknown",
+  "new_product_change": false,
+  "new_remote_CI": false,
+  "next_actual_flight_plan_implemented_or_run": false,
+  "reference14_complete_frozen_metrics_recomputation_equal": true,
+  "source23_and_exact4part_assembly_verified": true,
+  "staged_scope_only_archive_and_two_checkpoints": true,
+  "whitespace_record": "staged-whitespace.json",
+  "whole_macos13_goal_complete": false
+}
