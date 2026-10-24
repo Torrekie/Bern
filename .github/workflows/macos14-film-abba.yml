@@ -1,0 +1,67 @@
+name: Locked Gallery Film ABBA on macOS 14
+run-name: Runtime-only f9-e48-e48-f9 Film comparison
+
+# Manual only. No schedule, source build, native logger or automatic dispatch.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: macos14-film-abba
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    runs-on: macos-14
+    timeout-minutes: 8
+    steps:
+      - name: Reserve a bounded work interval and artifact-upload margin
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os, time
+          with open(os.environ['GITHUB_ENV'], 'a') as out:
+              out.write(f'ABBA_DEADLINE_EPOCH={time.time()+420}\n')
+          PY
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos13-gallery
+          run-id: 39991406873
+          github-token: ${{ github.token }}
+          path: build-a
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos13-gallery
+          run-id: 40070407306
+          github-token: ${{ github.token }}
+          path: build-b
+      - name: Set the existing normal profile on this disposable runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          defaults write com.apple.universalaccess increaseContrast -bool false
+          killall cfprefsd || true
+      - name: Verify originals, compile the unchanged observer once, collect A1 B1 B2 A2
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 harness/.github/scripts/gallery-film-abba.py \
+            "$PWD/build-a" "$PWD/build-b" \
+            "$PWD/harness/.github/scripts/gallery-film-probe.swift" \
+            "$PWD/evidence" \
+            "$RUNNER_TEMP/bern-film-abba-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-film-abba-evidence
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 3
