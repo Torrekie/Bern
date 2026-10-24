@@ -19,6 +19,11 @@ on:
         type: choice
         options: [all, direct]
         default: all
+      followup:
+        description: Optional post-initial Last/First and resize checks (direct scenario only)
+        type: choice
+        options: [none, last-resize]
+        default: none
       capture_trace:
         description: Require internal logs from a separately built diagnostic port (never a pristine reference)
         type: boolean
@@ -61,6 +66,7 @@ jobs:
           FILM_BUILD_RUN: ${{ inputs.build_run }}
           BERN_FILM_SCENARIO: ${{ inputs.scenario || 'all' }}
           FILM_CAPTURE_TRACE: ${{ inputs.capture_trace }}
+          BERN_FILM_FOLLOWUP: ${{ inputs.followup || 'none' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -144,6 +150,13 @@ jobs:
               assert c['film']['bounds_points']['Width'] == 920 and c['film']['bounds_points']['Height'] == 668
               if not d['accessibility_trusted']:
                   assert all('missing' in s for s in c['first_second_ax'])
+              if os.environ['BERN_FILM_FOLLOWUP'] == 'last-resize':
+                  stages = c['followup_stages']
+                  assert [s['stage'] for s in stages] == ['last', 'first', 'last-again', 'resize-wide', 'resize-restore']
+                  for s, width in zip(stages, [920, 920, 920, 1020, 920]):
+                      shot = s['capture']
+                      assert shot['equal_comparisons'] >= 4 and (root/shot['png']).is_file()
+                      assert shot['bounds_points']['Width'] == width and shot['bounds_points']['Height'] == 668
               if os.environ['FILM_CAPTURE_TRACE'] == 'true':
                   trace = json.loads((root/c['internal_trace']).read_text())
                   assert trace['pid'] == c['pid'] and trace['dropped'] == 0
