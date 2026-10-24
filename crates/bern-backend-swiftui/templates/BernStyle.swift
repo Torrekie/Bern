@@ -2228,6 +2228,56 @@ private enum BernScrollTrace {
             flush()
         }
     }
+    // Read public native geometry only after the original two-second event
+    // interval. This does not add a view or intervene in layout/scroll callbacks.
+    private static func nativeSnapshot() -> [String: Any] {
+        #if os(macOS)
+        func r(_ value: NSRect) -> [String: Any] { rectangle(value) }
+        func insets(_ value: NSEdgeInsets) -> [String: CGFloat] {
+            ["top": value.top, "left": value.left, "bottom": value.bottom, "right": value.right]
+        }
+        var windows = [[String: Any]]()
+        for window in NSApplication.shared.windows.prefix(8) {
+            var queue: [(NSView, Int)] = window.contentView.map { [($0, 0)] } ?? []
+            var index = 0, scrolls = [[String: Any]]()
+            while index < queue.count && index < 4096 {
+                let (view, depth) = queue[index]; index += 1
+                if let scroll = view as? NSScrollView {
+                    let clip = scroll.contentView
+                    var row: [String: Any] = ["class": String(reflecting: type(of: scroll)),
+                        "frame_in_parent": r(scroll.frame), "bounds": r(scroll.bounds),
+                        "frame_in_window": r(scroll.convert(scroll.bounds, to: nil)),
+                        "content_size": [scroll.contentSize.width, scroll.contentSize.height],
+                        "content_insets": insets(scroll.contentInsets),
+                        "automatically_adjusts_content_insets": scroll.automaticallyAdjustsContentInsets,
+                        "clip_frame_in_scroll": r(clip.frame), "clip_bounds": r(clip.bounds),
+                        "clip_frame_in_window": r(clip.convert(clip.bounds, to: nil)),
+                        "clip_document_rect": r(clip.documentRect),
+                        "clip_document_visible_rect": r(clip.documentVisibleRect),
+                        "clip_flipped": clip.isFlipped, "depth": depth]
+                    if let document = scroll.documentView {
+                        row["document"] = ["class": String(reflecting: type(of: document)),
+                            "frame_in_clip": r(document.frame), "bounds": r(document.bounds),
+                            "frame_in_window": r(document.convert(document.bounds, to: nil)),
+                            "flipped": document.isFlipped]
+                    }
+                    scrolls.append(row)
+                }
+                if depth < 32 { queue += view.subviews.map { ($0, depth + 1) } }
+            }
+            windows.append(["window_number": window.windowNumber, "frame": r(window.frame),
+                "content_layout_rect": r(window.contentLayoutRect), "visible": window.isVisible,
+                "key": window.isKeyWindow, "main": window.isMainWindow,
+                "visited_views": index, "queue_count": queue.count,
+                "truncated": index < queue.count, "scroll_views": scrolls])
+        }
+        return ["contract": "public AppKit reads at trace flush only; no view-tree or scroll mutation",
+            "uptime": ProcessInfo.processInfo.systemUptime, "application_active": NSApplication.shared.isActive,
+            "window_limit": 8, "windows": windows]
+        #else
+        return ["unavailable": "AppKit snapshot is macOS-only"]
+        #endif
+    }
     private static func flush() {
         guard let directory, !written else { return }
         written = true
@@ -2238,7 +2288,7 @@ private enum BernScrollTrace {
             "limit": 4096, "dropped": dropped,
             "binding_scope": "Original $target Binding unchanged; target.observed is the existing onChange callback, not each native setter invocation.",
             "scope_relationships": "Weak object-instance IDs; snap and position scopes are not automatically assigned a window or cross-linked.",
-            "scopes": scopeMetadata, "events": events]
+            "scopes": scopeMetadata, "events": events, "native_snapshot": nativeSnapshot()]
         do {
             let data = try JSONSerialization.data(withJSONObject: jsonValue(report), options: [.prettyPrinted, .sortedKeys])
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
