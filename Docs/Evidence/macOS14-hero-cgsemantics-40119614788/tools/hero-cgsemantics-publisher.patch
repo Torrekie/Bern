@@ -1,0 +1,11 @@
+--- publish-harness.before.py
++++ publish-harness.py
+@@ -22,6 +22,8 @@
+ paths+=['.github/workflows/macos14-hero-coordinator-delay-probe.yml']
+ paths+=git('ls-tree','-r','--name-only','HEAD','--','.github/scripts/hero-coordinator-app-probe').splitlines()
+ paths+=['.github/workflows/macos14-hero-coordinator-app-probe.yml']
++paths+=git('ls-tree','-r','--name-only','HEAD','--','.github/scripts/hero-cgsemantics-probe').splitlines()
++paths+=['.github/workflows/macos14-hero-cgsemantics-probe.yml']
+ try:
+     parent=git('rev-parse','ci/macos14-reference')
+     git('read-tree',parent)

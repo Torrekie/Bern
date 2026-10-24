@@ -1,0 +1,22 @@
+2026-10-24 18:13:08.072 HeroCGSemanticsProbe[978:5540] NSWindow warning: adding an unknown subview: <_TtC20HeroCGSemanticsProbeP33_4B445A3B4DE49E98CCBCD01A887A990815BernHeroOverlay: 0x141621880>. Break on NSLog to debug.
+2026-10-24 18:13:08.385 HeroCGSemanticsProbe[978:5540] Call stack:
+(
+	0   AppKit                              0x0000000197a0261c -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x0000000197a02190 -[NSView addSubview:positioned:relativeTo:] + 372
+	2   AppKit                              0x0000000197a01f98 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroCGSemanticsProbe                0x0000000100162330 $s20HeroCGSemanticsProbe21BernWindowImageHeroesC14prepareOverlay33_4B445A3B4DE49E98CCBCD01A887A9908LLSbyF + 300
+	4   HeroCGSemanticsProbe                0x0000000100160400 $s20HeroCGSemanticsProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 452
+	5   HeroCGSemanticsProbe                0x0000000100168fb0 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x0000000193ef0750 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x0000000193ef23e8 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x0000000193f00bb8 _dispatch_main_queue_drain + 988
+	9   libdispatch.dylib                   0x0000000193f007cc _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x00000001941c3834 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x0000000194180fb8 __CFRunLoopRun + 1996
+	12  CoreFoundation                      0x0000000194180194 CFRunLoopRunSpecific + 608
+	13  Foundation                          0x00000001952b66b8 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212
+	14  Foundation                          0x000000019532bbd0 -[NSRunLoop(NSRunLoop) runUntilDate:] + 100
+	15  HeroCGSemanticsProbe                0x0000000100177d64 $s20HeroCGSemanticsProbe0A12BaselineMain33_4B445A3B4DE49E98CCBCD01A887A9908LLO3runs5Int32VyFZTf4d_n + 10396
+	16  HeroCGSemanticsProbe                0x0000000100169360 main + 12
+	17  dyld                                0x0000000193d17154 start + 2476
+)

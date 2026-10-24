@@ -1,0 +1,53 @@
+{
+  "base_inputs": [
+    {
+      "bytes": 13772,
+      "path": "outputs/Bern/.github/workflows/macos14-hero-float-probe.yml",
+      "private_file": "float-workflow.original.yml",
+      "sha256": "c7f3f5a4376ef81713326a5deed829979a884c6a6c475e83496b57fd60c5be85"
+    },
+    {
+      "bytes": 1556,
+      "path": "outputs/Bern/.github/scripts/hero-float-probe/run-one.py",
+      "private_file": "run-one.original.py",
+      "sha256": "fdbc7aa6d766de0123181fe686366c3b7e8f508cbe9982c27e12f30af931cb15"
+    }
+  ],
+  "drawing_semantics_contract": {
+    "components": 3,
+    "decode": "nil count0 or present count6, finite JSON numeric values, corresponding exact lower-hex Double bits, nonfinite_index null; signed zero retained in bits without forcing JSON numeric sign",
+    "intent_and_should_interpolate": "types/ranges only; no particular observed values predicted",
+    "keys_exactly": 16,
+    "mask_required": false,
+    "model_raw": 1,
+    "off": "original records[]/provider0/retained0 assertions remain; no semantics loop in off",
+    "stage": "after_existing_window_teardown_before_primary_release",
+    "success_required": true,
+    "timing": "finite nonnegative; observed >= original provider_read time; observed+elapsed <= original released_at"
+  },
+  "fixture_base_commit": "5eca0e5904117d131e1129302d50d357e4234a15",
+  "kind_expected": "original_snapshot_cg_drawing_semantics_fixture",
+  "native_gate_delta": "Original complete float/native/ICC gate is an exact prefix except binary identity. Append backing-off success/empty isolation and each on-record drawing_semantics contract only.",
+  "package_contract": {
+    "artifacts": [
+      "macos14-hero-cgsemantics-probe-build",
+      "macos14-hero-cgsemantics-evidence"
+    ],
+    "binary": "HeroCGSemanticsProbe",
+    "directory": ".github/scripts/hero-cgsemantics-probe",
+    "file_map": "Root-owned independent package/final files map; not copied or independently verified here. CI retains original complete files-map hashing guard.",
+    "source_assembly": "cat ProductHero.base.swift FloatCapture.swift.inc Driver.swift.inc; exact original Image/Hero source identity remains b08",
+    "tar": "hero-cgsemantics-probe.tar.gz"
+  },
+  "product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "runtime_schema_execution": "NOT PERFORMED \u2014 no new drawing-semantics report supplied/used.",
+  "scope": "PRIVATE frozen workflow/wrapper/package-contract preparation only; static syntax and preservation checks. No repo/index/git/compile/UI/CI or runtime-schema execution.",
+  "sdk_scope": "Original Xcode26.3 build recipe and SDK major>=26 guard retained; actual SDK must be recorded by CI. Arm64 min13/build once/signature gates unchanged.",
+  "source_contract_snapshot_inspected": {
+    "bytes": 11944,
+    "path": "work/hero-cgsemantics-source-preparation/FloatCapture.swift.inc",
+    "scope": "Read-only alignment to exact16 metadata keys and post-original-raw-write/pre-append call placement; no compilation/getter execution.",
+    "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff"
+  },
+  "wrapper_delta": "Only one explicit child process setting BERN_HERO_LAYER_OBSERVE=off added. Original off/on float and expected OS/15s behavior preserved."
+}

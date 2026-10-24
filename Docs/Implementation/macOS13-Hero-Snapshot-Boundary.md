@@ -41,3 +41,11 @@
 named主显示差不能用这些对应平坦内区的raw数值差解释，但仍未证明整幅图或CGImage全部绘制语义相同。下一[唯一检查点](../Evidence/macOS14-hero-float-semantics-20261025/next-display-plan/README.md)是PNG及原teardown后的deferred renderingIntent/isMask/shouldInterpolate/decode getter；RGB非mask decode只可有界读六值，nil单列。它尚未实现/运行，不先加入directCG/cache/图层等变量。任一对象字段差异也只是新的边界证据，不直接指定根因或修产品。
 
 filter0 source parser拒绝及pretty JSON体积失败分开保留；成功版本只补标准PNG无损过滤解码并压缩JSON排版，几何判据与128KiB上限未放宽。这些程序失败不算颜色证据。完整颜色/动画/UI、其它macOS13门槛继续未通过，goal active，11/Swift5.3/Objective-C/iOS仍延期。
+
+## 延后读取四项显式绘制语义（2026-10-25）
+
+上节唯一检查点现由[CI40119614788](../Evidence/macOS14-hero-cgsemantics-40119614788/README.md)执行：SDK26.2/Swift6.2.4构建的同一原签名arm64/min13 binary在13/14各完成off/on，原PNG/teardown/raw导出之后、原primary释放之前读取那两个实际CGImage。每对象只读renderingIntent/isMask/shouldInterpolate/decode各一次；RGB3 guard沿用前两条primary descriptor已持有的space，没有新增image.colorSpace getter或provider访问。
+
+两key/两host均为intent0、isMask=false、shouldInterpolate=true、decode=nil；nil独立列空值，非nil/±0/nonfinite分支未运行。完整native/ICC/16字段与时序gate通过，四组旧→off及off→on各12图像ROI原RGB/sRGB exact，四raw与旧同host/key长度/SHA全同。独立审查分别覆盖源码失败传播、原包身份与native记录；不重复采集或将报告buffer一致性当独立捕获。观察耗时与原导出timer边界均保留。
+
+此结果排除了这四项已读属性不同的解释，没有消除可见色差或证明全部对象/绘制context状态相同。下一[唯一计划](../Evidence/macOS14-hero-cgsemantics-40119614788/next-direct-plan/README.md)是13本机相同retention/原snapshot的默认与CG direct配对，尚未实施：原context内只替换named两条sourceOver绘制原语，先验证方向/非空/完整extent，再完整比较D13−D14；不将NSImage边界预定为根因或预测修复。产品没有修改，真实flight/general HDR及完整UI门槛仍未通过，goal active，后续阶段保持延期。

@@ -1,0 +1,188 @@
+{
+  "CI_run_and_both_jobs_saved_success": true,
+  "all12_work_paths_are_archive_symlinks": true,
+  "all22_internal_hardlink_aliases_verified_no_external_hardlink": true,
+  "all4_pixel_control_receipts_verified": [
+    {
+      "ROI_count": 12,
+      "path": "same-binary-13-14/controls/old-float-vs-semantics-off13.json",
+      "sha256": "96625058c5b3ee0c8d97ef3f643c006f4634f411c6d4fe8d04a719db73b34b04"
+    },
+    {
+      "ROI_count": 12,
+      "path": "same-binary-13-14/controls/old-float-vs-semantics-off14.json",
+      "sha256": "636deedf7e7e3143d23b74db8be2329d384b6eac7f6c37c1f93b44aabb7d960f"
+    },
+    {
+      "ROI_count": 12,
+      "path": "same-binary-13-14/controls/semantics-off-vs-on13.json",
+      "sha256": "219847cf50dfa793db8aec148307d50f80b90ccadebc7094ba3f140cc115bd8d"
+    },
+    {
+      "ROI_count": 12,
+      "path": "same-binary-13-14/controls/semantics-off-vs-on14.json",
+      "sha256": "dc382835f80b76691486310eb01e00e5f15b04a3e7997e21ca3e947e69d3ae3d"
+    }
+  ],
+  "all4_raw_direct_byte_comparisons_to_old": [
+    {
+      "bytes": 1843200,
+      "direct_byte_equality_to_old": true,
+      "host": 13,
+      "key": "named",
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    {
+      "bytes": 1843200,
+      "direct_byte_equality_to_old": true,
+      "host": 13,
+      "key": "custom",
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    {
+      "bytes": 460800,
+      "direct_byte_equality_to_old": true,
+      "host": 14,
+      "key": "named",
+      "sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962"
+    },
+    {
+      "bytes": 460800,
+      "direct_byte_equality_to_old": true,
+      "host": 14,
+      "key": "custom",
+      "sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962"
+    }
+  ],
+  "all8_submanifests_verified_for_existing_members": [
+    {
+      "intentionally_cleaned": [],
+      "path": "ci-preparation/SHA256SUMS",
+      "sha256": "001cadd852ebd552e78a25788992aa6a1eb39d4d5cb99f9bcd57664aa4e934fd",
+      "verified_existing_entries": 9
+    },
+    {
+      "intentionally_cleaned": [],
+      "path": "code-review/SHA256SUMS",
+      "sha256": "6e16489271f08139458cf946e12ec3b5f880a5609647ba489a4fd80d23d65b7a",
+      "verified_existing_entries": 2
+    },
+    {
+      "intentionally_cleaned": [],
+      "path": "native-analysis/SHA256SUMS",
+      "sha256": "9d9375862bf424cd68e3cf034369e269586993a2e2188cceb9fcc992138092e6",
+      "verified_existing_entries": 7
+    },
+    {
+      "intentionally_cleaned": [],
+      "path": "next-direct-plan/SHA256SUMS",
+      "sha256": "364c23d907dbb7f7ab812d1946f6b64fb016dc7cb5f271f3fc4f740fd5797393",
+      "verified_existing_entries": 1
+    },
+    {
+      "intentionally_cleaned": [
+        "HeroCGSemanticsProbe"
+      ],
+      "path": "same-binary-13-14/build/SHA256SUMS",
+      "sha256": "89bc73533ab6678774d9079eb2a75808291d541e71768762d537c1b0cac6e5ee",
+      "verified_existing_entries": 28
+    },
+    {
+      "intentionally_cleaned": [
+        "HeroCGSemanticsProbe"
+      ],
+      "path": "same-binary-13-14/probe/SHA256SUMS",
+      "sha256": "89bc73533ab6678774d9079eb2a75808291d541e71768762d537c1b0cac6e5ee",
+      "verified_existing_entries": 28
+    },
+    {
+      "intentionally_cleaned": [
+        "HeroCGSemanticsProbe"
+      ],
+      "path": "same-binary-13-14/runtime14/SHA256SUMS",
+      "sha256": "89bc73533ab6678774d9079eb2a75808291d541e71768762d537c1b0cac6e5ee",
+      "verified_existing_entries": 28
+    },
+    {
+      "intentionally_cleaned": [],
+      "path": "source-preparation/SHA256SUMS",
+      "sha256": "aadf2d0140323793fefd82ca38606c53bf058f57ba2d0a09b5878c7db500a372",
+      "verified_existing_entries": 6
+    }
+  ],
+  "created_utc": "2026-10-24T18:41:07.805443+00:00",
+  "current_independent_input_fingerprints_verified": 68,
+  "final_inventory_checker_initial_attempt": "Stopped before writing output on expected hash_stage literal mismatch; matched recorded actual_precleanup_package_check on repeat. No evidence edited.",
+  "four_complete_native_ICC_semantics_gates_saved_PASS": true,
+  "historical_package_manifest_missing_exe_explained_by_cleanup": true,
+  "new_product_change": false,
+  "next_direct_plan_implemented_or_run": false,
+  "original_binary_and_tar_precleanup_fingerprints": [
+    {
+      "bytes": 257757,
+      "hash_stage": "actual_precleanup_package_check",
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/build/hero-cgsemantics-probe.tar.gz",
+      "sha256": "2c1151e83775c0a214f3ff36e33f1160883175c8709a6a86456072c52053b014"
+    },
+    {
+      "bytes": 587040,
+      "hash_stage": "actual_precleanup_package_check",
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/HeroCGSemanticsProbe",
+      "sha256": "68974a3fe0ae28c23ef47de9657fbc6d34287bb36f50d12d6ac69d52b3eee334"
+    }
+  ],
+  "owned_binary_and_tar_absent_per_receipt": true,
+  "staged_scope_only_archive_and_two_checkpoints": true,
+  "staged_whitespace_check": {
+    "all_other_staged_paths_exit_code": 0,
+    "exact_output": "Docs/Evidence/macOS14-hero-cgsemantics-40119614788/ci-preparation/workflow.diff:144: trailing whitespace.\n+ \nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/probe/backing-observer.patch:95: trailing whitespace.\n+ \nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/probe/cgimage-drawing-semantics.patch:64: trailing whitespace.\n+ \nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/probe/cgimage-drawing-semantics.patch:79: trailing whitespace.\n+ \nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/probe/cgimage-drawing-semantics.patch:79: new blank line at EOF.\nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime14/requested-normal.txt:1: trailing whitespace.\n+2026-10-24 18:13:07.609 defaults[972:5517] \nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/source-preparation/cgimage-drawing-semantics.patch:64: trailing whitespace.\n+ \nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/source-preparation/cgimage-drawing-semantics.patch:79: trailing whitespace.\n+ \nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/source-preparation/cgimage-drawing-semantics.patch:79: new blank line at EOF.\nDocs/Evidence/macOS14-hero-cgsemantics-40119614788/tools/hero-cgsemantics-runtime-validate.py:121: new blank line at EOF.\n",
+    "exceptions": [
+      {
+        "lines": {
+          "144": "Canonical unified-diff context for an empty source line."
+        },
+        "path": "Docs/Evidence/macOS14-hero-cgsemantics-40119614788/ci-preparation/workflow.diff",
+        "sha256": "68920ccb3d77ee22d0c8128cdf0f9af772851e56143b8639436b17a7c2a4b723"
+      },
+      {
+        "lines": {
+          "95": "Inherited canonical unified-diff context for an empty source line."
+        },
+        "path": "Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/probe/backing-observer.patch",
+        "sha256": "cfc5e25f4bea0effa2625bb91ba85e4ec6d4a60a7ec35f4c4574d6185d868147"
+      },
+      {
+        "lines": {
+          "64": "Canonical unified-diff context for an empty source line.",
+          "79": "Canonical empty EOF context line in the frozen patch."
+        },
+        "path": "Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/probe/cgimage-drawing-semantics.patch",
+        "sha256": "b54c7d3d87874ae13ffeb6829ecbb099bb6da9cb24dcc5a58b13bdcd9535abc6"
+      },
+      {
+        "lines": {
+          "64": "Canonical unified-diff context for an empty source line.",
+          "79": "Canonical empty EOF context line in the frozen patch."
+        },
+        "path": "Docs/Evidence/macOS14-hero-cgsemantics-40119614788/source-preparation/cgimage-drawing-semantics.patch",
+        "sha256": "b54c7d3d87874ae13ffeb6829ecbb099bb6da9cb24dcc5a58b13bdcd9535abc6"
+      },
+      {
+        "lines": {
+          "1": "Original remote defaults stderr timestamp, retained byte-exact."
+        },
+        "path": "Docs/Evidence/macOS14-hero-cgsemantics-40119614788/same-binary-13-14/runtime14/requested-normal.txt",
+        "sha256": "bf5525cc9a84783a939a9a4602a6fa51d31fc2e319e35ab36f60e56b46c0ab97"
+      },
+      {
+        "lines": {
+          "121": "Preserved extra terminal LF explicitly reconstructed by independent review."
+        },
+        "path": "Docs/Evidence/macOS14-hero-cgsemantics-40119614788/tools/hero-cgsemantics-runtime-validate.py",
+        "sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00"
+      }
+    ],
+    "full_exit_code": 2
+  },
+  "whole_macos13_goal_complete": false
+}

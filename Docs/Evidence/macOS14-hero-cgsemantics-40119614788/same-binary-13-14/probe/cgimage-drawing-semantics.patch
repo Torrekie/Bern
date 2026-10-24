@@ -1,0 +1,79 @@
+--- a/FloatCapture.swift.inc
++++ b/FloatCapture.swift.inc
+@@ -43,6 +43,62 @@
+     static func freezePrimary() {
+         primary = false
+         frozenAt = ProcessInfo.processInfo.systemUptime
++    }
++
++    // Public image drawing semantics only; caller is already post-teardown.
++    private static func drawingSemantics(_ image: CGImage, key: String) -> [String: Any] {
++        let began = ProcessInfo.processInfo.systemUptime
++        var record: [String: Any] = [
++            "stage": "after_existing_window_teardown_before_primary_release",
++            "success": false, "error": NSNull(),
++            "rendering_intent_raw": NSNull(), "is_mask": NSNull(), "should_interpolate": NSNull(),
++            "color_space_model_raw": NSNull(), "color_space_components": NSNull(),
++            "decode_present": NSNull(), "decode_count": NSNull(),
++            "decode_nonfinite_index": NSNull(), "observed_at_uptime_seconds": began
++        ]
++        var values: [Double] = [], bits: [String] = []
++        do {
++            // Each of the four image getters is called exactly once for this record.
++            let intent = image.renderingIntent
++            let mask = image.isMask
++            let interpolate = image.shouldInterpolate
++            let decode = image.decode
++            record["rendering_intent_raw"] = intent.rawValue
++            record["is_mask"] = mask; record["should_interpolate"] = interpolate
++            record["decode_present"] = decode != nil
++            // Original hook appends this primary descriptor before observing the same image.
++            let primaryDescriptors = fixtureSnapshotCGImageObservations.prefix(2)
++            let matches = primaryDescriptors.filter { $0.scalars["key"] as? String == key }
++            guard !mask, primaryDescriptors.count == 2, matches.count == 1,
++                  let descriptor = matches.first, let space = descriptor.space else {
++                throw FixtureFailure(message: "CGImage semantics requires one existing primary descriptor/key and a nonmask image with a color space")
++            }
++            let model = space.model, components = space.numberOfComponents
++            record["color_space_model_raw"] = model.rawValue
++            record["color_space_components"] = components
++            guard model == .rgb, components == 3, MemoryLayout<CGFloat>.size == 8,
++                  MemoryLayout<CGFloat>.stride == 8, MemoryLayout<Double>.size == 8 else {
++                throw FixtureFailure(message: "CGImage semantics requires RGB3 and64bit CGFloat; no decode pointer scan")
++            }
++            if let decode {
++                record["decode_count"] = 6
++                for index in 0..<6 {
++                    let value = Double(decode[index])
++                    let hex = String(value.bitPattern, radix: 16)
++                    bits.append("0x" + String(repeating: "0", count: 16 - hex.count) + hex)
++                    guard value.isFinite else {
++                        record["decode_nonfinite_index"] = index
++                        throw FixtureFailure(message: "Nonfinite CGImage decode value; partial finite values/bits retained")
++                    }
++                    values.append(value) // Preserve the sign of zero; bits are recorded separately.
++                }
++            } else { record["decode_count"] = 0 }
++            record["success"] = true
++        } catch { record["error"] = String(describing: error) }
++        record["decode_values"] = values; record["decode_value_bits"] = bits
++        record["decode_values_read"] = bits.count
++        record["observation_elapsed_seconds"] = ProcessInfo.processInfo.systemUptime - began
++        return record
+     }
+ 
+     private static func export(_ output: URL) throws {
+@@ -102,7 +158,12 @@
+             record["sha256"] = fixtureHash(data)
+             record["provider_read_at_uptime_seconds"] = began
+             record["export_elapsed_seconds"] = ProcessInfo.processInfo.systemUptime - began
+-            exported.append(record)
++            let semantics = drawingSemantics(entry.image, key: key)
++            record["drawing_semantics"] = semantics
++            exported.append(record) // Keep raw export and partial semantics even on rejection.
++            guard semantics["success"] as? Bool == true else {
++                throw FixtureFailure(message: "CGImage drawing semantics rejected: \(semantics["error"] as? String ?? "unknown")")
++            }
+         }
+     }
+ 

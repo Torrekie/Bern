@@ -1,0 +1,18 @@
+# Private deferred original-CGImage drawing semantics
+
+Source only. No repository/index/product/Driver/Image/Style/Hero edits, compile, UI or CI. `FloatCapture.base.swift.inc` is the immutable original; `FloatCapture.swift.inc` is its sole derived replacement, with `cgimage-drawing-semantics.patch`. `base-source-hashes.json` locks all21 existing `.github/scripts/hero-float-probe` regular files; root owns package assembly/provenance/build. Replace only FloatCapture in that package.
+
+The existing on-mode retained original renderer-return CGImage is observed exactly once, after its original provider export file/fields are complete, after all PNGs and original window teardown, before original release. The helper reads renderingIntent/isMask/shouldInterpolate/decode each once. The already-existing primary descriptor reference supplies colorSpace: prefix(2) must contain2 entries with exactly one matching actual key, with a nonnil space. No extra image.colorSpace call occurs. Its model/components guard permits pointer access only for nonmask RGB3 with64bit CGFloat/Double. Cleanup descriptors after the first2 are excluded. Nil decode remains distinct, count0, empty arrays. Non-nil reads at most6 entries, preserves finite Double values and0x+16hex bit patterns, including the sign of zero. No provider/snapshot/image readback/context/CGImage copy or conversion is added. The dictionary retains scalars/arrays only; no pointer or image is stored.
+
+Each original raw record adds `drawing_semantics`:
+
+- `stage=after_existing_window_teardown_before_primary_release`, `success`, `error` (null|string).
+- `rendering_intent_raw`, `is_mask`, `should_interpolate`; `color_space_model_raw`, `color_space_components` safety context.
+- `decode_present` (bool), `decode_count` (null before safe layout,0 for nil,6 for supported pointer), `decode_values` (finite Double prefix), `decode_value_bits` (all entries actually read), `decode_values_read`, `decode_nonfinite_index` (null|0…5).
+- `observed_at_uptime_seconds`, `observation_elapsed_seconds`.
+
+Mask/absent or non-RGB3 space/unsupported CGFloat layout fails without reading the decode pointer. A nonfinite value retains that index and its bit pattern plus the preceding finite values; remaining entries are not read. The record is appended before the failure is thrown, so original float export `finish` preserves partial data/error, releases held images on the original path and sets its existing finalizationFailed. Original Driver's existing check makes failure nonzero. No new failure/counter/Driver system is introduced.
+
+Off mode does not enter export and invokes no new getter. Success keeps the original raw files/layout/budget/provider call count/order. The existing per-record raw-export elapsed field is finalized before semantic observation; the new helper reports its own duration, while the unchanged overall finish duration naturally includes the added work. Original release scope/counters remain, not a claim that all CGImages deallocated. New scalar observation is not a zero-observer-effect claim; retain the original off/on pixel/cache/normal/foreground/lifetime controls.
+
+Static source checks only: patch applied to a temporary copy with zero fuzz and exactly matched; reversing the helper+insert recovers the base; original finish body is byte-identical; each of4 getter sites appears once, original provider-copy site count unchanged; all21 base hashes rechecked. No Swift typecheck or runtime test was performed. Failure or missing fields must not be treated as equal semantics, and matching fields will not establish a display root cause or HDR/color equivalence.

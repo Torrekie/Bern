@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "bash_n": "PASS",
+      "job": "build",
+      "python_heredocs_ast": 2,
+      "shell_body_executed": false
+    },
+    {
+      "bash_n": "PASS",
+      "job": "measure",
+      "python_heredocs_ast": 2,
+      "shell_body_executed": false
+    }
+  ],
+  "original_native_ICC_gate": "PASS \u2014 exact prefix except binary identity",
+  "runtime_schema_execution": "NOT PERFORMED",
+  "scope": "Static syntax, original full native/ICC gate exact-prefix and single-wrapper-environment-change proof only; no native/runtime-schema/CI/compiler/UI execution.",
+  "success": true,
+  "workflow_sha256": "8c5acfad83bf97255f10d73ba3dd2836350b53ecf0396dd65eec3e29923ccdcb",
+  "wrapper_ast": "PASS",
+  "wrapper_delta": "PASS \u2014 only explicit backing off added",
+  "wrapper_sha256": "e9c6805100adf443d470bfadd1ddf2179a4b1c9082890c79b620684746ef8995",
+  "yaml": "PASS"
+}

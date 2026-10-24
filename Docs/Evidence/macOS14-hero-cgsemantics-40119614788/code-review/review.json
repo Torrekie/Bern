@@ -1,0 +1,55 @@
+{
+  "kind": "bounded_private_deferred_original_cgimage_semantics_source_review",
+  "recorded_at_utc": "2026-10-24T18:08:29Z",
+  "disposition": "pass_source_review_not_compiled_or_run",
+  "new_obvious_type_bounds_or_failure_control_blocker_found": false,
+  "final_helper": {
+    "path": "work/hero-cgsemantics-source-preparation/FloatCapture.swift.inc",
+    "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff"
+  },
+  "input_manifest_sha256": "aadf2d0140323793fefd82ca38606c53bf058f57ba2d0a09b5878c7db500a372",
+  "base_helper": {
+    "path": "outputs/Bern/.github/scripts/hero-float-probe/FloatCapture.swift.inc",
+    "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+  },
+  "frozen_plan": "outputs/Bern/Docs/Evidence/macOS14-hero-float-semantics-20261025/next-display-plan",
+  "source_checks": {
+    "base_copy_byte_equal": true,
+    "reverse_new_helper_and_append_hook_exact_base": true,
+    "finish_body_byte_equal": true,
+    "all21_base_inventory_hashes_and_sizes_match": true,
+    "patch_equals_complete_unified_diff": true,
+    "provider_data_site_count_base_final": [1, 1],
+    "provider_copy_increment_site_count_base_final": [1, 1],
+    "new_getter_sites_per_record": {
+      "renderingIntent": 1,
+      "isMask": 1,
+      "shouldInterpolate": 1,
+      "decode": 1,
+      "colorSpace": 0
+    }
+  },
+  "reviewed_contracts": {
+    "original_held_image_and_on_only_post_raw_export_hook": "final helper161-165,176-191",
+    "post_png_teardown_before_finish": "base Driver.swift.inc269-284",
+    "existing_primary_descriptor_same_key_unique_and_cleanup_exclusion": "final helper69-81; base Driver.swift.inc161-164",
+    "max6_pointer_dereferences_after_nonmask_RGB3_64bit_guard": "final helper72-95",
+    "nil_finite_bits_signed_zero_and_partial_nonfinite_index": "final helper83-100",
+    "raw_record_append_before_rethrow_and_original_release_failure_status": "final helper154-165,170-191"
+  },
+  "resolved_pre_freeze_finding": "Extra image.colorSpace getter removed; final guard uses original primary descriptor.space.",
+  "public_decode_contracts": [
+    "https://developer.apple.com/documentation/coregraphics/cgimage/decode",
+    "https://developer.apple.com/documentation/accelerate/vimage_cgimageformat/decode"
+  ],
+  "limits": [
+    "Source review establishes bounded intended control flow, not actual Swift compilation/runtime or observed getter results.",
+    "Complete partial evidence applies to ordinary Swift failure with successful final report write; inherited watchdog/report-write behavior was not expanded.",
+    "No zero observer effect or identical elapsed lifetime is claimed; original retention scope/counters and release path remain, with added work before release.",
+    "Equal or different public states do not establish display cause, property-copy repair, HDR or color equivalence."
+  ],
+  "performed": ["source_and_frozen_plan_read", "Apple_primary_decode_contract_check", "bounded_diff_and_hash_inventory"],
+  "not_performed": ["source_edit", "compile", "typecheck", "tests", "UI", "CI", "raw_read", "pointer_experiment", "pixel_or_numeric_algorithm"],
+  "artifacts": ["README.md", "review.json", "SHA256SUMS"],
+  "freeze": "read-only files and directory after manifest generation"
+}

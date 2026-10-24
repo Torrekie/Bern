@@ -1,0 +1,1359 @@
+{
+  "ci_run": 40119614788,
+  "complete": true,
+  "crosshost_semantics": [
+    {
+      "all_reported_attributes_equal": true,
+      "attributes_and_decode_by_host": {
+        "13": {
+          "color_space_components": 3,
+          "color_space_model_raw": 1,
+          "decode_count": 0,
+          "decode_nonfinite_index": null,
+          "decode_present": false,
+          "decode_value_bits": [],
+          "decode_values": [],
+          "decode_values_read": 0,
+          "is_mask": false,
+          "rendering_intent_raw": 0,
+          "should_interpolate": true
+        },
+        "14": {
+          "color_space_components": 3,
+          "color_space_model_raw": 1,
+          "decode_count": 0,
+          "decode_nonfinite_index": null,
+          "decode_present": false,
+          "decode_value_bits": [],
+          "decode_values": [],
+          "decode_values_read": 0,
+          "is_mask": false,
+          "rendering_intent_raw": 0,
+          "should_interpolate": true
+        }
+      },
+      "key": "baseline-body-named",
+      "limits": "Equality covers these two retained original images per key at post-teardown observation only; no rendered-context/storage/visible-output cause follows."
+    },
+    {
+      "all_reported_attributes_equal": true,
+      "attributes_and_decode_by_host": {
+        "13": {
+          "color_space_components": 3,
+          "color_space_model_raw": 1,
+          "decode_count": 0,
+          "decode_nonfinite_index": null,
+          "decode_present": false,
+          "decode_value_bits": [],
+          "decode_values": [],
+          "decode_values_read": 0,
+          "is_mask": false,
+          "rendering_intent_raw": 0,
+          "should_interpolate": true
+        },
+        "14": {
+          "color_space_components": 3,
+          "color_space_model_raw": 1,
+          "decode_count": 0,
+          "decode_nonfinite_index": null,
+          "decode_present": false,
+          "decode_value_bits": [],
+          "decode_values": [],
+          "decode_values_read": 0,
+          "is_mask": false,
+          "rendering_intent_raw": 0,
+          "should_interpolate": true
+        }
+      },
+      "key": "baseline-body-custom",
+      "limits": "Equality covers these two retained original images per key at post-teardown observation only; no rendered-context/storage/visible-output cause follows."
+    }
+  ],
+  "gate_verification": {
+    "adapted_gate_sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00",
+    "only_literal_changes": {
+      "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==major and d['actual_os_major']==major",
+      "mode=sys.argv[1]; p=Path('evidence/runtime14')/mode; d=json.loads((p/'report.json').read_text())": "p=Path(sys.argv[1]).resolve(); mode=sys.argv[2]; major=int(sys.argv[3]); d=json.loads((p/'report.json').read_text())"
+    },
+    "original_gate_sha256": "72a517a53fee128fd60055571c72f5701fce5f592be35c9e27124d2c06c49066",
+    "root_adaptation_metadata_matches": true,
+    "serialization_only_extra_terminal_LF": true
+  },
+  "harness_commit": "9989b904fe3bd2018d53ce91eec08bc52573fcc6",
+  "input_files": {
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/.github/workflows/macos14-hero-cgsemantics-probe.yml": {
+      "bytes": 17107,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "8c5acfad83bf97255f10d73ba3dd2836350b53ecf0396dd65eec3e29923ccdcb"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/report.json": {
+      "bytes": 74997,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "ebaed7d2ae402fc9ebf81e880a50235bf7e37ac4761c62e4b4bf0fce3dee3c4f"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/snapshot-custom.bin": {
+      "bytes": 1843200,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/snapshot-named.bin": {
+      "bytes": 1843200,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime14/on/report.json": {
+      "bytes": 74294,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "aac969c3813411271e07f970a22169b508a8829a596a3d483efba1cefc61826b"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime14/on/snapshot-custom.bin": {
+      "bytes": 460800,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime14/on/snapshot-named.bin": {
+      "bytes": 460800,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cgsemantics-native-analysis/package-verification.json": {
+      "bytes": 11773,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "205737378b20865f226da4bf96b4ed38e0bb822afd8ecda1391f1800339df718"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cgsemantics-runtime-validate.py": {
+      "bytes": 8018,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cgsemantics-validation-adaptation.json": {
+      "bytes": 436,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "466f97ccdf05f52a712d1ff7b74000431826bfa030ca6d5081c4891a3e05ee59"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/build/hero-cgsemantics-probe.tar.gz": {
+      "bytes": 257757,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "2c1151e83775c0a214f3ff36e33f1160883175c8709a6a86456072c52053b014"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/controls/old-float-vs-semantics-off13.json": {
+      "bytes": 2877,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "96625058c5b3ee0c8d97ef3f643c006f4634f411c6d4fe8d04a719db73b34b04"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/controls/old-float-vs-semantics-off14.json": {
+      "bytes": 2877,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "636deedf7e7e3143d23b74db8be2329d384b6eac7f6c37c1f93b44aabb7d960f"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/controls/semantics-off-vs-on13.json": {
+      "bytes": 2877,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "219847cf50dfa793db8aec148307d50f80b90ccadebc7094ba3f140cc115bd8d"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/controls/semantics-off-vs-on14.json": {
+      "bytes": 2877,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "dc382835f80b76691486310eb01e00e5f15b04a3e7997e21ca3e947e69d3ae3d"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/package-verification-local.json": {
+      "bytes": 2248,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "3e31e71711f0da9873030fa893ea309bb07a4b927ca4f1c43f63671d9fc3f1f2"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/BackingObservation.swift.inc": {
+      "bytes": 5128,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "0136ae510fe8f91673aaf54358a239d5795c03cb8a4a5db33b54d0fc07f1f90b"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/Dependencies.swift": {
+      "bytes": 232,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/Driver.before-backing.swift.inc": {
+      "bytes": 23891,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "d9f6d257b754a6e2c960f22bf24b86ee4822822a05cee73b191eb2d74a197670"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/Driver.swift.inc": {
+      "bytes": 29683,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/Driver.v2.base.swift.inc": {
+      "bytes": 22985,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "02211e8b35cdb469776ae6fde6fe18c8614ccb31ea0866b4d0e543349a69b67a"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/FloatCapture.swift.inc": {
+      "bytes": 11944,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "9d17958cd7c7407fc24bd1b8045c6032f13b96058264c57717b1606a36feceff"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/HeroCGSemanticsProbe": {
+      "bytes": 587040,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "68974a3fe0ae28c23ef47de9657fbc6d34287bb36f50d12d6ac69d52b3eee334"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/ProductHero.base.swift": {
+      "bytes": 15038,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/ProductHero.exact.swift": {
+      "bytes": 14952,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/ProductHero.swift": {
+      "bytes": 56665,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "0094f0f8cbd228a1ad658b74193038bf7c626996e5eabae4d7ee415f650b51fc"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/ProductImage.exact.swift": {
+      "bytes": 23920,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/ProductImage.swift": {
+      "bytes": 24115,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/ProductStyle.swift": {
+      "bytes": 2487,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/README.md": {
+      "bytes": 2428,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "2a24bfa3a9640664ba71b258454786940b5e70131a61d369202731ab081f2c60"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/SHA256SUMS": {
+      "bytes": 2564,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "89bc73533ab6678774d9079eb2a75808291d541e71768762d537c1b0cac6e5ee"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/assets/source-named-pq.png": {
+      "bytes": 15588,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/backing-observer.patch": {
+      "bytes": 7605,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "cfc5e25f4bea0effa2625bb91ba85e4ec6d4a60a7ec35f4c4574d6185d868147"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/build/binary.txt": {
+      "bytes": 4052,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "365add2da0cdf67ad8fac95aef69b620ff3adb17fb5e519f4dec4f7e556a2b44"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/build/command.txt": {
+      "bytes": 421,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "af7d4bb4094762a7720848f177be37b5b5a4ed816a253657f0c4b1661c0f5656"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/build/compile.log": {
+      "bytes": 0,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/build/environment.txt": {
+      "bytes": 453,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "d5c74a95340974ce85fa8ffc248f32541db3fe2ab7141c7828e428cd3c5c5c1e"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/build/signature.txt": {
+      "bytes": 1048,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "92779a4280e1f49397aac4750fb2a1806ec64c9a70387bc7a785b57375c24e6e"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/cgimage-drawing-semantics.patch": {
+      "bytes": 4483,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "b54c7d3d87874ae13ffeb6829ecbb099bb6da9cb24dcc5a58b13bdcd9535abc6"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/float-capture-driver.patch": {
+      "bytes": 4165,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "999a16865cd40b4ae355ae5f7832693059974b2997558b74373d60223f79bede"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/run-backing-one.py": {
+      "bytes": 1652,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "9a3e263ba66131a1b2dda97489e545811f5d7b58c28e4198408d030a78693683"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/run-one.py": {
+      "bytes": 1586,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "e9c6805100adf443d470bfadd1ddf2179a4b1c9082890c79b620684746ef8995"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/source-provenance.before-backing.json": {
+      "bytes": 3609,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "a90d1ed2b29c3668f274bd25919f8d00ea8904e9294c4e81a0952296978a8cf7"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/probe/source-provenance.json": {
+      "bytes": 7177,
+      "hash_stage": "actual_precleanup_package_check",
+      "sha256": "5feff9eeec8b12c4b835d328d93544b0c79883ee6ed90740956955dbe2c3f686"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/off/progress-0.png": {
+      "bytes": 638869,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/off/progress-1.png": {
+      "bytes": 638869,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/off/report.json": {
+      "bytes": 73724,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "3f86ecd39eaf157a9332930e4cf393af4670380f1d6b660a0927fc4171375bb3"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/off/run-receipt.json": {
+      "bytes": 1010,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "7f535cdd538ae94e80130856dddb54549599ca42ddc03357948440fe27bfc78b"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/off/runtime.log": {
+      "bytes": 2207,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "e7a8fbc91a01118de5b50d82cf1e34a493aa0d66c63f1cefdc8d092f3f0af7c6"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/progress-0.png": {
+      "bytes": 638869,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/progress-1.png": {
+      "bytes": 638869,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/report.json": {
+      "bytes": 76692,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "c69c68a2d348b3aaecfbcfe08d89899181403b52c71b45e1eab0d7344ad73172"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/run-receipt.json": {
+      "bytes": 1007,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "a032a154b9ce363df9cbe3e6b51a8a92e54aae4d05cdf1a33d18734eea2daae6"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/runtime.log": {
+      "bytes": 2207,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "2e0d9143625b11b8dc15aec9598d10671ff572f96a9c386ca242bb37aebc69fa"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/snapshot-custom.bin": {
+      "bytes": 1843200,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/snapshot-named.bin": {
+      "bytes": 1843200,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/off/progress-0.png": {
+      "bytes": 190864,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/off/progress-1.png": {
+      "bytes": 148600,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/off/report.json": {
+      "bytes": 73004,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "4f1b1ee390148002ad3f8b8f90952a96422a886ea45b774267d13b3c3280226c"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/off/run-receipt.json": {
+      "bytes": 621,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "e94decfb2bcd250b37364d082e701f85380a082702d90ca75cf6a9b5ae677bc7"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/off/runtime.log": {
+      "bytes": 2197,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "1bb387e01a44d271422c7da22e98940a4023ec14ef873ca45e1794b7d1b6a246"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/progress-0.png": {
+      "bytes": 190864,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/progress-1.png": {
+      "bytes": 148600,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/report.json": {
+      "bytes": 75978,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "a3dfb66aa84ebf0cf0080e17ff6a3534c56fbd16dad1e0cffa6c91bdb186c9e6"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/run-receipt.json": {
+      "bytes": 619,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "168e43e5b013ac0e63f060a1a050dc191f5729d16747bf62b93960877f39d6e8"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/runtime.log": {
+      "bytes": 2199,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "027bbef25ad96dc04ee6f2ee86fc66d04aabd8ff1b2efe47a23e9c955a41c871"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/snapshot-custom.bin": {
+      "bytes": 460800,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/snapshot-named.bin": {
+      "bytes": 460800,
+      "hash_stage": "current_offline_analysis",
+      "sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962"
+    }
+  },
+  "input_stage_note": "Actual binary/tar/full package hashes captured before root cleanup; current native/raw/PNG inputs hashed here. Per-entry hash_stage distinguishes them; no fresh signing claim.",
+  "not_proven": [
+    "Pixel/UI/full-flight acceptance",
+    "Unique rendering cause",
+    "Context/storage equivalence",
+    "General zero observer effect",
+    "Decode-present behavior when all actual decodes are nil"
+  ],
+  "package_counts": {
+    "package": 29,
+    "source": 21
+  },
+  "precleanup_package_verification_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-cgsemantics-native-analysis/package-verification.json",
+  "processes": {
+    "13-off": {
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "68974a3fe0ae28c23ef47de9657fbc6d34287bb36f50d12d6ac69d52b3eee334",
+      "cache_before_equals_after": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "manager": {
+            "entries": {
+              "baseline-body-custom": [
+                "baseline-body-custom"
+              ],
+              "baseline-body-named": [
+                "baseline-body-named"
+              ]
+            },
+            "flight_count": 0,
+            "overlay_attached": true,
+            "overlay_bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "timer_exists": false
+          },
+          "owner_pid": 37070,
+          "phase": "progress-0",
+          "png": "progress-0.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10705
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "manager": {
+            "entries": {
+              "baseline-body-custom": [
+                "baseline-body-custom"
+              ],
+              "baseline-body-named": [
+                "baseline-body-named"
+              ]
+            },
+            "flight_count": 0,
+            "overlay_attached": true,
+            "overlay_bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "timer_exists": false
+          },
+          "owner_pid": 37070,
+          "phase": "progress-1",
+          "png": "progress-1.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10705
+        }
+      ],
+      "float_counts": {
+        "cleanup_observation_count": 2,
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 0,
+        "released_at_uptime_seconds": 267060.4446750417,
+        "retained_primary_peak_count": 0,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "native_ICC_semantics_gate": "PASS",
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 37070,
+      "primary_descriptors_ICC": [
+        {
+          "alpha_info_raw": 1,
+          "bitmap_info_raw": 4353,
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "byte_order_raw": 4096,
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "height": 360,
+          "icc_byte_count": 3144,
+          "icc_present": true,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named",
+          "pixel_format_raw": 0,
+          "width": 640
+        },
+        {
+          "alpha_info_raw": 1,
+          "bitmap_info_raw": 4353,
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "byte_order_raw": 4096,
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "height": 360,
+          "icc_byte_count": 3144,
+          "icc_present": true,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom",
+          "pixel_format_raw": 0,
+          "width": 640
+        }
+      ],
+      "sample_count": 10,
+      "semantics_records": [],
+      "window_seconds": 1.6570920944213867,
+      "wrapper_elapsed_seconds": 2.0563886670279317
+    },
+    "13-on": {
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "68974a3fe0ae28c23ef47de9657fbc6d34287bb36f50d12d6ac69d52b3eee334",
+      "cache_before_equals_after": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "manager": {
+            "entries": {
+              "baseline-body-custom": [
+                "baseline-body-custom"
+              ],
+              "baseline-body-named": [
+                "baseline-body-named"
+              ]
+            },
+            "flight_count": 0,
+            "overlay_attached": true,
+            "overlay_bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "timer_exists": false
+          },
+          "owner_pid": 37133,
+          "phase": "progress-0",
+          "png": "progress-0.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10706
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "manager": {
+            "entries": {
+              "baseline-body-custom": [
+                "baseline-body-custom"
+              ],
+              "baseline-body-named": [
+                "baseline-body-named"
+              ]
+            },
+            "flight_count": 0,
+            "overlay_attached": true,
+            "overlay_bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "timer_exists": false
+          },
+          "owner_pid": 37133,
+          "phase": "progress-1",
+          "png": "progress-1.png",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10706
+        }
+      ],
+      "float_counts": {
+        "cleanup_observation_count": 2,
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 2,
+        "released_at_uptime_seconds": 267095.0431488333,
+        "retained_primary_peak_count": 2,
+        "total_raw_bytes": 3686400
+      },
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "native_ICC_semantics_gate": "PASS",
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 37133,
+      "primary_descriptors_ICC": [
+        {
+          "alpha_info_raw": 1,
+          "bitmap_info_raw": 4353,
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "byte_order_raw": 4096,
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "height": 360,
+          "icc_byte_count": 3144,
+          "icc_present": true,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named",
+          "pixel_format_raw": 0,
+          "width": 640
+        },
+        {
+          "alpha_info_raw": 1,
+          "bitmap_info_raw": 4353,
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "byte_order_raw": 4096,
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "height": 360,
+          "icc_byte_count": 3144,
+          "icc_present": true,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom",
+          "pixel_format_raw": 0,
+          "width": 640
+        }
+      ],
+      "sample_count": 10,
+      "semantics_records": [
+        {
+          "bytes": 1843200,
+          "derived_observation_timing": {
+            "observation_end_to_release_seconds": 0.006571374949999154,
+            "provider_start_to_observation_seconds": 0.002217374974861741
+          },
+          "drawing_semantics": {
+            "color_space_components": 3,
+            "color_space_model_raw": 1,
+            "decode_count": 0,
+            "decode_nonfinite_index": null,
+            "decode_present": false,
+            "decode_value_bits": [],
+            "decode_values": [],
+            "decode_values_read": 0,
+            "error": null,
+            "is_mask": false,
+            "observation_elapsed_seconds": 8.41671135276556e-06,
+            "observed_at_uptime_seconds": 267095.03656904167,
+            "rendering_intent_raw": 0,
+            "should_interpolate": true,
+            "stage": "after_existing_window_teardown_before_primary_release",
+            "success": true
+          },
+          "height": 360,
+          "key": "baseline-body-named",
+          "provider_read_at_uptime_seconds": 267095.0343516667,
+          "raw_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/snapshot-named.bin",
+          "raw_sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+          "released_at_uptime_seconds": 267095.0431488333,
+          "width": 640
+        },
+        {
+          "bytes": 1843200,
+          "derived_observation_timing": {
+            "observation_end_to_release_seconds": 3.0958326533436775e-05,
+            "provider_start_to_observation_seconds": 0.006500208342913538
+          },
+          "drawing_semantics": {
+            "color_space_components": 3,
+            "color_space_model_raw": 1,
+            "decode_count": 0,
+            "decode_nonfinite_index": null,
+            "decode_present": false,
+            "decode_value_bits": [],
+            "decode_values": [],
+            "decode_values_read": 0,
+            "error": null,
+            "is_mask": false,
+            "observation_elapsed_seconds": 7.6249707490205765e-06,
+            "observed_at_uptime_seconds": 267095.04311025003,
+            "rendering_intent_raw": 0,
+            "should_interpolate": true,
+            "stage": "after_existing_window_teardown_before_primary_release",
+            "success": true
+          },
+          "height": 360,
+          "key": "baseline-body-custom",
+          "provider_read_at_uptime_seconds": 267095.0366100417,
+          "raw_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/snapshot-custom.bin",
+          "raw_sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+          "released_at_uptime_seconds": 267095.0431488333,
+          "width": 640
+        }
+      ],
+      "window_seconds": 1.612710952758789,
+      "wrapper_elapsed_seconds": 2.098275334050413
+    },
+    "14-off": {
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "68974a3fe0ae28c23ef47de9657fbc6d34287bb36f50d12d6ac69d52b3eee334",
+      "cache_before_equals_after": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "manager": {
+            "entries": {
+              "baseline-body-custom": [
+                "baseline-body-custom"
+              ],
+              "baseline-body-named": [
+                "baseline-body-named"
+              ]
+            },
+            "flight_count": 0,
+            "overlay_attached": true,
+            "overlay_bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "timer_exists": false
+          },
+          "owner_pid": 978,
+          "phase": "progress-0",
+          "png": "progress-0.png",
+          "png_sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "b235bbd4a6bdf1b35e0fbd32321cbdc4c0bca0aa693236346007eb1607ca4d67",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 24
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "manager": {
+            "entries": {
+              "baseline-body-custom": [
+                "baseline-body-custom"
+              ],
+              "baseline-body-named": [
+                "baseline-body-named"
+              ]
+            },
+            "flight_count": 0,
+            "overlay_attached": true,
+            "overlay_bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "timer_exists": false
+          },
+          "owner_pid": 978,
+          "phase": "progress-1",
+          "png": "progress-1.png",
+          "png_sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "4dfc2ca1f1749b46764fd0089f545a3716f799ae7f893babe0ae2b2a7e9d6724",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 24
+        }
+      ],
+      "float_counts": {
+        "cleanup_observation_count": 2,
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 0,
+        "released_at_uptime_seconds": 65.92368433333334,
+        "retained_primary_peak_count": 0,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 316,
+      "frontmost_before": 316,
+      "native_ICC_semantics_gate": "PASS",
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 978,
+      "primary_descriptors_ICC": [
+        {
+          "alpha_info_raw": 1,
+          "bitmap_info_raw": 4353,
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "byte_order_raw": 4096,
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "height": 180,
+          "icc_byte_count": 3144,
+          "icc_present": true,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named",
+          "pixel_format_raw": 0,
+          "width": 320
+        },
+        {
+          "alpha_info_raw": 1,
+          "bitmap_info_raw": 4353,
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "byte_order_raw": 4096,
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "height": 180,
+          "icc_byte_count": 3144,
+          "icc_present": true,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom",
+          "pixel_format_raw": 0,
+          "width": 320
+        }
+      ],
+      "sample_count": 10,
+      "semantics_records": [],
+      "window_seconds": 2.3520328998565674,
+      "wrapper_elapsed_seconds": 2.6401183329999967
+    },
+    "14-on": {
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "68974a3fe0ae28c23ef47de9657fbc6d34287bb36f50d12d6ac69d52b3eee334",
+      "cache_before_equals_after": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "manager": {
+            "entries": {
+              "baseline-body-custom": [
+                "baseline-body-custom"
+              ],
+              "baseline-body-named": [
+                "baseline-body-named"
+              ]
+            },
+            "flight_count": 0,
+            "overlay_attached": true,
+            "overlay_bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "timer_exists": false
+          },
+          "owner_pid": 1010,
+          "phase": "progress-0",
+          "png": "progress-0.png",
+          "png_sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "b235bbd4a6bdf1b35e0fbd32321cbdc4c0bca0aa693236346007eb1607ca4d67",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 25
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "manager": {
+            "entries": {
+              "baseline-body-custom": [
+                "baseline-body-custom"
+              ],
+              "baseline-body-named": [
+                "baseline-body-named"
+              ]
+            },
+            "flight_count": 0,
+            "overlay_attached": true,
+            "overlay_bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "timer_exists": false
+          },
+          "owner_pid": 1010,
+          "phase": "progress-1",
+          "png": "progress-1.png",
+          "png_sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "4dfc2ca1f1749b46764fd0089f545a3716f799ae7f893babe0ae2b2a7e9d6724",
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 25
+        }
+      ],
+      "float_counts": {
+        "cleanup_observation_count": 2,
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 2,
+        "released_at_uptime_seconds": 68.12434058333334,
+        "retained_primary_peak_count": 2,
+        "total_raw_bytes": 921600
+      },
+      "frontmost_after": 316,
+      "frontmost_before": 316,
+      "native_ICC_semantics_gate": "PASS",
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 1010,
+      "primary_descriptors_ICC": [
+        {
+          "alpha_info_raw": 1,
+          "bitmap_info_raw": 4353,
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "byte_order_raw": 4096,
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "height": 180,
+          "icc_byte_count": 3144,
+          "icc_present": true,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named",
+          "pixel_format_raw": 0,
+          "width": 320
+        },
+        {
+          "alpha_info_raw": 1,
+          "bitmap_info_raw": 4353,
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "byte_order_raw": 4096,
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "height": 180,
+          "icc_byte_count": 3144,
+          "icc_present": true,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom",
+          "pixel_format_raw": 0,
+          "width": 320
+        }
+      ],
+      "sample_count": 10,
+      "semantics_records": [
+        {
+          "bytes": 460800,
+          "derived_observation_timing": {
+            "observation_end_to_release_seconds": 0.002750208333324622,
+            "provider_start_to_observation_seconds": 0.002800500000006423
+          },
+          "drawing_semantics": {
+            "color_space_components": 3,
+            "color_space_model_raw": 1,
+            "decode_count": 0,
+            "decode_nonfinite_index": null,
+            "decode_present": false,
+            "decode_value_bits": [],
+            "decode_values": [],
+            "decode_values_read": 0,
+            "error": null,
+            "is_mask": false,
+            "observation_elapsed_seconds": 4.333333333761402e-05,
+            "observed_at_uptime_seconds": 68.12154704166667,
+            "rendering_intent_raw": 0,
+            "should_interpolate": true,
+            "stage": "after_existing_window_teardown_before_primary_release",
+            "success": true
+          },
+          "height": 180,
+          "key": "baseline-body-named",
+          "provider_read_at_uptime_seconds": 68.11874654166667,
+          "raw_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/snapshot-named.bin",
+          "raw_sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+          "released_at_uptime_seconds": 68.12434058333334,
+          "width": 320
+        },
+        {
+          "bytes": 460800,
+          "derived_observation_timing": {
+            "observation_end_to_release_seconds": 8.541666659311886e-06,
+            "provider_start_to_observation_seconds": 0.0026405416666648307
+          },
+          "drawing_semantics": {
+            "color_space_components": 3,
+            "color_space_model_raw": 1,
+            "decode_count": 0,
+            "decode_nonfinite_index": null,
+            "decode_present": false,
+            "decode_value_bits": [],
+            "decode_values": [],
+            "decode_values_read": 0,
+            "error": null,
+            "is_mask": false,
+            "observation_elapsed_seconds": 1.5000000004761205e-05,
+            "observed_at_uptime_seconds": 68.12431704166667,
+            "rendering_intent_raw": 0,
+            "should_interpolate": true,
+            "stage": "after_existing_window_teardown_before_primary_release",
+            "success": true
+          },
+          "height": 180,
+          "key": "baseline-body-custom",
+          "provider_read_at_uptime_seconds": 68.1216765,
+          "raw_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/snapshot-custom.bin",
+          "raw_sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+          "released_at_uptime_seconds": 68.12434058333334,
+          "width": 320
+        }
+      ],
+      "window_seconds": 1.9169479608535767,
+      "wrapper_elapsed_seconds": 2.120343915999996
+    }
+  },
+  "raw_window_buffer_scope": "PNG/raw export file SHA independently checked; five-equal WindowServer-buffer hashes are report consistency evidence, no WindowServer recapture or pixel decoding.",
+  "root_control_receipts_hashed_only": [
+    {
+      "bytes": 2877,
+      "hash_stage": "current_offline_analysis",
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/controls/old-float-vs-semantics-off13.json",
+      "scope": "Root pixel-control receipt fingerprint only; pixel algorithms not rerun and not native gates.",
+      "sha256": "96625058c5b3ee0c8d97ef3f643c006f4634f411c6d4fe8d04a719db73b34b04"
+    },
+    {
+      "bytes": 2877,
+      "hash_stage": "current_offline_analysis",
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/controls/old-float-vs-semantics-off14.json",
+      "scope": "Root pixel-control receipt fingerprint only; pixel algorithms not rerun and not native gates.",
+      "sha256": "636deedf7e7e3143d23b74db8be2329d384b6eac7f6c37c1f93b44aabb7d960f"
+    },
+    {
+      "bytes": 2877,
+      "hash_stage": "current_offline_analysis",
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/controls/semantics-off-vs-on13.json",
+      "scope": "Root pixel-control receipt fingerprint only; pixel algorithms not rerun and not native gates.",
+      "sha256": "219847cf50dfa793db8aec148307d50f80b90ccadebc7094ba3f140cc115bd8d"
+    },
+    {
+      "bytes": 2877,
+      "hash_stage": "current_offline_analysis",
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/controls/semantics-off-vs-on14.json",
+      "scope": "Root pixel-control receipt fingerprint only; pixel algorithms not rerun and not native gates.",
+      "sha256": "dc382835f80b76691486310eb01e00e5f15b04a3e7997e21ca3e947e69d3ae3d"
+    }
+  ],
+  "same_host_old_float_raw_comparisons": [
+    {
+      "host": 13,
+      "key": "baseline-body-named",
+      "new_byte_count": 1843200,
+      "new_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/snapshot-named.bin",
+      "new_sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+      "old_byte_count": 1843200,
+      "old_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/snapshot-named.bin",
+      "old_sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+      "same_bytes_by_SHA_and_length": true
+    },
+    {
+      "host": 13,
+      "key": "baseline-body-custom",
+      "new_byte_count": 1843200,
+      "new_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime13/on/snapshot-custom.bin",
+      "new_sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+      "old_byte_count": 1843200,
+      "old_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/snapshot-custom.bin",
+      "old_sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+      "same_bytes_by_SHA_and_length": true
+    },
+    {
+      "host": 14,
+      "key": "baseline-body-named",
+      "new_byte_count": 460800,
+      "new_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/snapshot-named.bin",
+      "new_sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+      "old_byte_count": 460800,
+      "old_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime14/on/snapshot-named.bin",
+      "old_sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+      "same_bytes_by_SHA_and_length": true
+    },
+    {
+      "host": 14,
+      "key": "baseline-body-custom",
+      "new_byte_count": 460800,
+      "new_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-cgsemantics-ci-40119614788/runtime14/on/snapshot-custom.bin",
+      "new_sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+      "old_byte_count": 460800,
+      "old_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime14/on/snapshot-custom.bin",
+      "old_sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+      "same_bytes_by_SHA_and_length": true
+    }
+  ],
+  "scope": "Offline original full native/ICC/semantics gate, retained-file hash and metadata comparison. No pixel decode/conversion, provider API, native/compiler/CI execution or source change.",
+  "source_commit": "3c137f307576a44ffc58543def3cfec5b310c9d7"
+}

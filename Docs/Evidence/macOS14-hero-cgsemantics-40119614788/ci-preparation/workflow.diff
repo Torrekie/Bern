@@ -1,0 +1,194 @@
+--- a/.github/workflows/macos14-hero-float-probe.yml
++++ b/.github/workflows/macos14-hero-cgsemantics-probe.yml
+@@ -1,11 +1,11 @@
+-name: macOS 14 actual hero float capture
+-run-name: actual hero original float capture off-on
++name: macOS 14 original snapshot CG drawing semantics
++run-name: actual hero original CG drawing semantics off-on
+ 'on':
+   workflow_dispatch: null
+ permissions:
+   contents: read
+ concurrency:
+-  group: macos14-hero-float-${{ github.ref }}
++  group: macos14-hero-cgsemantics-${{ github.ref }}
+   cancel-in-progress: false
+ jobs:
+   build:
+@@ -17,7 +17,7 @@
+     - uses: actions/checkout@v5
+       with:
+         persist-credentials: false
+-    - name: Build exact ARM64/min13 float observer package
++    - name: Build exact ARM64/min13 CG semantics package
+       shell: bash
+       run: |
+         set -euo pipefail
+@@ -37,13 +37,14 @@
+         case "$(uname -m)" in arm64|x86_64) ;; *) exit 1 ;; esac
+         sdk="$(xcrun --sdk macosx --show-sdk-version)"
+         test "${sdk%%.*}" -ge 26
+-        ditto .github/scripts/hero-float-probe work/probe
++        ditto .github/scripts/hero-cgsemantics-probe work/probe
+         python3 - <<'PY'
+         import hashlib,json
+         from pathlib import Path
+         p=Path('work/probe'); d=json.loads((p/'source-provenance.json').read_text())
+         assert d['product_source_commit']=='b08db54e01ac2ec54fb84e6f2a70041f1f4c3604'
+-        assert d['kind']=='original_snapshot_float_capture_fixture'
++        assert d['kind']=='original_snapshot_cg_drawing_semantics_fixture'
++        assert d['fixture_base_commit']=='5eca0e5904117d131e1129302d50d357e4234a15'
+         assert d['runtime_float_mode_default']=='off'
+         assert d['compiled_new_sdk_image_and_hero_base_are_original_harness'] is True
+         for name,m in d['files'].items():
+@@ -51,7 +52,7 @@
+         PY
+         cat work/probe/ProductHero.base.swift work/probe/FloatCapture.swift.inc work/probe/Driver.swift.inc > work/probe/ProductHero.swift
+         cat > evidence/build/command.txt <<'COMMAND'
+-        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage -framework ColorSync -framework ImageIO -framework CryptoKit work/probe/Dependencies.swift work/probe/ProductImage.swift work/probe/ProductStyle.swift work/probe/ProductHero.swift -o work/probe/HeroFloatProbe
++        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage -framework ColorSync -framework ImageIO -framework CryptoKit work/probe/Dependencies.swift work/probe/ProductImage.swift work/probe/ProductStyle.swift work/probe/ProductHero.swift -o work/probe/HeroCGSemanticsProbe
+         COMMAND
+         xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 \
+           -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache \
+@@ -59,14 +60,14 @@
+           -framework ColorSync -framework ImageIO -framework CryptoKit \
+           work/probe/Dependencies.swift work/probe/ProductImage.swift \
+           work/probe/ProductStyle.swift work/probe/ProductHero.swift \
+-          -o work/probe/HeroFloatProbe > evidence/build/compile.log 2>&1
+-        test "$(xcrun lipo -archs work/probe/HeroFloatProbe)" = arm64
+-        xcrun vtool -show-build work/probe/HeroFloatProbe > evidence/build/binary.txt
++          -o work/probe/HeroCGSemanticsProbe > evidence/build/compile.log 2>&1
++        test "$(xcrun lipo -archs work/probe/HeroCGSemanticsProbe)" = arm64
++        xcrun vtool -show-build work/probe/HeroCGSemanticsProbe > evidence/build/binary.txt
+         test "$(awk '/minos/ {print $2; exit}' evidence/build/binary.txt)" = 13.0
+-        xcrun otool -L work/probe/HeroFloatProbe >> evidence/build/binary.txt
+-        codesign --force --sign - work/probe/HeroFloatProbe > evidence/build/signature.txt 2>&1
+-        codesign --verify --strict --verbose=4 work/probe/HeroFloatProbe >> evidence/build/signature.txt 2>&1
+-        codesign --display --verbose=4 work/probe/HeroFloatProbe >> evidence/build/signature.txt 2>&1
++        xcrun otool -L work/probe/HeroCGSemanticsProbe >> evidence/build/binary.txt
++        codesign --force --sign - work/probe/HeroCGSemanticsProbe > evidence/build/signature.txt 2>&1
++        codesign --verify --strict --verbose=4 work/probe/HeroCGSemanticsProbe >> evidence/build/signature.txt 2>&1
++        codesign --display --verbose=4 work/probe/HeroCGSemanticsProbe >> evidence/build/signature.txt 2>&1
+         mkdir work/probe/build
+         cp evidence/build/{environment.txt,command.txt,compile.log,binary.txt,signature.txt} work/probe/build/
+         python3 - <<'PY'
+@@ -78,13 +79,13 @@
+             if f.is_file(): lines.append(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+f.relative_to(p).as_posix()+'\n')
+         (p/'SHA256SUMS').write_text(''.join(lines))
+         PY
+-        tar -czf evidence/build/hero-float-probe.tar.gz -C work/probe .
+-        (cd evidence/build && shasum -a 256 hero-float-probe.tar.gz > hero-float-probe.tar.gz.sha256)
++        tar -czf evidence/build/hero-cgsemantics-probe.tar.gz -C work/probe .
++        (cd evidence/build && shasum -a 256 hero-cgsemantics-probe.tar.gz > hero-cgsemantics-probe.tar.gz.sha256)
+         cp work/probe/{source-provenance.json,SHA256SUMS} evidence/build/
+     - uses: actions/upload-artifact@v5
+       if: always()
+       with:
+-        name: macos14-hero-float-probe-build
++        name: macos14-hero-cgsemantics-probe-build
+         path: evidence/build/
+         if-no-files-found: error
+         retention-days: 3
+@@ -96,7 +97,7 @@
+     steps:
+     - uses: actions/download-artifact@v5
+       with:
+-        name: macos14-hero-float-probe-build
++        name: macos14-hero-cgsemantics-probe-build
+         path: build
+     - name: Collect fresh off then on processes on14 without rebuilding
+       env:
+@@ -114,23 +115,23 @@
+         test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+         test "$(uname -m)" = arm64
+         test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+-        (cd build && shasum -a 256 -c hero-float-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1
++        (cd build && shasum -a 256 -c hero-cgsemantics-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1
+         python3 - <<'PY'
+         from pathlib import PurePosixPath
+         import tarfile
+-        with tarfile.open('build/hero-float-probe.tar.gz') as t:
++        with tarfile.open('build/hero-cgsemantics-probe.tar.gz') as t:
+             for m in t.getmembers():
+                 p=PurePosixPath(m.name)
+                 assert not p.is_absolute() and '..' not in p.parts,m.name
+                 assert m.isdir() or m.isfile(),m.name
+         PY
+-        tar -xzf build/hero-float-probe.tar.gz -C probe
++        tar -xzf build/hero-cgsemantics-probe.tar.gz -C probe
+         (cd probe && shasum -a 256 -c SHA256SUMS) > evidence/runtime14/package-verification.txt 2>&1
+-        test "$(xcrun lipo -archs probe/HeroFloatProbe)" = arm64
+-        codesign --verify --strict --verbose=4 probe/HeroFloatProbe > evidence/runtime14/signature-verification.txt 2>&1
+-        shasum -a 256 probe/HeroFloatProbe > evidence/runtime14/binary-sha256.txt
++        test "$(xcrun lipo -archs probe/HeroCGSemanticsProbe)" = arm64
++        codesign --verify --strict --verbose=4 probe/HeroCGSemanticsProbe > evidence/runtime14/signature-verification.txt 2>&1
++        shasum -a 256 probe/HeroCGSemanticsProbe > evidence/runtime14/binary-sha256.txt
+         cp build/environment.txt evidence/runtime14/build-environment.txt
+-        cp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-float-probe.tar.gz.sha256} evidence/runtime14/
++        cp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-cgsemantics-probe.tar.gz.sha256} evidence/runtime14/
+         defaults write com.apple.universalaccess reduceMotion -bool false
+         defaults write com.apple.universalaccess reduceTransparency -bool false
+         defaults write com.apple.universalaccess increaseContrast -bool false
+@@ -144,7 +145,7 @@
+         } > evidence/runtime14/requested-normal.txt 2>&1
+         for mode in off on; do
+           mkdir -p "evidence/runtime14/$mode"
+-          python3 probe/run-one.py "$PWD/probe/HeroFloatProbe" "$PWD/probe/assets/source-named-pq.png" \
++          python3 probe/run-one.py "$PWD/probe/HeroCGSemanticsProbe" "$PWD/probe/assets/source-named-pq.png" \
+             "$PWD/probe/assets/source-ffb-icc.png" "$PWD/evidence/runtime14/$mode" "$mode" 14
+           python3 - "$mode" <<'PY'
+         import base64,hashlib,json,sys
+@@ -228,12 +229,52 @@
+                 assert (r['bits_per_component'],r['bits_per_pixel'],r['bitmap_info_raw'],r['alpha_info_raw'],r['byte_order_raw'],r['pixel_format_raw'])==(16,64,4353,1,4096,0)
+                 assert r['float_components'] is True and r['export_stage']=='after_existing_window_teardown'
+ 
++        # Append-only isolation gate; all original float/native/ICC assertions above are preserved.
++        backing=d['backing_observation']
++        assert backing['requested']==backing['selected']=='off'
++        assert backing['success'] is True and backing['error'] is None
++        assert backing['records']==[] and backing['root'] is None and backing['overlay'] is None
++        import math,re,struct
++        def finite_nonnegative(value):
++            assert type(value) in (int,float) and math.isfinite(value) and value>=0
++        if mode=='on':
++            for r in records:
++                s=r['drawing_semantics']
++                assert isinstance(s,dict) and set(s)=={'stage','success','error','rendering_intent_raw',
++                    'is_mask','should_interpolate','color_space_model_raw','color_space_components',
++                    'decode_present','decode_count','decode_values','decode_value_bits','decode_values_read',
++                    'decode_nonfinite_index','observed_at_uptime_seconds','observation_elapsed_seconds'}
++                assert s['stage']=='after_existing_window_teardown_before_primary_release'
++                assert s['success'] is True and s['error'] is None
++                assert type(s['rendering_intent_raw']) is int and s['rendering_intent_raw']>=0
++                assert s['is_mask'] is False and type(s['should_interpolate']) is bool
++                assert type(s['color_space_model_raw']) is int and s['color_space_model_raw']==1
++                assert type(s['color_space_components']) is int and s['color_space_components']==3
++                assert type(s['decode_present']) is bool
++                count=6 if s['decode_present'] else 0
++                assert type(s['decode_count']) is int and s['decode_count']==count
++                assert type(s['decode_values_read']) is int and s['decode_values_read']==count
++                assert isinstance(s['decode_values'],list) and len(s['decode_values'])==count
++                assert isinstance(s['decode_value_bits'],list) and len(s['decode_value_bits'])==count
++                assert s['decode_nonfinite_index'] is None
++                for value,bits in zip(s['decode_values'],s['decode_value_bits']):
++                    assert type(value) in (int,float) and math.isfinite(value)
++                    assert isinstance(bits,str) and re.fullmatch(r'0x[0-9a-f]{16}',bits)
++                    decoded=struct.unpack('>d',struct.pack('>Q',int(bits,16)))[0]
++                    assert math.isfinite(decoded) and decoded==value
++                    # Signed zero remains in the exact bits field; JSON numeric sign is not inferred.
++                for value in (s['observed_at_uptime_seconds'],s['observation_elapsed_seconds'],
++                              r['provider_read_at_uptime_seconds'],f['released_at_uptime_seconds']):
++                    finite_nonnegative(value)
++                assert s['observed_at_uptime_seconds']>=r['provider_read_at_uptime_seconds']
++                assert s['observed_at_uptime_seconds']+s['observation_elapsed_seconds']<=f['released_at_uptime_seconds']
++
+         PY
+         done
+     - uses: actions/upload-artifact@v5
+       if: always()
+       with:
+-        name: macos14-hero-float-evidence
++        name: macos14-hero-cgsemantics-evidence
+         path: evidence/runtime14/
+         if-no-files-found: error
+         retention-days: 3

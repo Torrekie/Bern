@@ -1,0 +1,32 @@
+{
+  "binary_sha256": "68974a3fe0ae28c23ef47de9657fbc6d34287bb36f50d12d6ac69d52b3eee334",
+  "ci_run": 40119614788,
+  "gate_scope": {
+    "adapted_gate_sha256": "66302614538dc90f40ff1f1cb5ccd91137c2489416d0f639461925d5e7c6ea00",
+    "only_literal_changes": {
+      "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==major and d['actual_os_major']==major",
+      "mode=sys.argv[1]; p=Path('evidence/runtime14')/mode; d=json.loads((p/'report.json').read_text())": "p=Path(sys.argv[1]).resolve(); mode=sys.argv[2]; major=int(sys.argv[3]); d=json.loads((p/'report.json').read_text())"
+    },
+    "original_gate_sha256": "72a517a53fee128fd60055571c72f5701fce5f592be35c9e27124d2c06c49066",
+    "root_adaptation_metadata_matches": true,
+    "serialization_only_extra_terminal_LF": true
+  },
+  "harness_commit": "9989b904fe3bd2018d53ce91eec08bc52573fcc6",
+  "input_cohort": "work/native-pq-hero-cgsemantics-ci-40119614788",
+  "input_fingerprints": 70,
+  "input_stage_note": "Actual binary/tar/full package hashes captured before root cleanup; current native/raw/PNG inputs hashed here. Per-entry hash_stage distinguishes them; no fresh signing claim.",
+  "package_hash_scope": "Actual29package/21source, binary and tar rehashed by check-package.py before root cleanup. Saved strict-sign/min13/SDK26.2/arm64 receipt inspected, no fresh signing command.",
+  "pixel_controls": "Root control receipts fingerprinted only; no pixel algorithm rerun or pixel acceptance claim.",
+  "preflight_stop": "Initial checker attempt stopped before its gate execution on an extraction terminal-LF hash mismatch; corrected extraction boundary plus explicitly recorded root file-ending LF. This was not native/runtime failure and no report/guard/input was changed.",
+  "same_host_old_raw_exact_all4": true,
+  "scope": "PRIVATE one complete offline four-report native/ICC/semantics check, file hashes and metadata comparison only. No native/compiler/UI/CI/provider capture/pixel decode execution or product edits.",
+  "scripts": {
+    "analyze.py": "9f4f729caa66178a8ef2c7ee3c0c002f378a8d7d35d5379f92560a68de1cda18",
+    "check-package.py": "023a77dd0db9fd11d9c91d4e9083c15152b0eebaf44b50a8de6ba48e43f219ce"
+  },
+  "semantics_equal_both_keys": true,
+  "source_commit": "3c137f307576a44ffc58543def3cfec5b310c9d7",
+  "successful_gate_execution": "Root unchanged full gate executed once for each of13off/13on/14off/14on; all PASS.",
+  "summary_sha256": "8c65e54b5faba06cc51893425c692f74a0e2c050f9de4d5a674b3f7fdf1a55c5",
+  "tar_sha256": "2c1151e83775c0a214f3ff36e33f1160883175c8709a6a86456072c52053b014"
+}
