@@ -144,8 +144,12 @@ ready宽度900/920/920满足，但高度/恢复时序不同；所有末态捕获
 
 ## Standard PQ hero 的真实静态端点
 
-[本机13旧链证据](../Evidence/macOS13-hdr-candidate/native-pq-hero-baseline13/README.md)现已测得真实BernImage非空hero key→实际Probe/Anchor→原snapshot→原FlightView.draw，不再使用identity hero。两源body与同窗原生oracle在raw和ICC→sRGB均逐像素相同；hero固定progress0/1的sRGB fullRGB MAE却为named18.377760、custom18.385720/255，最大差164/255，各159539/230400像素不同，两phase结果相同。所有图均保留原WindowServer PNG/ICC，每phase五次连续相同raw buffer；1.970秒、前台不变、normal三项false、Metal0、原缓存/ICC/provider/identity保持。
+[本机13旧链证据](../Evidence/macOS13-hdr-candidate/native-pq-hero-baseline13/README.md)现已测得真实BernImage非空hero key→实际Probe/Anchor→原snapshot→原FlightView.draw，不再使用identity hero。两源body与同排原生oracle-top在raw和ICC→sRGB均逐像素相同；hero对同排oracle-bottom在固定progress0/1的sRGB fullRGB MAE却为named18.377760、custom18.385720/255，最大差164/255，各159539/230400像素不同，两phase结果相同。上下oracle自身仍有normalized MAE0.294106/max5的小差异；此前扩写为上下两排都exact的文字已纠正，数值报告未改。所有图均保留原WindowServer PNG/ICC，每phase五次连续相同raw buffer；1.970秒、前台不变、normal三项false、Metal0、原缓存/ICC/provider/identity保持。
 
 该AppKit hero完整区块与锁定上游逐字相同，因此这是13宿主中hero与body不同的证据，尚不能归为移植回归或认定其应改成body颜色。named也失败，不能假定只传cached-derived图已足够修复；已备的optional-display候选尚未应用产品。下一门槛为新SDK编译同一源码、同一个binary在14普通效果与13运行，再比较两宿主的body/hero差值。新增手动[采集工作流](../../.github/workflows/macos14-hero-probe.yml)只构建一次，14不重编。
 
 本轮仅静态端点，manager flight_count0/timer不存在，不声称完整flight、hide/restore、插值、retarget、High/HLG/alpha/EXIF等通过。本机SDK14.2 fixture另有已明示的gain-map编译条件及未使用时钟分支失败保护，原源码和首次失败日志均保留；远程新SDK包移除这两项适配。自有可执行文件及module cache约57.4MB逻辑文件已清理，36项归档hash和父任务独立像素复算通过。goal继续active，后续11/Objective-C/iOS仍暂缓。
+
+新增[同一binary的13/14 hero基线](../Evidence/macOS14-hero-snapshot-40080838898/README.md)已完成：build40080291082成功，首14 job仅因optional原始defaults键缺失而在应用启动前退出、PNG0；只修改该日志读取为nonfatal后，保留实际NSWorkspace normal首尾门槛，runtime-only40080838898复用原已签名binary成功，没有重编。新SDK26.2/Swift6.2.4的13两phase×六ROI在raw/normalized均逐像素等于旧SDK13；原先SDK14 fixture编译适配不再参与这份同binary证据。
+
+14自身hero也不等于body，因此不能把13hero强制等于live body当作已证实14目标。两宿主的`D=hero−body`十色块均值残差之差，MAE5.210863–5.236956、最大113.048334/255，最差cool812的R；父任务独立重算一致。14 hero跨phase还有max1/2的小差异，13各ROI跨phase不变，显示ICC/倍率/潜在余量不同，未指定唯一原因。13/14窗口分别1.612/2.499秒，normal首尾false、前台不变、Metal0、flight0/timer无、缓存不变均通过。optional-display候选未误合产品，下一步为公开ImageRenderer colorMode的限定诊断，先default control再extendedLinear；不拟合颜色或改上游14行为。新包/传输tar939623逻辑字节已清理，原始失败和成功证据分开保留；hero与整阶段继续未通过。

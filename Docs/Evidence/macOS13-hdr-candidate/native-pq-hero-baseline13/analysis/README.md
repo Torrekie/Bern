@@ -15,7 +15,9 @@
 
 所有数值为编码8-bit RGB code values（/255），不是线性光或nits。两条 flight 各有159539/230400像素与 oracle 不同；normalized 通道MAE分别为 named `[17.641402,12.651957,24.839922]`、custom `[17.640929,12.651558,24.864674]`，通道最大值均 `[164,69,106]`。
 
-两处 body 与上下两个 oracle 均逐像素相等，raw与ICC→sRGB均成立。六个ROI逐一跨 progress-0→progress-1 也全部逐像素相等，raw与normalized共12组跨phase比较。分析总计68组（各phase六ROI对上下oracle，加body对对应flight；另六ROI跨phase，分别raw/normalized），完整逐patch/逐比较指标见 `baseline-analysis/analysis.json`，全部逐ROI灰阶列均值见压缩的 `ramp-column-means.json.gz`。没有ICC哈希警告。
+两处 body 与同排 `oracle-top` 均逐像素相等，raw与ICC→sRGB均成立。上下两个 oracle 自身仍有小差异：normalized fullRGB MAE0.294106/max5、133032像素不同；patch均值MAE0.000755/max0.002747。六个ROI逐一跨 progress-0→progress-1 也全部逐像素相等，raw与normalized共12组跨phase比较。分析总计68组（各phase六ROI对上下oracle，加body对对应flight；另六ROI跨phase，分别raw/normalized），完整逐patch/逐比较指标见 `baseline-analysis/analysis.json`，全部逐ROI灰阶列均值见压缩的 `ramp-column-means.json.gz`。没有ICC哈希警告。
+
+文字勘误：首版把同排body相等错误扩写到上下两排oracle。原始analysis.json中的68组数值一直保留该差异，未改动；本次仅修正文案并刷新其清单。
 
 这是**未改的真实 snapshot(in:)→NSImage→原 BernHeroFlightView.draw 端点存在差异**的证据，尚不为差异指派唯一根因。两条 source/target 使用相同 NSImage 的固定尺寸绘制，progress0/1不等于完整 hero flight 生命周期验收；enter/leave、几何弹簧中间帧、hide/restore、retarget/reversal、动态Standard↔High、High/HLG/14、全应用均未因此通过。named也出现差异，不能据此断言只向hero传custom-derived图就足够修复。
 

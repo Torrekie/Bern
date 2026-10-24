@@ -21,7 +21,9 @@ Two original WindowServer PNGs retain their ICC. Each phase required five consec
 |Actual snapshot→FlightView, named PQ|18.3777604167|164|159539|
 |Actual snapshot→FlightView, custom cICP PQ|18.3857204861|164|159539|
 
-Progress 0 and 1 give the same result, and each of the six image regions is unchanged between phases. The body matches both oracle rows in raw RGB and normalized sRGB. Detailed color-patch/ramp measurements are in the companion offline analysis; their masks come from the existing source atlas, not inferred image boundaries.
+Progress 0 and 1 give the same result, and each of the six image regions is unchanged between phases. The body matches its same-row `oracle-top` in raw RGB and normalized sRGB. The two oracle rows themselves differ slightly: normalized fullRGB MAE0.294106/max5; their patch-mean MAE is0.000755/max0.002747. Hero values in the table compare with its same-row `oracle-bottom`. Detailed color-patch/ramp measurements are in the companion offline analysis; their masks come from the existing source atlas, not inferred image boundaries.
+
+Correction: the first version of this README incorrectly expanded same-row body equality to both oracle rows. The raw reports and offline numerical JSON always retained the cross-row difference and are unchanged; this correction narrows the prose to the measured result.
 
 The actual snapshot returns `NSCGImageSnapshotRep`, 640×360, 16 bits per sample, public color-space label `NSCalibratedRGBColorSpace`. The driver does not request `cgImage(forProposedRect:)`, TIFF data, or a bitmap conversion from NSImage. The underlying ImageRenderer CGImage metadata is therefore unobserved; this public label alone does not specify its transfer function or prove a cause.
 
