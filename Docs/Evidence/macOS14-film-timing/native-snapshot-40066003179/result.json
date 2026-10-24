@@ -1,0 +1,573 @@
+{
+  "accessibility_trusted" : true,
+  "activation_requests" : [
+    {
+      "accepted" : true,
+      "after" : {
+        "front_bundle" : "dev.bern.gallery",
+        "front_pid" : 4795,
+        "own_pid" : 4795,
+        "uptime" : 357.85145416666671
+      },
+      "before" : {
+        "front_bundle" : "com.apple.finder",
+        "front_pid" : 331,
+        "own_pid" : 4795,
+        "uptime" : 356.61285100000003
+      },
+      "options" : [
+        "activateAllWindows"
+      ],
+      "pid" : 4795,
+      "samples" : [
+        {
+          "front_bundle" : "com.apple.finder",
+          "front_pid" : 331,
+          "own_pid" : 4795,
+          "uptime" : 357.65012133333335
+        },
+        {
+          "front_bundle" : "dev.bern.gallery",
+          "front_pid" : 4795,
+          "own_pid" : 4795,
+          "uptime" : 357.85067745833334
+        }
+      ],
+      "scenario" : "direct"
+    }
+  ],
+  "appearance_profile" : "normal",
+  "cases" : [
+    {
+      "controls" : [
+        {
+          "enabled" : true,
+          "label" : "",
+          "reason" : null,
+          "role" : "adaptive",
+          "target" : "film.film_controls",
+          "value" : "medium",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Drag up or down",
+          "reason" : null,
+          "role" : "swipe",
+          "target" : "film.level",
+          "value" : "0.5",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "First",
+          "reason" : null,
+          "role" : "button",
+          "target" : "film.to_first",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Last",
+          "reason" : null,
+          "role" : "button",
+          "target" : "film.to_last",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "About",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.about",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Choose Poster…",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.choose_poster",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Clear Favorites",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.clear_favorites",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Close",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.close_details",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Crimson",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.crimson",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Dark",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.dark",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Search Patterns",
+          "reason" : null,
+          "role" : "search",
+          "target" : "main_window.find",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Follow the System",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.follow_system",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Light",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.light",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Look",
+          "reason" : null,
+          "role" : "menu",
+          "target" : "main_window.look",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Neon",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.neon",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Open Video",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.open_file",
+          "value" : "",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Film",
+          "reason" : null,
+          "role" : "sidebar",
+          "target" : "main_window.pages",
+          "value" : "Film",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Search “check”",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.search_check",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Delete a Letter",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.search_delete",
+          "value" : null,
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Details",
+          "reason" : null,
+          "role" : "switch",
+          "target" : "main_window.show_details",
+          "value" : "false",
+          "window" : "main#1"
+        },
+        {
+          "enabled" : true,
+          "label" : "Ultramarine",
+          "reason" : null,
+          "role" : "button",
+          "target" : "main_window.ultramarine",
+          "value" : null,
+          "window" : "main#1"
+        }
+      ],
+      "film" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 158
+        },
+        "elapsed_seconds" : 0.8284053750000453,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "direct-film.png",
+        "samples" : 5
+      },
+      "film_after_trace" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 158
+        },
+        "elapsed_seconds" : 0.72973541666664232,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "direct-film-after-trace.png",
+        "samples" : 5
+      },
+      "first_second_ax" : [
+        {
+          "elements" : [
+
+          ],
+          "end_uptime" : 362.65857062500004,
+          "matching_elements_missing" : true,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 0,
+          "start_uptime" : 362.34001812500003,
+          "truncated" : true,
+          "visited" : 1
+        },
+        {
+          "elements" : [
+
+          ],
+          "end_uptime" : 362.94212412500002,
+          "matching_elements_missing" : true,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 0,
+          "start_uptime" : 362.80724516666669,
+          "truncated" : true,
+          "visited" : 5
+        },
+        {
+          "elements" : [
+            {
+              "frame" : {
+                "height" : 616,
+                "width" : 920,
+                "x" : 510,
+                "y" : 210
+              },
+              "role" : "AXSplitGroup",
+              "text" : "",
+              "text_attribute" : "missing"
+            }
+          ],
+          "end_uptime" : 363.25394675000001,
+          "matching_elements_missing" : false,
+          "pattern_label_count" : 0,
+          "scroll_area_count" : 0,
+          "start_uptime" : 363.11958891666671,
+          "truncated" : true,
+          "visited" : 24
+        }
+      ],
+      "internal_trace" : "scroll-4795.json",
+      "ipc_dir" : "\/tmp\/bern-film-4794-direct",
+      "patterns" : {
+        "bounds_points" : {
+          "Height" : 668,
+          "Width" : 920,
+          "X" : 510,
+          "Y" : 158
+        },
+        "elapsed_seconds" : 1.1674204999999915,
+        "equal_comparisons" : 4,
+        "pixels" : [
+          920,
+          668
+        ],
+        "png" : "direct-patterns.png",
+        "samples" : 6
+      },
+      "pid" : 4795,
+      "scenario" : "direct",
+      "select_start_uptime" : 362.33526725000002,
+      "session" : "8cd65d7212bb00-ui",
+      "settled_ax" : {
+        "elements" : [
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 920,
+              "x" : 510,
+              "y" : 210
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 580,
+              "width" : 210,
+              "x" : 510,
+              "y" : 210
+            },
+            "role" : "AXScrollArea",
+            "text" : "",
+            "text_attribute" : "missing"
+          },
+          {
+            "frame" : {
+              "height" : 616,
+              "width" : 709,
+              "x" : 721,
+              "y" : 210
+            },
+            "role" : "AXSplitGroup",
+            "text" : "",
+            "text_attribute" : "missing"
+          }
+        ],
+        "end_uptime" : 364.38298170833338,
+        "matching_elements_missing" : false,
+        "pattern_label_count" : 0,
+        "scroll_area_count" : 1,
+        "start_uptime" : 364.25979950000004,
+        "truncated" : true,
+        "visited" : 108
+      }
+    }
+  ],
+  "commands" : [
+    {
+      "arguments" : [
+        "sessions"
+      ],
+      "end_uptime" : 356.18313858333335,
+      "start_uptime" : 356.09836195833333,
+      "status" : 3,
+      "stderr" : "001-stderr.txt",
+      "stdout" : "001-stdout.json"
+    },
+    {
+      "arguments" : [
+        "sessions"
+      ],
+      "end_uptime" : 356.60522470833337,
+      "start_uptime" : 356.42626008333337,
+      "status" : 0,
+      "stderr" : "002-stderr.txt",
+      "stdout" : "002-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "end_uptime" : 359.78831570833336,
+      "start_uptime" : 357.85315100000003,
+      "status" : 0,
+      "stderr" : "003-stderr.txt",
+      "stdout" : "003-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 360.1758872916667,
+      "start_uptime" : 359.789201875,
+      "status" : 0,
+      "stderr" : "004-stderr.txt",
+      "stdout" : "004-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "ui",
+        "activate",
+        "--target",
+        "main_window.light"
+      ],
+      "end_uptime" : 360.35932341666671,
+      "start_uptime" : 360.17828137500004,
+      "status" : 0,
+      "stderr" : "005-stderr.txt",
+      "stdout" : "005-stdout.json"
+    },
+    {
+      "arguments" : [
+        "state"
+      ],
+      "end_uptime" : 360.53903833333334,
+      "start_uptime" : 360.3605825416667,
+      "status" : 0,
+      "stderr" : "006-stderr.txt",
+      "stdout" : "006-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "window",
+        "list"
+      ],
+      "end_uptime" : 360.71759691666671,
+      "start_uptime" : 360.54091150000005,
+      "status" : 0,
+      "stderr" : "007-stderr.txt",
+      "stdout" : "007-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "end_uptime" : 360.81271666666669,
+      "start_uptime" : 360.71841562500003,
+      "status" : 0,
+      "stderr" : "008-stderr.txt",
+      "stdout" : "008-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 360.99185675000001,
+      "start_uptime" : 360.81389420833335,
+      "status" : 0,
+      "stderr" : "009-stderr.txt",
+      "stdout" : "009-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 361.16684025000001,
+      "start_uptime" : 360.99261479166671,
+      "status" : 0,
+      "stderr" : "010-stderr.txt",
+      "stdout" : "010-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Film"
+      ],
+      "end_uptime" : 363.42840150000001,
+      "start_uptime" : 362.33702154166667,
+      "status" : 0,
+      "stderr" : "011-stderr.txt",
+      "stdout" : "011-stdout.json"
+    },
+    {
+      "arguments" : [
+        "--session",
+        "8cd65d7212bb00-ui",
+        "ui",
+        "inspect"
+      ],
+      "end_uptime" : 364.51054208333335,
+      "start_uptime" : 364.38353237500002,
+      "status" : 0,
+      "stderr" : "012-stderr.txt",
+      "stdout" : "012-stdout.json"
+    }
+  ],
+  "displays" : [
+    {
+      "frame_points" : "{{0, 0}, {1920, 1080}}",
+      "scale" : 1
+    }
+  ],
+  "expected_os_major" : 14,
+  "harness_sha" : "1c4ef533cc62bb57ef73cfd98df13434bd40b304",
+  "inactive_capture_samples" : [
+
+  ],
+  "ipc_directories" : [
+    "\/tmp\/bern-film-4794-direct"
+  ],
+  "observation_contract" : "Original active visual capture contract.",
+  "observation_mode" : "active",
+  "os" : "Version 14.8.9 (Build 23J631)",
+  "requested_scenario" : "direct",
+  "sampling_scope" : "First second after Film select CLI launch, including mounting latency; actual AX-walk timestamps, no assumed sampling frequency.",
+  "scope" : "Light only; each selected scenario uses a fresh process, exact app. AX frames are global screen points. No draft\/target\/nearest introspection; visible labels do not prove a binding write.",
+  "screen_recording_preflight" : true,
+  "source_sha" : "744e3168abf388a6bd881a6eb6f00bc6a4542123",
+  "success" : true,
+  "system_preferences" : {
+    "increase_contrast" : false,
+    "reduce_motion" : false,
+    "reduce_transparency" : false
+  },
+  "variant" : "port"
+}

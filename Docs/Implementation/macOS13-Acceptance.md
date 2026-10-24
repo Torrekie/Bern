@@ -17,7 +17,7 @@
 | 14 Frame 原生对照 | f9与固定上游在同一14机器中的视频区/按钮/弹出层/滑块几何一致，Frame detail像素一致，独立音量popup PNG文件相同 | 仅浅色；主窗侧栏选中行仍5284像素灰/蓝差异；13对应验收及物理输入不由此通过 |
 | 原生交互 | 通知 AXPress 改变会话草稿；音量 AXIncrement 从 50 到 60，只产生一次引擎提交；Command-Comma 打开原生 Settings scene | 这些不是鼠标拖动验证；CLI 状态与原生 AX 操作分别记录 |
 
-最新完整应用源码为 `f9e08b1d55bed4b9d880b19934abe48281057bb3`，已包含HDR路由/系统SDR修复、14原生Pinch路径恢复和本轮音量PopoverButton系统按钮复用。两项CI均通过：[Showcase](https://github.com/Torrekie/Bern/actions/runs/39991409277)、[Gallery](https://github.com/Torrekie/Bern/actions/runs/39991406873)，环境为Swift6.2.4、SDK26.2、Rust1.99。两份产物均已在本机13.7.8启动、建立唯一会话并完成window/control inspect；实际Gallery通过原绑定进入Frame、打开音量弹出层并将草稿0.7改为0.55。随后停止自有进程，检查前后的前台应用一致。原始记录见[Showcase](../Evidence/macOS13-popover/full-app/showcase/report.json)和[Gallery](../Evidence/macOS13-popover/full-app/gallery/report.json)。组件内native action与关闭对照见[独立组件记录](../Evidence/macOS13-popover/component/README.md)。整应用绑定操作不替代真实鼠标或14/13 Frame视觉对照。这轮没有重拍全部视觉/交互样本，不能把下述0f/46截图改标为f9。
+目前保留且已在本机启动验证的完整应用来自 `f9e08b1d55bed4b9d880b19934abe48281057bb3`，已包含HDR路由/系统SDR修复、14原生Pinch路径恢复和本轮音量PopoverButton系统按钮复用。两项CI均通过：[Showcase](https://github.com/Torrekie/Bern/actions/runs/39991409277)、[Gallery](https://github.com/Torrekie/Bern/actions/runs/39991406873)，环境为Swift6.2.4、SDK26.2、Rust1.99。两份产物均已在本机13.7.8启动、建立唯一会话并完成window/control inspect；实际Gallery通过原绑定进入Frame、打开音量弹出层并将草稿0.7改为0.55。随后停止自有进程，检查前后的前台应用一致。原始记录见[Showcase](../Evidence/macOS13-popover/full-app/showcase/report.json)和[Gallery](../Evidence/macOS13-popover/full-app/gallery/report.json)。组件内native action与关闭对照见[独立组件记录](../Evidence/macOS13-popover/component/README.md)。整应用绑定操作不替代真实鼠标或14/13 Frame视觉对照。这轮没有重拍全部视觉/交互样本，不能把下述0f/46截图改标为f9。
 
 此前`5226454`两CI及启动检查仍保留为独立历史证据：[Showcase](../Evidence/macOS13-latest-build/showcase/report.json)、[Gallery](../Evidence/macOS13-latest-build/gallery/report.json)。
 
@@ -56,7 +56,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 - 13 Inspector 复用 `HSplitView`，内容仍为原 SwiftUI；滚动仍为系统 SwiftUI ScrollView。居中边距使用真实SwiftUI内容padding，并按滚动视图作用域隔离，避免直接改变NSScrollView insets造成LazyHStack原生/绘制坐标分离。相位使用14实窗校准的有效viewport及easeInOut Bezier曲线。
 - 缺失的按键监听只作用于当前窗口和焦点，不全局吞键；文本编辑与输入法仍需单独实测。
 - 普通无显式尺寸的圆形 IconButton 复用 `NSButton`。本轮生成器为普通图标PopoverButton选择同一桥接，并显式转发快捷键；手写helper默认、显式宽高、绘制外观和toolbar不请求此桥接，bar/group由原有组件保留原路径。toolbar、bar/group、显式宽高、plain/prominent、custom look、cancel 保留原路径；destructive、enabled、快捷键、AX ID 与最新 action 转接系统属性。
-- PQ/HLG 使用系统 MTKView/CoreImage/EDR 图层，严格识别标准cICP编码后才补足旧系统的色空间识别；SDR转换由Core Image完成，无Metal时复用NSImageView。请求HDR看潜在余量，绘制看当前余量，并通过系统屏幕通知更新，避免以启动前的1永久关闭HDR。普通SDR仍用SwiftUI Image；gain-map能力分支保持原逻辑。
+- 13的PQ/HLG High及HLG Standard使用系统MTKView/CoreImage/EDR图层，无Metal时复用NSImageView。严格识别标准cICP编码后才补足旧系统的色空间识别；新9dd候选只将explicit Standard/original/PQ改为复用现SwiftUI Image，并在decode缓存显示用CGImage色空间copy，原图/ICC保留。该候选的完整构建/实际BernImage分支切换验收仍单独记录。请求HDR看潜在余量，绘制看当前余量，并通过系统屏幕通知更新，避免以启动前的1永久关闭HDR。普通SDR仍用SwiftUI Image；gain-map能力分支保持原逻辑。
 - 显示时钟在 13 使用 CoreVideo 垂直同步；14 保留原生显示链接，不以固定 Timer 代替。
 
 ## 尚不能通过的项目
@@ -65,7 +65,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 
 | 项目 | 当前证据与后续条件 |
 |---|---|
-| Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。AX几何并非NSClipView bounds，内部target/nearest仍未观测，不能断言3写回成4。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
+| Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。新增整应用trace已记录14的target始终3，nearest变4，quiet释放后由Bern follow明确写position3→4；13后台trace则nearest保持3。14原生只读快照确认clip709、insets左右234.5、document1638；13使用真实padding。首次边距/定位差异已缩小，具体修复尚未通过；不把它称native setter写4或修改默认值。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
 | 未覆盖控件变体 | `f9e08b1`已让生成器选中的普通volume PopoverButton复用系统圆形NSButton，独立native action检查通过（单次触发、快捷键、disabled、外部打开和WindowServer alpha=0的关闭，与原Button配对一致）；整应用该版本构建、本机启动及Frame绑定打开/编辑均通过；14浅色Frame detail与原生popup已完成f9/上游配对：内容像素与几何一致，主窗侧栏仍有选中配色差异；13对应视觉仍待。icon风格Menu、显式尺寸等仍有独立路径，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
@@ -88,6 +88,8 @@ GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的�
 新增[当前产品Standard彩色对照](../Evidence/macOS13-hdr-candidate/standard-color-e06/validation.json)确认：cICP规范化后的自定义ICC与命名PQ在现有产品helper中输出一致；但对13原生SwiftUI，10色块的通道均值MAE约1.087/255、最大差约4.759/255，不能只凭灰阶认定色彩等同。[公开原生组件比较](../Evidence/macOS13-hdr-candidate/native-sdr-components13/validation.json)中，NSImageView在真实Hd1与13原生SwiftUI整图逐像素相同；CGContext 8位转换仍有约5级色块差。早期[动态余量检查](../Evidence/macOS13-hdr-candidate/native-sdr-headroom13/validation.json)只完成初始Hd1；本轮[缩小后的完整动态采样](../Evidence/macOS13-hdr-candidate/native-standard-dynamic13/validation.json)已实际完成current1→2→1，20次trajectory、27次GPU完成/读回、76次真实屏幕通知、6张截图。两原生图像的12个ROI均逐像素相同，并复现旧静态基线；窗口3.218秒、未激活、前台不变。这仅证明该PQ彩色atlas在此13环境的截图稳定，不扩充为HLG、EXIF、alpha或物理亮度。
 
 [14普通效果彩色基线](../Evidence/macOS14-hdr-color-normal/validation.json)已取得：同一binary在14的custom ICC与named PQ均识别为BT.2100 PQ并逐像素相同；13需要严格cICP规范化。13原生named PQ对14的10色块MAE约1.294/255，最大约26.515；现产品Standard helper更远。两个宿主的显示器/ICC/缩放也不同，不能单因归为系统版本，原生候选尚未进入产品。
+
+[严格PQ派生显示验证](../Evidence/macOS13-hdr-candidate/native-pq-canonical-copy13/README.md)现已完成：原file/ICC/provider/布局保留；派生custom和native named源的raw布局/字节相同。bare SwiftUI双列在actual1→2→1的12个ROI、与旧native13基线均逐像素相同。基于此，产品[9dd99b7](https://github.com/Torrekie/Bern/commit/9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0)只替换mac13 explicit Standard/original/PQ路径，复用已有standardImage的方向/fit/clip链；High/HLG/14/template、原缓存/平均色不改。独立只读审查通过；[完整Showcase CI40066468884](https://github.com/Torrekie/Bern/actions/runs/40066468884)及actual BernImage分支切换验收是另一门槛，不能用bareImage结果代替。hero快照仍使用原图，尚未纳入本次显示修复。
 
 ## 恢复后的14普通效果采集
 

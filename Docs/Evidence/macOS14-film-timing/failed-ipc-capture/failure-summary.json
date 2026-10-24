@@ -1,0 +1,37 @@
+{
+  "run_id": 40061845578,
+  "run_conclusion": "failure",
+  "artifact_id": 12548011112,
+  "artifact_name": "macos14-film-upstream",
+  "github_reported_artifact_digest": "sha256:d2d6d8a529a779196779d7c5019680b4cad481a05378e64be9ae4e3ef8c43ed6",
+  "harness_sha": "9ff20becf678957f3f4b9765bb9cabac29e13cc6",
+  "source_sha": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+  "build_run": 39959549054,
+  "measurement_status": "No Film measurement; startup/session discovery failed before any scenario capture",
+  "failure": "No unique UI session",
+  "cases": 0,
+  "pngs": 0,
+  "session_attempts": 81,
+  "status_counts": {
+    "3": 81
+  },
+  "discovery_seconds": 15.007586625000016,
+  "normal_profile": {
+    "increase_contrast": false,
+    "reduce_motion": false,
+    "reduce_transparency": false
+  },
+  "ax_trusted": true,
+  "screen_recording": true,
+  "deterministic_observer_path_error": {
+    "base_from_workflow": "/Users/runner/work/Bern/Bern/evidence/runtime/ipc-immediate",
+    "base_utf8_bytes": 59,
+    "transport_suffix_format": "/bern-<16hex>/<14hex>.sock",
+    "suffix_bytes": 42,
+    "total_bytes": 101,
+    "transport_maximum_bytes": 100,
+    "source_evidence": "ffb crates/bern-transport-ipc/src/lib.rs Server::bind rejects >100; socket_dir appends bern fingerprint; bern-command new_engine_id uses 8+4+2 hex digits"
+  },
+  "minimal_correction": "Only observer uses /tmp/bern-film-<pid>-<scenario>; actual paths recorded and each scenario defer removes it; no product or initial-position changes",
+  "interpretation": "Does not distinguish Inspector timing/contentMargins/scrollPosition and is not a Film identity result."
+}

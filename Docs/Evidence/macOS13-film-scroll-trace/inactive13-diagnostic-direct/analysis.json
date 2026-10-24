@@ -1,0 +1,559 @@
+{
+  "source_sha": "e4c01e4df31e7e9a5380285cb4fe8fd01a90b985",
+  "harness_sha": "a332bd41aebdf2ecab0d0b15438a0a19d59c416a",
+  "build_run": 40064305202,
+  "observation_mode": "inactive13",
+  "not_active_visual_acceptance": true,
+  "largest_observed_image": {
+    "name": "Madras",
+    "frame": {
+      "height": 151.20000000000005,
+      "width": 268.80000000000007,
+      "x": 701.1,
+      "y": 146.46000000000004
+    },
+    "local_center_x": 565.5
+  },
+  "images": [
+    {
+      "name": "Gingham",
+      "frame": {
+        "height": 135,
+        "width": 240,
+        "x": 175.5,
+        "y": 156
+      },
+      "local_center_x": 25.5
+    },
+    {
+      "name": "Tartan",
+      "frame": {
+        "height": 135,
+        "width": 240,
+        "x": 445.5,
+        "y": 156
+      },
+      "local_center_x": 295.5
+    },
+    {
+      "name": "Madras",
+      "frame": {
+        "height": 151.20000000000005,
+        "width": 268.80000000000007,
+        "x": 701.1,
+        "y": 146.46000000000004
+      },
+      "local_center_x": 565.5
+    },
+    {
+      "name": "Glen",
+      "frame": {
+        "height": 135,
+        "width": 240,
+        "x": 985.5,
+        "y": 156
+      },
+      "local_center_x": 835.5
+    },
+    {
+      "name": "Houndstooth",
+      "frame": {
+        "height": 135,
+        "width": 240,
+        "x": 1255.5,
+        "y": 156
+      },
+      "local_center_x": 1105.5
+    }
+  ],
+  "ax_truncated": true,
+  "capture_samples": 27,
+  "front_pid_set": [
+    35793
+  ],
+  "front_bundle_set": [
+    "com.apple.iphonesimulator"
+  ],
+  "window_id_set": [
+    9675
+  ],
+  "alpha_set": [
+    1
+  ],
+  "trace": {
+    "file": "scroll-64326.json",
+    "sha256": "8dcd17598184f7f0739a023a3aaca792f8d8dc19ccca5c8bf5d0829b8b713e91",
+    "count": 94,
+    "dropped": 0,
+    "scopes": [
+      {
+        "id": "4BE4A492-69BA-40FF-AB1C-4793D09C3791",
+        "kind": "Gallery.BernSnapItems"
+      },
+      {
+        "id": "EC11C9D0-DD03-4ACA-9BD7-3DA61FC0A59E",
+        "kind": "Gallery.BernSnapLargest"
+      },
+      {
+        "id": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "kind": "Gallery.BernScrollItems"
+      }
+    ],
+    "selected_events": [
+      {
+        "event": "snap.body",
+        "fields": {
+          "center": true,
+          "horizontal": true,
+          "item": 0,
+          "largest_instance": "EC11C9D0-DD03-4ACA-9BD7-3DA61FC0A59E",
+          "margin": 0,
+          "viewport": 0
+        },
+        "scope": "4BE4A492-69BA-40FF-AB1C-4793D09C3791",
+        "sequence": 0,
+        "uptime": 220557.6926415,
+        "seconds_after_expect": -0.02578300001914613
+      },
+      {
+        "event": "settle.computed",
+        "fields": {
+          "found": null,
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": null,
+            "followed": null,
+            "frame_count": 0,
+            "nearest": null,
+            "nudges": false,
+            "settling": false,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 0
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 3,
+        "uptime": 220557.71789987502,
+        "seconds_after_expect": -0.0005246250075288117
+      },
+      {
+        "event": "target.assign.appear",
+        "fields": {
+          "new": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "old": null,
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 1
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 35,
+        "uptime": 220557.71842579168,
+        "seconds_after_expect": 1.2916570995002985e-06
+      },
+      {
+        "event": "snap.body",
+        "fields": {
+          "center": true,
+          "horizontal": true,
+          "item": 240,
+          "largest_instance": "EC11C9D0-DD03-4ACA-9BD7-3DA61FC0A59E",
+          "margin": 234.5,
+          "viewport": 709
+        },
+        "scope": "4BE4A492-69BA-40FF-AB1C-4793D09C3791",
+        "sequence": 37,
+        "uptime": 220557.719128875,
+        "seconds_after_expect": 0.000704374979250133
+      },
+      {
+        "event": "legacy.margin",
+        "fields": {
+          "new": 234.5,
+          "old": 0,
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 1
+          },
+          "target": {
+            "type": "Swift.Int64",
+            "value": "3"
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 38,
+        "uptime": 220557.73075500003,
+        "seconds_after_expect": 0.012330500001553446
+      },
+      {
+        "event": "legacy.scroll-to",
+        "fields": {
+          "legacyPositioned": false,
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 2
+          },
+          "wanted": {
+            "type": "Swift.Int64",
+            "value": "3"
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 64,
+        "uptime": 220557.731857875,
+        "seconds_after_expect": 0.01343337498838082
+      },
+      {
+        "event": "settle.computed",
+        "fields": {
+          "found": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": false,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 3
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 82,
+        "uptime": 220557.79117270836,
+        "seconds_after_expect": 0.07274820833117701
+      },
+      {
+        "event": "wait.valid-wake",
+        "fields": {
+          "current": 3,
+          "key": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "nudges": false,
+            "settling": false,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 3
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 86,
+        "uptime": 220557.94360458336,
+        "seconds_after_expect": 0.22518008333281614
+      },
+      {
+        "event": "wait.stopped",
+        "fields": {
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": null,
+            "followed": null,
+            "frame_count": 6,
+            "nearest": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "nudges": false,
+            "settling": false,
+            "stops": 1,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 3
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 87,
+        "uptime": 220557.94364808334,
+        "seconds_after_expect": 0.22522358331480063
+      },
+      {
+        "event": "target.assign.release",
+        "fields": {
+          "new": null,
+          "old": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": null,
+            "followed": null,
+            "frame_count": 6,
+            "nearest": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "nudges": false,
+            "settling": false,
+            "stops": 1,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 3
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 88,
+        "uptime": 220557.94434966668,
+        "seconds_after_expect": 0.22592516665463336
+      }
+    ],
+    "id3_reports": [
+      {
+        "event": "report.input",
+        "fields": {
+          "frame": {
+            "height": 159,
+            "width": 240,
+            "x": 564,
+            "y": 24
+          },
+          "key": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": null,
+            "followed": null,
+            "frame_count": 3,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 0
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 18,
+        "uptime": 220557.71817825,
+        "seconds_after_expect": -0.00024625001242384315
+      },
+      {
+        "event": "report.input",
+        "fields": {
+          "frame": {
+            "height": 159,
+            "width": 240,
+            "x": 798.5,
+            "y": 24
+          },
+          "key": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 1
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 51,
+        "uptime": 220557.73178920834,
+        "seconds_after_expect": 0.013364708313019946
+      },
+      {
+        "event": "report.input",
+        "fields": {
+          "frame": {
+            "height": 159,
+            "width": 240,
+            "x": 234.5,
+            "y": 24
+          },
+          "key": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 2
+          }
+        },
+        "scope": "FF79A559-1200-4F65-8560-67A12EF8C330",
+        "sequence": 73,
+        "uptime": 220557.74639816667,
+        "seconds_after_expect": 0.02797366664162837
+      }
+    ]
+  },
+  "png_sha256": {
+    "direct-film-after-trace.png": "19aaa3e197b5a3a4688ddbadc37f9ef555048593322d2e7a0a982416614bd284",
+    "direct-film.png": "19aaa3e197b5a3a4688ddbadc37f9ef555048593322d2e7a0a982416614bd284",
+    "direct-patterns.png": "e28950d93e976b69773ef1118e903b76638f6be75ee79987aca55b0159ac9318"
+  },
+  "limits": [
+    "Own bundle identifier/ad-hoc signature differ from exact build; executable section hashes preserved, full executable hash differs.",
+    "Inactive13/2x/local profile compared to active14/1x/runner; not same-condition visual acceptance.",
+    "All27 recorded pre-capture samples inactive; no atomic post-capture focus/window check, so not proof of uninterrupted inactivity during each capture gap.",
+    "AX settled traversal truncated; unobserved items remain unobserved. AXScrollArea dimensions are not native NSClipView bounds.",
+    "Callbacks/explicit writes only, not all native Binding setters; logger can alter timing."
+  ]
+}

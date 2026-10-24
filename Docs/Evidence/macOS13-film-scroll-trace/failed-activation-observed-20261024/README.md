@@ -1,0 +1,3 @@
+# Observed local13 activation failure; no Film measurement
+
+Parent executed one new unique-bundle attempt with observer bba8554. The single activation request returned false; all38 samples across about2.05seconds and the later capture check show frontmost com.apple.MobileSMS PID437, ownGalleryPID60700. This proves the requested activation did not deliver, but does not identify its system cause. Failure is again before initial Patterns PNG/Film select; cases0, no PNG/internal trace. No repeat activation or preference/TCC changes are in the observer. The source and all original result/application/command logs are unchanged. No further UI retry by this agent.

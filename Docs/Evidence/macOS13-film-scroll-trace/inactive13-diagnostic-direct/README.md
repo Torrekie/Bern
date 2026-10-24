@@ -1,0 +1,5 @@
+# Successful inactive13 internal diagnosis; not active visual acceptance
+
+Parent ran one explicit inactive13 observer a332bd4 against e4c build40064305202. No activation/focus-restore requests;27 pre-capture samples all record frontmost Simulator35793, own64326, CGWindow9675/alpha1. Raw buffers and same window geometry passed four equal comparisons for Patterns/Film/after-trace. This is a separate background contract, not an active visual acceptance or a proof of inactivity throughout capture gaps.
+
+Madras is largest: AXImage localcenter565.5/width268.8; sidebar210/detail709. This reproduces the previously observed13 card identity/center/width, within oldPNG raster bounds; it does not establish matching materials/colors or all app geometry. Trace94events/drop0/single position scope: initialtarget3,margin234.5, Reader margin-reapply then targetscrollTo, finalid3x234.5,nearest3, quietrelease to nil, nofollow write4. Exact code sections are preserved in the uniquely re-identified/ad-hoc-signed local bundle; full executable bytes and bundle environment differ. See isolation-inactive13-provenance.json.

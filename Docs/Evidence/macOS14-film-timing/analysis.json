@@ -1,0 +1,849 @@
+{
+  "run_id": 40062194628,
+  "conclusion": "success",
+  "artifact_id": 12547582320,
+  "github_reported_artifact_digest": "sha256:b392bfb04f8aced75bf689ca2e7bbf73b934c811a2a55a3a91de330b83cec4f2",
+  "source_sha": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+  "harness_sha": "2aa4e63cb96b413de7d0113faf7f512f5e5df7a6",
+  "build_run": 39959549054,
+  "normal_profile": {
+    "increase_contrast": false,
+    "reduce_motion": false,
+    "reduce_transparency": false
+  },
+  "scope": "Read-only original PNG and public AX analysis. No product changes/UI/dispatch. Card centers are AXImage rect centers after effects, in window-local points; not internal draft/target/nearest.",
+  "cases": [
+    {
+      "scenario": "immediate",
+      "pid": 1266,
+      "session": "5bc2209904f200-ui",
+      "outer_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "film_png": "immediate-film.png",
+      "film_png_sha256": "0e494f5ea4dfa701466d52512e564d323850d09d40d24a13f259f02d5e649ae7",
+      "max_scaled_card": "Glen",
+      "image_frames_local_points": [
+        {
+          "name": "Gingham",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": -364,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": -244.0
+        },
+        {
+          "name": "Tartan",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": -94,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 26.0
+        },
+        {
+          "name": "Madras",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 176,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 296.0
+        },
+        {
+          "name": "Glen",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 431.60012359619145,
+          "y": 66.46008188247674,
+          "width": 268.7997528076171,
+          "height": 151.19986095428467,
+          "center_x": 566.0
+        },
+        {
+          "name": "Houndstooth",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 716,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 836.0
+        },
+        {
+          "name": "Windowpane",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 986,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 1106.0
+        }
+      ],
+      "closed_wait_seconds": 4.291666670042105e-06,
+      "raw_stable_equal_comparisons": 4,
+      "first_second_timeline": [
+        {
+          "start_seconds_after_select": 0.001455291666658809,
+          "end_seconds_after_select": 0.22412004166666577,
+          "truncated": true,
+          "axes": [],
+          "image_names": []
+        },
+        {
+          "start_seconds_after_select": 0.32629229166666107,
+          "end_seconds_after_select": 0.4608187499999872,
+          "truncated": true,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            }
+          ],
+          "image_names": []
+        },
+        {
+          "start_seconds_after_select": 0.5658920416666575,
+          "end_seconds_after_select": 0.6165984583333284,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.7109328333333309,
+          "end_seconds_after_select": 0.7727234166666648,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.8724779583333202,
+          "end_seconds_after_select": 0.9359149166666612,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "wait",
+      "pid": 1373,
+      "session": "26fafaa3055d00-ui",
+      "outer_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "film_png": "wait-film.png",
+      "film_png_sha256": "11aca852e8bda60e98d9079171932efd3d876891d1613a8c4fb3053cb5896351",
+      "max_scaled_card": "Glen",
+      "image_frames_local_points": [
+        {
+          "name": "Gingham",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": -329,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": -209.0
+        },
+        {
+          "name": "Tartan",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": -59,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 61.0
+        },
+        {
+          "name": "Madras",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 210.9855667114258,
+          "y": 75.99043794631962,
+          "width": 240.0288665771484,
+          "height": 135.01623744964604,
+          "center_x": 331.0
+        },
+        {
+          "name": "Glen",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 467.2326065063477,
+          "y": 66.87910181045527,
+          "width": 267.53478698730476,
+          "height": 150.48831768035888,
+          "center_x": 601.0
+        },
+        {
+          "name": "Houndstooth",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 751,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 871.0
+        },
+        {
+          "name": "Windowpane",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 1021,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 1141.0
+        }
+      ],
+      "closed_wait_seconds": 2.224603541666667,
+      "raw_stable_equal_comparisons": 4,
+      "first_second_timeline": [
+        {
+          "start_seconds_after_select": 0.0010762916666635647,
+          "end_seconds_after_select": 0.12279049999999359,
+          "truncated": true,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            }
+          ],
+          "image_names": []
+        },
+        {
+          "start_seconds_after_select": 0.22471370833333992,
+          "end_seconds_after_select": 0.2912763333333288,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.39030091666666067,
+          "end_seconds_after_select": 0.4466178333333346,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.5102802499999939,
+          "end_seconds_after_select": 0.5620878333333366,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.655260416666664,
+          "end_seconds_after_select": 0.7042610000000025,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.8065157083333361,
+          "end_seconds_after_select": 0.8566059999999993,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.9404278333333309,
+          "end_seconds_after_select": 0.986638208333332,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "direct",
+      "pid": 1429,
+      "session": "985727f5059500-ui",
+      "outer_points": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 54
+      },
+      "film_png": "direct-film.png",
+      "film_png_sha256": "11aca852e8bda60e98d9079171932efd3d876891d1613a8c4fb3053cb5896351",
+      "max_scaled_card": "Glen",
+      "image_frames_local_points": [
+        {
+          "name": "Gingham",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": -329,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": -209.0
+        },
+        {
+          "name": "Tartan",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": -59,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 61.0
+        },
+        {
+          "name": "Madras",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 210.9855667114258,
+          "y": 75.99043794631962,
+          "width": 240.0288665771484,
+          "height": 135.01623744964604,
+          "center_x": 331.0
+        },
+        {
+          "name": "Glen",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 467.2326065063477,
+          "y": 66.87910181045527,
+          "width": 267.53478698730476,
+          "height": 150.48831768035888,
+          "center_x": 601.0
+        },
+        {
+          "name": "Houndstooth",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 751,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 871.0
+        },
+        {
+          "name": "Windowpane",
+          "role": "AXImage",
+          "attribute": "AXDescription",
+          "x": 1021,
+          "y": 76,
+          "width": 240,
+          "height": 135,
+          "center_x": 1141.0
+        }
+      ],
+      "closed_wait_seconds": null,
+      "raw_stable_equal_comparisons": 4,
+      "first_second_timeline": [
+        {
+          "start_seconds_after_select": 0.0020021250000041846,
+          "end_seconds_after_select": 0.1676936249999983,
+          "truncated": true,
+          "axes": [],
+          "image_names": []
+        },
+        {
+          "start_seconds_after_select": 0.26290679166666564,
+          "end_seconds_after_select": 0.38680374999999856,
+          "truncated": true,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            }
+          ],
+          "image_names": []
+        },
+        {
+          "start_seconds_after_select": 0.4890473749999984,
+          "end_seconds_after_select": 0.609305875000004,
+          "truncated": true,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": []
+        },
+        {
+          "start_seconds_after_select": 0.7035309999999981,
+          "end_seconds_after_select": 0.758687666666674,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.8623181250000016,
+          "end_seconds_after_select": 0.9129954583333415,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        },
+        {
+          "start_seconds_after_select": 0.974481041666678,
+          "end_seconds_after_select": 1.0404768750000102,
+          "truncated": false,
+          "axes": [
+            {
+              "role": "AXSplitGroup",
+              "width": 920,
+              "height": 616,
+              "x_local": 0
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 210,
+              "height": 580,
+              "x_local": 0
+            },
+            {
+              "role": "AXSplitGroup",
+              "width": 709,
+              "height": 616,
+              "x_local": 211
+            },
+            {
+              "role": "AXScrollArea",
+              "width": 240,
+              "height": 207,
+              "x_local": 445.5
+            }
+          ],
+          "image_names": [
+            "Gingham",
+            "Tartan",
+            "Madras",
+            "Glen",
+            "Houndstooth",
+            "Windowpane"
+          ]
+        }
+      ]
+    }
+  ],
+  "wait_direct_png_byte_identical": true,
+  "conclusions": [
+    "All three scenarios show Glen as largest card; Inspector close transition is not necessary for this identity.",
+    "Immediate Glen center566/width268.79975 versus wait/direct center601/width267.53479; detail center565.5. Closing immediately still changes settled offset.",
+    "All obtained detail split frames are709 wide; Film AXScrollArea frames are240 wide. AXScrollArea is accessibility geometry, not an observed NSClipView.bounds.",
+    "Early AX walks truncate: first complete image sets at0.566s/0.225s/0.704s. No484\u2192709 transition or target3\u21924 write was observed.",
+    "Wait/direct Madras center331 differs from detail565.5 by234.5, exactly matching the expected (709\u2212240)/2 margin. This is a geometry correlation, not confirmed causal attribution."
+  ],
+  "next_minimum": "Single direct-entry standalone14 fixture retaining original helpers/modifier order/build SDK and initial3; trace own target assignments separately from native scrollPosition Binding setter, geometry viewport/largest/margin, id3/id4 frames and nearest, expect/watch/stops/target release/follow writes; memory buffer then final JSON. First reproduce before proposing product change.",
+  "startup_geometry_confound": {
+    "immediate_before_resize": [
+      900,
+      652
+    ],
+    "wait_before_resize": [
+      920,
+      668
+    ],
+    "direct_before_resize": [
+      920,
+      668
+    ],
+    "scope": "Only first scenario actually resizes; others restore final dimensions. One run per scenario, fixed order.35pt offset difference cannot be attributed solely to Inspector timing."
+  }
+}

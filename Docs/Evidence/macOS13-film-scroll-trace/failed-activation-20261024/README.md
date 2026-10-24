@@ -1,0 +1,3 @@
+# Partial local13 activation failure; no Film measurement
+
+Exact e4c build40064305202, unique local bundle and signatures/section hashes recorded in isolation-provenance.json. Parent executed the prepared observer once; exit1. Failure occurred at the first Patterns stable capture, before Film selection. There are zero cases, PNGs and internal trace files. The original result/application/CLI/observer logs are preserved unchanged. Focus was false in the window responses; actual frontmost PID and activation return were not recorded, so activation cause remains unknown. This is not a product Film regression, nor a successful local runtime acceptance. No retry was performed by this agent.

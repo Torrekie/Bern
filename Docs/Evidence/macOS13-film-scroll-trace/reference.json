@@ -1,0 +1,40 @@
+{
+  "source_base": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+  "diagnostic_source": "e4c01e4df31e7e9a5380285cb4fe8fd01a90b985",
+  "diagnostic_build": {
+    "run": 40064305202,
+    "artifact_id": 12548462781,
+    "artifact_name": "macos13-gallery",
+    "server_zip_digest": "sha256:8f4aecefcfd3af1d729ddaf18effaedd45166dadefaecd2f5b30b3c0c641ccd0"
+  },
+  "active14_unmodified": {
+    "run": 40064744315,
+    "harness": "de0faa1ddccb5b63eb2d8fcd816caca9ef06f9a6",
+    "build": 39991406873,
+    "artifact_id": 12549300588,
+    "artifact_name": "macos14-film-port",
+    "server_zip_digest": "sha256:a4f07e20af0342ff09337d03c94eeea6478e3af799954c5b3d3b169a0bef50d8"
+  },
+  "active14_diagnostic": {
+    "run": 40064766856,
+    "harness": "7684977258e5bbb120f6e06e8e28c9f68abf6fa7",
+    "build": 40064305202,
+    "artifact_id": 12548683095,
+    "artifact_name": "macos14-film-port",
+    "server_zip_digest": "sha256:3d167b08973cf1f1f5c9bc9e1d15a0bbc3b9ff9ef696c1d6350ede6a3375a8c0"
+  },
+  "inactive13_diagnostic": {
+    "observer": "a332bd41aebdf2ecab0d0b15438a0a19d59c416a",
+    "build": 40064305202,
+    "contract": "inactive13, not active visual acceptance",
+    "source_sha256": "dd23e9bf4e15ab0474d4f5d50ab3c5d1d606b9e92c21766a390c1919131e1e63"
+  },
+  "source_diff": "e4 relativef9 onlyBernStyle.swift 132insertions/7deletions; preserves originalBinding/timer/explicit assignment order",
+  "partial_attempts": [
+    "failed-activation-20261024",
+    "failed-activation-observed-20261024"
+  ],
+  "same_binary_code13_trace_observed": true,
+  "same_signed_executable_bytes13_vs14": false,
+  "same_active_visual_conditions13_vs14": false
+}

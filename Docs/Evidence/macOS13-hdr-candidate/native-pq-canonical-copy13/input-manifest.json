@@ -1,0 +1,66 @@
+{
+  "driver_source_references": {
+    "Display.swift": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-standard-dynamic13/Display.swift",
+    "ToneMap.swift": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-standard-dynamic13/ToneMap.swift"
+  },
+  "existing_custom_basename": "source-ffb-icc.png (the existing source-ffb input; no new source file created)",
+  "inputs": {
+    "custom": {
+      "bytes": 15470,
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/color-probe13/source-ffb-icc.png",
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "driver": {
+      "bytes": 15506,
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/examples/showcase/images/hdr-pq.png",
+      "sha256": "96f80d2f1c06070dac29e3b7e2924a6aed8e54286bc73921f62cf75420a599ed"
+    },
+    "named": {
+      "bytes": 15588,
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/color-probe13/source-named-pq.png",
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    }
+  },
+  "prior_reported_decode_metadata": {
+    "report": "Docs/Evidence/macOS13-hdr-candidate/native-sdr-components13/report.json",
+    "report_sha256": "e417c5a71cc35c651b82ba4dafeb65efaab5125841f450081329d924733fd64d",
+    "scope": "Historical actual13 evidence only; current input file hashes exactly match those used there. No new decode executed.",
+    "sources": [
+      {
+        "bitmap_info": 4099,
+        "bits_per_component": 16,
+        "decoded_color": {
+          "cicp_hex": "636963700000000009100001",
+          "icc_sha256": "63cd9f4a8443c71df3633aa0a2ec4594aa8fbca23b1a3231b517bc726a567b16",
+          "is_pq": false,
+          "name": "unnamed",
+          "uses_2100": false
+        },
+        "file": "source-ffb-icc.png",
+        "file_sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e",
+        "height": 360,
+        "normalized_space": "kCGColorSpaceITUR_2100_PQ",
+        "provider_sha256": "825a2d25eb2b74a596730fc1beb0003c2be29ebdde22d9a23e8e954bde261e7c",
+        "width": 640
+      },
+      {
+        "bitmap_info": 4099,
+        "bits_per_component": 16,
+        "decoded_color": {
+          "icc_sha256": "6f756c9ba8ab35eab3ca429edaa3f468a7f8389121da6455ff47cbf1ae89b91a",
+          "is_pq": true,
+          "name": "kCGColorSpaceITUR_2100_PQ",
+          "uses_2100": true
+        },
+        "file": "source-named-pq.png",
+        "file_sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+        "height": 360,
+        "normalized_space": "kCGColorSpaceITUR_2100_PQ",
+        "provider_sha256": "825a2d25eb2b74a596730fc1beb0003c2be29ebdde22d9a23e8e954bde261e7c",
+        "width": 640
+      }
+    ]
+  },
+  "runtime_source_sha256": "1ec700f09c9b2488f0253beed0b2134e08b651bd5c6936f0e8e70abad454ac0f",
+  "scope": "Source-file hashes only; new offline CGImage decoding/validation not executed yet"
+}

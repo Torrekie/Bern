@@ -1,0 +1,34 @@
+{
+  "build_run": 40064305202,
+  "artifact": {
+    "id": 12548462781,
+    "name": "macos13-gallery",
+    "size_bytes": 2145794,
+    "server_zip_digest": "sha256:8f4aecefcfd3af1d729ddaf18effaedd45166dadefaecd2f5b30b3c0c641ccd0"
+  },
+  "source_sha": "e4c01e4df31e7e9a5380285cb4fe8fd01a90b985",
+  "base_source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+  "build_harness_sha": "a39d29faeab8ad7fd15f04a2db219d755c5ef48d",
+  "observer_harness_sha": "7684977258e5bbb120f6e06e8e28c9f68abf6fa7",
+  "sdk": "26.2",
+  "swift": "6.2.4",
+  "architecture": "arm64",
+  "minimum_macos": "13.0",
+  "ui": "swiftui-modern",
+  "archive_sha256": "d49cd38d46da3987d68acb71b622cd04fd98d87ec66c31a947a8807d3b6579dd",
+  "gui_sha256": "51d6a628763242704cb78033a0d7736c8bab5bebcd33bf028919d213418c91f4",
+  "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+  "style_sha256": "7cb6678e87bd99a6de22d85d3b3c37a58b050d27e53d36e86dc18b4f2514b0d8",
+  "offline_checks": {
+    "archive_checksum": true,
+    "gui_and_cli_arm64": true,
+    "gui_plist_and_macho_min13": true,
+    "cli_macho_min13": true,
+    "gui_signature_deep_strict": true,
+    "cli_signature_strict": true,
+    "signature": "adhoc, no TeamIdentifier",
+    "source_diff": "f9..e4c: only BernStyle.swift 132 insertions/7 deletions; diagnostic template byte-matches prepared copy"
+  },
+  "local_ui_run": false,
+  "readiness_only": true
+}
