@@ -1,0 +1,433 @@
+name: macOS 14 actual hero coordinator SDR default capture
+run-name: actual hero coordinator SDR default capture
+'on':
+  workflow_dispatch: null
+permissions:
+  contents: read
+concurrency:
+  group: macos14-hero-coordinator-sdr-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 8
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        persist-credentials: false
+    - name: Build exact ARM64/min13 coordinator SDR package
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p work/probe evidence/build
+        trap 'rm -rf work/hero-module-cache work/probe' EXIT
+        {
+          printf 'harness_sha=%s\n' "$GITHUB_SHA"
+          printf 'product_source_sha=b08db54e01ac2ec54fb84e6f2a70041f1f4c3604\n'
+          sw_vers
+          uname -m
+          xcodebuild -version
+          xcrun --sdk macosx --show-sdk-version
+          xcrun --sdk macosx --show-sdk-path
+          xcrun swiftc -version
+        } > evidence/build/environment.txt 2>&1
+        test -d "$DEVELOPER_DIR"
+        case "$(uname -m)" in arm64|x86_64) ;; *) exit 1 ;; esac
+        sdk="$(xcrun --sdk macosx --show-sdk-version)"
+        test "$sdk" = 26.2
+        ditto .github/scripts/hero-coordinator-sdr-probe work/probe
+        python3 - <<'PY'
+        import hashlib,json
+        from pathlib import Path
+        p=Path('work/probe'); d=json.loads((p/'source-provenance.json').read_text())
+        assert d['product_source_commit']=='b08db54e01ac2ec54fb84e6f2a70041f1f4c3604'
+        assert d['kind']=='actual_coordinator_sdr_fixture'
+        assert 'local_static_preflight' not in d and d['local_compile_attempted'] is False
+        assert d['original_hero_sha256']=='8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c'
+        assert d['files']['ProductHero.exact.swift']['sha256']==d['original_hero_sha256']
+        assert d['files']['ProductImage.swift']['sha256']=='8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc'
+        assert d['files']['ProductStyle.swift']['sha256']=='550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984'
+        assert d['files']['Dependencies.swift']['sha256']=='d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9'
+        assert all(name in d['files'] for name in ('ProductHero.swift','FlightSDR.swift.inc','Driver.swift.inc','run-one.py'))
+        assert d['files']['ProductHero.swift']['sha256']=='cf924d4fa27df6486b65b30be1a194ec7daf4016674b79bd4084e045eba8beea'
+        assert d['files']['FlightSDR.swift.inc']['sha256']=='5f79ae281bb743ee7af87dc737e66195b4bd85c5e50c84d0c5183f53766d8f65'
+        assert d['files']['Driver.swift.inc']['sha256']=='16d366612fdb55a4a2a1e39ce731cc7ad247fa71608a89f65a1c8d241230ec92'
+        assert d['files']['run-one.py']['sha256']=='200403b0b4e07f49dc4f74b6af8e0b5b14d67f36a3de022f44e4c44419d8621c'
+        for name,m in d['files'].items():
+            assert hashlib.sha256((p/name).read_bytes()).hexdigest()==m['sha256'],name
+        PY
+        printf 'import AppKit\nimport SwiftUI\n' > work/probe/CoordinatorSDR.assembled.swift
+        cat work/probe/ProductHero.swift work/probe/FlightSDR.swift.inc work/probe/Driver.swift.inc >> work/probe/CoordinatorSDR.assembled.swift
+        cat > evidence/build/command.txt <<'COMMAND'
+        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage -framework ColorSync -framework ImageIO -framework CryptoKit work/probe/Dependencies.swift work/probe/ProductImage.swift work/probe/ProductStyle.swift work/probe/CoordinatorSDR.assembled.swift -o work/probe/HeroCoordinatorSDRProbe
+        COMMAND
+        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 \
+          -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache \
+          -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage \
+          -framework ColorSync -framework ImageIO -framework CryptoKit \
+          work/probe/Dependencies.swift work/probe/ProductImage.swift \
+          work/probe/ProductStyle.swift work/probe/CoordinatorSDR.assembled.swift \
+          -o work/probe/HeroCoordinatorSDRProbe > evidence/build/compile.log 2>&1
+        test "$(xcrun lipo -archs work/probe/HeroCoordinatorSDRProbe)" = arm64
+        xcrun vtool -show-build work/probe/HeroCoordinatorSDRProbe > evidence/build/binary.txt
+        test "$(awk '/minos/ {print $2; exit}' evidence/build/binary.txt)" = 13.0
+        xcrun otool -L work/probe/HeroCoordinatorSDRProbe >> evidence/build/binary.txt
+        codesign --force --sign - work/probe/HeroCoordinatorSDRProbe > evidence/build/signature.txt 2>&1
+        codesign --verify --strict --verbose=4 work/probe/HeroCoordinatorSDRProbe >> evidence/build/signature.txt 2>&1
+        codesign --display --verbose=4 work/probe/HeroCoordinatorSDRProbe >> evidence/build/signature.txt 2>&1
+        mkdir work/probe/build
+        cp evidence/build/{environment.txt,command.txt,compile.log,binary.txt,signature.txt} work/probe/build/
+        python3 - <<'PY'
+        import hashlib
+        from pathlib import Path
+        p=Path('work/probe'); lines=[]
+        for f in sorted(p.rglob('*')):
+            assert not f.is_symlink(),f
+            if f.is_file(): lines.append(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+f.relative_to(p).as_posix()+'\n')
+        (p/'SHA256SUMS').write_text(''.join(lines))
+        PY
+        tar -czf evidence/build/hero-coordinator-sdr-probe.tar.gz -C work/probe .
+        (cd evidence/build && shasum -a 256 hero-coordinator-sdr-probe.tar.gz > hero-coordinator-sdr-probe.tar.gz.sha256)
+        cp work/probe/{source-provenance.json,SHA256SUMS} evidence/build/
+    - uses: actions/upload-artifact@v5
+      if: always()
+      with:
+        name: macos14-hero-coordinator-sdr-probe-build
+        path: evidence/build/
+        if-no-files-found: error
+        retention-days: 3
+        compression-level: 0
+  measure:
+    needs: build
+    runs-on: macos-14
+    timeout-minutes: 5
+    steps:
+    - uses: actions/download-artifact@v5
+      with:
+        name: macos14-hero-coordinator-sdr-probe-build
+        path: build
+    - name: Collect one NSApplication.run coordinator process on14 without rebuilding
+      env:
+        BERN_HERO_EXPECT_OS: '14'
+        BERN_HERO_FLIGHT_SDR: default
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p probe evidence/runtime14
+        trap 'rm -rf probe build' EXIT
+        {
+          printf 'harness_sha=%s\nexpected_os_major=%s\n' "$GITHUB_SHA" "$BERN_HERO_EXPECT_OS"
+          sw_vers
+          uname -m
+        } > evidence/runtime14/environment.txt 2>&1
+        test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+        test "$(uname -m)" = arm64
+        test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+        (cd build && shasum -a 256 -c hero-coordinator-sdr-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1
+        python3 - <<'PY'
+        from pathlib import PurePosixPath
+        import tarfile
+        with tarfile.open('build/hero-coordinator-sdr-probe.tar.gz') as t:
+            for m in t.getmembers():
+                p=PurePosixPath(m.name)
+                assert not p.is_absolute() and '..' not in p.parts,m.name
+                assert m.isdir() or m.isfile(),m.name
+        PY
+        tar -xzf build/hero-coordinator-sdr-probe.tar.gz -C probe
+        (cd probe && shasum -a 256 -c SHA256SUMS) > evidence/runtime14/package-verification.txt 2>&1
+        test "$(xcrun lipo -archs probe/HeroCoordinatorSDRProbe)" = arm64
+        codesign --verify --strict --verbose=4 probe/HeroCoordinatorSDRProbe > evidence/runtime14/signature-verification.txt 2>&1
+        shasum -a 256 probe/HeroCoordinatorSDRProbe > evidence/runtime14/binary-sha256.txt
+        cp build/environment.txt evidence/runtime14/build-environment.txt
+        cp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-coordinator-sdr-probe.tar.gz.sha256} evidence/runtime14/
+        defaults write com.apple.universalaccess reduceMotion -bool false
+        defaults write com.apple.universalaccess reduceTransparency -bool false
+        defaults write com.apple.universalaccess increaseContrast -bool false
+        killall cfprefsd || true
+        {
+          # Raw defaults absence is diagnostic; effective NSWorkspace flags
+          # remain mandatory before/after in the executable and assertions.
+          defaults read com.apple.universalaccess reduceMotion || true
+          defaults read com.apple.universalaccess reduceTransparency || true
+          defaults read com.apple.universalaccess increaseContrast || true
+        } > evidence/runtime14/requested-normal.txt 2>&1
+        python3 probe/run-one.py "$PWD/probe/HeroCoordinatorSDRProbe" "$PWD/probe/assets/source-named-pq.png" \
+          "$PWD/evidence/runtime14" 14 default
+        python3 - <<'PY'
+        import hashlib,json,math
+        from pathlib import Path
+        def reject_constant(value): raise ValueError('Non-finite JSON token: '+value)
+        p=Path('evidence/runtime14')
+        d=json.loads((p/'report.json').read_text(),parse_constant=reject_constant)
+        receipt=json.loads((p/'run-receipt.json').read_text(),parse_constant=reject_constant)
+        assert d['success'] is True and d.get('error') is None
+        assert d['expected_os_major']==14 and d['actual_os_major']==14
+        assert receipt['exit_code']==0 and not receipt.get('wrapper_timeout',False)
+        assert receipt['expected_os_major']==14 and receipt['timeout_seconds']==15
+        assert receipt['bern_motion_environment']=='unset' and type(receipt['bern_motion_was_present']) is bool
+        assert receipt['binary_sha256']==hashlib.sha256(Path('probe/HeroCoordinatorSDRProbe').read_bytes()).hexdigest()
+        asset_sha='3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b'
+        assert receipt['named_asset_sha256']==asset_sha
+        assert d['activation_calls']==0 and 0<d['window_seconds']<7.9
+        assert d['collection_seconds']==7.2 and d['watchdog_seconds']==7.9 and d['preload_seconds_limit']==3
+        assert d['sample_limit']==512 and d['nominal_poll_hz']==60 and d['maximum_pngs']==3
+        assert d['frontmost_before']==d['frontmost_after'] and receipt['own_pid']!=d['frontmost_before']
+        for key in ('normal_before','normal_after'):
+            assert set(d[key])=={'reduce_motion','reduce_transparency','increase_contrast'}
+            assert all(v is False for v in d[key].values())
+        assert d['cache_unchanged'] is True and d['cache_before']==d['cache_after']
+        assert d['cache_before']['file_sha256']==asset_sha and d['cache_before']['orientation']=='up'
+        assert d['pixel_acceptance']=='Not performed; before/mid/settled PNGs require offline visibility/color/timing review'
+        captures=d['captures']; assert isinstance(captures,list) and len(captures)==3
+        assert [c['phase'] for c in captures]==['before','in-flight','settled']
+        assert len(list(p.glob('*.png')))==3
+        window_ids={c['window_id'] for c in captures}
+        assert len(window_ids)==1 and all(type(v) is int and v>0 for v in window_ids)
+        own_window=next(iter(window_ids))
+        def number(value):
+            assert type(value) in (int,float) and math.isfinite(value)
+        def rect(value):
+            assert isinstance(value,dict) and set(value)=={'x','y','width','height'}
+            for v in value.values(): number(v)
+            assert value['width']>0 and value['height']>0
+        def state(value):
+            assert isinstance(value,dict) and isinstance(value['flights'],list)
+            assert type(value['flight_count']) is int and value['flight_count']==len(value['flights'])
+            assert type(value['timer_exists']) is bool
+            assert type(value['temporary_flight_view_count']) is int and value['temporary_flight_view_count']>=0
+            assert set(value['entry_keys']).issubset({'coordinator-one'})
+            for flight in value['flights']:
+                assert flight['key']=='coordinator-one' and flight['parent_is_actual_overlay'] is True
+                assert flight['window_number']==own_window
+                assert isinstance(flight['view_identity'],str) and flight['view_identity']
+                number(flight['progress']); rect(flight['frame']); rect(flight['bounds'])
+                rect(flight['from_rect']); rect(flight['to_rect'])
+                assert flight['from_rect']!=flight['to_rect']
+            return value['flights']
+        def resting(value):
+            assert state(value)==[] and value['timer_exists'] is False
+            assert value['temporary_flight_view_count']==0
+        for c in captures:
+            assert c['owner_pid']==receipt['own_pid'] and c['key'] is False and c['active'] is False
+            assert c['live_metal_count']==0
+            assert c['window_frame']==captures[0]['window_frame']
+            assert c['capture_before_uptime']<=c['capture_after_uptime']
+            for key in ('state_before','state_after'): state(c[key])
+            size=c['capture_size']; assert len(size)==2 and all(type(v) is int and v>0 for v in size)
+            for roi in c['rois'].values():
+                rect(roi['root_points']); pixels=roi['screenshot_pixels']; rect(pixels)
+                assert pixels['x']>=0 and pixels['y']>=0
+                assert pixels['x']+pixels['width']<=size[0] and pixels['y']+pixels['height']<=size[1]
+            assert c['png']==c['phase']+'.png'
+            assert hashlib.sha256((p/c['png']).read_bytes()).hexdigest()==c['png_sha256']
+        for c,role,wanted in ((captures[0],'source',{'x':16,'y':24,'width':320,'height':180}),
+                              (captures[2],'destination',{'x':352,'y':244,'width':320,'height':180})):
+            assert c['consecutive_equal_buffers']>=5
+            resting(c['state_before']); resting(c['state_after'])
+            actual=c['rois'][role]['root_points']
+            assert max(abs(actual[k]-wanted[k]) for k in wanted)<=0.000001
+        samples=d['samples']; assert isinstance(samples,list) and 0<len(samples)<=512
+        assert all(type(v['sample_index']) is int and v['sample_index']==i for i,v in enumerate(samples))
+        mid=captures[1]
+        assert mid['consecutive_equal_buffers_required'] is False
+        sampling=d['midflight_sampling']
+        policy='first_band_arm_then_next_original_loop_sample'
+        assert sampling['policy']==policy and mid['sampling_policy']==policy
+        assert sampling['capture_attempted'] is True and sampling['next_sample_captured'] is True
+        armed=sampling['armed']; captured=sampling['capture_sample']
+        for record in (armed,captured):
+            assert isinstance(record,dict) and set(record)=={'sample_index','state','uptime','progress','flight_identity'}
+            index=record['sample_index']; assert type(index) is int and 0<=index<len(samples)
+            number(record['uptime']); number(record['progress'])
+            value=record['state']; records_live=state(value)
+            assert len(records_live)==1 and value['timer_exists'] is True
+            assert records_live[0]['view_identity']==record['flight_identity']
+            assert records_live[0]['progress']==record['progress'] and value['uptime']==record['uptime']
+            assert samples[index]['stage']=='transition'
+            assert all(samples[index][k]==v for k,v in value.items())
+        assert captured['sample_index']==armed['sample_index']+1
+        assert captured['uptime']>=armed['uptime']
+        assert armed['flight_identity']==captured['flight_identity']
+        assert 0.2<armed['progress']<0.8
+        assert not any(v['flights'] and 0.2<v['flights'][0]['progress']<0.8 for v in samples[:armed['sample_index']])
+        # No captured-progress band assertion: the exact next sample may exceed .8.
+        for flat,key in (('armed_sample_index','sample_index'),('armed_sample_state','state'),
+                         ('armed_sample_uptime','uptime'),('armed_progress','progress'),('armed_flight_identity','flight_identity')):
+            assert mid[flat]==armed[key]
+        for flat,key in (('capture_sample_index','sample_index'),('capture_sample_state','state'),
+                         ('capture_sample_uptime','uptime'),('capture_sample_progress','progress'),('capture_sample_flight_identity','flight_identity')):
+            assert mid[flat]==captured[key]
+        assert mid['trigger_refers_to']=='armed_sample'
+        assert mid['trigger_state']==armed['state'] and mid['trigger_progress']==armed['progress']
+        live=state(armed['state']); assert 'flight' in mid['rois']
+        # Shot bracket states are actual records, not forced to stay live or stable.
+        native=d['native_gates']; assert native['transition_count']==1
+        for key in ('actual_flight_seen','actual_frame_and_progress_changed','midband_armed','next_sample_captured',
+                    'source_no_longer_attached','temporary_view_removed'):
+            assert native[key] is True
+        for key in ('source_detached_observed','source_weak_deallocated'):
+            assert type(native[key]) is bool
+        identities=native['observed_flight_identities']
+        assert isinstance(identities,list) and len(identities)==1 and identities[0]==live[0]['view_identity']
+        assert d['observed_flight_identities']==identities
+        for c in captures:
+            for key in ('state_before','state_after'):
+                assert all(f['view_identity']==identities[0] for f in c[key]['flights'])
+        observed=[]
+        for sample in samples:
+            flights=state(sample)
+            if flights:
+                assert len(flights)==1 and sample['timer_exists'] is True
+                assert flights[0]['view_identity']==identities[0]
+                observed.append(flights[0])
+        assert any(a['frame']!=b['frame'] and a['progress']!=b['progress'] for a,b in zip(observed,observed[1:]))
+        resting(d['before_cleanup_state'])
+        # Append-only app-loop metadata gate; inherited native acquisition gate above is unchanged.
+        execution=d['execution_model']
+        assert execution['kind']=='nsapplication_run_delegate_default_timer'
+        for key in ('launch_completed_count','loop_entry_count','loop_return_count','terminal_count','stop_calls','wake_count'):
+            assert type(execution[key]) is int and execution[key]==1
+        for key in ('sampler_reentrant_callbacks','sampler_callbacks_after_terminal'):
+            assert type(execution[key]) is int and execution[key]==0
+        assert type(execution['sampler_max_depth']) is int and execution['sampler_max_depth']==1
+        assert type(execution['sampler_callback_count']) is int and execution['sampler_callback_count']>0
+        assert isinstance(execution['sampler_mode'],str) and execution['sampler_mode']
+        assert execution['sampler_observed_modes']==[execution['sampler_mode']]
+        number(execution['sampler_interval_seconds'])
+        assert execution['sampler_interval_seconds']==1/60
+        assert execution['sampler_invalidated_before_stop'] is True
+        assert execution['wake_after_terminal'] is True and execution['wake_posted_to_own_app_queue'] is True
+        assert execution['wake_type']=='applicationDefined'
+        times=[execution[key] for key in ('loop_entry_uptime','launch_completed_uptime',
+               'preload_started_uptime','preload_completed_uptime')]
+        times += [captures[0]['capture_before_uptime'],captures[0]['capture_after_uptime'],
+                  captures[2]['capture_before_uptime'],captures[2]['capture_after_uptime'],
+                  execution['terminal_uptime'],execution['loop_return_uptime']]
+        for value in times: number(value)
+        assert 0<=times[0] and times==sorted(times)
+        assert 0<=execution['preload_completed_uptime']-execution['preload_started_uptime']<=d['preload_seconds_limit']
+        # Append-only SDR metadata gate; inherited native/execution gate above remains unchanged.
+        #!/usr/bin/env python3
+        """Append-only gate for the frozen actual-coordinator flight_sdr_display schema."""
+        import json, math, sys
+
+        def validate_flight_sdr(d, receipt, mode, major):
+            def need(value, message):
+                if not value: raise ValueError('flight_sdr_display: '+message)
+            def count(value, label, expected=None):
+                need(type(value) is int and value>=0,label+' must be a nonnegative integer')
+                if expected is not None: need(value==expected,label+' differs')
+            def number(value, label):
+                need(type(value) in (int,float) and math.isfinite(value) and value>=0,label+' must be finite/nonnegative')
+                return value
+            def identity(value, label):
+                need(isinstance(value,str) and bool(value) and value!='nil',label+' missing')
+                return value
+            def layout(value, bits, pixels, floating, label):
+                for key in ('width','height','bits_per_component','bits_per_pixel','bytes_per_row',
+                            'bitmap_info_raw','alpha_info_raw','byte_order_raw','pixel_format_raw'):
+                    count(value[key],label+'.'+key)
+                need(value['width'] in (320,640) and value['height']==value['width']*9//16,label+' extent')
+                need(value['bits_per_component']==bits and value['bits_per_pixel']==pixels,label+' depth')
+                need(value['float_components'] is floating and value['bytes_per_row']>=value['width']*(pixels//8),label+' storage')
+            def space(value, label):
+                need(value['present'] is True and value['model_raw']==1 and value['components']==3,label+' RGB3')
+                need(value['stage']=='after_existing_window_teardown',label+' metadata stage')
+                count(value['icc_byte_count'],label+'.icc_byte_count')
+                sha=value['icc_sha256']
+                need((value['icc_byte_count']==0 and sha=='absent') or
+                     (value['icc_byte_count']>0 and isinstance(sha,str) and len(sha)==64 and all(c in '0123456789abcdef' for c in sha)),label+' ICC record')
+            need(type(major) is int and major in (13,14) and mode in ('default','baked-pair'),'mode/OS enum')
+            need(mode=='default' or major==13,'baked-pair is13 only')
+            need(d['success'] is True and d.get('error') is None,'original acquisition failed')
+            need(d['expected_os_major']==major and d['actual_os_major']==major,'report OS')
+            need(receipt['exit_code']==0 and not receipt.get('wrapper_timeout',False),'process failure/timeout')
+            need(receipt['expected_os_major']==major and receipt['timeout_seconds']==15,'receipt OS/timeout')
+            need(receipt['flight_sdr_mode']==mode and receipt['bern_hero_flight_sdr_environment']==mode,'receipt mode/environment')
+            need(receipt['flight_sdr_mode_source'] in ('last_argument','environment','default'),'receipt mode source')
+            s=d['flight_sdr_display']
+            need(s['requested']==mode and s['selected']==mode,'reported mode')
+            need(s['success'] is True and s['error'] is None,'helper failure; no successful fallback accepted')
+            count(s['primary_snapshot_count'],'primary snapshots',2)
+            count(s['cleanup_snapshot_count'],'cleanup snapshots')
+            baked=mode=='baked-pair'
+            for key,wanted in (('conversion_count',2 if baked else 0),('context_create_count',1 if baked else 0),
+                               ('derived_cache_count_before_release',2 if baked else 0),
+                               ('helper_retained_original_cgimage_count',0),('helper_original_provider_read_count',0)):
+                count(s[key],key,wanted)
+            need(s['primary_frozen'] is True and s['helper_references_cleared'] is True,'original cleanup/release incomplete')
+            need(s['release_scope']=='Helper-owned derived cache/context/color-space and weak refs cleared; no global deallocation claim','release scope')
+            records=s['records']; need(isinstance(records,list) and len(records)==2,'two actual records required')
+            mapping=s['flight_mapping']
+            need(mapping['from_ordinal']==1 and mapping['to_ordinal']==2,'actual snapshot ordinal mapping')
+            transition=number(mapping['transition_uptime'],'transition')
+            need(transition==d['transition_uptime'],'transition mismatch')
+            started=number(mapping['flight_started_uptime'],'flight started')
+            first=number(mapping['first_live_observation_uptime'],'first observation')
+            need(transition<=started<=first,'transition/flight/observer order')
+            flight_id=identity(mapping['flight_identity'],'flight identity')
+            need(d['observed_flight_identities']==[flight_id] and d['native_gates']['observed_flight_identities']==[flight_id],'native flight mapping')
+            need(mapping['from_nsimage_id']!=mapping['to_nsimage_id'],'independent from/to wrappers')
+            previous_end=transition; derived_ids=[]
+            for ordinal,record in enumerate(records,1):
+                need(record['ordinal']==ordinal and record['key']=='coordinator-one','record ordinal/key')
+                identity(record['anchor_identity'],'anchor identity')
+                identity(record['input_object_id'],'original renderer CGImage identity')
+                need(record['wrapped'] is True and record.get('error') is None,'partial snapshot/wrapper failure')
+                need(record['logical_size']==[320,180],'original logical size')
+                role='from' if ordinal==1 else 'to'
+                need(record['flight_role']==role and record['display_nsimage_id']==mapping[role+'_nsimage_id'],'actual wrapper role')
+                identity(record['display_nsimage_id'],'display wrapper identity')
+                source=record['input_layout']; layout(source,16,64,True,'input')
+                need((source['bitmap_info_raw'],source['alpha_info_raw'],source['byte_order_raw'],source['pixel_format_raw'])==(4353,1,4096,0),'original float layout')
+                need(record['input_extent']=={'x':0,'y':0,'width':source['width'],'height':source['height']},'exact input extent')
+                space(record['input_color_space'],'input space')
+                timeline=[number(record[key],key) for key in ('snapshot_started_uptime','renderer_returned_uptime')]
+                if baked:
+                    need(record['requested_tone_map_hdr_to_sdr'] is True and record['actual_tone_mapping_applied']=='unknown','requested versus actual tone mapping')
+                    need(record['input_color_space_override'] is False and record['deferred'] is False,'fixed recipe options')
+                    need(record['requested_output_format']=='RGBA8' and record['requested_output_color_space']=='sRGB','fixed output request')
+                    timeline += [number(record[key],key) for key in ('conversion_started_uptime','conversion_finished_uptime')]
+                    derived=record['derived_layout']; layout(derived,8,32,False,'derived')
+                    need((derived['width'],derived['height'])==(source['width'],source['height']),'exact output extent')
+                    space(record['derived_color_space'],'derived space')
+                    need(record['derived_color_space']['name']=='kCGColorSpaceSRGB','derived sRGB')
+                    derived_id=identity(record['derived_object_id'],'derived identity')
+                    need(derived_id!=record['input_object_id'],'derived output cannot be original-image fallback')
+                    derived_ids.append(derived_id)
+                else:
+                    need(record['conversion_started_uptime'] is None and record['conversion_finished_uptime'] is None,'default conversion timestamps')
+                    for key in ('derived_object_id','derived_layout','derived_color_space','requested_tone_map_hdr_to_sdr',
+                                'actual_tone_mapping_applied','requested_output_format','requested_output_color_space','deferred','input_color_space_override'):
+                        need(key not in record,'default unexpectedly contains conversion field '+key)
+                timeline += [number(record[key],key) for key in ('nsimage_wrapped_uptime','snapshot_returning_uptime')]
+                need(previous_end<=timeline[0] and timeline==sorted(timeline) and timeline[-1]<=started,'snapshot/conversion/wrapper/flight order')
+                previous_end=timeline[-1]
+            if baked: need(len(set(derived_ids))==2,'two independent retained derived images')
+            states=list(d['samples'])+[d['before_cleanup_state']]
+            for capture in d['captures']: states += [capture['state_before'],capture['state_after']]
+            states += [d['midflight_sampling']['armed']['state'],d['midflight_sampling']['capture_sample']['state']]
+            live_count=0
+            for state in states:
+                for flight in state['flights']:
+                    live_count+=1
+                    need(flight['view_identity']==flight_id and flight['started_uptime']==started,'scalar actual flight mismatch')
+                    need(flight['from_nsimage_id']==mapping['from_nsimage_id'] and flight['to_nsimage_id']==mapping['to_nsimage_id'],'scalar actual image mismatch')
+                    need(first<=number(state['uptime'],'live scalar uptime'),'observer precedes recorded state')
+                    need(records[0]['rect_in_overlay']==flight['from_rect'] and records[1]['rect_in_overlay']==flight['to_rect'],'snapshot rect/flight mapping')
+            need(live_count>0,'no actual live scalar record')
+            need(first<=d['execution_model']['terminal_uptime']<=d['execution_model']['loop_return_uptime'],'observer/normal return order')
+            return {'mode':mode,'major':major,'actual_snapshots':2,'conversions':s['conversion_count'],
+                    'contexts':s['context_create_count'],'helper_references_cleared':True,'actual_tone_mapping_applied':'unknown' if baked else 'not requested'}
+
+        validate_flight_sdr(d,receipt,'default',14)
+        PY
+    - uses: actions/upload-artifact@v5
+      if: always()
+      with:
+        name: macos14-hero-coordinator-sdr-evidence
+        path: evidence/runtime14/
+        if-no-files-found: error
+        retention-days: 3
