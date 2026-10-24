@@ -1,0 +1,119 @@
+{
+  "backing_local_controls": {
+    "backing-off-vs-on13.json": true,
+    "binary_sha256": "b57b0d9303ba39ff60740c52a84cc34ab212694dff99692d69bb636b6c7c57a4",
+    "float-vs-backing-off13.json": true,
+    "scope": "Observed12 raw+ICC normalized ROI controls; no general zero-observer-effect guarantee. Local compiler guards unchanged; newSDK guards remain absent."
+  },
+  "backing_observer_stage": "post_png_post_final_guards_pre_teardown",
+  "base_harness_commit": "34dbeff0c4a9ab07828e8459ea990efba2f9fbf2",
+  "compiled_new_sdk_image_and_hero_base_are_original_harness": true,
+  "files": {
+    "BackingObservation.swift.inc": {
+      "bytes": 5128,
+      "sha256": "0136ae510fe8f91673aaf54358a239d5795c03cb8a4a5db33b54d0fc07f1f90b"
+    },
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.before-backing.swift.inc": {
+      "bytes": 23891,
+      "sha256": "d9f6d257b754a6e2c960f22bf24b86ee4822822a05cee73b191eb2d74a197670"
+    },
+    "Driver.swift.inc": {
+      "bytes": 29683,
+      "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d"
+    },
+    "Driver.v2.base.swift.inc": {
+      "bytes": 22985,
+      "sha256": "02211e8b35cdb469776ae6fde6fe18c8614ccb31ea0866b4d0e543349a69b67a"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "ProductHero.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "README.md": {
+      "bytes": 3627,
+      "sha256": "db53603c8fc60e0c77ddf1fd8b6df5c30e1dedb57db965b214cc23394bcbb584"
+    },
+    "assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "backing-observer.patch": {
+      "bytes": 7605,
+      "sha256": "cfc5e25f4bea0effa2625bb91ba85e4ec6d4a60a7ec35f4c4574d6185d868147"
+    },
+    "float-capture-driver.patch": {
+      "bytes": 4165,
+      "sha256": "999a16865cd40b4ae355ae5f7832693059974b2997558b74373d60223f79bede"
+    },
+    "run-backing-one.py": {
+      "bytes": 1652,
+      "sha256": "9a3e263ba66131a1b2dda97489e545811f5d7b58c28e4198408d030a78693683"
+    },
+    "run-one.py": {
+      "bytes": 1556,
+      "sha256": "fdbc7aa6d766de0123181fe686366c3b7e8f508cbe9982c27e12f30af931cb15"
+    },
+    "source-provenance.before-backing.json": {
+      "bytes": 3609,
+      "sha256": "a90d1ed2b29c3668f274bd25919f8d00ea8904e9294c4e81a0952296978a8cf7"
+    }
+  },
+  "kind": "original_snapshot_float_capture_fixture",
+  "local_controls_compiler_scope": "SDK14.2 Swift5.9.2 min13, with explicitly archived unreachable gainmap/unused-clock guards. These two guards are absent from this newSDK package.",
+  "local_preceding_binary_sha256": "84efaed4e15e9f24b95d84d0e352131ab3f418ed9e42e158d53c9e0b4f885313",
+  "local_preceding_controls": {
+    "float-off-vs-on13.json": {
+      "all12_raw_and_srgb_exact": true,
+      "sha256": "a69335d29a2b16dfd85ef44b951249be36b7fbeeadd73663ee4cece497562ae1"
+    },
+    "v2-vs-float-off13.json": {
+      "all12_raw_and_srgb_exact": true,
+      "sha256": "e8f9ff00c3e4f5c7c49c9857b6769650b7ccc5d190ba6701e2ae683ad9f52908"
+    }
+  },
+  "prior_metadata_harness_commit": "1a77dd3165ea420e64d422ae62a49dadf9aa31f5",
+  "product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "provider_copy_limit": 2,
+  "raw_byte_limit": 4194304,
+  "row_direction": "unverified",
+  "runtime_backing_mode_default": "off",
+  "runtime_float_mode_default": "off",
+  "scope": "Actual static endpoints only; no actual coordinated flight, lifecycle, full app, HDR physics or crossOS parity acceptance. NewSDK samebinary pixel controls still required.",
+  "source_adaptations": [
+    "existing_v2_metadata_hook_and_driver",
+    "separate_opt_in_original_CGImage_retention_and_post_teardown_provider_capture",
+    "optional_post_png_scalar_view_layer_and_existing_actual_overlay_ancestor_observation_default_off"
+  ]
+}
