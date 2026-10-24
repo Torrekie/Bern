@@ -1,0 +1,90 @@
+{
+  "status": "metadata_and_historical_PNG_exact_pass",
+  "run": 40135147500,
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "harness_sha": "d72cb5f9bcec8a90fa394bca1060ed0f392ba8f3",
+  "runtime": "Version 14.8.9 (Build 23J631)",
+  "requested_profile": "normal",
+  "system_preferences": {
+    "accent": "default",
+    "increase_contrast": false,
+    "reduce_motion": false,
+    "reduce_transparency": false
+  },
+  "window": {
+    "bounds_points": {
+      "Height": 668,
+      "Width": 920,
+      "X": 500,
+      "Y": 190
+    },
+    "color_space": "unknown",
+    "pid": 1853,
+    "pixel_height": 668,
+    "pixel_width": 920,
+    "png": "images-layout-light.png",
+    "session_windows": [
+      {
+        "actions": [
+          "Activate",
+          "Close",
+          "Minimize",
+          "Maximize",
+          "Move",
+          "Resize"
+        ],
+        "changed_by": "Command",
+        "focused": true,
+        "frame": {
+          "height": 668,
+          "width": 920,
+          "x": 500,
+          "y": 190
+        },
+        "kind": "main",
+        "lifecycle": "Open",
+        "presentation": "Native",
+        "size": "Normal",
+        "version": 3,
+        "visibility": "Visible",
+        "window": "main#1"
+      }
+    ],
+    "title": "Images & Layout",
+    "window_number": 24
+  },
+  "png_sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780",
+  "historical_B14_png": "outputs/Bern/Docs/Evidence/macOS14-port-comparison/showcase-images-layout-light.png",
+  "historical_B14_png_sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780",
+  "original_PNG_bytes_equal": true,
+  "artifact_archive_sha256": "fb5fd66e8247d1adada07411cb8368de716cc8e251f6ecf70968678b3d74662b",
+  "commands": 80,
+  "PNGs": 13,
+  "allowed_startup_session_poll_failures": [
+    {
+      "appearance": "light",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 3,
+      "stderr": "001-stderr.txt",
+      "stdout": "001-stdout.json"
+    },
+    {
+      "appearance": "dark",
+      "arguments": [
+        "sessions"
+      ],
+      "status": 3,
+      "stderr": "072-stderr.txt",
+      "stdout": "072-stdout.json"
+    }
+  ],
+  "validation_correction": "Initial root assertion all80 commands status0 failed. Original collector permits sessions polling failure before ready. Actual two sessions/status3 polls precede recovered ready in separate light/dark starts; all subsequent commands0. No product failure or rerun.",
+  "limits": [
+    "Original Layout capture waits0.8sec; no five-stable-frame gate",
+    "Historical B14 product source fa820f differs from fresh9dd; byte-identical PNG does not establish causal source independence",
+    "13PNG full collector covers existing slice only, not all UI or physical input",
+    "Native card boundaries pending independent original-pixel measurement"
+  ]
+}

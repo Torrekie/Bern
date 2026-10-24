@@ -1,0 +1,161 @@
+{
+  "scope": "Only task-owned directories and newly downloaded byte-identical PNG duplicates. Original historical evidence unchanged. No product App/tar/cache downloaded locally.",
+  "first_attempt": "Control directory rename and work alias succeeded; first frozen preparation directory rename failed EACCES; no preparation member or PNG removed by that attempt.",
+  "recovery": "Verified frozen member hashes, temporarily added owner-write on each task-owned preparation directory only, renamed, reverified all bytes, restored original directory mode.",
+  "archive": "outputs/Bern/Docs/Evidence/macOS14-picture-scene-control-40135147500",
+  "moved_preparations": [
+    {
+      "from": "work/picture-scene-ci-preparation",
+      "to": "outputs/Bern/Docs/Evidence/macOS14-picture-scene-control-40135147500/ci-preparation",
+      "original_directory_mode": "0o555",
+      "temporary_owner_write_for_rename": true,
+      "verified_members": {
+        "provenance.json": "01b12eab9b550969be5f3396e6b145d52bb687333828648e0c99b62d0d749a3c",
+        "README.md": "19b2360be5ab34f2f3a6554242bbdab5f9663104ebbf412407da6960d80e33e4",
+        "SHA256SUMS": "e77d65e2f848aac6ace69ee4d0d64ffe3cd67eb38cb56249a11648975314f1e9",
+        "artifacts-api.json": "0cc40efccf446756a139596f7f0809ddc8d59d11642ba866e6ed249bdadbcc31"
+      },
+      "method": "rename; original directory mode restored, work alias preserves references"
+    },
+    {
+      "from": "work/picture-scene-observer-preparation",
+      "to": "outputs/Bern/Docs/Evidence/macOS14-picture-scene-control-40135147500/observer-preparation",
+      "original_directory_mode": "0o755",
+      "temporary_owner_write_for_rename": true,
+      "verified_members": {
+        "README.md": "aa687ededea46e522d229198591c074fd4fce519beeb0db249f4f0eb0046382f",
+        "SHA256SUMS": "d745d6d10d84471665af4a1bd8c676e919bf0b0b2d0fe7af2416f3f528a93966"
+      },
+      "method": "rename; original directory mode restored, work alias preserves references"
+    },
+    {
+      "from": "work/picture-scene-source-delta",
+      "to": "outputs/Bern/Docs/Evidence/macOS14-picture-scene-control-40135147500/source-delta",
+      "original_directory_mode": "0o755",
+      "temporary_owner_write_for_rename": true,
+      "verified_members": {
+        "README.md": "4a80099cd6d65fd1adf6ec29a668a94b99e5ace5d06dd9ab5dd77e2503381ad0",
+        "SHA256SUMS": "5e91750646631d33e773447c6abdf74e1d3e0470552524fd28189e94c5d857df"
+      },
+      "method": "rename; original directory mode restored, work alias preserves references"
+    },
+    {
+      "from": "work/picture-scene-measurement-review",
+      "to": "outputs/Bern/Docs/Evidence/macOS14-picture-scene-control-40135147500/measurement-review",
+      "original_directory_mode": "0o755",
+      "temporary_owner_write_for_rename": true,
+      "verified_members": {
+        "control14-measurements.json": "cfc592e8358995bd3957d10459ea01aaf35e5a7a219c8c5e175863b0829b3807",
+        "README.md": "58b9434057af065294943733d6e4b7ecfaa72de54f8c83d4e39a94ed451c1297",
+        "measured.py": "05b74fd7cbeefdccdd953699e10c7c7e20570887f70a9959bd8411be1f76aae9"
+      },
+      "method": "rename; original directory mode restored, work alias preserves references"
+    },
+    {
+      "from": "work/picture-scene-control-review",
+      "to": "outputs/Bern/Docs/Evidence/macOS14-picture-scene-control-40135147500/independent-review",
+      "original_directory_mode": "0o755",
+      "temporary_owner_write_for_rename": true,
+      "verified_members": {
+        "SHA256SUMS": "a1a6c3c61d6144dfffaccb69d375920413f15411f8a2c212bdb370ea70da0faa",
+        "review.json": "71a44f8ba456d9d109d2ccc121e21c96d54b2021005b5ed2641e951da5e8e172"
+      },
+      "method": "rename; original directory mode restored, work alias preserves references"
+    }
+  ],
+  "deduplicated_original_PNGs": [
+    {
+      "path": "raw/buttons-light.png",
+      "bytes": 58374,
+      "sha256": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/buttons-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/buttons-light.png"
+    },
+    {
+      "path": "raw/controls-dark.png",
+      "bytes": 88154,
+      "sha256": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/controls-dark.png",
+      "relative_symlink": "../../macOS14-reference-normal/controls-dark.png"
+    },
+    {
+      "path": "raw/controls-light-after-commit.png",
+      "bytes": 85326,
+      "sha256": "f8bc92c12960dc94bffe727aaf3f7363e0a128a04eedda7567efdbaf28f3373a",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/controls-light-after-commit.png",
+      "relative_symlink": "../../macOS14-reference-normal/controls-light-after-commit.png"
+    },
+    {
+      "path": "raw/controls-light.png",
+      "bytes": 85729,
+      "sha256": "49479af56bfba53146b3f50d35929dcdbfb849fb0e4b7e5c5fc2ffdd8bb95929",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/controls-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/controls-light.png"
+    },
+    {
+      "path": "raw/images-layout-light.png",
+      "bytes": 172517,
+      "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780",
+      "canonical": "Docs/Evidence/macOS14-port-comparison/showcase-images-layout-light.png",
+      "relative_symlink": "../../macOS14-port-comparison/showcase-images-layout-light.png"
+    },
+    {
+      "path": "raw/inputs-light.png",
+      "bytes": 42905,
+      "sha256": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/inputs-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/inputs-light.png"
+    },
+    {
+      "path": "raw/query-empty-light.png",
+      "bytes": 52401,
+      "sha256": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/query-empty-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/query-empty-light.png"
+    },
+    {
+      "path": "raw/query-failed-light.png",
+      "bytes": 57561,
+      "sha256": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/query-failed-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/query-failed-light.png"
+    },
+    {
+      "path": "raw/query-recovered-light.png",
+      "bytes": 57882,
+      "sha256": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/query-recovered-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/query-recovered-light.png"
+    },
+    {
+      "path": "raw/text-light.png",
+      "bytes": 57046,
+      "sha256": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/text-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/text-light.png"
+    },
+    {
+      "path": "raw/video-failed-light.png",
+      "bytes": 58010,
+      "sha256": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/video-failed-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/video-failed-light.png"
+    },
+    {
+      "path": "raw/video-ready-light.png",
+      "bytes": 136932,
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/video-ready-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/video-ready-light.png"
+    },
+    {
+      "path": "raw/video-recovered-light.png",
+      "bytes": 136932,
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5",
+      "canonical": "Docs/Evidence/macOS14-reference-normal/video-recovered-light.png",
+      "relative_symlink": "../../macOS14-reference-normal/video-recovered-light.png"
+    }
+  ],
+  "duplicate_logical_bytes_removed": 1089769,
+  "physical_savings": "Not measured; no APFS attribution"
+}

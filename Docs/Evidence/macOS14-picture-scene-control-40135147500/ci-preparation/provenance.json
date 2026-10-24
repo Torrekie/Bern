@@ -1,0 +1,94 @@
+{
+  "kind": "picture_complete_scene_control_preparation",
+  "prepared_at_utc": "2026-10-24T21:38:19.444577+00:00",
+  "status": "read_only_investigation_complete_runtime_reproduction_pending",
+  "source_control": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "inspected_head": "80ff1a365cf05cb44fa3d8517f2da6942ff1a75c",
+  "product_diff_exclusions": [
+    "Docs",
+    ".github",
+    "work"
+  ],
+  "product_changed_files": [
+    "M\tcrates/bern-backend-swiftui/templates/BernStyle.swift"
+  ],
+  "selected_build_run": 40066468884,
+  "selected_artifact": {
+    "id": 12549219297,
+    "name": "macos13-showcase",
+    "expired": false,
+    "size_in_bytes": 2426606,
+    "digest": "sha256:3d2ac931aa00ccf328fc574a2008eadb5b35078e82fdb5c4f5d20b8c0de39dc3",
+    "expires_at": "2026-10-27T05:33:15Z"
+  },
+  "api": {
+    "method": "GET",
+    "endpoint": "repos/Torrekie/Bern/actions/runs/40066468884/artifacts",
+    "request_count": 1,
+    "download_count": 0,
+    "raw_response": "artifacts-api.json"
+  },
+  "retained_archive_inner_sha256": "fb5fd66e8247d1adada07411cb8368de716cc8e251f6ecf70968678b3d74662b",
+  "inputs": [
+    {
+      "path": "outputs/Bern/.github/workflows/macos13-port.yml",
+      "bytes": 5535,
+      "sha256": "0bc70b10942b1aeeeed65d64b81763bf1233ff8887ef0e98f056a680b7175102"
+    },
+    {
+      "path": "outputs/Bern/.github/workflows/macos13-compare.yml",
+      "bytes": 3242,
+      "sha256": "aba2dcf54a2ea78fbeaa332adcf68c3b342ab1867131d05ef8fc82009b5d3387"
+    },
+    {
+      "path": "outputs/Bern/.github/workflows/macos14-reference.yml",
+      "bytes": 8738,
+      "sha256": "81c5341b0997c721f5e3ccde29a1576172a5e978b3ddf3ee2082925b97b71aa9"
+    },
+    {
+      "path": "outputs/Bern/.github/scripts/macos14-reference.swift",
+      "bytes": 28055,
+      "sha256": "3dcaaf994cd7b61655e202ac76f79cc0e0b7c161b608ed2800378652207f0ac6"
+    },
+    {
+      "path": "outputs/Bern/Docs/Implementation/macOS13-Acceptance.md",
+      "bytes": 64328,
+      "sha256": "eb085a686af98eee3baa6e8f1e3ce08138c320ec6b65cc1f95676c75baa325f6"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-native-standard-full-app-9dd/README.md",
+      "bytes": 1634,
+      "sha256": "5977189a487f955cac73774b57d45fd10483b0a00bb764ac4de35cba11e9abfb"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-native-standard-full-app-9dd/delivery.json",
+      "bytes": 3127,
+      "sha256": "3b517a3926f0289fd8910834a9079dbfb06360dfa18abec681752d1d8352cb69"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-native-standard-full-app-9dd/build/environment.txt",
+      "bytes": 565,
+      "sha256": "d0b0ebb2bcc1d1410a4d49aa3c0be654e167c351d5711ed6f5b4b0b5d70f1c2f"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-native-standard-full-app-9dd/build/showcase.tar.gz.sha256",
+      "bytes": 82,
+      "sha256": "3109dcaed1c76e5142c3a6dabdfa28f5e160e0764e195dcabaace6d492cbb249"
+    },
+    {
+      "path": "outputs/Bern/examples/showcase/showcase-ui/src/pages.rs",
+      "bytes": 20577,
+      "sha256": "1bb92ffd8d13f7e732baa2668285dd4d4e4524ce04602d89ffba8a532f44b261"
+    },
+    {
+      "path": "outputs/Bern/crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "bytes": 210785,
+      "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+    }
+  ],
+  "new_workflow_or_wrapper_generated": false,
+  "compile_attempted": false,
+  "ui_attempted": false,
+  "ci_dispatched": false,
+  "repo_or_index_modified": false
+}

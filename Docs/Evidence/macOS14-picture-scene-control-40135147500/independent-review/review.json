@@ -1,0 +1,361 @@
+{
+  "acceptance_limits": [
+    "13 PNG means thirteen selected Showcase screenshots, not macOS13 screenshots. This is fresh9dd on macOS14 versus historicalfa820f on macOS14.",
+    "Source/build versions differ despite identical selected PNG files; no source-independent causal inference, all UI/variants/input/animation or whole-goal acceptance.",
+    "Original Layout pause0.8s has no five-buffer stability gate. No stronger timing/physical-input claim.",
+    "No observed/instrumented Picture Scene run exists in this control review; observer-effect acceptance remains a separate next gate."
+  ],
+  "commands": {
+    "count": 80,
+    "other_status0": 78,
+    "per_appearance_readiness": {
+      "dark": {
+        "failed_poll": "072-stdout.json",
+        "post_ready_commands_all_zero": true,
+        "ready_poll": "073-stdout.json",
+        "ready_session": "74e725ed087900-ui"
+      },
+      "light": {
+        "failed_poll": "001-stdout.json",
+        "post_ready_commands_all_zero": true,
+        "ready_poll": "002-stdout.json",
+        "ready_session": "605e4ca9073d00-ui"
+      }
+    },
+    "scope": "Each new appearance may fail only its initial sessions discovery before its successful ready poll. No post-ready failure was ignored.",
+    "startup_only_status3": 2
+  },
+  "delivered_bundle_receipt": {
+    "CLI_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+    "GUI_sha256": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+    "all_match_original_9dd_delivery_map": true,
+    "members": 16,
+    "saved_codesign_returncode": 0,
+    "scope": "Receipt/source-map comparison; no fresh local bundle rehash/signature command. Do not compare original GUI to the prior separately resigned isolated copy."
+  },
+  "digests": {
+    "build_artifact_id": 12549219297,
+    "inner_matches_raw_and_archived_checksum_and_CI_OK": true,
+    "inner_showcase_tar_sha256": "fb5fd66e8247d1adada07411cb8368de716cc8e251f6ecf70968678b3d74662b",
+    "new_evidence_zip_upload_reported_sha256": "4605c17a0385bb21bb00b4b03a7703337e56cd7fb13bdec2ff80d84d795424ec",
+    "outer_build_zip_sha256": "3d2ac931aa00ccf328fc574a2008eadb5b35078e82fdb5c4f5d20b8c0de39dc3",
+    "outer_expected_equals_runner_computed": true,
+    "scope": "CI API/log computations and retained checksum records cross-checked; outer ZIP/inner tar were not locally reopened or rehashed in this review."
+  },
+  "input_fingerprints": {
+    "outputs/Bern/Docs/Evidence/macOS13-native-standard-full-app-9dd/artifacts-api.json": {
+      "bytes": 705,
+      "sha256": "0cc40efccf446756a139596f7f0809ddc8d59d11642ba866e6ed249bdadbcc31"
+    },
+    "outputs/Bern/Docs/Evidence/macOS13-native-standard-full-app-9dd/build/showcase.tar.gz.sha256": {
+      "bytes": 82,
+      "sha256": "3109dcaed1c76e5142c3a6dabdfa28f5e160e0764e195dcabaace6d492cbb249"
+    },
+    "outputs/Bern/Docs/Evidence/macOS13-native-standard-full-app-9dd/delivery.json": {
+      "bytes": 3127,
+      "sha256": "3b517a3926f0289fd8910834a9079dbfb06360dfa18abec681752d1d8352cb69"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-port-comparison/comparison.json": {
+      "bytes": 11158,
+      "sha256": "3ef4356a585960edb43c0c2b4b3291e888ca12998cf3efb40691c9fa5ca682e3"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-port-comparison/showcase-images-layout-light.png": {
+      "bytes": 172517,
+      "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/buttons-light.png": {
+      "bytes": 58374,
+      "sha256": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/controls-dark.png": {
+      "bytes": 88154,
+      "sha256": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/controls-light-after-commit.png": {
+      "bytes": 85326,
+      "sha256": "f8bc92c12960dc94bffe727aaf3f7363e0a128a04eedda7567efdbaf28f3373a"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/controls-light.png": {
+      "bytes": 85729,
+      "sha256": "49479af56bfba53146b3f50d35929dcdbfb849fb0e4b7e5c5fc2ffdd8bb95929"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/inputs-light.png": {
+      "bytes": 42905,
+      "sha256": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/query-empty-light.png": {
+      "bytes": 52401,
+      "sha256": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/query-failed-light.png": {
+      "bytes": 57561,
+      "sha256": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/query-recovered-light.png": {
+      "bytes": 57882,
+      "sha256": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/text-light.png": {
+      "bytes": 57046,
+      "sha256": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/video-failed-light.png": {
+      "bytes": 58010,
+      "sha256": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/video-ready-light.png": {
+      "bytes": 136932,
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-reference-normal/video-recovered-light.png": {
+      "bytes": 136932,
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+    },
+    "work/picture-scene-control14/capture-job.log": {
+      "bytes": 22112,
+      "sha256": "354ab5ea655b0dfd777216959ed816603b26bbb4596edd9df1880a9e57ad77af"
+    },
+    "work/picture-scene-control14/control-validation.json": {
+      "bytes": 2851,
+      "sha256": "2c276a675c8d469a86506bd3899caee979586dfdc3c82d7374a267287926659c"
+    },
+    "work/picture-scene-control14/historical-full-slice-comparison.json": {
+      "bytes": 4005,
+      "sha256": "4c634ed5e0e962d657ff0ed55db135642bd8ff08ccd6b9315b0d27ad6ba66a56"
+    },
+    "work/picture-scene-control14/local-delivered-bundle-verification.json": {
+      "bytes": 2845,
+      "sha256": "0f9e5bd23b1b0d73e2b8ad8f51aadb71d71b2b76795157ad8c4f4262361c20a5"
+    },
+    "work/picture-scene-control14/raw/001-stderr.txt": {
+      "bytes": 91,
+      "sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
+    },
+    "work/picture-scene-control14/raw/001-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "work/picture-scene-control14/raw/002-stdout.json": {
+      "bytes": 69,
+      "sha256": "47f28e095a1f2b435112c33bf1728e2dec5310feccea7269d2116bb5828cfe02"
+    },
+    "work/picture-scene-control14/raw/072-stderr.txt": {
+      "bytes": 91,
+      "sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
+    },
+    "work/picture-scene-control14/raw/072-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "work/picture-scene-control14/raw/073-stdout.json": {
+      "bytes": 89,
+      "sha256": "b45f7d7db2c9a460b8fa57df1de36ddc827e3b37a7e9d690fa70fdf0773e828a"
+    },
+    "work/picture-scene-control14/raw/build-binary.txt": {
+      "bytes": 4988,
+      "sha256": "3a0734287202e477f9577c051eb82f8d7725fba9197a30ff606e4420f23d351f"
+    },
+    "work/picture-scene-control14/raw/build-environment.txt": {
+      "bytes": 565,
+      "sha256": "d0b0ebb2bcc1d1410a4d49aa3c0be654e167c351d5711ed6f5b4b0b5d70f1c2f"
+    },
+    "work/picture-scene-control14/raw/build.json": {
+      "bytes": 921,
+      "sha256": "e7e12bc06672384c3d75e7b6e669b687c004d97a769e479f9592ce2de5c2bff5"
+    },
+    "work/picture-scene-control14/raw/buttons-light.png": {
+      "bytes": 58374,
+      "sha256": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9"
+    },
+    "work/picture-scene-control14/raw/capture.log": {
+      "bytes": 1670,
+      "sha256": "37d1e55c44881fbc02c28aaf6849fe2b8b6dfbbdac3f9c6b4d4d0ceaf6de49a8"
+    },
+    "work/picture-scene-control14/raw/controls-dark.png": {
+      "bytes": 88154,
+      "sha256": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e"
+    },
+    "work/picture-scene-control14/raw/controls-light-after-commit.png": {
+      "bytes": 85326,
+      "sha256": "f8bc92c12960dc94bffe727aaf3f7363e0a128a04eedda7567efdbaf28f3373a"
+    },
+    "work/picture-scene-control14/raw/controls-light.png": {
+      "bytes": 85729,
+      "sha256": "49479af56bfba53146b3f50d35929dcdbfb849fb0e4b7e5c5fc2ffdd8bb95929"
+    },
+    "work/picture-scene-control14/raw/environment.txt": {
+      "bytes": 209,
+      "sha256": "c564399d81246462f40b042839c1351f75cbe67555b7295d60fa22f4a47f8a65"
+    },
+    "work/picture-scene-control14/raw/images-layout-light.png": {
+      "bytes": 172517,
+      "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780"
+    },
+    "work/picture-scene-control14/raw/inputs-light.png": {
+      "bytes": 42905,
+      "sha256": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519"
+    },
+    "work/picture-scene-control14/raw/query-empty-light.png": {
+      "bytes": 52401,
+      "sha256": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef"
+    },
+    "work/picture-scene-control14/raw/query-failed-light.png": {
+      "bytes": 57561,
+      "sha256": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243"
+    },
+    "work/picture-scene-control14/raw/query-recovered-light.png": {
+      "bytes": 57882,
+      "sha256": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5"
+    },
+    "work/picture-scene-control14/raw/result.json": {
+      "bytes": 39461,
+      "sha256": "e8315fe48e613ce03dee339261e67b883b4b83e58ccc6eb31ddc5b4bc539aa0c"
+    },
+    "work/picture-scene-control14/raw/showcase.tar.gz.sha256": {
+      "bytes": 82,
+      "sha256": "3109dcaed1c76e5142c3a6dabdfa28f5e160e0764e195dcabaace6d492cbb249"
+    },
+    "work/picture-scene-control14/raw/text-light.png": {
+      "bytes": 57046,
+      "sha256": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572"
+    },
+    "work/picture-scene-control14/raw/video-failed-light.png": {
+      "bytes": 58010,
+      "sha256": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9"
+    },
+    "work/picture-scene-control14/raw/video-ready-light.png": {
+      "bytes": 136932,
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+    },
+    "work/picture-scene-control14/raw/video-recovered-light.png": {
+      "bytes": 136932,
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+    },
+    "work/picture-scene-control14/runs-after-dispatch.json": {
+      "bytes": 1586,
+      "sha256": "64f5d1be158db462d55f2bdcd983c0bb4e2090de6d405914467cb94bfd8f5f9d"
+    },
+    "work/picture-scene-control14/status-2.json": {
+      "bytes": 180,
+      "sha256": "dd9a15ab1b0da168085ee9782facbd322f50c49b03bba281ad91f0d940e45d7c"
+    }
+  },
+  "nonblocking_wording_notes": [
+    "control-validation.artifact_archive_sha256 is the inner showcase.tar.gz digest, not the outer Actions artifact ZIP digest; name the container when quoting it.",
+    "All later commands zero means within each appearance after ready; dark startup has its separate allowed sessions/status3 poll.",
+    "Native card pending in control-validation is an earlier-stage statement; separate measurement review now supports125/147, without changing this raw historical record."
+  ],
+  "png_comparison": {
+    "actual_selected_png_bytes_equal": 13,
+    "count": 13,
+    "fresh_source": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+    "historical_source": "fa820f706e5faf1bae8b8f07e23545842a1648b7",
+    "method": "Direct original bytes plus SHA256; no decoding or color conversion",
+    "rows": [
+      {
+        "actual_bytes_equal": true,
+        "file": "buttons-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/buttons-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "controls-dark.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/controls-dark.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "controls-light-after-commit.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/controls-light-after-commit.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "f8bc92c12960dc94bffe727aaf3f7363e0a128a04eedda7567efdbaf28f3373a"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "controls-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/controls-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "49479af56bfba53146b3f50d35929dcdbfb849fb0e4b7e5c5fc2ffdd8bb95929"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "images-layout-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-port-comparison/showcase-images-layout-light.png",
+        "historical_storage": "retained B14 candidate PNG",
+        "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "inputs-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/inputs-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "query-empty-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/query-empty-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "query-failed-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/query-failed-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "query-recovered-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/query-recovered-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "text-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/text-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "video-failed-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/video-failed-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "video-ready-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/video-ready-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+      },
+      {
+        "actual_bytes_equal": true,
+        "file": "video-recovered-light.png",
+        "historical_file": "outputs/Bern/Docs/Evidence/macOS14-reference-normal/video-recovered-light.png",
+        "historical_storage": "shared retained PNG; original comparison candidate SHA equals reference SHA",
+        "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+      }
+    ]
+  },
+  "scope": "Bounded independent read-only review; no app/UI/CI/build/signature command, pixel decoding or additional image algorithm.",
+  "source_and_harness": {
+    "build_harness": "1c4ef533cc62bb57ef73cfd98df13434bd40b304",
+    "build_run": 40066468884,
+    "capture_harness": "d72cb5f9bcec8a90fa394bca1060ed0f392ba8f3",
+    "capture_job_id": 120994989349,
+    "capture_job_terminal_success": true,
+    "capture_run": 40135147500,
+    "collector_git_sha256": "3dcaaf994cd7b61655e202ac76f79cc0e0b7c161b608ed2800378652207f0ac6",
+    "product": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+    "run_list_is_earlier_in_progress_snapshot": true
+  },
+  "status": "no_blocking_inconsistency_metadata_and_13_selected_png_bytes_supported"
+}

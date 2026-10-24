@@ -2,7 +2,9 @@
 
 本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
 
-最新检查点（2026-10-25）：[真实coordinator的bounded timing](../Evidence/macOS14-hero-timing-40132685948/README.md)已完成：SDK26.2/min13同binary在13/14各一次default，原native/execution/SDR及新增strict timing均通过，6原PNG、四个对应端点raw/ICC exact。14注册后checkpoint距started0.435ms、首callback前缀0.666ms、first tick159.427ms；其中scalars结束→tick140.835ms尚未区分尾部/自动draw/分派，不是根因或等效响应性声明。上一[14缺样失败](../Evidence/macOS14-hero-coordinator-sdr-40129608288/README.md)保留；本次有效参考不因未归因间隔停用，也不据此改产品clock或盲CI。此前[静态SDR候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)混合色差及产品intent链仍未解决，候选未采用。下一步回实际Picture Scene首卡布局等未通过项。下列整应用交付版本及其它未通过项保留，goal active。
+最新检查点（2026-10-25）：[完整 Picture Scene 的未插桩14 control](../Evidence/macOS14-picture-scene-control-40135147500/README.md)已重现：CI40135147500复用原9dd完整应用，不重编/重签，首卡125pt、HDR147pt；13张选定原PNG全部逐字等于历史B14对应文件。source9dd、normal三项false、英文、920×668及原页面/动作顺序均绑定；原Layout只等0.8秒，不宣称五帧稳定。独立ROI/边缘与元数据/13张哈希复核通过，startup两次sessions/status3均在各进程ready前，之后78条命令均0。这补足了真实Scene插桩的前置门槛；下一步取得精确生成源码后只读记录Form/首Grid row/HDR row，先通过control→observed卡高保持再解释环境。未增加布局补偿，13差异与整阶段仍未通过，goal active。13个逐字重复PNG改为指向既有原件的相对别名，自有work目录移入单一归档；未下载产品App/tar或本机构建缓存。
+
+此前检查点（2026-10-25）：[真实coordinator的bounded timing](../Evidence/macOS14-hero-timing-40132685948/README.md)已完成：SDK26.2/min13同binary在13/14各一次default，原native/execution/SDR及新增strict timing均通过，6原PNG、四个对应端点raw/ICC exact。14注册后checkpoint距started0.435ms、首callback前缀0.666ms、first tick159.427ms；其中scalars结束→tick140.835ms尚未区分尾部/自动draw/分派，不是根因或等效响应性声明。上一[14缺样失败](../Evidence/macOS14-hero-coordinator-sdr-40129608288/README.md)保留；本次有效参考不因未归因间隔停用，也不据此改产品clock或盲CI。此前[静态SDR候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)混合色差及产品intent链仍未解决，候选未采用。下一步回实际Picture Scene首卡布局等未通过项。下列整应用交付版本及其它未通过项保留，goal active。
 
 ## 已有可复核结果
 
