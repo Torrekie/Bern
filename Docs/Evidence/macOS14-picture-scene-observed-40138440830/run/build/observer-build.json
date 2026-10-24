@@ -1,0 +1,72 @@
+{
+  "binaries": {
+    "Showcase.app/Contents/MacOS/Showcase": {
+      "bytes": 3773824,
+      "sha256": "c1d27a0435bd145f08a098adaaf22c6718c1192da15367456afb7ff151c4c12c"
+    },
+    "bin/showcase": {
+      "bytes": 898336,
+      "sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170"
+    }
+  },
+  "build": {
+    "app_bundle": "Showcase.app",
+    "architecture": "arm64",
+    "channels": [
+      "ipc"
+    ],
+    "color_source": "native",
+    "engine_deployment": "in-process",
+    "generator": "bern-backend-swiftui",
+    "generator_version": "0.1.0",
+    "ir_version": 8,
+    "languages": [
+      "zh-Hans",
+      "en"
+    ],
+    "media": {
+      "backend": "avfoundation",
+      "backend_version": "1",
+      "contract": 1,
+      "players": [
+        "preview"
+      ],
+      "presenter": "avplayerview",
+      "presenter_version": "1"
+    },
+    "minimum_macos": "13.0",
+    "platform": "macos",
+    "profile": "release",
+    "protocol": "showcase",
+    "protocol_fingerprint": "2490f5e67cff9fac",
+    "resources": [
+      "images/bern.png",
+      "images/hdr-gainmap.jpg",
+      "images/hdr-pq.png",
+      "images/landscape.jpg",
+      "media/aurora.mp4",
+      "media/broken.mp4",
+      "media/tides.mp4"
+    ],
+    "target": "swiftui-modern-macos",
+    "ui": "swiftui-modern",
+    "ui_bridge": "c-abi"
+  },
+  "instrumentation": {
+    "compiled_generated_bytes": 106494,
+    "compiled_generated_sha256": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+    "generated_measured_sha256": "f152c30b1ed4e3107c7198db2652c536ea0f5cddf81a046ecc9b0fed0ea47c10",
+    "generated_original_sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083",
+    "hook_count": 21,
+    "observer_helper_sha256": "14532e7960a7138ae3be48b26fe08ecb0f0d6b347e6cd7faa76be08eb01709da",
+    "scope": "21 appended background modifiers plus file-scope observer; original Scene/children preserved",
+    "success": true
+  },
+  "log": {
+    "full_bytes": 5981,
+    "full_sha256": "cff9b6ba1d342e923323909918ace09cd132a366b53b4b368beda94fdb42ac9e",
+    "truncated": false
+  },
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "success": true
+}

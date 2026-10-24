@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "groups": {
+    "A2": {
+      "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v2/runtime-work/A2/Showcase.app",
+      "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-scene-observed14/exact/bin/showcase",
+      "bundle_id": "dev.bern.picture13.a2.b8bb115a07ed451eae11ec5354e7eff5",
+      "receipt": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v2/A2/isolation.json"
+    },
+    "B": {
+      "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab/runtime-work/B/Showcase.app",
+      "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-scene-observed14/exact/bin/showcase",
+      "bundle_id": "dev.bern.picture13.b.12a5d8646549489da7c2f9e4813987b2",
+      "receipt": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab/B/isolation.json"
+    }
+  },
+  "macho_helper_source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-toolbar-title-host-f6/capture-pair/run-pair.py",
+  "macho_helper_source_sha256": "2155609f04678ac13249125995831ebf26c8331cd00960e1f643517111d150c1",
+  "commands": [
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Showcase.app"
+      ],
+      "status": 0,
+      "log": "A2/original-signature.txt"
+    },
+    {
+      "argv": [
+        "ditto",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Showcase.app",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v2/runtime-work/A2/Showcase.app"
+      ],
+      "status": 0,
+      "log": "A2/copy.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--force",
+        "--deep",
+        "--sign",
+        "-",
+        "--identifier",
+        "dev.bern.picture13.a2.b8bb115a07ed451eae11ec5354e7eff5",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v2/runtime-work/A2/Showcase.app"
+      ],
+      "status": 0,
+      "log": "A2/resign.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v2/runtime-work/A2/Showcase.app"
+      ],
+      "status": 0,
+      "log": "A2/signature.txt"
+    }
+  ],
+  "scope": "Preparation only; no UI launched. Private signatures/IDs differ; Mach-O sections and signature-size-normalized non-signature bytes preserved. Original App/CLI unchanged. A/B share the exact unchanged CI CLI.",
+  "existing_unlaunched_B_lock": "../picture-local13-ab/locks.json"
+}

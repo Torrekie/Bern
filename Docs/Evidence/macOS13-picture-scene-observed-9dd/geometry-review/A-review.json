@@ -1,0 +1,2379 @@
+{
+  "verdict": "A_capture_geometry_usable_first_card_129pt_HDR_147pt_cleanup_failed",
+  "scope": "Read-only review of original A PNGs/data and original remote14 observed/control. No UI, resampling, image edits, matching thresholds or product edits.",
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "A_result_sha256": "763d948836b2588cad7ddcd3b4a15ce2f77bc02a8814d54f64d93dc2e1831a06",
+  "A_overall_success": false,
+  "A_failure": "Focus/owned-process cleanup incomplete; watchdog receipt required",
+  "A_cleanup": {
+    "helper_status": 1,
+    "own_pid": 67177,
+    "own_process_still_running": true,
+    "receipt": "cleanup-helper.json",
+    "success": false
+  },
+  "capture_checks": {
+    "all_14_checks_pass": true,
+    "PNG_count": 9,
+    "command_count": 59,
+    "startup_sessions_status_3_count": 1,
+    "remaining_commands_status_0_count": 58,
+    "source_prefix_from_set_language_through_Layout_window_list_same_as_remote14": true,
+    "normalized_commands": [
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "set-language",
+          "--language",
+          "en"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "resize",
+          "--window",
+          "main#1",
+          "--width",
+          "920",
+          "--height",
+          "668"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "select",
+          "--target",
+          "main_window.pages",
+          "--option",
+          "Controls"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "set-bool",
+          "--target",
+          "controls_page.notifications",
+          "--value",
+          "false"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "set-number",
+          "--target",
+          "controls_page.volume",
+          "--value",
+          "73"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "state"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "select",
+          "--target",
+          "main_window.pages",
+          "--option",
+          "Text"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "select",
+          "--target",
+          "main_window.pages",
+          "--option",
+          "Buttons"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "select",
+          "--target",
+          "main_window.pages",
+          "--option",
+          "Inputs"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "select",
+          "--target",
+          "main_window.pages",
+          "--option",
+          "Text"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "edit",
+          "--target",
+          "main_window.sidebar_search",
+          "--value",
+          "!"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "select",
+          "--target",
+          "main_window.pages",
+          "--option",
+          "Library"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "activate",
+          "--target",
+          "library_page.library_results"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "edit",
+          "--target",
+          "main_window.sidebar_search",
+          "--value",
+          "zzzzzz"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "edit",
+          "--target",
+          "main_window.sidebar_search",
+          "--value",
+          ""
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "select",
+          "--target",
+          "main_window.pages",
+          "--option",
+          "Layout"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "ui",
+          "inspect"
+        ],
+        "status": 0
+      },
+      {
+        "arguments": [
+          "--session",
+          "<SESSION>",
+          "window",
+          "list"
+        ],
+        "status": 0
+      }
+    ]
+  },
+  "context": {
+    "A_os": "Version 13.7.8 (Build 22H730)",
+    "reference_os": "Version 14.8.9 (Build 23J631)",
+    "appearance": "light",
+    "A_preferences": {
+      "accent": "default",
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "reference_preferences": {
+      "accent": "default",
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "A_own_pid": 67177,
+    "A_own_window": 10716,
+    "A_requested_actual_outer_points": [
+      920,
+      668
+    ],
+    "A_pixels_per_point": 2,
+    "reference_pixels_per_point": 1,
+    "layout_selected_check": {
+      "appearance": "light",
+      "check": "Selected Layout",
+      "observed_value": "Layout",
+      "passed": true,
+      "target": "main_window.pages"
+    },
+    "sidebar_edge_visual_interval_points": [
+      140,
+      141
+    ],
+    "detail_card_left_right_points": [
+      161,
+      900
+    ],
+    "column_context": "Both original full screenshots show four children on one row within a five-column first Grid; HDR has two children in three columns. At width719, the original formulas floor((719+16)/(120+16))=5 and floor((719+16)/(192+16))=3. Matching sidebar boundary, card span, image fit positions and width context permit using the unchanged fixed-ROI probe. Full pixel equality is not expected across different OS/display scale/color profiles.",
+    "grid_width_from_visual_card_inset_points": 719,
+    "grid_width_scope": "Card span739 minus original 10pt left/right row inset; confirm with B observer before treating as native allocated grid width."
+  },
+  "A_original_PNGs": [
+    {
+      "name": "controls-light.png",
+      "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    },
+    {
+      "name": "controls-light-after-commit.png",
+      "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    },
+    {
+      "name": "text-light.png",
+      "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    },
+    {
+      "name": "buttons-light.png",
+      "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    },
+    {
+      "name": "inputs-light.png",
+      "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    },
+    {
+      "name": "query-failed-light.png",
+      "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    },
+    {
+      "name": "query-empty-light.png",
+      "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    },
+    {
+      "name": "query-recovered-light.png",
+      "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    },
+    {
+      "name": "images-layout-light.png",
+      "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+      "pixels": [
+        1840,
+        1336
+      ],
+      "points": [
+        920,
+        668
+      ]
+    }
+  ],
+  "manual_complete_original_PNG_edge_interpretation": {
+    "A_images_card_half_open_points": [
+      161,
+      98,
+      900,
+      227
+    ],
+    "reference_images_card_half_open_points": [
+      161,
+      98,
+      900,
+      223
+    ],
+    "A_images_card_height_points": 129,
+    "reference_images_card_height_points": 125,
+    "A_HDR_card_half_open_points": [
+      161,
+      325,
+      900,
+      472
+    ],
+    "reference_HDR_card_half_open_points": [
+      161,
+      321,
+      900,
+      468
+    ],
+    "A_HDR_card_height_points": 147,
+    "reference_HDR_card_height_points": 147,
+    "interpretation": "The unchanged first-card top and interior pictures/captions, four extra points below its caption, then the later HDR card shifted down four points are present in the full original A screenshot. The second card keeps its 147pt height. Complete visible left/right/top/bottom edges are corroborated by multiple exact sRGB traversals, including border antialiasing at 0.5pt on A.",
+    "limits": "These are original raster edge intervals in window points, not public native view bounds or a causal diagnosis. Cross14 caption raster edges differ at subpoint precision because scale2 vs scale1. PQ rendering differs visibly and is not accepted as equivalent by this geometry review."
+  },
+  "fixed_original_measurement": {
+    "script": "outputs/Bern/Docs/Evidence/macOS14-picture-scene-control-40135147500/measurement-review/measured.py",
+    "script_sha256": "05b74fd7cbeefdccdd953699e10c7c7e20570887f70a9959bd8411be1f76aae9",
+    "output": "A-fixed-original-measurement.json",
+    "output_sha256": "03058af20c1a7728c55aec14e384c950d4f9fdd8b321edfa3be774ed496be91d",
+    "unchanged_ROIs_thresholds_ICC_arguments": true,
+    "full_ROI_scope": "Fixed ROI values remain diagnostic ink/color intervals. They are not whole native card detection, nor a geometry correction. All requested captions/headings remain visibly inside the corresponding original fixed ROIs."
+  },
+  "scans": [
+    {
+      "path": "work/picture-local13-ab/capture-A/images-layout-light.png",
+      "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+      "size_pixels": [
+        1840,
+        1336
+      ],
+      "scale": 2,
+      "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+      "exact_srgb_runs": [
+        {
+          "axis": "x",
+          "position_points": 165,
+          "range_points": [
+            90,
+            235
+          ],
+          "runs": [
+            {
+              "start": 90.0,
+              "end": 98.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 98.0,
+              "end": 98.5,
+              "rgb": [
+                224,
+                222,
+                223
+              ]
+            },
+            {
+              "start": 98.5,
+              "end": 99.0,
+              "rgb": [
+                229,
+                227,
+                228
+              ]
+            },
+            {
+              "start": 99.0,
+              "end": 99.5,
+              "rgb": [
+                234,
+                232,
+                233
+              ]
+            },
+            {
+              "start": 99.5,
+              "end": 225.5,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 225.5,
+              "end": 226.0,
+              "rgb": [
+                234,
+                232,
+                233
+              ]
+            },
+            {
+              "start": 226.0,
+              "end": 226.5,
+              "rgb": [
+                229,
+                227,
+                228
+              ]
+            },
+            {
+              "start": 226.5,
+              "end": 227.0,
+              "rgb": [
+                224,
+                222,
+                223
+              ]
+            },
+            {
+              "start": 227.0,
+              "end": 235.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 750,
+          "range_points": [
+            90,
+            235
+          ],
+          "runs": [
+            {
+              "start": 90.0,
+              "end": 98.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 98.0,
+              "end": 98.5,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 98.5,
+              "end": 99.0,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 99.0,
+              "end": 226.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 226.0,
+              "end": 226.5,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 226.5,
+              "end": 227.0,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 227.0,
+              "end": 235.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 800,
+          "range_points": [
+            90,
+            235
+          ],
+          "runs": [
+            {
+              "start": 90.0,
+              "end": 98.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 98.0,
+              "end": 98.5,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 98.5,
+              "end": 99.0,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 99.0,
+              "end": 226.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 226.0,
+              "end": 226.5,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 226.5,
+              "end": 227.0,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 227.0,
+              "end": 235.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 895,
+          "range_points": [
+            90,
+            235
+          ],
+          "runs": [
+            {
+              "start": 90.0,
+              "end": 98.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 98.0,
+              "end": 98.5,
+              "rgb": [
+                223,
+                221,
+                222
+              ]
+            },
+            {
+              "start": 98.5,
+              "end": 99.0,
+              "rgb": [
+                230,
+                228,
+                229
+              ]
+            },
+            {
+              "start": 99.0,
+              "end": 226.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 226.0,
+              "end": 226.5,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 226.5,
+              "end": 227.0,
+              "rgb": [
+                223,
+                221,
+                222
+              ]
+            },
+            {
+              "start": 227.0,
+              "end": 235.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 165,
+          "range_points": [
+            315,
+            480
+          ],
+          "runs": [
+            {
+              "start": 315.0,
+              "end": 325.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 325.0,
+              "end": 325.5,
+              "rgb": [
+                224,
+                222,
+                223
+              ]
+            },
+            {
+              "start": 325.5,
+              "end": 326.0,
+              "rgb": [
+                229,
+                227,
+                228
+              ]
+            },
+            {
+              "start": 326.0,
+              "end": 326.5,
+              "rgb": [
+                234,
+                232,
+                233
+              ]
+            },
+            {
+              "start": 326.5,
+              "end": 470.5,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 470.5,
+              "end": 471.0,
+              "rgb": [
+                234,
+                232,
+                233
+              ]
+            },
+            {
+              "start": 471.0,
+              "end": 471.5,
+              "rgb": [
+                229,
+                227,
+                228
+              ]
+            },
+            {
+              "start": 471.5,
+              "end": 472.0,
+              "rgb": [
+                224,
+                222,
+                223
+              ]
+            },
+            {
+              "start": 472.0,
+              "end": 480.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 750,
+          "range_points": [
+            315,
+            480
+          ],
+          "runs": [
+            {
+              "start": 315.0,
+              "end": 325.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 325.0,
+              "end": 325.5,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 325.5,
+              "end": 326.0,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 326.0,
+              "end": 471.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 471.0,
+              "end": 471.5,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 471.5,
+              "end": 472.0,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 472.0,
+              "end": 480.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 800,
+          "range_points": [
+            315,
+            480
+          ],
+          "runs": [
+            {
+              "start": 315.0,
+              "end": 325.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 325.0,
+              "end": 325.5,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 325.5,
+              "end": 326.0,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 326.0,
+              "end": 471.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 471.0,
+              "end": 471.5,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 471.5,
+              "end": 472.0,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 472.0,
+              "end": 480.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 895,
+          "range_points": [
+            315,
+            480
+          ],
+          "runs": [
+            {
+              "start": 315.0,
+              "end": 325.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 325.0,
+              "end": 325.5,
+              "rgb": [
+                223,
+                221,
+                222
+              ]
+            },
+            {
+              "start": 325.5,
+              "end": 326.0,
+              "rgb": [
+                230,
+                228,
+                229
+              ]
+            },
+            {
+              "start": 326.0,
+              "end": 471.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 471.0,
+              "end": 471.5,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 471.5,
+              "end": 472.0,
+              "rgb": [
+                223,
+                221,
+                222
+              ]
+            },
+            {
+              "start": 472.0,
+              "end": 480.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "y",
+          "position_points": 200,
+          "range_points": [
+            130,
+            181
+          ],
+          "runs": [
+            {
+              "start": 130.0,
+              "end": 138.0,
+              "rgb": [
+                226,
+                224,
+                226
+              ]
+            },
+            {
+              "start": 138.0,
+              "end": 138.5,
+              "rgb": [
+                225,
+                223,
+                225
+              ]
+            },
+            {
+              "start": 138.5,
+              "end": 139.0,
+              "rgb": [
+                224,
+                222,
+                224
+              ]
+            },
+            {
+              "start": 139.0,
+              "end": 139.5,
+              "rgb": [
+                223,
+                221,
+                223
+              ]
+            },
+            {
+              "start": 139.5,
+              "end": 140.0,
+              "rgb": [
+                221,
+                219,
+                221
+              ]
+            },
+            {
+              "start": 140.0,
+              "end": 140.5,
+              "rgb": [
+                214,
+                212,
+                214
+              ]
+            },
+            {
+              "start": 140.5,
+              "end": 141.0,
+              "rgb": [
+                203,
+                201,
+                203
+              ]
+            },
+            {
+              "start": 141.0,
+              "end": 161.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 161.0,
+              "end": 161.5,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 161.5,
+              "end": 162.0,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 162.0,
+              "end": 181.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "y",
+          "position_points": 200,
+          "range_points": [
+            880,
+            905
+          ],
+          "runs": [
+            {
+              "start": 880.0,
+              "end": 899.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 899.0,
+              "end": 899.5,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 899.5,
+              "end": 900.0,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 900.0,
+              "end": 905.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "y",
+          "position_points": 400,
+          "range_points": [
+            130,
+            181
+          ],
+          "runs": [
+            {
+              "start": 130.0,
+              "end": 138.0,
+              "rgb": [
+                226,
+                224,
+                226
+              ]
+            },
+            {
+              "start": 138.0,
+              "end": 138.5,
+              "rgb": [
+                225,
+                223,
+                225
+              ]
+            },
+            {
+              "start": 138.5,
+              "end": 139.0,
+              "rgb": [
+                224,
+                222,
+                224
+              ]
+            },
+            {
+              "start": 139.0,
+              "end": 139.5,
+              "rgb": [
+                223,
+                221,
+                223
+              ]
+            },
+            {
+              "start": 139.5,
+              "end": 140.0,
+              "rgb": [
+                221,
+                219,
+                221
+              ]
+            },
+            {
+              "start": 140.0,
+              "end": 140.5,
+              "rgb": [
+                214,
+                212,
+                214
+              ]
+            },
+            {
+              "start": 140.5,
+              "end": 141.0,
+              "rgb": [
+                203,
+                201,
+                203
+              ]
+            },
+            {
+              "start": 141.0,
+              "end": 161.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            },
+            {
+              "start": 161.0,
+              "end": 161.5,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 161.5,
+              "end": 162.0,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 162.0,
+              "end": 181.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "y",
+          "position_points": 400,
+          "range_points": [
+            880,
+            905
+          ],
+          "runs": [
+            {
+              "start": 880.0,
+              "end": 899.0,
+              "rgb": [
+                235,
+                233,
+                234
+              ]
+            },
+            {
+              "start": 899.0,
+              "end": 899.5,
+              "rgb": [
+                231,
+                229,
+                230
+              ]
+            },
+            {
+              "start": 899.5,
+              "end": 900.0,
+              "rgb": [
+                222,
+                220,
+                221
+              ]
+            },
+            {
+              "start": 900.0,
+              "end": 905.0,
+              "rgb": [
+                239,
+                237,
+                238
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "work/picture-scene-observed14/raw/images-layout-light.png",
+      "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "scale": 1,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "exact_srgb_runs": [
+        {
+          "axis": "x",
+          "position_points": 165,
+          "range_points": [
+            90,
+            235
+          ],
+          "runs": [
+            {
+              "start": 90.0,
+              "end": 98.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 98.0,
+              "end": 99.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 99.0,
+              "end": 222.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 222.0,
+              "end": 223.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 223.0,
+              "end": 235.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 750,
+          "range_points": [
+            90,
+            235
+          ],
+          "runs": [
+            {
+              "start": 90.0,
+              "end": 98.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 98.0,
+              "end": 99.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 99.0,
+              "end": 222.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 222.0,
+              "end": 223.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 223.0,
+              "end": 235.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 800,
+          "range_points": [
+            90,
+            235
+          ],
+          "runs": [
+            {
+              "start": 90.0,
+              "end": 98.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 98.0,
+              "end": 99.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 99.0,
+              "end": 222.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 222.0,
+              "end": 223.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 223.0,
+              "end": 235.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 895,
+          "range_points": [
+            90,
+            235
+          ],
+          "runs": [
+            {
+              "start": 90.0,
+              "end": 98.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 98.0,
+              "end": 99.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 99.0,
+              "end": 222.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 222.0,
+              "end": 223.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 223.0,
+              "end": 235.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 165,
+          "range_points": [
+            315,
+            480
+          ],
+          "runs": [
+            {
+              "start": 315.0,
+              "end": 321.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 321.0,
+              "end": 322.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 322.0,
+              "end": 467.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 467.0,
+              "end": 468.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 468.0,
+              "end": 480.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 750,
+          "range_points": [
+            315,
+            480
+          ],
+          "runs": [
+            {
+              "start": 315.0,
+              "end": 321.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 321.0,
+              "end": 322.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 322.0,
+              "end": 467.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 467.0,
+              "end": 468.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 468.0,
+              "end": 480.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 800,
+          "range_points": [
+            315,
+            480
+          ],
+          "runs": [
+            {
+              "start": 315.0,
+              "end": 321.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 321.0,
+              "end": 322.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 322.0,
+              "end": 467.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 467.0,
+              "end": 468.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 468.0,
+              "end": 480.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "x",
+          "position_points": 895,
+          "range_points": [
+            315,
+            480
+          ],
+          "runs": [
+            {
+              "start": 315.0,
+              "end": 321.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 321.0,
+              "end": 322.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 322.0,
+              "end": 467.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 467.0,
+              "end": 468.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 468.0,
+              "end": 480.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "y",
+          "position_points": 200,
+          "range_points": [
+            130,
+            181
+          ],
+          "runs": [
+            {
+              "start": 130.0,
+              "end": 138.0,
+              "rgb": [
+                221,
+                221,
+                221
+              ]
+            },
+            {
+              "start": 138.0,
+              "end": 139.0,
+              "rgb": [
+                220,
+                220,
+                220
+              ]
+            },
+            {
+              "start": 139.0,
+              "end": 140.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 140.0,
+              "end": 141.0,
+              "rgb": [
+                209,
+                209,
+                209
+              ]
+            },
+            {
+              "start": 141.0,
+              "end": 161.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 161.0,
+              "end": 162.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 162.0,
+              "end": 181.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "y",
+          "position_points": 200,
+          "range_points": [
+            880,
+            905
+          ],
+          "runs": [
+            {
+              "start": 880.0,
+              "end": 899.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 899.0,
+              "end": 900.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 900.0,
+              "end": 905.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "y",
+          "position_points": 400,
+          "range_points": [
+            130,
+            181
+          ],
+          "runs": [
+            {
+              "start": 130.0,
+              "end": 138.0,
+              "rgb": [
+                221,
+                221,
+                221
+              ]
+            },
+            {
+              "start": 138.0,
+              "end": 139.0,
+              "rgb": [
+                220,
+                220,
+                220
+              ]
+            },
+            {
+              "start": 139.0,
+              "end": 140.0,
+              "rgb": [
+                218,
+                218,
+                218
+              ]
+            },
+            {
+              "start": 140.0,
+              "end": 141.0,
+              "rgb": [
+                209,
+                209,
+                209
+              ]
+            },
+            {
+              "start": 141.0,
+              "end": 161.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            },
+            {
+              "start": 161.0,
+              "end": 162.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 162.0,
+              "end": 181.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            }
+          ]
+        },
+        {
+          "axis": "y",
+          "position_points": 400,
+          "range_points": [
+            880,
+            905
+          ],
+          "runs": [
+            {
+              "start": 880.0,
+              "end": 899.0,
+              "rgb": [
+                230,
+                230,
+                230
+              ]
+            },
+            {
+              "start": 899.0,
+              "end": 900.0,
+              "rgb": [
+                217,
+                217,
+                217
+              ]
+            },
+            {
+              "start": 900.0,
+              "end": 905.0,
+              "rgb": [
+                234,
+                234,
+                234
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pending": [
+    "B capture and same13 observer noninterference comparison",
+    "B public observer event comparison against14; do not infer root cause from current A raster alone"
+  ]
+}

@@ -1,0 +1,20 @@
+# Local13 private Picture Scene — independent native review
+
+The actual files passed provenance/isolation checks before retirement. All four private Apps have40 Mach-O sections equal to their corresponding original GUI, with equal non-signature bytes after the stated signature-storage normalization. Only `CFBundleIdentifier` in Info.plist and GUI signing bytes change; whole GUI hashes differ. Actual original/control/CI GUI and CLI hashes match saved delivery/source records. The CI tar's16 regular members were read and matched exact. Six Apps, CLI and four compiled helpers passed11 independent strict signature checks. Apps/CLI are arm64/min13/SDK26.2; collectors/guards arm64/min13/SDK14.2. Full fingerprints and actual checks are in `payload-review.json`.
+
+| Run | Native capture / cleanup | Observer scope |
+| --- | --- | --- |
+| A | 9 PNGs produced; automatic cleanup failed because launchDate was null; separate manual SIGTERM/exit/front-release receipts retained | Original control; remains a failed run |
+| A2 | Capture/result/helper/watchdog pass; original Simulator9292 restored before own stop | Fresh original control |
+| B | Capture and automatic cleanup pass | Modifiers present, event I/O disabled by missing directory; not an I/O-on observation |
+| B3 | Capture and automatic cleanup pass | Actual precreated external output directory;21 events/21 labels |
+
+A2/B3 have60 commands and B59; only initial sessions status3 is followed immediately by successful discovery, all remaining commands0, with14 passed checks each. Kernel start timestamps bind ownership, helper and watchdog receipts even though direct-launch launchDate remains null. All v2 normal flags arefalse at start/end. Own PID69534/window10731 binds the B3 packet to the Layout capture:124,058B, SHA256 `925deacd3f56a53ddf30fdfba5e6bcfbed5069846afd908ca22ff20df1e6d00a`,21 exact labels and contiguous sequences. It remains `end_state=not_observed`, without a settled/capture-synchronized claim. Per-label environment/geometry interpretation is separate.
+
+All9 selected original PNG files in A, B and B3 are byte-identical to A2, as independently read here; this includes original PNG/ICC bytes but uses no new pixel algorithm. A's matching images do not upgrade its failed cleanup. The local reports say `harness_sha=unknown`; actual compiled helper/build/watchdog hashes and frozen source links provide the local provenance instead of an invented Git stamp.
+
+The successful helper receipts show original front restored **before** stopping own instance, followed by no owned instance remaining. The earlier saved desktop-after checks were still active exclusive sessions and only establish recorded front/cursor state. The separately saved `desktop-final-released.json`, verified in `finalization-addendum.json`, records inactive/idle, Simulator9292 and cursor distance0. These are historical receipts, not a new desktop or process probe by this reviewer.
+
+`finalization-addendum.json` also binds16 successful preparation/signature commands, exact source locks for v2 (v1 has compiler source paths and retained source hashes but no build source-lock map), the existing55-input/compiled-Swift/CI provenance review, and root's cleanup receipts. No app/helper was executed, compiled, re-signed, or deleted by this review. Original/CI/private binaries and tar were read while present; root later retired owned artifacts. Their `input_hashes` are historical read receipts, **not** a retained-file manifest requiring the retired paths to exist. Only the files named by this directory's `SHA256SUMS` are its retained members. No payload was re-read after retirement.
+
+The acceptance scope is the original light route through Layout:920×668pt,2× PNGs, normal/en/en_US, programmatic CLI and original0.8-second Layout wait. It does not establish5stable, synchronized native/SwiftUI frames, universal observer noninterference, physical-input/animation/HDR equivalence, macOS14 geometry equality, whole macOS13 port completion, or any later platform stage.

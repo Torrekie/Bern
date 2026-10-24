@@ -1,0 +1,147 @@
+--- a/v1/run-local13.py
++++ b/v2/run-local13.py
+@@ -41,6 +41,40 @@
+ libproc = ctypes.CDLL('/usr/lib/libproc.dylib')
+ libproc.proc_pidpath.argtypes = [ctypes.c_int, ctypes.c_void_p, ctypes.c_uint32]
+ libproc.proc_pidpath.restype = ctypes.c_int
++# SDK sys/proc_info.h proc_bsdinfo, arm64: sizeof136, start timeval at120/128.
++class ProcBSDInfo(ctypes.Structure):
++    _fields_ = [(name, ctypes.c_uint32) for name in [
++        'flags', 'status', 'xstatus', 'pid', 'ppid', 'uid', 'gid', 'ruid',
++        'rgid', 'svuid', 'svgid', 'rfu_1']] + [
++        ('comm', ctypes.c_char * 16), ('name', ctypes.c_char * 32),
++        ('nfiles', ctypes.c_uint32), ('pgid', ctypes.c_uint32),
++        ('pjobc', ctypes.c_uint32), ('e_tdev', ctypes.c_uint32),
++        ('e_tpgid', ctypes.c_uint32), ('nice', ctypes.c_int32),
++        ('start_sec', ctypes.c_uint64), ('start_usec', ctypes.c_uint64)]
++assert ctypes.sizeof(ProcBSDInfo) == 136
++assert ProcBSDInfo.start_sec.offset == 120 and ProcBSDInfo.start_usec.offset == 128
++libproc.proc_pidinfo.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_uint64,
++                                ctypes.c_void_p, ctypes.c_int]
++libproc.proc_pidinfo.restype = ctypes.c_int
++
++def process_info(pid):
++    info = ProcBSDInfo()
++    size = ctypes.sizeof(info)
++    count = libproc.proc_pidinfo(pid, 3, 0, ctypes.byref(info), size)  # PROC_PIDTBSDINFO
++    if count != size or info.pid != pid or info.start_sec <= 0 or info.start_usec >= 1_000_000:
++        return None
++    return {'ppid': int(info.ppid), 'kernel_start':
++            {'tv_sec': int(info.start_sec), 'tv_usec': int(info.start_usec)}}
++
++def valid_start(row):
++    stamp = row.get('kernel_start')
++    return isinstance(stamp, dict) and type(stamp.get('tv_sec')) is int and \
++        type(stamp.get('tv_usec')) is int and stamp['tv_sec'] > 0 and 0 <= stamp['tv_usec'] < 1_000_000
++
++def same_process(row):
++    info = process_info(int(row['pid']))
++    return valid_start(row) and info is not None and info['kernel_start'] == row['kernel_start'] and \
++        executable(int(row['pid'])) == row['executable_path']
+ 
+ def executable(pid):
+     data = ctypes.create_string_buffer(4096)
+@@ -48,8 +82,10 @@
+     return os.path.realpath(os.fsdecode(data.value)) if size > 0 else None
+ 
+ def parent(pid):
+-    value = subprocess.check_output(['ps', '-p', str(pid), '-o', 'ppid='], timeout=2)
+-    return int(value.strip())
++    info = process_info(pid)
++    if info is None:
++        raise ProcessLookupError('Kernel process identity unavailable')
++    return info['ppid']
+ 
+ def save():
+     temp = sidecar / 'watchdog.json.tmp'
+@@ -74,11 +110,14 @@
+     assert row['collector_pid'] == process.pid
+     assert row['executable_path'] == str(app / 'Contents/MacOS/Showcase')
+     assert row['bundle_id'] == report['private_bundle_id']
+-    if row.get('launch_date') is None:
++    if not valid_start(row):
+         status, snapshot = helper('inspect')
+         own = snapshot.get('own')
+         if status == 0 and own and own['pid'] == row['pid']:
+             row = own
++    assert valid_start(row), 'Kernel process start unavailable; no launchDate fallback'
++    current = process_info(int(row['pid']))
++    assert current is None or current['kernel_start'] == row['kernel_start'], 'PID starttime changed'
+     expected = row
+     (sidecar / 'owned.json').write_text(json.dumps(row, indent=2) + '\n')
+ 
+@@ -93,7 +132,7 @@
+         return
+     assert row['bundle_id'] == report['private_bundle_id']
+     assert row['executable_path'] == str(app / 'Contents/MacOS/Showcase')
+-    assert row['launch_date'] is not None and parent(int(row['pid'])) == process.pid
++    assert valid_start(row) and same_process(row) and parent(int(row['pid'])) == process.pid
+     expected = row
+     (sidecar / 'owned.json').write_text(json.dumps(row, indent=2) + '\n')
+     report['ownership_bootstrapped_from_exact_child'] = True
+@@ -102,7 +141,7 @@
+     status, initial = helper('inspect')
+     assert status == 0 and initial['success'] is True and initial['own'] is None
+     front = initial['front']
+-    assert front and front['launch_date'] is not None and front['pid'] > 0
++    assert front and front['pid'] > 0 and valid_start(front) and same_process(front)
+     report['private_bundle_id'] = initial['private_bundle_id']
+     report['original_front'] = front
+     (sidecar / 'original-front.json').write_text(json.dumps(front, indent=2) + '\n')
+@@ -120,7 +159,7 @@
+         report['collector_pid'] = process.pid; save()
+         end = time.monotonic() + 175
+         while process.poll() is None and time.monotonic() < end:
+-            if expected is None or expected.get('launch_date') is None:
++            if expected is None or not valid_start(expected):
+                 refresh_owned()
+             time.sleep(0.1)
+         if process.poll() is None:
+@@ -138,7 +177,7 @@
+         if process is not None:
+             if process.poll() is None and not report.get('timeout'):
+                 os.kill(process.pid, signal.SIGSTOP)
+-            if expected is None or expected.get('launch_date') is None:
++            if expected is None or not valid_start(expected):
+                 bootstrap_owned()
+             if expected is not None:
+                 # Independent helper applies the same exact-instance and current-front guards.
+@@ -149,9 +188,9 @@
+                 if executable(pid) == str(app / 'Contents/MacOS/Showcase'):
+                     # An unregistered background child cannot be foreground; fail closed otherwise.
+                     front = receipt.get('front_after', {})
+-                    if front and front.get('pid') == pid:
++                    if not front or front.get('pid') == pid:
+                         raise RuntimeError('Own foreground remained after restore attempt; no blind kill')
+-                    if parent(pid) == process.pid:
++                    if parent(pid) == process.pid and same_process(expected):
+                         os.kill(pid, signal.SIGKILL)
+                     else:
+                         raise RuntimeError('Own executable remains without verified collector parent')
+@@ -174,8 +213,11 @@
+                         continue
+                     path = executable(pid)
+                     if path in {str(cli), str(guard)}:
+-                        if parent(pid) == process.pid and executable(pid) == path:
+-                            os.kill(pid, signal.SIGKILL)
++                        info = process_info(pid)
++                        if info is not None and info['ppid'] == process.pid:
++                            child = {'pid': pid, 'executable_path': path, 'kernel_start': info['kernel_start']}
++                            if same_process(child) and parent(pid) == process.pid:
++                                os.kill(pid, signal.SIGKILL)
+                     elif path == str(app / 'Contents/MacOS/Showcase'):
+                         # Covers an unregistered background child before ownership.json.
+                         receipt = report.get('outer_cleanup') or report.get('cleanup_without_ownership') or report.get('bootstrap_inspect')
+@@ -183,8 +225,11 @@
+                         if not front or front.get('pid') == pid:
+                             cleanup_ok = False
+                             report['remaining_app_child'] = {'pid': pid, 'reason': 'No verified non-own foreground; no blind kill'}
+-                        elif parent(pid) == process.pid and executable(pid) == path:
++                        elif expected is not None and expected['pid'] == pid and same_process(expected) and parent(pid) == process.pid:
+                             os.kill(pid, signal.SIGKILL)
++                        else:
++                            cleanup_ok = False
++                            report['remaining_app_child'] = {'pid': pid, 'reason': 'No matching kernel-start ownership receipt; no blind kill'}
+                 report['exact_child_cleanup_attempted'] = True
+             except BaseException as error:
+                 cleanup_ok = False

@@ -1,0 +1,671 @@
+{
+  "verdict": "legacy_A_failed_preserved_A2_B_B3_native_cleanup_pass_B3_packet_bound",
+  "runs": {
+    "A": {
+      "runtime": "Version 13.7.8 (Build 22H730)",
+      "collector_version": "v1",
+      "private_bundle_id": "dev.bern.picture13.a.6d69edf8fd4d4f8c9991b482cfdd70d0",
+      "own_pid": 67177,
+      "collector_pid": 67176,
+      "Layout_window_number": 10716,
+      "commands": 59,
+      "passed_checks": 14,
+      "PNG_count": 9,
+      "startup_only_nonzero": {
+        "command": "sessions",
+        "status": 3,
+        "immediate_retry_status": 0
+      },
+      "normal_start": {
+        "accent": "default",
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_end": null,
+      "harness_sha_field": "unknown (local build source/helper hashes are retained separately)",
+      "terminal": {
+        "status": "legacy_capture_partial_cleanup_failed_then_manual_cleanup_receipt",
+        "cleanup_pass": false,
+        "manual_own_exited_recorded": true,
+        "manual_front_restored_recorded": true,
+        "desktop_session_released_in_saved_receipt": true
+      },
+      "observer_scope": "original no-modifier control",
+      "PNG_hashes": {
+        "controls-light.png": {
+          "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+          "bytes": 237074
+        },
+        "controls-light-after-commit.png": {
+          "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+          "bytes": 236584
+        },
+        "text-light.png": {
+          "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+          "bytes": 159842
+        },
+        "buttons-light.png": {
+          "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+          "bytes": 169038
+        },
+        "inputs-light.png": {
+          "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+          "bytes": 125117
+        },
+        "query-failed-light.png": {
+          "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+          "bytes": 158369
+        },
+        "query-empty-light.png": {
+          "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+          "bytes": 146486
+        },
+        "query-recovered-light.png": {
+          "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+          "bytes": 162770
+        },
+        "images-layout-light.png": {
+          "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+          "bytes": 460220
+        }
+      }
+    },
+    "A2": {
+      "runtime": "Version 13.7.8 (Build 22H730)",
+      "collector_version": "v2",
+      "private_bundle_id": "dev.bern.picture13.a2.b8bb115a07ed451eae11ec5354e7eff5",
+      "own_pid": 68988,
+      "collector_pid": 68987,
+      "Layout_window_number": 10721,
+      "commands": 60,
+      "passed_checks": 14,
+      "PNG_count": 9,
+      "startup_only_nonzero": {
+        "command": "sessions",
+        "status": 3,
+        "immediate_retry_status": 0
+      },
+      "normal_start": {
+        "accent": "default",
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_end": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "harness_sha_field": "unknown (local build source/helper hashes are retained separately)",
+      "terminal": {
+        "status": "capture_and_automatic_kernel_identity_cleanup_pass",
+        "cleanup_pass": true,
+        "original_front_restored_before_stop": true,
+        "own_no_longer_running_in_receipts": true,
+        "own_kernel_start": {
+          "tv_sec": 1792883437,
+          "tv_usec": 779082
+        },
+        "launch_date": null,
+        "desktop_saved_front": 9292,
+        "desktop_saved_cursor_distance": 0,
+        "desktop_session_active_at_saved_check": true,
+        "desktop_release_not_claimed_by_this_saved_check": true
+      },
+      "observer_scope": "original no-modifier control",
+      "PNG_hashes": {
+        "controls-light.png": {
+          "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+          "bytes": 237074
+        },
+        "controls-light-after-commit.png": {
+          "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+          "bytes": 236584
+        },
+        "text-light.png": {
+          "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+          "bytes": 159842
+        },
+        "buttons-light.png": {
+          "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+          "bytes": 169038
+        },
+        "inputs-light.png": {
+          "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+          "bytes": 125117
+        },
+        "query-failed-light.png": {
+          "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+          "bytes": 158369
+        },
+        "query-empty-light.png": {
+          "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+          "bytes": 146486
+        },
+        "query-recovered-light.png": {
+          "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+          "bytes": 162770
+        },
+        "images-layout-light.png": {
+          "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+          "bytes": 460220
+        }
+      }
+    },
+    "B": {
+      "runtime": "Version 13.7.8 (Build 22H730)",
+      "collector_version": "v2",
+      "private_bundle_id": "dev.bern.picture13.b.12a5d8646549489da7c2f9e4813987b2",
+      "own_pid": 69134,
+      "collector_pid": 69133,
+      "Layout_window_number": 10726,
+      "commands": 59,
+      "passed_checks": 14,
+      "PNG_count": 9,
+      "startup_only_nonzero": {
+        "command": "sessions",
+        "status": 3,
+        "immediate_retry_status": 0
+      },
+      "normal_start": {
+        "accent": "default",
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_end": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "harness_sha_field": "unknown (local build source/helper hashes are retained separately)",
+      "terminal": {
+        "status": "capture_and_automatic_kernel_identity_cleanup_pass",
+        "cleanup_pass": true,
+        "original_front_restored_before_stop": true,
+        "own_no_longer_running_in_receipts": true,
+        "own_kernel_start": {
+          "tv_sec": 1792883458,
+          "tv_usec": 893108
+        },
+        "launch_date": null,
+        "desktop_saved_front": 9292,
+        "desktop_saved_cursor_distance": 0,
+        "desktop_session_active_at_saved_check": true,
+        "desktop_release_not_claimed_by_this_saved_check": true
+      },
+      "observer_scope": "modifiers compiled, event IO-off (documented missing directory)",
+      "PNG_hashes": {
+        "controls-light.png": {
+          "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+          "bytes": 237074
+        },
+        "controls-light-after-commit.png": {
+          "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+          "bytes": 236584
+        },
+        "text-light.png": {
+          "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+          "bytes": 159842
+        },
+        "buttons-light.png": {
+          "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+          "bytes": 169038
+        },
+        "inputs-light.png": {
+          "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+          "bytes": 125117
+        },
+        "query-failed-light.png": {
+          "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+          "bytes": 158369
+        },
+        "query-empty-light.png": {
+          "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+          "bytes": 146486
+        },
+        "query-recovered-light.png": {
+          "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+          "bytes": 162770
+        },
+        "images-layout-light.png": {
+          "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+          "bytes": 460220
+        }
+      }
+    },
+    "B3": {
+      "runtime": "Version 13.7.8 (Build 22H730)",
+      "collector_version": "v2",
+      "private_bundle_id": "dev.bern.picture13.b3.bffae7ce3c064b12a61b0e14a16ac0d0",
+      "own_pid": 69534,
+      "collector_pid": 69533,
+      "Layout_window_number": 10731,
+      "commands": 60,
+      "passed_checks": 14,
+      "PNG_count": 9,
+      "startup_only_nonzero": {
+        "command": "sessions",
+        "status": 3,
+        "immediate_retry_status": 0
+      },
+      "normal_start": {
+        "accent": "default",
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_end": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "harness_sha_field": "unknown (local build source/helper hashes are retained separately)",
+      "terminal": {
+        "status": "capture_and_automatic_kernel_identity_cleanup_pass",
+        "cleanup_pass": true,
+        "original_front_restored_before_stop": true,
+        "own_no_longer_running_in_receipts": true,
+        "own_kernel_start": {
+          "tv_sec": 1792883613,
+          "tv_usec": 645926
+        },
+        "launch_date": null,
+        "desktop_saved_front": 9292,
+        "desktop_saved_cursor_distance": 0,
+        "desktop_session_active_at_saved_check": true,
+        "desktop_release_not_claimed_by_this_saved_check": true
+      },
+      "observer_scope": "actual existing-directory event IO-on",
+      "PNG_hashes": {
+        "controls-light.png": {
+          "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+          "bytes": 237074
+        },
+        "controls-light-after-commit.png": {
+          "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+          "bytes": 236584
+        },
+        "text-light.png": {
+          "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+          "bytes": 159842
+        },
+        "buttons-light.png": {
+          "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+          "bytes": 169038
+        },
+        "inputs-light.png": {
+          "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+          "bytes": 125117
+        },
+        "query-failed-light.png": {
+          "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+          "bytes": 158369
+        },
+        "query-empty-light.png": {
+          "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+          "bytes": 146486
+        },
+        "query-recovered-light.png": {
+          "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+          "bytes": 162770
+        },
+        "images-layout-light.png": {
+          "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+          "bytes": 460220
+        }
+      }
+    }
+  },
+  "B3_packet": {
+    "path": "work/picture-local13-ab-v3/events-B3/picture-observer-69534.json",
+    "sha256": "925deacd3f56a53ddf30fdfba5e6bcfbed5069846afd908ca22ff20df1e6d00a",
+    "bytes": 124058,
+    "pid": 69534,
+    "window": 10731,
+    "events": 21,
+    "labels": 21,
+    "schema_identity_limits_pass": true,
+    "end_state": "not_observed",
+    "capture_synchronization_or_settled_state_established": false,
+    "precreated_external_output_directory_receipt_verified": true,
+    "interpretation": "PID/window/schema binding only; per-label geometry/environment meanings are left to the event reviewer."
+  },
+  "raw_file_comparisons_no_pixel_decode": {
+    "A": {
+      "PNG_count": 9,
+      "all_exact_to_A2": true
+    },
+    "B": {
+      "PNG_count": 9,
+      "all_exact_to_A2": true
+    },
+    "B3": {
+      "PNG_count": 9,
+      "all_exact_to_A2": true
+    }
+  },
+  "scope": [
+    "All PNG hashes were read from original files without a new color/pixel algorithm. Other geometry/ICC measurements are separate.",
+    "A remains failed automatic cleanup, with separate parent manual SIGTERM/exit/front-release receipts. It is not upgraded to a passing collector run.",
+    "B has compiled modifiers but no IO-on packet; B3 is the actual IO-on sample.",
+    "Successful v2 cleanup/front-before-stop is verified from original helper/watchdog/report records. Saved desktop checks for A2/B/B3 were still active exclusive sessions; they establish front/cursor observations, not desktop-session release.",
+    "Local report.harness_sha is unknown. Actual collector/guard binary hashes match saved builds/watchdog receipts; frozen source review provides source hashes.",
+    "No application/helper launch, UI, compilation, CI, re-signing, prefs change, artifact deletion or live desktop query by reviewer."
+  ],
+  "input_hashes": {
+    "work/picture-local13-ab/capture-A/result.json": {
+      "sha256": "763d948836b2588cad7ddcd3b4a15ce2f77bc02a8814d54f64d93dc2e1831a06",
+      "bytes": 31503
+    },
+    "work/picture-local13-ab/capture-A.watchdog/watchdog.json": {
+      "sha256": "c44e25c3b8db0d00d16ad4b88636a2fbeafc92338ff436c0601c746826fb6b02",
+      "bytes": 2475
+    },
+    "work/picture-local13-ab/capture-A/cleanup-helper.json": {
+      "sha256": "293196bdf57e533a207152cc1b8301088e5e8dad513fecda7d7655f6b5fb0f5d",
+      "bytes": 1381
+    },
+    "work/picture-local13-ab/capture-A/ownership.json": {
+      "sha256": "f37f0a94d3f881ef3f43d1d86a3f92aaa8f85627bf8ddc5971b434d4afa950b8",
+      "bytes": 339
+    },
+    "work/picture-local13-ab/capture-A/original-front.json": {
+      "sha256": "e5b44f199de6310d102457075848ffb86e87c7cab1ffae409d473363957e0601",
+      "bytes": 230
+    },
+    "work/picture-local13-ab/A/isolation.json": {
+      "sha256": "0176d6d031e5fd66518825e0d73695612496f1ce6a145a50b6ac74682d455eec",
+      "bytes": 31951
+    },
+    "work/picture-local13-ab/capture-A/controls-light.png": {
+      "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+      "bytes": 237074
+    },
+    "work/picture-local13-ab/capture-A/controls-light-after-commit.png": {
+      "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+      "bytes": 236584
+    },
+    "work/picture-local13-ab/capture-A/text-light.png": {
+      "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+      "bytes": 159842
+    },
+    "work/picture-local13-ab/capture-A/buttons-light.png": {
+      "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+      "bytes": 169038
+    },
+    "work/picture-local13-ab/capture-A/inputs-light.png": {
+      "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+      "bytes": 125117
+    },
+    "work/picture-local13-ab/capture-A/query-failed-light.png": {
+      "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+      "bytes": 158369
+    },
+    "work/picture-local13-ab/capture-A/query-empty-light.png": {
+      "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+      "bytes": 146486
+    },
+    "work/picture-local13-ab/capture-A/query-recovered-light.png": {
+      "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+      "bytes": 162770
+    },
+    "work/picture-local13-ab/capture-A/images-layout-light.png": {
+      "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+      "bytes": 460220
+    },
+    "work/picture-local13-ab/manual-cleanup-A.json": {
+      "sha256": "be19087a32171fdf78bf48c436485e6a0b898ab8776951438acb67de97654d33",
+      "bytes": 681
+    },
+    "work/picture-local13-ab/manual-cleanup-A-desktop.json": {
+      "sha256": "39713da463065736d5dc580f7520066e42e98560b5e42f9522ff833e64da77db",
+      "bytes": 568
+    },
+    "work/picture-local13-ab/capture-A/light-application.log": {
+      "sha256": "15ad68c7b65f8ce8f7c767b9801a7eb20f91f24a3ff9ca90bad1e9e66e7e0b66",
+      "bytes": 256
+    },
+    "work/picture-local13-ab/capture-A.watchdog/collector.log": {
+      "sha256": "9bebc9f165f73ba36d663c4797c13d88f0d6ed5e23760eb4de19b7bec609a2d8",
+      "bytes": 92
+    },
+    "work/picture-local13-ab-v2/capture-A2/result.json": {
+      "sha256": "e3202fb59f4fa872fadcd73e6340ffe7477b400fc490533a08e1ffcbc94d6eef",
+      "bytes": 32639
+    },
+    "work/picture-local13-ab-v2/capture-A2.watchdog/watchdog.json": {
+      "sha256": "b70241b7c021e0e6650b177b43e0e2d0ba70dc8f98ba2828416003af496f6255",
+      "bytes": 2346
+    },
+    "work/picture-local13-ab-v2/capture-A2/cleanup-helper.json": {
+      "sha256": "b11cfdbd48f8b6b98a1421d3aface0818becd56ec5d1079f4712f4a94ba18bfd",
+      "bytes": 2028
+    },
+    "work/picture-local13-ab-v2/capture-A2/ownership.json": {
+      "sha256": "362643137e3257ab155a6e10ea09fefe81356706cab493ebede6ea1d1f99f729",
+      "bytes": 420
+    },
+    "work/picture-local13-ab-v2/capture-A2/original-front.json": {
+      "sha256": "8b1d6e18ba79469e2cfa0dce41e0aabb738f601c597723ee7308fac09a006cd5",
+      "bytes": 306
+    },
+    "work/picture-local13-ab-v2/A2/isolation.json": {
+      "sha256": "39e33ef5b884cd808016bfbad4c9bcb0762e8705815e9fadcb228848f3420e74",
+      "bytes": 31963
+    },
+    "work/picture-local13-ab-v2/capture-A2/controls-light.png": {
+      "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+      "bytes": 237074
+    },
+    "work/picture-local13-ab-v2/capture-A2/controls-light-after-commit.png": {
+      "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+      "bytes": 236584
+    },
+    "work/picture-local13-ab-v2/capture-A2/text-light.png": {
+      "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+      "bytes": 159842
+    },
+    "work/picture-local13-ab-v2/capture-A2/buttons-light.png": {
+      "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+      "bytes": 169038
+    },
+    "work/picture-local13-ab-v2/capture-A2/inputs-light.png": {
+      "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+      "bytes": 125117
+    },
+    "work/picture-local13-ab-v2/capture-A2/query-failed-light.png": {
+      "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+      "bytes": 158369
+    },
+    "work/picture-local13-ab-v2/capture-A2/query-empty-light.png": {
+      "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+      "bytes": 146486
+    },
+    "work/picture-local13-ab-v2/capture-A2/query-recovered-light.png": {
+      "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+      "bytes": 162770
+    },
+    "work/picture-local13-ab-v2/capture-A2/images-layout-light.png": {
+      "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+      "bytes": 460220
+    },
+    "work/picture-local13-ab-v2/capture-A2.watchdog/owned.json": {
+      "sha256": "446bab01bd293b7728aac12edcd50facd314e6d03a3577065b1772df18e307f9",
+      "bytes": 399
+    },
+    "work/picture-local13-ab-v2/desktop-after-A2.json": {
+      "sha256": "c41120efaa2e983d5cb723ba8e956f5277119424ac3d735f565730a25f4150e2",
+      "bytes": 956
+    },
+    "work/picture-local13-ab-v2/capture-A2/light-application.log": {
+      "sha256": "093a2b7044d45265bf935ab998b49bb4ab11afa14b0c014af59fc49e07982e1c",
+      "bytes": 417
+    },
+    "work/picture-local13-ab-v2/capture-A2.watchdog/collector.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v2/capture-B/result.json": {
+      "sha256": "da0bca05ad457365322e200dece9ca2ff75b6fe6eb3f5f381fa96138cc793727",
+      "bytes": 31634
+    },
+    "work/picture-local13-ab-v2/capture-B.watchdog/watchdog.json": {
+      "sha256": "946f0ecf7746af97b831375d88d3bed1197510381bee589e6e12d4bb3133aa03",
+      "bytes": 2335
+    },
+    "work/picture-local13-ab-v2/capture-B/cleanup-helper.json": {
+      "sha256": "4f1edb40ed434bef9f851c7b7e3707ee1d2207eb413cbcf001ae8f78618618b8",
+      "bytes": 2013
+    },
+    "work/picture-local13-ab-v2/capture-B/ownership.json": {
+      "sha256": "adaccb2e702b9b7d8039e57a688c87b72da710f3e3210154a8bedea861485485",
+      "bytes": 415
+    },
+    "work/picture-local13-ab-v2/capture-B/original-front.json": {
+      "sha256": "8b1d6e18ba79469e2cfa0dce41e0aabb738f601c597723ee7308fac09a006cd5",
+      "bytes": 306
+    },
+    "work/picture-local13-ab/B/isolation.json": {
+      "sha256": "4b9be368e5eec05bcb3028231655bb1430f996d5cf6e6ab9ead9ea28078ec77c",
+      "bytes": 31990
+    },
+    "work/picture-local13-ab-v2/capture-B/controls-light.png": {
+      "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+      "bytes": 237074
+    },
+    "work/picture-local13-ab-v2/capture-B/controls-light-after-commit.png": {
+      "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+      "bytes": 236584
+    },
+    "work/picture-local13-ab-v2/capture-B/text-light.png": {
+      "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+      "bytes": 159842
+    },
+    "work/picture-local13-ab-v2/capture-B/buttons-light.png": {
+      "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+      "bytes": 169038
+    },
+    "work/picture-local13-ab-v2/capture-B/inputs-light.png": {
+      "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+      "bytes": 125117
+    },
+    "work/picture-local13-ab-v2/capture-B/query-failed-light.png": {
+      "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+      "bytes": 158369
+    },
+    "work/picture-local13-ab-v2/capture-B/query-empty-light.png": {
+      "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+      "bytes": 146486
+    },
+    "work/picture-local13-ab-v2/capture-B/query-recovered-light.png": {
+      "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+      "bytes": 162770
+    },
+    "work/picture-local13-ab-v2/capture-B/images-layout-light.png": {
+      "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+      "bytes": 460220
+    },
+    "work/picture-local13-ab-v2/capture-B.watchdog/owned.json": {
+      "sha256": "004d40d79920d837cb6619b2571cb8c449902d7058ede93da87665d7e50bd7de",
+      "bytes": 394
+    },
+    "work/picture-local13-ab-v2/desktop-after-B.json": {
+      "sha256": "c41120efaa2e983d5cb723ba8e956f5277119424ac3d735f565730a25f4150e2",
+      "bytes": 956
+    },
+    "work/picture-local13-ab-v2/capture-B/light-application.log": {
+      "sha256": "0bd320b2c3ececbc6cf2bdd79136eb4e99814d4d510cba2e4814684549de172c",
+      "bytes": 416
+    },
+    "work/picture-local13-ab-v2/capture-B.watchdog/collector.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v3/capture-B3/result.json": {
+      "sha256": "9fd4acf43e6b7abed6383a4968fdcdaa6a0ab10cdf2577d34a55176d1c28239f",
+      "bytes": 32637
+    },
+    "work/picture-local13-ab-v3/capture-B3.watchdog/watchdog.json": {
+      "sha256": "74b8fe255cbcc741e1e51edb056d4b98992273beb6f663647d22e7dd6275f0fd",
+      "bytes": 2346
+    },
+    "work/picture-local13-ab-v3/capture-B3/cleanup-helper.json": {
+      "sha256": "63b50a1822cff7614dbcea7591af2be97ecd1ebd65ad0c810b44a1979022869f",
+      "bytes": 2028
+    },
+    "work/picture-local13-ab-v3/capture-B3/ownership.json": {
+      "sha256": "b08a3b45662423ca825e79ed17c66ffb67c40099f386a9ed972abf8880117cee",
+      "bytes": 420
+    },
+    "work/picture-local13-ab-v3/capture-B3/original-front.json": {
+      "sha256": "8b1d6e18ba79469e2cfa0dce41e0aabb738f601c597723ee7308fac09a006cd5",
+      "bytes": 306
+    },
+    "work/picture-local13-ab-v3/B3/isolation.json": {
+      "sha256": "d1c2b45bc9d69e48de09d1f9ab18c58b0b9eb7c67b862e3aad021a99554d0a77",
+      "bytes": 32002
+    },
+    "work/picture-local13-ab-v3/capture-B3/controls-light.png": {
+      "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+      "bytes": 237074
+    },
+    "work/picture-local13-ab-v3/capture-B3/controls-light-after-commit.png": {
+      "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+      "bytes": 236584
+    },
+    "work/picture-local13-ab-v3/capture-B3/text-light.png": {
+      "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+      "bytes": 159842
+    },
+    "work/picture-local13-ab-v3/capture-B3/buttons-light.png": {
+      "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+      "bytes": 169038
+    },
+    "work/picture-local13-ab-v3/capture-B3/inputs-light.png": {
+      "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+      "bytes": 125117
+    },
+    "work/picture-local13-ab-v3/capture-B3/query-failed-light.png": {
+      "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+      "bytes": 158369
+    },
+    "work/picture-local13-ab-v3/capture-B3/query-empty-light.png": {
+      "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+      "bytes": 146486
+    },
+    "work/picture-local13-ab-v3/capture-B3/query-recovered-light.png": {
+      "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+      "bytes": 162770
+    },
+    "work/picture-local13-ab-v3/capture-B3/images-layout-light.png": {
+      "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+      "bytes": 460220
+    },
+    "work/picture-local13-ab-v3/capture-B3.watchdog/owned.json": {
+      "sha256": "3894bd59aef4e6722cee7965252bdb59b7ce584fca088ad10b394ad61815b580",
+      "bytes": 399
+    },
+    "work/picture-local13-ab-v3/desktop-after-B3.json": {
+      "sha256": "7118e09a4ed8ae147e482110051a3c107d5b012f919fb1aeb3f0473ade5df0ee",
+      "bytes": 956
+    },
+    "work/picture-local13-ab-v3/capture-B3/light-application.log": {
+      "sha256": "63e89873505f751f92409b8b3720b9e2d826f1f0559445a177c2ea9d0588d409",
+      "bytes": 417
+    },
+    "work/picture-local13-ab-v3/capture-B3.watchdog/collector.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v3/events-B3/picture-observer-69534.json": {
+      "sha256": "925deacd3f56a53ddf30fdfba5e6bcfbed5069846afd908ca22ff20df1e6d00a",
+      "bytes": 124058
+    },
+    "work/picture-local13-ab-v3/observer-preflight.json": {
+      "sha256": "9edd560df58e75e57ee95e4b72a322cc834ba3ca10aa2f2d2d602e69ccb013cb",
+      "bytes": 665
+    }
+  }
+}

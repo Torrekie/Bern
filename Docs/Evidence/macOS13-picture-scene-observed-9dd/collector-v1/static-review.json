@@ -1,0 +1,47 @@
+{
+  "kind": "bounded_local13_collector_static_preparation",
+  "status": "frozen_for_root_compile_review",
+  "baseline_sha256": "3dcaaf994cd7b61655e202ac76f79cc0e0b7c161b608ed2800378652207f0ac6",
+  "python_ast": "pass",
+  "original_action_prefixes_byte_exact": true,
+  "light_prefix_png_count": 9,
+  "source_review": "independent child review; no remaining major findings, no compile/UI execution",
+  "cleanup_order": "conditional exact-instance restore; stop exact private app; clean exact collector children; terminate collector",
+  "root_locks_read": "work/picture-local13-ab/locks.json; no app launched",
+  "no_sidebar_adjustment": true,
+  "runtime_attempted": false,
+  "compile_attempted": false,
+  "repo_or_index_modified": false,
+  "files": [
+    {
+      "name": "Collector.swift",
+      "bytes": 26753,
+      "sha256": "51f172d1c8a0d3a4f0af3811a429984dba6590546d318f0d33054354aa5c84f7"
+    },
+    {
+      "name": "FocusGuard.swift",
+      "bytes": 7125,
+      "sha256": "0d0e810cd7b0e81b35bff174858f05eef5052c684db6b967c3bf6c1b9acf9a63"
+    },
+    {
+      "name": "README.md",
+      "bytes": 4266,
+      "sha256": "860ed3dfe2a725480b681fa1001dec31c98bddaafdbb53b459988345200e6bc6"
+    },
+    {
+      "name": "collector.patch",
+      "bytes": 22795,
+      "sha256": "6710fdb794e3985d301dec07138ba217d4fad1edaab59da23c31b1babc3ed14b"
+    },
+    {
+      "name": "prefix-proof.json",
+      "bytes": 648,
+      "sha256": "9916eaa723dfdf988fd8e067796e462361626ae1b19ab681bcea9de780cc964a"
+    },
+    {
+      "name": "run-local13.py",
+      "bytes": 9866,
+      "sha256": "b770a47a6b152be72bcec08a5860d0baff483113647602bb5288d918773cd7d5"
+    }
+  ]
+}

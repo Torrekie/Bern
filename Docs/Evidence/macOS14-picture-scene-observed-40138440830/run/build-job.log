@@ -1,0 +1,410 @@
+﻿2026-10-24T22:24:49.1206610Z Current runner version: '2.338.0'
+2026-10-24T22:24:49.1223390Z ##[group]Runner Image Provisioner
+2026-10-24T22:24:49.1223920Z Hosted Compute Agent
+2026-10-24T22:24:49.1224290Z Version: 20260828.587
+2026-10-24T22:24:49.1224680Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-10-24T22:24:49.1225150Z Build Date: 2026-08-28T16:44:25Z
+2026-10-24T22:24:49.1225620Z Worker ID: {c5727a63-7906-45ab-a039-2b3293ddc419}
+2026-10-24T22:24:49.1226080Z Azure Region: westus
+2026-10-24T22:24:49.1226460Z ##[endgroup]
+2026-10-24T22:24:49.1227300Z ##[group]Operating System
+2026-10-24T22:24:49.1227700Z macOS
+2026-10-24T22:24:49.1228030Z 15.7.9
+2026-10-24T22:24:49.1228380Z 24G830
+2026-10-24T22:24:49.1228720Z ##[endgroup]
+2026-10-24T22:24:49.1229080Z ##[group]Runner Image
+2026-10-24T22:24:49.1229470Z Image: macos-15-arm64
+2026-10-24T22:24:49.1229860Z Version: 20260907.0337.1
+2026-10-24T22:24:49.1230710Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20260907.0337/images/macos/macos-15-arm64-Readme.md
+2026-10-24T22:24:49.1231790Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20260907.0337
+2026-10-24T22:24:49.1232550Z ##[endgroup]
+2026-10-24T22:24:49.1233450Z ##[group]GITHUB_TOKEN Permissions
+2026-10-24T22:24:49.1234720Z Actions: read
+2026-10-24T22:24:49.1235090Z Contents: read
+2026-10-24T22:24:49.1235540Z Metadata: read
+2026-10-24T22:24:49.1235940Z ##[endgroup]
+2026-10-24T22:24:49.1237540Z Secret source: Actions
+2026-10-24T22:24:49.1238220Z Cache mode: write
+2026-10-24T22:24:49.1238680Z Prepare workflow directory
+2026-10-24T22:24:49.1512690Z Prepare all required actions
+2026-10-24T22:24:49.1550150Z Getting action download info
+2026-10-24T22:24:49.4662950Z Download action repository 'actions/checkout@v5' (SHA:fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09)
+2026-10-24T22:24:49.8347070Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+2026-10-24T22:24:49.9201420Z Download action repository 'actions/upload-artifact@v5' (SHA:330a01c490aca151604b8cf639adc76d48f6c5d4)
+2026-10-24T22:24:50.1481950Z Complete job name: build
+2026-10-24T22:24:50.2034860Z ##[group]Run actions/checkout@v5
+2026-10-24T22:24:50.2035430Z with:
+2026-10-24T22:24:50.2035750Z   path: harness
+2026-10-24T22:24:50.2036080Z   persist-credentials: false
+2026-10-24T22:24:50.2036450Z   repository: Torrekie/Bern
+2026-10-24T22:24:50.2039100Z   token: ***
+2026-10-24T22:24:50.2039410Z   ssh-strict: true
+2026-10-24T22:24:50.2039730Z   ssh-user: git
+2026-10-24T22:24:50.2040050Z   clean: true
+2026-10-24T22:24:50.2040460Z   sparse-checkout-cone-mode: true
+2026-10-24T22:24:50.2040870Z   fetch-depth: 1
+2026-10-24T22:24:50.2041260Z   fetch-tags: false
+2026-10-24T22:24:50.2041590Z   show-progress: true
+2026-10-24T22:24:50.2042000Z   lfs: false
+2026-10-24T22:24:50.2042310Z   submodules: false
+2026-10-24T22:24:50.2042640Z   set-safe-directory: true
+2026-10-24T22:24:50.2043010Z   allow-unsafe-pr-checkout: false
+2026-10-24T22:24:50.2043560Z env:
+2026-10-24T22:24:50.2043990Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:24:50.2044520Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:24:50.2044860Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:24:50.2045190Z   CARGO_TERM_COLOR: never
+2026-10-24T22:24:50.2045550Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:24:50.2045910Z ##[endgroup]
+2026-10-24T22:24:50.5886730Z Syncing repository: Torrekie/Bern
+2026-10-24T22:24:50.5888470Z ##[group]Getting Git version info
+2026-10-24T22:24:50.5888980Z Working directory is '/Users/runner/work/Bern/Bern/harness'
+2026-10-24T22:24:50.5889930Z [command]/opt/homebrew/bin/git version
+2026-10-24T22:24:50.6461980Z git version 2.55.0
+2026-10-24T22:24:50.6496910Z ##[endgroup]
+2026-10-24T22:24:50.6502180Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/6a011d21-5d79-4214-8a8d-c3bec0c69010/.gitconfig'
+2026-10-24T22:24:50.6508040Z Temporarily overriding HOME='/Users/runner/work/_temp/6a011d21-5d79-4214-8a8d-c3bec0c69010' before making global git config changes
+2026-10-24T22:24:50.6509170Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T22:24:50.6511500Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/Bern/Bern/harness
+2026-10-24T22:24:50.6627150Z ##[group]Initializing the repository
+2026-10-24T22:24:50.6630100Z [command]/opt/homebrew/bin/git init /Users/runner/work/Bern/Bern/harness
+2026-10-24T22:24:50.6861350Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-24T22:24:50.6862360Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-24T22:24:50.6863180Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-24T22:24:50.6863750Z hint: call:
+2026-10-24T22:24:50.6864080Z hint:
+2026-10-24T22:24:50.6864520Z hint: 	git config --global init.defaultBranch <name>
+2026-10-24T22:24:50.6865010Z hint:
+2026-10-24T22:24:50.6865550Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-24T22:24:50.6866350Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-24T22:24:50.6866900Z hint:
+2026-10-24T22:24:50.6867250Z hint: 	git branch -m <name>
+2026-10-24T22:24:50.6867620Z hint:
+2026-10-24T22:24:50.6868170Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-24T22:24:50.6870000Z Initialized empty Git repository in /Users/runner/work/Bern/Bern/harness/.git/
+2026-10-24T22:24:50.6880970Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Torrekie/Bern
+2026-10-24T22:24:50.6967470Z ##[endgroup]
+2026-10-24T22:24:50.6968470Z ##[group]Disabling automatic garbage collection
+2026-10-24T22:24:50.6973140Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-10-24T22:24:50.7055210Z ##[endgroup]
+2026-10-24T22:24:50.7057420Z ##[group]Setting up auth
+2026-10-24T22:24:50.7059120Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T22:24:50.7128200Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T22:24:50.8081260Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T22:24:50.8139690Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T22:24:50.8919220Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T22:24:50.9016540Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T22:24:50.9979450Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-24T22:24:51.0134650Z ##[endgroup]
+2026-10-24T22:24:51.0135860Z ##[group]Fetching the repository
+2026-10-24T22:24:51.0137790Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c9867c223b2efaf53a82214edd352b988c2952c9:refs/remotes/origin/master
+2026-10-24T22:24:52.3514500Z From https://github.com/Torrekie/Bern
+2026-10-24T22:24:52.3516280Z  * [new ref]         c9867c223b2efaf53a82214edd352b988c2952c9 -> origin/master
+2026-10-24T22:24:52.3519390Z ##[endgroup]
+2026-10-24T22:24:52.3520540Z ##[group]Determining the checkout info
+2026-10-24T22:24:52.3524290Z ##[endgroup]
+2026-10-24T22:24:52.3532700Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-10-24T22:24:52.3635750Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-24T22:24:52.3810990Z ##[group]Checking out the ref
+2026-10-24T22:24:52.3824010Z [command]/opt/homebrew/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-10-24T22:24:52.6955190Z Reset branch 'master'
+2026-10-24T22:24:52.6958060Z branch 'master' set up to track 'origin/master'.
+2026-10-24T22:24:52.6965650Z ##[endgroup]
+2026-10-24T22:24:52.7069420Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-10-24T22:24:52.7142840Z c9867c223b2efaf53a82214edd352b988c2952c9
+2026-10-24T22:24:52.7153240Z ##[group]Removing auth
+2026-10-24T22:24:52.7156740Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T22:24:52.7227020Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T22:24:52.8063590Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T22:24:52.8119470Z http.https://github.com/.extraheader
+2026-10-24T22:24:52.8124070Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-24T22:24:52.8195020Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T22:24:52.8961920Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T22:24:52.9036060Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T22:24:53.0734070Z ##[endgroup]
+2026-10-24T22:24:53.0969850Z ##[group]Run actions/checkout@v5
+2026-10-24T22:24:53.0970290Z with:
+2026-10-24T22:24:53.0970610Z   ref: 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0
+2026-10-24T22:24:53.0970960Z   path: source
+2026-10-24T22:24:53.0971230Z   persist-credentials: false
+2026-10-24T22:24:53.0971570Z   repository: Torrekie/Bern
+2026-10-24T22:24:53.0973900Z   token: ***
+2026-10-24T22:24:53.0974160Z   ssh-strict: true
+2026-10-24T22:24:53.0974420Z   ssh-user: git
+2026-10-24T22:24:53.0974710Z   clean: true
+2026-10-24T22:24:53.0975100Z   sparse-checkout-cone-mode: true
+2026-10-24T22:24:53.0975470Z   fetch-depth: 1
+2026-10-24T22:24:53.0975740Z   fetch-tags: false
+2026-10-24T22:24:53.0976080Z   show-progress: true
+2026-10-24T22:24:53.0976440Z   lfs: false
+2026-10-24T22:24:53.0976700Z   submodules: false
+2026-10-24T22:24:53.0976980Z   set-safe-directory: true
+2026-10-24T22:24:53.0977290Z   allow-unsafe-pr-checkout: false
+2026-10-24T22:24:53.0977700Z env:
+2026-10-24T22:24:53.0978100Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:24:53.0978510Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:24:53.0978780Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:24:53.0979050Z   CARGO_TERM_COLOR: never
+2026-10-24T22:24:53.0979360Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:24:53.0979670Z ##[endgroup]
+2026-10-24T22:24:53.1870860Z Syncing repository: Torrekie/Bern
+2026-10-24T22:24:53.1871600Z ##[group]Getting Git version info
+2026-10-24T22:24:53.1872040Z Working directory is '/Users/runner/work/Bern/Bern/source'
+2026-10-24T22:24:53.1883270Z [command]/opt/homebrew/bin/git version
+2026-10-24T22:24:53.1946930Z git version 2.55.0
+2026-10-24T22:24:53.1957790Z ##[endgroup]
+2026-10-24T22:24:53.1964360Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/6d0204c5-9a9a-442b-80e0-ba6137ffdd4f/.gitconfig'
+2026-10-24T22:24:53.1971220Z Temporarily overriding HOME='/Users/runner/work/_temp/6d0204c5-9a9a-442b-80e0-ba6137ffdd4f' before making global git config changes
+2026-10-24T22:24:53.1972790Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T22:24:53.1975060Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/Bern/Bern/source
+2026-10-24T22:24:53.2042240Z ##[group]Initializing the repository
+2026-10-24T22:24:53.2045420Z [command]/opt/homebrew/bin/git init /Users/runner/work/Bern/Bern/source
+2026-10-24T22:24:53.2142880Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-24T22:24:53.2144280Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-24T22:24:53.2144890Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-24T22:24:53.2145400Z hint: call:
+2026-10-24T22:24:53.2145680Z hint:
+2026-10-24T22:24:53.2146010Z hint: 	git config --global init.defaultBranch <name>
+2026-10-24T22:24:53.2146540Z hint:
+2026-10-24T22:24:53.2146920Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-24T22:24:53.2147510Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-24T22:24:53.2147970Z hint:
+2026-10-24T22:24:53.2148240Z hint: 	git branch -m <name>
+2026-10-24T22:24:53.2148560Z hint:
+2026-10-24T22:24:53.2148950Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-24T22:24:53.2149570Z Initialized empty Git repository in /Users/runner/work/Bern/Bern/source/.git/
+2026-10-24T22:24:53.2151280Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Torrekie/Bern
+2026-10-24T22:24:53.2219470Z ##[endgroup]
+2026-10-24T22:24:53.2220080Z ##[group]Disabling automatic garbage collection
+2026-10-24T22:24:53.2221830Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-10-24T22:24:53.2281540Z ##[endgroup]
+2026-10-24T22:24:53.2282210Z ##[group]Setting up auth
+2026-10-24T22:24:53.2286250Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T22:24:53.2347320Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T22:24:53.3272730Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T22:24:53.3337440Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T22:24:53.4526380Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T22:24:53.4588780Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T22:24:53.5745770Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-24T22:24:53.5940230Z ##[endgroup]
+2026-10-24T22:24:53.5941100Z ##[group]Fetching the repository
+2026-10-24T22:24:53.5946420Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0
+2026-10-24T22:24:55.3548670Z From https://github.com/Torrekie/Bern
+2026-10-24T22:24:55.3549570Z  * branch            9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0 -> FETCH_HEAD
+2026-10-24T22:24:55.3559310Z ##[endgroup]
+2026-10-24T22:24:55.3560490Z ##[group]Determining the checkout info
+2026-10-24T22:24:55.3562880Z ##[endgroup]
+2026-10-24T22:24:55.3575640Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-10-24T22:24:55.3690790Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-24T22:24:55.3784480Z ##[group]Checking out the ref
+2026-10-24T22:24:55.3798180Z [command]/opt/homebrew/bin/git checkout --progress --force 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0
+2026-10-24T22:24:55.9140410Z HEAD is now at 9dd99b7 Reuse native PQ image rendering for explicit Standard on macOS 13
+2026-10-24T22:24:55.9156390Z ##[endgroup]
+2026-10-24T22:24:55.9279990Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-10-24T22:24:55.9362140Z 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0
+2026-10-24T22:24:55.9368330Z ##[group]Removing auth
+2026-10-24T22:24:55.9372830Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T22:24:55.9456850Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T22:24:56.0623710Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T22:24:56.0735480Z http.https://github.com/.extraheader
+2026-10-24T22:24:56.0742860Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-24T22:24:56.0812250Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T22:24:56.1628190Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T22:24:56.1688700Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T22:24:56.3134620Z ##[endgroup]
+2026-10-24T22:24:56.3220250Z ##[group]Run set -euo pipefail
+2026-10-24T22:24:56.3220660Z [36;1mset -euo pipefail[0m
+2026-10-24T22:24:56.3220940Z [36;1mmkdir evidence[0m
+2026-10-24T22:24:56.3221130Z [36;1m{[0m
+2026-10-24T22:24:56.3221470Z [36;1m  printf 'source_sha=%s\nharness_sha=%s\n' "$(git -C source rev-parse HEAD)" "$GITHUB_SHA"[0m
+2026-10-24T22:24:56.3221840Z [36;1m  sw_vers[0m
+2026-10-24T22:24:56.3222020Z [36;1m  uname -m[0m
+2026-10-24T22:24:56.3222250Z [36;1m  xcodebuild -version[0m
+2026-10-24T22:24:56.3222480Z [36;1m  xcrun --sdk macosx --show-sdk-version[0m
+2026-10-24T22:24:56.3222800Z [36;1m  xcrun swiftc -version[0m
+2026-10-24T22:24:56.3223040Z [36;1m} > evidence/environment.txt 2>&1[0m
+2026-10-24T22:24:56.3223400Z [36;1mtest "$(git -C source rev-parse HEAD)" = 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0[0m
+2026-10-24T22:24:56.3223750Z [36;1mtest "$(uname -m)" = arm64[0m
+2026-10-24T22:24:56.3224020Z [36;1mrustup toolchain install 1.99.0 --profile minimal[0m
+2026-10-24T22:24:56.3224390Z [36;1mrustc +1.99.0 -Vv >> evidence/environment.txt[0m
+2026-10-24T22:24:56.3225480Z [36;1mshasum -a 256 harness/.github/scripts/picture-scene-observer/build.py harness/.github/scripts/picture-scene-observer/patch.py harness/.github/scripts/picture-scene-observer/Observer.swift harness/.github/scripts/picture-source-export.py harness/.github/scripts/macos14-reference.swift > evidence/harness-inputs.sha256[0m
+2026-10-24T22:24:56.3276760Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-24T22:24:56.3277060Z env:
+2026-10-24T22:24:56.3277350Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:24:56.3277670Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:24:56.3277880Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:24:56.3278100Z   CARGO_TERM_COLOR: never
+2026-10-24T22:24:56.3278280Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:24:56.3278500Z ##[endgroup]
+2026-10-24T22:25:04.6696130Z info: syncing channel updates for 1.99.0-aarch64-apple-darwin
+2026-10-24T22:25:04.9151820Z info: latest update on 2026-10-01 for version 1.99.0 (b940084d7 2026-09-28)
+2026-10-24T22:25:04.9163460Z info: downloading 3 components
+2026-10-24T22:25:12.1353530Z 
+2026-10-24T22:25:12.1780230Z info: self-update is disabled for this build of rustup
+2026-10-24T22:25:12.1780970Z   1.99.0-aarch64-apple-darwin installed - rustc 1.99.0 (b940084d7 2026-09-28)
+2026-10-24T22:25:12.1782220Z info: any updates to rustup will need to be fetched with your system package manager
+2026-10-24T22:25:12.1786750Z 
+2026-10-24T22:25:12.7994310Z ##[group]Run actions/cache/restore@v4
+2026-10-24T22:25:12.7994540Z with:
+2026-10-24T22:25:12.7994720Z   path: ~/.cargo/registry
+~/.cargo/git
+source/target
+
+2026-10-24T22:25:12.7995170Z   key: bern-macos13-cargo-macos15-v1-7f742d59f484f2adf3998b3176cef86fb66891e0e4790e4ce41f1c98f9d992cc
+2026-10-24T22:25:12.7995650Z   enableCrossOsArchive: false
+2026-10-24T22:25:12.7995840Z   fail-on-cache-miss: false
+2026-10-24T22:25:12.7996010Z   lookup-only: false
+2026-10-24T22:25:12.7997180Z env:
+2026-10-24T22:25:12.7997400Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:25:12.7997750Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:25:12.7998030Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:25:12.7998300Z   CARGO_TERM_COLOR: never
+2026-10-24T22:25:12.7998540Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:25:12.7998830Z ##[endgroup]
+2026-10-24T22:25:12.9299040Z (node:6012) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-24T22:25:12.9299910Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-24T22:25:13.1125200Z (node:6012) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-24T22:25:13.1233360Z Cache hit for: bern-macos13-cargo-macos15-v1-7f742d59f484f2adf3998b3176cef86fb66891e0e4790e4ce41f1c98f9d992cc
+2026-10-24T22:25:14.2835590Z Received 16777216 of 161564029 (10.4%), 16.0 MBs/sec
+2026-10-24T22:25:15.2961070Z Received 88080384 of 161564029 (54.5%), 41.9 MBs/sec
+2026-10-24T22:25:16.3283370Z Received 134217728 of 161564029 (83.1%), 42.1 MBs/sec
+2026-10-24T22:25:17.3250470Z Received 157369725 of 161564029 (97.4%), 37.1 MBs/sec
+2026-10-24T22:25:18.2242690Z Received 161564029 of 161564029 (100.0%), 31.2 MBs/sec
+2026-10-24T22:25:18.2325290Z Cache Size: ~154 MB (161564029 B)
+2026-10-24T22:25:18.2336890Z [command]/opt/homebrew/bin/gtar -xf /Users/runner/work/_temp/d6d18b68-25cc-4f80-bc44-1f5cf3b34d53/cache.tzst -P -C /Users/runner/work/Bern/Bern --delay-directory-restore --use-compress-program unzstd
+2026-10-24T22:25:21.7793080Z Cache restored successfully
+2026-10-24T22:25:21.8251710Z Cache restored from key: bern-macos13-cargo-macos15-v1-7f742d59f484f2adf3998b3176cef86fb66891e0e4790e4ce41f1c98f9d992cc
+2026-10-24T22:25:21.8442320Z ##[group]Run set -euo pipefail
+2026-10-24T22:25:21.8442900Z [36;1mset -euo pipefail[0m
+2026-10-24T22:25:21.8443370Z [36;1mexport BERN_PICTURE_OBSERVER_DRIVER="$PWD/harness/.github/scripts/picture-scene-observer/build.py"[0m
+2026-10-24T22:25:21.8443980Z [36;1mexport BERN_PICTURE_OBSERVER_EVIDENCE="$PWD/evidence"[0m
+2026-10-24T22:25:21.8444480Z [36;1mpython3 harness/.github/scripts/picture-scene-observer/build.py prepare source evidence[0m
+2026-10-24T22:25:21.8512550Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-24T22:25:21.8513350Z env:
+2026-10-24T22:25:21.8514230Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:25:21.8515180Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:25:21.8515740Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:25:21.8516450Z   CARGO_TERM_COLOR: never
+2026-10-24T22:25:21.8517160Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:25:21.8517780Z ##[endgroup]
+2026-10-24T22:25:23.4014320Z ##[group]Run set +e
+2026-10-24T22:25:23.4014660Z [36;1mset +e[0m
+2026-10-24T22:25:23.4015150Z [36;1mexport BERN_PICTURE_OBSERVER_DRIVER="$PWD/harness/.github/scripts/picture-scene-observer/build.py"[0m
+2026-10-24T22:25:23.4015750Z [36;1mexport BERN_PICTURE_OBSERVER_EVIDENCE="$PWD/evidence"[0m
+2026-10-24T22:25:23.4016560Z [36;1m(cd source && cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest examples/showcase/Bern.toml --target macos_modern --release) > evidence/build.full.log 2>&1[0m
+2026-10-24T22:25:23.4017290Z [36;1mresult=$?[0m
+2026-10-24T22:25:23.4017590Z [36;1mprintf '%s\n' "$result" > evidence/build.exit-code.txt[0m
+2026-10-24T22:25:23.4018000Z [36;1mexit "$result"[0m
+2026-10-24T22:25:23.4054320Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-24T22:25:23.4054650Z env:
+2026-10-24T22:25:23.4054980Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:25:23.4055320Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:25:23.4055690Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:25:23.4056020Z   CARGO_TERM_COLOR: never
+2026-10-24T22:25:23.4056290Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:25:23.4064780Z ##[endgroup]
+2026-10-24T22:28:33.5013430Z ##[group]Run python3 harness/.github/scripts/picture-scene-observer/build.py collect source evidence
+2026-10-24T22:28:33.5014150Z [36;1mpython3 harness/.github/scripts/picture-scene-observer/build.py collect source evidence[0m
+2026-10-24T22:28:33.5183440Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-24T22:28:33.5183870Z env:
+2026-10-24T22:28:33.5184150Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:28:33.5184580Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:28:33.5184860Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:28:33.5185080Z   CARGO_TERM_COLOR: never
+2026-10-24T22:28:33.5185400Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:28:33.5185720Z ##[endgroup]
+2026-10-24T22:28:33.8030920Z {"success": true, "error": null}
+2026-10-24T22:28:33.8142830Z ##[group]Run set -euo pipefail
+2026-10-24T22:28:33.8143990Z [36;1mset -euo pipefail[0m
+2026-10-24T22:28:33.8145880Z [36;1mpython3 - <<'PY'[0m
+2026-10-24T22:28:33.8146410Z [36;1mimport json[0m
+2026-10-24T22:28:33.8146840Z [36;1mfrom pathlib import Path[0m
+2026-10-24T22:28:33.8147360Z [36;1md = json.loads(Path('source/target/bern/macos_modern/build.json').read_text())[0m
+2026-10-24T22:28:33.8147800Z [36;1massert d['ui'] == 'swiftui-modern', d[0m
+2026-10-24T22:28:33.8148290Z [36;1massert d['minimum_macos'] == '13.0', d[0m
+2026-10-24T22:28:33.8148690Z [36;1massert d['profile'] == 'release', d[0m
+2026-10-24T22:28:33.8149020Z [36;1mPY[0m
+2026-10-24T22:28:33.8149390Z [36;1mapp=source/target/bern/macos_modern/Showcase.app[0m
+2026-10-24T22:28:33.8150870Z [36;1mcli=source/target/bern/macos_modern/bin/showcase[0m
+2026-10-24T22:28:33.8151860Z [36;1mtest -x "$app/Contents/MacOS/Showcase"[0m
+2026-10-24T22:28:33.8153640Z [36;1mtest -x "$cli"[0m
+2026-10-24T22:28:33.8154500Z [36;1mtest "$(plutil -extract LSMinimumSystemVersion raw -o - "$app/Contents/Info.plist")" = 13.0[0m
+2026-10-24T22:28:33.8155270Z [36;1mtest "$(xcrun vtool -show-build "$app/Contents/MacOS/Showcase" | awk '/minos/ {print $2;exit}')" = 13.0[0m
+2026-10-24T22:28:33.8155840Z [36;1m{[0m
+2026-10-24T22:28:33.8156150Z [36;1m  xcrun vtool -show-build "$app/Contents/MacOS/Showcase"[0m
+2026-10-24T22:28:33.8156610Z [36;1m  xcrun vtool -show-build "$cli"[0m
+2026-10-24T22:28:33.8157030Z [36;1m  xcrun otool -L "$app/Contents/MacOS/Showcase"[0m
+2026-10-24T22:28:33.8157430Z [36;1m  codesign --verify --deep --strict "$app"[0m
+2026-10-24T22:28:33.8157860Z [36;1m  codesign --verify --strict "$cli"[0m
+2026-10-24T22:28:33.8158340Z [36;1m} > evidence/binary.txt 2>&1[0m
+2026-10-24T22:28:33.8158740Z [36;1mcp source/target/bern/macos_modern/build.json evidence/build.json[0m
+2026-10-24T22:28:33.8159410Z [36;1mtar -czf evidence/showcase-observer.tar.gz -C source/target/bern/macos_modern Showcase.app bin/showcase[0m
+2026-10-24T22:28:33.8160250Z [36;1m(cd evidence && shasum -a 256 showcase-observer.tar.gz > showcase-observer.tar.gz.sha256)[0m
+2026-10-24T22:28:33.8194610Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-24T22:28:33.8195070Z env:
+2026-10-24T22:28:33.8195380Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:28:33.8195790Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:28:33.8196060Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:28:33.8196410Z   CARGO_TERM_COLOR: never
+2026-10-24T22:28:33.8196790Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:28:33.8197070Z ##[endgroup]
+2026-10-24T22:28:36.2713270Z ##[group]Run actions/upload-artifact@v5
+2026-10-24T22:28:36.2713520Z with:
+2026-10-24T22:28:36.2713700Z   name: picture-scene-observer-build
+2026-10-24T22:28:36.2713950Z   path: evidence/
+!evidence/build.full.log
+
+2026-10-24T22:28:36.2714190Z   if-no-files-found: error
+2026-10-24T22:28:36.2714400Z   retention-days: 3
+2026-10-24T22:28:36.2714570Z   compression-level: 0
+2026-10-24T22:28:36.2714750Z   overwrite: false
+2026-10-24T22:28:36.2714930Z   include-hidden-files: false
+2026-10-24T22:28:36.2715120Z env:
+2026-10-24T22:28:36.2715350Z   DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+2026-10-24T22:28:36.2729690Z   CARGO_INCREMENTAL: 0
+2026-10-24T22:28:36.2729870Z   CARGO_BUILD_JOBS: 2
+2026-10-24T22:28:36.2730070Z   CARGO_TERM_COLOR: never
+2026-10-24T22:28:36.2730290Z   MACOSX_DEPLOYMENT_TARGET: 13.0
+2026-10-24T22:28:36.2730490Z ##[endgroup]
+2026-10-24T22:28:37.6927190Z (node:10057) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-24T22:28:37.7030560Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-24T22:28:37.9782220Z With the provided path, there will be 16 files uploaded
+2026-10-24T22:28:37.9782700Z Artifact name is valid!
+2026-10-24T22:28:37.9782930Z Root directory input is valid!
+2026-10-24T22:28:38.1367200Z Beginning upload of artifact content to blob storage
+2026-10-24T22:28:38.1468040Z (node:10057) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-24T22:28:38.5586720Z Uploaded bytes 2573945
+2026-10-24T22:28:38.6040240Z Finished uploading artifact content to blob storage!
+2026-10-24T22:28:38.6146990Z SHA256 digest of uploaded artifact zip is 477a14c31b24c6ae7a639e9eae90e15ca2bed7d7cd6ed78a6914f4a2ced4fb22
+2026-10-24T22:28:38.6247820Z Finalizing artifact upload
+2026-10-24T22:28:39.0663560Z Artifact picture-scene-observer-build.zip successfully finalized. Artifact ID 12577397840
+2026-10-24T22:28:39.0766420Z Artifact picture-scene-observer-build has been successfully uploaded! Final size is 2573945 bytes. Artifact ID is 12577397840
+2026-10-24T22:28:39.0868980Z Artifact download URL: https://github.com/Torrekie/Bern/actions/runs/40138440830/artifacts/12577397840
+2026-10-24T22:28:39.1263090Z Post job cleanup.
+2026-10-24T22:28:39.3235560Z [command]/opt/homebrew/bin/git version
+2026-10-24T22:28:39.3337910Z git version 2.55.0
+2026-10-24T22:28:39.3843820Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/76921294-9681-45de-a46c-ee72bd79615b/.gitconfig'
+2026-10-24T22:28:39.3945240Z Temporarily overriding HOME='/Users/runner/work/_temp/76921294-9681-45de-a46c-ee72bd79615b' before making global git config changes
+2026-10-24T22:28:39.4045630Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T22:28:39.4147030Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/Bern/Bern/source
+2026-10-24T22:28:39.4450710Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T22:28:39.4753760Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T22:28:39.5363140Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T22:28:39.5665930Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T22:28:39.6969980Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T22:28:39.7273800Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T22:28:39.8696150Z Post job cleanup.
+2026-10-24T22:28:39.9682780Z [command]/opt/homebrew/bin/git version
+2026-10-24T22:28:39.9790490Z git version 2.55.0
+2026-10-24T22:28:40.0270270Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/a5cc52ed-1dbb-446e-8f4f-8c2e7ae1abfd/.gitconfig'
+2026-10-24T22:28:40.0371860Z Temporarily overriding HOME='/Users/runner/work/_temp/a5cc52ed-1dbb-446e-8f4f-8c2e7ae1abfd' before making global git config changes
+2026-10-24T22:28:40.0473310Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-24T22:28:40.0581910Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/Bern/Bern/harness
+2026-10-24T22:28:40.0784850Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-24T22:28:40.1088050Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-24T22:28:40.1479900Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-24T22:28:40.2012440Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-24T22:28:40.3747840Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-24T22:28:40.4050130Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-24T22:28:40.5477240Z Cleaning up orphan processes
+2026-10-24T22:28:41.4798250Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache/restore@v4, actions/upload-artifact@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

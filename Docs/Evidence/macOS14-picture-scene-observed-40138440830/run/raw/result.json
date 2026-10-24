@@ -1,0 +1,1757 @@
+{
+  "accessibility_trusted" : true,
+  "appearance_profile" : "normal",
+  "application" : "Showcase",
+  "capture" : "CGWindowListCreateImage \/ WindowServer",
+  "checks" : [
+    {
+      "appearance" : "light",
+      "check" : "Selected Text",
+      "observed_value" : "Text",
+      "passed" : true,
+      "target" : "main_window.pages"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Selected Buttons",
+      "observed_value" : "Buttons",
+      "passed" : true,
+      "target" : "main_window.pages"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Selected Inputs",
+      "observed_value" : "Inputs",
+      "passed" : true,
+      "target" : "main_window.pages"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Selected Text",
+      "observed_value" : "Text",
+      "passed" : true,
+      "target" : "main_window.pages"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Search draft committed",
+      "observed_value" : "!",
+      "passed" : true,
+      "target" : "main_window.sidebar_search"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Selected Library",
+      "observed_value" : "Library",
+      "passed" : true,
+      "target" : "main_window.pages"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Initial query failed without previous results",
+      "observed_value" : "failed v1 invalid_search: search text cannot start with `!`; search operators are not supported",
+      "passed" : true,
+      "target" : "library_page.library_results"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Retry issued a new failing request",
+      "observed_value" : "failed v2 invalid_search: search text cannot start with `!`; search operators are not supported",
+      "passed" : true,
+      "target" : "library_page.library_results"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Search draft committed",
+      "observed_value" : "zzzzzz",
+      "passed" : true,
+      "target" : "main_window.sidebar_search"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Query returned zero results",
+      "observed_value" : "ready v3 (0)",
+      "passed" : true,
+      "target" : "library_page.library_results"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Search draft committed",
+      "observed_value" : "",
+      "passed" : true,
+      "target" : "main_window.sidebar_search"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Query recovered with results",
+      "observed_value" : "ready v4 (5)",
+      "passed" : true,
+      "target" : "library_page.library_results"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Selected Layout",
+      "observed_value" : "Layout",
+      "passed" : true,
+      "target" : "main_window.pages"
+    },
+    {
+      "check" : "Four bundled image inputs decode",
+      "passed" : true
+    },
+    {
+      "appearance" : "light",
+      "check" : "Selected Media",
+      "observed_value" : "Media",
+      "passed" : true,
+      "target" : "main_window.pages"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Initial featured clip is playable",
+      "observed_value" : "Ready 0:00 \/ 0:08",
+      "passed" : true,
+      "target" : "media_page.featured"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Damaged clip reaches failed state",
+      "observed_value" : "Failed 0:00 \/ --:--",
+      "passed" : true,
+      "target" : "media_page.featured"
+    },
+    {
+      "appearance" : "light",
+      "check" : "Featured clip recovers after replacing damaged source",
+      "observed_value" : "Ready 0:00 \/ 0:08",
+      "passed" : true,
+      "target" : "media_page.featured"
+    }
+  ],
+  "commands" : [
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "sessions"
+      ],
+      "status" : 3,
+      "stderr" : "001-stderr.txt",
+      "stdout" : "001-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "sessions"
+      ],
+      "status" : 0,
+      "stderr" : "002-stderr.txt",
+      "stdout" : "002-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "status" : 0,
+      "stderr" : "003-stderr.txt",
+      "stdout" : "003-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "004-stderr.txt",
+      "stdout" : "004-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "status" : 0,
+      "stderr" : "005-stderr.txt",
+      "stdout" : "005-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "006-stderr.txt",
+      "stdout" : "006-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Controls"
+      ],
+      "status" : 0,
+      "stderr" : "007-stderr.txt",
+      "stdout" : "007-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "008-stderr.txt",
+      "stdout" : "008-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "009-stderr.txt",
+      "stdout" : "009-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "set-bool",
+        "--target",
+        "controls_page.notifications",
+        "--value",
+        "false"
+      ],
+      "status" : 0,
+      "stderr" : "010-stderr.txt",
+      "stdout" : "010-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "set-number",
+        "--target",
+        "controls_page.volume",
+        "--value",
+        "73"
+      ],
+      "status" : 0,
+      "stderr" : "011-stderr.txt",
+      "stdout" : "011-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "state"
+      ],
+      "status" : 0,
+      "stderr" : "012-stderr.txt",
+      "stdout" : "012-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "013-stderr.txt",
+      "stdout" : "013-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "014-stderr.txt",
+      "stdout" : "014-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "015-stderr.txt",
+      "stdout" : "015-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Text"
+      ],
+      "status" : 0,
+      "stderr" : "016-stderr.txt",
+      "stdout" : "016-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "017-stderr.txt",
+      "stdout" : "017-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "018-stderr.txt",
+      "stdout" : "018-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "019-stderr.txt",
+      "stdout" : "019-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Buttons"
+      ],
+      "status" : 0,
+      "stderr" : "020-stderr.txt",
+      "stdout" : "020-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "021-stderr.txt",
+      "stdout" : "021-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "022-stderr.txt",
+      "stdout" : "022-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "023-stderr.txt",
+      "stdout" : "023-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Inputs"
+      ],
+      "status" : 0,
+      "stderr" : "024-stderr.txt",
+      "stdout" : "024-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "025-stderr.txt",
+      "stdout" : "025-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "026-stderr.txt",
+      "stdout" : "026-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "027-stderr.txt",
+      "stdout" : "027-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Text"
+      ],
+      "status" : 0,
+      "stderr" : "028-stderr.txt",
+      "stdout" : "028-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "029-stderr.txt",
+      "stdout" : "029-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "030-stderr.txt",
+      "stdout" : "030-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "edit",
+        "--target",
+        "main_window.sidebar_search",
+        "--value",
+        "!"
+      ],
+      "status" : 0,
+      "stderr" : "031-stderr.txt",
+      "stdout" : "031-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "032-stderr.txt",
+      "stdout" : "032-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "033-stderr.txt",
+      "stdout" : "033-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Library"
+      ],
+      "status" : 0,
+      "stderr" : "034-stderr.txt",
+      "stdout" : "034-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "035-stderr.txt",
+      "stdout" : "035-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "036-stderr.txt",
+      "stdout" : "036-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "037-stderr.txt",
+      "stdout" : "037-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "activate",
+        "--target",
+        "library_page.library_results"
+      ],
+      "status" : 0,
+      "stderr" : "038-stderr.txt",
+      "stdout" : "038-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "039-stderr.txt",
+      "stdout" : "039-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "040-stderr.txt",
+      "stdout" : "040-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "edit",
+        "--target",
+        "main_window.sidebar_search",
+        "--value",
+        "zzzzzz"
+      ],
+      "status" : 0,
+      "stderr" : "041-stderr.txt",
+      "stdout" : "041-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "042-stderr.txt",
+      "stdout" : "042-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "043-stderr.txt",
+      "stdout" : "043-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "044-stderr.txt",
+      "stdout" : "044-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "045-stderr.txt",
+      "stdout" : "045-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "046-stderr.txt",
+      "stdout" : "046-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "edit",
+        "--target",
+        "main_window.sidebar_search",
+        "--value",
+        ""
+      ],
+      "status" : 0,
+      "stderr" : "047-stderr.txt",
+      "stdout" : "047-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "048-stderr.txt",
+      "stdout" : "048-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "049-stderr.txt",
+      "stdout" : "049-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "050-stderr.txt",
+      "stdout" : "050-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "051-stderr.txt",
+      "stdout" : "051-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "052-stderr.txt",
+      "stdout" : "052-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "053-stderr.txt",
+      "stdout" : "053-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Layout"
+      ],
+      "status" : 0,
+      "stderr" : "054-stderr.txt",
+      "stdout" : "054-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "055-stderr.txt",
+      "stdout" : "055-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "056-stderr.txt",
+      "stdout" : "056-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "057-stderr.txt",
+      "stdout" : "057-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Media"
+      ],
+      "status" : 0,
+      "stderr" : "058-stderr.txt",
+      "stdout" : "058-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "059-stderr.txt",
+      "stdout" : "059-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "060-stderr.txt",
+      "stdout" : "060-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "061-stderr.txt",
+      "stdout" : "061-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "062-stderr.txt",
+      "stdout" : "062-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "063-stderr.txt",
+      "stdout" : "063-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "064-stderr.txt",
+      "stdout" : "064-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "activate",
+        "--target",
+        "media_page.damaged"
+      ],
+      "status" : 0,
+      "stderr" : "065-stderr.txt",
+      "stdout" : "065-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "066-stderr.txt",
+      "stdout" : "066-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "067-stderr.txt",
+      "stdout" : "067-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "068-stderr.txt",
+      "stdout" : "068-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "activate",
+        "--target",
+        "media_page.pattern"
+      ],
+      "status" : 0,
+      "stderr" : "069-stderr.txt",
+      "stdout" : "069-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "070-stderr.txt",
+      "stdout" : "070-stdout.json"
+    },
+    {
+      "appearance" : "light",
+      "arguments" : [
+        "--session",
+        "9aa7b497078600-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "071-stderr.txt",
+      "stdout" : "071-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "sessions"
+      ],
+      "status" : 3,
+      "stderr" : "072-stderr.txt",
+      "stdout" : "072-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "sessions"
+      ],
+      "status" : 0,
+      "stderr" : "073-stderr.txt",
+      "stdout" : "073-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "--session",
+        "80a7b4db08bf00-ui",
+        "ui",
+        "set-language",
+        "--language",
+        "en"
+      ],
+      "status" : 0,
+      "stderr" : "074-stderr.txt",
+      "stdout" : "074-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "--session",
+        "80a7b4db08bf00-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "075-stderr.txt",
+      "stdout" : "075-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "--session",
+        "80a7b4db08bf00-ui",
+        "window",
+        "resize",
+        "--window",
+        "main#1",
+        "--width",
+        "920",
+        "--height",
+        "668"
+      ],
+      "status" : 0,
+      "stderr" : "076-stderr.txt",
+      "stdout" : "076-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "--session",
+        "80a7b4db08bf00-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "077-stderr.txt",
+      "stdout" : "077-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "--session",
+        "80a7b4db08bf00-ui",
+        "ui",
+        "select",
+        "--target",
+        "main_window.pages",
+        "--option",
+        "Controls"
+      ],
+      "status" : 0,
+      "stderr" : "078-stderr.txt",
+      "stdout" : "078-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "--session",
+        "80a7b4db08bf00-ui",
+        "ui",
+        "inspect"
+      ],
+      "status" : 0,
+      "stderr" : "079-stderr.txt",
+      "stdout" : "079-stdout.json"
+    },
+    {
+      "appearance" : "dark",
+      "arguments" : [
+        "--session",
+        "80a7b4db08bf00-ui",
+        "window",
+        "list"
+      ],
+      "status" : 0,
+      "stderr" : "080-stderr.txt",
+      "stdout" : "080-stdout.json"
+    }
+  ],
+  "displays" : [
+    {
+      "color_space" : "Apple Virtual",
+      "frame_points" : "{{0, 0}, {1920, 1080}}",
+      "scale" : 1
+    }
+  ],
+  "geometry_scope" : "Outer frame normalized through window.resize; CLI does not expose the content rect, and PNGs include system window chrome",
+  "harness_sha" : "c9867c223b2efaf53a82214edd352b988c2952c9",
+  "image_assets" : [
+    {
+      "color_space" : "kCGColorSpaceSRGB",
+      "pixel_height" : 360,
+      "pixel_width" : 640,
+      "resource" : "images\/landscape.jpg"
+    },
+    {
+      "color_space" : "kCGColorSpaceSRGB",
+      "pixel_height" : 256,
+      "pixel_width" : 256,
+      "resource" : "images\/bern.png"
+    },
+    {
+      "color_space" : "kCGColorSpaceDisplayP3",
+      "pixel_height" : 360,
+      "pixel_width" : 640,
+      "resource" : "images\/hdr-gainmap.jpg"
+    },
+    {
+      "color_space" : "kCGColorSpaceITUR_2100_PQ",
+      "pixel_height" : 360,
+      "pixel_width" : 640,
+      "resource" : "images\/hdr-pq.png"
+    }
+  ],
+  "image_verification_scope" : "Inputs decode with ImageIO; the Layout PNG requires visual comparison for image presence, fit, clipping and color. No HDR luminance or EDR equivalence is asserted.",
+  "interaction_scope" : "Generated CLI bindings. Motion files record programmatic transitions; mouse\/keyboard paths and transition equivalence are not asserted",
+  "os" : "Version 14.8.9 (Build 23J631)",
+  "post_event_access" : true,
+  "requested_outer_size_points" : {
+    "height" : 668,
+    "width" : 920
+  },
+  "screen_recording_preflight" : true,
+  "showcase_extra_slices" : "Light appearance only; main window at 920 x 668 outer points. Screenshots are evidence for comparison, not an automatic visual-equivalence verdict.",
+  "source_sha" : "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "success" : true,
+  "system_preferences" : {
+    "accent" : "default",
+    "increase_contrast" : false,
+    "reduce_motion" : false,
+    "reduce_transparency" : false
+  },
+  "windows" : [
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "controls-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Switches & Sliders",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "controls-light-after-commit.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Switches & Sliders",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "text-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Text",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "buttons-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Buttons",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "inputs-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Text Fields",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "query-failed-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "List & Detail",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "query-empty-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "List & Detail",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "query-recovered-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "List & Detail",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "images-layout-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Images & Layout",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "video-ready-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Video",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "video-failed-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Video",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 1926,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "video-recovered-light.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "Command",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Video",
+      "window_number" : 28
+    },
+    {
+      "bounds_points" : {
+        "Height" : 668,
+        "Width" : 920,
+        "X" : 500,
+        "Y" : 190
+      },
+      "color_space" : "unknown",
+      "pid" : 2239,
+      "pixel_height" : 668,
+      "pixel_width" : 920,
+      "png" : "controls-dark.png",
+      "session_windows" : [
+        {
+          "actions" : [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by" : "System",
+          "focused" : true,
+          "frame" : {
+            "height" : 668,
+            "width" : 920,
+            "x" : 500,
+            "y" : 190
+          },
+          "kind" : "main",
+          "lifecycle" : "Open",
+          "presentation" : "Native",
+          "size" : "Normal",
+          "version" : 3,
+          "visibility" : "Visible",
+          "window" : "main#1"
+        }
+      ],
+      "title" : "Switches & Sliders",
+      "window_number" : 32
+    }
+  ]
+}

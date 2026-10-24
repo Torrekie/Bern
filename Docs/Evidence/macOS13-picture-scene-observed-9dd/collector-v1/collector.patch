@@ -1,0 +1,380 @@
+--- a/macos14-reference.swift
++++ b/Collector.swift
+@@ -10,18 +10,52 @@
+ struct Failure: Error, CustomStringConvertible { let description: String }
+ let files = FileManager.default
+ guard CommandLine.arguments.count == 4 else {
+-    fputs("usage: macos14-reference.swift APP CLI OUTPUT\n", stderr)
++    fputs("usage: picture-local13-collector APP CLI OUTPUT\n", stderr)
+     exit(2)
+ }
+-let appURL = URL(fileURLWithPath: CommandLine.arguments[1])
++let appURL = URL(fileURLWithPath: CommandLine.arguments[1]).resolvingSymlinksInPath()
+ let product = appURL.deletingPathExtension().lastPathComponent
+-let cliURL = URL(fileURLWithPath: CommandLine.arguments[2])
++let cliURL = URL(fileURLWithPath: CommandLine.arguments[2]).resolvingSymlinksInPath()
+ let output = URL(fileURLWithPath: CommandLine.arguments[3], isDirectory: true)
++guard !files.fileExists(atPath: output.path) else {
++    fputs("Output must be fresh and nonexistent\n", stderr); exit(2)
++}
+ try files.createDirectory(at: output, withIntermediateDirectories: true)
++let originalFront = NSWorkspace.shared.frontmostApplication
++var cleanupOK = true
++func appIdentity(_ app: NSRunningApplication) -> [String: Any] {
++    ["pid": app.processIdentifier, "bundle_id": app.bundleIdentifier ?? "",
++     "executable_path": app.executableURL?.resolvingSymlinksInPath().path ?? "",
++     "launch_date": app.launchDate.map { $0.timeIntervalSince1970 as Any } ?? NSNull()]
++}
++func sameIdentity(_ app: NSRunningApplication, _ row: [String: Any]) -> Bool {
++    guard !app.isTerminated, let pid = row["pid"] as? NSNumber,
++          let launch = row["launch_date"] as? NSNumber, let actual = app.launchDate else { return false }
++    return app.processIdentifier == pid.int32Value && app.bundleIdentifier == (row["bundle_id"] as? String) &&
++        app.executableURL?.resolvingSymlinksInPath().path == (row["executable_path"] as? String) &&
++        abs(actual.timeIntervalSince1970 - launch.doubleValue) < 0.001
++}
++func writeIdentity(_ row: [String: Any], _ name: String) throws {
++    try JSONSerialization.data(withJSONObject: row, options: [.prettyPrinted, .sortedKeys])
++        .write(to: output.appendingPathComponent(name), options: .atomic)
++}
++func writeOwnership(_ process: Process) throws {
++    var row: [String: Any] = ["pid": process.processIdentifier,
++        "bundle_id": Bundle(url: appURL)?.bundleIdentifier ?? "",
++        "executable_path": appURL.appendingPathComponent("Contents/MacOS/Showcase").path,
++        "launch_date": NSNull()]
++    if let running = NSRunningApplication(processIdentifier: process.processIdentifier),
++       running.bundleIdentifier == (row["bundle_id"] as? String),
++       running.executableURL?.resolvingSymlinksInPath().path == (row["executable_path"] as? String) {
++        row = appIdentity(running)
++    }
++    row["collector_pid"] = getpid()
++    try writeIdentity(row, "ownership.json")
++}
+ let timeLimit: TimeInterval = 160
+ let deadline = Date().addingTimeInterval(timeLimit)
+ var report: [String: Any] = [
+-    "source_sha": ProcessInfo.processInfo.environment["BERN_SOURCE_SHA"] ?? "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
++    "source_sha": ProcessInfo.processInfo.environment["BERN_SOURCE_SHA"] ?? "unknown",
+     "application": product,
+     "harness_sha": ProcessInfo.processInfo.environment["GITHUB_SHA"] ?? "unknown",
+     "os": ProcessInfo.processInfo.operatingSystemVersionString,
+@@ -68,17 +102,27 @@
+     guard files.createFile(atPath: path.path, contents: nil) else { throw Failure(description: "Cannot create \(name)") }
+     return try FileHandle(forWritingTo: path)
+ }
++// The helper restores the original live instance BEFORE stopping the exact private app.
+ func stop(_ process: Process) {
+-    guard process.isRunning else { return }
+-    NSRunningApplication(processIdentifier: process.processIdentifier)?.terminate()
+-    let end = Date().addingTimeInterval(2)
+-    while process.isRunning && Date() < end {
+-        RunLoop.current.run(until: Date().addingTimeInterval(0.025))
+-        Thread.sleep(forTimeInterval: 0.01)
+-    }
+-    if process.isRunning { kill(process.processIdentifier, SIGKILL) }
+-}
+-func cli(_ arguments: [String], session: String? = nil, allowFailure: Bool = false) throws -> Any? {
++    guard let helper = environment["BERN_PICTURE_FOCUS_GUARD"] else { cleanupOK = false; return }
++    let p = Process(); p.executableURL = URL(fileURLWithPath: helper)
++    p.arguments = ["cleanup", appURL.path, output.appendingPathComponent("original-front.json").path,
++                   output.appendingPathComponent("ownership.json").path]
++    do {
++        let log = try logHandle("cleanup-helper.json"); defer { log.closeFile() }
++        p.standardOutput = log; p.standardError = log
++        try p.run()
++        let end = Date().addingTimeInterval(7)
++        while p.isRunning && Date() < end { RunLoop.current.run(until: Date().addingTimeInterval(0.02)) }
++        if p.isRunning { kill(p.processIdentifier, SIGKILL); cleanupOK = false }
++        else { cleanupOK = p.terminationStatus == 0 && !process.isRunning }
++        report["cleanup"] = ["helper_status": p.isRunning ? -1 : p.terminationStatus,
++            "own_pid": process.processIdentifier, "own_process_still_running": process.isRunning,
++            "success": cleanupOK, "receipt": "cleanup-helper.json"]
++    } catch { cleanupOK = false; report["cleanup_error"] = String(describing: error) }
++}
++
++func cli(_ arguments: [String], session: String? = nil, allowFailure: Bool = false, until cutoff: Date? = nil) throws -> Any? {
+     sequence += 1
+     let stem = String(format: "%03d", sequence)
+     let stdoutName = "\(stem)-stdout.json", stderrName = "\(stem)-stderr.txt"
+@@ -88,7 +132,8 @@
+     process.arguments = (session.map { ["--session", $0] } ?? []) + arguments
+     process.environment = environment; process.standardOutput = stdout; process.standardError = error
+     try process.run()
+-    let end = min(Date().addingTimeInterval(8), deadline)
++    defer { if process.isRunning { kill(process.processIdentifier, SIGKILL) } }
++    let end = min(Date().addingTimeInterval(8), min(cutoff ?? deadline, deadline))
+     while process.isRunning && Date() < end { try pause(0.03) }
+     if process.isRunning { kill(process.processIdentifier, SIGKILL); throw Failure(description: "CLI timed out: \(arguments)") }
+     commands.append(["arguments": process.arguments ?? [], "status": process.terminationStatus,
+@@ -170,26 +215,18 @@
+     try save()
+ }
+ func visibleWindow(_ pid: pid_t) -> [String: Any]? {
+-    let rows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+-    var largest: [String: Any]?
+-    var largestArea = 0.0
+-    for info in rows {
+-        guard let owner = info[kCGWindowOwnerPID as String] as? NSNumber,
+-              owner.int32Value == pid else { continue }
+-        guard let layer = info[kCGWindowLayer as String] as? NSNumber,
+-              layer.intValue == 0 else { continue }
+-        guard let bounds = info[kCGWindowBounds as String] as? [String: NSNumber],
+-              let width = bounds["Width"]?.doubleValue,
+-              let height = bounds["Height"]?.doubleValue,
+-              width > 120, height > 120 else { continue }
+-        let area = width * height
+-        if area > largestArea {
+-            largest = info
+-            largestArea = area
+-        }
+-    }
+-    return largest
+-}
++    let all = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
++    let own = all.filter { row in
++        guard (row[kCGWindowOwnerPID as String] as? NSNumber)?.int32Value == pid,
++              (row[kCGWindowLayer as String] as? NSNumber)?.intValue == 0,
++              (row[kCGWindowIsOnscreen as String] as? NSNumber)?.boolValue == true,
++              ((row[kCGWindowAlpha as String] as? NSNumber)?.doubleValue ?? 0) >= 0.99,
++              let bounds = row[kCGWindowBounds as String] as? [String: NSNumber] else { return false }
++        return (bounds["Width"]?.doubleValue ?? 0) > 120 && (bounds["Height"]?.doubleValue ?? 0) > 120
++    }
++    return own.count == 1 ? own[0] : nil
++}
++
+ func capture(_ name: String, process: Process, session: String) throws {
+     guard process.isRunning, let info = visibleWindow(process.processIdentifier),
+           let number = info[kCGWindowNumber as String] as? NSNumber else {
+@@ -227,67 +264,6 @@
+                     "color_space": image.colorSpace?.name as String? ?? "unknown",
+                     "session_windows": try cli(["window", "list"], session: session) ?? NSNull()])
+     try save()
+-}
+-
+-func motion(_ name: String, process: Process, change: () throws -> Void) throws {
+-    guard let info = visibleWindow(process.processIdentifier),
+-          let number = info[kCGWindowNumber as String] as? NSNumber else {
+-        throw Failure(description: "No window for transition capture")
+-    }
+-    // Keep the WindowServer sampling canvas stable while an inspector resizes the window.
+-    let canvas = CGDisplayBounds(CGMainDisplayID())
+-    let path = output.appendingPathComponent(name + ".gif")
+-    let count = 16
+-    guard let destination = CGImageDestinationCreateWithURL(path as CFURL, "com.compuserve.gif" as CFString, count, nil) else {
+-        throw Failure(description: "Cannot create transition image")
+-    }
+-    CGImageDestinationSetProperties(destination, [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFLoopCount: 0]] as CFDictionary)
+-    let start = ProcessInfo.processInfo.systemUptime
+-    var times = [Double]()
+-    for index in 0..<count {
+-        if index == 1 { try change() }
+-        guard process.isRunning, let image = CGWindowListCreateImage(canvas, .optionIncludingWindow, CGWindowID(number.uint32Value), [.boundsIgnoreFraming, .bestResolution]) else {
+-            throw Failure(description: "Transition capture failed")
+-        }
+-        times.append(ProcessInfo.processInfo.systemUptime - start)
+-        CGImageDestinationAddImage(destination, image, [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFDelayTime: 0.05]] as CFDictionary)
+-        try pause(0.05)
+-    }
+-    guard CGImageDestinationFinalize(destination) else { throw Failure(description: "Cannot save transition image") }
+-    var recordings = report["motion"] as? [[String: Any]] ?? []
+-    recordings.append(["file": path.lastPathComponent, "frame_times_seconds": times,
+-                       "canvas_points": NSStringFromRect(canvas),
+-                       "scope": "WindowServer frames; GIF is for motion, original PNGs are the color reference"])
+-    report["motion"] = recordings
+-    try save()
+-}
+-
+-func waitForStaticWindow(_ name: String, process: Process) throws {
+-    let start = ProcessInfo.processInfo.systemUptime
+-    var previous: Data?
+-    var identical = 0
+-    var samples = 0
+-    while ProcessInfo.processInfo.systemUptime - start < 8 {
+-        guard process.isRunning, let info = visibleWindow(process.processIdentifier),
+-              let number = info[kCGWindowNumber as String] as? NSNumber,
+-              let image = CGWindowListCreateImage(.null, .optionIncludingWindow, CGWindowID(number.uint32Value), [.boundsIgnoreFraming, .bestResolution]),
+-              let bytes = image.dataProvider?.data else {
+-            throw Failure(description: "Cannot observe settled window for \(name)")
+-        }
+-        let data = bytes as Data
+-        samples += 1
+-        identical = data == previous ? identical + 1 : 0
+-        previous = data
+-        if identical >= 4 {
+-            checks.append(["description": "Stable WindowServer pixels: " + name, "samples": samples,
+-                           "consecutive_equal_comparisons": identical,
+-                           "elapsed_seconds": ProcessInfo.processInfo.systemUptime - start])
+-            try save()
+-            return
+-        }
+-        try pause(0.1)
+-    }
+-    throw Failure(description: "Window did not become pixel-stable within 8 seconds for \(name)")
+ }
+ 
+ func showcaseSlices(process: Process, session: String) throws {
+@@ -342,25 +318,7 @@
+     try pause(0.8)
+     try capture("images-layout-light", process: process, session: session)
+ 
+-    try selectPage("Media", session: session)
+-    let playable: (String) -> Bool = { value in
+-        ["Ready ", "Playing ", "Paused ", "Buffering "].contains { value.hasPrefix($0) }
+-    }
+-    _ = try waitForValue(session, suffix: ".featured", role: "video", description: "Initial featured clip is playable", matching: playable)
+-    try pause(0.3)
+-    try capture("video-ready-light", process: process, session: session)
+-    let damaged = try control(inspect(session), suffix: ".damaged", role: "button")
+-    _ = try cli(["ui", "activate", "--target", damaged["target"] as! String], session: session)
+-    _ = try waitForValue(session, suffix: ".featured", role: "video", description: "Damaged clip reaches failed state") {
+-        $0.hasPrefix("Failed ")
+-    }
+-    try pause(0.3)
+-    try capture("video-failed-light", process: process, session: session)
+-    let pattern = try control(inspect(session), suffix: ".pattern", role: "button")
+-    _ = try cli(["ui", "activate", "--target", pattern["target"] as! String], session: session)
+-    _ = try waitForValue(session, suffix: ".featured", role: "video", description: "Featured clip recovers after replacing damaged source", matching: playable)
+-    try pause(0.3)
+-    try capture("video-recovered-light", process: process, session: session)
++
+ }
+ 
+ do {
+@@ -374,16 +332,30 @@
+         }
+         report["appearance_profile"] = profile
+     }
+-    guard ProcessInfo.processInfo.operatingSystemVersion.majorVersion == 14 else {
+-        throw Failure(description: "Reference capture must run on macOS 14")
+-    }
++    guard ProcessInfo.processInfo.operatingSystemVersion.majorVersion == 13,
++          !NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
++          !NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,
++          !NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast else {
++        throw Failure(description: "Requires macOS13 and existing normal profile; preferences are never written")
++    }
++    guard product == "Showcase", let bundleID = Bundle(url: appURL)?.bundleIdentifier,
++          bundleID.hasPrefix("dev.bern."), bundleID != "dev.bern.showcase",
++          !NSWorkspace.shared.runningApplications.contains(where: { $0.bundleIdentifier == bundleID }),
++          let originalFront, let frontPath = environment["BERN_PICTURE_WATCHDOG_FRONT"],
++          let expectedFront = try JSONSerialization.jsonObject(with: Data(contentsOf: URL(fileURLWithPath: frontPath))) as? [String: Any],
++          sameIdentity(originalFront, expectedFront), environment["BERN_PICTURE_FOCUS_GUARD"] != nil else {
++        throw Failure(description: "Requires private nonrunning Showcase and matching watchdog original-front receipt")
++    }
++    try writeIdentity(appIdentity(originalFront), "original-front.json")
++    report["original_front"] = appIdentity(originalFront)
++    report["private_bundle_id"] = bundleID
+     let permission = CGPreflightScreenCaptureAccess()
+     report["screen_recording_preflight"] = permission
+     try save()
+     guard permission else {
+         throw Failure(description: "CGPreflightScreenCaptureAccess=false: runner Screen Recording permission unavailable; no TCC changes or screenshot fallback")
+     }
+-    for appearance in ["light", "dark"] {
++    for appearance in ["light"] {
+         let ipc = URL(fileURLWithPath: "/tmp/bern-reference-\(getpid())-\(appearance)", isDirectory: true)
+         try files.createDirectory(at: ipc, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
+         environment["BERN_IPC_DIR"] = ipc.path; environment["BERN_APPEARANCE"] = appearance
+@@ -393,32 +365,44 @@
+         process.environment = environment
+         let appLog = try logHandle("\(appearance)-application.log")
+         process.standardOutput = appLog; process.standardError = appLog
++        let launchStart = Date()
+         try process.run()
+-        defer { stop(process); appLog.closeFile(); try? files.removeItem(at: ipc) }
+-        let ready = Date().addingTimeInterval(18)
+-        var session: String?
+-        while session == nil && Date() < ready && process.isRunning {
+-            if let entries = try cli(["sessions"], allowFailure: true) as? [[String: Any]], entries.count == 1 {
+-                session = entries[0]["session_id"] as? String
++        defer {
++            stop(process); appLog.closeFile()
++            do { try files.removeItem(at: ipc) }
++            catch { cleanupOK = false; report["ipc_cleanup_error"] = String(describing: error) }
++        }
++        try writeOwnership(process)
++        let ready = min(deadline, launchStart.addingTimeInterval(18))
++        var session: String?, startupReady = false
++        var startupSamples = [[String: Any]]()
++        while !startupReady && Date() < ready && process.isRunning {
++            if session == nil {
++                let entries = try cli(["sessions"], allowFailure: true, until: ready) as? [[String: Any]] ?? []
++                guard entries.count <= 1 else { throw Failure(description: "Ambiguous private IPC session") }
++                session = entries.first?["session_id"] as? String
+             }
+-            try pause(0.15)
+-        }
+-        guard let session = session else { throw Failure(description: "Application did not register exactly one UI session") }
+-        NSRunningApplication(processIdentifier: process.processIdentifier)?.activate(options: [.activateAllWindows, .activateIgnoringOtherApps])
++            if let id = session {
++                let listed = try cli(["window", "list"], session: id, allowFailure: true, until: ready) as? [[String: Any]] ?? []
++                let main = listed.filter { $0["kind"] as? String == "main" }
++                let native = visibleWindow(process.processIdentifier)
++                startupSamples.append(["session": id, "registered_windows": listed, "own_pid": process.processIdentifier,
++                    "own_visible_window": native as Any? ?? NSNull()])
++                startupReady = main.count == 1 && native != nil && Date() < ready
++            }
++            if !startupReady { try pause(0.15) }
++        }
++        report["startup_readiness"] = startupSamples; try save()
++        guard startupReady, let session else { throw Failure(description: "Private session + main + unique own visible window not ready in18s") }
++        try writeOwnership(process)
++        let accepted = NSRunningApplication(processIdentifier: process.processIdentifier)?.activate(options: [.activateAllWindows, .activateIgnoringOtherApps]) ?? false
++        let activationEnd = min(deadline, Date().addingTimeInterval(2))
++        while NSWorkspace.shared.frontmostApplication?.processIdentifier != process.processIdentifier && Date() < activationEnd { try pause(0.03) }
++        report["activation_accepted"] = accepted
++        guard NSWorkspace.shared.frontmostApplication?.processIdentifier == process.processIdentifier else {
++            throw Failure(description: "Own app activation failed")
++        }
+         _ = try cli(["ui", "set-language", "--language", "en"], session: session)
+-        if product == "Gallery" {
+-            // Gallery's explicit System choice overrides the development
+-            // environment variable. Use its existing appearance action.
+-            let choice = try control(inspect(session), suffix: "." + appearance, role: "button")
+-            _ = try cli(["ui", "activate", "--target", choice["target"] as! String], session: session)
+-            let state = try cli(["state"]) as? [String: Any] ?? [:]
+-            let values = state["values"] as? [String: Any] ?? [:]
+-            guard (values["appearance"] as? String)?.lowercased() == appearance else {
+-                throw Failure(description: "Gallery did not commit the requested appearance")
+-            }
+-            checks.append(["description": "Gallery application appearance", "expected": appearance, "actual": values["appearance"] ?? NSNull()])
+-            try pause(0.4)
+-        }
+         let listed = try cli(["window", "list"], session: session) as? [[String: Any]] ?? []
+         let main = listed.filter { $0["kind"] as? String == "main" }
+         guard main.count == 1, let identifier = main[0]["window"] as? String else {
+@@ -426,27 +410,6 @@
+         }
+         _ = try cli(["window", "resize", "--window", identifier, "--width", "920", "--height", "668"], session: session)
+         let sidebar = try control(inspect(session), suffix: ".pages", role: "sidebar")
+-        if product == "Gallery" {
+-            try pause(0.8)
+-            try capture("gallery-patterns-\(appearance)", process: process, session: session)
+-            let toggle = try control(inspect(session), suffix: ".show_details", role: "switch")
+-            try motion("gallery-inspector-\(appearance)", process: process) {
+-                _ = try cli(["ui", "set-bool", "--target", toggle["target"] as! String, "--value", "true"], session: session)
+-            }
+-            try waitForStaticWindow("inspector-" + appearance, process: process)
+-            try capture("gallery-inspector-\(appearance)", process: process, session: session)
+-            _ = try cli(["ui", "set-bool", "--target", toggle["target"] as! String, "--value", "false"], session: session)
+-            _ = try cli(["ui", "select", "--target", sidebar["target"] as! String, "--option", "Film"], session: session)
+-            try waitForStaticWindow("film-initial-" + appearance, process: process)
+-            try capture("gallery-film-\(appearance)", process: process, session: session)
+-            let last = try control(inspect(session), suffix: ".to_last", role: "button")
+-            try motion("gallery-scroll-last-\(appearance)", process: process) {
+-                _ = try cli(["ui", "activate", "--target", last["target"] as! String], session: session)
+-            }
+-            try waitForStaticWindow("film-last-" + appearance, process: process)
+-            try capture("gallery-film-last-\(appearance)", process: process, session: session)
+-            continue
+-        }
+         _ = try cli(["ui", "select", "--target", sidebar["target"] as! String, "--option", "Controls"], session: session)
+         try pause(0.8)
+         let before = try inspect(session)
+@@ -472,6 +435,7 @@
+             try showcaseSlices(process: process, session: session)
+         }
+     }
++    guard cleanupOK else { throw Failure(description: "Focus/owned-process cleanup incomplete; watchdog receipt required") }
+     report["success"] = true
+     try save()
+ } catch {

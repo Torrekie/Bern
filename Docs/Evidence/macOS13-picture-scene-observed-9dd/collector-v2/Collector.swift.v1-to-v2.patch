@@ -1,0 +1,66 @@
+--- a/v1/Collector.swift
++++ b/v2/Collector.swift
+@@ -23,17 +23,34 @@
+ try files.createDirectory(at: output, withIntermediateDirectories: true)
+ let originalFront = NSWorkspace.shared.frontmostApplication
+ var cleanupOK = true
++// Public Darwin kernel process start timeval; launchDate remains diagnostic-only.
++func kernelStart(_ pid: pid_t) -> [String: UInt64]? {
++    guard pid > 0 else { return nil }
++    var info = proc_bsdinfo()
++    let size = MemoryLayout<proc_bsdinfo>.stride
++    let result = proc_pidinfo(pid, PROC_PIDTBSDINFO, 0, &info, Int32(size))
++    guard result == Int32(size), info.pbi_pid == UInt32(pid),
++          info.pbi_start_tvsec > 0, info.pbi_start_tvusec < 1_000_000 else { return nil }
++    return ["tv_sec": info.pbi_start_tvsec, "tv_usec": info.pbi_start_tvusec]
++}
++func sameKernelStart(_ pid: pid_t, _ row: [String: Any]) -> Bool {
++    guard let expected = row["kernel_start"] as? [String: Any],
++          let seconds = expected["tv_sec"] as? NSNumber,
++          let micros = expected["tv_usec"] as? NSNumber,
++          let actual = kernelStart(pid) else { return false }
++    return seconds.uint64Value == actual["tv_sec"] && micros.uint64Value == actual["tv_usec"]
++}
+ func appIdentity(_ app: NSRunningApplication) -> [String: Any] {
+     ["pid": app.processIdentifier, "bundle_id": app.bundleIdentifier ?? "",
+      "executable_path": app.executableURL?.resolvingSymlinksInPath().path ?? "",
+-     "launch_date": app.launchDate.map { $0.timeIntervalSince1970 as Any } ?? NSNull()]
++     "launch_date": app.launchDate.map { $0.timeIntervalSince1970 as Any } ?? NSNull(),
++     "kernel_start": kernelStart(app.processIdentifier).map { $0 as Any } ?? NSNull()]
+ }
+ func sameIdentity(_ app: NSRunningApplication, _ row: [String: Any]) -> Bool {
+     guard !app.isTerminated, let pid = row["pid"] as? NSNumber,
+-          let launch = row["launch_date"] as? NSNumber, let actual = app.launchDate else { return false }
++          sameKernelStart(app.processIdentifier, row) else { return false }
+     return app.processIdentifier == pid.int32Value && app.bundleIdentifier == (row["bundle_id"] as? String) &&
+-        app.executableURL?.resolvingSymlinksInPath().path == (row["executable_path"] as? String) &&
+-        abs(actual.timeIntervalSince1970 - launch.doubleValue) < 0.001
++        app.executableURL?.resolvingSymlinksInPath().path == (row["executable_path"] as? String)
+ }
+ func writeIdentity(_ row: [String: Any], _ name: String) throws {
+     try JSONSerialization.data(withJSONObject: row, options: [.prettyPrinted, .sortedKeys])
+@@ -43,7 +60,8 @@
+     var row: [String: Any] = ["pid": process.processIdentifier,
+         "bundle_id": Bundle(url: appURL)?.bundleIdentifier ?? "",
+         "executable_path": appURL.appendingPathComponent("Contents/MacOS/Showcase").path,
+-        "launch_date": NSNull()]
++        "launch_date": NSNull(),
++        "kernel_start": kernelStart(process.processIdentifier).map { $0 as Any } ?? NSNull()]
+     if let running = NSRunningApplication(processIdentifier: process.processIdentifier),
+        running.bundleIdentifier == (row["bundle_id"] as? String),
+        running.executableURL?.resolvingSymlinksInPath().path == (row["executable_path"] as? String) {
+@@ -435,6 +453,14 @@
+             try showcaseSlices(process: process, session: session)
+         }
+     }
++    let endingNormalProfile: [String: Bool] = [
++        "reduce_motion": NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
++        "reduce_transparency": NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,
++        "increase_contrast": NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast]
++    report["system_preferences_end"] = endingNormalProfile
++    guard endingNormalProfile.values.allSatisfy({ !$0 }) else {
++        throw Failure(description: "Normal accessibility profile changed before completion")
++    }
+     guard cleanupOK else { throw Failure(description: "Focus/owned-process cleanup incomplete; watchdog receipt required") }
+     report["success"] = true
+     try save()

@@ -1,0 +1,295 @@
+{
+  "kind": "archive_preparation_suggestion_not_archive_or_cleanup_receipt",
+  "scope": "Existing observed14 evidence and three frozen reviews only; no macOS13 A/B result inferred. No payload or PNG copied/moved/deleted.",
+  "proposed_groups": [
+    {
+      "source": "work/picture-scene-observed14/raw",
+      "proposed_target": "runtime14",
+      "policy": "Retain original raw files including all selected PNGs, command stdout/stderr, logs, metadata and light observer packet. Do not replace original PNGs with review crops.",
+      "regular_file_count": 184,
+      "logical_bytes_stat_only": 1493359
+    },
+    {
+      "source": "work/picture-scene-observed14/build",
+      "proposed_target": "build-receipts",
+      "policy": "Retain original small source/patch/maps/build/compiler/signature/checksum receipts. tar remains live input until root completes13/14 chain; final exclusion/removal needs actual cleanup receipt.",
+      "future_tar_exclusion_if_root_authorizes": "showcase-observer.tar.gz",
+      "regular_file_count": 15,
+      "logical_bytes_stat_only": 137665
+    },
+    {
+      "source": "work/picture-scene-observed14 top-level regular files",
+      "proposed_target": "ci-and-receipts",
+      "policy": "Retain job logs, terminal status/checkpoint/exact-verification and entitlement receipts; earlier status snapshots remain chronological, not terminal verdicts.",
+      "files": [
+        {
+          "name": "build-job.log",
+          "bytes": 34383,
+          "sha256": "8e2f6ddcdecca46d6ef94c8b881e8160e893a8fb74fdb9038104f6d73477246c"
+        },
+        {
+          "name": "capture-job.log",
+          "bytes": 21980,
+          "sha256": "29663c33a4ffbfd24b1fe0077d5de57a7c28e2a901fd3336069345d94a15e67f"
+        },
+        {
+          "name": "checkpoint.json",
+          "bytes": 1387,
+          "sha256": "4b37dcdf39b75a0e893f4ef5f3daa21b87bb2cc56992f51212506703ac29e3ad"
+        },
+        {
+          "name": "delivered-entitlements-stderr.txt",
+          "bytes": 233,
+          "sha256": "7b584ed56898cd7ae76950c7b2f6ae63491861a29bd392f8f3f4a315ee46ea3b"
+        },
+        {
+          "name": "delivered-entitlements.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "dispatch.txt",
+          "bytes": 5,
+          "sha256": "af5d8a21858f42808c9bcc17012b77bcc2fd6ab3b071dbd4a05f13f410470541"
+        },
+        {
+          "name": "exact-entitlements-stderr.txt",
+          "bytes": 253,
+          "sha256": "b19b6a5ffe46172a6bef794656849c6373ee699667748553e4f82bcd06e48b04"
+        },
+        {
+          "name": "exact-entitlements.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "exact-verification.json",
+          "bytes": 3973,
+          "sha256": "f2c8f0d3151310884201817d731e12aa01470e0295a7b605b5ca069903c99918"
+        },
+        {
+          "name": "runs-after-dispatch.json",
+          "bytes": 344,
+          "sha256": "aee543e94d4a8a82a74c124cfb9db4c21721ac667d67c71b7aaae5df807edffc"
+        },
+        {
+          "name": "status-1.json",
+          "bytes": 250,
+          "sha256": "dd9230f4d075f082f52bfd1fb5bb3b7a61303c633a53029667b877155ffc6090"
+        },
+        {
+          "name": "status-2.json",
+          "bytes": 430,
+          "sha256": "5c8df6741912713cc6b1dcea93ffc6161b8a87ae541c06018cf569f41262eb86"
+        },
+        {
+          "name": "status-3.json",
+          "bytes": 355,
+          "sha256": "7400782e02cbcff936f7c7bcc9a8a67874aa617eaee6f344d798c0b29d99a4ea"
+        }
+      ]
+    },
+    {
+      "source": "work/picture-scene-observed14/exact",
+      "proposed_target": null,
+      "policy": "Leave original extracted signed payload in place for13. If later omitted from evidence archive, retain full16-member map, actual native checks and cleanup record; this document performs no cleanup.",
+      "regular_file_count": 16,
+      "logical_bytes_stat_only": 5150562
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "geometry14",
+      "source": "work/picture-observed14-geometry-review",
+      "proposed_target": "reviews/geometry14",
+      "manifest_sha256": "f7e69108895def2b7004565026dc4c1d64babc76999fb8f43b651ff18a299a80",
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 2738,
+          "sha256": "1a4f37d13d2afff955381d68f4c739a2bbe1ae2b8de2ffdb9c5365e20837bbea"
+        },
+        {
+          "name": "SHA256SUMS",
+          "bytes": 245,
+          "sha256": "f7e69108895def2b7004565026dc4c1d64babc76999fb8f43b651ff18a299a80"
+        },
+        {
+          "name": "layout-measurements.json",
+          "bytes": 8214,
+          "sha256": "c625fc3f32c121f8f978f3f582a50f5e45df80c0a86d0f6b2404be2c558cd564"
+        },
+        {
+          "name": "review.json",
+          "bytes": 11831,
+          "sha256": "d429f0bb3903d4e22548e29fcfc59ce6c5aa2a89b1c46d6d2b14735a34bd4793"
+        }
+      ]
+    },
+    {
+      "kind": "events14",
+      "source": "work/picture-observed14-event-review",
+      "proposed_target": "reviews/events14",
+      "manifest_sha256": "72c0c8fd90075fa25032f9f2103d4be4a16de3641ec017c89d7f7057f31014d4",
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 4101,
+          "sha256": "0a56860a23841c3173957d06d9076d31441d76823d3c1ef598ea578db43f6747"
+        },
+        {
+          "name": "SHA256SUMS",
+          "bytes": 160,
+          "sha256": "72c0c8fd90075fa25032f9f2103d4be4a16de3641ec017c89d7f7057f31014d4"
+        },
+        {
+          "name": "event-review.json",
+          "bytes": 51097,
+          "sha256": "cb62eb4836c1d9563eb8d6a9c366cee4cfd94e7ce4d482eab9cfe278fd2c6b99"
+        }
+      ]
+    },
+    {
+      "kind": "native14",
+      "source": "work/picture-observed14-native-review",
+      "proposed_target": "reviews/native14",
+      "manifest_sha256": "ac99a4e0b6643704bdf1f0e9e1b92bd5a94ccdd77ae0b854be1acc5eccbc2c7f",
+      "files": [
+        {
+          "name": "README.md",
+          "bytes": 3815,
+          "sha256": "84ea32bbe9cd8d39a54130cfbc14ee099517fcfab88c56fe8e4007ec71c9c121"
+        },
+        {
+          "name": "SHA256SUMS",
+          "bytes": 154,
+          "sha256": "ac99a4e0b6643704bdf1f0e9e1b92bd5a94ccdd77ae0b854be1acc5eccbc2c7f"
+        },
+        {
+          "name": "review.json",
+          "bytes": 15694,
+          "sha256": "71fc67b45b5a20bf77b1849faf9b892151784ff5bc0cbad50d274b78d29b1efd"
+        }
+      ]
+    }
+  ],
+  "recorded_payload_identity_from_frozen_native_review": {
+    "source_review_sha256": "71fc67b45b5a20bf77b1849faf9b892151784ff5bc0cbad50d274b78d29b1efd",
+    "tar_sha256": "bea6ff27c3b4b085d8b7459307278537a30e76e7a59ee5a8136bcb7df147bf4e",
+    "tar_bytes": 2434110,
+    "GUI": {
+      "bytes": 3773824,
+      "sha256": "c1d27a0435bd145f08a098adaaf22c6718c1192da15367456afb7ff151c4c12c"
+    },
+    "CLI": {
+      "bytes": 898336,
+      "sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170"
+    },
+    "member_count": 16,
+    "hashes_not_recomputed_again_for_this_document": true
+  },
+  "recorded_original_PNG_hashes_from_geometry_review": {
+    "source_review_sha256": "d429f0bb3903d4e22548e29fcfc59ce6c5aa2a89b1c46d6d2b14735a34bd4793",
+    "count_is_files_not_OS_version": true,
+    "pairs_all_exact_to_control40135147500": true,
+    "files": [
+      {
+        "png": "controls-light.png",
+        "bytes": 85729,
+        "sha256": "49479af56bfba53146b3f50d35929dcdbfb849fb0e4b7e5c5fc2ffdd8bb95929"
+      },
+      {
+        "png": "controls-light-after-commit.png",
+        "bytes": 85326,
+        "sha256": "f8bc92c12960dc94bffe727aaf3f7363e0a128a04eedda7567efdbaf28f3373a"
+      },
+      {
+        "png": "text-light.png",
+        "bytes": 57046,
+        "sha256": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572"
+      },
+      {
+        "png": "buttons-light.png",
+        "bytes": 58374,
+        "sha256": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9"
+      },
+      {
+        "png": "inputs-light.png",
+        "bytes": 42905,
+        "sha256": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519"
+      },
+      {
+        "png": "query-failed-light.png",
+        "bytes": 57561,
+        "sha256": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243"
+      },
+      {
+        "png": "query-empty-light.png",
+        "bytes": 52401,
+        "sha256": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef"
+      },
+      {
+        "png": "query-recovered-light.png",
+        "bytes": 57882,
+        "sha256": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5"
+      },
+      {
+        "png": "images-layout-light.png",
+        "bytes": 172517,
+        "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780"
+      },
+      {
+        "png": "video-ready-light.png",
+        "bytes": 136932,
+        "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+      },
+      {
+        "png": "video-failed-light.png",
+        "bytes": 58010,
+        "sha256": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9"
+      },
+      {
+        "png": "video-recovered-light.png",
+        "bytes": 136932,
+        "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+      },
+      {
+        "png": "controls-dark.png",
+        "bytes": 88154,
+        "sha256": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e"
+      }
+    ]
+  },
+  "recorded_event_packet_identity_from_event_review": {
+    "source_review_sha256": "cb62eb4836c1d9563eb8d6a9c366cee4cfd94e7ce4d482eab9cfe278fd2c6b99",
+    "bytes": 286397,
+    "path": "work/picture-scene-observed14/raw/observer/picture-observer-1926.json",
+    "sha256": "a6ee9cb22bcf7feead30bdb3623ec03b227f9fafbc6af4ad0ed18e93dce9d981",
+    "event_count": 49,
+    "label_count": 21,
+    "end_state": "not_observed",
+    "capture_synchronization_established": false,
+    "settled_state_established": false
+  },
+  "source_reuse": {
+    "product_commit": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+    "harness_commit": "c9867c223b2efaf53a82214edd352b988c2952c9",
+    "workflow_sha256": "29382ffea9dda304ef4eaa00332c6947c6570e9bff57fbd52a0e7cf4eb67d879",
+    "generated_original_sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083",
+    "compiled_input_reconstructed_sha256": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+    "existing_original_source": "work/picture-source-export-run/raw/BernGenerated.swift (existing archive alias; reference exact original record rather than recopy whole source tree)",
+    "policy": "Keep exact Git/source-export references and canonical small patch/helper fingerprints; no duplicate App/tar/PNG or whole source tree for this preparation."
+  },
+  "later_root_archive_checks": [
+    "Choose and document final13A/B directory names only after actual evidence is ready. Preserve original and private re-sign derivation separately.",
+    "Verify retained regular bytes and all review submanifests at final destination; do not link archive files back to mutable work.",
+    "A final manifest must explicitly state intentionally excluded historic executable/tar paths instead of treating them as unexplained corruption.",
+    "Cleanup records must describe actual owner-approved operations and measured logical bytes; suggested stat totals are not APFS physical savings.",
+    "Do not convert49-event coverage or13-file equality into terminal synchronized observer/native or whole-goal acceptance."
+  ],
+  "preparation_hash_sources": {
+    "geometry_manifest_sha256": "f7e69108895def2b7004565026dc4c1d64babc76999fb8f43b651ff18a299a80",
+    "event_manifest_sha256": "72c0c8fd90075fa25032f9f2103d4be4a16de3641ec017c89d7f7057f31014d4",
+    "native_manifest_sha256": "ac99a4e0b6643704bdf1f0e9e1b92bd5a94ccdd77ae0b854be1acc5eccbc2c7f"
+  }
+}

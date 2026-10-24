@@ -1,0 +1,240 @@
+{
+  "verdict": "final_saved_desktop_release_and_small_receipt_source_links_pass",
+  "existing_payload_and_runtime_reviews_unchanged": true,
+  "no_payload_read_after_root_retirement": true,
+  "locks_and_signature_preparation_receipts": [
+    {
+      "path": "work/picture-local13-ab/locks.json",
+      "groups": [
+        "A",
+        "B"
+      ],
+      "recorded_commands": 8,
+      "all_saved_status_zero": true,
+      "all_referenced_logs_hashed": true,
+      "macho_helper_hash_verified": true,
+      "preparer_requires_fresh_prefs_and_saved_state_paths": true
+    },
+    {
+      "path": "work/picture-local13-ab-v2/locks.json",
+      "groups": [
+        "A2",
+        "B"
+      ],
+      "recorded_commands": 4,
+      "all_saved_status_zero": true,
+      "all_referenced_logs_hashed": true,
+      "macho_helper_hash_verified": true,
+      "preparer_requires_fresh_prefs_and_saved_state_paths": true
+    },
+    {
+      "path": "work/picture-local13-ab-v3/locks.json",
+      "groups": [
+        "B3"
+      ],
+      "recorded_commands": 4,
+      "all_saved_status_zero": true,
+      "all_referenced_logs_hashed": true,
+      "macho_helper_hash_verified": true,
+      "preparer_requires_fresh_prefs_and_saved_state_paths": true
+    }
+  ],
+  "compiled_helper_source_receipts": [
+    {
+      "receipt": "work/picture-local13-build/build.json",
+      "compiler_argv_source_paths_match_retained_source": true,
+      "source_locks_present_in_build": false,
+      "retained_source_hashes": {
+        "Collector": "51f172d1c8a0d3a4f0af3811a429984dba6590546d318f0d33054354aa5c84f7",
+        "FocusGuard": "0d0e810cd7b0e81b35bff174858f05eef5052c684db6b967c3bf6c1b9acf9a63"
+      },
+      "source_check": "v2 actual source_locks verified; v1 has no build source_locks, retained hashes match the frozen independent source-review input map.",
+      "actual_binary_hash_verification": "Saved in payload-review.json before retirement; not re-read afterward."
+    },
+    {
+      "receipt": "work/picture-local13-build/v2/build.json",
+      "compiler_argv_source_paths_match_retained_source": true,
+      "source_locks_present_in_build": true,
+      "retained_source_hashes": {
+        "Collector": "aa722884b6692f65fe5d7b4a3953ae2f8358361b373e9bad64cebcdbbc1a60d8",
+        "FocusGuard": "dfe7417c19f0ae334226a3cdd4bc135a444f2aaa71fdb7f3e9f973bcd5f0170d"
+      },
+      "source_check": "v2 actual source_locks verified; v1 has no build source_locks, retained hashes match the frozen independent source-review input map.",
+      "actual_binary_hash_verification": "Saved in payload-review.json before retirement; not re-read afterward."
+    }
+  ],
+  "B_compiled_GUI_source_link": {
+    "prior_review": "work/picture-observed14-native-review/review.json",
+    "prior_review_sha256": "71fc67b45b5a20bf77b1849faf9b892151784ff5bc0cbad50d274b78d29b1efd",
+    "source_commit": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+    "harness_commit": "c9867c223b2efaf53a82214edd352b988c2952c9",
+    "compiled_generated_SHA": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+    "compiled_generated_bytes": 106494,
+    "CI_original_GUI_SHA": "c1d27a0435bd145f08a098adaaf22c6718c1192da15367456afb7ff151c4c12c",
+    "verified_before_retirement": "Actual original/CI/four private GUI derivations in payload-review.json; this only adds frozen provenance references."
+  },
+  "final_saved_desktop_release": {
+    "receipt": "work/picture-local13-ab-v3/desktop-final-released.json",
+    "active": false,
+    "front_pid": 9292,
+    "front_bundle": "com.apple.iphonesimulator",
+    "cursor": {
+      "x": 691.7734375,
+      "y": 444.12890625
+    },
+    "cursor_moved_distance": 0,
+    "actions_used": 0,
+    "scope": "Final saved MCP idle/released record. Earlier active desktop-after records unchanged. No live desktop query by reviewer."
+  },
+  "root_cleanup_references": [
+    {
+      "path": "work/picture-cohort-cleanup/retired-artifacts.json",
+      "sha256": "f4cb9d0fa718ce2c205530fbd23fea8339822325502e4e2f88276a97cf1e7744",
+      "scope": "Parent cleanup receipt referenced; operations not rerun by reviewer."
+    },
+    {
+      "path": "work/picture-cohort-cleanup/module-cache-cleanup.json",
+      "sha256": "519db5894aae1673fe2cff04d9a63f215d01831ecd431da793d7cdb216f37c83",
+      "scope": "Parent cleanup receipt referenced; operations not rerun by reviewer."
+    }
+  ],
+  "historical_input_hash_scope": "Payload hashes record actual reads while files existed, before parent retirement; they do not require retired executables/tar to exist in the retained archive.",
+  "input_hashes": {
+    "work/picture-local13-ab/locks.json": {
+      "sha256": "4d49b4902fbbb0d349b090145c10ee0326980946ab9276893bdd9db75d45efd3",
+      "bytes": 4415
+    },
+    "outputs/Bern/Docs/Evidence/macOS13-toolbar-title-host-f6/capture-pair/run-pair.py": {
+      "sha256": "2155609f04678ac13249125995831ebf26c8331cd00960e1f643517111d150c1",
+      "bytes": 18363
+    },
+    "work/picture-local13-ab/A/original-signature.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab/A/copy.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab/A/resign.txt": {
+      "sha256": "ce946ad2895162227e7c291059be0cf98a84d5fd0c3b8e78832727313e1808ca",
+      "bytes": 163
+    },
+    "work/picture-local13-ab/A/signature.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab/B/original-signature.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab/B/copy.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab/B/resign.txt": {
+      "sha256": "b2ce177124b021c9437e9d1ff62345a72d760453bfa13683d53abbc6d4566679",
+      "bytes": 163
+    },
+    "work/picture-local13-ab/B/signature.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab/prepare-copies.py": {
+      "sha256": "e2c8f9e4bb7a19d84d02f03f1b8798296c7641257df85eba429781ffcc9d0509",
+      "bytes": 4591
+    },
+    "work/picture-local13-ab-v2/locks.json": {
+      "sha256": "3764163b93f1a122ee1d37b41b6d26d584a6c7c6e8a35edd2dcb151a26e8ba37",
+      "bytes": 3097
+    },
+    "work/picture-local13-ab-v2/A2/original-signature.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v2/A2/copy.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v2/A2/resign.txt": {
+      "sha256": "16c321d767cf91d540cb9b2a3585ad1e7fb16eeafb33bbd8d12560a19b3af1eb",
+      "bytes": 167
+    },
+    "work/picture-local13-ab-v2/A2/signature.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v2/prepare-copies.py": {
+      "sha256": "f32272be6bd21a052f174d1a77221d0e729d763a5b04d914be47e7044597b167",
+      "bytes": 4462
+    },
+    "work/picture-local13-ab-v3/locks.json": {
+      "sha256": "2f403bc01186a632c89cc8fa3846f04a021330131c64fdc56b01c7308bb4f53b",
+      "bytes": 2539
+    },
+    "work/picture-local13-ab-v3/B3/original-signature.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v3/B3/copy.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v3/B3/resign.txt": {
+      "sha256": "ddaf2861cb10e02289d5644972ad0ca99f564930760adc97b7aa651f96d667a2",
+      "bytes": 167
+    },
+    "work/picture-local13-ab-v3/B3/signature.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-ab-v3/prepare-copies.py": {
+      "sha256": "cca2a6dd85468c92e01868f73ec51c068764acd2e18968fc33351c93d36824ce",
+      "bytes": 4493
+    },
+    "work/picture-local13-build/build.json": {
+      "sha256": "28b2211054ec8b58b2727fa7269d14a02b2b448981c761ee57d9ab81e883de20",
+      "bytes": 2142
+    },
+    "work/picture-local13-collector-preparation/Collector.swift": {
+      "sha256": "51f172d1c8a0d3a4f0af3811a429984dba6590546d318f0d33054354aa5c84f7",
+      "bytes": 26753
+    },
+    "work/picture-local13-collector-preparation/FocusGuard.swift": {
+      "sha256": "0d0e810cd7b0e81b35bff174858f05eef5052c684db6b967c3bf6c1b9acf9a63",
+      "bytes": 7125
+    },
+    "work/picture-local13-build/v2/build.json": {
+      "sha256": "12a1956a5913a668caff61653806d037235c2222b75bd241606faa0a19a5d3dd",
+      "bytes": 2208
+    },
+    "work/picture-local13-collector-v2/Collector.swift": {
+      "sha256": "aa722884b6692f65fe5d7b4a3953ae2f8358361b373e9bad64cebcdbbc1a60d8",
+      "bytes": 28337
+    },
+    "work/picture-local13-collector-v2/FocusGuard.swift": {
+      "sha256": "dfe7417c19f0ae334226a3cdd4bc135a444f2aaa71fdb7f3e9f973bcd5f0170d",
+      "bytes": 8079
+    },
+    "work/picture-local13-ab-v3/desktop-final-released.json": {
+      "sha256": "39713da463065736d5dc580f7520066e42e98560b5e42f9522ff833e64da77db",
+      "bytes": 568
+    },
+    "work/picture-observed14-native-review/review.json": {
+      "sha256": "71fc67b45b5a20bf77b1849faf9b892151784ff5bc0cbad50d274b78d29b1efd",
+      "bytes": 15694
+    },
+    "work/picture-observed14-native-review/SHA256SUMS": {
+      "sha256": "ac99a4e0b6643704bdf1f0e9e1b92bd5a94ccdd77ae0b854be1acc5eccbc2c7f",
+      "bytes": 154
+    },
+    "work/picture-cohort-cleanup/retired-artifacts.json": {
+      "sha256": "f4cb9d0fa718ce2c205530fbd23fea8339822325502e4e2f88276a97cf1e7744",
+      "bytes": 22281
+    },
+    "work/picture-cohort-cleanup/module-cache-cleanup.json": {
+      "sha256": "519db5894aae1673fe2cff04d9a63f215d01831ecd431da793d7cdb216f37c83",
+      "bytes": 12888
+    }
+  }
+}

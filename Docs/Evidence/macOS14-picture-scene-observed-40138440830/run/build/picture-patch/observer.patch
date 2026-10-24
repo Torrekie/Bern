@@ -1,0 +1,86 @@
+--- a/BernGenerated.swift
++++ b/BernGenerated.swift
+@@ -1280,30 +1280,43 @@
+                 BernAdaptiveGrid(minimum: 120.0, gap: 16.0, rowGap: 16.0, motion: nil) {
+                     SwiftUI.VStack(alignment: .center, spacing: 6.0) {
+                         BernImage(name: "images/landscape.jpg", label: BernText.string("layout_page.0.0.0.0.0.label"), width: 120.0, height: 90.0, fit: .contain, aspect: nil)
++                        .bernPictureMeasure("images-contain-image")
+                         SwiftUI.Text(verbatim: BernText.string("layout_page.0.0.0.0.1.content"))
+                         .font(.caption)
+                         .foregroundStyle(.secondary)
+-                    }
++                        .bernPictureMeasure("images-contain-caption")
++                    }
++                    .bernPictureMeasure("images-contain-column")
+                     SwiftUI.VStack(alignment: .center, spacing: 6.0) {
+                         BernImage(name: "images/landscape.jpg", label: BernText.string("layout_page.0.0.0.1.0.label"), width: 120.0, height: 90.0, fit: .cover, aspect: nil)
++                        .bernPictureMeasure("images-cover-image")
+                         SwiftUI.Text(verbatim: BernText.string("layout_page.0.0.0.1.1.content"))
+                         .font(.caption)
+                         .foregroundStyle(.secondary)
+-                    }
++                        .bernPictureMeasure("images-cover-caption")
++                    }
++                    .bernPictureMeasure("images-cover-column")
+                     SwiftUI.VStack(alignment: .center, spacing: 6.0) {
+                         BernImage(name: "images/landscape.jpg", label: BernText.string("layout_page.0.0.0.2.0.label"), width: 120.0, height: 90.0, fit: .fill, aspect: nil)
++                        .bernPictureMeasure("images-fill-image")
+                         SwiftUI.Text(verbatim: BernText.string("layout_page.0.0.0.2.1.content"))
+                         .font(.caption)
+                         .foregroundStyle(.secondary)
+-                    }
++                        .bernPictureMeasure("images-fill-caption")
++                    }
++                    .bernPictureMeasure("images-fill-column")
+                     SwiftUI.VStack(alignment: .center, spacing: 6.0) {
+                         BernImage(name: "images/bern.png", label: BernText.string("layout_page.0.0.0.3.0.label"), width: 64.0, height: nil, fit: .contain, aspect: nil)
++                        .bernPictureMeasure("images-mark-image")
+                         SwiftUI.Text(verbatim: BernText.string("layout_page.0.0.0.3.1.content"))
+                         .font(.caption)
+                         .foregroundStyle(.secondary)
+-                    }
++                        .bernPictureMeasure("images-mark-caption")
++                    }
++                    .bernPictureMeasure("images-mark-column")
+                 }
+                 .frame(maxWidth: .infinity, alignment: .leading)
++                .bernPictureMeasure("images-grid")
+             } header: {
+                 SwiftUI.Text(verbatim: BernText.string("layout_page.0.0.title")).bernSectionTitle()
+             } footer: {
+@@ -1314,18 +1327,25 @@
+                 BernAdaptiveGrid(minimum: 192.0, gap: 16.0, rowGap: 16.0, motion: nil) {
+                     SwiftUI.VStack(alignment: .center, spacing: 6.0) {
+                         BernImage(name: "images/hdr-gainmap.jpg", label: BernText.string("layout_page.0.1.0.0.0.label"), width: 192.0, height: 108.0, fit: .contain, aspect: nil)
++                        .bernPictureMeasure("hdr-gainmap-image")
+                         SwiftUI.Text(verbatim: BernText.string("layout_page.0.1.0.0.1.content"))
+                         .font(.caption)
+                         .foregroundStyle(.secondary)
+-                    }
++                        .bernPictureMeasure("hdr-gainmap-caption")
++                    }
++                    .bernPictureMeasure("hdr-gainmap-column")
+                     SwiftUI.VStack(alignment: .center, spacing: 6.0) {
+                         BernImage(name: "images/hdr-pq.png", label: BernText.string("layout_page.0.1.0.1.0.label"), width: 192.0, height: 108.0, fit: .contain, aspect: nil)
++                        .bernPictureMeasure("hdr-pq-image")
+                         SwiftUI.Text(verbatim: BernText.string("layout_page.0.1.0.1.1.content"))
+                         .font(.caption)
+                         .foregroundStyle(.secondary)
+-                    }
++                        .bernPictureMeasure("hdr-pq-caption")
++                    }
++                    .bernPictureMeasure("hdr-pq-column")
+                 }
+                 .frame(maxWidth: .infinity, alignment: .leading)
++                .bernPictureMeasure("hdr-grid")
+             } header: {
+                 SwiftUI.Text(verbatim: BernText.string("layout_page.0.1.title")).bernSectionTitle()
+             } footer: {
+@@ -1404,6 +1424,7 @@
+             .modifier(BernFormRows())
+         }
+         .formStyle(.grouped)
++        .bernPictureMeasure("form-root")
+     }
+ }
+ 

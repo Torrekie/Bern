@@ -1,0 +1,378 @@
+{
+  "verdict": "actual_original_and_four_private_payloads_sections_signatures_helpers_tar_pass",
+  "variants": {
+    "A": {
+      "original_app": "outputs/macOS13/Showcase.app",
+      "private_app": "work/picture-local13-ab/runtime-work/A/Showcase.app",
+      "bundle_id": "dev.bern.picture13.a.6d69edf8fd4d4f8c9991b482cfdd70d0",
+      "original_gui": {
+        "sha256": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+        "bytes": 3736752,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "26.2"
+        },
+        "section_count": 40,
+        "normalized_non_signature_sha256": "7b85edf156aecea52d4fcbdefab9617e4c45b1dfc2bb0e96718453f96e86bb56"
+      },
+      "private_gui": {
+        "sha256": "2444df271263cfb674c1d7557d6dcd65c9c5714fee63b6c55e2a0fc25c52c2d9",
+        "bytes": 3736784,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "26.2"
+        },
+        "section_count": 40,
+        "normalized_non_signature_sha256": "7b85edf156aecea52d4fcbdefab9617e4c45b1dfc2bb0e96718453f96e86bb56"
+      },
+      "all_reported_sections_and_normalized_non_signature_equal": true,
+      "changed_members": [
+        "Contents/Info.plist",
+        "Contents/MacOS/Showcase"
+      ],
+      "plist_only_CFBundleIdentifier_changes": true,
+      "other13_app_members_unchanged": true,
+      "CLI_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+      "isolation_receipt_sha256": "0176d6d031e5fd66518825e0d73695612496f1ce6a145a50b6ac74682d455eec"
+    },
+    "A2": {
+      "original_app": "outputs/macOS13/Showcase.app",
+      "private_app": "work/picture-local13-ab-v2/runtime-work/A2/Showcase.app",
+      "bundle_id": "dev.bern.picture13.a2.b8bb115a07ed451eae11ec5354e7eff5",
+      "original_gui": {
+        "sha256": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+        "bytes": 3736752,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "26.2"
+        },
+        "section_count": 40,
+        "normalized_non_signature_sha256": "7b85edf156aecea52d4fcbdefab9617e4c45b1dfc2bb0e96718453f96e86bb56"
+      },
+      "private_gui": {
+        "sha256": "068d845bd4cdcbf613d7395e581510d7f69de554ed7bc1fddfb2b4ac1257b811",
+        "bytes": 3736784,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "26.2"
+        },
+        "section_count": 40,
+        "normalized_non_signature_sha256": "7b85edf156aecea52d4fcbdefab9617e4c45b1dfc2bb0e96718453f96e86bb56"
+      },
+      "all_reported_sections_and_normalized_non_signature_equal": true,
+      "changed_members": [
+        "Contents/Info.plist",
+        "Contents/MacOS/Showcase"
+      ],
+      "plist_only_CFBundleIdentifier_changes": true,
+      "other13_app_members_unchanged": true,
+      "CLI_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+      "isolation_receipt_sha256": "39e33ef5b884cd808016bfbad4c9bcb0762e8705815e9fadcb228848f3420e74"
+    },
+    "B": {
+      "original_app": "work/picture-scene-observed14/exact/Showcase.app",
+      "private_app": "work/picture-local13-ab/runtime-work/B/Showcase.app",
+      "bundle_id": "dev.bern.picture13.b.12a5d8646549489da7c2f9e4813987b2",
+      "original_gui": {
+        "sha256": "c1d27a0435bd145f08a098adaaf22c6718c1192da15367456afb7ff151c4c12c",
+        "bytes": 3773824,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "26.2"
+        },
+        "section_count": 40,
+        "normalized_non_signature_sha256": "1ffd06fd67835f7b6a6b0f28a6d53552cf5076b2d7e2c4dd1a720764c8ee2efd"
+      },
+      "private_gui": {
+        "sha256": "df1f5cf42390ded17abb5b04e3d0fc35a7044b1593ac45d66c82620d5cb36d58",
+        "bytes": 3773856,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "26.2"
+        },
+        "section_count": 40,
+        "normalized_non_signature_sha256": "1ffd06fd67835f7b6a6b0f28a6d53552cf5076b2d7e2c4dd1a720764c8ee2efd"
+      },
+      "all_reported_sections_and_normalized_non_signature_equal": true,
+      "changed_members": [
+        "Contents/Info.plist",
+        "Contents/MacOS/Showcase"
+      ],
+      "plist_only_CFBundleIdentifier_changes": true,
+      "other13_app_members_unchanged": true,
+      "CLI_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+      "isolation_receipt_sha256": "4b9be368e5eec05bcb3028231655bb1430f996d5cf6e6ab9ead9ea28078ec77c"
+    },
+    "B3": {
+      "original_app": "work/picture-scene-observed14/exact/Showcase.app",
+      "private_app": "work/picture-local13-ab-v3/runtime-work/B3/Showcase.app",
+      "bundle_id": "dev.bern.picture13.b3.bffae7ce3c064b12a61b0e14a16ac0d0",
+      "original_gui": {
+        "sha256": "c1d27a0435bd145f08a098adaaf22c6718c1192da15367456afb7ff151c4c12c",
+        "bytes": 3773824,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "26.2"
+        },
+        "section_count": 40,
+        "normalized_non_signature_sha256": "1ffd06fd67835f7b6a6b0f28a6d53552cf5076b2d7e2c4dd1a720764c8ee2efd"
+      },
+      "private_gui": {
+        "sha256": "b492694b8cbe4a960abdf15bc7ccc0243e67fc872e7e795d052760f4b8d6ff80",
+        "bytes": 3773856,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "26.2"
+        },
+        "section_count": 40,
+        "normalized_non_signature_sha256": "1ffd06fd67835f7b6a6b0f28a6d53552cf5076b2d7e2c4dd1a720764c8ee2efd"
+      },
+      "all_reported_sections_and_normalized_non_signature_equal": true,
+      "changed_members": [
+        "Contents/Info.plist",
+        "Contents/MacOS/Showcase"
+      ],
+      "plist_only_CFBundleIdentifier_changes": true,
+      "other13_app_members_unchanged": true,
+      "CLI_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+      "isolation_receipt_sha256": "d1c2b45bc9d69e48de09d1f9ab18c58b0b9eb7c67b862e3aad021a99554d0a77"
+    }
+  },
+  "actual_codesign_checks": [
+    {
+      "path": "outputs/macOS13/Showcase.app",
+      "check": "codesign --verify --deep --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-local13-ab/runtime-work/A/Showcase.app",
+      "check": "codesign --verify --deep --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-local13-ab/runtime-work/B/Showcase.app",
+      "check": "codesign --verify --deep --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-local13-ab-v2/runtime-work/A2/Showcase.app",
+      "check": "codesign --verify --deep --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-local13-ab-v3/runtime-work/B3/Showcase.app",
+      "check": "codesign --verify --deep --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-scene-observed14/exact/Showcase.app",
+      "check": "codesign --verify --deep --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-scene-observed14/exact/bin/showcase",
+      "check": "codesign --verify --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-local13-build/Collector",
+      "check": "codesign --verify --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-local13-build/FocusGuard",
+      "check": "codesign --verify --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-local13-build/v2/Collector",
+      "check": "codesign --verify --strict",
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "path": "work/picture-local13-build/v2/FocusGuard",
+      "check": "codesign --verify --strict",
+      "returncode": 0,
+      "output": ""
+    }
+  ],
+  "actual_compiled_helpers": {
+    "v1": {
+      "Collector": {
+        "sha256": "e5111e653710d71dfb131281f2dd8fbf9bb620cc9dba440f6c5be87f511d1a85",
+        "bytes": 273848,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "14.2"
+        }
+      },
+      "FocusGuard": {
+        "sha256": "6fe411ca7d3589646a8bac630f2bb067471fc8e1be14666e7c88cbda75592731",
+        "bytes": 139016,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "14.2"
+        }
+      }
+    },
+    "v2": {
+      "Collector": {
+        "sha256": "c3e3545585e168d50f7d96f15f76f8aa80174a061fcfa9c82ae806d8c4bba2af",
+        "bytes": 276072,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "14.2"
+        }
+      },
+      "FocusGuard": {
+        "sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+        "bytes": 140680,
+        "arch": "arm64",
+        "build": {
+          "platform": "MACOS",
+          "minos": "13.0",
+          "sdk": "14.2"
+        }
+      }
+    }
+  },
+  "original_CI_tar": {
+    "sha256": "bea6ff27c3b4b085d8b7459307278537a30e76e7a59ee5a8136bcb7df147bf4e",
+    "bytes": 2434110,
+    "actual_regular_members_read_equal_exact": 16
+  },
+  "delivered_original_GUI_SHA": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+  "CI_original_GUI_SHA": "c1d27a0435bd145f08a098adaaf22c6718c1192da15367456afb7ff151c4c12c",
+  "source_link": "Reuses frozen picture-observed14-native-review source reconstruction/55Git/CI acquisition result; original delivered9dd identity is separately retained in original control delivery receipt. Private re-sign differs only Info.plist/GUI signature storage and preserves all section/non-signature normalized bytes.",
+  "input_hashes": {
+    "work/picture-local13-ab/A/isolation.json": {
+      "sha256": "0176d6d031e5fd66518825e0d73695612496f1ce6a145a50b6ac74682d455eec",
+      "bytes": 31951
+    },
+    "outputs/macOS13/Showcase.app/Contents/MacOS/Showcase": {
+      "sha256": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+      "bytes": 3736752
+    },
+    "work/picture-local13-ab/runtime-work/A/Showcase.app/Contents/MacOS/Showcase": {
+      "sha256": "2444df271263cfb674c1d7557d6dcd65c9c5714fee63b6c55e2a0fc25c52c2d9",
+      "bytes": 3736784
+    },
+    "work/picture-scene-observed14/exact/bin/showcase": {
+      "sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+      "bytes": 898336
+    },
+    "work/picture-local13-ab-v2/A2/isolation.json": {
+      "sha256": "39e33ef5b884cd808016bfbad4c9bcb0762e8705815e9fadcb228848f3420e74",
+      "bytes": 31963
+    },
+    "work/picture-local13-ab-v2/runtime-work/A2/Showcase.app/Contents/MacOS/Showcase": {
+      "sha256": "068d845bd4cdcbf613d7395e581510d7f69de554ed7bc1fddfb2b4ac1257b811",
+      "bytes": 3736784
+    },
+    "work/picture-local13-ab/B/isolation.json": {
+      "sha256": "4b9be368e5eec05bcb3028231655bb1430f996d5cf6e6ab9ead9ea28078ec77c",
+      "bytes": 31990
+    },
+    "work/picture-scene-observed14/exact/Showcase.app/Contents/MacOS/Showcase": {
+      "sha256": "c1d27a0435bd145f08a098adaaf22c6718c1192da15367456afb7ff151c4c12c",
+      "bytes": 3773824
+    },
+    "work/picture-local13-ab/runtime-work/B/Showcase.app/Contents/MacOS/Showcase": {
+      "sha256": "df1f5cf42390ded17abb5b04e3d0fc35a7044b1593ac45d66c82620d5cb36d58",
+      "bytes": 3773856
+    },
+    "work/picture-local13-ab-v3/B3/isolation.json": {
+      "sha256": "d1c2b45bc9d69e48de09d1f9ab18c58b0b9eb7c67b862e3aad021a99554d0a77",
+      "bytes": 32002
+    },
+    "work/picture-local13-ab-v3/runtime-work/B3/Showcase.app/Contents/MacOS/Showcase": {
+      "sha256": "b492694b8cbe4a960abdf15bc7ccc0243e67fc872e7e795d052760f4b8d6ff80",
+      "bytes": 3773856
+    },
+    "work/picture-local13-build/build.json": {
+      "sha256": "28b2211054ec8b58b2727fa7269d14a02b2b448981c761ee57d9ab81e883de20",
+      "bytes": 2142
+    },
+    "work/picture-local13-build/Collector": {
+      "sha256": "e5111e653710d71dfb131281f2dd8fbf9bb620cc9dba440f6c5be87f511d1a85",
+      "bytes": 273848
+    },
+    "work/picture-local13-build/Collector.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-build/FocusGuard": {
+      "sha256": "6fe411ca7d3589646a8bac630f2bb067471fc8e1be14666e7c88cbda75592731",
+      "bytes": 139016
+    },
+    "work/picture-local13-build/FocusGuard.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-build/v2/build.json": {
+      "sha256": "12a1956a5913a668caff61653806d037235c2222b75bd241606faa0a19a5d3dd",
+      "bytes": 2208
+    },
+    "work/picture-local13-build/v2/Collector": {
+      "sha256": "c3e3545585e168d50f7d96f15f76f8aa80174a061fcfa9c82ae806d8c4bba2af",
+      "bytes": 276072
+    },
+    "work/picture-local13-build/v2/Collector.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-local13-build/v2/FocusGuard": {
+      "sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+      "bytes": 140680
+    },
+    "work/picture-local13-build/v2/FocusGuard.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-scene-observed14/build/showcase-observer.tar.gz": {
+      "sha256": "bea6ff27c3b4b085d8b7459307278537a30e76e7a59ee5a8136bcb7df147bf4e",
+      "bytes": 2434110
+    },
+    "work/picture-scene-observed14/exact-entitlements.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/picture-scene-observed14/delivered-entitlements.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "scope": "Actual existing files read before cleanup; original/4private Apps and CLI/helpers verified without execution, re-signing, extraction or deletion. Normalization excludes LC_CODE_SIGNATURE command/blob and __LINKEDIT storage sizes only."
+}

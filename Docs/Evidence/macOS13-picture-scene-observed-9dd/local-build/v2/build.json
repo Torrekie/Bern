@@ -1,0 +1,56 @@
+{
+  "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+  "source_locks": {
+    "Collector": "aa722884b6692f65fe5d7b4a3953ae2f8358361b373e9bad64cebcdbbc1a60d8",
+    "FocusGuard": "dfe7417c19f0ae334226a3cdd4bc135a444f2aaa71fdb7f3e9f973bcd5f0170d"
+  },
+  "commands": [
+    {
+      "argv": [
+        "xcrun",
+        "swiftc",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-module-cache-path",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-build/module-cache",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-collector-v2/Collector.swift",
+        "-o",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-build/v2/Collector"
+      ],
+      "status": 0,
+      "seconds": 2.1532165000098757,
+      "log": "Collector.log"
+    },
+    {
+      "argv": [
+        "xcrun",
+        "swiftc",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-module-cache-path",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-build/module-cache",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-collector-v2/FocusGuard.swift",
+        "-o",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-build/v2/FocusGuard"
+      ],
+      "status": 0,
+      "seconds": 0.5273894169949926,
+      "log": "FocusGuard.log"
+    }
+  ],
+  "success": true,
+  "binaries": {
+    "Collector": {
+      "sha256": "c3e3545585e168d50f7d96f15f76f8aa80174a061fcfa9c82ae806d8c4bba2af",
+      "bytes": 276072
+    },
+    "FocusGuard": {
+      "sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+      "bytes": 140680
+    }
+  }
+}

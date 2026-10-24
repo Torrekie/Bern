@@ -1,0 +1,102 @@
+{
+  "kind": "kernel_timeval_identity_v2_static_preparation",
+  "status": "frozen_no_remaining_blocking_source_finding_after_null_front_fallback_fix",
+  "public_sdk_headers": [
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/libproc.h",
+      "sha256": "ffcee048b682ca60edc7c56af2453981b8c33d98bfbab06a64c7c222889f0190",
+      "lines": [
+        96,
+        96
+      ]
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/proc_info.h",
+      "sha256": "106c210de2a9a562484d981c494e5a768fda6444789f7849fc8b887801b7ac31",
+      "lines": [
+        59,
+        81
+      ]
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/proc_info.h",
+      "sha256": "106c210de2a9a562484d981c494e5a768fda6444789f7849fc8b887801b7ac31",
+      "lines": [
+        706,
+        707
+      ]
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/param.h",
+      "sha256": "a2615ddf1061d802f7c7320757b517dc0d3fb0d462d2186fc466d9453be2a817",
+      "lines": [
+        95,
+        95
+      ]
+    }
+  ],
+  "public_api": "proc_pidinfo(PROC_PIDTBSDINFO=3)",
+  "api_availability_from_header": "macOS10.5",
+  "kernel_fields": [
+    "pbi_start_tvsec",
+    "pbi_start_tvusec"
+  ],
+  "identity_contract": [
+    "pid",
+    "private bundleID",
+    "canonical executable path",
+    "exact kernel start sec/usec"
+  ],
+  "launchDate": "retained nullable diagnostic only; never a validity/polling condition",
+  "ctypes_layout": {
+    "bytes": 136,
+    "start_seconds_offset": 120,
+    "start_micros_offset": 128,
+    "only_class_definition_evaluated": true
+  },
+  "swift_typechecks": [
+    {
+      "source": "kernel-import-check.swift",
+      "mode": "-typecheck -swift-version5 -target arm64-apple-macos13.0",
+      "sdk": "14.2",
+      "exit_code": 0,
+      "runtime_executed": false
+    },
+    {
+      "source": "FocusGuard.swift",
+      "mode": "-typecheck -swift-version5 -target arm64-apple-macos13.0",
+      "sdk": "14.2",
+      "exit_code": 0,
+      "runtime_executed": false,
+      "source_sha256": "dfe7417c19f0ae334226a3cdd4bc135a444f2aaa71fdb7f3e9f973bcd5f0170d"
+    },
+    {
+      "source": "Collector.swift",
+      "mode": "-typecheck -swift-version5 -target arm64-apple-macos13.0",
+      "sdk": "14.2",
+      "exit_code": 0,
+      "runtime_executed": false,
+      "source_sha256": "b9ca6af8333cb1cec88a321afc91ddb1c02195cece9ad1871af54ef05c863214",
+      "later_change": "FinalCollector adds read-only end normal3flags receipt/assert; root compiles finalaa722 version separately."
+    }
+  ],
+  "prefixes_byte_exact": true,
+  "ui_attempted": false,
+  "product_compile_attempted": false,
+  "runtime_work_modified": false,
+  "v1_modified": false,
+  "independent_reviewer": {
+    "agent": "/root/toolbar_composition_audit",
+    "directory": "work/picture-local13-collector-v2-review",
+    "review_sha256": "933dcd58aebbb6718f8b4219655509742e896708cb7f2564ce1a03982da023a5",
+    "manifest_sha256": "8206a2ef5e732b473342c9bacfca645c400eca56b737d4f882299fb0aa259750",
+    "runtime_results_not_part_of_source_verdict": true
+  },
+  "active_sources": {
+    "Collector.swift": "aa722884b6692f65fe5d7b4a3953ae2f8358361b373e9bad64cebcdbbc1a60d8",
+    "FocusGuard.swift": "dfe7417c19f0ae334226a3cdd4bc135a444f2aaa71fdb7f3e9f973bcd5f0170d",
+    "run-local13.py": "4ec5481369c66fcf4e2d13939d49815b95568b0c8d8b0446760877c4ffdfda4a"
+  },
+  "last_review_fix": "Unknown or nullfront in directfallback now refuses kill, matching childfallback.",
+  "observer_directory_contract": "root must precreate external absolute events directory; helper requires exists and does not create it"
+}

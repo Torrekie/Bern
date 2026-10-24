@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "groups": {
+    "B3": {
+      "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v3/runtime-work/B3/Showcase.app",
+      "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-scene-observed14/exact/bin/showcase",
+      "bundle_id": "dev.bern.picture13.b3.bffae7ce3c064b12a61b0e14a16ac0d0",
+      "receipt": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v3/B3/isolation.json"
+    }
+  },
+  "macho_helper_source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-toolbar-title-host-f6/capture-pair/run-pair.py",
+  "macho_helper_source_sha256": "2155609f04678ac13249125995831ebf26c8331cd00960e1f643517111d150c1",
+  "commands": [
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-scene-observed14/exact/Showcase.app"
+      ],
+      "status": 0,
+      "log": "B3/original-signature.txt"
+    },
+    {
+      "argv": [
+        "ditto",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-scene-observed14/exact/Showcase.app",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v3/runtime-work/B3/Showcase.app"
+      ],
+      "status": 0,
+      "log": "B3/copy.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--force",
+        "--deep",
+        "--sign",
+        "-",
+        "--identifier",
+        "dev.bern.picture13.b3.bffae7ce3c064b12a61b0e14a16ac0d0",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v3/runtime-work/B3/Showcase.app"
+      ],
+      "status": 0,
+      "log": "B3/resign.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-local13-ab-v3/runtime-work/B3/Showcase.app"
+      ],
+      "status": 0,
+      "log": "B3/signature.txt"
+    }
+  ],
+  "scope": "Preparation only; no UI launched. Private signatures/IDs differ; Mach-O sections and signature-size-normalized non-signature bytes preserved. Original App/CLI unchanged. A/B share the exact unchanged CI CLI."
+}

@@ -1,0 +1,96 @@
+{
+  "verdict": "no_remaining_blocking_source_finding_after_null_front_fallback_fix",
+  "source_hashes": {
+    "Collector.swift": "aa722884b6692f65fe5d7b4a3953ae2f8358361b373e9bad64cebcdbbc1a60d8",
+    "FocusGuard.swift": "dfe7417c19f0ae334226a3cdd4bc135a444f2aaa71fdb7f3e9f973bcd5f0170d",
+    "run-local13.py": "4ec5481369c66fcf4e2d13939d49815b95568b0c8d8b0446760877c4ffdfda4a"
+  },
+  "resolved_finding": {
+    "severity": "blocking_before_fix_for_unknown_foreground",
+    "path": "run-local13.py direct fallback after outer cleanup",
+    "before_wrapper_sha256": "1f7c204d04b9e092e317a57121d0094412bbc04f66c8549d336407c721f8ab90",
+    "before": "if front and front.get(pid)==owned: reject; null/missing foreground could continue to direct SIGKILL.",
+    "final": "if not front or front.get(pid)==owned: reject; matches the fail-closed app-child fallback.",
+    "fixed_source_sha256": "4ec5481369c66fcf4e2d13939d49815b95568b0c8d8b0446760877c4ffdfda4a",
+    "native_failure_or_reproduction_asserted": false
+  },
+  "checks": {
+    "kernel_identity": "Swift Collector/FocusGuard use proc_pidinfo(PROC_PIDTBSDINFO), exact returned struct size, reported pid and valid sec/usec. App matching also requires pid, bundle and resolved executable path; launch_date is serialized nullable diagnostic only.",
+    "python_ABI": "Header declaration/layout read only:12 initial32-bit fields,16+32 char arrays,6 more32-bit fields,then2 UInt64 start fields;136bytes/offset120,128. Python source asserts these and validates integer sec/usec, pid/current path; no libproc query executed by reviewer.",
+    "normal_refresh": "Outer polling refreshes only until valid kernel_start, so nullable launch_date no longer causes recurring inspect subprocesses.",
+    "bootstrap": "May adopt only matching private bundle/executable/current kernel-start and collector parent. Unknown/stale/orphaned ownership fails closed; no launchDate substitute.",
+    "restore_before_owned_stop": "FocusGuard conditionally restores the exact original foreground if owned app remains front; validates original and own kernel identities, then rechecks own identity before terminate/kill. If the user changed foreground, it preserves that choice.",
+    "wrapper_cleanup": "Collector is stopped/frozen before outer cleanup on timeout/error; exact helper cleanup precedes direct app fallback. Direct/remaining-app fallback require known non-own foreground plus expected pid/start/path and collector parent. CLI/guard child cleanup also rechecks current start/path/parent before kill, then collector is reaped.",
+    "partial_and_error": "Collector success needs cleanupOK and ending normal flagsfalse; wrapper needs cleanup_success, collector exit0, no timeout/error. Missing/stale identities do not manufacture success. try? report save and hard-kill still limit guaranteed partial output.",
+    "deadlines": "Original collector160s, startup18s from launchStart, activation2s and cleanup-helper7s preserved; outer collector wait175s uses monotonic clock. Cleanup may extend whole wrapper wall time beyond175s.",
+    "final_normal_readback": "Final Collector adds read-only three-flag system_preferences_end and requires allfalse after the loop before report.success; it does not write defaults or alter page prefix.",
+    "fresh_opt_in": "Python --run required; output and watchdog paths must not already exist. Reviewer did not invoke wrapper, guard, collector or any UI.",
+    "observer_IO_prerequisite": "Wrapper only requires the supplied observer path be absolute; it does not create it. Helper requires an existing directory. Parent must precreate external observer directory and verify own-PID packet/21-label coverage before an IO-on claim. Missing events are not IO-on acceptance."
+  },
+  "prefix_byte_evidence": {
+    "showcaseSlices_through_Layout_capture": {
+      "bytes": 3004,
+      "sha256": "1233ed3c9ba49335507446dac98e9875ed1884031b40da9f00fdb9f7a1853ef1",
+      "equal_v1_and_original_full_reference": true
+    },
+    "CLI_helpers_capture_and_showcase_functions_before_main_do": {
+      "bytes": 11858,
+      "sha256": "88bbb34b7df2f9a1c78ce51e56c0710984091b79be5892d18a26b27ab0e822ef",
+      "equal_v1": true
+    },
+    "capture_and_image_helpers": {
+      "bytes": 2399,
+      "sha256": "f0778a32eaaf8dca62c72a5e51c52c5a71e00188208e477cbd2f838dfd25ebc7",
+      "equal_v1": true
+    },
+    "scope": "Exact selected source blocks, not whole v2=oldsource and not runtime rendering/timing equality. Layout retains original0.8s pause without5stable."
+  },
+  "public_headers_read": [
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libproc.h",
+      "sha256": "ffcee048b682ca60edc7c56af2453981b8c33d98bfbab06a64c7c222889f0190"
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/proc_info.h",
+      "sha256": "106c210de2a9a562484d981c494e5a768fda6444789f7849fc8b887801b7ac31"
+    }
+  ],
+  "remaining_limits": [
+    "Source review does not prove runtime cleanup/front restoration/cursor behavior. Parent must inspect actual A2/B receipts.",
+    "Kernel-start/path checks and subsequent Unix kill are separate operations, not an atomic process handle; rechecks reduce PID reuse risk but do not eliminate every TOCTOU.",
+    "Unknown foreground/start/registration or a child orphaned before ownership may yield cleanup failure and require parent intervention rather than a blind kill.",
+    "Collector/FocusGuard use public NSRunningApplication registration as well as kernel identity; direct-launch launch_date may remain null.",
+    "This collector covers the original light prefix through Layout9 selected PNGs; no whole14 route/dark/Media/physical-input equivalence or stable/synchronized observer sample is established by source audit.",
+    "No compiler/typecheck, product/helper launch, libproc runtime query, UI/CI, implementation change, cache creation, or v1/raw artifact edit by reviewer. Parent compile/preflight/runtime reports are external to this source-only result."
+  ],
+  "input_hashes": {
+    "work/picture-local13-collector-v2/Collector.swift": {
+      "bytes": 28337,
+      "sha256": "aa722884b6692f65fe5d7b4a3953ae2f8358361b373e9bad64cebcdbbc1a60d8"
+    },
+    "work/picture-local13-collector-v2/FocusGuard.swift": {
+      "bytes": 8079,
+      "sha256": "dfe7417c19f0ae334226a3cdd4bc135a444f2aaa71fdb7f3e9f973bcd5f0170d"
+    },
+    "work/picture-local13-collector-v2/run-local13.py": {
+      "bytes": 12486,
+      "sha256": "4ec5481369c66fcf4e2d13939d49815b95568b0c8d8b0446760877c4ffdfda4a"
+    },
+    "work/picture-local13-collector-preparation/Collector.swift": {
+      "bytes": 26753,
+      "sha256": "51f172d1c8a0d3a4f0af3811a429984dba6590546d318f0d33054354aa5c84f7"
+    },
+    "work/picture-local13-collector-preparation/FocusGuard.swift": {
+      "bytes": 7125,
+      "sha256": "0d0e810cd7b0e81b35bff174858f05eef5052c684db6b967c3bf6c1b9acf9a63"
+    },
+    "work/picture-local13-collector-preparation/run-local13.py": {
+      "bytes": 9866,
+      "sha256": "b770a47a6b152be72bcec08a5860d0baff483113647602bb5288d918773cd7d5"
+    },
+    "outputs/Bern/.github/scripts/macos14-reference.swift": {
+      "bytes": 28055,
+      "sha256": "3dcaaf994cd7b61655e202ac76f79cc0e0b7c161b608ed2800378652207f0ac6"
+    }
+  }
+}

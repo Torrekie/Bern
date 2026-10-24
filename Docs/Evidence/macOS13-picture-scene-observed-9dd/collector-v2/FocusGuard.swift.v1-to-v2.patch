@@ -1,0 +1,51 @@
+--- a/v1/FocusGuard.swift
++++ b/v2/FocusGuard.swift
+@@ -7,18 +7,35 @@
+ func require(_ condition: Bool, _ text: String) throws {
+     if !condition { throw GuardFailure(description: text) }
+ }
++// Public Darwin kernel process start timeval; launchDate remains diagnostic-only.
++func kernelStart(_ pid: pid_t) -> [String: UInt64]? {
++    guard pid > 0 else { return nil }
++    var info = proc_bsdinfo()
++    let size = MemoryLayout<proc_bsdinfo>.stride
++    let result = proc_pidinfo(pid, PROC_PIDTBSDINFO, 0, &info, Int32(size))
++    guard result == Int32(size), info.pbi_pid == UInt32(pid),
++          info.pbi_start_tvsec > 0, info.pbi_start_tvusec < 1_000_000 else { return nil }
++    return ["tv_sec": info.pbi_start_tvsec, "tv_usec": info.pbi_start_tvusec]
++}
++func sameKernelStart(_ pid: pid_t, _ row: [String: Any]) -> Bool {
++    guard let expected = row["kernel_start"] as? [String: Any],
++          let seconds = expected["tv_sec"] as? NSNumber,
++          let micros = expected["tv_usec"] as? NSNumber,
++          let actual = kernelStart(pid) else { return false }
++    return seconds.uint64Value == actual["tv_sec"] && micros.uint64Value == actual["tv_usec"]
++}
+ func identity(_ app: NSRunningApplication) -> [String: Any] {
+     ["pid": app.processIdentifier, "bundle_id": app.bundleIdentifier ?? "",
+      "executable_path": app.executableURL?.resolvingSymlinksInPath().path ?? "",
+-     "launch_date": app.launchDate.map { $0.timeIntervalSince1970 as Any } ?? NSNull()]
++     "launch_date": app.launchDate.map { $0.timeIntervalSince1970 as Any } ?? NSNull(),
++     "kernel_start": kernelStart(app.processIdentifier).map { $0 as Any } ?? NSNull()]
+ }
+ func same(_ app: NSRunningApplication, _ row: [String: Any]) -> Bool {
+     guard !app.isTerminated, let pid = row["pid"] as? NSNumber,
+-          let launch = row["launch_date"] as? NSNumber, let date = app.launchDate else { return false }
++          sameKernelStart(app.processIdentifier, row) else { return false }
+     return app.processIdentifier == pid.int32Value &&
+         app.bundleIdentifier == (row["bundle_id"] as? String) &&
+-        app.executableURL?.resolvingSymlinksInPath().path == (row["executable_path"] as? String) &&
+-        abs(date.timeIntervalSince1970 - launch.doubleValue) < 0.001
++        app.executableURL?.resolvingSymlinksInPath().path == (row["executable_path"] as? String)
+ }
+ func read(_ path: String) throws -> [String: Any] {
+     guard let result = try JSONSerialization.jsonObject(with: Data(contentsOf: URL(fileURLWithPath: path))) as? [String: Any] else {
+@@ -54,7 +71,7 @@
+         try require(args.count == 5, "cleanup requires both identity receipts")
+         let original = try read(args[3]), expected = try read(args[4])
+         if let own = matches.first {
+-            try require(same(own, expected), "Own PID/bundle/path/launchDate changed; no action")
++            try require(same(own, expected), "Own PID/bundle/path/kernel start changed; no action")
+             var restored = true
+             if NSWorkspace.shared.frontmostApplication?.processIdentifier == own.processIdentifier {
+                 let originalPID = (original["pid"] as? NSNumber)?.int32Value ?? 0
