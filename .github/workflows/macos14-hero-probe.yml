@@ -140,9 +140,11 @@ jobs:
           defaults write com.apple.universalaccess increaseContrast -bool false
           killall cfprefsd || true
           {
-            defaults read com.apple.universalaccess reduceMotion
-            defaults read com.apple.universalaccess reduceTransparency
-            defaults read com.apple.universalaccess increaseContrast
+            # Raw defaults absence is diagnostic; effective NSWorkspace flags
+            # remain mandatory before/after in the executable and assertions.
+            defaults read com.apple.universalaccess reduceMotion || true
+            defaults read com.apple.universalaccess reduceTransparency || true
+            defaults read com.apple.universalaccess increaseContrast || true
           } > evidence/runtime14/requested-normal.txt 2>&1
           probe/HeroSnapshotProbe "$PWD/probe/assets/source-named-pq.png" \
             "$PWD/probe/assets/source-ffb-icc.png" "$PWD/evidence/runtime14" \
