@@ -22,7 +22,7 @@ var environment = ProcessInfo.processInfo.environment
 let expectedOS = Int(environment["BERN_FILM_EXPECTED_OS"] ?? "14") ?? 0
 let requestedScenario = environment["BERN_FILM_SCENARIO"] ?? "all"
 let scenarios = requestedScenario == "all" ? ["immediate", "wait", "direct"] : [requestedScenario]
-var commands = [[String: Any]](), cases = [[String: Any]]()
+var commands = [[String: Any]](), cases = [[String: Any]](), activationRequests = [[String: Any]]()
 var ipcPaths = [String]()
 var report: [String: Any] = [
     "source_sha": environment["BERN_SOURCE_SHA"] ?? "unknown",
@@ -40,8 +40,15 @@ var report: [String: Any] = [
     "displays": NSScreen.screens.map { ["frame_points": NSStringFromRect($0.frame), "scale": $0.backingScaleFactor] },
 ]
 func now() -> Double { ProcessInfo.processInfo.systemUptime }
+func frontState(_ ownPID: pid_t) -> [String: Any] {
+    let front = NSWorkspace.shared.frontmostApplication
+    return ["uptime": now(), "own_pid": ownPID,
+        "front_pid": front.map { $0.processIdentifier as Any } ?? NSNull(),
+        "front_bundle": front?.bundleIdentifier as Any? ?? NSNull()]
+}
 func save() throws {
     report["commands"] = commands; report["cases"] = cases
+    report["activation_requests"] = activationRequests
     report["ipc_directories"] = ipcPaths
     try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
         .write(to: output.appendingPathComponent("result.json"), options: .atomic)
@@ -111,6 +118,8 @@ func stable(_ pid: pid_t, name: String) throws -> [String: Any] {
     let start = now()
     while now() - start < 8 {
         guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+            report["capture_focus_failure"] = ["capture": name, "actual": frontState(pid)]
+            try save()
             throw Failure(description: "Gallery is not active at capture time")
         }
         let img = try image(pid)
@@ -214,7 +223,20 @@ do {
             if session == nil { try pause(0.1) }
         }
         guard let id = session else { throw Failure(description: "No unique UI session") }
-        NSRunningApplication(processIdentifier: p.processIdentifier)?.activate(options: [.activateAllWindows])
+        let beforeActivation = frontState(p.processIdentifier)
+        let activationOptions: NSApplication.ActivationOptions = expectedOS == 13
+            ? [.activateAllWindows, .activateIgnoringOtherApps] : [.activateAllWindows]
+        let accepted = NSRunningApplication(processIdentifier: p.processIdentifier)?.activate(options: activationOptions) ?? false
+        var activationSamples = [frontState(p.processIdentifier)]
+        let activationDeadline = min(deadline, now() + 2)
+        while NSWorkspace.shared.frontmostApplication?.processIdentifier != p.processIdentifier, now() < activationDeadline {
+            try pause(0.05); activationSamples.append(frontState(p.processIdentifier))
+        }
+        activationRequests.append(["scenario": scenario, "pid": p.processIdentifier,
+            "before": beforeActivation, "accepted": accepted,
+            "options": expectedOS == 13 ? ["activateAllWindows", "activateIgnoringOtherApps"] : ["activateAllWindows"],
+            "samples": activationSamples, "after": frontState(p.processIdentifier)])
+        try save()
         _ = try cli(["ui", "set-language", "--language", "en"], id)
         _ = try cli(["ui", "activate", "--target", target(id, suffix: ".light")], id)
         let state = try cli(["state"]) as? [String: Any] ?? [:]
