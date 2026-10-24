@@ -1,0 +1,291 @@
+name: macOS 14 actual hero backing observation
+run-name: actual hero backing scalar observation off-on
+'on':
+  workflow_dispatch: null
+permissions:
+  contents: read
+concurrency:
+  group: macos14-hero-backing-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 8
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        persist-credentials: false
+    - name: Build exact ARM64/min13 backing observer package
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p work/probe evidence/build
+        trap 'rm -rf work/hero-module-cache work/probe' EXIT
+        {
+          printf 'harness_sha=%s\n' "$GITHUB_SHA"
+          printf 'product_source_sha=b08db54e01ac2ec54fb84e6f2a70041f1f4c3604\n'
+          sw_vers
+          uname -m
+          xcodebuild -version
+          xcrun --sdk macosx --show-sdk-version
+          xcrun --sdk macosx --show-sdk-path
+          xcrun swiftc -version
+        } > evidence/build/environment.txt 2>&1
+        test -d "$DEVELOPER_DIR"
+        case "$(uname -m)" in arm64|x86_64) ;; *) exit 1 ;; esac
+        sdk="$(xcrun --sdk macosx --show-sdk-version)"
+        test "$sdk" = 26.2
+        ditto .github/scripts/hero-float-probe work/probe
+        python3 - <<'PY'
+        import hashlib,json
+        from pathlib import Path
+        p=Path('work/probe'); d=json.loads((p/'source-provenance.json').read_text())
+        assert d['product_source_commit']=='b08db54e01ac2ec54fb84e6f2a70041f1f4c3604'
+        assert d['kind']=='original_snapshot_float_capture_fixture'
+        assert d['runtime_float_mode_default']=='off'
+        assert d['compiled_new_sdk_image_and_hero_base_are_original_harness'] is True
+        assert 'run-backing-one.py' in d['files']
+        assert (p/'run-backing-one.py').is_file()
+        for name,m in d['files'].items():
+            assert hashlib.sha256((p/name).read_bytes()).hexdigest()==m['sha256'],name
+        PY
+        cat work/probe/ProductHero.base.swift work/probe/FloatCapture.swift.inc work/probe/Driver.swift.inc > work/probe/ProductHero.swift
+        cat > evidence/build/command.txt <<'COMMAND'
+        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage -framework ColorSync -framework ImageIO -framework CryptoKit work/probe/Dependencies.swift work/probe/ProductImage.swift work/probe/ProductStyle.swift work/probe/ProductHero.swift -o work/probe/HeroFloatProbe
+        COMMAND
+        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 \
+          -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache \
+          -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage \
+          -framework ColorSync -framework ImageIO -framework CryptoKit \
+          work/probe/Dependencies.swift work/probe/ProductImage.swift \
+          work/probe/ProductStyle.swift work/probe/ProductHero.swift \
+          -o work/probe/HeroFloatProbe > evidence/build/compile.log 2>&1
+        test "$(xcrun lipo -archs work/probe/HeroFloatProbe)" = arm64
+        xcrun vtool -show-build work/probe/HeroFloatProbe > evidence/build/binary.txt
+        test "$(awk '/minos/ {print $2; exit}' evidence/build/binary.txt)" = 13.0
+        xcrun otool -L work/probe/HeroFloatProbe >> evidence/build/binary.txt
+        codesign --force --sign - work/probe/HeroFloatProbe > evidence/build/signature.txt 2>&1
+        codesign --verify --strict --verbose=4 work/probe/HeroFloatProbe >> evidence/build/signature.txt 2>&1
+        codesign --display --verbose=4 work/probe/HeroFloatProbe >> evidence/build/signature.txt 2>&1
+        mkdir work/probe/build
+        cp evidence/build/{environment.txt,command.txt,compile.log,binary.txt,signature.txt} work/probe/build/
+        python3 - <<'PY'
+        import hashlib
+        from pathlib import Path
+        p=Path('work/probe'); lines=[]
+        for f in sorted(p.rglob('*')):
+            assert not f.is_symlink(),f
+            if f.is_file(): lines.append(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+f.relative_to(p).as_posix()+'\n')
+        (p/'SHA256SUMS').write_text(''.join(lines))
+        PY
+        tar -czf evidence/build/hero-backing-probe.tar.gz -C work/probe .
+        (cd evidence/build && shasum -a 256 hero-backing-probe.tar.gz > hero-backing-probe.tar.gz.sha256)
+        cp work/probe/{source-provenance.json,SHA256SUMS} evidence/build/
+    - uses: actions/upload-artifact@v5
+      if: always()
+      with:
+        name: macos14-hero-backing-probe-build
+        path: evidence/build/
+        if-no-files-found: error
+        retention-days: 3
+        compression-level: 0
+  measure:
+    needs: build
+    runs-on: macos-14
+    timeout-minutes: 5
+    steps:
+    - uses: actions/download-artifact@v5
+      with:
+        name: macos14-hero-backing-probe-build
+        path: build
+    - name: Collect fresh backing-off then backing-on processes on14 without rebuilding
+      env:
+        BERN_HERO_EXPECT_OS: '14'
+        BERN_HERO_FLOAT_CAPTURE: 'off'
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p probe evidence/runtime14
+        trap 'rm -rf probe build' EXIT
+        {
+          printf 'harness_sha=%s\nexpected_os_major=%s\n' "$GITHUB_SHA" "$BERN_HERO_EXPECT_OS"
+          sw_vers
+          uname -m
+        } > evidence/runtime14/environment.txt 2>&1
+        test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+        test "$(uname -m)" = arm64
+        test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+        (cd build && shasum -a 256 -c hero-backing-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1
+        python3 - <<'PY'
+        from pathlib import PurePosixPath
+        import tarfile
+        with tarfile.open('build/hero-backing-probe.tar.gz') as t:
+            for m in t.getmembers():
+                p=PurePosixPath(m.name)
+                assert not p.is_absolute() and '..' not in p.parts,m.name
+                assert m.isdir() or m.isfile(),m.name
+        PY
+        tar -xzf build/hero-backing-probe.tar.gz -C probe
+        (cd probe && shasum -a 256 -c SHA256SUMS) > evidence/runtime14/package-verification.txt 2>&1
+        test "$(xcrun lipo -archs probe/HeroFloatProbe)" = arm64
+        codesign --verify --strict --verbose=4 probe/HeroFloatProbe > evidence/runtime14/signature-verification.txt 2>&1
+        shasum -a 256 probe/HeroFloatProbe > evidence/runtime14/binary-sha256.txt
+        cp build/environment.txt evidence/runtime14/build-environment.txt
+        cp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-backing-probe.tar.gz.sha256} evidence/runtime14/
+        defaults write com.apple.universalaccess reduceMotion -bool false
+        defaults write com.apple.universalaccess reduceTransparency -bool false
+        defaults write com.apple.universalaccess increaseContrast -bool false
+        killall cfprefsd || true
+        {
+          # Raw defaults absence is diagnostic; effective NSWorkspace flags
+          # remain mandatory before/after in the executable and assertions.
+          defaults read com.apple.universalaccess reduceMotion || true
+          defaults read com.apple.universalaccess reduceTransparency || true
+          defaults read com.apple.universalaccess increaseContrast || true
+        } > evidence/runtime14/requested-normal.txt 2>&1
+        for mode in off on; do
+          mkdir -p "evidence/runtime14/$mode"
+          python3 probe/run-backing-one.py "$PWD/probe/HeroFloatProbe" "$PWD/probe/assets/source-named-pq.png" \
+            "$PWD/probe/assets/source-ffb-icc.png" "$PWD/evidence/runtime14/$mode" "$mode" 14
+          python3 - "$mode" <<'PY'
+        import base64,hashlib,json,math,sys
+        from pathlib import Path
+        def reject_constant(value): raise ValueError('Non-finite JSON token: '+value)
+        mode=sys.argv[1]; p=Path('evidence/runtime14')/mode
+        d=json.loads((p/'report.json').read_text(),parse_constant=reject_constant)
+        assert d['success'] is True,d.get('error')
+        assert d['expected_os_major']==14 and d['actual_os_major']==14
+        assert d['completed_phases']==2 and len(d['captures'])==2
+        assert d['cache_unchanged'] is True and d['metal_count_before_cleanup']==0
+        assert d['cache_before']==d['cache_after']
+        assert d['activation_calls']==0 and 0<d['window_seconds']<7.9
+        assert d['frontmost_before']==d['frontmost_after']
+        assert all(v is False for k in ('normal_before','normal_after') for v in d[k].values())
+        assert {s['key'] for s in d['snapshots']}=={'baseline-body-named','baseline-body-custom'}
+        observations=d['snapshot_cgimage_observations']
+        assert d['snapshot_cgimage_observations_scope']=='before_existing_window_teardown'
+        assert len(observations)==2
+        assert {o['key'] for o in observations}=={'baseline-body-named','baseline-body-custom'}
+        assert isinstance(d['snapshot_cgimage_cleanup_observations'],list)
+        positive=('width','height','bits_per_component','bits_per_pixel','bytes_per_row')
+        nonnegative=('bitmap_info_raw','alpha_info_raw','byte_order_raw','pixel_format_raw')
+        flags=('wide_gamut_rgb','uses_extended_range','uses_itur2100_tf','is_pq_based','is_hlg_based')
+        for o in observations:
+            assert o['observation_site']=='snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown'
+            assert o['color_space_metadata_stage']=='after_existing_window_teardown'
+            assert all(type(o[n]) is int and o[n]>0 for n in positive)
+            assert all(type(o[n]) is int and o[n]>=0 for n in nonnegative)
+            assert type(o['float_components']) is bool and type(o['color_space_present']) is bool
+            assert o['color_space_name'] is None or isinstance(o['color_space_name'],str)
+            if o['color_space_present']:
+                assert type(o['color_space_model_raw']) is int
+                assert type(o['color_space_components']) is int and o['color_space_components']>=0
+                assert all(type(o[n]) is bool for n in flags)
+                assert type(o['icc_present']) is bool
+                assert type(o['icc_byte_count']) is int and o['icc_byte_count']>=0
+                if o['icc_present']:
+                    assert o['icc_byte_count']>0 and len(o['icc_sha256'])==64
+                    assert all(c in '0123456789abcdef' for c in o['icc_sha256'])
+                    if o['icc_byte_count']<=65536:
+                        profile=base64.b64decode(o['icc_base64'],validate=True)
+                        assert len(profile)==o['icc_byte_count']
+                        assert hashlib.sha256(profile).hexdigest()==o['icc_sha256']
+                        assert o['icc_base64_omitted_reason'] is None
+                    else:
+                        assert o['icc_base64'] is None
+                        assert o['icc_base64_omitted_reason']=='profile_exceeds_65536_bytes'
+                else:
+                    assert o['icc_byte_count']==0 and o['icc_sha256'] is None
+                    assert o['icc_base64'] is None and o['icc_base64_omitted_reason']=='no_icc_profile'
+            else:
+                assert all(o[n] is None for n in ('color_space_model_raw','color_space_components','icc_present','icc_byte_count','icc_sha256','icc_base64','icc_base64_omitted_reason',*flags))
+        assert [c['phase'] for c in d['captures']]==['progress-0','progress-1']
+        for c in d['captures']:
+            assert c['consecutive_equal_buffers']>=5 and c['live_metal_count']==0
+            assert c['key'] is False and c['active'] is False
+            assert c['manager']['flight_count']==0 and c['manager']['timer_exists'] is False
+            assert c['capture_icc_sha256']!='absent'
+        wanted={'source-named-pq.png':'3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b','source-ffb-icc.png':'fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e'}
+        assert set(d['cache_before'])==set(wanted)
+        assert all(d['cache_before'][n]['file_sha256']==s and d['cache_before'][n]['orientation']=='up' for n,s in wanted.items())
+        assert len(list(p.glob('*.png')))==2
+        receipt=json.loads((p/'run-receipt.json').read_text())
+        assert receipt['exit_code']==0 and not receipt.get('wrapper_timeout',False)
+        assert all(c['owner_pid']==receipt['own_pid'] for c in d['captures'])
+        assert receipt['mode']==mode and receipt['layer_observe_environment']==mode
+        assert receipt['float_capture_environment']=='off' and receipt['expected_os_major']==14
+        assert receipt['binary_sha256']==hashlib.sha256(Path('probe/HeroFloatProbe').read_bytes()).hexdigest()
+        f=d['snapshot_float_capture']
+        assert f['requested']=='off' and f['selected']=='off'
+        assert f['primary_observation_count']==2 and f['success'] is True and f['error'] is None
+        assert type(f['cleanup_observation_count']) is int and f['cleanup_observation_count']>=0
+        assert f['fixture_retained_images_after_export']==0
+        assert f['provider_copy_calls']==0 and f['retained_primary_peak_count']==0
+        assert f['records']==[] and f['total_raw_bytes']==0
+        assert len(list(p.glob('*.bin')))==0
+        b=d['backing_observation']
+        assert b['requested']==mode and b['selected']==mode
+        assert b['stage']=='post_png_post_final_guards_pre_teardown'
+        assert b['success'] is True and b['error'] is None
+        if mode=='off':
+            assert b['records']==[] and b['root'] is None and b['overlay'] is None
+        else:
+            expected=b['expected_window_number']
+            assert type(expected) is int and expected>0
+            assert {c['window_id'] for c in d['captures']}=={expected}
+            assert b['overlay_parent_is_window_content_superview_or_content'] is True
+            def number(value):
+                assert type(value) in (int,float) and math.isfinite(value)
+            def rect(value):
+                assert isinstance(value,dict) and set(value)=={'x','y','width','height'}
+                for v in value.values(): number(v)
+            def node(n):
+                assert isinstance(n,dict)
+                for key in ('object_id','class'):
+                    assert isinstance(n[key],str) and n[key]
+                assert type(n['window_number']) is int and n['window_number']==expected
+                rect(n['frame']); rect(n['bounds'])
+                for key in ('is_flipped','wants_layer','wants_update_layer','can_draw_subviews_into_layer'):
+                    assert type(n[key]) is bool
+                for key in ('layer_contents_redraw_policy','layer_contents_placement'):
+                    assert type(n[key]) is int
+                layer=n['layer']; assert isinstance(layer,dict) and type(layer['present']) is bool
+                if layer['present']:
+                    for key in ('object_id','class','contents_format'):
+                        assert isinstance(layer[key],str)
+                    number(layer['contents_scale'])
+                    assert layer['delegate_class'] is None or isinstance(layer['delegate_class'],str)
+                    assert type(layer['delegate_is_view']) is bool
+                else:
+                    assert set(layer)=={'present'}
+            def tree(t):
+                assert isinstance(t,dict) and t['ancestor_chain_complete'] is True
+                assert isinstance(t['ancestors'],list) and len(t['ancestors'])<=16
+                nodes=[t['view'],*t['ancestors']]
+                for n in nodes: node(n)
+                ids=[n['object_id'] for n in nodes]
+                assert len(ids)==len(set(ids))
+                return ids
+            root_ids=tree(b['root']); tree(b['overlay'])
+            records=b['records']; assert isinstance(records,list) and len(records)==2
+            assert {r['role'] for r in records}=={'flight-named','flight-custom'}
+            for record in records:
+                ids=tree(record)
+                assert record['parent_is_fixture_root'] is True
+                assert ids[1:]==root_ids
+                rect(record['rect_in_fixture_root'])
+                frame=record['rect_in_fixture_root']
+                assert frame['width']==320 and frame['height']==180
+                assert all(frame==c['rois'][record['role']]['host_top_left_points'] for c in d['captures'])
+
+        PY
+        done
+    - uses: actions/upload-artifact@v5
+      if: always()
+      with:
+        name: macos14-hero-backing-evidence
+        path: evidence/runtime14/
+        if-no-files-found: error
+        retention-days: 3

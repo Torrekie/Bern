@@ -1,0 +1,39 @@
+{
+  "archive_manifests": {
+    "macOS13-hdr-candidate/native-pq-hero-backing13": {
+      "files": 47,
+      "manifest_sha256": "f03a0ede2c71fcd1f330d8f4c6b5a124188f1620f6a0b2a66ec650a08088acc8"
+    },
+    "macOS13-hdr-candidate/native-pq-hero-static-route13": {
+      "files": 51,
+      "manifest_sha256": "c1e609c5fcdae48aa90da2c35e8ece7a1a911bad78877b7cedf1dbfc41d4c228"
+    },
+    "macOS14-hero-backing-40095339192": {
+      "files": 95,
+      "manifest_sha256": "83f982e1794ce4e5d216f50c56e30753062e861adfa39c52e066f5f3b4a90894"
+    }
+  },
+  "created_utc": "2026-10-24T13:06:12.000780+00:00",
+  "delivered_original_four_binary_sha256_and_two_app_strict_signatures_verified": true,
+  "goal_remains": "active",
+  "next_gate": "macOS14 root/actual-overlay samebinary static route control; actual coordinator lifecycle and all other open acceptance gates remain unpassed",
+  "other_staged_files_git_diff_cached_check": "passed excluding only *.patch and *.diff; raw originals preserved, not normalized",
+  "raw_diff_whitespace_check_exceptions": {
+    "macOS13-hdr-candidate/native-pq-hero-backing13/fixture/backing-observer.patch": {
+      "exact_content": "single unified-diff context-space",
+      "line": 95,
+      "sha256": "cfc5e25f4bea0effa2625bb91ba85e4ec6d4a60a7ec35f4c4574d6185d868147"
+    },
+    "macOS14-hero-backing-40095339192/ci-preparation/workflow.diff": {
+      "exact_content": "single unified-diff context-space",
+      "line": 215,
+      "sha256": "e96b1502d4c07a52e9f965042f07812435812a15aab015bf1a892500af9666e7"
+    },
+    "macOS14-hero-backing-40095339192/same-binary-13-14/probe/backing-observer.patch": {
+      "exact_content": "single unified-diff context-space",
+      "line": 95,
+      "sha256": "cfc5e25f4bea0effa2625bb91ba85e4ec6d4a60a7ec35f4c4574d6185d868147"
+    }
+  },
+  "scope": "Final current retained evidence, source controls, delivered original binaries and intentional immutable raw-diff whitespace exceptions. No whole-goal acceptance."
+}

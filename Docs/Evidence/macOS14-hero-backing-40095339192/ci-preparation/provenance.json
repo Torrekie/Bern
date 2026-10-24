@@ -1,0 +1,37 @@
+{
+  "assumption": "Backing helper is inline in Driver.swift.inc; original three-source concatenation, HeroFloatProbe binary, float package path, source kind and fields remain. Root must install run-backing-one.py and update existing source-provenance files hashes before publication.",
+  "base_inputs": [
+    {
+      "bytes": 13772,
+      "commit": "a2d8e3323a742ea881e91c73f480ae32913542e4",
+      "private_original_file": "macos14-hero-float-probe.original.yml",
+      "repository_path": ".github/workflows/macos14-hero-float-probe.yml",
+      "sha256": "c7f3f5a4376ef81713326a5deed829979a884c6a6c475e83496b57fd60c5be85"
+    },
+    {
+      "bytes": 1556,
+      "commit": "a2d8e3323a742ea881e91c73f480ae32913542e4",
+      "private_original_file": "run-one.original.py",
+      "repository_path": ".github/scripts/hero-float-probe/run-one.py",
+      "sha256": "fdbc7aa6d766de0123181fe686366c3b7e8f508cbe9982c27e12f30af931cb15"
+    }
+  ],
+  "existing_yaml_module_available": true,
+  "final_workflow_sha256": "7f60104214eede029879cd1c1cfe302ee5fa6d24323453a4d10590d66c0c4a91",
+  "final_wrapper_sha256": "9a3e263ba66131a1b2dda97489e545811f5d7b58c28e4198408d030a78693683",
+  "local13_offline_schema_validation": "Root existing off/on reports passed identical report gate with only four literal path/OS substitutions; no runtime launch or pixel comparison.",
+  "prepared_utc": "2026-10-24T12:35:06.025199+00:00",
+  "schema_source": {
+    "bytes": 5128,
+    "observed_utc": "2026-10-24T12:42:40.194423+00:00",
+    "path": "work/native-pq-hero-backing-observer/BackingObservation.swift.inc",
+    "private_copy": "BackingObservation.schema-source.swift.inc",
+    "sha256": "0136ae510fe8f91673aaf54358a239d5795c03cb8a4a5db33b54d0fc07f1f90b"
+  },
+  "scope": "Private work-only CI draft from pinned committed float workflow/wrapper. Not installed into repository, published, dispatched, compiled or run; no UI/CI/spawning. Static validation only.",
+  "scope_limitations": [
+    "Acquisition success only; offline same-binary screenshot controls remain required.",
+    "Getter once is per node invocation; shared ancestors may be observed multiple times; no global deduplication claim.",
+    "No fixed layer presence, class, contentsFormat, storage, render equivalence, or causal assertions."
+  ]
+}

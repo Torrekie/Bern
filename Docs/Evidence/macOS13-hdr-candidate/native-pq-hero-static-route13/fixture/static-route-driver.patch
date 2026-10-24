@@ -1,0 +1,83 @@
+--- backing-observer/Driver.swift.inc
++++ static-route/Driver.swift.inc
+@@ -256,6 +256,7 @@
+         let front = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
+         var window: NSWindow?, root: FixtureRoot?, began: Date?, watchdog: DispatchSourceTimer?
+         var samples: [[String: Any]] = [], captures: [[String: Any]] = []
++        var fixtureOwnedOverlayFlights: [BernHeroFlightView] = []
+         var report: [String: Any] = [
+             "success": false, "product_head": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+             "expected_os_major": expectedOS, "actual_os_major": actualOS,
+@@ -265,6 +266,9 @@
+             "snapshot_cgimage_metadata": "Fixture-only public CGImage scalar descriptors and color-space reference at the actual renderer.cgImage result; classification/ICC hash/bounded profile serialization only after all PNG captures and original window teardown. The v2 metadata observer retains no image; separate opt-in raw capture lifetime/provider reads are reported in snapshot_float_capture. No NSImage recache, conversion or relabel. Not a zero-observer-effect claim."
+         ]
+         report["backing_observation"] = FixtureBackingObservation.initial()
++        report["static_route"] = ["requested": FixtureStaticRouteMode.requested.map { $0 as Any } ?? NSNull(),
++            "selected": FixtureStaticRouteMode.selected.map { $0 as Any } ?? NSNull(),
++            "backing_and_float_modes_required_off": true]
+         defer {
+             FixtureSnapshotFloatCapture.freezePrimary()
+             let observationsBeforeCleanup = fixtureSnapshotCGImageObservations
+@@ -273,7 +277,11 @@
+                 "reduce_transparency": NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,
+                 "increase_contrast": NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast]
+             if let r = root { report["metal_count_before_cleanup"] = fixtureDescendants(r).filter { $0 is MTKView }.count }
+-            window?.orderOut(nil); window?.contentView = nil; window?.close(); watchdog?.cancel()
++            window?.orderOut(nil)
++            // Only views created by this fixture in overlay mode; no manager lifecycle calls.
++            for flight in fixtureOwnedOverlayFlights { flight.removeFromSuperview() }
++            fixtureOwnedOverlayFlights.removeAll()
++            window?.contentView = nil; window?.close(); watchdog?.cancel()
+             if let began { report["window_seconds"] = Date().timeIntervalSince(began) }
+             report["snapshot_cgimage_observations"] = observationsBeforeCleanup.map { $0.metadata() }
+             report["snapshot_cgimage_cleanup_observations"] = fixtureSnapshotCGImageObservations.dropFirst(observationsBeforeCleanup.count).map { $0.metadata() }
+@@ -292,6 +300,10 @@
+         }
+         do {
+             try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
++            guard FixtureStaticRouteMode.selected != nil, FixtureBackingMode.selected == "off",
++                  FixtureFloatCaptureMode.selected == .off else {
++                throw FixtureFailure(message: "Static route root/overlay requires backing observer off and float capture off before window creation")
++            }
+             guard FixtureBackingMode.selected != nil else {
+                 throw FixtureFailure(message: "Invalid BERN_HERO_LAYER_OBSERVE; off/on required before window creation")
+             }
+@@ -360,11 +372,15 @@
+             let manager = BernWindowImageHeroes.forWindow(w)
+             var flights: [BernHeroFlightView] = [], phase = 0, identical = 0, previousHash = ""
+             var phaseBegan = Date(), snapshotTaken = false
++            let desiredFlightRects = xs.prefix(2).map { CGRect(x: $0, y: bottomY, width: 320, height: 180) }
+             while Date() < deadline && phase < 2 {
+                 r.layoutSubtreeIfNeeded(); r.displayIfNeeded()
+                 RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.08))
+                 let views = fixtureDescendants(r), anchors = views.compactMap { $0 as? BernPictureHeroAnchor }
+                 let metal = views.filter { $0 is MTKView }.count
++                if snapshotTaken {
++                    _ = try FixtureStaticRoute.check(flights, desired: desiredFlightRects, root: r, manager: manager, window: w)
++                }
+                 let infos = CGWindowListCopyWindowInfo(.optionIncludingWindow, CGWindowID(w.windowNumber)) as? [[String: Any]] ?? []
+                 guard let info = infos.first, info[kCGWindowOwnerPID as String] as? pid_t == getpid(),
+                       info[kCGWindowNumber as String] as? Int == w.windowNumber,
+@@ -385,9 +401,12 @@
+                         metadata["anchor_bounds"] = fixtureRect(a.bounds); metadata["captures_view"] = a.capturesView
+                         anchorInfo.append(metadata)
+                         let f = BernHeroFlightView(from: p.image, to: p.image)
+-                        f.corner = p.corner; f.frame = CGRect(x: xs[i], y: bottomY, width: 320, height: 180)
+-                        r.addSubview(f); flights.append(f); regions[i == 0 ? "flight-named" : "flight-custom"] = f
++                        f.corner = p.corner
++                        try FixtureStaticRoute.mount(f, desired: desiredFlightRects[i], root: r, manager: manager, window: w)
++                        if FixtureStaticRouteMode.selected == "overlay" { fixtureOwnedOverlayFlights.append(f) }
++                        flights.append(f); regions[i == 0 ? "flight-named" : "flight-custom"] = f
+                     }
++                    report["static_route_mount"] = try FixtureStaticRoute.check(flights, desired: desiredFlightRects, root: r, manager: manager, window: w)
+                     report["snapshots"] = anchorInfo; snapshotTaken = true; phaseBegan = Date(); continue
+                 }
+                 guard (manager.fixtureState["flight_count"] as? Int) == 0,
+@@ -445,6 +464,7 @@
+                   NSWorkspace.shared.frontmostApplication?.processIdentifier == front else {
+                 throw FixtureFailure(message: "Cache/normal/foreground final contract failed")
+             }
++            report["static_route_post_png"] = try FixtureStaticRoute.check(flights, desired: desiredFlightRects, root: r, manager: manager, window: w)
+             report["backing_observation"] = try FixtureBackingObservation.finish(flights, root: r, manager: manager, window: w)
+             report["success"] = true; return 0
+         } catch {

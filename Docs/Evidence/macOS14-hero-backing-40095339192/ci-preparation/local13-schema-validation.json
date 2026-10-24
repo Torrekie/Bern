@@ -1,0 +1,42 @@
+{
+  "adapted_gate_sha256": "ce24128abd45e95a20c7e4a13a6dfa1d6cb206126ef1936868ac86fd8751cd35",
+  "literal_transforms_only": {
+    "Path('evidence/runtime14')/mode": "Path('work/native-pq-hero-backing-observer')/('runtime13-'+mode)",
+    "Path('probe/HeroFloatProbe')": "Path('work/native-pq-hero-backing-observer/HeroFloatCaptureProbe')",
+    "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==13 and d['actual_os_major']==13",
+    "receipt['expected_os_major']==14": "receipt['expected_os_major']==13"
+  },
+  "results": [
+    {
+      "inputs": {
+        "report.json": {
+          "bytes": 73725,
+          "sha256": "6bb8178c51930a67e8e991a475bf19b3b0abb9954f70eb8a8b6ab10ba8fb4857"
+        },
+        "run-receipt.json": {
+          "bytes": 1028,
+          "sha256": "ec1db7d6f812665e26a138fe7d9d70d7b7722997391c16d5ca9a8c8a2a5f0b56"
+        }
+      },
+      "mode": "off",
+      "schema_gate": "PASS"
+    },
+    {
+      "inputs": {
+        "report.json": {
+          "bytes": 85573,
+          "sha256": "ad9a4f14864b1a3a05a407503641fac5c48773d7a9659d1564331e465950190c"
+        },
+        "run-receipt.json": {
+          "bytes": 1025,
+          "sha256": "7c10596a11350c8ded89767f232918d07f9c5c90f77931db95a1cddf01854168"
+        }
+      },
+      "mode": "on",
+      "schema_gate": "PASS"
+    }
+  ],
+  "scope": "Existing local13 JSON/receipt/PNG-count and binary-hash checks only. No app/wrapper/compiler/CI execution; no PNG pixel comparison.",
+  "success": true,
+  "workflow_sha256": "7f60104214eede029879cd1c1cfe302ee5fa6d24323453a4d10590d66c0c4a91"
+}

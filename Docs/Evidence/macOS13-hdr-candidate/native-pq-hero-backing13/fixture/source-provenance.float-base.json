@@ -1,0 +1,127 @@
+{
+  "base_harness_commit": "34dbeff0c4a9ab07828e8459ea990efba2f9fbf2",
+  "diagnostic_change": "Process-cached off/on; on retains at most the two original primary renderer CGImages, freezes before original cleanup, exports each provider once after teardown with strict layout/length and4MiB raw budget, then releases fixture references. Off retains no image and reads no snapshot provider.",
+  "generated_files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.swift.inc": {
+      "bytes": 23891,
+      "sha256": "d9f6d257b754a6e2c960f22bf24b86ee4822822a05cee73b191eb2d74a197670"
+    },
+    "Driver.v2.base.swift.inc": {
+      "bytes": 22985,
+      "sha256": "02211e8b35cdb469776ae6fde6fe18c8614ccb31ea0866b4d0e543349a69b67a"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15534,
+      "sha256": "5be2a6cc4e5683ce44d75e43a5c32768eabce0cfb38a12ea1ab4fa8f527a4e6d"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductHero.swift": {
+      "bytes": 47528,
+      "sha256": "921125dc647d3ad07e063c10b7cc793383c2fc12c19d1c8c4eec098a24380d47"
+    },
+    "ProductHero.v2.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductImage.v2.base.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "README.md": {
+      "bytes": 5075,
+      "sha256": "0ac843c3a4ef7d1233c979c07f5be3d275e83f4c5df9b580e4a688af6e4ea4ce"
+    },
+    "assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "build.sh": {
+      "bytes": 856,
+      "sha256": "20fd8c8b5713408b2534a3e652ceca04c0838a547c827c224fb0230ecad6c198"
+    },
+    "fingerprint.py": {
+      "bytes": 1550,
+      "sha256": "1381374d8a9b70a6e1773e622fd739ba1fcb3047fdc70345b989a7d30917aa94"
+    },
+    "float-capture-driver.patch": {
+      "bytes": 4165,
+      "sha256": "999a16865cd40b4ae355ae5f7832693059974b2997558b74373d60223f79bede"
+    },
+    "local-image-imports-and-sdk14.patch": {
+      "bytes": 1225,
+      "sha256": "accf273f917d98447768b76a28d738b530c4efca9f430120dc051d23b3db75c5"
+    },
+    "local-sdk14-clock.patch": {
+      "bytes": 904,
+      "sha256": "71cf918174cd726e61f9359cc0696750be68a77e4040841336d246372706991a"
+    },
+    "prepare.py": {
+      "bytes": 8061,
+      "sha256": "76bc350176f162e37ff5fdd5ed394d36e955d241b3cbebfe15ff0880a90701cb"
+    },
+    "run.py": {
+      "bytes": 2328,
+      "sha256": "e93042ebf8839cfd1e739bebdb6d0bac9ccf205db3ca52438cda9e7e23a1a2d5"
+    },
+    "sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    },
+    "source-provenance.v2.base.json": {
+      "bytes": 10308,
+      "sha256": "2f6a708d7b4a88fcf2e290a65dd4830d6196ca2c362cf2d77f2821d0ae4ce5a8"
+    },
+    "verify_sources.py": {
+      "bytes": 581,
+      "sha256": "d7c26a232b07c738951acdd886b7af0c2a031be00e8a1b15fc079695644e5010"
+    }
+  },
+  "immutable_driver_sha256": "02211e8b35cdb469776ae6fde6fe18c8614ccb31ea0866b4d0e543349a69b67a",
+  "immutable_hero_base_sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f",
+  "local_adaptations": [
+    "Exact archived gain-map compiler guard/imports",
+    "Exact archived unused-clock compiler/availability guard"
+  ],
+  "local_sdk14_source_archive": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-cgmetadata-40086541042/local13-observer-controls",
+  "no_row_direction_or_zero_observer_effect_claim": true,
+  "prepared_only": "No Swift compilation, runtime, UI/CI, publication, product/harness/index modification.",
+  "prior_harness_commit_identical_driver_hero": "1a77dd3165ea420e64d422ae62a49dadf9aa31f5",
+  "product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "unchanged": [
+    "Actual snapshot renderer/colorMode/NSImage construction and Flight.draw",
+    "Existing v2 ICC metadata serialization after teardown",
+    "Original window/panes/fit/two phases/five raw buffers/normal/front/cache/noMetal/noTimer/deadlines",
+    "Outer wrapper timeout15seconds"
+  ]
+}

@@ -1,0 +1,1615 @@
+{
+  "binary_sha256": "86130e8e33a7170156d893147ff34878cd58409c284a06001a49c20b1b9b9d3f",
+  "ci_run": 40095339192,
+  "existing_control_receipts": {
+    "backing-off-vs-on13.json": {
+      "all12_raw_and_srgb_exact": true,
+      "baseline_report_outside_current_cohort": false,
+      "baseline_report_sha256": "7912c49cedb748a5b86e6d65e289433b6ee6973c685cebd56634e4bd9b48c83b",
+      "candidate_report_sha256": "3b74b4838d6b54b6fe35aca98ffdb4e0604e6bf8217999fff81d374b96a8fe96",
+      "embedded_icc_identical": true,
+      "pixel_comparison_recomputed_by_this_analysis": false,
+      "receipt_validation": "PASS"
+    },
+    "backing-off-vs-on14.json": {
+      "all12_raw_and_srgb_exact": true,
+      "baseline_report_outside_current_cohort": false,
+      "baseline_report_sha256": "5ca5561e41247101d9bd0943372fad33d7076b88ef4d26c66c2c04af98709690",
+      "candidate_report_sha256": "d6521b8a86118e3f562611c59c49ddc8d505f1c7fccd7e2620070562f8517d34",
+      "embedded_icc_identical": true,
+      "pixel_comparison_recomputed_by_this_analysis": false,
+      "receipt_validation": "PASS"
+    },
+    "float-vs-backing-off13.json": {
+      "all12_raw_and_srgb_exact": true,
+      "baseline_report_outside_current_cohort": true,
+      "baseline_report_sha256": "688203dbf134d21cc4ac9908a2d1e89c36db03ed919ba58440c71b3cfba0020f",
+      "candidate_report_sha256": "7912c49cedb748a5b86e6d65e289433b6ee6973c685cebd56634e4bd9b48c83b",
+      "embedded_icc_identical": true,
+      "pixel_comparison_recomputed_by_this_analysis": false,
+      "receipt_validation": "PASS"
+    },
+    "float-vs-backing-off14.json": {
+      "all12_raw_and_srgb_exact": true,
+      "baseline_report_outside_current_cohort": true,
+      "baseline_report_sha256": "8ab8e98f6de2959148fa48ea4458d7ff4a20576ceae2b05eb03068310d88543a",
+      "candidate_report_sha256": "5ca5561e41247101d9bd0943372fad33d7076b88ef4d26c66c2c04af98709690",
+      "embedded_icc_identical": true,
+      "pixel_comparison_recomputed_by_this_analysis": false,
+      "receipt_validation": "PASS"
+    }
+  },
+  "harness_commit": "0590f49e095f1eabe7553816615c67d53ad171d2",
+  "input_files": {
+    "work/hero-backing-ci-preparation/macos14-hero-backing-probe.yml": {
+      "bytes": 16816,
+      "sha256": "7f60104214eede029879cd1c1cfe302ee5fa6d24323453a4d10590d66c0c4a91"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/backing-off-vs-on13.json": {
+      "bytes": 2877,
+      "sha256": "d3e60357b794be9871cbd85ced8a8dbe00e935052d43cfcbb87ea5c3e0088068"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/backing-off-vs-on14.json": {
+      "bytes": 2877,
+      "sha256": "0e3dc2e7f21677f335a94f8cab9ee28228ad3e25210521de38f069d31c190462"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/build/hero-backing-probe.tar.gz": {
+      "bytes": 249820,
+      "sha256": "d57cae572afdafe27e46dd7bc13623d0763aded04ae68eb15bb5b0e334ce7170"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/build/hero-backing-probe.tar.gz.sha256": {
+      "bytes": 92,
+      "sha256": "8e80656c7a5f1f0a46c7c5a33afa2ae3e8f9fc13eab22c828b1ee48af6fc4eb3"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/float-vs-backing-off13.json": {
+      "bytes": 2877,
+      "sha256": "f8314deb1f849c7a00b43509e6e07aa22a7feddcfd6cc8b02ff0d225a79041ee"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/float-vs-backing-off14.json": {
+      "bytes": 2877,
+      "sha256": "2b29e68688c9c53b17f116bb33feee8bb3806e3a5be6afbcc3d13ff534b44f56"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/package-verification-local.json": {
+      "bytes": 1786,
+      "sha256": "4c92c8d79cea98390b94b259ea2288b11c5e11037b5a4df0db85cb65c6ab6dc4"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/BackingObservation.swift.inc": {
+      "bytes": 5128,
+      "sha256": "0136ae510fe8f91673aaf54358a239d5795c03cb8a4a5db33b54d0fc07f1f90b"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/Driver.before-backing.swift.inc": {
+      "bytes": 23891,
+      "sha256": "d9f6d257b754a6e2c960f22bf24b86ee4822822a05cee73b191eb2d74a197670"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/Driver.swift.inc": {
+      "bytes": 29683,
+      "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/Driver.v2.base.swift.inc": {
+      "bytes": 22985,
+      "sha256": "02211e8b35cdb469776ae6fde6fe18c8614ccb31ea0866b4d0e543349a69b67a"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/HeroFloatProbe": {
+      "bytes": 577744,
+      "sha256": "86130e8e33a7170156d893147ff34878cd58409c284a06001a49c20b1b9b9d3f"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/ProductHero.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/ProductHero.swift": {
+      "bytes": 52823,
+      "sha256": "50c5feb13baaf8507c984b76df4bcb2f6e3d567ab57de8799a7031cb7830edc0"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/ProductImage.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/README.md": {
+      "bytes": 3627,
+      "sha256": "db53603c8fc60e0c77ddf1fd8b6df5c30e1dedb57db965b214cc23394bcbb584"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/SHA256SUMS": {
+      "bytes": 2460,
+      "sha256": "6ac884fe06c0cde2e2581ce3e12b868eac7cb469cc1327260ea616a42e285d45"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/backing-observer.patch": {
+      "bytes": 7605,
+      "sha256": "cfc5e25f4bea0effa2625bb91ba85e4ec6d4a60a7ec35f4c4574d6185d868147"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/build/binary.txt": {
+      "bytes": 4040,
+      "sha256": "d0674fc81b045ae83f3794dc57fe34b72870aedaf71dc271c0a0f01682af0a7c"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/build/command.txt": {
+      "bytes": 415,
+      "sha256": "986548d72f72ffb1fa48e966ce15d08033211641a545c7f0bd48e42b92dc4274"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/build/compile.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/build/environment.txt": {
+      "bytes": 453,
+      "sha256": "dc61d05cef5df308e0f6dee3fe3d1658bc22440347d2589aee130bda91d9dcdf"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/build/signature.txt": {
+      "bytes": 1018,
+      "sha256": "f86cd6a0be54ea007aa591046cb35c75452e06cf7adc5eb603aa9b3489aa4a05"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/float-capture-driver.patch": {
+      "bytes": 4165,
+      "sha256": "999a16865cd40b4ae355ae5f7832693059974b2997558b74373d60223f79bede"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/run-backing-one.py": {
+      "bytes": 1652,
+      "sha256": "9a3e263ba66131a1b2dda97489e545811f5d7b58c28e4198408d030a78693683"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/run-one.py": {
+      "bytes": 1556,
+      "sha256": "fdbc7aa6d766de0123181fe686366c3b7e8f508cbe9982c27e12f30af931cb15"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/source-provenance.before-backing.json": {
+      "bytes": 3609,
+      "sha256": "a90d1ed2b29c3668f274bd25919f8d00ea8904e9294c4e81a0952296978a8cf7"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/probe/source-provenance.json": {
+      "bytes": 4934,
+      "sha256": "2fdd2acfb338be075ddb79b170f04727704504830d41dbdd800c345c2cded7be"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime13/off/progress-0.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime13/off/progress-1.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime13/off/report.json": {
+      "bytes": 73725,
+      "sha256": "7912c49cedb748a5b86e6d65e289433b6ee6973c685cebd56634e4bd9b48c83b"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime13/off/run-receipt.json": {
+      "bytes": 1064,
+      "sha256": "7d17bf4a7ebbb6bb072543054922c88d2246ef371d0659199397af3bfbeae70c"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime13/on/progress-0.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime13/on/progress-1.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime13/on/report.json": {
+      "bytes": 85495,
+      "sha256": "3b74b4838d6b54b6fe35aca98ffdb4e0604e6bf8217999fff81d374b96a8fe96"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime13/on/run-receipt.json": {
+      "bytes": 1060,
+      "sha256": "601df10329c26676873912fef9c709562d3cd071582e93375b78f362ca20474a"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/binary-sha256.txt": {
+      "bytes": 87,
+      "sha256": "39f92aed8ae7d2aa2cc0e4e300352c37ee0c28e0b4d4bae6e802002d07e82d0c"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/off/progress-0.png": {
+      "bytes": 190864,
+      "sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/off/progress-1.png": {
+      "bytes": 148600,
+      "sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/off/report.json": {
+      "bytes": 73013,
+      "sha256": "5ca5561e41247101d9bd0943372fad33d7076b88ef4d26c66c2c04af98709690"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/off/run-receipt.json": {
+      "bytes": 692,
+      "sha256": "11c3f79da6c33a3f36cabe500edd8e1dce455fdcab1d1d5276a535f5c294feaf"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/on/progress-0.png": {
+      "bytes": 190864,
+      "sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/on/progress-1.png": {
+      "bytes": 148600,
+      "sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/on/report.json": {
+      "bytes": 84693,
+      "sha256": "d6521b8a86118e3f562611c59c49ddc8d505f1c7fccd7e2620070562f8517d34"
+    },
+    "work/native-pq-hero-backing-ci-40095339192/runtime14/on/run-receipt.json": {
+      "bytes": 688,
+      "sha256": "e4adfff5111a42e68dee2c6d8150dcc710ed1eb8c27bc64f165c8927ff4b3569"
+    },
+    "work/native-pq-hero-backing-observer/runtime13-on/report.json": {
+      "bytes": 85573,
+      "sha256": "ad9a4f14864b1a3a05a407503641fac5c48773d7a9659d1564331e465950190c"
+    }
+  },
+  "limitations": [
+    "Layer getters sampled only at post_png_post_final_guards_pre_teardown; no pre-PNG state or persistence is established.",
+    "contentsFormat/class are public getter results, not proof of actual storage or rendering path.",
+    "No unique OS/systemic cause, crosshost pixel parity or actual coordinated-flight/lifecycle acceptance is inferred.",
+    "Different host scale/headroom/ICC context remains; no fitting, resampling or new color matrix.",
+    "Repeated ancestor reads are recorded per path; equal repeated scalar records in these reports do not imply global getter deduplication."
+  ],
+  "offline_report_gate": {
+    "adapted_gate_sha256": "b29e94b690fee8b90af88a19741b87a9addfa3db739939c19bdbf3309d075159",
+    "literal_transforms_only": {
+      "Path('evidence/runtime14')/mode": "Path('work/native-pq-hero-backing-ci-40095339192/runtime'+str(major))/mode",
+      "Path('probe/HeroFloatProbe')": "Path('work/native-pq-hero-backing-ci-40095339192/probe/HeroFloatProbe')",
+      "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==major and d['actual_os_major']==major",
+      "receipt['expected_os_major']==14": "receipt['expected_os_major']==major"
+    },
+    "source": "work/hero-backing-ci-preparation/macos14-hero-backing-probe.yml",
+    "source_sha256": "7f60104214eede029879cd1c1cfe302ee5fa6d24323453a4d10590d66c0c4a91"
+  },
+  "on_view_correspondence": {
+    "existing-overlay": {
+      "13": {
+        "ancestor_classes": [
+          "NSThemeFrame"
+        ],
+        "bounds": {
+          "height": 468,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "can_draw_subviews_into_layer": false,
+        "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+        "frame": {
+          "height": 468,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "is_flipped": true,
+        "layer": {
+          "class": "_NSViewBackingLayer",
+          "contents_format": "RGBA8",
+          "contents_scale": 2,
+          "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+          "delegate_is_view": true,
+          "present": true
+        },
+        "layer_contents_placement": 0,
+        "layer_contents_redraw_policy": 1,
+        "wants_layer": false,
+        "wants_update_layer": true
+      },
+      "14": {
+        "ancestor_classes": [
+          "NSThemeFrame"
+        ],
+        "bounds": {
+          "height": 468,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "can_draw_subviews_into_layer": false,
+        "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+        "frame": {
+          "height": 468,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "is_flipped": true,
+        "layer": {
+          "class": "NSViewBackingLayer",
+          "contents_format": "RGBA8",
+          "contents_scale": 1,
+          "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+          "delegate_is_view": true,
+          "present": true
+        },
+        "layer_contents_placement": 0,
+        "layer_contents_redraw_policy": 1,
+        "wants_layer": false,
+        "wants_update_layer": true
+      }
+    },
+    "flight-custom": {
+      "13": {
+        "ancestor_classes": [
+          "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+          "NSThemeFrame"
+        ],
+        "bounds": {
+          "height": 180,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "can_draw_subviews_into_layer": false,
+        "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "frame": {
+          "height": 180,
+          "width": 320,
+          "x": 352,
+          "y": 244
+        },
+        "is_flipped": true,
+        "layer": {
+          "class": "_NSViewBackingLayer",
+          "contents_format": "AutomaticAppKit",
+          "contents_scale": 2,
+          "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+          "delegate_is_view": true,
+          "present": true
+        },
+        "layer_contents_placement": 0,
+        "layer_contents_redraw_policy": 2,
+        "wants_layer": false,
+        "wants_update_layer": false
+      },
+      "14": {
+        "ancestor_classes": [
+          "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+          "NSThemeFrame"
+        ],
+        "bounds": {
+          "height": 180,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "can_draw_subviews_into_layer": false,
+        "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "frame": {
+          "height": 180,
+          "width": 320,
+          "x": 352,
+          "y": 244
+        },
+        "is_flipped": true,
+        "layer": {
+          "class": "NSViewBackingLayer",
+          "contents_format": "RGBA8",
+          "contents_scale": 1,
+          "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+          "delegate_is_view": true,
+          "present": true
+        },
+        "layer_contents_placement": 0,
+        "layer_contents_redraw_policy": 2,
+        "wants_layer": false,
+        "wants_update_layer": false
+      }
+    },
+    "flight-named": {
+      "13": {
+        "ancestor_classes": [
+          "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+          "NSThemeFrame"
+        ],
+        "bounds": {
+          "height": 180,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "can_draw_subviews_into_layer": false,
+        "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "frame": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 244
+        },
+        "is_flipped": true,
+        "layer": {
+          "class": "_NSViewBackingLayer",
+          "contents_format": "AutomaticAppKit",
+          "contents_scale": 2,
+          "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+          "delegate_is_view": true,
+          "present": true
+        },
+        "layer_contents_placement": 0,
+        "layer_contents_redraw_policy": 2,
+        "wants_layer": false,
+        "wants_update_layer": false
+      },
+      "14": {
+        "ancestor_classes": [
+          "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+          "NSThemeFrame"
+        ],
+        "bounds": {
+          "height": 180,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "can_draw_subviews_into_layer": false,
+        "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "frame": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 244
+        },
+        "is_flipped": true,
+        "layer": {
+          "class": "NSViewBackingLayer",
+          "contents_format": "RGBA8",
+          "contents_scale": 1,
+          "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+          "delegate_is_view": true,
+          "present": true
+        },
+        "layer_contents_placement": 0,
+        "layer_contents_redraw_policy": 2,
+        "wants_layer": false,
+        "wants_update_layer": false
+      }
+    },
+    "root": {
+      "13": {
+        "ancestor_classes": [
+          "NSThemeFrame"
+        ],
+        "bounds": {
+          "height": 440,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "can_draw_subviews_into_layer": false,
+        "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "frame": {
+          "height": 440,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "is_flipped": true,
+        "layer": {
+          "class": "_NSViewBackingLayer",
+          "contents_format": "AutomaticAppKit",
+          "contents_scale": 2,
+          "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+          "delegate_is_view": true,
+          "present": true
+        },
+        "layer_contents_placement": 0,
+        "layer_contents_redraw_policy": 2,
+        "wants_layer": false,
+        "wants_update_layer": false
+      },
+      "14": {
+        "ancestor_classes": [
+          "NSThemeFrame"
+        ],
+        "bounds": {
+          "height": 440,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "can_draw_subviews_into_layer": false,
+        "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "frame": {
+          "height": 440,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "is_flipped": true,
+        "layer": {
+          "class": "NSViewBackingLayer",
+          "contents_format": "RGBA8",
+          "contents_scale": 1,
+          "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+          "delegate_is_view": true,
+          "present": true
+        },
+        "layer_contents_placement": 0,
+        "layer_contents_redraw_policy": 2,
+        "wants_layer": false,
+        "wants_update_layer": false
+      }
+    }
+  },
+  "package_verification": {
+    "archive_sha256": "d57cae572afdafe27e46dd7bc13623d0763aded04ae68eb15bb5b0e334ce7170",
+    "archs": "arm64",
+    "current_archive_hash_matches": true,
+    "current_binary_hash_matches": true,
+    "current_manifest_hash_matches": true,
+    "current_manifest_members_verified": 28,
+    "current_source_map_hashes_verified": 20,
+    "minos": "13.0",
+    "sdk": "26.2",
+    "signature_arch_min_sdk": "Root receipt checked and hashed; no new codesign or Mach-O command executed."
+  },
+  "prior_local_sdk13_scalar_control": {
+    "all_equal": false,
+    "all_nonclass_scalar_fields_equal": true,
+    "class_string_differences_only": true,
+    "differences": [
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "field": "class",
+        "node_index": 0,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D018BernHeroFlightView",
+        "tree": "flight-named"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "field": "layer.delegate_class",
+        "node_index": 0,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D018BernHeroFlightView",
+        "tree": "flight-named"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "field": "class",
+        "node_index": 1,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D011FixtureRoot",
+        "tree": "flight-named"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "field": "layer.delegate_class",
+        "node_index": 1,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D011FixtureRoot",
+        "tree": "flight-named"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "field": "class",
+        "node_index": 0,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D018BernHeroFlightView",
+        "tree": "flight-custom"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "field": "layer.delegate_class",
+        "node_index": 0,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D018BernHeroFlightView",
+        "tree": "flight-custom"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "field": "class",
+        "node_index": 1,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D011FixtureRoot",
+        "tree": "flight-custom"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "field": "layer.delegate_class",
+        "node_index": 1,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D011FixtureRoot",
+        "tree": "flight-custom"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "field": "class",
+        "node_index": 0,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D011FixtureRoot",
+        "tree": "root"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "field": "layer.delegate_class",
+        "node_index": 0,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D011FixtureRoot",
+        "tree": "root"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+        "field": "class",
+        "node_index": 0,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D015BernHeroOverlay",
+        "tree": "existing-overlay"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+        "field": "layer.delegate_class",
+        "node_index": 0,
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D015BernHeroOverlay",
+        "tree": "existing-overlay"
+      }
+    ],
+    "distinct_class_string_pairs": [
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D011FixtureRoot"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D015BernHeroOverlay"
+      },
+      {
+        "current": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+        "prior": "_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D018BernHeroFlightView"
+      }
+    ],
+    "note": "Exact signatures are not equal: fixture Swift class/delegate class strings differ between HeroFloatCaptureProbe and HeroFloatProbe module/private symbol spellings. All other compared scalar fields and ancestor order/geometry are equal; IDs/window number were excluded explicitly.",
+    "path": "work/native-pq-hero-backing-observer/runtime13-on/report.json",
+    "scope": "Exact scalar signatures including class/geometry/flags/layer, excluding process-local view/layer object IDs and window number only. No pixel comparison.",
+    "trees_equal": {
+      "existing-overlay": false,
+      "flight-custom": false,
+      "flight-named": false,
+      "root": false
+    }
+  },
+  "processes": {
+    "13-off": {
+      "activation_calls": 0,
+      "all_reviewed_acquisition_gates": "PASS",
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "86130e8e33a7170156d893147ff34878cd58409c284a06001a49c20b1b9b9d3f",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 51503,
+          "phase": "progress-0",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_id": 10678
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 51503,
+          "phase": "progress-1",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_id": 10678
+        }
+      ],
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "primary_observation_keys": [
+          "baseline-body-named",
+          "baseline-body-custom"
+        ],
+        "provider_copy_calls": 0,
+        "records": [],
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 1390,
+      "frontmost_before": 1390,
+      "input_receipt": "work/native-pq-hero-backing-ci-40095339192/runtime13/off/run-receipt.json",
+      "input_report": "work/native-pq-hero-backing-ci-40095339192/runtime13/off/report.json",
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 13.7.8 (Build 22H730)",
+      "own_pid": 51503,
+      "snapshot_descriptor_context": [
+        {
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "color_space_metadata_stage": "after_existing_window_teardown",
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "float_components": true,
+          "height": 360,
+          "icc_byte_count": 3144,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named",
+          "width": 640
+        },
+        {
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "color_space_metadata_stage": "after_existing_window_teardown",
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "float_components": true,
+          "height": 360,
+          "icc_byte_count": 3144,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom",
+          "width": 640
+        }
+      ],
+      "window_seconds": 1.652235984802246
+    },
+    "13-on": {
+      "activation_calls": 0,
+      "all_reviewed_acquisition_gates": "PASS",
+      "backing_observation": {
+        "error": null,
+        "expected_window_number": 10679,
+        "node_invocation_count": 10,
+        "node_observation_paths": {
+          "ObjectIdentifier(0x000000011de05c50)": [
+            "flight-named.ancestors[0]",
+            "flight-custom.ancestors[0]",
+            "root.view"
+          ],
+          "ObjectIdentifier(0x000000011df1cd50)": [
+            "existing-overlay.view"
+          ],
+          "ObjectIdentifier(0x000000011df2b9b0)": [
+            "flight-named.view"
+          ],
+          "ObjectIdentifier(0x000000011df2d2d0)": [
+            "flight-custom.view"
+          ],
+          "ObjectIdentifier(0x000000011f9097b0)": [
+            "flight-named.ancestors[1]",
+            "flight-custom.ancestors[1]",
+            "root.ancestors[0]",
+            "existing-overlay.ancestors[0]"
+          ]
+        },
+        "nodes": {
+          "ObjectIdentifier(0x000000011de05c50)": {
+            "bounds": {
+              "height": 440,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+            "frame": {
+              "height": 440,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "is_flipped": true,
+            "layer": {
+              "class": "_NSViewBackingLayer",
+              "contents_format": "AutomaticAppKit",
+              "contents_scale": 2,
+              "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x0000600000f405d0)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 2,
+            "object_id": "ObjectIdentifier(0x000000011de05c50)",
+            "wants_layer": false,
+            "wants_update_layer": false,
+            "window_number": 10679
+          },
+          "ObjectIdentifier(0x000000011df1cd50)": {
+            "bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+            "frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "is_flipped": true,
+            "layer": {
+              "class": "_NSViewBackingLayer",
+              "contents_format": "RGBA8",
+              "contents_scale": 2,
+              "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x0000600000f57bd0)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 1,
+            "object_id": "ObjectIdentifier(0x000000011df1cd50)",
+            "wants_layer": false,
+            "wants_update_layer": true,
+            "window_number": 10679
+          },
+          "ObjectIdentifier(0x000000011df2b9b0)": {
+            "bounds": {
+              "height": 180,
+              "width": 320,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+            "frame": {
+              "height": 180,
+              "width": 320,
+              "x": 16,
+              "y": 244
+            },
+            "is_flipped": true,
+            "layer": {
+              "class": "_NSViewBackingLayer",
+              "contents_format": "AutomaticAppKit",
+              "contents_scale": 2,
+              "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x0000600000f56d30)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 2,
+            "object_id": "ObjectIdentifier(0x000000011df2b9b0)",
+            "wants_layer": false,
+            "wants_update_layer": false,
+            "window_number": 10679
+          },
+          "ObjectIdentifier(0x000000011df2d2d0)": {
+            "bounds": {
+              "height": 180,
+              "width": 320,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+            "frame": {
+              "height": 180,
+              "width": 320,
+              "x": 352,
+              "y": 244
+            },
+            "is_flipped": true,
+            "layer": {
+              "class": "_NSViewBackingLayer",
+              "contents_format": "AutomaticAppKit",
+              "contents_scale": 2,
+              "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x0000600000f57b40)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 2,
+            "object_id": "ObjectIdentifier(0x000000011df2d2d0)",
+            "wants_layer": false,
+            "wants_update_layer": false,
+            "window_number": 10679
+          },
+          "ObjectIdentifier(0x000000011f9097b0)": {
+            "bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "NSThemeFrame",
+            "frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "is_flipped": false,
+            "layer": {
+              "class": "_NSViewBackingLayer",
+              "contents_format": "RGBA8",
+              "contents_scale": 2,
+              "delegate_class": "NSThemeFrame",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x0000600000f40810)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 1,
+            "object_id": "ObjectIdentifier(0x000000011f9097b0)",
+            "wants_layer": false,
+            "wants_update_layer": true,
+            "window_number": 10679
+          }
+        },
+        "overlay_parent_is_window_content_superview_or_content": true,
+        "repeated_node_scalar_records_equal": true,
+        "requested": "on",
+        "selected": "on",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true,
+        "trees": {
+          "existing-overlay": {
+            "ancestor_chain_complete": true,
+            "ancestor_object_ids": [
+              "ObjectIdentifier(0x000000011f9097b0)"
+            ],
+            "view_object_id": "ObjectIdentifier(0x000000011df1cd50)"
+          },
+          "flight-custom": {
+            "ancestor_chain_complete": true,
+            "ancestor_object_ids": [
+              "ObjectIdentifier(0x000000011de05c50)",
+              "ObjectIdentifier(0x000000011f9097b0)"
+            ],
+            "parent_is_fixture_root": true,
+            "rect_in_fixture_root": {
+              "height": 180,
+              "width": 320,
+              "x": 352,
+              "y": 244
+            },
+            "view_object_id": "ObjectIdentifier(0x000000011df2d2d0)"
+          },
+          "flight-named": {
+            "ancestor_chain_complete": true,
+            "ancestor_object_ids": [
+              "ObjectIdentifier(0x000000011de05c50)",
+              "ObjectIdentifier(0x000000011f9097b0)"
+            ],
+            "parent_is_fixture_root": true,
+            "rect_in_fixture_root": {
+              "height": 180,
+              "width": 320,
+              "x": 16,
+              "y": 244
+            },
+            "view_object_id": "ObjectIdentifier(0x000000011df2b9b0)"
+          },
+          "root": {
+            "ancestor_chain_complete": true,
+            "ancestor_object_ids": [
+              "ObjectIdentifier(0x000000011f9097b0)"
+            ],
+            "view_object_id": "ObjectIdentifier(0x000000011de05c50)"
+          }
+        },
+        "unique_view_count": 5
+      },
+      "binary_sha256": "86130e8e33a7170156d893147ff34878cd58409c284a06001a49c20b1b9b9d3f",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 51734,
+          "phase": "progress-0",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_id": 10679
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 51734,
+          "phase": "progress-1",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_id": 10679
+        }
+      ],
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "primary_observation_keys": [
+          "baseline-body-named",
+          "baseline-body-custom"
+        ],
+        "provider_copy_calls": 0,
+        "records": [],
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 1390,
+      "frontmost_before": 1390,
+      "input_receipt": "work/native-pq-hero-backing-ci-40095339192/runtime13/on/run-receipt.json",
+      "input_report": "work/native-pq-hero-backing-ci-40095339192/runtime13/on/report.json",
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 13.7.8 (Build 22H730)",
+      "own_pid": 51734,
+      "snapshot_descriptor_context": [
+        {
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "color_space_metadata_stage": "after_existing_window_teardown",
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "float_components": true,
+          "height": 360,
+          "icc_byte_count": 3144,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named",
+          "width": 640
+        },
+        {
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "color_space_metadata_stage": "after_existing_window_teardown",
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "float_components": true,
+          "height": 360,
+          "icc_byte_count": 3144,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom",
+          "width": 640
+        }
+      ],
+      "window_seconds": 1.6637530326843262
+    },
+    "14-off": {
+      "activation_calls": 0,
+      "all_reviewed_acquisition_gates": "PASS",
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "86130e8e33a7170156d893147ff34878cd58409c284a06001a49c20b1b9b9d3f",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 309,
+          "key": false,
+          "owner_pid": 1072,
+          "phase": "progress-0",
+          "png_sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "b235bbd4a6bdf1b35e0fbd32321cbdc4c0bca0aa693236346007eb1607ca4d67",
+          "window_id": 25
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 309,
+          "key": false,
+          "owner_pid": 1072,
+          "phase": "progress-1",
+          "png_sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "4dfc2ca1f1749b46764fd0089f545a3716f799ae7f893babe0ae2b2a7e9d6724",
+          "window_id": 25
+        }
+      ],
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "primary_observation_keys": [
+          "baseline-body-named",
+          "baseline-body-custom"
+        ],
+        "provider_copy_calls": 0,
+        "records": [],
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 309,
+      "frontmost_before": 309,
+      "input_receipt": "work/native-pq-hero-backing-ci-40095339192/runtime14/off/run-receipt.json",
+      "input_report": "work/native-pq-hero-backing-ci-40095339192/runtime14/off/report.json",
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 14.8.9 (Build 23J631)",
+      "own_pid": 1072,
+      "snapshot_descriptor_context": [
+        {
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "color_space_metadata_stage": "after_existing_window_teardown",
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "float_components": true,
+          "height": 180,
+          "icc_byte_count": 3144,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named",
+          "width": 320
+        },
+        {
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "color_space_metadata_stage": "after_existing_window_teardown",
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "float_components": true,
+          "height": 180,
+          "icc_byte_count": 3144,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom",
+          "width": 320
+        }
+      ],
+      "window_seconds": 2.219974994659424
+    },
+    "14-on": {
+      "activation_calls": 0,
+      "all_reviewed_acquisition_gates": "PASS",
+      "backing_observation": {
+        "error": null,
+        "expected_window_number": 26,
+        "node_invocation_count": 10,
+        "node_observation_paths": {
+          "ObjectIdentifier(0x0000000159f0c630)": [
+            "flight-named.ancestors[1]",
+            "flight-custom.ancestors[1]",
+            "root.ancestors[0]",
+            "existing-overlay.ancestors[0]"
+          ],
+          "ObjectIdentifier(0x000000015b80a860)": [
+            "flight-named.ancestors[0]",
+            "flight-custom.ancestors[0]",
+            "root.view"
+          ],
+          "ObjectIdentifier(0x000000015b825d10)": [
+            "existing-overlay.view"
+          ],
+          "ObjectIdentifier(0x000000015b82bb90)": [
+            "flight-named.view"
+          ],
+          "ObjectIdentifier(0x000000015b83c440)": [
+            "flight-custom.view"
+          ]
+        },
+        "nodes": {
+          "ObjectIdentifier(0x0000000159f0c630)": {
+            "bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "NSThemeFrame",
+            "frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "is_flipped": false,
+            "layer": {
+              "class": "NSViewBackingLayer",
+              "contents_format": "RGBA8",
+              "contents_scale": 1,
+              "delegate_class": "NSThemeFrame",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x00006000009fd5c0)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 1,
+            "object_id": "ObjectIdentifier(0x0000000159f0c630)",
+            "wants_layer": false,
+            "wants_update_layer": true,
+            "window_number": 26
+          },
+          "ObjectIdentifier(0x000000015b80a860)": {
+            "bounds": {
+              "height": 440,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+            "frame": {
+              "height": 440,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "is_flipped": true,
+            "layer": {
+              "class": "NSViewBackingLayer",
+              "contents_format": "RGBA8",
+              "contents_scale": 1,
+              "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C411FixtureRoot",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x00006000009fd3e0)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 2,
+            "object_id": "ObjectIdentifier(0x000000015b80a860)",
+            "wants_layer": false,
+            "wants_update_layer": false,
+            "window_number": 26
+          },
+          "ObjectIdentifier(0x000000015b825d10)": {
+            "bounds": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+            "frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "is_flipped": true,
+            "layer": {
+              "class": "NSViewBackingLayer",
+              "contents_format": "RGBA8",
+              "contents_scale": 1,
+              "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x00006000009c7570)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 1,
+            "object_id": "ObjectIdentifier(0x000000015b825d10)",
+            "wants_layer": false,
+            "wants_update_layer": true,
+            "window_number": 26
+          },
+          "ObjectIdentifier(0x000000015b82bb90)": {
+            "bounds": {
+              "height": 180,
+              "width": 320,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+            "frame": {
+              "height": 180,
+              "width": 320,
+              "x": 16,
+              "y": 244
+            },
+            "is_flipped": true,
+            "layer": {
+              "class": "NSViewBackingLayer",
+              "contents_format": "RGBA8",
+              "contents_scale": 1,
+              "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x00006000009e4870)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 2,
+            "object_id": "ObjectIdentifier(0x000000015b82bb90)",
+            "wants_layer": false,
+            "wants_update_layer": false,
+            "window_number": 26
+          },
+          "ObjectIdentifier(0x000000015b83c440)": {
+            "bounds": {
+              "height": 180,
+              "width": 320,
+              "x": 0,
+              "y": 0
+            },
+            "can_draw_subviews_into_layer": false,
+            "class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+            "frame": {
+              "height": 180,
+              "width": 320,
+              "x": 352,
+              "y": 244
+            },
+            "is_flipped": true,
+            "layer": {
+              "class": "NSViewBackingLayer",
+              "contents_format": "RGBA8",
+              "contents_scale": 1,
+              "delegate_class": "_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C418BernHeroFlightView",
+              "delegate_is_view": true,
+              "object_id": "ObjectIdentifier(0x00006000009e4840)",
+              "present": true
+            },
+            "layer_contents_placement": 0,
+            "layer_contents_redraw_policy": 2,
+            "object_id": "ObjectIdentifier(0x000000015b83c440)",
+            "wants_layer": false,
+            "wants_update_layer": false,
+            "window_number": 26
+          }
+        },
+        "overlay_parent_is_window_content_superview_or_content": true,
+        "repeated_node_scalar_records_equal": true,
+        "requested": "on",
+        "selected": "on",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true,
+        "trees": {
+          "existing-overlay": {
+            "ancestor_chain_complete": true,
+            "ancestor_object_ids": [
+              "ObjectIdentifier(0x0000000159f0c630)"
+            ],
+            "view_object_id": "ObjectIdentifier(0x000000015b825d10)"
+          },
+          "flight-custom": {
+            "ancestor_chain_complete": true,
+            "ancestor_object_ids": [
+              "ObjectIdentifier(0x000000015b80a860)",
+              "ObjectIdentifier(0x0000000159f0c630)"
+            ],
+            "parent_is_fixture_root": true,
+            "rect_in_fixture_root": {
+              "height": 180,
+              "width": 320,
+              "x": 352,
+              "y": 244
+            },
+            "view_object_id": "ObjectIdentifier(0x000000015b83c440)"
+          },
+          "flight-named": {
+            "ancestor_chain_complete": true,
+            "ancestor_object_ids": [
+              "ObjectIdentifier(0x000000015b80a860)",
+              "ObjectIdentifier(0x0000000159f0c630)"
+            ],
+            "parent_is_fixture_root": true,
+            "rect_in_fixture_root": {
+              "height": 180,
+              "width": 320,
+              "x": 16,
+              "y": 244
+            },
+            "view_object_id": "ObjectIdentifier(0x000000015b82bb90)"
+          },
+          "root": {
+            "ancestor_chain_complete": true,
+            "ancestor_object_ids": [
+              "ObjectIdentifier(0x0000000159f0c630)"
+            ],
+            "view_object_id": "ObjectIdentifier(0x000000015b80a860)"
+          }
+        },
+        "unique_view_count": 5
+      },
+      "binary_sha256": "86130e8e33a7170156d893147ff34878cd58409c284a06001a49c20b1b9b9d3f",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 309,
+          "key": false,
+          "owner_pid": 1083,
+          "phase": "progress-0",
+          "png_sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "b235bbd4a6bdf1b35e0fbd32321cbdc4c0bca0aa693236346007eb1607ca4d67",
+          "window_id": 26
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 309,
+          "key": false,
+          "owner_pid": 1083,
+          "phase": "progress-1",
+          "png_sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "4dfc2ca1f1749b46764fd0089f545a3716f799ae7f893babe0ae2b2a7e9d6724",
+          "window_id": 26
+        }
+      ],
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "primary_observation_keys": [
+          "baseline-body-named",
+          "baseline-body-custom"
+        ],
+        "provider_copy_calls": 0,
+        "records": [],
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 309,
+      "frontmost_before": 309,
+      "input_receipt": "work/native-pq-hero-backing-ci-40095339192/runtime14/on/run-receipt.json",
+      "input_report": "work/native-pq-hero-backing-ci-40095339192/runtime14/on/report.json",
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 14.8.9 (Build 23J631)",
+      "own_pid": 1083,
+      "snapshot_descriptor_context": [
+        {
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "color_space_metadata_stage": "after_existing_window_teardown",
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "float_components": true,
+          "height": 180,
+          "icc_byte_count": 3144,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-named",
+          "width": 320
+        },
+        {
+          "bits_per_component": 16,
+          "bits_per_pixel": 64,
+          "color_space_metadata_stage": "after_existing_window_teardown",
+          "color_space_name": "kCGColorSpaceExtendedSRGB",
+          "float_components": true,
+          "height": 180,
+          "icc_byte_count": 3144,
+          "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+          "key": "baseline-body-custom",
+          "width": 320
+        }
+      ],
+      "window_seconds": 1.7773569822311401
+    }
+  },
+  "scope": "PRIVATE offline bounded scalar summary; no app/wrapper/compiler/CI execution and no new image comparison.",
+  "success": true
+}

@@ -1,0 +1,28 @@
+{
+  "checks": [
+    {
+      "bash_n": "PASS",
+      "job": "build",
+      "name": "Build exact ARM64/min13 backing observer package",
+      "python_heredocs_ast": 2,
+      "shell_body_executed": false,
+      "step": 1
+    },
+    {
+      "bash_n": "PASS",
+      "job": "measure",
+      "name": "Collect fresh backing-off then backing-on processes on14 without rebuilding",
+      "python_heredocs_ast": 2,
+      "shell_body_executed": false,
+      "step": 1
+    }
+  ],
+  "schema_copy_hash": "PASS",
+  "scope": "Static parse and bash syntax only; no workflow body, wrapper, native app, compiler or CI execution.",
+  "source_original_hashes": "PASS",
+  "success": true,
+  "workflow_sha256": "7f60104214eede029879cd1c1cfe302ee5fa6d24323453a4d10590d66c0c4a91",
+  "wrapper_ast": "PASS",
+  "wrapper_sha256": "9a3e263ba66131a1b2dda97489e545811f5d7b58c28e4198408d030a78693683",
+  "yaml": "PASS"
+}

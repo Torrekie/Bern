@@ -1,0 +1,112 @@
+{
+  "backing_default": "off",
+  "base_driver_sha256": "d9f6d257b754a6e2c960f22bf24b86ee4822822a05cee73b191eb2d74a197670",
+  "base_fixture": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-float13/fixture",
+  "float_mode_required_for_these_runs": "off",
+  "generated_files": {
+    "BackingObservation.swift.inc": {
+      "bytes": 5128,
+      "sha256": "0136ae510fe8f91673aaf54358a239d5795c03cb8a4a5db33b54d0fc07f1f90b"
+    },
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.before-backing.swift.inc": {
+      "bytes": 23891,
+      "sha256": "d9f6d257b754a6e2c960f22bf24b86ee4822822a05cee73b191eb2d74a197670"
+    },
+    "Driver.swift.inc": {
+      "bytes": 29683,
+      "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15534,
+      "sha256": "5be2a6cc4e5683ce44d75e43a5c32768eabce0cfb38a12ea1ab4fa8f527a4e6d"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductHero.swift": {
+      "bytes": 53321,
+      "sha256": "7352b96c24a56c98b997b2cf93d45acf4f8283d240a781779a27b7ca04510f2d"
+    },
+    "ProductHero.v2.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductImage.v2.base.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "backing-observer.patch": {
+      "bytes": 7605,
+      "sha256": "cfc5e25f4bea0effa2625bb91ba85e4ec6d4a60a7ec35f4c4574d6185d868147"
+    },
+    "build.sh": {
+      "bytes": 856,
+      "sha256": "20fd8c8b5713408b2534a3e652ceca04c0838a547c827c224fb0230ecad6c198"
+    },
+    "fingerprint.py": {
+      "bytes": 1550,
+      "sha256": "1381374d8a9b70a6e1773e622fd739ba1fcb3047fdc70345b989a7d30917aa94"
+    },
+    "local-image-imports-and-sdk14.patch": {
+      "bytes": 1225,
+      "sha256": "accf273f917d98447768b76a28d738b530c4efca9f430120dc051d23b3db75c5"
+    },
+    "local-sdk14-clock.patch": {
+      "bytes": 904,
+      "sha256": "71cf918174cd726e61f9359cc0696750be68a77e4040841336d246372706991a"
+    },
+    "sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    },
+    "source-provenance.float-base.json": {
+      "bytes": 5301,
+      "sha256": "a624b07236d46794056f590e755bcd09b82e3365bf6d953f6970b62cc235c7f9"
+    },
+    "verify_sources.py": {
+      "bytes": 581,
+      "sha256": "d7c26a232b07c738951acdd886b7af0c2a031be00e8a1b15fc079695644e5010"
+    }
+  },
+  "kind": "post_png_scalar_backing_observer_local13",
+  "scope": "Static root-mounted endpoint flights plus already-prepared actual manager overlay and their ancestor scalars; no actual flight/lifecycle or zero-observer-effect claim.",
+  "stage": "post_png_post_final_guards_pre_teardown",
+  "unchanged": [
+    "Actual snapshot renderer, NSImage construction, Flight.draw, all existing PNG/final guards/teardown",
+    "Local SDK14.2 gainmap/unused-clock compiler guards",
+    "7.9second watchdog,15second wrapper, min13, Swift5"
+  ]
+}

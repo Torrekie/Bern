@@ -1,0 +1,95 @@
+{
+  "built_at_utc": "2026-10-24T12:54:06.061821+00:00",
+  "codesign": {
+    "argv": [
+      "codesign",
+      "-dvvv",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-static-route13/HeroFloatCaptureProbe"
+    ],
+    "exit_code": 0,
+    "output": "Executable=/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-static-route13/HeroFloatCaptureProbe\nIdentifier=HeroFloatCaptureProbe\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=4590 flags=0x20002(adhoc,linker-signed) hashes=140+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=762a6c33674b19a48d5ce807277d8bed5ae1105b\nCandidateCDHashFull sha256=762a6c33674b19a48d5ce807277d8bed5ae1105b164b15b1c166afbb056f87d5\nHash choices=sha256\nCMSDigest=762a6c33674b19a48d5ce807277d8bed5ae1105b164b15b1c166afbb056f87d5\nCMSDigestType=2\nLaunch Constraints:\n\tNone\nCDHash=762a6c33674b19a48d5ce807277d8bed5ae1105b\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\n"
+  },
+  "codesign_verify": {
+    "argv": [
+      "codesign",
+      "--verify",
+      "--strict",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-static-route13/HeroFloatCaptureProbe"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  "file": {
+    "argv": [
+      "file",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-static-route13/HeroFloatCaptureProbe"
+    ],
+    "exit_code": 0,
+    "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-static-route13/HeroFloatCaptureProbe: Mach-O 64-bit executable arm64\n"
+  },
+  "hashes": {
+    "Dependencies.swift": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9",
+    "Driver.before-static-route.swift.inc": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d",
+    "Driver.swift.inc": "a6b483d48f468f3479d6ac36ba7b95464c037d3c792f7efe134edfc1ba9109ca",
+    "FloatCapture.swift.inc": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388",
+    "HeroFloatCaptureProbe": "8fb1b7f57b60de0948866bb950be07696b15196d9f89e2fda994fac1a22d3fac",
+    "ProductHero.clock-adapted.swift": "5be2a6cc4e5683ce44d75e43a5c32768eabce0cfb38a12ea1ab4fa8f527a4e6d",
+    "ProductHero.exact.swift": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c",
+    "ProductHero.swift": "3d101c31ca70325d7bdffd52fb0f843576ee7a497a709bbcce31aafaf5577b19",
+    "ProductHero.v2.base.swift": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f",
+    "ProductImage.exact.swift": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11",
+    "ProductImage.swift": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54",
+    "ProductImage.v2.base.swift": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc",
+    "ProductStyle.exact.swift": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1",
+    "ProductStyle.swift": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984",
+    "SHA256SUMS": "c8916d1371f5648ad66411723ae624716577248bb0a26343c136c85f0196473a",
+    "StaticRoute.swift.inc": "1480c3e71ffd0e1618e56330af5c68d97dbdd37657bd34d609f3386b9609400d",
+    "assets/source-ffb-icc.png": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e",
+    "assets/source-named-pq.png": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+    "build-environment.txt": "f73db909861714e4f99a5b3b928d6636f603280791d3e46f47276c1cb986b18c",
+    "build.log": "70673f49a6432ad7879f67261d75e1c728555008d127f67d1fdbb0a2ce1e0438",
+    "build.sh": "7bf1631029bbd2081957d726af8e0b6bb86e46e912fbcbe7bbb6f294f7410c98",
+    "fingerprint.py": "1381374d8a9b70a6e1773e622fd739ba1fcb3047fdc70345b989a7d30917aa94",
+    "local-image-imports-and-sdk14.patch": "accf273f917d98447768b76a28d738b530c4efca9f430120dc051d23b3db75c5",
+    "local-sdk14-clock.patch": "71cf918174cd726e61f9359cc0696750be68a77e4040841336d246372706991a",
+    "run-route-one.py": "5ae69049ac4e0762557d3bb0903b7354cfa1e6428680b4757c697bfb1add3157",
+    "sdk14-unreachable-gainmap.patch": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf",
+    "source-provenance.json": "29e5fc82b2c94fcdb5476b567fade3b1a253203e618dc0a4a2d0889cb1a07f3c",
+    "static-route-driver.patch": "2fea632b6b1eb3455b07e0ed9cefb70dffedec96448bc11c5aa9de61b2c4af99",
+    "static-route-source-provenance.json": "219d955113956546097d2c95e57497980ab2bc9a532f2c97adf21dea0d9da25e",
+    "verify_sources.py": "d7c26a232b07c738951acdd886b7af0c2a031be00e8a1b15fc079695644e5010"
+  },
+  "jobs": 2,
+  "language_mode": "5",
+  "mach_build": {
+    "argv": [
+      "xcrun",
+      "vtool",
+      "-show-build",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-static-route13/HeroFloatCaptureProbe"
+    ],
+    "exit_code": 0,
+    "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-static-route13/HeroFloatCaptureProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 14.2\n   ntools 1\n     tool LD\n  version 1022.1\n"
+  },
+  "optimization": "O",
+  "sdk": {
+    "argv": [
+      "xcrun",
+      "--show-sdk-version"
+    ],
+    "exit_code": 0,
+    "output": "14.2\n"
+  },
+  "source_policy": "Isolated v2 metadata fixture plus opt-in original CGImage retention/post-teardown provider export; exact localSDK14 compatibility guards.",
+  "swift": {
+    "argv": [
+      "xcrun",
+      "swiftc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "swift-driver version: 1.87.3 Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\n"
+  },
+  "target": "arm64-apple-macos13.0",
+  "warning_policy": "Preserve actual compiler log; no warning suppression or warnings-as-errors claim."
+}

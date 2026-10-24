@@ -1,0 +1,89 @@
+{
+  "created_utc": "2026-10-24T12:58:35.753709+00:00",
+  "duplicate_logical_bytes": 9955282,
+  "duplicate_work_replaced_by_archive_symlinks": [
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-backing13/fixture",
+      "bytes": 3043642,
+      "path": "work/native-pq-hero-backing-observer",
+      "verified_files": 44
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-backing-40095339192/same-binary-13-14",
+      "bytes": 3896712,
+      "path": "work/native-pq-hero-backing-ci-40095339192",
+      "verified_files": 73
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/fixture",
+      "bytes": 2859402,
+      "path": "work/native-pq-hero-static-route13",
+      "verified_files": 42
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-backing-40095339192/analysis",
+      "bytes": 65067,
+      "path": "work/hero-backing-crosshost-analysis",
+      "verified_files": 3
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-backing-40095339192/ci-preparation",
+      "bytes": 69497,
+      "path": "work/hero-backing-ci-preparation",
+      "verified_files": 14
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/source-preparation",
+      "bytes": 15195,
+      "path": "work/hero-actual-overlay-route-preparation",
+      "verified_files": 5
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/route-plan",
+      "bytes": 5767,
+      "path": "work/hero-actual-overlay-route-plan",
+      "verified_files": 1
+    }
+  ],
+  "expendable_artifact_bytes": 58872876,
+  "expendable_artifacts_removed": [
+    {
+      "bytes": 574184,
+      "kind": "fingerprinted_owned_binary_or_transport",
+      "path": "work/native-pq-hero-backing-observer/HeroFloatCaptureProbe",
+      "sha256": "b57b0d9303ba39ff60740c52a84cc34ab212694dff99692d69bb636b6c7c57a4"
+    },
+    {
+      "bytes": 577744,
+      "kind": "fingerprinted_owned_binary_or_transport",
+      "path": "work/native-pq-hero-backing-ci-40095339192/probe/HeroFloatProbe",
+      "sha256": "86130e8e33a7170156d893147ff34878cd58409c284a06001a49c20b1b9b9d3f"
+    },
+    {
+      "bytes": 576824,
+      "kind": "fingerprinted_owned_binary_or_transport",
+      "path": "work/native-pq-hero-static-route13/HeroFloatCaptureProbe",
+      "sha256": "8fb1b7f57b60de0948866bb950be07696b15196d9f89e2fda994fac1a22d3fac"
+    },
+    {
+      "bytes": 249820,
+      "kind": "fingerprinted_owned_binary_or_transport",
+      "path": "work/native-pq-hero-backing-ci-40095339192/build/hero-backing-probe.tar.gz",
+      "sha256": "d57cae572afdafe27e46dd7bc13623d0763aded04ae68eb15bb5b0e334ce7170"
+    },
+    {
+      "bytes": 56894304,
+      "files": 81,
+      "kind": "owned_module_cache_reused_for_two_local_builds_no_matching_writers",
+      "path": "work/native-pq-hero-backing-observer/modules"
+    }
+  ],
+  "matching_writers_before_cleanup": [],
+  "original_manifest_exceptions": [
+    "Local build fingerprints retain removed executable hashes.",
+    "CI probe/SHA256SUMS retains original HeroFloatProbe member; binary was independently verified before execution/removal.",
+    "CI archive checksum remains as provenance; transport tar intentionally removed."
+  ],
+  "physical_apfs_reclaim_or_net_disk_delta_claim": false,
+  "scope": "Only this root-owned completed backing/route experiment binaries, transport, active local module cache after both local builds, and byte-verified duplicate work. Sources/PNGs/ICC/receipts/results preserved. No unrelated apps/caches/preferences/defaults/TCC/simulators removed."
+}

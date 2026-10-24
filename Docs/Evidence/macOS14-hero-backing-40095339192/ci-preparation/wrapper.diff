@@ -1,0 +1,19 @@
+--- run-one.original.py
++++ run-backing-one.py
+@@ -1,13 +1,13 @@
+ #!/usr/bin/env python3
+-"""One exact packaged probe process; no retries or preference/permission changes."""
++"""One exact packaged backing-observer process; scalar-only mode, float capture off."""
+ import datetime,hashlib,json,os,subprocess,sys,time
+ from pathlib import Path
+ assert len(sys.argv)==7,'binary named custom output off|on 13|14'
+ binary,named,custom,out=map(lambda x:Path(x).resolve(),sys.argv[1:5]);mode=sys.argv[5];major=int(sys.argv[6]);assert mode in ['off','on'] and major in [13,14]
+ assert binary.is_file() and named.is_file() and custom.is_file()
+ assert not (out/'report.json').exists() and not (out/'run-receipt.json').exists();out.mkdir(parents=True,exist_ok=True)
+-command=list(map(str,[binary,named,custom,out]));env=dict(os.environ,BERN_HERO_FLOAT_CAPTURE=mode,BERN_HERO_EXPECT_OS=str(major))
+-r=dict(started_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),command=command,mode=mode,expected_os_major=major,timeout_seconds=15)
++command=list(map(str,[binary,named,custom,out]));env=dict(os.environ,BERN_HERO_FLOAT_CAPTURE="off",BERN_HERO_LAYER_OBSERVE=mode,BERN_HERO_EXPECT_OS=str(major))
++r=dict(started_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),command=command,mode=mode,layer_observe_environment=mode,float_capture_environment="off",expected_os_major=major,timeout_seconds=15)
+ began=time.monotonic()
+ with (out/'runtime.log').open('w') as log:
+  p=subprocess.Popen(command,env=env,stdout=log,stderr=subprocess.STDOUT);r['own_pid']=p.pid

@@ -180,3 +180,14 @@ source审查还确认：当前固定端点夹具将真实FlightView挂在Fixture
 
 
 本轮raw证据归档后，已删除自有probe/cache/传输包/临时组装草稿58,261,039B及逐字核验的work重复副本15,427,392B，合计约73.7MB逻辑文件，见[清理收据](../Evidence/macOS13-hdr-candidate/hero-float-experiments-cleanup-20261024.json)。原始raw/PNG、源码和数值报告保留；现存证据有独立最终清单。此数字不代表APFS回收量或磁盘总可用量变化。
+
+
+## 已有backing与真实overlay静态路由（2026-10-24）
+
+[backing采集40095339192](../Evidence/macOS14-hero-backing-40095339192/README.md)已完成：SDK26.2/min13只构建一次，原签名binary`86130e8e…b9b9d3f`在13/14各运行off/on。两边旧float-off→新backing-off及off→on共四组各12ROI原始RGB/ICC归一全部exact；首尾normal false、缓存/前台保持、noMTK/noFlight/noTimer/五stable与原窗口界限均通过。新增观察只发生在全部PNG和原最终检查之后、原teardown之前，不读contents/presentation/provider或设置layer。观察后看到两flight/root在13报告`AutomaticAppKit`，在14报告`RGBA8`；两边已存在的真实overlay及NSThemeFrame均`RGBA8`，wantsLayer都false但layer存在。不能从这些getter值推断实际storage、前PNG持久状态、唯一系统原因或真实动画通过。
+
+随后完成[本机13静态route控制](../Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/README.md)：只把相同实际Flight挂到已存在的manager overlay，通过公开convert保持原屏幕ROI，mount/采样/postPNG直接检查retained两flight及其子树。默认root复现backing-off，overlay复现root，各12ROI raw/normalized exact；root y244→overlay y272→root y244，误差0pt。窗口1.681/1.614秒、前台1390保持、normal/cache/noMTK/flight0/timernil/五stable通过。该parent切换没有改善本机主色差；14的对应route和真实coordinated flight仍需验证。产品没有加入格式setter、层创建或未证实颜色修复。
+
+下一检查点：复用已冻结`native-pq-hero-static-route13`源码差分，准备单一root/overlay手动14采集（新SDK一次构建、同原签名binary运行13），先通过默认路径和route控制，再决定是否对已有layer测试单一格式请求。实际enter/leave/计时退出/隐藏恢复仍是独立门槛，不以静态同图端点代替。其它Film/chrome/图片布局/Frame/交互/动画与HDR未通过项保持；goal继续active，不进入11/Swift5.3/Objective-C/iOS。
+
+本轮归档后清理自有binary/tar/module cache58,872,876B及逐字核验的work副本9,955,282B，合计约68.8MB逻辑文件，见[清理收据](../Evidence/macOS13-hdr-candidate/hero-backing-route-cleanup-20261024.json)。保留源码/原PNG/ICC/元数据/控制与最终现存清单，不将此数字称为APFS实际回收或磁盘总可用量变化。

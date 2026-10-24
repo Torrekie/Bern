@@ -1,0 +1,22 @@
+2026-10-24 20:39:53.050 HeroFloatCaptureProbe[49332:4954654] NSWindow warning: adding an unknown subview: <_TtC21HeroFloatCaptureProbeP33_DAA04EC86E9BAFC764DD131F4AFDC1D015BernHeroOverlay: 0x153713a50>. Break on NSLog to debug.
+2026-10-24 20:39:53.066 HeroFloatCaptureProbe[49332:4954654] Call stack:
+(
+	0   AppKit                              0x00000001a0a3a004 -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x00000001a0a39ce4 -[NSView addSubview:positioned:relativeTo:] + 176
+	2   AppKit                              0x00000001a0a39bb0 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroFloatCaptureProbe               0x0000000104e9e5ec $s21HeroFloatCaptureProbe21BernWindowImageHeroesC14prepareOverlay33_DAA04EC86E9BAFC764DD131F4AFDC1D0LLSbyF + 308
+	4   HeroFloatCaptureProbe               0x0000000104e9c23c $s21HeroFloatCaptureProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 432
+	5   HeroFloatCaptureProbe               0x0000000104ea58c4 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x000000019d556874 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x000000019d558400 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x000000019d566bf8 _dispatch_main_queue_drain + 928
+	9   libdispatch.dylib                   0x000000019d566848 _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x000000019d827b24 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x000000019d7e52a4 __CFRunLoopRun + 1992
+	12  CoreFoundation                      0x000000019d7e4388 CFRunLoopRunSpecific + 612
+	13  Foundation                          0x000000019e762de8 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212
+	14  Foundation                          0x000000019e7d71a4 -[NSRunLoop(NSRunLoop) runUntilDate:] + 100
+	15  HeroFloatCaptureProbe               0x0000000104eb55d0 $s21HeroFloatCaptureProbe0A12BaselineMain33_DAA04EC86E9BAFC764DD131F4AFDC1D0LLO3runs5Int32VyFZTf4d_n + 10992
+	16  HeroFloatCaptureProbe               0x0000000104ea5d9c main + 12
+	17  dyld                                0x000000019d3affd8 start + 2412
+)

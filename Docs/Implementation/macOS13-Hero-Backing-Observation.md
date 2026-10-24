@@ -2,7 +2,7 @@
 
 ## Conclusion
 
-`CALayer.contentsFormat = .RGBA16Float` is publicly available on macOS10.12+, so macOS13 has no API-availability blocker. It is a **desired storage-format hint for layer drawing**, not a promise of the actual NSView backing pixel format, a color-space conversion, or a tone-map/headroom selector. Apple explicitly says a layer-backed NSView may change this property for the device. A one-property candidate is meaningful only if the existing flight already has its own drawing layer and the requested value survives AppKit updates; neither condition is currently recorded. It cannot yet be called a fix or evidence that13 clipped before color conversion. [Apple contentsFormat](https://developer.apple.com/documentation/quartzcore/calayer/contentsformat)
+`CALayer.contentsFormat = .RGBA16Float` is publicly available on macOS10.12+, so macOS13 has no API-availability blocker. It is a **desired storage-format hint for layer drawing**, not a promise of the actual NSView backing pixel format, a color-space conversion, or a tone-map/headroom selector. Apple explicitly says a layer-backed NSView may change this property for the device. A one-property candidate is meaningful only if the existing flight already has its own drawing layer and the requested value survives AppKit updates; the original source-only audit did not record those conditions; the controlled post-PNG observation below now establishes existing layers and their reported hints, without a setter/persistence test. It cannot yet be called a fix or evidence that13 clipped before color conversion. [Apple contentsFormat](https://developer.apple.com/documentation/quartzcore/calayer/contentsformat)
 
 ## Exact path and ownership
 
@@ -36,3 +36,10 @@ comparison would need explicit coordinate conversion, same native window ROIs
 and a default control before any conclusion about the live overlay path.
 The current endpoint results do not prove that a full application flight has the
 same color defect. No container mutation or backing-format setter has run yet.
+
+
+## Controlled observation and local route comparison completed
+
+[CI40095339192 and samebinary13/14 evidence](../Evidence/macOS14-hero-backing-40095339192/README.md) now record the public getters after all PNGs/final guards. Both hosts have existing view-managed drawing layers even with wantsLayer=false. Flight/root contentsFormat is AutomaticAppKit on13 and RGBA8 on14; existing manager overlay/theme frame is RGBA8 on both. All recorded ancestors report canDrawSubviewsIntoLayer=false. Old→off and off→on each reproduce12 raw/ICC-normalized ROIs exactly per host; this is a measured control, not proof of general zero observer effect or pre-PNG persistence. No storage or causal conclusion follows from the hint.
+
+The [separate local13 root→existing actual overlay comparison](../Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/README.md) now passes public coordinate roundtrip0pt, same ROI and explicit retained-flight subtree checks. Default root reproduces the preceding backing-off baseline; overlay reproduces root12ROIs exactly, so this parent switch alone did not improve the local static color residual. Its layer observer/float capture were both off. The corresponding14 route and actual coordinator lifecycle remain unverified. Do not turn the original RGBA16Float hypothesis into a product change from these observations; the reference14 reports RGBA8, and all values were read after capture.
