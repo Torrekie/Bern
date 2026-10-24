@@ -219,7 +219,6 @@ private struct FormRows: ViewModifier {
     let assets: Assets
     let measurements: Measurements
     let minimumRow: CGFloat?
-    private let captions = ["Contain", "Cover", "Fill", "Width only"]
     private func picture(_ name: String, width: CGFloat, height: CGFloat? = nil, fit: Fit = .contain) -> some View {
         ProbeImage(variant: variant, picture: assets.images[name]!, width: width, height: height, fit: fit)
     }
@@ -230,12 +229,25 @@ private struct FormRows: ViewModifier {
         Form {
             Section {
                 AdaptiveGrid(minimum: 120, measurements: measurements) {
-                    ForEach(0..<4, id: \.self) { i in
-                        VStack(alignment: .center, spacing: 6) {
-                            picture(i == 3 ? "bern.png" : "landscape.jpg", width: i == 3 ? 64 : 120, height: i == 3 ? nil : 90, fit: i == 1 ? .cover : i == 2 ? .fill : .contain).probe("image.images.\(i)")
-                            caption(captions[i], "images.\(i)")
-                        }.probe("column.images.\(i)")
-                    }
+                    // Match layout_page's four literal Column children. The earlier
+                    // retained probe used ForEach here; only this child composition
+                    // changes, to isolate its effect on the native Form allocation.
+                    VStack(alignment: .center, spacing: 6) {
+                        picture("landscape.jpg", width: 120, height: 90, fit: .contain).probe("image.images.0")
+                        caption("Contain", "images.0")
+                    }.probe("column.images.0")
+                    VStack(alignment: .center, spacing: 6) {
+                        picture("landscape.jpg", width: 120, height: 90, fit: .cover).probe("image.images.1")
+                        caption("Cover", "images.1")
+                    }.probe("column.images.1")
+                    VStack(alignment: .center, spacing: 6) {
+                        picture("landscape.jpg", width: 120, height: 90, fit: .fill).probe("image.images.2")
+                        caption("Fill", "images.2")
+                    }.probe("column.images.2")
+                    VStack(alignment: .center, spacing: 6) {
+                        picture("bern.png", width: 64, fit: .contain).probe("image.images.3")
+                        caption("Width only", "images.3")
+                    }.probe("column.images.3")
                 }.probe("grid.images").probe("row.images")
             } header: { Text("Images").probe("header.images") }
               footer: { Text("Pictures are bundled resources. The same 16:9 picture in a 120×90 frame: Contain leaves bars, Cover crops the sides, Fill stretches it.").probe("footer.images") }
@@ -452,6 +464,7 @@ private struct FormRows: ViewModifier {
         }
         let report: [String: Any] = ["success": success, "error": error as Any? ?? NSNull(),
             "probe_source_sha": ProcessInfo.processInfo.environment["BERN_PROBE_SHA"] ?? "local",
+            "images_grid_child_composition": "four literal VStack children, matching generated layout_page; prior probe used ForEach",
             "os": ProcessInfo.processInfo.operatingSystemVersionString, "architecture": ProcessInfo.processInfo.machineArchitecture,
             "bundle_identifier": Bundle.main.bundleIdentifier ?? "standalone executable",
             "scope": "Standalone public SwiftUI layout plus real WindowServer card-border measurement. Not the Bern application; HDR pixels/EDR and model behavior are excluded.",
