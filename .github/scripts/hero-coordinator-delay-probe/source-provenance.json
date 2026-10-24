@@ -1,0 +1,55 @@
+{
+  "assembly": "imports AppKit/SwiftUI + exact ProductHero.exact.swift + Driver.swift.inc",
+  "driver_sha256": "b9d6b699af43128b0658ecb9e81df8ef346e6f9b3be253c07cca80968bcd8ec6",
+  "files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.swift.inc": {
+      "bytes": 29689,
+      "sha256": "b9d6b699af43128b0658ecb9e81df8ef346e6f9b3be253c07cca80968bcd8ec6"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "README.md": {
+      "bytes": 2602,
+      "sha256": "e6098cfe697e38e481d1c3ed78cb6782f317b2b4aa0fa267502ae6df579a26b0"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "run-one.py": {
+      "bytes": 1646,
+      "sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6"
+    }
+  },
+  "kind": "actual_coordinator_next_sample_fixture",
+  "local_compile_attempted": false,
+  "no_old_snapshot_metadata_float_backing_route_hooks": true,
+  "no_sdk14_unused_clock_or_gainmap_guards_in_newsdk_package": true,
+  "observer_change": "First live midband sample arms scalar only; exactly next original outer-loop RunLoop/sample takes one midflight PNG, fails incomplete if the same flight is lost.",
+  "original_hero_sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c",
+  "previous_fixture_driver_sha256": "d8ed3e8d5716f65b00a6d14fd1007d89eaf30d5aca58446344263d59375a739b",
+  "product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "scope": "One real same-key conditional replacement with next-sample observer only; native collection gates, not synchronized rendered-frame/color/whole-animation acceptance."
+}
