@@ -22,6 +22,7 @@ var environment = ProcessInfo.processInfo.environment
 let expectedOS = Int(environment["BERN_FILM_EXPECTED_OS"] ?? "14") ?? 0
 let requestedScenario = environment["BERN_FILM_SCENARIO"] ?? "all"
 let observation = environment["BERN_FILM_OBSERVATION"] ?? "active"
+let followup = environment["BERN_FILM_FOLLOWUP"] ?? "none"
 let scenarios = requestedScenario == "all" ? ["immediate", "wait", "direct"] : [requestedScenario]
 var commands = [[String: Any]](), cases = [[String: Any]](), activationRequests = [[String: Any]]()
 var inactiveCaptureSamples = [[String: Any]]()
@@ -31,7 +32,7 @@ var report: [String: Any] = [
     "harness_sha": environment["GITHUB_SHA"] ?? "unknown",
     "variant": environment["FILM_VARIANT"] ?? "unknown",
     "expected_os_major": expectedOS, "requested_scenario": requestedScenario,
-    "observation_mode": observation,
+    "observation_mode": observation, "followup_sequence": followup,
     "observation_contract": observation == "inactive13"
         ? "Internal diagnostic only: no activate/focus-restore requests; own window must remain visible with alpha>=0.99, inactive, stable raw buffers and bounds. Not active visual acceptance."
         : "Original active visual capture contract.",
@@ -120,7 +121,7 @@ func image(_ pid: pid_t) throws -> CGImage {
     }
     return img
 }
-func stable(_ pid: pid_t, name: String) throws -> [String: Any] {
+func stable(_ pid: pid_t, name: String, expectedWidth: Double = 920) throws -> [String: Any] {
     var previous: Data?, same = 0, count = 0
     var previousInactiveGeometry: [Double]?
     let start = now()
@@ -154,8 +155,8 @@ func stable(_ pid: pid_t, name: String) throws -> [String: Any] {
         previous = data; previousInactiveGeometry = inactiveGeometry; count += 1
         if same >= 4 {
             let info = try window(pid), bounds = info[kCGWindowBounds as String] as? [String: NSNumber] ?? [:]
-            guard bounds["Width"]?.doubleValue == 920, bounds["Height"]?.doubleValue == 668 else {
-                throw Failure(description: "Outer window is not 920 x 668 points")
+            guard bounds["Width"]?.doubleValue == expectedWidth, bounds["Height"]?.doubleValue == 668 else {
+                throw Failure(description: "Outer window is not \(expectedWidth) x 668 points")
             }
             let url = output.appendingPathComponent(name + ".png")
             guard let dest = CGImageDestinationCreateWithURL(url as CFURL, "public.png" as CFString, 1, nil) else {
@@ -173,12 +174,12 @@ func stable(_ pid: pid_t, name: String) throws -> [String: Any] {
 func attribute(_ element: AXUIElement, _ key: CFString) -> CFTypeRef? {
     var value: CFTypeRef?; return AXUIElementCopyAttributeValue(element, key, &value) == .success ? value : nil
 }
-func axSample(_ root: AXUIElement) -> [String: Any] {
+func axSample(_ root: AXUIElement, timeBudget: Double = 0.12) -> [String: Any] {
     let start = now()
     guard trusted else { return ["start_uptime": start, "missing": "AXIsProcessTrusted=false; no permission request"] }
     var queue = [root], index = 0, rows = [[String: Any]]()
     let names: Set<String> = ["Gingham", "Tartan", "Madras", "Glen", "Houndstooth", "Windowpane"]
-    while index < queue.count && index < 512 && now() - start < 0.12 {
+    while index < queue.count && index < 512 && now() - start < timeBudget {
         let e = queue[index]; index += 1
         AXUIElementSetMessagingTimeout(e, 0.04)
         let role = attribute(e, kAXRoleAttribute as CFString) as? String ?? "unknown"
@@ -217,6 +218,7 @@ do {
     guard [13, 14].contains(expectedOS), ProcessInfo.processInfo.operatingSystemVersion.majorVersion == expectedOS,
           ["all", "immediate", "wait", "direct"].contains(requestedScenario),
           observation == "active" || observation == "inactive13" && expectedOS == 13,
+          followup == "none" || followup == "last-resize" && requestedScenario == "direct",
           CGPreflightScreenCaptureAccess() else {
         throw Failure(description: "Requires the explicitly selected macOS13/14, valid scenario and existing Screen Recording access; no TCC changes")
     }
@@ -309,6 +311,27 @@ do {
             entry["film_after_trace"] = try stable(p.processIdentifier, name: scenario + "-film-after-trace")
         }
         cases[cases.count - 1] = entry; try save()
+        if followup == "last-resize" {
+            // Only the explicit direct sequence continues after the original
+            // first-entry capture/trace. These are real existing bindings.
+            var stages = [[String: Any]]()
+            for (stage, suffix, width) in [("last", ".to_last", 920), ("first", ".to_first", 920),
+                                          ("last-again", ".to_last", 920), ("resize-wide", "", 1020),
+                                          ("resize-restore", "", 920)] {
+                let started = now()
+                if suffix.isEmpty {
+                    _ = try cli(["window", "resize", "--window", win, "--width", String(width), "--height", "668"], id)
+                } else {
+                    _ = try cli(["ui", "activate", "--target", target(id, suffix: suffix)], id)
+                }
+                let shot = try stable(p.processIdentifier, name: scenario + "-" + stage, expectedWidth: Double(width))
+                stages.append(["stage": stage, "action_start_uptime": started, "capture": shot,
+                    "ax": axSample(root, timeBudget: 2), "controls": try cli(["ui", "inspect"], id) ?? NSNull(),
+                    "windows": try cli(["window", "list"], id) ?? NSNull(),
+                    "scope": "Post-initial CLI binding/resize and real stable WindowServer buffer; not physical input or an internal followup trace."])
+                entry["followup_stages"] = stages; cases[cases.count - 1] = entry; try save()
+            }
+        }
     }
     report["success"] = true; try save()
 } catch {
