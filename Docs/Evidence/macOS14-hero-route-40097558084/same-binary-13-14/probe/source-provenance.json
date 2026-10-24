@@ -1,0 +1,121 @@
+{
+  "backing_local_controls": {
+    "backing-off-vs-on13.json": true,
+    "binary_sha256": "b57b0d9303ba39ff60740c52a84cc34ab212694dff99692d69bb636b6c7c57a4",
+    "float-vs-backing-off13.json": true,
+    "scope": "Observed12 raw+ICC normalized ROI controls; no general zero-observer-effect guarantee. Local compiler guards unchanged; newSDK guards remain absent."
+  },
+  "backing_observer_stage": "post_png_post_final_guards_pre_teardown",
+  "base_harness_commit": "34dbeff0c4a9ab07828e8459ea990efba2f9fbf2",
+  "compiled_new_sdk_image_and_hero_base_are_original_harness": true,
+  "files": {
+    "BackingObservation.swift.inc": {
+      "bytes": 5128,
+      "sha256": "0136ae510fe8f91673aaf54358a239d5795c03cb8a4a5db33b54d0fc07f1f90b"
+    },
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.before-static-route.swift.inc": {
+      "bytes": 29683,
+      "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d"
+    },
+    "Driver.swift.inc": {
+      "bytes": 34860,
+      "sha256": "a6b483d48f468f3479d6ac36ba7b95464c037d3c792f7efe134edfc1ba9109ca"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "ProductHero.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "README.md": {
+      "bytes": 2397,
+      "sha256": "1238c83da7d083a7ab457df35ae7a492c8f657b5acdf0481839b6785672d0acb"
+    },
+    "StaticRoute.swift.inc": {
+      "bytes": 3531,
+      "sha256": "1480c3e71ffd0e1618e56330af5c68d97dbdd37657bd34d609f3386b9609400d"
+    },
+    "assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "run-route-one.py": {
+      "bytes": 1718,
+      "sha256": "4f5a0372061615550d489374b447582d826a3266bfc04884e8b3f951cfea6129"
+    },
+    "source-provenance.before-static-route.json": {
+      "bytes": 4934,
+      "sha256": "2fdd2acfb338be075ddb79b170f04727704504830d41dbdd800c345c2cded7be"
+    },
+    "static-route-driver.patch": {
+      "bytes": 6512,
+      "sha256": "2fea632b6b1eb3455b07e0ed9cefb70dffedec96448bc11c5aa9de61b2c4af99"
+    }
+  },
+  "historical_delta_source": "The existing hero-float-probe directory and source-provenance.before-static-route.json retain preceding metadata/float/backing history; unused old wrappers and earlier delta copies are intentionally omitted from this standalone route package.",
+  "kind": "actual_existing_overlay_static_route_fixture",
+  "local_controls_compiler_scope": "SDK14.2 Swift5.9.2 min13, with explicitly archived unreachable gainmap/unused-clock guards. These two guards are absent from this newSDK package.",
+  "local_preceding_binary_sha256": "84efaed4e15e9f24b95d84d0e352131ab3f418ed9e42e158d53c9e0b4f885313",
+  "local_preceding_controls": {
+    "float-off-vs-on13.json": {
+      "all12_raw_and_srgb_exact": true,
+      "sha256": "a69335d29a2b16dfd85ef44b951249be36b7fbeeadd73663ee4cece497562ae1"
+    },
+    "v2-vs-float-off13.json": {
+      "all12_raw_and_srgb_exact": true,
+      "sha256": "e8f9ff00c3e4f5c7c49c9857b6769650b7ccc5d190ba6701e2ae683ad9f52908"
+    }
+  },
+  "prior_metadata_harness_commit": "1a77dd3165ea420e64d422ae62a49dadf9aa31f5",
+  "product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+  "provider_copy_limit": 2,
+  "raw_byte_limit": 4194304,
+  "required_backing_and_float_selected": "off",
+  "route_local_controls": {
+    "backing-vs-route-root13.json": true,
+    "binary_sha256": "8fb1b7f57b60de0948866bb950be07696b15196d9f89e2fda994fac1a22d3fac",
+    "local_scope": "SDK14.2 min13 with archived unused-clock/gainmap compiler guards; those guards absent from newSDK ProductImage/Hero base here. Static endpoints only.",
+    "route-root-vs-overlay13.json": true
+  },
+  "row_direction": "unverified",
+  "runtime_backing_mode_default": "off",
+  "runtime_float_mode_default": "off",
+  "runtime_static_route_default": "root",
+  "scope": "Same manual static endpoints under root or existing actual overlay; no actual coordinated flight/lifecycle/fullapp/HDR-physics acceptance. Samebinary13/14 offline pixel controls pending.",
+  "source_adaptations": [
+    "existing_v2_metadata_hook_and_driver",
+    "separate_opt_in_original_CGImage_retention_and_post_teardown_provider_capture",
+    "optional_post_png_scalar_view_layer_and_existing_actual_overlay_ancestor_observation_default_off",
+    "same_manual_Flight_parent_root_or_existing_actual_manager_overlay_public_coordinate_roundtrip_and_explicit_subtree_checks"
+  ]
+}

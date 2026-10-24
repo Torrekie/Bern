@@ -1,0 +1,23 @@
+# Existing flight layer: one RGBA8 hint request
+
+Conditional plan only. Proceed only if the pending13/14 static root↔actual-overlay controls meet the same ROI/pixel/gate contract. Fix one already validated parent route in both control/candidate; do not vary parenting and format together. Prefer the actual-overlay route if its controls pass, because it matches the real manager's flight parent. No implementation, compilation, UI, CI or repository change is made here.
+
+## Public/source boundary
+
+SDK14.2 `QuartzCore/CALayer.h:375–380,928–929` exposes contentsFormat and RGBA8Uint on macOS10.12. It is a desired format for draw-layer storage, not a guarantee of the actual backing format or a change to layer.contents interpretation. AppKit may choose/change a view-managed layer's value. NSView.h244–262 distinguishes drawRect-backed content, updateLayer and ancestor flattening. The actual Flight init/draw (`BernAppKit.swift:1926–1937`) neither configures a layer nor substitutes another draw path. Do not add wantsLayer, makeBackingLayer, delegate, contents, or a different drawing context.
+
+Known post-PNG observations are hints:13 flight/root AutomaticAppKit versus14 RGBA8; existing overlay/theme frame RGBA8 on both. They do not establish the initial value when a newly mounted flight becomes available, nor actual pixel storage. The candidate requests RGBA8 to match the reported14 hint; it does not implement a color transform or predict a pass.
+
+## One controlled intervention
+
+Use a separate process-cached control/request switch; unset/control returns before any new layer/view-state getter. Require the existing backing observer and raw capture modes off. Keep the chosen static route, images, draw, geometry, normal/front/cache, five-buffer gates and deadlines unchanged.
+
+Request branch only: immediately after each original manual flight has been mounted by the chosen route helper, before continuing to the next original display/runloop iteration, obtain **that flight's current optional layer**. Nil fails with retained evidence and normal teardown; do not wait/retry, create a layer, or enable backing. Require the expected flight parent/window. Record source key, stage, layer class/object identity, contentsFormat before, and existing view/layer needsDisplay getter values. If it is already RGBA8, mark this premise non-discriminating and stop rather than claiming the intervention changed anything. Otherwise set only that existing layer.contentsFormat to RGBA8Uint once, immediately read the value and fail if not retained. Preserve a weak reference plus scalar identity for later comparison, rather than extending layer/image lifetime.
+
+After each original PNG has been written, request branch alone rechecks the same existing layer identity and reported format, then once more after the original final guards. Nil, replacement, or a non-RGBA8 value fails the candidate; do not reapply. Record these states alongside the PNG/phase references. Control performs none of these added getters, including after PNGs. No contents/provider/presentation access, layer rendering, cache readback, root/ancestor setter or new image retention is added. Scalar output records a request and persistence observation, not “actual8bit storage”.
+
+## Drawing timing and interpretation
+
+An extra read-only call/run is not required to activate a setter, and getters cannot make a new format take effect on already-cached pixels. The public header does not promise that assigning contentsFormat invalidates old drawing. Use the existing drawing schedule: the request is as early as possible after a real attached layer exists; the next original iteration performs its unchanged display/runloop work, and the original p0→p1 step already sets each flight.needsDisplay=true. Do **not** insert an additional display/layout/flush or needsDisplay setter. AppKit can create/update backing during attachment, so the hook position alone must not be described as proof of zero earlier drawing. Interpret p0 and p1 separately; even a persistent readback does not prove which storage AppKit used during draw.
+
+A changed endpoint PNG can associate output with this single request under the recorded conditions, without locating the conversion/clipping stage. A negative result excludes only that persistent request on that flight in the chosen static route. On the root route, root itself and possibly ancestors remain AutomaticAppKit; changing a child alone does not exclude inherited/composited backing behavior. On the overlay route, root is a sibling rather than a flight ancestor, but the common unchanged scene still contains it. Neither route permits “all layer causes ruled out”, actual-flight lifecycle acceptance or physical-HDR claims.

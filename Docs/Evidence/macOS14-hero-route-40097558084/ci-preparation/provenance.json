@@ -1,0 +1,47 @@
+{
+  "base_inputs": [
+    {
+      "bytes": 16816,
+      "commit": "8b96b8c7f93dc324bd8281fa2f8356f962ee387d",
+      "private_original_file": "backing-workflow.original.yml",
+      "repository_path": ".github/workflows/macos14-hero-backing-probe.yml",
+      "sha256": "7f60104214eede029879cd1c1cfe302ee5fa6d24323453a4d10590d66c0c4a91"
+    },
+    {
+      "bytes": 1652,
+      "commit": "8b96b8c7f93dc324bd8281fa2f8356f962ee387d",
+      "private_original_file": "run-backing-one.original.py",
+      "repository_path": ".github/scripts/hero-float-probe/run-backing-one.py",
+      "sha256": "9a3e263ba66131a1b2dda97489e545811f5d7b58c28e4198408d030a78693683"
+    }
+  ],
+  "binary_name": "HeroFloatProbe",
+  "compiled_source_concatenation": "ProductHero.base.swift + FloatCapture.swift.inc + Driver.swift.inc (helpers inline in Driver)",
+  "fixture_bounds_limitation": "No separate flight.bounds field is serialized. Swift check enforces actual 320x180 bounds; workflow checks all three reported rect sizes/parent/window/roundtrip/ROI/no-MTK without inventing a bounds field or fixed overlay offset.",
+  "offline_binary_limitation": "Local binary was already removed. Existing receipts match the saved build-fingerprint SHA only; no current local binary rehash. Formal CI workflow retains its actual packaged-file hash check.",
+  "package_source_directory": ".github/scripts/hero-route-probe",
+  "pixel_scope": "Acquisition schema only; no image equality requirement or visual/flight-lifecycle acceptance.",
+  "route_schema_inputs": [
+    {
+      "bytes": 3531,
+      "path": "work/native-pq-hero-static-route13/StaticRoute.swift.inc",
+      "sha256": "1480c3e71ffd0e1618e56330af5c68d97dbdd37657bd34d609f3386b9609400d"
+    },
+    {
+      "bytes": 34860,
+      "path": "work/native-pq-hero-static-route13/Driver.swift.inc",
+      "sha256": "a6b483d48f468f3479d6ac36ba7b95464c037d3c792f7efe134edfc1ba9109ca"
+    }
+  ],
+  "scope": "Private source preparation only. No repository writes, publication, CI, UI, compilation or spawning.",
+  "source_contract": {
+    "kind": "actual_existing_overlay_static_route_fixture",
+    "required_backing_and_float_selected": "off",
+    "runtime_backing_mode_default": "off",
+    "runtime_float_mode_default": "off",
+    "runtime_static_route_default": "root"
+  },
+  "workflow_sha256": "7e9ace3e8dc718acc64b717603936726f3cb1f66d435da1f5a4ddddf941ae586",
+  "wrapper_sha256": "4f5a0372061615550d489374b447582d826a3266bfc04884e8b3f951cfea6129",
+  "wrapper_static_relation": "Exact existing local route wrapper text except corrected docstring; behavior code byte-identical."
+}

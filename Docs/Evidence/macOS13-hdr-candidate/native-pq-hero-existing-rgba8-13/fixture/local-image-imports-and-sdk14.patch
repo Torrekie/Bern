@@ -1,0 +1,27 @@
+--- committed-v2/ProductImage.swift
++++ local-SDK14/ProductImage.swift
+@@ -1,4 +1,4 @@
+-// Exact b08 product image/cache slice with imports; no SDK14 diagnostic adaptation.
++// Exact product image/cache slice, with one documented diagnostic compiler condition.
+ import AppKit
+ import SwiftUI
+ import Combine
+@@ -342,6 +342,7 @@
+     /// The first picture of `source`, in HDR where the system can show it,
+     /// with its EXIF orientation.
+     nonisolated static func decode(_ source: CGImageSource) -> Picture? {
++        #if compiler(>=6.0)
+         var decoded: CGImage?
+         // The iOS simulator decodes gain maps to HDR as black, and cannot
+         // show HDR anyway; it shows the SDR picture.
+@@ -350,6 +351,10 @@
+             decoded = CGImageSourceCreateImageAtIndex(
+                 source, 0, [kCGImageSourceDecodeRequest: kCGImageSourceDecodeToHDR] as CFDictionary)
+         }
++        #endif
++        #else
++        // Diagnostic SDK14.2 build: the15+ branch above cannot run on13.
++        let decoded: CGImage? = nil
+         #endif
+         guard let image = decoded ?? CGImageSourceCreateImageAtIndex(source, 0, nil) else { return nil }
+         // ImageIO leaves the EXIF orientation to the caller.

@@ -191,3 +191,14 @@ source审查还确认：当前固定端点夹具将真实FlightView挂在Fixture
 下一检查点：复用已冻结`native-pq-hero-static-route13`源码差分，准备单一root/overlay手动14采集（新SDK一次构建、同原签名binary运行13），先通过默认路径和route控制，再决定是否对已有layer测试单一格式请求。实际enter/leave/计时退出/隐藏恢复仍是独立门槛，不以静态同图端点代替。其它Film/chrome/图片布局/Frame/交互/动画与HDR未通过项保持；goal继续active，不进入11/Swift5.3/Objective-C/iOS。
 
 本轮归档后清理自有binary/tar/module cache58,872,876B及逐字核验的work副本9,955,282B，合计约68.8MB逻辑文件，见[清理收据](../Evidence/macOS13-hdr-candidate/hero-backing-route-cleanup-20261024.json)。保留源码/原PNG/ICC/元数据/控制与最终现存清单，不将此数字称为APFS实际回收或磁盘总可用量变化。
+
+
+## 真实overlay的双宿主控制与早期格式请求停止（2026-10-24）
+
+[CI40097558084与同binary13/14记录](../Evidence/macOS14-hero-route-40097558084/README.md)已完成：新SDK26.2/min13一次构建，原签名binary`cb4bd5d0…022f8d1`分别跑root/overlay。四组旧→root、root→overlay控制各12ROI raw/ICC归一exact；坐标往返0pt，normal/cache/前台/原窗口界限、noMTK/managerFlight0/timernil/五stable均通过。独立route源码目录保留原float/backing工作流功能；只改变两个manual静态flight的parent，未改变产品draw/renderer或加入新层。13窗口1.853/1.818秒、14为2.167/1.929秒。两系统均有prepareOverlay unknown-subview日志，不能当13独有原因。容器切换没有改善既有主差，也未验收真实coordinator。
+
+随后[本机RGBA8限定候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-existing-rgba8-13/README.md)的control复现新SDK13 overlay12ROI。request在第一flight mount后/下一原display前的existing layer getter返回nil，0.209秒exit1、setter0、PNG0；因此仅该早期前提不成立，不是RGBA8视觉阴性，更不是完整cache/final guards通过。未等待重试、开启wantsLayer或强制绘制，产品未合此候选。
+
+下一检查点转为[一次真实coordinator条件替换](../Evidence/macOS14-hero-route-40097558084/next-coordinator-plan/README.md)及[至多三PNG的补充](../Evidence/macOS14-hero-route-40097558084/next-coordinator-plan/Supplement.md)：真实BernImage同非空key、source/destination不同.id/位置，用正常SwiftUI dismantle/update触发，不手调enter/leave/flight/tick/visibility；只读实际maps/timer/frame/progress，须见运动、自动finish归零/timer停止/overlay临时view移除、目的图可见。before/settled各5stable，中途首次.2<p<.8取一张原窗口并记录capture前后状态，需目检实际绘制，不能用不同步13/14逐像素相等代替动画验收。仅新SDK原Hero exact+imports同binary13/14，不带旧SDK fatal clock guard或旧float双key/双snapshot合同；单次失败保留证据，不隐式重试。此方案尚未实现或运行。
+
+其它Film/chrome/图片布局/Frame/交互/HDR和动画未通过项继续保留，完整macOS13阶段未验收，goal active；不进入11/Swift5.3/Objective-C/iOS。本轮清理自有binary/tar/cache 58,335,236B与逐字核验的work副本5,392,458B（约63.7MB逻辑文件），见[收据](../Evidence/macOS13-hdr-candidate/hero-route-format-cleanup-20261024.json)；不当作APFS实际回收或磁盘净变化。

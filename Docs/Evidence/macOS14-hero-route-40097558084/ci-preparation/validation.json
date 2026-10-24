@@ -1,0 +1,72 @@
+{
+  "adapted_gate_sha256": "7751b0cb5c0e6a901e18a3ef460066f75f4bf5e3d083882be5ae65fa96a20bff",
+  "input_files": {
+    "work/native-pq-hero-static-route13/Driver.swift.inc": {
+      "bytes": 34860,
+      "sha256": "a6b483d48f468f3479d6ac36ba7b95464c037d3c792f7efe134edfc1ba9109ca"
+    },
+    "work/native-pq-hero-static-route13/StaticRoute.swift.inc": {
+      "bytes": 3531,
+      "sha256": "1480c3e71ffd0e1618e56330af5c68d97dbdd37657bd34d609f3386b9609400d"
+    },
+    "work/native-pq-hero-static-route13/build-fingerprint.json": {
+      "bytes": 6073,
+      "sha256": "cdf890b3a8d297877b705e942461eed3bc066284c6ac22b0c1ceddb4f257ada7"
+    },
+    "work/native-pq-hero-static-route13/runtime13-overlay/report.json": {
+      "bytes": 76230,
+      "sha256": "ae916356fa8efeb61094ca3d646ff3fe3aaa57ef78651ac72f2cf109b189ff08"
+    },
+    "work/native-pq-hero-static-route13/runtime13-overlay/run-receipt.json": {
+      "bytes": 1070,
+      "sha256": "7177db1f68df48d1deef1ff74dca8a91042e2d93cd984d9e8e6b651f57bdd154"
+    },
+    "work/native-pq-hero-static-route13/runtime13-root/report.json": {
+      "bytes": 76223,
+      "sha256": "7e486f64748a13848c20fdaca10660aa1fd77ecce17538f0286e009abd8a0647"
+    },
+    "work/native-pq-hero-static-route13/runtime13-root/run-receipt.json": {
+      "bytes": 1060,
+      "sha256": "f014e8c4875f9217bb716432fe1ef7168d34594cba3c10eb6bc63a5c85c12d0b"
+    }
+  },
+  "literal_transforms_only": {
+    "Path('evidence/runtime14')/mode": "Path('work/native-pq-hero-static-route13')/('runtime13-'+mode)",
+    "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==13 and d['actual_os_major']==13",
+    "hashlib.sha256(Path('probe/HeroFloatProbe').read_bytes()).hexdigest()": "'8fb1b7f57b60de0948866bb950be07696b15196d9f89e2fda994fac1a22d3fac'",
+    "receipt['expected_os_major']==14": "receipt['expected_os_major']==13"
+  },
+  "local_binary_check": "Local binary was already removed. Existing receipts match the saved build-fingerprint SHA only; no current local binary rehash. Formal CI workflow retains its actual packaged-file hash check.",
+  "offline_existing_local13_schema": [
+    {
+      "mode": "root",
+      "schema": "PASS"
+    },
+    {
+      "mode": "overlay",
+      "schema": "PASS"
+    }
+  ],
+  "scope": "YAML/Python AST/bash syntax and offline existing-report schema only. No app/wrapper/compiler/CI execution or pixel comparison.",
+  "success": true,
+  "syntax_checks": [
+    {
+      "bash_n": "PASS",
+      "job": "build",
+      "python_heredocs_ast": 2,
+      "shell_body_executed": false,
+      "step": 1
+    },
+    {
+      "bash_n": "PASS",
+      "job": "measure",
+      "python_heredocs_ast": 2,
+      "shell_body_executed": false,
+      "step": 1
+    }
+  ],
+  "workflow_sha256": "7e9ace3e8dc718acc64b717603936726f3cb1f66d435da1f5a4ddddf941ae586",
+  "wrapper_ast": "PASS",
+  "wrapper_sha256": "4f5a0372061615550d489374b447582d826a3266bfc04884e8b3f951cfea6129",
+  "yaml": "PASS"
+}

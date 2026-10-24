@@ -1,0 +1,22 @@
+2026-10-24 13:19:26.862 HeroFloatProbe[1560:8116] NSWindow warning: adding an unknown subview: <_TtC14HeroFloatProbeP33_BB33BF17A694EE6770E50B1E1D5675C415BernHeroOverlay: 0x120807df0>. Break on NSLog to debug.
+2026-10-24 13:19:26.863 HeroFloatProbe[1560:8116] Call stack:
+(
+	0   AppKit                              0x00000001868ae61c -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x00000001868ae190 -[NSView addSubview:positioned:relativeTo:] + 372
+	2   AppKit                              0x00000001868adf98 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroFloatProbe                      0x0000000104e86320 $s14HeroFloatProbe21BernWindowImageHeroesC14prepareOverlay33_BB33BF17A694EE6770E50B1E1D5675C4LLSbyF + 300
+	4   HeroFloatProbe                      0x0000000104e84400 $s14HeroFloatProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 452
+	5   HeroFloatProbe                      0x0000000104e8d634 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x0000000182d9c750 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x0000000182d9e3e8 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x0000000182dacbb8 _dispatch_main_queue_drain + 988
+	9   libdispatch.dylib                   0x0000000182dac7cc _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x000000018306f834 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x000000018302cfb8 __CFRunLoopRun + 1996
+	12  CoreFoundation                      0x000000018302c194 CFRunLoopRunSpecific + 608
+	13  Foundation                          0x00000001841626b8 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212
+	14  Foundation                          0x00000001841d7bd0 -[NSRunLoop(NSRunLoop) runUntilDate:] + 100
+	15  HeroFloatProbe                      0x0000000104e9c404 $s14HeroFloatProbe0A12BaselineMain33_BB33BF17A694EE6770E50B1E1D5675C4LLO3runs5Int32VyFZTf4d_n + 11604
+	16  HeroFloatProbe                      0x0000000104e8d9e4 main + 12
+	17  dyld                                0x0000000182bc3154 start + 2476
+)

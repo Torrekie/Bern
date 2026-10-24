@@ -1,0 +1,130 @@
+{
+  "backing_and_float_required": "off",
+  "base_fixture": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/fixture",
+  "fixed_static_route": "overlay",
+  "format_mode_default": "control",
+  "generated_files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.before-format.swift.inc": {
+      "bytes": 34860,
+      "sha256": "a6b483d48f468f3479d6ac36ba7b95464c037d3c792f7efe134edfc1ba9109ca"
+    },
+    "Driver.swift.inc": {
+      "bytes": 41174,
+      "sha256": "7f8cbb85d11e752f46845fb201f1bb9d44fd1bb71895eb8c265820c69007f1c3"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "FormatRequest.swift.inc": {
+      "bytes": 5142,
+      "sha256": "2269db9651475ba548e6c4019411657f31111897495ee2d99f23133868f909de"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15534,
+      "sha256": "5be2a6cc4e5683ce44d75e43a5c32768eabce0cfb38a12ea1ab4fa8f527a4e6d"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductHero.swift": {
+      "bytes": 64812,
+      "sha256": "e8b67f0a8470f68168d8c888db8b951a5a682f6adb644b037c734ced7a37a28d"
+    },
+    "ProductHero.v2.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductImage.v2.base.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "build.sh": {
+      "bytes": 856,
+      "sha256": "20fd8c8b5713408b2534a3e652ceca04c0838a547c827c224fb0230ecad6c198"
+    },
+    "fingerprint.py": {
+      "bytes": 1546,
+      "sha256": "15c330c6a42df5b553dbf186ea064b8972af5bd83f575d96f07d291333accabe"
+    },
+    "format-request-driver.patch": {
+      "bytes": 5177,
+      "sha256": "d7d1c76d0bad5b082f0acc6d84ea3fb202e67b5aba208d213ac9196048ace4c3"
+    },
+    "format-source-provenance.json": {
+      "bytes": 1856,
+      "sha256": "d91be28783a97a6bf53bef0e040f2b05d2def1b8d9dd3d0204dc4e3eb3819318"
+    },
+    "local-image-imports-and-sdk14.patch": {
+      "bytes": 1225,
+      "sha256": "accf273f917d98447768b76a28d738b530c4efca9f430120dc051d23b3db75c5"
+    },
+    "local-sdk14-clock.patch": {
+      "bytes": 904,
+      "sha256": "71cf918174cd726e61f9359cc0696750be68a77e4040841336d246372706991a"
+    },
+    "run-format-one.py": {
+      "bytes": 1782,
+      "sha256": "1cea0126f363bbde09478957fb0dff41073bf7d3c96250aa412bb31d240e29cf"
+    },
+    "sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    },
+    "verify_sources.py": {
+      "bytes": 581,
+      "sha256": "d7c26a232b07c738951acdd886b7af0c2a031be00e8a1b15fc079695644e5010"
+    }
+  },
+  "kind": "existing_flight_single_rgba8_request_local13",
+  "precondition_remote_route": "CI40097558084 samebinary13/14 root and overlay controls all12 raw+ICC normalized exact on each host; does not accept full flight.",
+  "source_change": {
+    "added_lines_including_helper": 108,
+    "base_driver": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-static-route13/Driver.swift.inc",
+    "base_driver_sha256": "a6b483d48f468f3479d6ac36ba7b95464c037d3c792f7efe134edfc1ba9109ca",
+    "compose": "Prepend FormatRequest.swift.inc to patched Driver.swift.inc in existing combined actual Hero/Float file; retain base source/SDK adaptations.",
+    "composed_helper_and_driver_sha256": "7f8cbb85d11e752f46845fb201f1bb9d44fd1bb71895eb8c265820c69007f1c3",
+    "derived_driver_without_helper_sha256": "546d51bb11248f5472dafb3984be1cd84289945f4ecc66bee8f16dba59020ea7",
+    "fixed_route": "Both modes default static route to overlay in this private derived driver; explicit root rejected before window creation. Backing and float modes must be off.",
+    "helper_sha256": "2269db9651475ba548e6c4019411657f31111897495ee2d99f23133868f909de",
+    "not_claimed": [
+      "Actual backing format or cause",
+      "Zero observer effect",
+      "Actual coordinated-flight acceptance"
+    ],
+    "patch_sha256": "d7d1c76d0bad5b082f0acc6d84ea3fb202e67b5aba208d213ac9196048ace4c3",
+    "scope": "One existing layer hint setter per flight, request-only getters/weak identity; after each original PNG and final guards persistence checks; scalar freeze before old cleanup.",
+    "source_validation": "Exact baseline lock, reversible substitutions and patch forward-application succeeded; temporary removed. No Swift typecheck/runtime/CI.",
+    "static_checks": "Source patch forward application/reverse substitution, base unchanged, one contentsFormat setter site, control early guards before getters, weak-only tracking and no forbidden read/display/setter sites checked; no Swift typecheck.",
+    "switch": "Process-cached BERN_HERO_FORMAT_REQUEST=control(default)|rgba8; invalid prewindow failure."
+  }
+}

@@ -1,0 +1,1083 @@
+{
+  "binary_sha256": "cb4bd5d007048cfc0bcbda4ecc66df4ffd79053df27edbb7590563ba5022f8d1",
+  "ci_run": 40097558084,
+  "existing_pixel_controls": {
+    "backing-vs-route-root13.json": {
+      "all12_raw_and_srgb_exact": true,
+      "baseline_outside_current_cohort": true,
+      "baseline_report_sha256": "7912c49cedb748a5b86e6d65e289433b6ee6973c685cebd56634e4bd9b48c83b",
+      "candidate_report_sha256": "ea8350b536c9a041c44b6661fe296bb8b100f19c9f3536a9d762b4751ac9ccca",
+      "embedded_icc_identical": true,
+      "existing_control_receipt_gate": "PASS",
+      "pixels_recomputed_by_this_analysis": false,
+      "row_count": 12
+    },
+    "backing-vs-route-root14.json": {
+      "all12_raw_and_srgb_exact": true,
+      "baseline_outside_current_cohort": true,
+      "baseline_report_sha256": "5ca5561e41247101d9bd0943372fad33d7076b88ef4d26c66c2c04af98709690",
+      "candidate_report_sha256": "95caf3c976f89933203a31442e02c0a7a30b5bd8337a57c142a6edf332e17b0f",
+      "embedded_icc_identical": true,
+      "existing_control_receipt_gate": "PASS",
+      "pixels_recomputed_by_this_analysis": false,
+      "row_count": 12
+    },
+    "root-vs-overlay13.json": {
+      "all12_raw_and_srgb_exact": true,
+      "baseline_outside_current_cohort": false,
+      "baseline_report_sha256": "ea8350b536c9a041c44b6661fe296bb8b100f19c9f3536a9d762b4751ac9ccca",
+      "candidate_report_sha256": "4c4a03368766e0c3ab03d6391e93d8a2e2e285d8c24745a35d05cfb81a41ae53",
+      "embedded_icc_identical": true,
+      "existing_control_receipt_gate": "PASS",
+      "pixels_recomputed_by_this_analysis": false,
+      "row_count": 12
+    },
+    "root-vs-overlay14.json": {
+      "all12_raw_and_srgb_exact": true,
+      "baseline_outside_current_cohort": false,
+      "baseline_report_sha256": "95caf3c976f89933203a31442e02c0a7a30b5bd8337a57c142a6edf332e17b0f",
+      "candidate_report_sha256": "1cdf3ecac0a7c479493fa611a62960fd541f91e38acd8e0b919b5d643d04df10",
+      "embedded_icc_identical": true,
+      "existing_control_receipt_gate": "PASS",
+      "pixels_recomputed_by_this_analysis": false,
+      "row_count": 12
+    }
+  },
+  "harness_commit": "313c9cdfc1df5c36e1e2dffa45c4491c775c8e39",
+  "input_files": {
+    "work/hero-route-ci-preparation/macos14-hero-route-probe.yml": {
+      "bytes": 16439,
+      "sha256": "7e9ace3e8dc718acc64b717603936726f3cb1f66d435da1f5a4ddddf941ae586"
+    },
+    "work/native-pq-hero-route-ci-40097558084/backing-vs-route-root13.json": {
+      "bytes": 2877,
+      "sha256": "4d562da2ab8ca3560d22dfe462eecb803e544e8981dd12d7acb24ba6ba338654"
+    },
+    "work/native-pq-hero-route-ci-40097558084/backing-vs-route-root14.json": {
+      "bytes": 2877,
+      "sha256": "b6a1a331cc224173d72dac98b62d5facf4af1a94cf002cb34cab60a5ae1713fb"
+    },
+    "work/native-pq-hero-route-ci-40097558084/build/hero-route-probe.tar.gz": {
+      "bytes": 259196,
+      "sha256": "358e37530dc35a9d1532081cbcbf1376fe84158cdf033ba623661b03be67095d"
+    },
+    "work/native-pq-hero-route-ci-40097558084/build/hero-route-probe.tar.gz.sha256": {
+      "bytes": 90,
+      "sha256": "dc2c90adb908434fc1966e0354f3e2721d6773e9da8b88f7dca16fc0ba5e4bf4"
+    },
+    "work/native-pq-hero-route-ci-40097558084/package-verification-local.json": {
+      "bytes": 1973,
+      "sha256": "fe8daf3fda40f403015f0613177b4af53b0d14d12e7cddb9befedddebc4cc1d0"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/BackingObservation.swift.inc": {
+      "bytes": 5128,
+      "sha256": "0136ae510fe8f91673aaf54358a239d5795c03cb8a4a5db33b54d0fc07f1f90b"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/Driver.before-static-route.swift.inc": {
+      "bytes": 29683,
+      "sha256": "c9da49e65236d52a3bb5e9ca608d362a7c9127efc7c47439dafd3f5e88da797d"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/Driver.swift.inc": {
+      "bytes": 34860,
+      "sha256": "a6b483d48f468f3479d6ac36ba7b95464c037d3c792f7efe134edfc1ba9109ca"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/HeroFloatProbe": {
+      "bytes": 580560,
+      "sha256": "cb4bd5d007048cfc0bcbda4ecc66df4ffd79053df27edbb7590563ba5022f8d1"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/ProductHero.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/ProductHero.swift": {
+      "bytes": 58000,
+      "sha256": "4d2059129b7c913db1032ce5d219b7f26a30d6609604c6a3558eb7e9629b9e4e"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/ProductImage.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/README.md": {
+      "bytes": 2397,
+      "sha256": "1238c83da7d083a7ab457df35ae7a492c8f657b5acdf0481839b6785672d0acb"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/SHA256SUMS": {
+      "bytes": 2298,
+      "sha256": "6849ee83ceea201b843efa3c322bd804882bf165d8311d6a350235c2afe1c1ea"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/StaticRoute.swift.inc": {
+      "bytes": 3531,
+      "sha256": "1480c3e71ffd0e1618e56330af5c68d97dbdd37657bd34d609f3386b9609400d"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/build/binary.txt": {
+      "bytes": 4040,
+      "sha256": "d0674fc81b045ae83f3794dc57fe34b72870aedaf71dc271c0a0f01682af0a7c"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/build/command.txt": {
+      "bytes": 415,
+      "sha256": "986548d72f72ffb1fa48e966ce15d08033211641a545c7f0bd48e42b92dc4274"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/build/compile.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/build/environment.txt": {
+      "bytes": 453,
+      "sha256": "17f5a030b8c444ba4669d82c4f0732b23d3158d5ce8ea3470070b0d3937f9b37"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/build/signature.txt": {
+      "bytes": 1018,
+      "sha256": "d22fa88d48f109f2ac40b323e964b8d8089d6d775a4d781f8e68a94f608e5a85"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/run-route-one.py": {
+      "bytes": 1718,
+      "sha256": "4f5a0372061615550d489374b447582d826a3266bfc04884e8b3f951cfea6129"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/source-provenance.before-static-route.json": {
+      "bytes": 4934,
+      "sha256": "2fdd2acfb338be075ddb79b170f04727704504830d41dbdd800c345c2cded7be"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/source-provenance.json": {
+      "bytes": 5554,
+      "sha256": "f7412972c9c15355e08a2460970a41803c969c3c068235513ba5ba1f11e55e9d"
+    },
+    "work/native-pq-hero-route-ci-40097558084/probe/static-route-driver.patch": {
+      "bytes": 6512,
+      "sha256": "2fea632b6b1eb3455b07e0ed9cefb70dffedec96448bc11c5aa9de61b2c4af99"
+    },
+    "work/native-pq-hero-route-ci-40097558084/root-vs-overlay13.json": {
+      "bytes": 2877,
+      "sha256": "3e7fca2b537eedda068366ef18b24ceba21049c999eea5cec6a41baec51175d0"
+    },
+    "work/native-pq-hero-route-ci-40097558084/root-vs-overlay14.json": {
+      "bytes": 2877,
+      "sha256": "f21fa4e0f9adc90ae9834f8e16c59f4a7888b780ccb3f3f7897800d3cac3371c"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime13/overlay/progress-0.png": {
+      "bytes": 548491,
+      "sha256": "fecb3717324468ba57f3e7f4640b1a1aabae6cdf99a149b7e6d2f9b37b3f15fa"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime13/overlay/progress-1.png": {
+      "bytes": 548491,
+      "sha256": "fecb3717324468ba57f3e7f4640b1a1aabae6cdf99a149b7e6d2f9b37b3f15fa"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime13/overlay/report.json": {
+      "bytes": 76227,
+      "sha256": "4c4a03368766e0c3ab03d6391e93d8a2e2e285d8c24745a35d05cfb81a41ae53"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime13/overlay/run-receipt.json": {
+      "bytes": 1104,
+      "sha256": "a844ba7f62112e40b73938c365f4bf31e7b674fa5b6d7b29dcfc11fd5314cf5e"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime13/root/progress-0.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime13/root/progress-1.png": {
+      "bytes": 638869,
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime13/root/report.json": {
+      "bytes": 76221,
+      "sha256": "ea8350b536c9a041c44b6661fe296bb8b100f19c9f3536a9d762b4751ac9ccca"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime13/root/run-receipt.json": {
+      "bytes": 1095,
+      "sha256": "473a4bc9ebb4c87957a035d5f6ecbacacce40d9f673cd706aac19d3dd5109e96"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/binary-sha256.txt": {
+      "bytes": 87,
+      "sha256": "0c571130a6a6d6059677af5b4f00cb2c2e7372798b06f784195feaab84893166"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/hero-route-probe.tar.gz.sha256": {
+      "bytes": 90,
+      "sha256": "dc2c90adb908434fc1966e0354f3e2721d6773e9da8b88f7dca16fc0ba5e4bf4"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/overlay/progress-0.png": {
+      "bytes": 190864,
+      "sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/overlay/progress-1.png": {
+      "bytes": 148600,
+      "sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/overlay/report.json": {
+      "bytes": 75513,
+      "sha256": "1cdf3ecac0a7c479493fa611a62960fd541f91e38acd8e0b919b5d643d04df10"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/overlay/run-receipt.json": {
+      "bytes": 741,
+      "sha256": "38f007479c3ea512fa16411d0eb74659993ab288416c8a783d6b0a44a4998f07"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/root/progress-0.png": {
+      "bytes": 190864,
+      "sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/root/progress-1.png": {
+      "bytes": 148600,
+      "sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/root/report.json": {
+      "bytes": 75498,
+      "sha256": "95caf3c976f89933203a31442e02c0a7a30b5bd8337a57c142a6edf332e17b0f"
+    },
+    "work/native-pq-hero-route-ci-40097558084/runtime14/root/run-receipt.json": {
+      "bytes": 725,
+      "sha256": "93755edde7d14cc82e258b73d78b52fb12acd160b75c1af269ebc6beb59d8f32"
+    }
+  },
+  "interpretation": {
+    "flight_scope": "Manually mounted static BernHeroFlightView endpoints; not an actual coordinated flight or lifecycle acceptance.",
+    "hint_scope": "Backing observer was selected off with null root/overlay and no records; this optional fixture observer did not collect view/layer hints. Framework internals were not inspected.",
+    "limits": "No actual storage/cause/persistent pre-PNG hint inference, general zero-observer-effect claim, full-app parity, image resampling, fitting or new color matrix.",
+    "observed_geometry": "All mount/post-PNG records have 320x180 desired, selected-parent and back-converted rects, valid window/parent/role ROI, zero subtree MTKView and reported zero roundtrip error. Root y244 and overlay y272 both convert back to root y244 in these captures; no fixed offset was used by the gate.",
+    "primary_difference": "Existing same-host control records show no static endpoint ROI pixel change from route-root to actual-existing-overlay on either host; this diagnostic did not improve the previously observed primary difference. No new crosshost residual calculation was performed."
+  },
+  "package_validation": {
+    "archive_sha256": "358e37530dc35a9d1532081cbcbf1376fe84158cdf033ba623661b03be67095d",
+    "archs": "arm64",
+    "current_archive_sha_verified": true,
+    "current_binary_sha_verified": true,
+    "current_package_manifest_sha_verified": true,
+    "manifest_members_verified": 26,
+    "minos": "13.0",
+    "sdk": "26.2",
+    "signature_scope": "Hashed root verification receipt only; no fresh codesign/Mach-O command.",
+    "source_map_members_verified": 18
+  },
+  "processes": {
+    "13-overlay": {
+      "activation_calls": 0,
+      "all_recorded_roundtrip_errors_zero": true,
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "cb4bd5d007048cfc0bcbda4ecc66df4ffd79053df27edbb7590563ba5022f8d1",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 63695,
+          "phase": "progress-0",
+          "png_sha256": "fecb3717324468ba57f3e7f4640b1a1aabae6cdf99a149b7e6d2f9b37b3f15fa",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "59f1cbdb34c0eb92b09ab235b89284b9327a59b7bffec6a10239c0ad4d7f4254",
+          "window_id": 10691
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 63695,
+          "phase": "progress-1",
+          "png_sha256": "fecb3717324468ba57f3e7f4640b1a1aabae6cdf99a149b7e6d2f9b37b3f15fa",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "59f1cbdb34c0eb92b09ab235b89284b9327a59b7bffec6a10239c0ad4d7f4254",
+          "window_id": 10691
+        }
+      ],
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 0,
+        "records": [],
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 1390,
+      "frontmost_before": 1390,
+      "input_receipt": "work/native-pq-hero-route-ci-40097558084/runtime13/overlay/run-receipt.json",
+      "input_report": "work/native-pq-hero-route-ci-40097558084/runtime13/overlay/report.json",
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 13.7.8 (Build 22H730)",
+      "own_pid": 63695,
+      "reviewed_report_gate": "PASS",
+      "static_route": {
+        "backing_and_float_modes_required_off": true,
+        "requested": "overlay",
+        "selected": "overlay"
+      },
+      "static_route_mount": [
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 272
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-named",
+          "roundtrip_max_error_points": 0,
+          "window_number": 10691
+        },
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 272
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-custom",
+          "roundtrip_max_error_points": 0,
+          "window_number": 10691
+        }
+      ],
+      "static_route_post_png": [
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 272
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-named",
+          "roundtrip_max_error_points": 0,
+          "window_number": 10691
+        },
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 272
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-custom",
+          "roundtrip_max_error_points": 0,
+          "window_number": 10691
+        }
+      ],
+      "window_seconds": 1.8183220624923706
+    },
+    "13-root": {
+      "activation_calls": 0,
+      "all_recorded_roundtrip_errors_zero": true,
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "cb4bd5d007048cfc0bcbda4ecc66df4ffd79053df27edbb7590563ba5022f8d1",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 63610,
+          "phase": "progress-0",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_id": 10690
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 1390,
+          "key": false,
+          "owner_pid": 63610,
+          "phase": "progress-1",
+          "png_sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "1a10cc4b561858698e1a2410e45c34af521685e844ea6b25e2c17f7ec6968844",
+          "window_id": 10690
+        }
+      ],
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 0,
+        "records": [],
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 1390,
+      "frontmost_before": 1390,
+      "input_receipt": "work/native-pq-hero-route-ci-40097558084/runtime13/root/run-receipt.json",
+      "input_report": "work/native-pq-hero-route-ci-40097558084/runtime13/root/report.json",
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 13.7.8 (Build 22H730)",
+      "own_pid": 63610,
+      "reviewed_report_gate": "PASS",
+      "static_route": {
+        "backing_and_float_modes_required_off": true,
+        "requested": "root",
+        "selected": "root"
+      },
+      "static_route_mount": [
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-named",
+          "roundtrip_max_error_points": 0,
+          "window_number": 10690
+        },
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-custom",
+          "roundtrip_max_error_points": 0,
+          "window_number": 10690
+        }
+      ],
+      "static_route_post_png": [
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-named",
+          "roundtrip_max_error_points": 0,
+          "window_number": 10690
+        },
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-custom",
+          "roundtrip_max_error_points": 0,
+          "window_number": 10690
+        }
+      ],
+      "window_seconds": 1.8528300523757935
+    },
+    "14-overlay": {
+      "activation_calls": 0,
+      "all_recorded_roundtrip_errors_zero": true,
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "cb4bd5d007048cfc0bcbda4ecc66df4ffd79053df27edbb7590563ba5022f8d1",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 335,
+          "key": false,
+          "owner_pid": 1560,
+          "phase": "progress-0",
+          "png_sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "b235bbd4a6bdf1b35e0fbd32321cbdc4c0bca0aa693236346007eb1607ca4d67",
+          "window_id": 25
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 335,
+          "key": false,
+          "owner_pid": 1560,
+          "phase": "progress-1",
+          "png_sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "4dfc2ca1f1749b46764fd0089f545a3716f799ae7f893babe0ae2b2a7e9d6724",
+          "window_id": 25
+        }
+      ],
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 0,
+        "records": [],
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 335,
+      "frontmost_before": 335,
+      "input_receipt": "work/native-pq-hero-route-ci-40097558084/runtime14/overlay/run-receipt.json",
+      "input_report": "work/native-pq-hero-route-ci-40097558084/runtime14/overlay/report.json",
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 14.8.9 (Build 23J631)",
+      "own_pid": 1560,
+      "reviewed_report_gate": "PASS",
+      "static_route": {
+        "backing_and_float_modes_required_off": true,
+        "requested": "overlay",
+        "selected": "overlay"
+      },
+      "static_route_mount": [
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 272
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-named",
+          "roundtrip_max_error_points": 0,
+          "window_number": 25
+        },
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 272
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-custom",
+          "roundtrip_max_error_points": 0,
+          "window_number": 25
+        }
+      ],
+      "static_route_post_png": [
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 272
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-named",
+          "roundtrip_max_error_points": 0,
+          "window_number": 25
+        },
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 272
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-custom",
+          "roundtrip_max_error_points": 0,
+          "window_number": 25
+        }
+      ],
+      "window_seconds": 1.928855061531067
+    },
+    "14-root": {
+      "activation_calls": 0,
+      "all_recorded_roundtrip_errors_zero": true,
+      "backing_observation": {
+        "error": null,
+        "overlay": null,
+        "records": [],
+        "requested": "off",
+        "root": null,
+        "selected": "off",
+        "stage": "post_png_post_final_guards_pre_teardown",
+        "success": true
+      },
+      "binary_sha256": "cb4bd5d007048cfc0bcbda4ecc66df4ffd79053df27edbb7590563ba5022f8d1",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 335,
+          "key": false,
+          "owner_pid": 1491,
+          "phase": "progress-0",
+          "png_sha256": "b75aef981eb3ddffe1e02fcd1a76a91fdec8ab98c16bcd650b33624debb6a202",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "b235bbd4a6bdf1b35e0fbd32321cbdc4c0bca0aa693236346007eb1607ca4d67",
+          "window_id": 24
+        },
+        {
+          "active": false,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "frontmost_pid": 335,
+          "key": false,
+          "owner_pid": 1491,
+          "phase": "progress-1",
+          "png_sha256": "94dc1fc7d67fdc7f3a361a3e2b63e1b27111b1aedb82ab7d9f26dfe1901b5294",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "4dfc2ca1f1749b46764fd0089f545a3716f799ae7f893babe0ae2b2a7e9d6724",
+          "window_id": 24
+        }
+      ],
+      "float_capture": {
+        "cleanup_observation_count": 2,
+        "error": null,
+        "export_stage": "after_existing_window_teardown",
+        "fixture_retained_images_after_export": 0,
+        "primary_observation_count": 2,
+        "provider_copy_calls": 0,
+        "records": [],
+        "requested": "off",
+        "retained_primary_peak_count": 0,
+        "selected": "off",
+        "success": true,
+        "total_raw_bytes": 0
+      },
+      "frontmost_after": 335,
+      "frontmost_before": 335,
+      "input_receipt": "work/native-pq-hero-route-ci-40097558084/runtime14/root/run-receipt.json",
+      "input_report": "work/native-pq-hero-route-ci-40097558084/runtime14/root/report.json",
+      "metal_count_before_cleanup": 0,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "os": "Version 14.8.9 (Build 23J631)",
+      "own_pid": 1491,
+      "reviewed_report_gate": "PASS",
+      "static_route": {
+        "backing_and_float_modes_required_off": true,
+        "requested": "root",
+        "selected": "root"
+      },
+      "static_route_mount": [
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-named",
+          "roundtrip_max_error_points": 0,
+          "window_number": 24
+        },
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-custom",
+          "roundtrip_max_error_points": 0,
+          "window_number": 24
+        }
+      ],
+      "static_route_post_png": [
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 16,
+            "y": 244
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-named",
+          "roundtrip_max_error_points": 0,
+          "window_number": 24
+        },
+        {
+          "back_converted_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "desired_root_rect": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "flight_subtree_metal_count": 0,
+          "frame_in_selected_parent": {
+            "height": 180,
+            "width": 320,
+            "x": 352,
+            "y": 244
+          },
+          "parent_is_selected_route": true,
+          "role": "flight-custom",
+          "roundtrip_max_error_points": 0,
+          "window_number": 24
+        }
+      ],
+      "window_seconds": 2.1667850017547607
+    }
+  },
+  "reviewed_report_gate": {
+    "adapted_gate_sha256": "0e367957973d15b5c5b9d7f3c760e56418949df190e00ac974b51dc04b4500e1",
+    "literal_path_os_changes_only": {
+      "Path('evidence/runtime14')/mode": "Path('work/native-pq-hero-route-ci-40097558084/runtime'+str(major))/mode",
+      "Path('probe/HeroFloatProbe')": "Path('work/native-pq-hero-route-ci-40097558084/probe/HeroFloatProbe')",
+      "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==major and d['actual_os_major']==major",
+      "receipt['expected_os_major']==14": "receipt['expected_os_major']==major"
+    },
+    "source": "work/hero-route-ci-preparation/macos14-hero-route-probe.yml",
+    "source_sha256": "7e9ace3e8dc718acc64b717603936726f3cb1f66d435da1f5a4ddddf941ae586"
+  },
+  "scope": "PRIVATE bounded offline route report/schema and input hashes only; no UI, compiler, CI, repository changes, pixel recomputation or source/PNG/archive copies.",
+  "success": true
+}

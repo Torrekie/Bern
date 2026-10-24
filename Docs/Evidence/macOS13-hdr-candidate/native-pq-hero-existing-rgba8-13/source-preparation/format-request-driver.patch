@@ -1,0 +1,73 @@
+--- static-route/Driver.swift.inc
++++ existing-format/Driver.swift.inc
+@@ -3,7 +3,7 @@
+ private enum FixtureStaticRouteMode {
+     static let requested = ProcessInfo.processInfo.environment["BERN_HERO_STATIC_ROUTE"]
+     static let selected: String? = {
+-        let value = requested ?? "root"
++        let value = requested ?? "overlay"
+         return ["root", "overlay"].contains(value) ? value : nil
+     }()
+ }
+@@ -305,7 +305,7 @@
+ @main private enum HeroBaselineMain {
+     @MainActor static func main() {
+         let status = run()
+-        exit(status == 0 && FixtureSnapshotFloatCapture.finalizationFailed ? 1 : status)
++        exit(status == 0 && (FixtureSnapshotFloatCapture.finalizationFailed || FixtureFormatRequest.finalizationFailed) ? 1 : status)
+     }
+     @MainActor private static func run() -> Int32 {
+         guard CommandLine.arguments.count == 4 else { return 2 }
+@@ -326,10 +326,17 @@
+             "snapshot_cgimage_metadata": "Fixture-only public CGImage scalar descriptors and color-space reference at the actual renderer.cgImage result; classification/ICC hash/bounded profile serialization only after all PNG captures and original window teardown. The v2 metadata observer retains no image; separate opt-in raw capture lifetime/provider reads are reported in snapshot_float_capture. No NSImage recache, conversion or relabel. Not a zero-observer-effect claim."
+         ]
+         report["backing_observation"] = FixtureBackingObservation.initial()
++        report["format_request"] = FixtureFormatRequest.initial()
+         report["static_route"] = ["requested": FixtureStaticRouteMode.requested.map { $0 as Any } ?? NSNull(),
+             "selected": FixtureStaticRouteMode.selected.map { $0 as Any } ?? NSNull(),
+             "backing_and_float_modes_required_off": true]
+         defer {
++            let format = FixtureFormatRequest.freeze(acquisitionSucceeded: report["success"] as? Bool == true, priorError: report["error"] as? String)
++            report["format_request"] = format
++            if format["success"] as? Bool != true {
++                report["success"] = false
++                if report["error"] == nil { report["error"] = format["error"] }
++            }
+             FixtureSnapshotFloatCapture.freezePrimary()
+             let observationsBeforeCleanup = fixtureSnapshotCGImageObservations
+             report["snapshot_cgimage_observations_scope"] = "before_existing_window_teardown"
+@@ -360,6 +367,10 @@
+         }
+         do {
+             try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
++            guard FixtureFormatMode.selected != nil, FixtureStaticRouteMode.selected == "overlay",
++                  FixtureBackingMode.selected == "off", FixtureFloatCaptureMode.selected == .off else {
++                throw FixtureFailure(message: "Format control/rgba8 requires fixed overlay route, backing/float off before window creation")
++            }
+             guard FixtureStaticRouteMode.selected != nil, FixtureBackingMode.selected == "off",
+                   FixtureFloatCaptureMode.selected == .off else {
+                 throw FixtureFailure(message: "Static route root/overlay requires backing observer off and float capture off before window creation")
+@@ -464,6 +475,7 @@
+                         f.corner = p.corner
+                         try FixtureStaticRoute.mount(f, desired: desiredFlightRects[i], root: r, manager: manager, window: w)
+                         if FixtureStaticRouteMode.selected == "overlay" { fixtureOwnedOverlayFlights.append(f) }
++                        try FixtureFormatRequest.mounted(f, key: i == 0 ? "flight-named" : "flight-custom", manager: manager, window: w)
+                         flights.append(f); regions[i == 0 ? "flight-named" : "flight-custom"] = f
+                     }
+                     report["static_route_mount"] = try FixtureStaticRoute.check(flights, desired: desiredFlightRects, root: r, manager: manager, window: w)
+@@ -511,6 +523,7 @@
+                     try fixtureSavePNG(shot, url)
+                     var capture = sample; capture["png"] = filename
+                     capture["png_sha256"] = fixtureHash(try Data(contentsOf: url)); captures.append(capture)
++                    try FixtureFormatRequest.check(flights, stage: "after_png_progress-\(phase)")
+                     phase += 1; identical = 0; previousHash = ""; phaseBegan = Date()
+                     for f in flights { f.progress = CGFloat(phase); f.needsDisplay = true }
+                 }
+@@ -524,6 +537,7 @@
+                   NSWorkspace.shared.frontmostApplication?.processIdentifier == front else {
+                 throw FixtureFailure(message: "Cache/normal/foreground final contract failed")
+             }
++            try FixtureFormatRequest.check(flights, stage: "post_final_guards")
+             report["static_route_post_png"] = try FixtureStaticRoute.check(flights, desired: desiredFlightRects, root: r, manager: manager, window: w)
+             report["backing_observation"] = try FixtureBackingObservation.finish(flights, root: r, manager: manager, window: w)
+             report["success"] = true; return 0
