@@ -1,0 +1,12 @@
+{
+  "before_driver": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/.github/scripts/hero-coordinator-probe/Driver.swift.inc",
+  "before_driver_sha256": "d8ed3e8d5716f65b00a6d14fd1007d89eaf30d5aca58446344263d59375a739b",
+  "behavior": "First in-band actual live sample only arms scalar; capture on exact next recorded sample after next original RunLoop, same pinned flight/timer/parent. Progress may leave band. No retry or second arming.",
+  "diff_sha256": "512f1e4c59a8f79de85eeb18ed76c40d0ecfc8130be6ccc5d95eafdcd8183f14",
+  "driver_lines": 384,
+  "driver_sha256": "b9d6b699af43128b0658ecb9e81df8ef346e6f9b3be253c07cca80968bcd8ec6",
+  "kind": "one_original_iteration_delayed_midflight_observer",
+  "schema": "README.md",
+  "source_checks": "Reversible exact substitutions, base unchanged, no new runloop/capture/save call sites; no compile/runtime/UI/CI. Forward patch application to removed private temporary output and exact flat-schema/adjacent-sample/failure guards verified.",
+  "unchanged": "Exact prefix before transition sampling declarations, actual product/Hero, endpoint capture code, loop/runloop/capture call-site counts, bounds/deadlines and single model transition."
+}

@@ -1,0 +1,44 @@
+{
+  "base_inputs": [
+    {
+      "bytes": 15529,
+      "commit": "fe7f30d21494a290f363572c6556a138804fb1ba",
+      "private_file": "coordinator-workflow.original.yml",
+      "repository_path": ".github/workflows/macos14-hero-coordinator-probe.yml",
+      "sha256": "5fbeb0f00b79e59c4a4c32bbbc397a090e52b7aba01c457144ae6516ae66da69"
+    },
+    {
+      "bytes": 1646,
+      "commit": "fe7f30d21494a290f363572c6556a138804fb1ba",
+      "private_file": "run-one.py",
+      "repository_path": ".github/scripts/hero-coordinator-probe/run-one.py",
+      "sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6"
+    }
+  ],
+  "driver_input": {
+    "bytes": 29689,
+    "lines": 384,
+    "path": "work/hero-coordinator-delay-preparation/Driver.swift.inc",
+    "sha256": "b9d6b699af43128b0658ecb9e81df8ef346e6f9b3be253c07cca80968bcd8ec6"
+  },
+  "driver_sha256_substitution": "Explicit pending token replaced with root-frozen b9d6... before final static validation; no unexplained placeholders remain.",
+  "kind": "actual_coordinator_next_sample_fixture",
+  "pending": [],
+  "runtime_gate_scope": "Exact next-sample indices/states/times and same live identity; arming band only. Runtime schema not executed; no actual delayed runtime report exists.",
+  "scope": "PRIVATE frozen CI preparation; no repository/index modifications, UI/compiler/CI execution or inherited typecheck success.",
+  "source_contract_unchanged": [
+    "product_source_commit",
+    "original_hero_sha256",
+    "ProductImage/Style/Dependencies/assets hashes"
+  ],
+  "source_provenance_input": {
+    "bytes": 2451,
+    "path": "work/hero-coordinator-delay-source-preparation/source-provenance.json",
+    "sha256": "c888bd79dd263236cea377478fbf52f363fcd98a94c377b459efbc96413d6c41"
+  },
+  "static_validation": "YAML/Python AST/bash-n and source/map hashes only; no runtime/schema execution or local Swift typecheck.",
+  "validation_scope": "Static only; new Driver has no inherited local-static-preflight success.",
+  "workflow_sha256": "5f0d71da1a07504e0bee49e6a6b8c3a750b10b667d5f97b68b3ad7fa4700bb28",
+  "wrapper_byte_identity": "Exact committed run-one.py copied without changes.",
+  "wrapper_sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6"
+}

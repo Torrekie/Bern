@@ -1,0 +1,22 @@
+2026-10-24 15:32:43.075 HeroCoordinatorDelayProbe[999:5783] NSWindow warning: adding an unknown subview: <_TtC25HeroCoordinatorDelayProbeP33_3F182B88D5B2B3341BD3CDDE9A1DF13E15BernHeroOverlay: 0x132f12580>. Break on NSLog to debug.
+2026-10-24 15:32:43.305 HeroCoordinatorDelayProbe[999:5783] Call stack:
+(
+	0   AppKit                              0x000000018af2e61c -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x000000018af2e190 -[NSView addSubview:positioned:relativeTo:] + 372
+	2   AppKit                              0x000000018af2df98 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroCoordinatorDelayProbe           0x00000001045719e4 $s25HeroCoordinatorDelayProbe21BernWindowImageHeroesC14prepareOverlay33_3F182B88D5B2B3341BD3CDDE9A1DF13ELLSbyF + 300
+	4   HeroCoordinatorDelayProbe           0x00000001045703f4 $s25HeroCoordinatorDelayProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 452
+	5   HeroCoordinatorDelayProbe           0x0000000104578f90 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x000000018741c750 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x000000018741e3e8 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x000000018742cbb8 _dispatch_main_queue_drain + 988
+	9   libdispatch.dylib                   0x000000018742c7cc _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x00000001876ef834 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x00000001876acfb8 __CFRunLoopRun + 1996
+	12  CoreFoundation                      0x00000001876ac194 CFRunLoopRunSpecific + 608
+	13  Foundation                          0x00000001887e26b8 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212
+	14  Foundation                          0x0000000188857bd0 -[NSRunLoop(NSRunLoop) runUntilDate:] + 100
+	15  HeroCoordinatorDelayProbe           0x0000000104584cc4 $s25HeroCoordinatorDelayProbe0aB4Main33_3F182B88D5B2B3341BD3CDDE9A1DF13ELLO3runs5Int32VyFZTf4d_n + 8328
+	16  HeroCoordinatorDelayProbe           0x0000000104579a80 main + 12
+	17  dyld                                0x0000000187243154 start + 2476
+)

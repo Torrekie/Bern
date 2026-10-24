@@ -1,0 +1,107 @@
+--- published-immediate/Driver.swift.inc
++++ private-delayed/Driver.swift.inc
+@@ -241,12 +241,17 @@
+             started = fixtureUptime(); timer.schedule(deadline: .now() + 7.9); timer.resume(); w.orderFrontRegardless()
+             let initialFrame = w.frame, deadline = started! + 7.2
+             var stage = "before", previousHash = "", equalBuffers = 0, transitionCount = 0
+-            var sawFlight = false, sawMovement = false, midAttempted = false, previousLiveFrame: [String: Double]?, previousProgress: Double?
++            var sawFlight = false, sawMovement = false, nextSampleCaptured = false, previousLiveFrame: [String: Double]?, previousProgress: Double?
++            var midArmed: [String: Any]?
++            var midSampling: [String: Any] = ["policy": "first_band_arm_then_next_original_loop_sample",
++                "armed": NSNull(), "capture_sample": NSNull(), "capture_attempted": false, "next_sample_captured": false]
++            report["midflight_sampling"] = midSampling
+             var sourceID = "", sourceRect: CGRect?, sawSourceDetached = false
+             var observedFlightID: String?
+             while fixtureUptime() < deadline && stage != "complete" {
+                 guard samples.count < 512 else { throw FixtureFailure(message: "Sample bound; incomplete") }
+                 RunLoop.main.run(until: Date(timeIntervalSinceNow: 1.0 / 60))
++                if midArmed != nil && !nextSampleCaptured && manager == nil { throw FixtureFailure(message: "Armed flight manager lost on the next original iteration") }
+                 _ = try fixtureWindowInfo(w, initialFrame: initialFrame, front: front, manager: manager, root: root)
+                 // These local arrays end this iteration, before the next runloop/dismantle pass.
+                 var anchors = fixtureDescendants(root).compactMap { $0 as? BernPictureHeroAnchor }
+@@ -256,12 +261,14 @@
+                 }
+                 guard let heroes = manager else { continue }
+                 let state = heroes.fixtureScalars(root: root)
++                guard let sampleUptime = state["uptime"] as? Double else { throw FixtureFailure(message: "Missing actual sample uptime") }
++                let sampleIndex = samples.count
+                 guard anchors.allSatisfy({ $0.key == fixtureHeroKey && !$0.reduced }),
+                       Set(state["entry_keys"] as? [String] ?? []).isSubset(of: [fixtureHeroKey]) else { throw FixtureFailure(message: "Unexpected key/reduced motion") }
+                 let flights = state["flights"] as? [[String: Any]] ?? []
+                 let timerExists = state["timer_exists"] as? Bool == true
+                 var sample = state; sample["stage"] = stage; sample["elapsed_seconds"] = fixtureUptime() - started!
+-                sample["anchor_count"] = anchors.count; samples.append(sample)
++                sample["sample_index"] = sampleIndex; sample["anchor_count"] = anchors.count; samples.append(sample)
+                 if let source = refs.source, !source.attached { sawSourceDetached = true }
+                 var rois: [String: CGRect] = [:]
+                 for anchor in anchors where anchor.window === w { rois["anchor-" + String(describing: ObjectIdentifier(anchor))] = anchor.convert(anchor.bounds, to: root) }
+@@ -279,15 +286,38 @@
+                     if let old = previousLiveFrame, old != frame, let p = previousProgress, p != progress { sawMovement = true }
+                     previousLiveFrame = frame; previousProgress = progress
+                     if let flight = refs.flight { rois["flight"] = flight.convert(flight.bounds, to: root) }
+-                    if !midAttempted && progress > 0.2 && progress < 0.8 {
+-                        midAttempted = true
++                    if let armed = midArmed, !nextSampleCaptured {
++                        guard let armedIndex = armed["sample_index"] as? Int, sampleIndex == armedIndex + 1,
++                              armed["flight_identity"] as? String == identity else {
++                            throw FixtureFailure(message: "Armed capture did not reach the exact next sample of the same flight")
++                        }
++                        let captureSample: [String: Any] = ["sample_index": sampleIndex, "state": state,
++                            "uptime": sampleUptime, "progress": progress, "flight_identity": identity]
++                        midSampling["capture_sample"] = captureSample; midSampling["capture_attempted"] = true
++                        report["midflight_sampling"] = midSampling
+                         let (image, shot) = try fixtureShot(w, root: root, manager: heroes, initialFrame: initialFrame, front: front, rois: rois)
+-                        var value = shot; value["trigger_state"] = state; value["trigger_progress"] = progress
+-                        value["consecutive_equal_buffers_required"] = false
++                        var value = shot
++                        value["sampling_policy"] = midSampling["policy"]
++                        value["armed_sample_index"] = armed["sample_index"]; value["armed_sample_state"] = armed["state"]
++                        value["armed_sample_uptime"] = armed["uptime"]; value["armed_progress"] = armed["progress"]
++                        value["armed_flight_identity"] = armed["flight_identity"]
++                        value["capture_sample_index"] = sampleIndex; value["capture_sample_state"] = state
++                        value["capture_sample_uptime"] = sampleUptime; value["capture_sample_progress"] = progress
++                        value["capture_sample_flight_identity"] = identity
++                        value["trigger_state"] = armed["state"]; value["trigger_progress"] = armed["progress"]
++                        value["trigger_refers_to"] = "armed_sample"; value["consecutive_equal_buffers_required"] = false
+                         captures.append(try fixtureSave(image, record: value, phase: "in-flight", output: output))
++                        nextSampleCaptured = true; midSampling["next_sample_captured"] = true
++                        report["midflight_sampling"] = midSampling
++                    } else if midArmed == nil && progress > 0.2 && progress < 0.8 {
++                        let armed: [String: Any] = ["sample_index": sampleIndex, "state": state,
++                            "uptime": sampleUptime, "progress": progress, "flight_identity": identity]
++                        midArmed = armed; midSampling["armed"] = armed
++                        report["midflight_sampling"] = midSampling // No capture on the arming iteration.
+                     }
+                     continue
+                 }
++                if midArmed != nil && !nextSampleCaptured { throw FixtureFailure(message: "Armed flight no longer live at its next sample; incomplete") }
+                 if stage == "before" {
+                     guard fixtureUptime() - started! < 1.5 else { throw FixtureFailure(message: "Initial source readiness/stability deadline") }
+                     guard anchors.count == 1, let source = anchors.first, source.attached, source.picture != nil,
+@@ -301,7 +331,7 @@
+                     let viewRemoved = refs.flight == nil || refs.flight?.superview == nil
+                     let entries = state["entries"] as? [String: [[String: Any]]] ?? [:]
+                     let liveEntries = entries[fixtureHeroKey] ?? []
+-                    let ready = sawFlight && sawMovement && midAttempted && captures.contains(where: { $0["phase"] as? String == "in-flight" }) &&
++                    let ready = sawFlight && sawMovement && midArmed != nil && nextSampleCaptured && captures.contains(where: { $0["phase"] as? String == "in-flight" }) &&
+                         !timerExists && state["temporary_flight_view_count"] as? Int == 0 && sourceGone && viewRemoved &&
+                         liveEntries.count == 1 && liveEntries.first?["identity"] as? String != sourceID && anchors.count == 1
+                     guard ready, let destination = anchors.first, destination.attached, destination.picture != nil,
+@@ -333,13 +363,14 @@
+                     stage = "transition"; previousHash = ""; equalBuffers = 0
+                 } else { stage = "complete" }
+             }
+-            guard stage == "complete", transitionCount == 1, sawFlight, sawMovement, captures.count == 3,
+-                  captures.map({ $0["phase"] as? String ?? "" }) == ["before", "in-flight", "settled"] else { throw FixtureFailure(message: "Lifecycle/midband/settled deadline; incomplete") }
++            guard stage == "complete", transitionCount == 1, sawFlight, sawMovement, midArmed != nil, nextSampleCaptured, captures.count == 3,
++                  captures.map({ $0["phase"] as? String ?? "" }) == ["before", "in-flight", "settled"] else { throw FixtureFailure(message: "Lifecycle/armed-next-sample/settled deadline; incomplete") }
+             let ledgerAfter = try fixtureLedger(asset); report["cache_after"] = ledgerAfter
+             let unchanged = NSDictionary(dictionary: ledgerAfter).isEqual(to: ledgerBefore); report["cache_unchanged"] = unchanged
+             guard unchanged, fixtureNormal().values.allSatisfy({ !$0 }), NSWorkspace.shared.frontmostApplication?.processIdentifier == front else { throw FixtureFailure(message: "Final cache/normal/front gate failed") }
+             report["native_gates"] = ["transition_count": transitionCount, "actual_flight_seen": sawFlight,
+-                "actual_frame_and_progress_changed": sawMovement, "midband_captured": midAttempted,
++                "actual_frame_and_progress_changed": sawMovement, "midband_armed": midArmed != nil,
++                "next_sample_captured": nextSampleCaptured,
+                 "observed_flight_identities": observedFlightID.map { [$0] } ?? [],
+                 "source_detached_observed": sawSourceDetached, "source_weak_deallocated": refs.source == nil,
+                 "source_no_longer_attached": refs.source == nil || refs.source?.attached == false,

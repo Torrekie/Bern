@@ -1,0 +1,28 @@
+{
+  "analysis_executions": 1,
+  "command": [
+    "python3",
+    "-B",
+    "work/hero-coordinator-delay-pixel-analysis/analyze.py",
+    "--new-root",
+    "work/native-pq-hero-coordinator-delay-ci-40107406624",
+    "--old-root",
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14",
+    "--output",
+    "work/hero-coordinator-delay-pixel-analysis/summary.json"
+  ],
+  "exit_code": 0,
+  "input_count": 14,
+  "input_hashes_reverified_after_analysis": true,
+  "littlecms": "2.19",
+  "metadata_recorded_utc": "2026-10-24T15:43:37.096948+00:00",
+  "no_input_or_repository_modifications": true,
+  "old_reference_scripts": {
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/pixel-analysis/analyze.py": "32da7bcdc3b4f81f98164ae8d25bc6d8c108bb533ccee2bf858e97a3b97f5b12",
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/pixel-analysis/mid-opaque-bounds.py": "3d0df2e27b518f9826f9b26e4446e1611a7a073b2dbe84a20237782cba4eb9e8"
+  },
+  "pillow": "12.3.0",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 15.0.0 (clang-1500.1.0.2.5)]",
+  "scope": "One allowed offline image-analysis execution; subsequent validation hashes/metadata only, no image-analysis rerun, derived images, UI or CI.",
+  "script_sha256": "8023c0b902e668e30581edb3646d7ab11761a726f039a1059da15b62d65cf299"
+}

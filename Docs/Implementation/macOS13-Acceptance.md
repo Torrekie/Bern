@@ -213,3 +213,12 @@ source审查还确认：当前固定端点夹具将真实FlightView挂在Fixture
 下一检查点只调整[采样时机](../Evidence/macOS14-hero-coordinator-40103369574/next-sampling-plan/README.md)：首次.2<p<.8仅arm，恰下一原自然RunLoop/sample后拍一次mid，保留分开的index/state/uptime；失去同一live flight则incomplete、不寻第二次band或强制flush/进度。尚未实现/运行，它不承诺同步修复。产品没有合入颜色/layer请求；Film/chrome/Picture/Frame/交互/HDR和完整动画未通过项保持，goal active，11/Swift5.3/Objective-C/iOS仍推迟。
 
 本批原binary/tar和已用完module cache清理57,691,387B；逐字核验后的work重复副本另行清理，见[收据](../Evidence/macOS14-hero-coordinator-40103369574/cleanup.json)。保留六张原PNG/ICC、报告、源码与最终现存清单；数字为逻辑文件量，不代表APFS实际回收或磁盘净变化。
+
+
+## 下一原样本采集的实测对照（2026-10-24）
+
+上节采样方案已由[CI40107406624及同binary13/14](../Evidence/macOS14-hero-coordinator-delay-40107406624/README.md)落实。新SDK26.2/min13原签名binary`fca470c9…cb5c6e23`只改变observer，首次band仅arm，下一次原outer-loop的RunLoop.run/sample才采唯一mid，不重试或修改clock/draw/progress/visibility。两边schema与原生门槛通过：13 index9→10、p.278344→.368318、间隔19.179ms；14 index7→8、p.609194→.714572、间隔27.411ms。窗口1.435/1.951秒、normal/cache/front/noMTK及真实结束清理保持，weak source仍未dealloc。本机未编译、重签或生成模块缓存。
+
+四项same-host旧→新before/source、settled/destination ROI的原RGB和ICC intent0归一sRGB均exact，端点内容保持。新before→settled仍非exact：13 sRGB MAE0.294106/max5，14为0.271169/max2。root原mid目检和固定12pt opaque inset非白内容bounds显示13已有位移[109.5,85,429.5,265]，14仍source[16,24,336,204]；capture逻辑原点却为(139.7547,105.0299)/(256.0963,181.2059)，CG前后native bracket未变。bounds不作精确flight配准；新的trigger字段是arm别名，不能误当capture状态。额外一次原循环仍未建立presentation同步，不通过中间帧/颜色/动画，也不唯一归因系统或手动泵。
+
+下一检查点为[正常NSApplication.run生命周期](../Evidence/macOS14-hero-coordinator-delay-40107406624/next-app-loop-plan/README.md)的单一observer执行模型对照，尚未实现/运行：原采样body以MainActor timer调度，保留原产品/clock/scene/key/action/arm/截图与门槛，terminal后stop→run返回→正常defer。此入口更接近实际应用，但不是同步fence或已知修复。原7.2s入口deadline及hard watchdog minimal-report限制明确保留；不叠加等待、flush/layout/display或进度控制。本批原binary/tar和逐字校验work副本已清理，见[收据](../Evidence/macOS14-hero-coordinator-delay-40107406624/cleanup.json)。其它未通过项与goal active保持，不进入11/Swift5.3/Objective-C/iOS。

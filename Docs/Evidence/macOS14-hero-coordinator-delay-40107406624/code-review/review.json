@@ -1,0 +1,98 @@
+{
+  "kind": "bounded_private_delayed_observer_source_review",
+  "recorded_at_utc": "2026-10-24T15:24:51Z",
+  "disposition": "pass_source_review_with_inherited_limits",
+  "new_obvious_swift_type_or_control_flow_defects_found": false,
+  "sources": {
+    "original": {
+      "path": "outputs/Bern/.github/scripts/hero-coordinator-probe/Driver.swift.inc",
+      "sha256": "d8ed3e8d5716f65b00a6d14fd1007d89eaf30d5aca58446344263d59375a739b",
+      "lines": 353
+    },
+    "prepared": {
+      "path": "work/hero-coordinator-delay-preparation/Driver.swift.inc",
+      "sha256": "b9d6b699af43128b0658ecb9e81df8ef346e6f9b3be253c07cca80968bcd8ec6",
+      "lines": 384
+    }
+  },
+  "criteria": [
+    {
+      "criterion": "first live strict midband sample only arms scalar state",
+      "result": "pass",
+      "prepared_lines": "275-318"
+    },
+    {
+      "criterion": "capture follows next original RunLoop and recorded sample with adjacent index",
+      "result": "pass",
+      "prepared_lines": "251-271,289-298"
+    },
+    {
+      "criterion": "capture requires original pinned live flight, timer and actual overlay parent",
+      "result": "pass",
+      "prepared_lines": "275-293"
+    },
+    {
+      "criterion": "capture sample may progress above 0.8",
+      "result": "pass",
+      "prepared_lines": "289-312"
+    },
+    {
+      "criterion": "manager/flight/identity/timer/parent/index loss fails without rearm or retry",
+      "result": "pass",
+      "prepared_lines": "252-254,276-293,310-320,366-367"
+    },
+    {
+      "criterion": "normal-defer partial report preserves arm and pre-shot capture attempt",
+      "result": "pass_with_watchdog_and_report_write_limit",
+      "prepared_lines": "199-210,294-297,313-316,379-381"
+    },
+    {
+      "criterion": "capture completion requires successful PNG finalize and read/hash",
+      "result": "pass",
+      "prepared_lines": "163-172,309-311,334-335,366-367"
+    },
+    {
+      "criterion": "all original bounds, endpoint five-buffer gates and native/cache gates preserved",
+      "result": "pass_with_original_loop_entry_deadline_semantics",
+      "prepared_lines": "121-172,197-242,251-255,321-378"
+    },
+    {
+      "criterion": "diff introduces no product/clock/visibility/frame/layout/flush control or extra RunLoop/capture call site",
+      "result": "pass",
+      "basis": "complete two-source diff and unchanged helper/setup regions"
+    }
+  ],
+  "inherited_limits": [
+    {
+      "id": "loop_entry_deadline",
+      "new_regression": false,
+      "prepared_lines": "251-253,366-367",
+      "description": "The 7.2s deadline is checked at outer-loop entry only. A loop entered before it may sample/capture after the existing RunLoop returns beyond it. Normal loop-deadline exhaustion fails incomplete."
+    },
+    {
+      "id": "minimal_hard_watchdog_report",
+      "new_regression": false,
+      "prepared_lines": "235-240",
+      "description": "The 7.9s watchdog writes only success/error/own_pid and calls _exit, bypassing defer. Arm/attempt preservation is limited to normal-defer paths and successful final report writes."
+    }
+  ],
+  "source_text_inventory": {
+    "RunLoop_main_run_occurrences_base_and_prepared": [2, 2],
+    "fixtureShot_call_sites_excluding_declaration_base_and_prepared": [2, 2],
+    "fixtureSave_call_sites_excluding_declaration_base_and_prepared": [2, 2],
+    "model_transition_assignments_base_and_prepared": [1, 1],
+    "CGWindowListCreateImage_occurrences_base_and_prepared": [1, 1]
+  },
+  "unchanged_regions": {
+    "prefix_through_original_setup_and_deadline": "byte_equal",
+    "window_capture_and_save_helpers": "byte_equal",
+    "failure_defer_and_watchdog": "byte_equal",
+    "final_cache_normal_front_gate": "byte_equal",
+    "endpoint_region": "byte_equal_after_only_intended_midAttempted_to_arm_and_successful_capture_predicate_substitution"
+  },
+  "performed": ["source_read", "complete_diff_review", "sha256_inventory", "source_region_byte_comparison", "private_review_artifact_write"],
+  "not_performed": ["compile", "typecheck", "tests", "CI", "UI", "native_run", "visual_acceptance", "color_acceptance", "synchrony_acceptance", "external_wrapper_review", "product_or_repository_edit"],
+  "scope": "source correctness only; macOS13 equivalence remains a root task; macOS11/Objective-C/iOS deferred",
+  "artifacts": ["README.md", "review.json", "SHA256SUMS"],
+  "freeze": "read-only artifact files and directory after manifest creation"
+}

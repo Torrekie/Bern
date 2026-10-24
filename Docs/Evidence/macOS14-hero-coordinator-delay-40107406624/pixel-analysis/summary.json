@@ -1,0 +1,1074 @@
+{
+  "hosts": {
+    "13": {
+      "new_before_to_settled": {
+        "embedded_icc_identical": true,
+        "left_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+        "left_roi_pixels": [
+          32,
+          104,
+          672,
+          464
+        ],
+        "opaque": true,
+        "raw": {
+          "exact": false,
+          "mae": 0.3447728587962963,
+          "max": 2
+        },
+        "right_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+        "right_roi_pixels": [
+          704,
+          544,
+          1344,
+          904
+        ],
+        "size_pixels": [
+          640,
+          360
+        ],
+        "srgb": {
+          "exact": false,
+          "mae": 0.29410590277777776,
+          "max": 5
+        },
+        "status": "performed"
+      },
+      "new_midflight_fixed_inset_bounds": {
+        "alpha_extrema": [
+          255,
+          255
+        ],
+        "embedded_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+        "inset_screenshot_pixels": [
+          24,
+          80,
+          2024,
+          912
+        ],
+        "interpretation": "Nonwhite pixels within fixed opaque inset; white cells can be omitted. Not exact flight bounds, fitted registration or cause.",
+        "measured_root_origin_pixels": [
+          0.0,
+          56.0
+        ],
+        "measured_scale": [
+          2.0,
+          2.0
+        ],
+        "normalized_nonwhite_bbox_root_points": [
+          109.5,
+          85.0,
+          429.5,
+          265.0
+        ],
+        "root_inset_points": 12,
+        "status": "performed"
+      },
+      "new_midflight_timing": {
+        "actual_native_rois": {
+          "anchor-ObjectIdentifier(0x000000012d71a800)": {
+            "root_points": {
+              "height": 180,
+              "width": 320,
+              "x": 352,
+              "y": 244
+            },
+            "screenshot_pixels": {
+              "height": 360,
+              "width": 640,
+              "x": 704,
+              "y": 544
+            }
+          },
+          "flight": {
+            "root_points": {
+              "height": 180,
+              "width": 320,
+              "x": 139.75468198849342,
+              "y": 105.02985130198977
+            },
+            "screenshot_pixels": {
+              "height": 360,
+              "width": 640,
+              "x": 279.50936397698683,
+              "y": 266.05970260397953
+            }
+          }
+        },
+        "armed": {
+          "flight_identity": "ObjectIdentifier(0x000000012e90f760)",
+          "progress": 0.27834425591200473,
+          "sample_index": 9,
+          "state": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000012d71a800)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 10699
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000012d71a800)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 109.52366998643359,
+                  "y": 113.23573630064104
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.27834425591200473,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 109.52366998643359,
+                  "y": 85.23573630064107
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000012e90f760)",
+                "window_number": 10699
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 257385.46387658335
+          },
+          "uptime": 257385.46387658335
+        },
+        "capture_after_uptime": 257385.48735570835,
+        "capture_before_uptime": 257385.48321641667,
+        "capture_sample": {
+          "flight_identity": "ObjectIdentifier(0x000000012e90f760)",
+          "progress": 0.36831750591813517,
+          "sample_index": 10,
+          "state": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000012d71a800)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 10699
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000012d71a800)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 139.75468198849342,
+                  "y": 133.02985130198974
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.36831750591813517,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 139.75468198849342,
+                  "y": 105.02985130198977
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000012e90f760)",
+                "window_number": 10699
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 257385.48305595835
+          },
+          "uptime": 257385.48305595835
+        },
+        "interpretation": "Native state/time brackets and measured ROI only; not the rendered frame or synchronization.",
+        "policy": "first_band_arm_then_next_original_loop_sample",
+        "state_after": {
+          "departed": {},
+          "entries": {
+            "coordinator-one": [
+              {
+                "attached": true,
+                "identity": "ObjectIdentifier(0x000000012d71a800)",
+                "last_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "reduced": false,
+                "window_number": 10699
+              }
+            ]
+          },
+          "entry_keys": [
+            "coordinator-one"
+          ],
+          "flight_count": 1,
+          "flights": [
+            {
+              "bounds": {
+                "height": 180,
+                "width": 320,
+                "x": 0,
+                "y": 0
+              },
+              "corner": 0,
+              "destination_attached": true,
+              "destination_identity": "ObjectIdentifier(0x000000012d71a800)",
+              "frame": {
+                "height": 180,
+                "width": 320,
+                "x": 139.75468198849342,
+                "y": 133.02985130198974
+              },
+              "from_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 52
+              },
+              "key": "coordinator-one",
+              "parent_is_actual_overlay": true,
+              "progress": 0.36831750591813517,
+              "rect_in_root": {
+                "height": 180,
+                "width": 320,
+                "x": 139.75468198849342,
+                "y": 105.02985130198977
+              },
+              "source_attached": null,
+              "source_identity": null,
+              "to_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              },
+              "view_identity": "ObjectIdentifier(0x000000012e90f760)",
+              "window_number": 10699
+            }
+          ],
+          "overlay_attached": true,
+          "overlay_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 0,
+            "y": 0
+          },
+          "temporary_flight_view_count": 1,
+          "timer_exists": true,
+          "uptime": 257385.48739158336
+        },
+        "state_before": {
+          "departed": {},
+          "entries": {
+            "coordinator-one": [
+              {
+                "attached": true,
+                "identity": "ObjectIdentifier(0x000000012d71a800)",
+                "last_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "reduced": false,
+                "window_number": 10699
+              }
+            ]
+          },
+          "entry_keys": [
+            "coordinator-one"
+          ],
+          "flight_count": 1,
+          "flights": [
+            {
+              "bounds": {
+                "height": 180,
+                "width": 320,
+                "x": 0,
+                "y": 0
+              },
+              "corner": 0,
+              "destination_attached": true,
+              "destination_identity": "ObjectIdentifier(0x000000012d71a800)",
+              "frame": {
+                "height": 180,
+                "width": 320,
+                "x": 139.75468198849342,
+                "y": 133.02985130198974
+              },
+              "from_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 52
+              },
+              "key": "coordinator-one",
+              "parent_is_actual_overlay": true,
+              "progress": 0.36831750591813517,
+              "rect_in_root": {
+                "height": 180,
+                "width": 320,
+                "x": 139.75468198849342,
+                "y": 105.02985130198977
+              },
+              "source_attached": null,
+              "source_identity": null,
+              "to_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              },
+              "view_identity": "ObjectIdentifier(0x000000012e90f760)",
+              "window_number": 10699
+            }
+          ],
+          "overlay_attached": true,
+          "overlay_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 0,
+            "y": 0
+          },
+          "temporary_flight_view_count": 1,
+          "timer_exists": true,
+          "uptime": 257385.4832299167
+        },
+        "status": "performed"
+      },
+      "new_runtime_issues": {
+        "captures": [],
+        "report": null
+      },
+      "old_runtime_issues": {
+        "captures": [],
+        "report": null
+      },
+      "old_to_new_before_control": {
+        "embedded_icc_identical": true,
+        "left_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+        "left_roi_pixels": [
+          32,
+          104,
+          672,
+          464
+        ],
+        "opaque": true,
+        "raw": {
+          "exact": true,
+          "mae": 0.0,
+          "max": 0
+        },
+        "right_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+        "right_roi_pixels": [
+          32,
+          104,
+          672,
+          464
+        ],
+        "size_pixels": [
+          640,
+          360
+        ],
+        "srgb": {
+          "exact": true,
+          "mae": 0.0,
+          "max": 0
+        },
+        "status": "performed"
+      },
+      "old_to_new_settled_control": {
+        "embedded_icc_identical": true,
+        "left_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+        "left_roi_pixels": [
+          704,
+          544,
+          1344,
+          904
+        ],
+        "opaque": true,
+        "raw": {
+          "exact": true,
+          "mae": 0.0,
+          "max": 0
+        },
+        "right_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+        "right_roi_pixels": [
+          704,
+          544,
+          1344,
+          904
+        ],
+        "size_pixels": [
+          640,
+          360
+        ],
+        "srgb": {
+          "exact": true,
+          "mae": 0.0,
+          "max": 0
+        },
+        "status": "performed"
+      }
+    },
+    "14": {
+      "new_before_to_settled": {
+        "embedded_icc_identical": true,
+        "left_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+        "left_roi_pixels": [
+          16,
+          52,
+          336,
+          232
+        ],
+        "opaque": true,
+        "raw": {
+          "exact": false,
+          "mae": 0.27116898148148144,
+          "max": 2
+        },
+        "right_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+        "right_roi_pixels": [
+          352,
+          272,
+          672,
+          452
+        ],
+        "size_pixels": [
+          320,
+          180
+        ],
+        "srgb": {
+          "exact": false,
+          "mae": 0.27116898148148144,
+          "max": 2
+        },
+        "status": "performed"
+      },
+      "new_midflight_fixed_inset_bounds": {
+        "alpha_extrema": [
+          255,
+          255
+        ],
+        "embedded_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+        "inset_screenshot_pixels": [
+          12,
+          40,
+          1012,
+          456
+        ],
+        "interpretation": "Nonwhite pixels within fixed opaque inset; white cells can be omitted. Not exact flight bounds, fitted registration or cause.",
+        "measured_root_origin_pixels": [
+          0.0,
+          28.0
+        ],
+        "measured_scale": [
+          1.0,
+          1.0
+        ],
+        "normalized_nonwhite_bbox_root_points": [
+          16.0,
+          24.0,
+          336.0,
+          204.0
+        ],
+        "root_inset_points": 12,
+        "status": "performed"
+      },
+      "new_midflight_timing": {
+        "actual_native_rois": {
+          "anchor-ObjectIdentifier(0x0000000132f15b50)": {
+            "root_points": {
+              "height": 180,
+              "width": 320,
+              "x": 352,
+              "y": 244
+            },
+            "screenshot_pixels": {
+              "height": 180,
+              "width": 320,
+              "x": 352,
+              "y": 272
+            }
+          },
+          "flight": {
+            "root_points": {
+              "height": 180,
+              "width": 320,
+              "x": 256.0963003189473,
+              "y": 181.2059109231203
+            },
+            "screenshot_pixels": {
+              "height": 180,
+              "width": 320,
+              "x": 256.0963003189473,
+              "y": 209.2059109231203
+            }
+          }
+        },
+        "armed": {
+          "flight_identity": "ObjectIdentifier(0x0000000132e2d900)",
+          "progress": 0.6091942872454421,
+          "sample_index": 7,
+          "state": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x0000000132f15b50)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 24
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x0000000132f15b50)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 220.68928051446855,
+                  "y": 186.02274319399726
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.6091942872454421,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 220.68928051446855,
+                  "y": 158.02274319399726
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x0000000132e2d900)",
+                "window_number": 24
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 73.33612804166667
+          },
+          "uptime": 73.33612804166667
+        },
+        "capture_after_uptime": 73.37065883333334,
+        "capture_before_uptime": 73.36384866666667,
+        "capture_sample": {
+          "flight_identity": "ObjectIdentifier(0x0000000132e2d900)",
+          "progress": 0.7145723223778195,
+          "sample_index": 8,
+          "state": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x0000000132f15b50)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 24
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x0000000132f15b50)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 256.0963003189473,
+                  "y": 209.20591092312029
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.7145723223778195,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 256.0963003189473,
+                  "y": 181.2059109231203
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x0000000132e2d900)",
+                "window_number": 24
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 73.36353854166667
+          },
+          "uptime": 73.36353854166667
+        },
+        "interpretation": "Native state/time brackets and measured ROI only; not the rendered frame or synchronization.",
+        "policy": "first_band_arm_then_next_original_loop_sample",
+        "state_after": {
+          "departed": {},
+          "entries": {
+            "coordinator-one": [
+              {
+                "attached": true,
+                "identity": "ObjectIdentifier(0x0000000132f15b50)",
+                "last_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "reduced": false,
+                "window_number": 24
+              }
+            ]
+          },
+          "entry_keys": [
+            "coordinator-one"
+          ],
+          "flight_count": 1,
+          "flights": [
+            {
+              "bounds": {
+                "height": 180,
+                "width": 320,
+                "x": 0,
+                "y": 0
+              },
+              "corner": 0,
+              "destination_attached": true,
+              "destination_identity": "ObjectIdentifier(0x0000000132f15b50)",
+              "frame": {
+                "height": 180,
+                "width": 320,
+                "x": 256.0963003189473,
+                "y": 209.20591092312029
+              },
+              "from_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 52
+              },
+              "key": "coordinator-one",
+              "parent_is_actual_overlay": true,
+              "progress": 0.7145723223778195,
+              "rect_in_root": {
+                "height": 180,
+                "width": 320,
+                "x": 256.0963003189473,
+                "y": 181.2059109231203
+              },
+              "source_attached": null,
+              "source_identity": null,
+              "to_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              },
+              "view_identity": "ObjectIdentifier(0x0000000132e2d900)",
+              "window_number": 24
+            }
+          ],
+          "overlay_attached": true,
+          "overlay_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 0,
+            "y": 0
+          },
+          "temporary_flight_view_count": 1,
+          "timer_exists": true,
+          "uptime": 73.3707035
+        },
+        "state_before": {
+          "departed": {},
+          "entries": {
+            "coordinator-one": [
+              {
+                "attached": true,
+                "identity": "ObjectIdentifier(0x0000000132f15b50)",
+                "last_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "reduced": false,
+                "window_number": 24
+              }
+            ]
+          },
+          "entry_keys": [
+            "coordinator-one"
+          ],
+          "flight_count": 1,
+          "flights": [
+            {
+              "bounds": {
+                "height": 180,
+                "width": 320,
+                "x": 0,
+                "y": 0
+              },
+              "corner": 0,
+              "destination_attached": true,
+              "destination_identity": "ObjectIdentifier(0x0000000132f15b50)",
+              "frame": {
+                "height": 180,
+                "width": 320,
+                "x": 256.0963003189473,
+                "y": 209.20591092312029
+              },
+              "from_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 52
+              },
+              "key": "coordinator-one",
+              "parent_is_actual_overlay": true,
+              "progress": 0.7145723223778195,
+              "rect_in_root": {
+                "height": 180,
+                "width": 320,
+                "x": 256.0963003189473,
+                "y": 181.2059109231203
+              },
+              "source_attached": null,
+              "source_identity": null,
+              "to_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              },
+              "view_identity": "ObjectIdentifier(0x0000000132e2d900)",
+              "window_number": 24
+            }
+          ],
+          "overlay_attached": true,
+          "overlay_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 0,
+            "y": 0
+          },
+          "temporary_flight_view_count": 1,
+          "timer_exists": true,
+          "uptime": 73.363859375
+        },
+        "status": "performed"
+      },
+      "new_runtime_issues": {
+        "captures": [],
+        "report": null
+      },
+      "old_runtime_issues": {
+        "captures": [],
+        "report": null
+      },
+      "old_to_new_before_control": {
+        "embedded_icc_identical": true,
+        "left_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+        "left_roi_pixels": [
+          16,
+          52,
+          336,
+          232
+        ],
+        "opaque": true,
+        "raw": {
+          "exact": true,
+          "mae": 0.0,
+          "max": 0
+        },
+        "right_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+        "right_roi_pixels": [
+          16,
+          52,
+          336,
+          232
+        ],
+        "size_pixels": [
+          320,
+          180
+        ],
+        "srgb": {
+          "exact": true,
+          "mae": 0.0,
+          "max": 0
+        },
+        "status": "performed"
+      },
+      "old_to_new_settled_control": {
+        "embedded_icc_identical": true,
+        "left_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+        "left_roi_pixels": [
+          352,
+          272,
+          672,
+          452
+        ],
+        "opaque": true,
+        "raw": {
+          "exact": true,
+          "mae": 0.0,
+          "max": 0
+        },
+        "right_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+        "right_roi_pixels": [
+          352,
+          272,
+          672,
+          452
+        ],
+        "size_pixels": [
+          320,
+          180
+        ],
+        "srgb": {
+          "exact": true,
+          "mae": 0.0,
+          "max": 0
+        },
+        "status": "performed"
+      }
+    }
+  },
+  "input_roots": {
+    "new": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-delay-ci-40107406624",
+    "old": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14"
+  },
+  "inputs": {
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14/runtime13/before.png": {
+      "bytes": 187059,
+      "kind": "original_png",
+      "sha256": "df988c9f218040aafddd4e7fef9de6dd8a29348d1ddb829f70d965335407ae49"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14/runtime13/report.json": {
+      "bytes": 109882,
+      "kind": "report",
+      "sha256": "f935d4c26c1cfe2c2e92877eee0e0f83b5886f6e33e62a8b951e18e5354b5b27"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14/runtime13/settled.png": {
+      "bytes": 187238,
+      "kind": "original_png",
+      "sha256": "c705e24e5bbf25290e5fbc0230d959c7883f9d8cdc7afe351aa40c1ef176515f"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14/runtime14/before.png": {
+      "bytes": 56671,
+      "kind": "original_png",
+      "sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14/runtime14/report.json": {
+      "bytes": 72295,
+      "kind": "report",
+      "sha256": "0e21a494a05a1959c81f0b3cb48e1a8a40b2752b81702deada3edd051f460287"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14/runtime14/settled.png": {
+      "bytes": 55695,
+      "kind": "original_png",
+      "sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba"
+    },
+    "work/native-pq-hero-coordinator-delay-ci-40107406624/runtime13/before.png": {
+      "bytes": 187059,
+      "kind": "original_png",
+      "sha256": "df988c9f218040aafddd4e7fef9de6dd8a29348d1ddb829f70d965335407ae49"
+    },
+    "work/native-pq-hero-coordinator-delay-ci-40107406624/runtime13/in-flight.png": {
+      "bytes": 113693,
+      "kind": "original_png",
+      "sha256": "4ec11623ce0f71d6239b5131a84086fd20b1c54c9d080982d49701d7d565fa09"
+    },
+    "work/native-pq-hero-coordinator-delay-ci-40107406624/runtime13/report.json": {
+      "bytes": 123290,
+      "kind": "report",
+      "sha256": "414bccabb4f33ae3b428a2c162aee0ee7eb68fc101a5280814ca7e7cc1190cb8"
+    },
+    "work/native-pq-hero-coordinator-delay-ci-40107406624/runtime13/settled.png": {
+      "bytes": 187238,
+      "kind": "original_png",
+      "sha256": "c705e24e5bbf25290e5fbc0230d959c7883f9d8cdc7afe351aa40c1ef176515f"
+    },
+    "work/native-pq-hero-coordinator-delay-ci-40107406624/runtime14/before.png": {
+      "bytes": 56671,
+      "kind": "original_png",
+      "sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83"
+    },
+    "work/native-pq-hero-coordinator-delay-ci-40107406624/runtime14/in-flight.png": {
+      "bytes": 45077,
+      "kind": "original_png",
+      "sha256": "a440bd1c8a691663c0156a91c07a0bc556c37ec2f2f4a759e75f2ce758a1c866"
+    },
+    "work/native-pq-hero-coordinator-delay-ci-40107406624/runtime14/report.json": {
+      "bytes": 83040,
+      "kind": "report",
+      "sha256": "29f8415bcd901dc5e146b12bff8bc15c58ebaad18a20eba5e4a9c01480c230ce"
+    },
+    "work/native-pq-hero-coordinator-delay-ci-40107406624/runtime14/settled.png": {
+      "bytes": 55695,
+      "kind": "original_png",
+      "sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba"
+    }
+  },
+  "scope": "Original PNG/report hashes, intent0-perceptual ICC-to-sRGB opaque same-size endpoint comparisons and fixed12pt opaque root-inset mid bounds only. No derived images, registration, resampling, synchronized/cross-host mid equality or cause attribution.",
+  "script_sha256": "8023c0b902e668e30581edb3646d7ab11761a726f039a1059da15b62d65cf299"
+}

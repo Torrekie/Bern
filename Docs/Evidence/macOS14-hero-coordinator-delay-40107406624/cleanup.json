@@ -1,0 +1,81 @@
+{
+  "byte_verified_duplicate_logical_bytes": 1414257,
+  "created_utc": "2026-10-24T15:48:50.881700+00:00",
+  "duplicates": [
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/same-binary-13-14",
+      "logical_bytes": 1052408,
+      "verified_files": 51,
+      "work": "work/native-pq-hero-coordinator-delay-ci-40107406624"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/native-analysis",
+      "logical_bytes": 64187,
+      "verified_files": 5,
+      "work": "work/hero-coordinator-delay-native-analysis"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/pixel-analysis",
+      "logical_bytes": 52173,
+      "verified_files": 7,
+      "work": "work/hero-coordinator-delay-pixel-analysis"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/driver-preparation",
+      "logical_bytes": 44464,
+      "verified_files": 5,
+      "work": "work/hero-coordinator-delay-preparation"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/ci-preparation",
+      "logical_bytes": 64683,
+      "verified_files": 9,
+      "work": "work/hero-coordinator-delay-ci-preparation"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/code-review",
+      "logical_bytes": 8485,
+      "verified_files": 3,
+      "work": "work/hero-coordinator-delay-code-review"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/next-app-loop-plan",
+      "logical_bytes": 4731,
+      "verified_files": 2,
+      "work": "work/hero-coordinator-app-loop-plan"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/tools/verify-hero-coordinator-delay-package.py",
+      "logical_bytes": 2596,
+      "verified_files": 1,
+      "work": "work/verify-hero-coordinator-delay-package.py"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/source-static-validation.json",
+      "logical_bytes": 377,
+      "verified_files": 1,
+      "work": "work/hero-coordinator-delay-root-static.json"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/same-binary-13-14/probe",
+      "logical_bytes": 120153,
+      "scope": "Source package subset byte-equal to exact execution package; destination also retains assembly/build metadata.",
+      "verified_files": 11,
+      "work": "work/hero-coordinator-delay-source-preparation"
+    }
+  ],
+  "excluded_artifacts": [
+    {
+      "logical_bytes": 224135,
+      "path": "work/native-pq-hero-coordinator-delay-ci-40107406624/build/hero-coordinator-delay-probe.tar.gz",
+      "sha256": "d824dee65ffc2ef651818f29bd0551d85c33d50d34cafa0aa23a16a232fc72cc"
+    },
+    {
+      "logical_bytes": 606192,
+      "path": "work/native-pq-hero-coordinator-delay-ci-40107406624/probe/HeroCoordinatorDelayProbe",
+      "sha256": "fca470c9174bd11d9fc6220fa61643b7ad2338a2bb4bc34e560b3de3cb5c6e23"
+    }
+  ],
+  "expendable_artifact_logical_bytes": 830327,
+  "scope": "Owned completed next-sample coordinator cohort only. No local compiler/module cache was created. Runtime wrapper and CI terminal; no active HeroCoordinatorDelayProbe/swiftc observed. All retained duplicates byte-verified before removal. Logical bytes do not describe APFS extents or net free-space change."
+}
