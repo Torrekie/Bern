@@ -1,0 +1,255 @@
+--- a/crates/bern-backend-swiftui/templates/BernStyle.swift
++++ b/crates/bern-backend-swiftui/templates/BernStyle.swift
+@@ -2089,6 +2089,9 @@
+     @State private var items = BernSnapItems()
+     #endif
+     @State private var viewport: CGFloat = 0
++    #if os(macOS)
++    @Environment(\.bernScrollItems) private var positionItems
++    #endif
+ 
+     func body(content: Content) -> some View {
+         let horizontal = axis == .horizontal
+@@ -2103,9 +2106,12 @@
+                     .contentMargins(horizontal ? .horizontal : .vertical, margin, for: .scrollContent)
+             } else {
+                 let legacyMargin = item > 0 ? margin : 0
++                let initialOwner = center && legacyMargin > 0 ? positionItems?.legacyInitial : nil
+                 content.background(BernLegacyScrollProbe(
+                     axis: axis, reduce: reduce || bernForcedReduceMotion,
+-                    snap: { start, length in items.rest(start, length: length, axis: axis, center: center) }))
++                    snap: { start, length in items.rest(start, length: length, axis: axis, center: center) },
++                    snapAllowed: initialOwner.map { owner in { [weak owner] in owner?.waiting != true } },
++                    snapGeneration: initialOwner.map { owner in { [weak owner] in owner?.generation ?? 0 } }))
+                     .environment(\.bernLegacyScrollMargin, legacyMargin)
+                     .preference(key: BernLegacyScrollMarginPreference.self, value: legacyMargin)
+             }
+@@ -2312,6 +2318,48 @@
+     }
+ }
+ 
++#if os(macOS)
++/// Non-observable ownership of only the first legacy target installation.
++/// A later explicit request or user scroll permanently retires this owner.
++@MainActor
++fileprivate final class BernLegacyInitialScroll {
++    struct Signature: Equatable {
++        let key: AnyHashable
++        let horizontal: Bool
++        let viewport: CGFloat
++        let margin: CGFloat
++        let length: CGFloat
++    }
++    private(set) var key: AnyHashable?
++    private(set) var waiting = true
++    private(set) var generation: UInt64 = 0
++    private var started = false
++    private var applied: Signature?
++
++    func begin(_ key: AnyHashable) {
++        guard !started, waiting else { return }
++        started = true
++        self.key = key
++        generation &+= 1
++    }
++    func owns(_ key: AnyHashable) -> Bool { waiting && started && self.key == key }
++    func note(_ signature: Signature, retryOnly: Bool) -> Bool {
++        if retryOnly && applied == signature { return false }
++        applied = signature
++        return true
++    }
++    func finish() {
++        guard waiting else { return }
++        waiting = false
++        key = nil
++        applied = nil
++        // Invalidates all pending work from the initial programmatic wave,
++        // even if it wakes after the existing 150ms target release.
++        generation &+= 1
++    }
++}
++#endif
++
+ @MainActor
+ #if !os(macOS)
+ @Observable
+@@ -2345,6 +2393,10 @@
+     }
+ 
+     func tracks(_ key: AnyHashable) -> Bool { accepts(key) }
++    #if os(macOS)
++    fileprivate lazy var legacyInitial = BernLegacyInitialScroll()
++    fileprivate func legacyFrame(_ key: AnyHashable) -> CGRect? { frames[key] }
++    #endif
+ 
+     #if !os(macOS)
+     @ObservationIgnored
+@@ -2552,6 +2604,7 @@
+     #if os(macOS)
+     @State private var legacyPositioned = false
+     @State private var legacyMargin: CGFloat = 0
++    @Environment(\.bernScrollAxis) private var legacyAxis
+     #endif
+     #if os(macOS)
+     @StateObject private var items = BernScrollItems(keyType: ID.self)
+@@ -2568,9 +2621,10 @@
+             ScrollViewReader { proxy in
+                 tracked(content.background(BernLegacyScrollProbe(userScroll: {
+                     items.bernTrace("target.assign.user-scroll") { ["old": BernScrollTrace.key(target.map(AnyHashable.init)), "new": NSNull()] }
++                    items.legacyInitial.finish()
+                     items.cancelArrival()
+                     target = nil
+-                })))
++                })), legacyInitialRetry: { retryLegacyInitial(proxy) })
+                 .onPreferenceChange(BernLegacyScrollMarginPreference.self) { margin in
+                     guard margin != legacyMargin else { return }
+                     items.bernTrace("legacy.margin") { ["old": legacyMargin, "new": margin, "target": BernScrollTrace.key(target.map(AnyHashable.init))] }
+@@ -2578,16 +2632,21 @@
+                     // Initial item measurements and a viewport resize change
+                     // the real content padding. Reapply a still-owned target;
+                     // once the person takes over, target is nil and stays so.
+-                    if let wanted = target { proxy.scrollTo(wanted, anchor: anchor) }
++                    if let wanted = target {
++                        let resolved = legacyInitialAnchor(for: wanted) ?? anchor
++                        proxy.scrollTo(wanted, anchor: resolved)
++                    }
+                 }
+                 .bernOnChange(of: target, initial: true) { _, wanted in
+                     if let wanted {
+                         items.bernTrace("legacy.scroll-to") { ["wanted": BernScrollTrace.key(AnyHashable(wanted)), "legacyPositioned": legacyPositioned] }
+                         let animation = legacyPositioned && !reduce && !bernForcedReduceMotion ? motion.animation : nil
+-                        withAnimation(animation) { proxy.scrollTo(wanted, anchor: anchor) }
++                        let resolved = legacyInitialAnchor(for: wanted) ?? anchor
++                        withAnimation(animation) { proxy.scrollTo(wanted, anchor: resolved) }
+                         legacyPositioned = true
+                     }
+                 }
++                .onDisappear { items.legacyInitial.finish() }
+             }
+         }
+         #else
+@@ -2595,7 +2654,9 @@
+         #endif
+     }
+ 
+-    private func tracked<Tracked: View>(_ content: Tracked) -> some View {
++    private func tracked<Tracked: View>(
++        _ content: Tracked, legacyInitialRetry: (() -> Void)? = nil
++    ) -> some View {
+         content
+             .environment(\.bernScrollItems, items)
+             .bernNamedCoordinateSpace(bernScrollSpace)
+@@ -2605,9 +2666,13 @@
+                 items.arrival = arrival
+                 items.viewport = size
+                 items.settle()
++                legacyInitialRetry?()
+             }
+             .onAppear {
+                 items.bernTrace("position.appear.enter") { ["target": BernScrollTrace.key(target.map(AnyHashable.init)), "position": BernScrollTrace.key(AnyHashable(position.wrappedValue)), "placed": placed] }
++                #if os(macOS)
++                if #unavailable(macOS 14) { items.legacyInitial.begin(AnyHashable(position.wrappedValue)) }
++                #endif
+                 items.expect(AnyHashable(position.wrappedValue), nudge: false)
+                 items.bernTrace("target.assign.appear") { ["old": BernScrollTrace.key(target.map(AnyHashable.init)), "new": BernScrollTrace.key(AnyHashable(position.wrappedValue))] }
+                 target = position.wrappedValue
+@@ -2617,6 +2682,9 @@
+             // Once there, the platform's position lets go, so that the
+             // person's next scroll comes to rest on an item as any other.
+             .bernOnChange(of: items.stops) { _, _ in
++                #if os(macOS)
++                if #unavailable(macOS 14) { items.legacyInitial.finish() }
++                #endif
+                 items.bernTrace("target.assign.release") { ["old": BernScrollTrace.key(target.map(AnyHashable.init)), "new": NSNull()] }
+                 items.clearing = true
+                 target = nil
+@@ -2633,6 +2701,7 @@
+             }
+             .bernOnChange(of: items.nearest) { previous, next in
+                 items.bernTrace("nearest.observed") { ["old": BernScrollTrace.key(previous), "new": BernScrollTrace.key(next)] }
++                legacyInitialRetry?()
+                 follow()
+             }
+             .bernOnChange(of: target) { previous, current in
+@@ -2641,6 +2710,40 @@
+                 follow()
+             }
+     }
++
++    #if os(macOS)
++    /// Candidate only: the measured center/positive-margin initial IR domain.
++    /// Origin changes never enter the signature, so scrolling cannot reapply
++    /// itself. No candidate code calls expect/wait or creates another timer.
++    private func legacyInitialAnchor(for wanted: ID, retryOnly: Bool = false) -> UnitPoint? {
++        let key = AnyHashable(wanted)
++        guard items.legacyInitial.owns(key), anchor.x == 0.5, anchor.y == 0.5,
++              let frame = items.legacyFrame(key) else { return nil }
++        let horizontal = legacyAxis == .horizontal
++        let viewport = horizontal ? items.viewport.width : items.viewport.height
++        let length = horizontal ? frame.width : frame.height
++        let margin = legacyMargin
++        let effective = viewport - 2 * margin
++        guard [viewport, length, margin, effective].allSatisfy({ $0.isFinite }),
++              margin > 0, length > 0, length <= effective, viewport > length else { return nil }
++        let signature = BernLegacyInitialScroll.Signature(key: key, horizontal: horizontal,
++            viewport: viewport, margin: margin, length: length)
++        guard items.legacyInitial.note(signature, retryOnly: retryOnly) else { return nil }
++        let aligned = 0.5 * (effective - length) / (viewport - length)
++        let result = horizontal ? UnitPoint(x: aligned, y: anchor.y) : UnitPoint(x: anchor.x, y: aligned)
++        items.bernTrace("legacy.initial-anchor") {
++            ["key": BernScrollTrace.key(key), "horizontal": horizontal, "viewport": viewport,
++             "margin": margin, "length": length, "anchor": [result.x, result.y],
++             "generation": items.legacyInitial.generation, "retry_only": retryOnly]
++        }
++        return result
++    }
++    private func retryLegacyInitial(_ proxy: ScrollViewProxy) {
++        guard let wanted = target,
++              let resolved = legacyInitialAnchor(for: wanted, retryOnly: true) else { return }
++        proxy.scrollTo(wanted, anchor: resolved)
++    }
++    #endif
+ 
+     /// While the person scrolls, `position` follows the item nearest the
+     /// anchor.
+@@ -2656,6 +2759,9 @@
+     }
+ 
+     private func scroll(to wanted: ID) {
++        #if os(macOS)
++        if #unavailable(macOS 14) { items.legacyInitial.finish() }
++        #endif
+         items.bernTrace("scroll.request") { ["wanted": BernScrollTrace.key(AnyHashable(wanted)), "target": BernScrollTrace.key(target.map(AnyHashable.init))] }
+         let animation = reduce || bernForcedReduceMotion ? nil : motion.animation
+         let items = items
+@@ -5022,6 +5128,8 @@
+     var margin: CGFloat = 0
+     var reduce = false
+     var snap: ((CGFloat, CGFloat) -> CGFloat?)? = nil
++    var snapAllowed: (@MainActor () -> Bool)? = nil
++    var snapGeneration: (@MainActor () -> UInt64)? = nil
+     var userScroll: (() -> Void)? = nil
+     var phase: ((Double) -> Void)? = nil
+     var initialAnchor: UnitPoint? = nil
+@@ -5181,13 +5289,17 @@
+         }
+         private func scheduleSnap() {
+             guard configuration.snap != nil else { return }
+-            pending?.cancel()
+-            let work = DispatchWorkItem { [weak self] in MainActor.assumeIsolated { self?.settle() } }
++            pending?.cancel(); pending = nil
++            guard configuration.snapAllowed?() != false else { return }
++            let generation = configuration.snapGeneration?()
++            let work = DispatchWorkItem { [weak self] in MainActor.assumeIsolated { self?.settle(generation: generation) } }
+             pending = work
+             DispatchQueue.main.asyncAfter(deadline: .now() + 0.16, execute: work)
+         }
+-        private func settle() {
+-            guard !live, let scroll, let document = scroll.documentView, let snap = configuration.snap else { return }
++        private func settle(generation: UInt64?) {
++            guard configuration.snapAllowed?() != false,
++                  configuration.snapGeneration?() == generation,
++                  !live, let scroll, let document = scroll.documentView, let snap = configuration.snap else { return }
+             let clip = scroll.contentView
+             let horizontal = configuration.axis == .horizontal
+             let bounds = clip.bounds

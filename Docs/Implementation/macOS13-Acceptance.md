@@ -67,7 +67,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 
 | 项目 | 当前证据与后续条件 |
 |---|---|
-| Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。新增整应用trace已记录14的target始终3，nearest变4，quiet释放后由Bern follow明确写position3→4；13后台trace则nearest保持3。14原生只读快照确认clip709、insets左右234.5、document1638；13使用真实padding。首次边距/定位差异已缩小，具体修复尚未通过；不把它称native setter写4或修改默认值。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
+| Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。新增整应用trace已记录14的target始终3，nearest变4，quiet释放后由Bern follow明确写position3→4；13后台trace则nearest保持3。14原生只读快照确认clip709、insets左右234.5、document1638；13使用真实padding。d146诊断候选已使direct初始Glen完整frame对14差小于0.00001pt，默认3及nearest保留。与旧f9同collector对照确认wide约16.5pt偏差旧13已有，First/Last-again/restore候选相对旧13约+0.186pt；首Last仍差且时序/前台条件不同。去插桩的clean修复已提交e48fff46，精确整应用CI40070407306及13三场景运行仍待；不把诊断构建通过套给clean应用，也不改默认值。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
 | 未覆盖控件变体 | `f9e08b1`已让生成器选中的普通volume PopoverButton复用系统圆形NSButton，独立native action检查通过（单次触发、快捷键、disabled、外部打开和WindowServer alpha=0的关闭，与原Button配对一致）；整应用该版本构建、本机启动及Frame绑定打开/编辑均通过；14浅色Frame detail与原生popup已完成f9/上游配对：内容像素与几何一致，主窗侧栏仍有选中配色差异；13对应视觉仍待。icon风格Menu、显式尺寸等仍有独立路径，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |

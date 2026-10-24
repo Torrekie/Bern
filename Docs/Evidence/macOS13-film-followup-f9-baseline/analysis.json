@@ -1,0 +1,1748 @@
+{
+  "conclusion": "The candidate reproduces native14 initial Glen identity and measured geometry. The large wide-window difference already exists in old13. First/Last-again/restore/wide differ from old13 by about 0.186 pt; the first Last differs by 7.186 pt and remains a separate, unproven-history case. This is not full visual or endpoint parity.",
+  "runs": {
+    "old13": {
+      "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "harness_sha": "3f434cf0313d5657a136b1f98d0ac1293b60f169",
+      "os": "Version 13.7.8 (Build 22H730)",
+      "observation": "inactive13",
+      "profile": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "pid": 98617,
+      "success": true,
+      "activation_requests": [],
+      "sampled_fronts": [
+        [
+          1390,
+          "com.openai.codex"
+        ]
+      ],
+      "sampled_inactive_count": 77,
+      "internal_trace": null,
+      "stages": {
+        "initial": {
+          "identity": "Madras",
+          "local_rect": [
+            431.1,
+            66.46000000000004,
+            268.80000000000007,
+            151.20000000000005
+          ],
+          "center_x": 565.5,
+          "center_y": 142.06000000000006,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -94.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                175.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                431.1,
+                66.46000000000004,
+                268.80000000000007,
+                151.20000000000005
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                715.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                985.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                1255.5,
+                76,
+                240,
+                135
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-film.png",
+          "png_sha256": "48c656df990091c20ca39e884af8b63f44fdd85c940bc66123e465883845eafc",
+          "action_seconds_since_film_select": 0.0
+        },
+        "last": {
+          "identity": "Windowpane",
+          "local_rect": [
+            424.1208579577292,
+            66.47381839699563,
+            268.75828408454163,
+            151.1765347975546
+          ],
+          "center_x": 558.5,
+          "center_y": 142.06208579577293,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -911.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -641.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -371.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -101.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                168.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                424.1208579577292,
+                66.47381839699563,
+                268.75828408454163,
+                151.1765347975546
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-last.png",
+          "png_sha256": "386c29159162d5540568a929402315c377d3b46aae02fa90fd93dca6b416ed76",
+          "action_seconds_since_film_select": 1.693407999991905
+        },
+        "first": {
+          "identity": "Gingham",
+          "local_rect": [
+            431.1,
+            66.46000000000004,
+            268.79999999999995,
+            151.20000000000005
+          ],
+          "center_x": 565.5,
+          "center_y": 142.06000000000006,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                431.1,
+                66.46000000000004,
+                268.79999999999995,
+                151.20000000000005
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                715.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                985.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                1255.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                1525.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                1795.5,
+                76,
+                240,
+                135
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-first.png",
+          "png_sha256": "f7e0e4056c0849612478b8315486a4e2ef7e2c81e1420e04bd27ab7d6559bb99",
+          "action_seconds_since_film_select": 3.7482556250179186
+        },
+        "last-again": {
+          "identity": "Windowpane",
+          "local_rect": [
+            431.0999999999999,
+            66.46000000000004,
+            268.8000000000002,
+            151.20000000000005
+          ],
+          "center_x": 565.5,
+          "center_y": 142.06000000000006,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -904.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -634.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -364.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -94.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                175.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                431.0999999999999,
+                66.46000000000004,
+                268.8000000000002,
+                151.20000000000005
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-last-again.png",
+          "png_sha256": "9221242b2b13dae162e4cf9560d2ed38fade58fdf92af20354803532e7ae7d41",
+          "action_seconds_since_film_select": 5.709555375011405
+        },
+        "resize-wide": {
+          "identity": "Windowpane",
+          "local_rect": [
+            481.0999999999999,
+            66.46000000000004,
+            268.8000000000002,
+            151.20000000000005
+          ],
+          "center_x": 615.5,
+          "center_y": 142.06000000000006,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -854.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -584.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -314.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -44.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                225.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                481.0999999999999,
+                66.46000000000004,
+                268.8000000000002,
+                151.20000000000005
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 1020,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-resize-wide.png",
+          "png_sha256": "813d7d74d4935be02dad8a3fa0d9ca820af4691cde272e27011fe85b52c8f43b",
+          "action_seconds_since_film_select": 7.6960630000103265
+        },
+        "resize-restore": {
+          "identity": "Windowpane",
+          "local_rect": [
+            431.0999999999999,
+            66.46000000000004,
+            268.8000000000002,
+            151.20000000000005
+          ],
+          "center_x": 565.5,
+          "center_y": 142.06000000000006,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -904.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -634.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -364.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -94.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                175.5,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                431.0999999999999,
+                66.46000000000004,
+                268.8000000000002,
+                151.20000000000005
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-resize-restore.png",
+          "png_sha256": "9221242b2b13dae162e4cf9560d2ed38fade58fdf92af20354803532e7ae7d41",
+          "action_seconds_since_film_select": 8.50429954167339
+        }
+      }
+    },
+    "candidate13": {
+      "source_sha": "d14655fbd634c59a1e036cc9a6eb0bc550d64c75",
+      "harness_sha": "3f434cf0313d5657a136b1f98d0ac1293b60f169",
+      "os": "Version 13.7.8 (Build 22H730)",
+      "observation": "inactive13",
+      "profile": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "pid": 95890,
+      "success": true,
+      "activation_requests": [],
+      "sampled_fronts": [
+        [
+          35793,
+          "com.apple.iphonesimulator"
+        ]
+      ],
+      "sampled_inactive_count": 77,
+      "internal_trace": "scroll-95890.json",
+      "stages": {
+        "initial": {
+          "identity": "Glen",
+          "local_rect": [
+            467.23260958251853,
+            66.8791038484186,
+            267.53478083496293,
+            150.48831421966656
+          ],
+          "center_x": 601.0,
+          "center_y": 142.12326095825188,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -329,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -59,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                210.9855618272785,
+                75.990434710572,
+                240.02887634544288,
+                135.01624294431164
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                467.23260958251853,
+                66.8791038484186,
+                267.53478083496293,
+                150.48831421966656
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                751,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                1021,
+                76,
+                240,
+                135
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-film.png",
+          "png_sha256": "d24244cebc921e49f15b6d8b0693517b607488434f5cde119db5765e8175570b",
+          "action_seconds_since_film_select": 0.0
+        },
+        "last": {
+          "identity": "Windowpane",
+          "local_rect": [
+            431.2858749721097,
+            66.46000962545872,
+            268.799970942011,
+            151.1999836548813
+          ],
+          "center_x": 565.6858604431152,
+          "center_y": 142.06000145289937,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -904.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -634.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -364.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -94.31413955688481,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                175.6858604431152,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                431.2858749721097,
+                66.46000962545872,
+                268.799970942011,
+                151.1999836548813
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-last.png",
+          "png_sha256": "1bc60679e5778302a610eeb810e535f19f5ea5867e458cf9f6b1fb29fe522853",
+          "action_seconds_since_film_select": 2.869774958351627
+        },
+        "first": {
+          "identity": "Gingham",
+          "local_rect": [
+            431.28587582925365,
+            66.46001019331675,
+            268.799969227723,
+            151.19998269059414
+          ],
+          "center_x": 565.6858604431152,
+          "center_y": 142.06000153861382,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                431.28587582925365,
+                66.46001019331675,
+                268.799969227723,
+                151.19998269059414
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                715.6858604431152,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                985.6858604431152,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                1255.6858604431152,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                1525.6858604431152,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                1795.6858604431154,
+                76,
+                240,
+                135
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-first.png",
+          "png_sha256": "410db82e351b329313e55a89981269730423270e12adca1ffc79f0b40e53c7dd",
+          "action_seconds_since_film_select": 4.937974458327517
+        },
+        "last-again": {
+          "identity": "Windowpane",
+          "local_rect": [
+            431.28587582925365,
+            66.46001019331675,
+            268.79996922772307,
+            151.19998269059414
+          ],
+          "center_x": 565.6858604431152,
+          "center_y": 142.06000153861382,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -904.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -634.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -364.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -94.31413955688481,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                175.6858604431152,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                431.28587582925365,
+                66.46001019331675,
+                268.79996922772307,
+                151.19998269059414
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-last-again.png",
+          "png_sha256": "1bc60679e5778302a610eeb810e535f19f5ea5867e458cf9f6b1fb29fe522853",
+          "action_seconds_since_film_select": 7.056907833350124
+        },
+        "resize-wide": {
+          "identity": "Windowpane",
+          "local_rect": [
+            481.28587582925365,
+            66.46001019331675,
+            268.79996922772307,
+            151.19998269059414
+          ],
+          "center_x": 615.6858604431152,
+          "center_y": 142.06000153861382,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -854.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -584.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -314.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -44.31413955688481,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                225.6858604431152,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                481.28587582925365,
+                66.46001019331675,
+                268.79996922772307,
+                151.19998269059414
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 1020,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-resize-wide.png",
+          "png_sha256": "305d94fdd23bc5e6c72620e961ff93192323bb34876cc32d6fcbd91e246987e2",
+          "action_seconds_since_film_select": 9.163682000013068
+        },
+        "resize-restore": {
+          "identity": "Windowpane",
+          "local_rect": [
+            431.28587582925365,
+            66.46001019331675,
+            268.79996922772307,
+            151.19998269059414
+          ],
+          "center_x": 565.6858604431152,
+          "center_y": 142.06000153861382,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -904.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -634.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -364.3141395568848,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -94.31413955688481,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                175.6858604431152,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                431.28587582925365,
+                66.46001019331675,
+                268.79996922772307,
+                151.19998269059414
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-resize-restore.png",
+          "png_sha256": "1bc60679e5778302a610eeb810e535f19f5ea5867e458cf9f6b1fb29fe522853",
+          "action_seconds_since_film_select": 9.89929937501438
+        }
+      }
+    },
+    "native14": {
+      "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "harness_sha": "a864c0ca517fded07f66d51b091cdc3aa76426a3",
+      "os": "Version 14.8.9 (Build 23J631)",
+      "observation": "active",
+      "profile": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "pid": 1281,
+      "success": true,
+      "activation_requests": [
+        {
+          "accepted": true,
+          "after": {
+            "front_bundle": "dev.bern.gallery",
+            "front_pid": 1281,
+            "own_pid": 1281,
+            "uptime": 84.00063033333333
+          },
+          "before": {
+            "front_bundle": "com.apple.finder",
+            "front_pid": 323,
+            "own_pid": 1281,
+            "uptime": 83.86255816666667
+          },
+          "options": [
+            "activateAllWindows"
+          ],
+          "pid": 1281,
+          "samples": [
+            {
+              "front_bundle": "com.apple.finder",
+              "front_pid": 323,
+              "own_pid": 1281,
+              "uptime": 83.87535895833334
+            },
+            {
+              "front_bundle": "dev.bern.gallery",
+              "front_pid": 1281,
+              "own_pid": 1281,
+              "uptime": 84.00023425
+            }
+          ],
+          "scenario": "direct"
+        }
+      ],
+      "sampled_fronts": [],
+      "sampled_inactive_count": 0,
+      "internal_trace": null,
+      "stages": {
+        "initial": {
+          "identity": "Glen",
+          "local_rect": [
+            467.2326065063477,
+            66.87910181045527,
+            267.53478698730476,
+            150.48831768035888
+          ],
+          "center_x": 601.0,
+          "center_y": 142.1232606506347,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -329,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -59,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                210.9855667114258,
+                75.99043794631962,
+                240.0288665771484,
+                135.01623744964604
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                467.2326065063477,
+                66.87910181045527,
+                267.53478698730476,
+                150.48831768035888
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                751,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                1021,
+                76,
+                240,
+                135
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-film.png",
+          "png_sha256": "46ae79801159c1a9b26e6a86225e51bcfc34a667bf215ec94a611c6cfe8b00d8",
+          "action_seconds_since_film_select": 0.0
+        },
+        "last": {
+          "identity": "Windowpane",
+          "local_rect": [
+            438.62539215087895,
+            66.47682229995712,
+            268.7492156982421,
+            151.17143383026126
+          ],
+          "center_x": 573.0,
+          "center_y": 142.06253921508775,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -897,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -627,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -357,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -87,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                183,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                438.62539215087895,
+                66.47682229995712,
+                268.7492156982421,
+                151.17143383026126
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-last.png",
+          "png_sha256": "13788694f15e1d1c87111de35daac508c6fa65e7f725ae4639136504013e6522",
+          "action_seconds_since_film_select": 1.8631781666666711
+        },
+        "first": {
+          "identity": "Gingham",
+          "local_rect": [
+            430.6001098632812,
+            66.4600727844238,
+            268.7997802734376,
+            151.19987640380862
+          ],
+          "center_x": 565.0,
+          "center_y": 142.0600109863281,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                430.6001098632812,
+                66.4600727844238,
+                268.7997802734376,
+                151.19987640380862
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                715,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                985,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                1255,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                1525,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                1795,
+                76,
+                240,
+                135
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-first.png",
+          "png_sha256": "776ee043ac7ed48de0090a6d784a059fa324832f102a007d1d07a6c891f18b90",
+          "action_seconds_since_film_select": 4.1907570416666715
+        },
+        "last-again": {
+          "identity": "Windowpane",
+          "local_rect": [
+            430.6001098632812,
+            66.4600727844238,
+            268.7997802734376,
+            151.19987640380862
+          ],
+          "center_x": 565.0,
+          "center_y": 142.0600109863281,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -905,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -635,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -365,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -95,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                175,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                430.6001098632812,
+                66.4600727844238,
+                268.7997802734376,
+                151.19987640380862
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-last-again.png",
+          "png_sha256": "4d18a87205c9d1c8665db6542f1a59f3a3c22cd428e7909ee8480990256dfa9b",
+          "action_seconds_since_film_select": 6.544329375000004
+        },
+        "resize-wide": {
+          "identity": "Windowpane",
+          "local_rect": [
+            464.7248321533202,
+            66.54270130157465,
+            268.55033569335956,
+            151.05956382751464
+          ],
+          "center_x": 599.0,
+          "center_y": 142.07248321533197,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -871,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -601,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -331,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -61,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                209,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                464.7248321533202,
+                66.54270130157465,
+                268.55033569335956,
+                151.05956382751464
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 1020,
+            "X": 510,
+            "Y": 158
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-resize-wide.png",
+          "png_sha256": "d4f6fd0b866fc0962d2c37adf07d716131f149fed2ea0386c2e2496ccaef6cc1",
+          "action_seconds_since_film_select": 9.085994624999998
+        },
+        "resize-restore": {
+          "identity": "Windowpane",
+          "local_rect": [
+            430.6001098632812,
+            66.4600727844238,
+            268.7997802734376,
+            151.19987640380862
+          ],
+          "center_x": 565.0,
+          "center_y": 142.0600109863281,
+          "images": [
+            {
+              "identity": "Gingham",
+              "local_rect": [
+                -905,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Tartan",
+              "local_rect": [
+                -635,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Madras",
+              "local_rect": [
+                -365,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Glen",
+              "local_rect": [
+                -95,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Houndstooth",
+              "local_rect": [
+                175,
+                76,
+                240,
+                135
+              ]
+            },
+            {
+              "identity": "Windowpane",
+              "local_rect": [
+                430.6001098632812,
+                66.4600727844238,
+                268.7997802734376,
+                151.19987640380862
+              ]
+            }
+          ],
+          "window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "raw_equal_comparisons": 4,
+          "png": "direct-resize-restore.png",
+          "png_sha256": "4d18a87205c9d1c8665db6542f1a59f3a3c22cd428e7909ee8480990256dfa9b",
+          "action_seconds_since_film_select": 10.210836999999998
+        }
+      }
+    }
+  },
+  "comparison": [
+    {
+      "stage": "initial",
+      "identities": [
+        "Madras",
+        "Glen",
+        "Glen"
+      ],
+      "center_x": [
+        565.5,
+        601.0,
+        601.0
+      ],
+      "candidate_minus_old_center": 35.5,
+      "old_minus_native_center": -35.5,
+      "candidate_minus_native_center": 0.0,
+      "candidate_minus_old_rect": [
+        36.13260958251851,
+        0.4191038484185583,
+        -1.2652191650371378,
+        -0.7116857803334824
+      ],
+      "png_candidate_vs_old": {
+        "size": [
+          1840,
+          1336
+        ],
+        "byte_identical": false,
+        "icc_identical": true,
+        "alpha_identical": true,
+        "opaque_pixel_count": 2457768,
+        "opaque_rgb_max": 202,
+        "opaque_rgb_mean": 2.1961408345566653,
+        "scope": "Raw encoded RGB diagnostic only. Different fronts, state history, and geometry prevent a pixel-equivalence conclusion."
+      }
+    },
+    {
+      "stage": "last",
+      "identities": [
+        "Windowpane",
+        "Windowpane",
+        "Windowpane"
+      ],
+      "center_x": [
+        558.5,
+        565.6858604431152,
+        573.0
+      ],
+      "candidate_minus_old_center": 7.185860443115189,
+      "old_minus_native_center": -14.5,
+      "candidate_minus_native_center": -7.314139556884811,
+      "candidate_minus_old_rect": [
+        7.16501701438051,
+        -0.013808771536901077,
+        0.041686857469358074,
+        0.023448857326684447
+      ],
+      "png_candidate_vs_old": {
+        "size": [
+          1840,
+          1336
+        ],
+        "byte_identical": false,
+        "icc_identical": true,
+        "alpha_identical": true,
+        "opaque_pixel_count": 2457768,
+        "opaque_rgb_max": 202,
+        "opaque_rgb_mean": 1.9579571112217806,
+        "scope": "Raw encoded RGB diagnostic only. Different fronts, state history, and geometry prevent a pixel-equivalence conclusion."
+      }
+    },
+    {
+      "stage": "first",
+      "identities": [
+        "Gingham",
+        "Gingham",
+        "Gingham"
+      ],
+      "center_x": [
+        565.5,
+        565.6858604431152,
+        565.0
+      ],
+      "candidate_minus_old_center": 0.1858604431151889,
+      "old_minus_native_center": 0.5,
+      "candidate_minus_native_center": 0.6858604431151889,
+      "candidate_minus_old_rect": [
+        0.18587582925363222,
+        1.019331671159307e-05,
+        -3.077227694348039e-05,
+        -1.73094059050527e-05
+      ],
+      "png_candidate_vs_old": {
+        "size": [
+          1840,
+          1336
+        ],
+        "byte_identical": false,
+        "icc_identical": true,
+        "alpha_identical": true,
+        "opaque_pixel_count": 2457768,
+        "opaque_rgb_max": 72,
+        "opaque_rgb_mean": 0.2274691237469661,
+        "scope": "Raw encoded RGB diagnostic only. Different fronts, state history, and geometry prevent a pixel-equivalence conclusion."
+      }
+    },
+    {
+      "stage": "last-again",
+      "identities": [
+        "Windowpane",
+        "Windowpane",
+        "Windowpane"
+      ],
+      "center_x": [
+        565.5,
+        565.6858604431152,
+        565.0
+      ],
+      "candidate_minus_old_center": 0.1858604431151889,
+      "old_minus_native_center": 0.5,
+      "candidate_minus_native_center": 0.6858604431151889,
+      "candidate_minus_old_rect": [
+        0.1858758292537459,
+        1.019331671159307e-05,
+        -3.077227711401065e-05,
+        -1.73094059050527e-05
+      ],
+      "png_candidate_vs_old": {
+        "size": [
+          1840,
+          1336
+        ],
+        "byte_identical": false,
+        "icc_identical": true,
+        "alpha_identical": true,
+        "opaque_pixel_count": 2457768,
+        "opaque_rgb_max": 72,
+        "opaque_rgb_mean": 0.23414035281876347,
+        "scope": "Raw encoded RGB diagnostic only. Different fronts, state history, and geometry prevent a pixel-equivalence conclusion."
+      }
+    },
+    {
+      "stage": "resize-wide",
+      "identities": [
+        "Windowpane",
+        "Windowpane",
+        "Windowpane"
+      ],
+      "center_x": [
+        615.5,
+        615.6858604431152,
+        599.0
+      ],
+      "candidate_minus_old_center": 0.1858604431151889,
+      "old_minus_native_center": 16.5,
+      "candidate_minus_native_center": 16.68586044311519,
+      "candidate_minus_old_rect": [
+        0.1858758292537459,
+        1.019331671159307e-05,
+        -3.077227711401065e-05,
+        -1.73094059050527e-05
+      ],
+      "png_candidate_vs_old": {
+        "size": [
+          2040,
+          1336
+        ],
+        "byte_identical": false,
+        "icc_identical": true,
+        "alpha_identical": true,
+        "opaque_pixel_count": 2724968,
+        "opaque_rgb_max": 72,
+        "opaque_rgb_mean": 0.22625672423798493,
+        "scope": "Raw encoded RGB diagnostic only. Different fronts, state history, and geometry prevent a pixel-equivalence conclusion."
+      }
+    },
+    {
+      "stage": "resize-restore",
+      "identities": [
+        "Windowpane",
+        "Windowpane",
+        "Windowpane"
+      ],
+      "center_x": [
+        565.5,
+        565.6858604431152,
+        565.0
+      ],
+      "candidate_minus_old_center": 0.1858604431151889,
+      "old_minus_native_center": 0.5,
+      "candidate_minus_native_center": 0.6858604431151889,
+      "candidate_minus_old_rect": [
+        0.1858758292537459,
+        1.019331671159307e-05,
+        -3.077227711401065e-05,
+        -1.73094059050527e-05
+      ],
+      "png_candidate_vs_old": {
+        "size": [
+          1840,
+          1336
+        ],
+        "byte_identical": false,
+        "icc_identical": true,
+        "alpha_identical": true,
+        "opaque_pixel_count": 2457768,
+        "opaque_rgb_max": 72,
+        "opaque_rgb_mean": 0.23414035281876347,
+        "scope": "Raw encoded RGB diagnostic only. Different fronts, state history, and geometry prevent a pixel-equivalence conclusion."
+      }
+    }
+  ],
+  "limits": [
+    "Both 13 runs are inactive/2x; native 14 is active/1x. The 13 fronts differ: old13 Codex, candidate13 Simulator.",
+    "Candidate includes a two-second one-shot trace flush and after-trace capture before Last; the uninstrumented f9 baseline has no such wait. No extra pause or synthetic trace was added.",
+    "Each sequence was run once. AX identity/frame, raw-buffer stability, and actual PNG are observed; binding setters, physical gesture behavior, and causes of the endpoint differences are not.",
+    "Initial target default 3 is unchanged. Candidate nearest/follow trace is diagnostic evidence, not coverage of every native binding setter.",
+    "The clean semantic patch is a separate uncompiled proposal; the diagnostic candidate build/CI cannot be claimed to validate a logger-free whole app."
+  ]
+}

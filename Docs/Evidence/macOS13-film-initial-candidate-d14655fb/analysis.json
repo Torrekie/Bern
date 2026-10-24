@@ -1,0 +1,476 @@
+{
+  "conclusion": "Initialcandidate matches active14 card identity and measured geometry; fullfollowup parity notpassed. Oldsameharness13baseline stillneeded before attributing remainingdifferences to candidate.",
+  "states": [
+    {
+      "stage": "initial",
+      "identity": "Glen",
+      "window_bounds": {
+        "Height": 668,
+        "Width": 920,
+        "X": 270,
+        "Y": 80
+      },
+      "largest_local_rect": [
+        467.23260958251853,
+        66.8791038484186,
+        267.53478083496293,
+        150.48831421966656
+      ],
+      "center_x": 601.0,
+      "reference_center_x": 601.0,
+      "center_delta_vs_active14": 0.0,
+      "width_delta_vs_active14": -6.152341825327312e-06,
+      "AX_truncated": false,
+      "png": "direct-film.png",
+      "png_sha256": "d24244cebc921e49f15b6d8b0693517b607488434f5cde119db5765e8175570b",
+      "equal_comparisons": 4
+    },
+    {
+      "stage": "last",
+      "identity": "Windowpane",
+      "window_bounds": {
+        "Height": 668,
+        "Width": 920,
+        "X": 270,
+        "Y": 80
+      },
+      "largest_local_rect": [
+        431.2858749721097,
+        66.46000962545872,
+        268.799970942011,
+        151.1999836548813
+      ],
+      "center_x": 565.6858604431152,
+      "reference_center_x": 573.0,
+      "center_delta_vs_active14": -7.314139556884811,
+      "width_delta_vs_active14": 0.05075524376889007,
+      "AX_truncated": false,
+      "png": "direct-last.png",
+      "png_sha256": "1bc60679e5778302a610eeb810e535f19f5ea5867e458cf9f6b1fb29fe522853",
+      "equal_comparisons": 4
+    },
+    {
+      "stage": "first",
+      "identity": "Gingham",
+      "window_bounds": {
+        "Height": 668,
+        "Width": 920,
+        "X": 270,
+        "Y": 80
+      },
+      "largest_local_rect": [
+        431.28587582925365,
+        66.46001019331675,
+        268.799969227723,
+        151.19998269059414
+      ],
+      "center_x": 565.6858604431152,
+      "reference_center_x": 565.0,
+      "center_delta_vs_active14": 0.6858604431151889,
+      "width_delta_vs_active14": 0.0001889542854200954,
+      "AX_truncated": false,
+      "png": "direct-first.png",
+      "png_sha256": "410db82e351b329313e55a89981269730423270e12adca1ffc79f0b40e53c7dd",
+      "equal_comparisons": 4
+    },
+    {
+      "stage": "last-again",
+      "identity": "Windowpane",
+      "window_bounds": {
+        "Height": 668,
+        "Width": 920,
+        "X": 270,
+        "Y": 80
+      },
+      "largest_local_rect": [
+        431.28587582925365,
+        66.46001019331675,
+        268.79996922772307,
+        151.19998269059414
+      ],
+      "center_x": 565.6858604431152,
+      "reference_center_x": 565.0,
+      "center_delta_vs_active14": 0.6858604431151889,
+      "width_delta_vs_active14": 0.00018895428547693882,
+      "AX_truncated": false,
+      "png": "direct-last-again.png",
+      "png_sha256": "1bc60679e5778302a610eeb810e535f19f5ea5867e458cf9f6b1fb29fe522853",
+      "equal_comparisons": 4
+    },
+    {
+      "stage": "resize-wide",
+      "identity": "Windowpane",
+      "window_bounds": {
+        "Height": 668,
+        "Width": 1020,
+        "X": 270,
+        "Y": 80
+      },
+      "largest_local_rect": [
+        481.28587582925365,
+        66.46001019331675,
+        268.79996922772307,
+        151.19998269059414
+      ],
+      "center_x": 615.6858604431152,
+      "reference_center_x": 599.0,
+      "center_delta_vs_active14": 16.68586044311519,
+      "width_delta_vs_active14": 0.249633534363511,
+      "AX_truncated": false,
+      "png": "direct-resize-wide.png",
+      "png_sha256": "305d94fdd23bc5e6c72620e961ff93192323bb34876cc32d6fcbd91e246987e2",
+      "equal_comparisons": 4
+    },
+    {
+      "stage": "resize-restore",
+      "identity": "Windowpane",
+      "window_bounds": {
+        "Height": 668,
+        "Width": 920,
+        "X": 270,
+        "Y": 80
+      },
+      "largest_local_rect": [
+        431.28587582925365,
+        66.46001019331675,
+        268.79996922772307,
+        151.19998269059414
+      ],
+      "center_x": 565.6858604431152,
+      "reference_center_x": 565.0,
+      "center_delta_vs_active14": 0.6858604431151889,
+      "width_delta_vs_active14": 0.00018895428547693882,
+      "AX_truncated": false,
+      "png": "direct-resize-restore.png",
+      "png_sha256": "1bc60679e5778302a610eeb810e535f19f5ea5867e458cf9f6b1fb29fe522853",
+      "equal_comparisons": 4
+    }
+  ],
+  "initial_pixel_comparison": {
+    "raw_png_sha_equal": false,
+    "pixels": [
+      1840,
+      1336
+    ],
+    "ICC_equal": true,
+    "alpha_equal": true,
+    "both_opaque_pixel_count": 2457768,
+    "both_opaque_max_rgb_difference": 1,
+    "raw_max_rgb_difference": 85,
+    "premultiplied_max_difference": 1.6235294117647059,
+    "cause": "Not established; do not label dither or geometry movement solely from these raw differences."
+  },
+  "initial_trace": {
+    "events": 99,
+    "dropped": 0,
+    "sha256": "2aae494532fd4894bad8f9367f7e154a0b434ba22d98cde410639c7c007bc379",
+    "selected_events": [
+      {
+        "event": "settle.computed",
+        "fields": {
+          "found": null,
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": null,
+            "followed": null,
+            "frame_count": 0,
+            "nearest": null,
+            "nudges": false,
+            "settling": false,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 0
+          }
+        },
+        "scope": "FB961ED5-E38E-451B-91CB-3C0ADE2D01CA",
+        "sequence": 3,
+        "uptime": 223574.75903979168,
+        "seconds_after_expect": -0.0005993333470541984
+      },
+      {
+        "event": "target.assign.appear",
+        "fields": {
+          "new": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "old": null,
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 1
+          }
+        },
+        "scope": "FB961ED5-E38E-451B-91CB-3C0ADE2D01CA",
+        "sequence": 35,
+        "uptime": 223574.75964029168,
+        "seconds_after_expect": 1.1666561476886272e-06
+      },
+      {
+        "event": "legacy.initial-anchor",
+        "fields": {
+          "anchor": [
+            0,
+            0.5
+          ],
+          "generation": 1,
+          "horizontal": true,
+          "key": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "length": 240,
+          "margin": 234.5,
+          "retry_only": false,
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 1
+          },
+          "viewport": 709
+        },
+        "scope": "FB961ED5-E38E-451B-91CB-3C0ADE2D01CA",
+        "sequence": 39,
+        "uptime": 223574.774681375,
+        "seconds_after_expect": 0.015042249986436218
+      },
+      {
+        "event": "legacy.initial-anchor",
+        "fields": {
+          "anchor": [
+            0,
+            0.5
+          ],
+          "generation": 1,
+          "horizontal": true,
+          "key": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "length": 240,
+          "margin": 234.5,
+          "retry_only": false,
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": true,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 2
+          },
+          "viewport": 709
+        },
+        "scope": "FB961ED5-E38E-451B-91CB-3C0ADE2D01CA",
+        "sequence": 66,
+        "uptime": 223574.77644229168,
+        "seconds_after_expect": 0.016803166654426605
+      },
+      {
+        "event": "settle.computed",
+        "fields": {
+          "found": {
+            "type": "Swift.Int64",
+            "value": "4"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": {
+              "type": "Swift.Int64",
+              "value": "3"
+            },
+            "followed": null,
+            "frame_count": 6,
+            "nearest": null,
+            "nudges": false,
+            "settling": false,
+            "stops": 0,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 3
+          }
+        },
+        "scope": "FB961ED5-E38E-451B-91CB-3C0ADE2D01CA",
+        "sequence": 84,
+        "uptime": 223574.83900579167,
+        "seconds_after_expect": 0.07936666664318182
+      },
+      {
+        "event": "target.assign.release",
+        "fields": {
+          "new": null,
+          "old": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": false,
+            "coming": null,
+            "followed": null,
+            "frame_count": 6,
+            "nearest": {
+              "type": "Swift.Int64",
+              "value": "4"
+            },
+            "nudges": false,
+            "settling": false,
+            "stops": 1,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 3
+          }
+        },
+        "scope": "FB961ED5-E38E-451B-91CB-3C0ADE2D01CA",
+        "sequence": 90,
+        "uptime": 223574.9977697917,
+        "seconds_after_expect": 0.23813066666480154
+      },
+      {
+        "event": "position.assign.follow",
+        "fields": {
+          "new": {
+            "type": "Swift.Int64",
+            "value": "4"
+          },
+          "old": {
+            "type": "Swift.Int64",
+            "value": "3"
+          },
+          "state": {
+            "anchor": [
+              0.5,
+              0.5
+            ],
+            "arrivals": 0,
+            "clearing": true,
+            "coming": null,
+            "followed": null,
+            "frame_count": 6,
+            "nearest": {
+              "type": "Swift.Int64",
+              "value": "4"
+            },
+            "nudges": false,
+            "settling": false,
+            "stops": 1,
+            "viewport": [
+              709,
+              207
+            ],
+            "watch": 3
+          }
+        },
+        "scope": "FB961ED5-E38E-451B-91CB-3C0ADE2D01CA",
+        "sequence": 95,
+        "uptime": 223574.99968583335,
+        "seconds_after_expect": 0.24004670832073316
+      }
+    ]
+  },
+  "native_initial": {
+    "application_active": false,
+    "clip": [
+      709,
+      207
+    ],
+    "clip_bounds_x": 798.5,
+    "document_width": 2107,
+    "horizontal_insets": [
+      0,
+      0
+    ],
+    "comparison_active14_initial": {
+      "clip_x": 564,
+      "document_width": 1638,
+      "insets": [
+        234.5,
+        234.5
+      ]
+    },
+    "coordinate_difference": "13 realpadding adds234.5 toboth targetdocx andclipx; rendered id3origin0 matches14"
+  },
+  "capture_scope": {
+    "samples": 77,
+    "front_pids": [
+      35793
+    ],
+    "front_bundles": [
+      "com.apple.iphonesimulator"
+    ],
+    "own_pid": 95890,
+    "mode": "inactive13; sample-before-capture contract, not uninterrupted atomic proof or activevisual acceptance"
+  },
+  "followup_scope": "ExternalCGwindow/PNG/AX/CLI only. One internal2second trace; no Last/First/resize internal trace."
+}

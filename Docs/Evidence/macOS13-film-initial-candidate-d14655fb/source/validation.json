@@ -1,0 +1,36 @@
+{
+  "base_commit": "744e3168abf388a6bd881a6eb6f00bc6a4542123",
+  "base_sha256": "9713b662e36e8ee563d3865b5ddc53ba7210bd8daa57325cbeb484acc2ebba10",
+  "candidate_sha256": "ae6b7caa30b7c9c23c699669dd78eeac6c33f943d1e89a0660e763fbec864868",
+  "patch_sha256": "02de91864709215a6634ce0214fbb0e195bee4dcb4bf7a1c16387857a3e06928",
+  "callback_and_timer_count_contract": {
+    ".onAppear": true,
+    ".onDisappear": true,
+    ".onGeometryChange": true,
+    ".bernOnChange": true,
+    "Task.sleep(for: .milliseconds(150))": true,
+    ".now() + 0.16": true
+  },
+  "only_new_view_modifier": "onDisappear, only in13Reader branch, retires initial owner",
+  "compiled": false,
+  "ui_run": false,
+  "ci_dispatch": false,
+  "frontend_parse": {
+    "status": 0,
+    "compiler": "Swift5.9.2",
+    "source": "BernStyle.swift",
+    "scope": "syntax only"
+  },
+  "owner_hook_typecheck": {
+    "status": 0,
+    "compiler": "Swift5.9.2/SDK14.2",
+    "target": "arm64-apple-macos13.0",
+    "options": [
+      "strict-concurrency=complete",
+      "warnings-as-errors"
+    ],
+    "scope": "extracted exact owner class and weak MainActor callback wiring, not whole-template typechecking"
+  },
+  "new_view_modifier": "onDisappear in13Reader only; retires owner before quiet callback can be lost",
+  "owner_hook_typecheck_source_sha256": "92685398d4be534361c8612edd7363075219ed901913482f9804cacf600aef21"
+}
