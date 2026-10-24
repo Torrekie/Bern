@@ -1,0 +1,55 @@
+--- committed-v2/Driver.swift.inc
++++ isolated-float/Driver.swift.inc
+@@ -70,6 +70,7 @@
+     let space = image.colorSpace
+     record["color_space_present"] = space != nil
+     fixtureSnapshotCGImageObservations.append(FixtureSnapshotCGImageDescriptor(scalars: record, space: space))
++    FixtureSnapshotFloatCapture.observe(image, key: key)
+ }
+ private func fixtureRect(_ r: CGRect) -> [String: Double] {
+     ["x": r.minX, "y": r.minY, "width": r.width, "height": r.height]
+@@ -151,7 +152,10 @@
+      "readback_policy": "Public NSImageRep metadata only; no CGImage/TIFF/bitmap recache conversion"]
+ }
+ @main private enum HeroBaselineMain {
+-    @MainActor static func main() { exit(run()) }
++    @MainActor static func main() {
++        let status = run()
++        exit(status == 0 && FixtureSnapshotFloatCapture.finalizationFailed ? 1 : status)
++    }
+     @MainActor private static func run() -> Int32 {
+         guard CommandLine.arguments.count == 4 else { return 2 }
+         let urls = CommandLine.arguments[1...2].map { URL(fileURLWithPath: $0) }
+@@ -167,9 +171,10 @@
+             "scope": "Actual BernImage(hero: unique nonnil keys) body/modifier/anchor/manager/snapshot; actual BernHeroFlightView.draw at fixed progress0/1, same opaque image at both endpoints. Static endpoints only, no actual coordinated flight or lifecycle acceptance.",
+             "activation_calls": 0, "collection_seconds": 7.2, "watchdog_seconds": 7.9,
+             "image_equality_collection_gate": false,
+-            "snapshot_cgimage_metadata": "Fixture-only public CGImage scalar descriptors and color-space reference at the actual renderer.cgImage result; classification/ICC hash/bounded profile serialization only after all PNG captures and original window teardown. No retained image, observer pixel/provider readback, NSImage recache, conversion or relabel. Not a zero-observer-effect claim."
++            "snapshot_cgimage_metadata": "Fixture-only public CGImage scalar descriptors and color-space reference at the actual renderer.cgImage result; classification/ICC hash/bounded profile serialization only after all PNG captures and original window teardown. The v2 metadata observer retains no image; separate opt-in raw capture lifetime/provider reads are reported in snapshot_float_capture. No NSImage recache, conversion or relabel. Not a zero-observer-effect claim."
+         ]
+         defer {
++            FixtureSnapshotFloatCapture.freezePrimary()
+             let observationsBeforeCleanup = fixtureSnapshotCGImageObservations
+             report["snapshot_cgimage_observations_scope"] = "before_existing_window_teardown"
+             report["normal_after"] = ["reduce_motion": NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
+@@ -184,11 +189,20 @@
+             report["frontmost_before"] = front
+             report["frontmost_after"] = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
+             report["os"] = ProcessInfo.processInfo.operatingSystemVersionString
++            let floatCapture = FixtureSnapshotFloatCapture.finish(output: output, acquisitionSucceeded: report["success"] as? Bool == true)
++            report["snapshot_float_capture"] = floatCapture
++            if floatCapture["success"] as? Bool != true {
++                report["success"] = false
++                if report["error"] == nil { report["error"] = floatCapture["error"] }
++            }
+             try? JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
+                 .write(to: output.appendingPathComponent("report.json"))
+         }
+         do {
+             try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
++            guard FixtureFloatCaptureMode.selected != nil else {
++                throw FixtureFailure(message: "Invalid BERN_HERO_FLOAT_CAPTURE; off/on required before window creation")
++            }
+             guard (expectedOS == 13 || expectedOS == 14), actualOS == expectedOS, CGPreflightScreenCaptureAccess() else {
+                 throw FixtureFailure(message: "Expected13/14 and existing screen permission required; no prompt")
+             }
