@@ -1,0 +1,122 @@
+{
+  "active_workflow_gate_wrapper_pending_count": 0,
+  "additive_gate_sha256": "25665325f42137f7947587d65c3d98887fad39c744158f84e9959e534ad19af4",
+  "append_whitespace_fix": {
+    "blank_lines_cleaned": 2,
+    "only_new_append_region": true,
+    "original_prefix_untouched": true,
+    "yaml_semantics_unchanged": true
+  },
+  "assembly_output": "CoordinatorSDR.assembled.swift",
+  "base_workflow": {
+    "path": "outputs/Bern/.github/workflows/macos14-hero-coordinator-app-probe.yml",
+    "sha256": "875747591a581fde4b4381482961405ab990cb279a878929a5627adc3791c7af"
+  },
+  "base_wrapper": {
+    "path": "outputs/Bern/.github/scripts/hero-coordinator-app-probe/run-one.py",
+    "sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6"
+  },
+  "canonical_diff_sha256": "66635b8c5d20a14c9b2585887a390cceb5361b7335ebb7efef7b1a6a1b2a408d",
+  "derived_sources": {
+    "Driver.swift.inc": "16d366612fdb55a4a2a1e39ce731cc7ad247fa71608a89f65a1c8d241230ec92",
+    "FlightSDR.swift.inc": "5f79ae281bb743ee7af87dc737e66195b4bd85c5e50c84d0c5183f53766d8f65",
+    "ProductHero.swift": "cf924d4fa27df6486b65b30be1a194ec7daf4016674b79bd4084e045eba8beea"
+  },
+  "final_assembly": [
+    "ProductHero.swift",
+    "FlightSDR.swift.inc",
+    "Driver.swift.inc"
+  ],
+  "final_static_review": {
+    "additive_gate_definitions_byte_exact": true,
+    "additive_gate_sha256": "25665325f42137f7947587d65c3d98887fad39c744158f84e9959e534ad19af4",
+    "compile_ui_ci_dispatch": false,
+    "error": null,
+    "final_source_ready": true,
+    "inherited_gate_prefix": {
+      "byte_exact_after_binary_path_substitution": true,
+      "bytes": 9830,
+      "sha256": "e67b21226c79f7516cc603d7731fae4e6cc4c6403df72b5769608f204c3d5a44"
+    },
+    "pending_source_contract_markers": [],
+    "source_package_hashes_verified": true,
+    "static_framework_valid": true,
+    "wrapper_sha256": "200403b0b4e07f49dc4f74b6af8e0b5b14d67f36a3de022f44e4c44419d8621c",
+    "yaml_python_shell_syntax_valid": true
+  },
+  "flight_sdr_schema_pending": false,
+  "initial_framework_checkpoint_manifest_sha256": "936d9e06e0cb321b2b954af39a8b72d9bd96b7a04323802cf5be22cab2f270a5",
+  "new_binary": "HeroCoordinatorSDRProbe",
+  "new_package_folder": ".github/scripts/hero-coordinator-sdr-probe",
+  "new_workflow_path": ".github/workflows/macos14-hero-coordinator-sdr-probe.yml",
+  "performed": {
+    "compile_ui_ci_dispatch": false,
+    "old_archive_mutation": false,
+    "private_framework_written": true,
+    "repository_or_index_mutation": false,
+    "source_tree_or_images_copied": false
+  },
+  "preserved": {
+    "app_native_and_execution_gate_prefix_byte_exact_after_package_binary_path_substitution": true,
+    "build_os": "macos-15",
+    "compile_once": true,
+    "default14_only": true,
+    "developer_dir": "/Applications/Xcode_26.3.app/Contents/Developer",
+    "sdk_version": "26.2",
+    "target": "arm64-apple-macos13.0",
+    "wrapper_timeout_seconds": 15
+  },
+  "root_source_package": "work/hero-coordinator-sdr-20261025/probe-source",
+  "root_source_provenance_sha256": "d84d7525000f3cae0f24f036815b0c53e05111aa9fb4e486fdb19093da9b671a",
+  "safety_of_incomplete_framework": "Source SHA placeholders prevent build; append-only pending-schema assertion prevents a green gate until finalization. Not dispatched.",
+  "schema_contract": {
+    "accepted_cases": [
+      "default13",
+      "default14",
+      "baked-pair13"
+    ],
+    "actual_snapshots": 2,
+    "baked_pair_conversions_context_cache": [
+      2,
+      1,
+      2
+    ],
+    "cleanup": "Frozen primary and original teardown metadata stage, cleared helper references only; no global deallocation claim.",
+    "default_conversions_context_cache": [
+      0,
+      0,
+      0
+    ],
+    "failure": "Sticky helper/native success/error, complete two-output mapping and nonzero process are required; no original-image fallback accepted. No failure injection performed.",
+    "identity": "Two ordinal records; distinct actual from/to NSImage and retained derived IDs. Original CGImage address uniqueness is not asserted because reuse is possible.",
+    "record_key": "flight_sdr_display",
+    "timing": "Actual snapshot/conversion/wrap/return/Flight.started/observer ordering only; no total0.3s TTL bound. First observer is not first visible frame.",
+    "tone_mapping": "Requested true, actual application remains unknown."
+  },
+  "source_files_and_promap_assembled_by": "root",
+  "source_names_hashes_pending": false,
+  "static_checks": {
+    "compile_ui_ci_dispatch": false,
+    "error": null,
+    "final_source_ready": false,
+    "inherited_gate_prefix": {
+      "byte_exact_after_binary_path_substitution": true,
+      "bytes": 9830,
+      "sha256": "e67b21226c79f7516cc603d7731fae4e6cc4c6403df72b5769608f204c3d5a44"
+    },
+    "pending_source_contract_markers": [
+      "PENDING_DRIVER_SHA256",
+      "PENDING_FLIGHT_SDR_SCHEMA",
+      "PENDING_FLIGHT_SDR_SHA256",
+      "PENDING_HERO_BASE_SHA256"
+    ],
+    "static_framework_valid": true,
+    "wrapper_sha256": "200403b0b4e07f49dc4f74b6af8e0b5b14d67f36a3de022f44e4c44419d8621c",
+    "yaml_python_shell_syntax_valid": true
+  },
+  "static_checks_scope": "YAML/AST and bash -n only, no shell execution or wrapper invocation; source/schema finalization still pending.",
+  "status": "final_source_and_schema_locked_private_not_dispatched",
+  "validator_sha256": "0c4f1b28e314e4713c3cb2fc3b0da7ee338030fdc5e17da067f794d814389f5e",
+  "workflow_sha256": "d222f36f67f2a5014e4970ed6484dd60023735f5d8e28ceecb12018ff62b1335",
+  "wrapper_sha256": "200403b0b4e07f49dc4f74b6af8e0b5b14d67f36a3de022f44e4c44419d8621c"
+}

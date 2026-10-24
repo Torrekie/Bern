@@ -1,0 +1,67 @@
+{
+  "archive_sha256": "586e23c5f58c036c3af9ffd9b89c769175af60a9ba6b7c852f3f9326879acb94",
+  "assembly_sha256": "4b28394f1ca1b103b5e13dbce28e0ae6ca82d12eb6cf631f83522b66d4efe4e7",
+  "binary_bytes": 654256,
+  "binary_sha256": "999b31d0bff0fe3079c3fc2abb5a816769361d0d603286c73e8b21c3f6aa64c8",
+  "checks": {
+    "arch": {
+      "argv": [
+        "xcrun",
+        "lipo",
+        "-archs",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/HeroCoordinatorSDRProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "arm64\n"
+    },
+    "build": {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/HeroCoordinatorSDRProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/HeroCoordinatorSDRProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 26.2\n   ntools 1\n     tool LD\n  version 1230.1\n"
+    },
+    "signature": {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "--verbose=4",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/HeroCoordinatorSDRProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/HeroCoordinatorSDRProbe: valid on disk\n/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/HeroCoordinatorSDRProbe: satisfies its Designated Requirement\n",
+      "stdout": ""
+    }
+  },
+  "local_compile_or_resign": false,
+  "package_manifest_sha256": "2008c7e706aa176559b32bf4ce5329b0929efa97bd5744a52af99bea624d2ed5",
+  "source_map_members": 12,
+  "verified_package_members": [
+    "CoordinatorSDR.assembled.swift",
+    "Dependencies.swift",
+    "Driver.swift.inc",
+    "FlightSDR.swift.inc",
+    "HeroCoordinatorSDRProbe",
+    "ProductHero.exact.swift",
+    "ProductHero.swift",
+    "ProductImage.exact.swift",
+    "ProductImage.swift",
+    "ProductStyle.exact.swift",
+    "ProductStyle.swift",
+    "README.md",
+    "assets/source-named-pq.png",
+    "build/binary.txt",
+    "build/command.txt",
+    "build/compile.log",
+    "build/environment.txt",
+    "build/signature.txt",
+    "run-one.py",
+    "source-provenance.json"
+  ]
+}

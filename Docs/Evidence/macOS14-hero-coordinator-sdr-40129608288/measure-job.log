@@ -1,0 +1,396 @@
+﻿2026-10-24T20:24:57.4895490Z Current runner version: '2.338.0'
+2026-10-24T20:24:57.4914440Z ##[group]Runner Image Provisioner
+2026-10-24T20:24:57.4914980Z Hosted Compute Agent
+2026-10-24T20:24:57.4915400Z Version: 20260828.587
+2026-10-24T20:24:57.4915870Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-10-24T20:24:57.4916440Z Build Date: 2026-08-28T16:44:25Z
+2026-10-24T20:24:57.4916970Z Worker ID: {b1308648-8fd7-4594-9685-735aead6d114}
+2026-10-24T20:24:57.4917420Z Azure Region: westus
+2026-10-24T20:24:57.4917780Z ##[endgroup]
+2026-10-24T20:24:57.4918710Z ##[group]Operating System
+2026-10-24T20:24:57.4919130Z macOS
+2026-10-24T20:24:57.4919510Z 14.8.9
+2026-10-24T20:24:57.4919820Z 23J631
+2026-10-24T20:24:57.4920220Z ##[endgroup]
+2026-10-24T20:24:57.4920580Z ##[group]Runner Image
+2026-10-24T20:24:57.4921050Z Image: macos-14-arm64
+2026-10-24T20:24:57.4921410Z Version: 20260831.0302.1
+2026-10-24T20:24:57.4922340Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20260831.0302/images/macos/macos-14-arm64-Readme.md
+2026-10-24T20:24:57.4923530Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20260831.0302
+2026-10-24T20:24:57.4924230Z ##[endgroup]
+2026-10-24T20:24:57.4925040Z ##[group]GITHUB_TOKEN Permissions
+2026-10-24T20:24:57.4926230Z Contents: read
+2026-10-24T20:24:57.4926580Z Metadata: read
+2026-10-24T20:24:57.4926980Z ##[endgroup]
+2026-10-24T20:24:57.4928380Z Secret source: Actions
+2026-10-24T20:24:57.4928950Z Cache mode: write
+2026-10-24T20:24:57.4929380Z Prepare workflow directory
+2026-10-24T20:24:57.5357540Z Prepare all required actions
+2026-10-24T20:24:57.5417020Z Getting action download info
+2026-10-24T20:24:57.6739680Z Download action repository 'actions/download-artifact@v5' (SHA:634f93cb2916e3fdff6788551b99b062d0335ce0)
+2026-10-24T20:24:58.7934820Z Download action repository 'actions/upload-artifact@v5' (SHA:330a01c490aca151604b8cf639adc76d48f6c5d4)
+2026-10-24T20:24:59.0327380Z Complete job name: measure
+2026-10-24T20:24:59.1015100Z ##[group]Run actions/download-artifact@v5
+2026-10-24T20:24:59.1015800Z with:
+2026-10-24T20:24:59.1016230Z   name: macos14-hero-coordinator-sdr-probe-build
+2026-10-24T20:24:59.1016730Z   path: build
+2026-10-24T20:24:59.1017100Z   merge-multiple: false
+2026-10-24T20:24:59.1017500Z   repository: Torrekie/Bern
+2026-10-24T20:24:59.1017910Z   run-id: 40129608288
+2026-10-24T20:24:59.1018390Z ##[endgroup]
+2026-10-24T20:24:59.6702940Z Downloading single artifact
+2026-10-24T20:24:59.6964100Z (node:1584) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-24T20:24:59.6969080Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-24T20:24:59.8060330Z Preparing to download the following artifacts:
+2026-10-24T20:24:59.8077120Z - macos14-hero-coordinator-sdr-probe-build (ID: 12573987924, Size: 269386, Expected Digest: sha256:21bf09ee31386d962faf2080566930b56409ee71ce795cf40722f436adfa07af)
+2026-10-24T20:24:59.9121820Z Redirecting to blob download url: https://productionresultssa8.blob.core.windows.net/actions-results/72a8600b-e835-4821-b5e5-be43cc18a43e/workflow-job-run-c8f699a3-eb78-544a-adef-3f5818510f11/artifacts/99c1da6a9c6df0cc0be505ec599496daaefdfeef46e8832f89c264d38af28fd3.zip
+2026-10-24T20:24:59.9127800Z Starting download of artifact to: /Users/runner/work/Bern/Bern/build
+2026-10-24T20:24:59.9658500Z (node:1584) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-24T20:24:59.9884380Z SHA256 digest of downloaded artifact is 21bf09ee31386d962faf2080566930b56409ee71ce795cf40722f436adfa07af
+2026-10-24T20:24:59.9887030Z Artifact download completed successfully.
+2026-10-24T20:24:59.9888190Z Total of 1 artifact(s) downloaded
+2026-10-24T20:24:59.9890010Z Download artifact has finished successfully
+2026-10-24T20:25:00.0277250Z ##[group]Run set -euo pipefail
+2026-10-24T20:25:00.0283150Z [36;1mset -euo pipefail[0m
+2026-10-24T20:25:00.0290110Z [36;1mmkdir -p probe evidence/runtime14[0m
+2026-10-24T20:25:00.0294540Z [36;1mtrap 'rm -rf probe build' EXIT[0m
+2026-10-24T20:25:00.0299020Z [36;1m{[0m
+2026-10-24T20:25:00.0302680Z [36;1m  printf 'harness_sha=%s\nexpected_os_major=%s\n' "$GITHUB_SHA" "$BERN_HERO_EXPECT_OS"[0m
+2026-10-24T20:25:00.0308020Z [36;1m  sw_vers[0m
+2026-10-24T20:25:00.0310170Z [36;1m  uname -m[0m
+2026-10-24T20:25:00.0312370Z [36;1m} > evidence/runtime14/environment.txt 2>&1[0m
+2026-10-24T20:25:00.0316540Z [36;1mtest "$(sw_vers -productVersion | cut -d. -f1)" = 14[0m
+2026-10-24T20:25:00.0319890Z [36;1mtest "$(uname -m)" = arm64[0m
+2026-10-24T20:25:00.0325000Z [36;1mtest "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"[0m
+2026-10-24T20:25:00.0331910Z [36;1m(cd build && shasum -a 256 -c hero-coordinator-sdr-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1[0m
+2026-10-24T20:25:00.0337110Z [36;1mpython3 - <<'PY'[0m
+2026-10-24T20:25:00.0338250Z [36;1mfrom pathlib import PurePosixPath[0m
+2026-10-24T20:25:00.0339970Z [36;1mimport tarfile[0m
+2026-10-24T20:25:00.0343160Z [36;1mwith tarfile.open('build/hero-coordinator-sdr-probe.tar.gz') as t:[0m
+2026-10-24T20:25:00.0346330Z [36;1m    for m in t.getmembers():[0m
+2026-10-24T20:25:00.0350570Z [36;1m        p=PurePosixPath(m.name)[0m
+2026-10-24T20:25:00.0353630Z [36;1m        assert not p.is_absolute() and '..' not in p.parts,m.name[0m
+2026-10-24T20:25:00.0356510Z [36;1m        assert m.isdir() or m.isfile(),m.name[0m
+2026-10-24T20:25:00.0359140Z [36;1mPY[0m
+2026-10-24T20:25:00.0360680Z [36;1mtar -xzf build/hero-coordinator-sdr-probe.tar.gz -C probe[0m
+2026-10-24T20:25:00.0363640Z [36;1m(cd probe && shasum -a 256 -c SHA256SUMS) > evidence/runtime14/package-verification.txt 2>&1[0m
+2026-10-24T20:25:00.0368430Z [36;1mtest "$(xcrun lipo -archs probe/HeroCoordinatorSDRProbe)" = arm64[0m
+2026-10-24T20:25:00.0373400Z [36;1mcodesign --verify --strict --verbose=4 probe/HeroCoordinatorSDRProbe > evidence/runtime14/signature-verification.txt 2>&1[0m
+2026-10-24T20:25:00.0378450Z [36;1mshasum -a 256 probe/HeroCoordinatorSDRProbe > evidence/runtime14/binary-sha256.txt[0m
+2026-10-24T20:25:00.0385890Z [36;1mcp build/environment.txt evidence/runtime14/build-environment.txt[0m
+2026-10-24T20:25:00.0390820Z [36;1mcp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-coordinator-sdr-probe.tar.gz.sha256} evidence/runtime14/[0m
+2026-10-24T20:25:00.0395580Z [36;1mdefaults write com.apple.universalaccess reduceMotion -bool false[0m
+2026-10-24T20:25:00.0442610Z [36;1mdefaults write com.apple.universalaccess reduceTransparency -bool false[0m
+2026-10-24T20:25:00.0444760Z [36;1mdefaults write com.apple.universalaccess increaseContrast -bool false[0m
+2026-10-24T20:25:00.0446550Z [36;1mkillall cfprefsd || true[0m
+2026-10-24T20:25:00.0447550Z [36;1m{[0m
+2026-10-24T20:25:00.0449000Z [36;1m  # Raw defaults absence is diagnostic; effective NSWorkspace flags[0m
+2026-10-24T20:25:00.0450990Z [36;1m  # remain mandatory before/after in the executable and assertions.[0m
+2026-10-24T20:25:00.0455100Z [36;1m  defaults read com.apple.universalaccess reduceMotion || true[0m
+2026-10-24T20:25:00.0459240Z [36;1m  defaults read com.apple.universalaccess reduceTransparency || true[0m
+2026-10-24T20:25:00.0461470Z [36;1m  defaults read com.apple.universalaccess increaseContrast || true[0m
+2026-10-24T20:25:00.0463120Z [36;1m} > evidence/runtime14/requested-normal.txt 2>&1[0m
+2026-10-24T20:25:00.0465100Z [36;1mpython3 probe/run-one.py "$PWD/probe/HeroCoordinatorSDRProbe" "$PWD/probe/assets/source-named-pq.png" \[0m
+2026-10-24T20:25:00.0466940Z [36;1m  "$PWD/evidence/runtime14" 14 default[0m
+2026-10-24T20:25:00.0468000Z [36;1mpython3 - <<'PY'[0m
+2026-10-24T20:25:00.0468710Z [36;1mimport hashlib,json,math[0m
+2026-10-24T20:25:00.0469500Z [36;1mfrom pathlib import Path[0m
+2026-10-24T20:25:00.0471960Z [36;1mdef reject_constant(value): raise ValueError('Non-finite JSON token: '+value)[0m
+2026-10-24T20:25:00.0473650Z [36;1mp=Path('evidence/runtime14')[0m
+2026-10-24T20:25:00.0474890Z [36;1md=json.loads((p/'report.json').read_text(),parse_constant=reject_constant)[0m
+2026-10-24T20:25:00.0476750Z [36;1mreceipt=json.loads((p/'run-receipt.json').read_text(),parse_constant=reject_constant)[0m
+2026-10-24T20:25:00.0478320Z [36;1massert d['success'] is True and d.get('error') is None[0m
+2026-10-24T20:25:00.0479680Z [36;1massert d['expected_os_major']==14 and d['actual_os_major']==14[0m
+2026-10-24T20:25:00.0481250Z [36;1massert receipt['exit_code']==0 and not receipt.get('wrapper_timeout',False)[0m
+2026-10-24T20:25:00.0482890Z [36;1massert receipt['expected_os_major']==14 and receipt['timeout_seconds']==15[0m
+2026-10-24T20:25:00.0485280Z [36;1massert receipt['bern_motion_environment']=='unset' and type(receipt['bern_motion_was_present']) is bool[0m
+2026-10-24T20:25:00.0487770Z [36;1massert receipt['binary_sha256']==hashlib.sha256(Path('probe/HeroCoordinatorSDRProbe').read_bytes()).hexdigest()[0m
+2026-10-24T20:25:00.0489900Z [36;1masset_sha='3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b'[0m
+2026-10-24T20:25:00.0491620Z [36;1massert receipt['named_asset_sha256']==asset_sha[0m
+2026-10-24T20:25:00.0493120Z [36;1massert d['activation_calls']==0 and 0<d['window_seconds']<7.9[0m
+2026-10-24T20:25:00.0495000Z [36;1massert d['collection_seconds']==7.2 and d['watchdog_seconds']==7.9 and d['preload_seconds_limit']==3[0m
+2026-10-24T20:25:00.0498230Z [36;1massert d['sample_limit']==512 and d['nominal_poll_hz']==60 and d['maximum_pngs']==3[0m
+2026-10-24T20:25:00.0500210Z [36;1massert d['frontmost_before']==d['frontmost_after'] and receipt['own_pid']!=d['frontmost_before'][0m
+2026-10-24T20:25:00.0501820Z [36;1mfor key in ('normal_before','normal_after'):[0m
+2026-10-24T20:25:00.0503250Z [36;1m    assert set(d[key])=={'reduce_motion','reduce_transparency','increase_contrast'}[0m
+2026-10-24T20:25:00.0504670Z [36;1m    assert all(v is False for v in d[key].values())[0m
+2026-10-24T20:25:00.0505960Z [36;1massert d['cache_unchanged'] is True and d['cache_before']==d['cache_after'][0m
+2026-10-24T20:25:00.0507660Z [36;1massert d['cache_before']['file_sha256']==asset_sha and d['cache_before']['orientation']=='up'[0m
+2026-10-24T20:25:00.0509940Z [36;1massert d['pixel_acceptance']=='Not performed; before/mid/settled PNGs require offline visibility/color/timing review'[0m
+2026-10-24T20:25:00.0512250Z [36;1mcaptures=d['captures']; assert isinstance(captures,list) and len(captures)==3[0m
+2026-10-24T20:25:00.0513900Z [36;1massert [c['phase'] for c in captures]==['before','in-flight','settled'][0m
+2026-10-24T20:25:00.0516970Z [36;1massert len(list(p.glob('*.png')))==3[0m
+2026-10-24T20:25:00.0518210Z [36;1mwindow_ids={c['window_id'] for c in captures}[0m
+2026-10-24T20:25:00.0519910Z [36;1massert len(window_ids)==1 and all(type(v) is int and v>0 for v in window_ids)[0m
+2026-10-24T20:25:00.0521230Z [36;1mown_window=next(iter(window_ids))[0m
+2026-10-24T20:25:00.0522150Z [36;1mdef number(value):[0m
+2026-10-24T20:25:00.0523250Z [36;1m    assert type(value) in (int,float) and math.isfinite(value)[0m
+2026-10-24T20:25:00.0525130Z [36;1mdef rect(value):[0m
+2026-10-24T20:25:00.0528750Z [36;1m    assert isinstance(value,dict) and set(value)=={'x','y','width','height'}[0m
+2026-10-24T20:25:00.0533080Z [36;1m    for v in value.values(): number(v)[0m
+2026-10-24T20:25:00.0537710Z [36;1m    assert value['width']>0 and value['height']>0[0m
+2026-10-24T20:25:00.0541090Z [36;1mdef state(value):[0m
+2026-10-24T20:25:00.0543150Z [36;1m    assert isinstance(value,dict) and isinstance(value['flights'],list)[0m
+2026-10-24T20:25:00.0550610Z [36;1m    assert type(value['flight_count']) is int and value['flight_count']==len(value['flights'])[0m
+2026-10-24T20:25:00.0554640Z [36;1m    assert type(value['timer_exists']) is bool[0m
+2026-10-24T20:25:00.0561430Z [36;1m    assert type(value['temporary_flight_view_count']) is int and value['temporary_flight_view_count']>=0[0m
+2026-10-24T20:25:00.0566750Z [36;1m    assert set(value['entry_keys']).issubset({'coordinator-one'})[0m
+2026-10-24T20:25:00.0572810Z [36;1m    for flight in value['flights']:[0m
+2026-10-24T20:25:00.0576270Z [36;1m        assert flight['key']=='coordinator-one' and flight['parent_is_actual_overlay'] is True[0m
+2026-10-24T20:25:00.0578160Z [36;1m        assert flight['window_number']==own_window[0m
+2026-10-24T20:25:00.0581580Z [36;1m        assert isinstance(flight['view_identity'],str) and flight['view_identity'][0m
+2026-10-24T20:25:00.0583440Z [36;1m        number(flight['progress']); rect(flight['frame']); rect(flight['bounds'])[0m
+2026-10-24T20:25:00.0585580Z [36;1m        rect(flight['from_rect']); rect(flight['to_rect'])[0m
+2026-10-24T20:25:00.0587160Z [36;1m        assert flight['from_rect']!=flight['to_rect'][0m
+2026-10-24T20:25:00.0588410Z [36;1m    return value['flights'][0m
+2026-10-24T20:25:00.0589400Z [36;1mdef resting(value):[0m
+2026-10-24T20:25:00.0591650Z [36;1m    assert state(value)==[] and value['timer_exists'] is False[0m
+2026-10-24T20:25:00.0594880Z [36;1m    assert value['temporary_flight_view_count']==0[0m
+2026-10-24T20:25:00.0597980Z [36;1mfor c in captures:[0m
+2026-10-24T20:25:00.0600040Z [36;1m    assert c['owner_pid']==receipt['own_pid'] and c['key'] is False and c['active'] is False[0m
+2026-10-24T20:25:00.0601600Z [36;1m    assert c['live_metal_count']==0[0m
+2026-10-24T20:25:00.0603240Z [36;1m    assert c['window_frame']==captures[0]['window_frame'][0m
+2026-10-24T20:25:00.0605390Z [36;1m    assert c['capture_before_uptime']<=c['capture_after_uptime'][0m
+2026-10-24T20:25:00.0607360Z [36;1m    for key in ('state_before','state_after'): state(c[key])[0m
+2026-10-24T20:25:00.0609230Z [36;1m    size=c['capture_size']; assert len(size)==2 and all(type(v) is int and v>0 for v in size)[0m
+2026-10-24T20:25:00.0610560Z [36;1m    for roi in c['rois'].values():[0m
+2026-10-24T20:25:00.0611790Z [36;1m        rect(roi['root_points']); pixels=roi['screenshot_pixels']; rect(pixels)[0m
+2026-10-24T20:25:00.0613050Z [36;1m        assert pixels['x']>=0 and pixels['y']>=0[0m
+2026-10-24T20:25:00.0614490Z [36;1m        assert pixels['x']+pixels['width']<=size[0] and pixels['y']+pixels['height']<=size[1][0m
+2026-10-24T20:25:00.0615830Z [36;1m    assert c['png']==c['phase']+'.png'[0m
+2026-10-24T20:25:00.0617080Z [36;1m    assert hashlib.sha256((p/c['png']).read_bytes()).hexdigest()==c['png_sha256'][0m
+2026-10-24T20:25:00.0618690Z [36;1mfor c,role,wanted in ((captures[0],'source',{'x':16,'y':24,'width':320,'height':180}),[0m
+2026-10-24T20:25:00.0620520Z [36;1m                      (captures[2],'destination',{'x':352,'y':244,'width':320,'height':180})):[0m
+2026-10-24T20:25:00.0621920Z [36;1m    assert c['consecutive_equal_buffers']>=5[0m
+2026-10-24T20:25:00.0623140Z [36;1m    resting(c['state_before']); resting(c['state_after'])[0m
+2026-10-24T20:25:00.0624360Z [36;1m    actual=c['rois'][role]['root_points'][0m
+2026-10-24T20:25:00.0626190Z [36;1m    assert max(abs(actual[k]-wanted[k]) for k in wanted)<=0.000001[0m
+2026-10-24T20:25:00.0628600Z [36;1msamples=d['samples']; assert isinstance(samples,list) and 0<len(samples)<=512[0m
+2026-10-24T20:25:00.0631870Z [36;1massert all(type(v['sample_index']) is int and v['sample_index']==i for i,v in enumerate(samples))[0m
+2026-10-24T20:25:00.0633790Z [36;1mmid=captures[1][0m
+2026-10-24T20:25:00.0634800Z [36;1massert mid['consecutive_equal_buffers_required'] is False[0m
+2026-10-24T20:25:00.0635950Z [36;1msampling=d['midflight_sampling'][0m
+2026-10-24T20:25:00.0636950Z [36;1mpolicy='first_band_arm_then_next_original_loop_sample'[0m
+2026-10-24T20:25:00.0638330Z [36;1massert sampling['policy']==policy and mid['sampling_policy']==policy[0m
+2026-10-24T20:25:00.0641630Z [36;1massert sampling['capture_attempted'] is True and sampling['next_sample_captured'] is True[0m
+2026-10-24T20:25:00.0644420Z [36;1marmed=sampling['armed']; captured=sampling['capture_sample'][0m
+2026-10-24T20:25:00.0645680Z [36;1mfor record in (armed,captured):[0m
+2026-10-24T20:25:00.0647940Z [36;1m    assert isinstance(record,dict) and set(record)=={'sample_index','state','uptime','progress','flight_identity'}[0m
+2026-10-24T20:25:00.0650360Z [36;1m    index=record['sample_index']; assert type(index) is int and 0<=index<len(samples)[0m
+2026-10-24T20:25:00.0651980Z [36;1m    number(record['uptime']); number(record['progress'])[0m
+2026-10-24T20:25:00.0654970Z [36;1m    value=record['state']; records_live=state(value)[0m
+2026-10-24T20:25:00.0657170Z [36;1m    assert len(records_live)==1 and value['timer_exists'] is True[0m
+2026-10-24T20:25:00.0660360Z [36;1m    assert records_live[0]['view_identity']==record['flight_identity'][0m
+2026-10-24T20:25:00.0662870Z [36;1m    assert records_live[0]['progress']==record['progress'] and value['uptime']==record['uptime'][0m
+2026-10-24T20:25:00.0664440Z [36;1m    assert samples[index]['stage']=='transition'[0m
+2026-10-24T20:25:00.0665520Z [36;1m    assert all(samples[index][k]==v for k,v in value.items())[0m
+2026-10-24T20:25:00.0666710Z [36;1massert captured['sample_index']==armed['sample_index']+1[0m
+2026-10-24T20:25:00.0667840Z [36;1massert captured['uptime']>=armed['uptime'][0m
+2026-10-24T20:25:00.0668900Z [36;1massert armed['flight_identity']==captured['flight_identity'][0m
+2026-10-24T20:25:00.0669930Z [36;1massert 0.2<armed['progress']<0.8[0m
+2026-10-24T20:25:00.0671270Z [36;1massert not any(v['flights'] and 0.2<v['flights'][0]['progress']<0.8 for v in samples[:armed['sample_index']])[0m
+2026-10-24T20:25:00.0672980Z [36;1m# No captured-progress band assertion: the exact next sample may exceed .8.[0m
+2026-10-24T20:25:00.0674510Z [36;1mfor flat,key in (('armed_sample_index','sample_index'),('armed_sample_state','state'),[0m
+2026-10-24T20:25:00.0676360Z [36;1m                 ('armed_sample_uptime','uptime'),('armed_progress','progress'),('armed_flight_identity','flight_identity')):[0m
+2026-10-24T20:25:00.0677840Z [36;1m    assert mid[flat]==armed[key][0m
+2026-10-24T20:25:00.0679040Z [36;1mfor flat,key in (('capture_sample_index','sample_index'),('capture_sample_state','state'),[0m
+2026-10-24T20:25:00.0681080Z [36;1m                 ('capture_sample_uptime','uptime'),('capture_sample_progress','progress'),('capture_sample_flight_identity','flight_identity')):[0m
+2026-10-24T20:25:00.0685440Z [36;1m    assert mid[flat]==captured[key][0m
+2026-10-24T20:25:00.0686760Z [36;1massert mid['trigger_refers_to']=='armed_sample'[0m
+2026-10-24T20:25:00.0688110Z [36;1massert mid['trigger_state']==armed['state'] and mid['trigger_progress']==armed['progress'][0m
+2026-10-24T20:25:00.0689660Z [36;1mlive=state(armed['state']); assert 'flight' in mid['rois'][0m
+2026-10-24T20:25:00.0690980Z [36;1m# Shot bracket states are actual records, not forced to stay live or stable.[0m
+2026-10-24T20:25:00.0692350Z [36;1mnative=d['native_gates']; assert native['transition_count']==1[0m
+2026-10-24T20:25:00.0694120Z [36;1mfor key in ('actual_flight_seen','actual_frame_and_progress_changed','midband_armed','next_sample_captured',[0m
+2026-10-24T20:25:00.0695850Z [36;1m            'source_no_longer_attached','temporary_view_removed'):[0m
+2026-10-24T20:25:00.0696860Z [36;1m    assert native[key] is True[0m
+2026-10-24T20:25:00.0697870Z [36;1mfor key in ('source_detached_observed','source_weak_deallocated'):[0m
+2026-10-24T20:25:00.0699500Z [36;1m    assert type(native[key]) is bool[0m
+2026-10-24T20:25:00.0700730Z [36;1midentities=native['observed_flight_identities'][0m
+2026-10-24T20:25:00.0702220Z [36;1massert isinstance(identities,list) and len(identities)==1 and identities[0]==live[0]['view_identity'][0m
+2026-10-24T20:25:00.0703740Z [36;1massert d['observed_flight_identities']==identities[0m
+2026-10-24T20:25:00.0704630Z [36;1mfor c in captures:[0m
+2026-10-24T20:25:00.0705400Z [36;1m    for key in ('state_before','state_after'):[0m
+2026-10-24T20:25:00.0707100Z [36;1m        assert all(f['view_identity']==identities[0] for f in c[key]['flights'])[0m
+2026-10-24T20:25:00.0708230Z [36;1mobserved=[][0m
+2026-10-24T20:25:00.0708870Z [36;1mfor sample in samples:[0m
+2026-10-24T20:25:00.0710050Z [36;1m    flights=state(sample)[0m
+2026-10-24T20:25:00.0710860Z [36;1m    if flights:[0m
+2026-10-24T20:25:00.0711860Z [36;1m        assert len(flights)==1 and sample['timer_exists'] is True[0m
+2026-10-24T20:25:00.0713030Z [36;1m        assert flights[0]['view_identity']==identities[0][0m
+2026-10-24T20:25:00.0714150Z [36;1m        observed.append(flights[0])[0m
+2026-10-24T20:25:00.0715450Z [36;1massert any(a['frame']!=b['frame'] and a['progress']!=b['progress'] for a,b in zip(observed,observed[1:]))[0m
+2026-10-24T20:25:00.0716870Z [36;1mresting(d['before_cleanup_state'])[0m
+2026-10-24T20:25:00.0718100Z [36;1m# Append-only app-loop metadata gate; inherited native acquisition gate above is unchanged.[0m
+2026-10-24T20:25:00.0719370Z [36;1mexecution=d['execution_model'][0m
+2026-10-24T20:25:00.0720400Z [36;1massert execution['kind']=='nsapplication_run_delegate_default_timer'[0m
+2026-10-24T20:25:00.0722110Z [36;1mfor key in ('launch_completed_count','loop_entry_count','loop_return_count','terminal_count','stop_calls','wake_count'):[0m
+2026-10-24T20:25:00.0723760Z [36;1m    assert type(execution[key]) is int and execution[key]==1[0m
+2026-10-24T20:25:00.0725120Z [36;1mfor key in ('sampler_reentrant_callbacks','sampler_callbacks_after_terminal'):[0m
+2026-10-24T20:25:00.0726410Z [36;1m    assert type(execution[key]) is int and execution[key]==0[0m
+2026-10-24T20:25:00.0727760Z [36;1massert type(execution['sampler_max_depth']) is int and execution['sampler_max_depth']==1[0m
+2026-10-24T20:25:00.0729430Z [36;1massert type(execution['sampler_callback_count']) is int and execution['sampler_callback_count']>0[0m
+2026-10-24T20:25:00.0731030Z [36;1massert isinstance(execution['sampler_mode'],str) and execution['sampler_mode'][0m
+2026-10-24T20:25:00.0732450Z [36;1massert execution['sampler_observed_modes']==[execution['sampler_mode']][0m
+2026-10-24T20:25:00.0733640Z [36;1mnumber(execution['sampler_interval_seconds'])[0m
+2026-10-24T20:25:00.0734620Z [36;1massert execution['sampler_interval_seconds']==1/60[0m
+2026-10-24T20:25:00.0735690Z [36;1massert execution['sampler_invalidated_before_stop'] is True[0m
+2026-10-24T20:25:00.0737250Z [36;1massert execution['wake_after_terminal'] is True and execution['wake_posted_to_own_app_queue'] is True[0m
+2026-10-24T20:25:00.0738680Z [36;1massert execution['wake_type']=='applicationDefined'[0m
+2026-10-24T20:25:00.0739890Z [36;1mtimes=[execution[key] for key in ('loop_entry_uptime','launch_completed_uptime',[0m
+2026-10-24T20:25:00.0741160Z [36;1m       'preload_started_uptime','preload_completed_uptime')][0m
+2026-10-24T20:25:00.0742470Z [36;1mtimes += [captures[0]['capture_before_uptime'],captures[0]['capture_after_uptime'],[0m
+2026-10-24T20:25:00.0743930Z [36;1m          captures[2]['capture_before_uptime'],captures[2]['capture_after_uptime'],[0m
+2026-10-24T20:25:00.0745250Z [36;1m          execution['terminal_uptime'],execution['loop_return_uptime']][0m
+2026-10-24T20:25:00.0746300Z [36;1mfor value in times: number(value)[0m
+2026-10-24T20:25:00.0747150Z [36;1massert 0<=times[0] and times==sorted(times)[0m
+2026-10-24T20:25:00.0748680Z [36;1massert 0<=execution['preload_completed_uptime']-execution['preload_started_uptime']<=d['preload_seconds_limit'][0m
+2026-10-24T20:25:00.0750500Z [36;1m# Append-only SDR metadata gate; inherited native/execution gate above remains unchanged.[0m
+2026-10-24T20:25:00.0751700Z [36;1m#!/usr/bin/env python3[0m
+2026-10-24T20:25:00.0752760Z [36;1m"""Append-only gate for the frozen actual-coordinator flight_sdr_display schema."""[0m
+2026-10-24T20:25:00.0753940Z [36;1mimport json, math, sys[0m
+2026-10-24T20:25:00.0754680Z [36;1m[0m
+2026-10-24T20:25:00.0755340Z [36;1mdef validate_flight_sdr(d, receipt, mode, major):[0m
+2026-10-24T20:25:00.0756220Z [36;1m    def need(value, message):[0m
+2026-10-24T20:25:00.0757930Z [36;1m        if not value: raise ValueError('flight_sdr_display: '+message)[0m
+2026-10-24T20:25:00.0759160Z [36;1m    def count(value, label, expected=None):[0m
+2026-10-24T20:25:00.0760550Z [36;1m        need(type(value) is int and value>=0,label+' must be a nonnegative integer')[0m
+2026-10-24T20:25:00.0761870Z [36;1m        if expected is not None: need(value==expected,label+' differs')[0m
+2026-10-24T20:25:00.0762870Z [36;1m    def number(value, label):[0m
+2026-10-24T20:25:00.0764170Z [36;1m        need(type(value) in (int,float) and math.isfinite(value) and value>=0,label+' must be finite/nonnegative')[0m
+2026-10-24T20:25:00.0765640Z [36;1m        return value[0m
+2026-10-24T20:25:00.0766320Z [36;1m    def identity(value, label):[0m
+2026-10-24T20:25:00.0767410Z [36;1m        need(isinstance(value,str) and bool(value) and value!='nil',label+' missing')[0m
+2026-10-24T20:25:00.0768540Z [36;1m        return value[0m
+2026-10-24T20:25:00.0769350Z [36;1m    def layout(value, bits, pixels, floating, label):[0m
+2026-10-24T20:25:00.0770600Z [36;1m        for key in ('width','height','bits_per_component','bits_per_pixel','bytes_per_row',[0m
+2026-10-24T20:25:00.0772060Z [36;1m                    'bitmap_info_raw','alpha_info_raw','byte_order_raw','pixel_format_raw'):[0m
+2026-10-24T20:25:00.0773240Z [36;1m            count(value[key],label+'.'+key)[0m
+2026-10-24T20:25:00.0774430Z [36;1m        need(value['width'] in (320,640) and value['height']==value['width']*9//16,label+' extent')[0m
+2026-10-24T20:25:00.0776140Z [36;1m        need(value['bits_per_component']==bits and value['bits_per_pixel']==pixels,label+' depth')[0m
+2026-10-24T20:25:00.0777970Z [36;1m        need(value['float_components'] is floating and value['bytes_per_row']>=value['width']*(pixels//8),label+' storage')[0m
+2026-10-24T20:25:00.0779580Z [36;1m    def space(value, label):[0m
+2026-10-24T20:25:00.0780780Z [36;1m        need(value['present'] is True and value['model_raw']==1 and value['components']==3,label+' RGB3')[0m
+2026-10-24T20:25:00.0782370Z [36;1m        need(value['stage']=='after_existing_window_teardown',label+' metadata stage')[0m
+2026-10-24T20:25:00.0783640Z [36;1m        count(value['icc_byte_count'],label+'.icc_byte_count')[0m
+2026-10-24T20:25:00.0784880Z [36;1m        sha=value['icc_sha256'][0m
+2026-10-24T20:25:00.0785870Z [36;1m        need((value['icc_byte_count']==0 and sha=='absent') or[0m
+2026-10-24T20:25:00.0787570Z [36;1m             (value['icc_byte_count']>0 and isinstance(sha,str) and len(sha)==64 and all(c in '0123456789abcdef' for c in sha)),label+' ICC record')[0m
+2026-10-24T20:25:00.0789500Z [36;1m    need(type(major) is int and major in (13,14) and mode in ('default','baked-pair'),'mode/OS enum')[0m
+2026-10-24T20:25:00.0790870Z [36;1m    need(mode=='default' or major==13,'baked-pair is13 only')[0m
+2026-10-24T20:25:00.0792120Z [36;1m    need(d['success'] is True and d.get('error') is None,'original acquisition failed')[0m
+2026-10-24T20:25:00.0793550Z [36;1m    need(d['expected_os_major']==major and d['actual_os_major']==major,'report OS')[0m
+2026-10-24T20:25:00.0795110Z [36;1m    need(receipt['exit_code']==0 and not receipt.get('wrapper_timeout',False),'process failure/timeout')[0m
+2026-10-24T20:25:00.0796830Z [36;1m    need(receipt['expected_os_major']==major and receipt['timeout_seconds']==15,'receipt OS/timeout')[0m
+2026-10-24T20:25:00.0798700Z [36;1m    need(receipt['flight_sdr_mode']==mode and receipt['bern_hero_flight_sdr_environment']==mode,'receipt mode/environment')[0m
+2026-10-24T20:25:00.0800640Z [36;1m    need(receipt['flight_sdr_mode_source'] in ('last_argument','environment','default'),'receipt mode source')[0m
+2026-10-24T20:25:00.0801950Z [36;1m    s=d['flight_sdr_display'][0m
+2026-10-24T20:25:00.0802910Z [36;1m    need(s['requested']==mode and s['selected']==mode,'reported mode')[0m
+2026-10-24T20:25:00.0804330Z [36;1m    need(s['success'] is True and s['error'] is None,'helper failure; no successful fallback accepted')[0m
+2026-10-24T20:25:00.0806400Z [36;1m    count(s['primary_snapshot_count'],'primary snapshots',2)[0m
+2026-10-24T20:25:00.0807550Z [36;1m    count(s['cleanup_snapshot_count'],'cleanup snapshots')[0m
+2026-10-24T20:25:00.0808710Z [36;1m    baked=mode=='baked-pair'[0m
+2026-10-24T20:25:00.0809890Z [36;1m    for key,wanted in (('conversion_count',2 if baked else 0),('context_create_count',1 if baked else 0),[0m
+2026-10-24T20:25:00.0811340Z [36;1m                       ('derived_cache_count_before_release',2 if baked else 0),[0m
+2026-10-24T20:25:00.0812830Z [36;1m                       ('helper_retained_original_cgimage_count',0),('helper_original_provider_read_count',0)):[0m
+2026-10-24T20:25:00.0814810Z [36;1m        count(s[key],key,wanted)[0m
+2026-10-24T20:25:00.0816580Z [36;1m    need(s['primary_frozen'] is True and s['helper_references_cleared'] is True,'original cleanup/release incomplete')[0m
+2026-10-24T20:25:00.0819110Z [36;1m    need(s['release_scope']=='Helper-owned derived cache/context/color-space and weak refs cleared; no global deallocation claim','release scope')[0m
+2026-10-24T20:25:00.0821520Z [36;1m    records=s['records']; need(isinstance(records,list) and len(records)==2,'two actual records required')[0m
+2026-10-24T20:25:00.0823110Z [36;1m    mapping=s['flight_mapping'][0m
+2026-10-24T20:25:00.0824470Z [36;1m    need(mapping['from_ordinal']==1 and mapping['to_ordinal']==2,'actual snapshot ordinal mapping')[0m
+2026-10-24T20:25:00.0826010Z [36;1m    transition=number(mapping['transition_uptime'],'transition')[0m
+2026-10-24T20:25:00.0827220Z [36;1m    need(transition==d['transition_uptime'],'transition mismatch')[0m
+2026-10-24T20:25:00.0828700Z [36;1m    started=number(mapping['flight_started_uptime'],'flight started')[0m
+2026-10-24T20:25:00.0830170Z [36;1m    first=number(mapping['first_live_observation_uptime'],'first observation')[0m
+2026-10-24T20:25:00.0831570Z [36;1m    need(transition<=started<=first,'transition/flight/observer order')[0m
+2026-10-24T20:25:00.0833170Z [36;1m    flight_id=identity(mapping['flight_identity'],'flight identity')[0m
+2026-10-24T20:25:00.0836180Z [36;1m    need(d['observed_flight_identities']==[flight_id] and d['native_gates']['observed_flight_identities']==[flight_id],'native flight mapping')[0m
+2026-10-24T20:25:00.0839870Z [36;1m    need(mapping['from_nsimage_id']!=mapping['to_nsimage_id'],'independent from/to wrappers')[0m
+2026-10-24T20:25:00.0841150Z [36;1m    previous_end=transition; derived_ids=[][0m
+2026-10-24T20:25:00.0842070Z [36;1m    for ordinal,record in enumerate(records,1):[0m
+2026-10-24T20:25:00.0843440Z [36;1m        need(record['ordinal']==ordinal and record['key']=='coordinator-one','record ordinal/key')[0m
+2026-10-24T20:25:00.0844810Z [36;1m        identity(record['anchor_identity'],'anchor identity')[0m
+2026-10-24T20:25:00.0846290Z [36;1m        identity(record['input_object_id'],'original renderer CGImage identity')[0m
+2026-10-24T20:25:00.0857010Z [36;1m        need(record['wrapped'] is True and record.get('error') is None,'partial snapshot/wrapper failure')[0m
+2026-10-24T20:25:00.0859120Z [36;1m        need(record['logical_size']==[320,180],'original logical size')[0m
+2026-10-24T20:25:00.0860180Z [36;1m        role='from' if ordinal==1 else 'to'[0m
+2026-10-24T20:25:00.0861610Z [36;1m        need(record['flight_role']==role and record['display_nsimage_id']==mapping[role+'_nsimage_id'],'actual wrapper role')[0m
+2026-10-24T20:25:00.0863430Z [36;1m        identity(record['display_nsimage_id'],'display wrapper identity')[0m
+2026-10-24T20:25:00.0864760Z [36;1m        source=record['input_layout']; layout(source,16,64,True,'input')[0m
+2026-10-24T20:25:00.0866640Z [36;1m        need((source['bitmap_info_raw'],source['alpha_info_raw'],source['byte_order_raw'],source['pixel_format_raw'])==(4353,1,4096,0),'original float layout')[0m
+2026-10-24T20:25:00.0869180Z [36;1m        need(record['input_extent']=={'x':0,'y':0,'width':source['width'],'height':source['height']},'exact input extent')[0m
+2026-10-24T20:25:00.0871380Z [36;1m        space(record['input_color_space'],'input space')[0m
+2026-10-24T20:25:00.0872810Z [36;1m        timeline=[number(record[key],key) for key in ('snapshot_started_uptime','renderer_returned_uptime')][0m
+2026-10-24T20:25:00.0874290Z [36;1m        if baked:[0m
+2026-10-24T20:25:00.0875830Z [36;1m            need(record['requested_tone_map_hdr_to_sdr'] is True and record['actual_tone_mapping_applied']=='unknown','requested versus actual tone mapping')[0m
+2026-10-24T20:25:00.0878050Z [36;1m            need(record['input_color_space_override'] is False and record['deferred'] is False,'fixed recipe options')[0m
+2026-10-24T20:25:00.0880100Z [36;1m            need(record['requested_output_format']=='RGBA8' and record['requested_output_color_space']=='sRGB','fixed output request')[0m
+2026-10-24T20:25:00.0882120Z [36;1m            timeline += [number(record[key],key) for key in ('conversion_started_uptime','conversion_finished_uptime')][0m
+2026-10-24T20:25:00.0883860Z [36;1m            derived=record['derived_layout']; layout(derived,8,32,False,'derived')[0m
+2026-10-24T20:25:00.0885510Z [36;1m            need((derived['width'],derived['height'])==(source['width'],source['height']),'exact output extent')[0m
+2026-10-24T20:25:00.0886920Z [36;1m            space(record['derived_color_space'],'derived space')[0m
+2026-10-24T20:25:00.0888270Z [36;1m            need(record['derived_color_space']['name']=='kCGColorSpaceSRGB','derived sRGB')[0m
+2026-10-24T20:25:00.0889640Z [36;1m            derived_id=identity(record['derived_object_id'],'derived identity')[0m
+2026-10-24T20:25:00.0891110Z [36;1m            need(derived_id!=record['input_object_id'],'derived output cannot be original-image fallback')[0m
+2026-10-24T20:25:00.0892380Z [36;1m            derived_ids.append(derived_id)[0m
+2026-10-24T20:25:00.0893120Z [36;1m        else:[0m
+2026-10-24T20:25:00.0894490Z [36;1m            need(record['conversion_started_uptime'] is None and record['conversion_finished_uptime'] is None,'default conversion timestamps')[0m
+2026-10-24T20:25:00.0896510Z [36;1m            for key in ('derived_object_id','derived_layout','derived_color_space','requested_tone_map_hdr_to_sdr',[0m
+2026-10-24T20:25:00.0898500Z [36;1m                        'actual_tone_mapping_applied','requested_output_format','requested_output_color_space','deferred','input_color_space_override'):[0m
+2026-10-24T20:25:00.0900310Z [36;1m                need(key not in record,'default unexpectedly contains conversion field '+key)[0m
+2026-10-24T20:25:00.0901850Z [36;1m        timeline += [number(record[key],key) for key in ('nsimage_wrapped_uptime','snapshot_returning_uptime')][0m
+2026-10-24T20:25:00.0903740Z [36;1m        need(previous_end<=timeline[0] and timeline==sorted(timeline) and timeline[-1]<=started,'snapshot/conversion/wrapper/flight order')[0m
+2026-10-24T20:25:00.0905190Z [36;1m        previous_end=timeline[-1][0m
+2026-10-24T20:25:00.0906330Z [36;1m    if baked: need(len(set(derived_ids))==2,'two independent retained derived images')[0m
+2026-10-24T20:25:00.0907640Z [36;1m    states=list(d['samples'])+[d['before_cleanup_state']][0m
+2026-10-24T20:25:00.0908950Z [36;1m    for capture in d['captures']: states += [capture['state_before'],capture['state_after']][0m
+2026-10-24T20:25:00.0910520Z [36;1m    states += [d['midflight_sampling']['armed']['state'],d['midflight_sampling']['capture_sample']['state']][0m
+2026-10-24T20:25:00.0911740Z [36;1m    live_count=0[0m
+2026-10-24T20:25:00.0912380Z [36;1m    for state in states:[0m
+2026-10-24T20:25:00.0913080Z [36;1m        for flight in state['flights']:[0m
+2026-10-24T20:25:00.0913800Z [36;1m            live_count+=1[0m
+2026-10-24T20:25:00.0915040Z [36;1m            need(flight['view_identity']==flight_id and flight['started_uptime']==started,'scalar actual flight mismatch')[0m
+2026-10-24T20:25:00.0917070Z [36;1m            need(flight['from_nsimage_id']==mapping['from_nsimage_id'] and flight['to_nsimage_id']==mapping['to_nsimage_id'],'scalar actual image mismatch')[0m
+2026-10-24T20:25:00.0919180Z [36;1m            need(first<=number(state['uptime'],'live scalar uptime'),'observer precedes recorded state')[0m
+2026-10-24T20:25:00.0921430Z [36;1m            need(records[0]['rect_in_overlay']==flight['from_rect'] and records[1]['rect_in_overlay']==flight['to_rect'],'snapshot rect/flight mapping')[0m
+2026-10-24T20:25:00.0922980Z [36;1m    need(live_count>0,'no actual live scalar record')[0m
+2026-10-24T20:25:00.0924470Z [36;1m    need(first<=d['execution_model']['terminal_uptime']<=d['execution_model']['loop_return_uptime'],'observer/normal return order')[0m
+2026-10-24T20:25:00.0927130Z [36;1m    return {'mode':mode,'major':major,'actual_snapshots':2,'conversions':s['conversion_count'],[0m
+2026-10-24T20:25:00.0929220Z [36;1m            'contexts':s['context_create_count'],'helper_references_cleared':True,'actual_tone_mapping_applied':'unknown' if baked else 'not requested'}[0m
+2026-10-24T20:25:00.0930800Z [36;1m[0m
+2026-10-24T20:25:00.0931540Z [36;1mvalidate_flight_sdr(d,receipt,'default',14)[0m
+2026-10-24T20:25:00.0932350Z [36;1mPY[0m
+2026-10-24T20:25:00.1048780Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-24T20:25:00.1049650Z env:
+2026-10-24T20:25:00.1050170Z   BERN_HERO_EXPECT_OS: 14
+2026-10-24T20:25:00.1050790Z   BERN_HERO_FLIGHT_SDR: default
+2026-10-24T20:25:00.1051450Z ##[endgroup]
+2026-10-24T20:25:09.6603040Z {"own_pid": 1618, "exit_code": 1, "elapsed_seconds": 7.586876957999976}
+2026-10-24T20:25:09.6893850Z ##[error]Process completed with exit code 1.
+2026-10-24T20:25:09.7048190Z ##[group]Run actions/upload-artifact@v5
+2026-10-24T20:25:09.7049760Z with:
+2026-10-24T20:25:09.7051470Z   name: macos14-hero-coordinator-sdr-evidence
+2026-10-24T20:25:09.7055930Z   path: evidence/runtime14/
+2026-10-24T20:25:09.7060000Z   if-no-files-found: error
+2026-10-24T20:25:09.7061100Z   retention-days: 3
+2026-10-24T20:25:09.7062520Z   compression-level: 6
+2026-10-24T20:25:09.7063590Z   overwrite: false
+2026-10-24T20:25:09.7064240Z   include-hidden-files: false
+2026-10-24T20:25:09.7065660Z ##[endgroup]
+2026-10-24T20:25:09.9845640Z (node:1717) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-24T20:25:09.9856540Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-24T20:25:09.9920480Z With the provided path, there will be 16 files uploaded
+2026-10-24T20:25:09.9921260Z Artifact name is valid!
+2026-10-24T20:25:09.9921660Z Root directory input is valid!
+2026-10-24T20:25:10.2139620Z Beginning upload of artifact content to blob storage
+2026-10-24T20:25:10.2490500Z (node:1717) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-24T20:25:10.2956350Z Uploaded bytes 65129
+2026-10-24T20:25:10.3110160Z Finished uploading artifact content to blob storage!
+2026-10-24T20:25:10.3110970Z SHA256 digest of uploaded artifact zip is d509be93ce56477f5d3bfc9b55d1063ac02d7c3ed1a9e945a72b76342b3b5450
+2026-10-24T20:25:10.3111570Z Finalizing artifact upload
+2026-10-24T20:25:10.7460580Z Artifact macos14-hero-coordinator-sdr-evidence.zip successfully finalized. Artifact ID 12574866403
+2026-10-24T20:25:10.7467440Z Artifact macos14-hero-coordinator-sdr-evidence has been successfully uploaded! Final size is 65129 bytes. Artifact ID is 12574866403
+2026-10-24T20:25:10.7469310Z Artifact download URL: https://github.com/Torrekie/Bern/actions/runs/40129608288/artifacts/12574866403
+2026-10-24T20:25:10.7548130Z Cleaning up orphan processes
+2026-10-24T20:25:11.2006030Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/download-artifact@v5, actions/upload-artifact@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

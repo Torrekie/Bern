@@ -1,0 +1,138 @@
+{
+  "assembly_contract": {
+    "generated_output_not_present_or_examined_in_this_review": true,
+    "input_ProductHero_renamed": false,
+    "new_SDK_original_real_clock_required": true,
+    "root_generated_output_name": "CoordinatorSDR.assembled.swift",
+    "same_file_order": [
+      "imports AppKit and SwiftUI",
+      "ProductHero.swift",
+      "FlightSDR.swift.inc",
+      "Driver.swift.inc"
+    ],
+    "sdk14_static_clock_fatal_or_actor_shim_permitted": false
+  },
+  "blocking_findings": [],
+  "findings": [
+    {
+      "area": "Two actual snapshot attempts",
+      "finding": "Every primary snapshot entry appends a new ordinal before the existing renderer guards. It records scalar anchor/key/rect/input identity and all available timing; attempts are never merged by same key or possibly reused CGImage address. Extra, missing or unwrapped attempts fail the helper contract."
+    },
+    {
+      "area": "Actual renderer input and default",
+      "finding": "The existing renderer.cgImage is read once. Default observes scalar layout and a CGColorSpace reference but creates no CI/context/output. No helper-owned original CGImage or provider read is added; default is an instrumented control, not a claim of zero observer effect."
+    },
+    {
+      "area": "Candidate conversion",
+      "finding": "The same fixed CIImage toneMapHDRtoSDR=true request has no input-space override, relabel, filter, orientation or rescale. One context is reused; each actual snapshot calls createCGImage independently with exact extent, RGBA8/sRGB and deferred=false. Two record-owned derivatives are expected, without input-key/address caching or prewarming."
+    },
+    {
+      "area": "True Flight endpoint mapping",
+      "finding": "Each wrapper is referenced weakly. The existing manager scalar observer compares actual Flight.from.image and .to.image by === against the two wrappers, requires unique different ordinals and pins the same Flight view identity. It does not manufacture, retain or drive a Flight. CoreImage internal object reuse is not ruled out by this source review."
+    },
+    {
+      "area": "Timing",
+      "finding": "Transition uptime is marked immediately before the original model toggle. Begin, renderer return, conversion interval, wrapper and snapshot-returning uptimes are recorded per attempt. The existing Flight.started property and first scalar live observation are recorded after actual snapshot creation. First live observation is not first rendered frame. Synchronous conversion costs and the original departure/clock timing remain observable, without deadline extension."
+    },
+    {
+      "area": "Original behavior and sampling",
+      "finding": "Hero outside snapshot is byte-identical, including enter/leave/departure, visibility, started initialization,120Hz real timer/tick/draw/finish. Scene, default-mode sampler callback, arm-then-exact-next-sample capture block and terminal app loop/execution metadata are byte-identical. Additional helper error checks do not retry/freeze the transition."
+    },
+    {
+      "area": "Baseline limits",
+      "finding": "Original3s preload,1.5s source readiness,7.2s collection,7.9s watchdog,512 samples, before/settled5-equal buffers, maximum3 PNGs, cache/normal/front/nonkey/inactive/noMTK/single-Flight/lifecycle guards remain. Candidate is rejected before window creation on OS14; the Scene remains explicitly Standard with no product dynamicRange-to-anchor route."
+    },
+    {
+      "area": "Freeze, cleanup and failures",
+      "finding": "Acquisition freezes before original cleanup/window teardown. Cleanup snapshots use original pixels with no conversion or new binding. After window teardown, helper records original color-space and derived format/ICC metadata, clears its cache/context/space/weak references, and propagates ordinary incomplete/conversion/mapping failures through helper finalization to nonzero process status. Report writing retains the original do/catch nonzero failure path."
+    }
+  ],
+  "frozen_preparation": {
+    "directory": "work/hero-coordinator-sdr-preparation",
+    "manifest_sha256": "c29fc0adb2d8041676822eee85120561b843da331b4079621f048d9b28878bb2",
+    "member_count": 9,
+    "members_verified": [
+      {
+        "bytes": 35968,
+        "path": "work/hero-coordinator-sdr-preparation/Driver.swift.inc",
+        "sha256": "16d366612fdb55a4a2a1e39ce731cc7ad247fa71608a89f65a1c8d241230ec92"
+      },
+      {
+        "bytes": 12101,
+        "path": "work/hero-coordinator-sdr-preparation/FlightSDR.swift.inc",
+        "sha256": "5f79ae281bb743ee7af87dc737e66195b4bd85c5e50c84d0c5183f53766d8f65"
+      },
+      {
+        "bytes": 15446,
+        "path": "work/hero-coordinator-sdr-preparation/ProductHero.swift",
+        "sha256": "cf924d4fa27df6486b65b30be1a194ec7daf4016674b79bd4084e045eba8beea"
+      },
+      {
+        "bytes": 5438,
+        "path": "work/hero-coordinator-sdr-preparation/README.md",
+        "sha256": "2237e803b46df9e44c1d40350ff24806e71d4ce1274fbc0dcb8ad43524124b28"
+      },
+      {
+        "bytes": 34816,
+        "path": "work/hero-coordinator-sdr-preparation/base/Driver.swift.inc",
+        "sha256": "571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270"
+      },
+      {
+        "bytes": 14952,
+        "path": "work/hero-coordinator-sdr-preparation/base/ProductHero.exact.swift",
+        "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+      },
+      {
+        "bytes": 19130,
+        "path": "work/hero-coordinator-sdr-preparation/coordinator-sdr.patch",
+        "sha256": "c280544dc729aa73bb85f901fed5a90d3cb47ada2a3370d15b9d9c18d0a7d136"
+      },
+      {
+        "bytes": 4358,
+        "path": "work/hero-coordinator-sdr-preparation/source-provenance.json",
+        "sha256": "c0522293b1e0548d6656002db2e157c238d57cc76fd98d38bc12de91da9e81ff"
+      },
+      {
+        "bytes": 663,
+        "path": "work/hero-coordinator-sdr-preparation/validation.json",
+        "sha256": "7740224a5e820711abcaea696b42ccf0559cc78129c7c1bb8cc5271e9825ac3d"
+      }
+    ]
+  },
+  "independent_static_checks": {
+    "arm_next_sample_block_byte_identical": true,
+    "base_hero_and_driver_exact": true,
+    "hero_outside_snapshot_byte_identical": true,
+    "no_helper_provider_or_NSImage_readback": true,
+    "one_context_constructor_and_one_CI_call_site": true,
+    "original_single_renderer_getter": true,
+    "sampler_callback_byte_identical": true,
+    "scene_byte_identical": true,
+    "terminal_loop_and_execution_byte_identical": true
+  },
+  "limits": [
+    "No compiler/typecheck, native/UI/CI run, binary/build/signature check, pixel or actual timing analysis was performed. No product, fixture, repository or old evidence file was edited.",
+    "Actual tone-map execution remains unknown. This single recipe changes output format/color space together with the Bool request and does not isolate a kernel or establish color/animation equivalence.",
+    "Default adds scalar/color-space/weak identity observation. A fresh default control and candidate native/timing/visibility evidence remain required.",
+    "No explicit extra original CGImage holder/provider access is added by the helper; this does not characterize CoreImage internal retention. Helper-reference clearing does not prove global deallocation.",
+    "The inherited hard watchdog _exit path bypasses normal cleanup/report finalization; pre-existing report/PNG overwrite guards and output freshness require the unchanged wrapper contract.",
+    "Standard intent is only guaranteed by this private Scene. Product intent propagation, High/default-High, other inputs, retargeting and general adoption remain outside this experiment.",
+    "Native success cannot accept a cold synchronous pause, first visible content or color equivalence. Unequal-progress cross-OS mid PNGs are not exact pixel equality targets."
+  ],
+  "root_source_staging_verified": [
+    {
+      "path": "work/hero-coordinator-sdr-20261025/probe-source/ProductHero.swift",
+      "sha256": "cf924d4fa27df6486b65b30be1a194ec7daf4016674b79bd4084e045eba8beea"
+    },
+    {
+      "path": "work/hero-coordinator-sdr-20261025/probe-source/FlightSDR.swift.inc",
+      "sha256": "5f79ae281bb743ee7af87dc737e66195b4bd85c5e50c84d0c5183f53766d8f65"
+    },
+    {
+      "path": "work/hero-coordinator-sdr-20261025/probe-source/Driver.swift.inc",
+      "sha256": "16d366612fdb55a4a2a1e39ce731cc7ad247fa71608a89f65a1c8d241230ec92"
+    }
+  ],
+  "scope": "Independent static source review of one private real coordinator named Standard SDR-pair fixture; no product intent route or runtime acceptance.",
+  "verdict": "no_blocking_source_finding_for_bounded_fixture"
+}

@@ -1,0 +1,247 @@
+{
+  "causal_conclusion": "Unknown. Progress0 is an observed state, not evidence that tick never ran; no internal-call duration can be assigned from this report.",
+  "inputs": [
+    {
+      "byte_count": 241416,
+      "path": "work/hero-coordinator-sdr-20261025/runtime14/report.json",
+      "sha256": "bb3a59a0e4b13ecd783c15eacc995c11caa7307173b2258329c03b0612a79fb4"
+    },
+    {
+      "byte_count": 118620,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/runtime14/report.json",
+      "sha256": "b965a1d15a2518bb073ef50ef8fa00060058021c073a2393a1ee7d93529438db"
+    },
+    {
+      "byte_count": 15446,
+      "path": "work/hero-coordinator-sdr-20261025/probe-source/ProductHero.swift",
+      "sha256": "cf924d4fa27df6486b65b30be1a194ec7daf4016674b79bd4084e045eba8beea"
+    },
+    {
+      "byte_count": 35968,
+      "path": "work/hero-coordinator-sdr-20261025/probe-source/Driver.swift.inc",
+      "sha256": "16d366612fdb55a4a2a1e39ce731cc7ad247fa71608a89f65a1c8d241230ec92"
+    },
+    {
+      "byte_count": 12101,
+      "path": "work/hero-coordinator-sdr-20261025/probe-source/FlightSDR.swift.inc",
+      "sha256": "5f79ae281bb743ee7af87dc737e66195b4bd85c5e50c84d0c5183f53766d8f65"
+    }
+  ],
+  "not_observed": [
+    "Flight.init completion",
+    "visibility callback completion",
+    "overlay.addSubview completion",
+    "native timer registration time",
+    "first native tick entry or first applied progress time",
+    "per-sampler callback entry/return",
+    "CGWindowListCopyWindowInfo/descendant/normal/front query begin-end",
+    "fixtureScalars or weak matching begin time",
+    "WindowServer presentation timestamp"
+  ],
+  "old14_context_only": {
+    "capture_count": 3,
+    "first_to_second_live_ms": 144.94266666666533,
+    "first_two_live_samples": [
+      {
+        "destination_attached": true,
+        "frame": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 52
+        },
+        "progress": 0,
+        "rect_in_root": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 24
+        },
+        "sample_index": 6,
+        "stage": "transition",
+        "timer_exists": true,
+        "uptime": 65.49299754166667
+      },
+      {
+        "destination_attached": true,
+        "frame": {
+          "height": 180,
+          "width": 320,
+          "x": 233.25998860935653,
+          "y": 194.25356397041202
+        },
+        "progress": 0.6466071089564183,
+        "rect_in_root": {
+          "height": 180,
+          "width": 319.99999999999994,
+          "x": 233.25998860935653,
+          "y": 166.25356397041202
+        },
+        "sample_index": 7,
+        "stage": "transition",
+        "timer_exists": true,
+        "uptime": 65.63794020833333
+      }
+    ],
+    "flight_started_not_observed": true,
+    "success": true
+  },
+  "runtime14": {
+    "capture_count": 1,
+    "derived_intervals_ms": {
+      "first_helper_observation_to_first_sample_stamp": 0.025708333339480305,
+      "first_to_second_live_sample_stamp": 13.886124999999083,
+      "flight_started_to_first_helper_observation": 215.32608333330927,
+      "second_snapshot_returning_to_flight_started": 0.003125000006320988,
+      "trigger_to_flight_started": 18.706083333341894
+    },
+    "error": "FixtureFailure(message: \"Collection entry deadline/sample bound; incomplete\")",
+    "execution_model": {
+      "kind": "nsapplication_run_delegate_default_timer",
+      "launch_completed_count": 1,
+      "launch_completed_uptime": 143.6883584166667,
+      "loop_entry_count": 1,
+      "loop_entry_uptime": 143.67097095833333,
+      "loop_return_count": 1,
+      "loop_return_uptime": 151.067994625,
+      "preload_completed_uptime": 143.73064683333334,
+      "preload_started_uptime": 143.68835850000002,
+      "sampler_callback_count": 199,
+      "sampler_callbacks_after_terminal": 0,
+      "sampler_interval_seconds": 0.016666666666666666,
+      "sampler_invalidated_before_stop": true,
+      "sampler_max_depth": 1,
+      "sampler_mode": "kCFRunLoopDefaultMode",
+      "sampler_observed_modes": [
+        "kCFRunLoopDefaultMode"
+      ],
+      "sampler_reentrant_callbacks": 0,
+      "stop_calls": 1,
+      "terminal_count": 1,
+      "terminal_uptime": 151.06621320833335,
+      "wake_after_terminal": true,
+      "wake_count": 1,
+      "wake_posted_to_own_app_queue": true,
+      "wake_type": "applicationDefined"
+    },
+    "first_empty_sample_after_live": {
+      "flight_count": 0,
+      "sample_index": 37,
+      "timer_exists": false,
+      "uptime": 145.58594812500002
+    },
+    "first_two_live_samples": [
+      {
+        "destination_attached": true,
+        "frame": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 52
+        },
+        "progress": 0,
+        "rect_in_root": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 24
+        },
+        "sample_index": 6,
+        "stage": "transition",
+        "timer_exists": true,
+        "uptime": 144.98032679166667
+      },
+      {
+        "destination_attached": true,
+        "frame": {
+          "height": 180,
+          "width": 320,
+          "x": 300.1587511992534,
+          "y": 238.05632518998735
+        },
+        "progress": 0.8457105690453971,
+        "rect_in_root": {
+          "height": 179.99999999999997,
+          "width": 320,
+          "x": 300.1587511992534,
+          "y": 210.05632518998735
+        },
+        "sample_index": 7,
+        "stage": "transition",
+        "timer_exists": true,
+        "uptime": 144.99421291666667
+      }
+    ],
+    "flight_mapping": {
+      "first_live_observation_uptime": 144.98030108333333,
+      "flight_identity": "ObjectIdentifier(0x00000001526190a0)",
+      "flight_started_uptime": 144.76497500000002,
+      "from_nsimage_id": "ObjectIdentifier(0x0000600001cd1720)",
+      "from_ordinal": 1,
+      "to_nsimage_id": "ObjectIdentifier(0x0000600001cd5720)",
+      "to_ordinal": 2,
+      "transition_uptime": 144.74626891666668
+    },
+    "helper_context_count": 0,
+    "helper_conversion_count": 0,
+    "last_live_sample": {
+      "destination_attached": true,
+      "frame": {
+        "height": 180,
+        "width": 320,
+        "x": 352.0375719227791,
+        "y": 272.0246006637244
+      },
+      "progress": 1.0001118211987472,
+      "rect_in_root": {
+        "height": 180,
+        "width": 320,
+        "x": 352.0375719227791,
+        "y": 244.0246006637244
+      },
+      "sample_index": 36,
+      "stage": "transition",
+      "timer_exists": true,
+      "uptime": 145.56153608333335
+    },
+    "live_sample_count": 31,
+    "midflight_sampling": {
+      "armed": null,
+      "capture_attempted": false,
+      "capture_sample": null,
+      "next_sample_captured": false,
+      "policy": "first_band_arm_then_next_original_loop_sample"
+    },
+    "only_capture": [
+      {
+        "capture_after_uptime": 144.73409845833334,
+        "capture_before_uptime": 144.7271035,
+        "consecutive_equal_buffers": 5,
+        "phase": "before",
+        "png": "before.png"
+      }
+    ],
+    "sample_count": 197,
+    "snapshots": [
+      {
+        "flight_role": "from",
+        "nsimage_wrapped_uptime": 144.762383625,
+        "ordinal": 1,
+        "renderer_returned_uptime": 144.76227962500002,
+        "snapshot_returning_uptime": 144.76241641666667,
+        "snapshot_started_uptime": 144.74843845833334
+      },
+      {
+        "flight_role": "to",
+        "nsimage_wrapped_uptime": 144.76494495833333,
+        "ordinal": 2,
+        "renderer_returned_uptime": 144.76482108333335,
+        "snapshot_returning_uptime": 144.76497187500001,
+        "snapshot_started_uptime": 144.76450733333334
+      }
+    ],
+    "success": false,
+    "transition_uptime": 144.74626891666668
+  },
+  "scope": "Read-only existing JSON/source timing analysis. No new runtime, pixels, source patch or causal attribution."
+}

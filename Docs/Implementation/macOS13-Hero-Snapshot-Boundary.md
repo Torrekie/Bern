@@ -65,3 +65,11 @@ filter0 source parser拒绝及pretty JSON体积失败分开保留；成功版本
 完整十patch/ramp报告保留全部退步：named p0/p1 meanabs(D13−D14)降至1.525197459/1.567882898，max降至25.754035027/26.186040522，但7/9通道恶化、ramp p1小幅恶化，custom不变。candidate两phase原PNG逐字相同；这些是相对14各phase参考的分类，不证明新phase-dependent转换。方向与完整可见extent为两原PNGvisual-only检查，不能推成逐像素覆盖或全UI等效。此输出边界在本夹具中有作用，尚不能隔离Bool/输出目标各自贡献或确定唯一根因，未合入产品。
 
 一次转换约259ms，且真实Flight.started在同步source/destination snapshot之后。下一[唯一真实flight门槛](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/next-flight-plan/README.md)已冻结但未实现：沿新SDK/min13/原timer/正常AppKit loop做一次Standard named替换，按两实际snapshot而非key合并派生，保留原生命周期及触发前延迟。静态clock guard不能用于真实13timer，产品intent链仍需显式传递，不能靠profile/key猜Standard。其它颜色/动画/UI与后续阶段边界保持，goal active。
+
+## 真实两snapshot已在13完成，14新参考未完成（2026-10-25）
+
+上述下一门槛现已[实际执行](../Evidence/macOS14-hero-coordinator-sdr-40129608288/README.md)。同一SDK26.2/min13原签名binary在13的default/candidate均通过完整原native/execution及新增两snapshot gate，default先复现旧13两个端点，candidate两个端点也raw/ICC exact。候选单context对两实际source/destination snapshot独立转换，以实际Flight.from/to弱NSImage绑定，原timer/tick/draw/期限不改；cleanup原路径一次且转换0。两转换约47.474/2.598ms，触发→started58.058ms、default27.438ms；两轮准备/render成本不同，差值不隔离为纯CI成本，首次live观察也不是显示首帧。
+
+14 default确实运行并记录两个原float snapshot，但firstlive进度0、下一个.845710569，未进入(.2,.8)arm区间，197样本后原collection deadline失败，仅before PNG。CI build成功/measure失败及原收据/日志保留；没有新14中间与settled对照，不扩充为全native通过，不放宽门槛或重跑。远程设备在本次可运行，尚非等待数小时仍无14环境的暂停条件。
+
+13原mid有可见位移、候选settled非空；白格与背景不能区分，视觉检查不证明完整像素覆盖/全动画等效，也不按不同progress配准计算颜色。此前静态recipe仍有7/9恶化通道等残差，产品intent传递仍是独立门槛，候选不采用。下一小步只读界定默认路径首次tick/观察空档；High/其它输入与完整UI验收保留，goal active，不提前后续系统/语言阶段。

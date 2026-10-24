@@ -1,0 +1,101 @@
+{
+  "scope": "Private source-only real Standard named coordinator recipe; no product intent route or execution.",
+  "repository_head_at_preparation": "0b60358077370bcfd5f85c8008d8c477366ab5ac",
+  "base_inputs": {
+    "ProductHero.exact.swift": {
+      "repository_path": ".github/scripts/hero-coordinator-app-probe/ProductHero.exact.swift",
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c",
+      "byte_count": 14952
+    },
+    "Driver.swift.inc": {
+      "repository_path": ".github/scripts/hero-coordinator-app-probe/Driver.swift.inc",
+      "sha256": "571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270",
+      "byte_count": 34816
+    },
+    "ProductImage.swift": {
+      "repository_path": ".github/scripts/hero-coordinator-app-probe/ProductImage.swift",
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc",
+      "byte_count": 24115
+    },
+    "ProductImage.exact.swift": {
+      "repository_path": ".github/scripts/hero-coordinator-app-probe/ProductImage.exact.swift",
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11",
+      "byte_count": 23920
+    },
+    "ProductStyle.swift": {
+      "repository_path": ".github/scripts/hero-coordinator-app-probe/ProductStyle.swift",
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984",
+      "byte_count": 2487
+    },
+    "ProductStyle.exact.swift": {
+      "repository_path": ".github/scripts/hero-coordinator-app-probe/ProductStyle.exact.swift",
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1",
+      "byte_count": 2471
+    },
+    "Dependencies.swift": {
+      "repository_path": ".github/scripts/hero-coordinator-app-probe/Dependencies.swift",
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9",
+      "byte_count": 232
+    },
+    "run-one.py": {
+      "repository_path": ".github/scripts/hero-coordinator-app-probe/run-one.py",
+      "sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6",
+      "byte_count": 1646
+    }
+  },
+  "previous_static_recipe": {
+    "helper": "work/hero-snapshot-sdr-preparation/SnapshotSDR.swift.inc",
+    "sha256": "cd04487ee1321e55ee7aa86872805d222a3f0dda34657be079bdb6d16f184118"
+  },
+  "plan": {
+    "path": "work/hero-snapshot-sdr-next-flight-plan/README.md",
+    "sha256": "a290704b8f1104fd7c00efe51dd70f79688b4c44211a7c4289cc6ddb5d38247e"
+  },
+  "assembly_order": [
+    "imports AppKit and SwiftUI",
+    "ProductHero.swift",
+    "FlightSDR.swift.inc",
+    "Driver.swift.inc"
+  ],
+  "unchanged_separate_sources": [
+    "ProductImage.swift",
+    "ProductStyle.swift",
+    "Dependencies.swift"
+  ],
+  "unchanged_wrapper": "run-one.py; four positional wrapper arguments remain binary,namedAsset,output,expectedOS",
+  "sdk14_clock_gainmap_adaptations": [],
+  "toolchain_contract": "Root must use the original new-SDK real Hero clock; no local SDK14 static fatal guard or actor shim.",
+  "canonical_patch_application": "Seed ProductHero.swift with base/ProductHero.exact.swift, seed Driver.swift.inc with base/Driver.swift.inc, then patch -p1; no file rename behavior required.",
+  "derived_sources": {
+    "ProductHero.swift": {
+      "sha256": "cf924d4fa27df6486b65b30be1a194ec7daf4016674b79bd4084e045eba8beea",
+      "byte_count": 15446
+    },
+    "Driver.swift.inc": {
+      "sha256": "16d366612fdb55a4a2a1e39ce731cc7ad247fa71608a89f65a1c8d241230ec92",
+      "byte_count": 35968
+    },
+    "FlightSDR.swift.inc": {
+      "sha256": "5f79ae281bb743ee7af87dc737e66195b4bd85c5e50c84d0c5183f53766d8f65",
+      "byte_count": 12101
+    },
+    "coordinator-sdr.patch": {
+      "sha256": "c280544dc729aa73bb85f901fed5a90d3cb47ada2a3370d15b9d9c18d0a7d136",
+      "byte_count": 19130
+    }
+  },
+  "validation": {
+    "base_hero_exact": true,
+    "base_driver_exact": true,
+    "hero_outside_snapshot_byte_identical": true,
+    "original_single_renderer_read": true,
+    "no_provider_or_nsimage_readback_in_helper": true,
+    "one_context_constructor_one_create_call": true,
+    "original_sampler_method_exact": true,
+    "original_arm_nextsample_capture_block_exact": true,
+    "original_scene_exact": true,
+    "original_binary_argument_count_unchanged": true,
+    "no_compile_ui_ci_performed": true,
+    "canonical_patch_zero_fuzz_roundtrip": true
+  }
+}

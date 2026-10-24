@@ -1,0 +1,13 @@
+# Coordinator SDR: independent native review
+
+Final verdict: **two13_native_pass_14_partial**. Both macOS13 modes passed the complete original native/execution prefix and the unmodified final additive gate, each exit0. The macOS14 original gate exited1 at its original success assertion; the additive exited1 with `original acquisition failed`. Their full stderr is retained. Later assertions did not run after those failures; no macOS14 native/execution total PASS is claimed.
+
+While present, the actual654256B binary was read before and after gates: `999b31d0bff0fe3079c3fc2abb5a816769361d0d603286c73e8b21c3f6aa64c8`. Read-only arch/build-version/strict-signature checks passed for arm64/min13/SDK26.2. All20 manifest members,12 source-map entries, exact three-source assembly plus imports and tar member/hash maps matched. The report records56 input fingerprints, including7 original PNGs.
+
+Root's default13 endpoint-control results were hash-bound to their actual source inputs; all four root steps exited0 and the ready receipt precedes candidate launch. Candidate source/destination conversion durations were0.047473542s and0.002598042s; transition→Flight.started was0.058058167s and transition→first live scalar observation0.069423708s. These are one-run observations, not presentation timing or latency acceptance. Root pixel calculations were not repeated.
+
+macOS14 exited1 with collection-entry deadline/sample-bound incomplete,197 samples, first live sample progress values [0, 0.8457105690453971], no arm/capture sample and only before.png. Two original snapshot/wrapper records and default0CI were reported, along with app-loop return and resting cleanup state; these partial observations do not replace missing mid/settled acquisition, native_gates or final cache_after.
+
+The original unexecuted preparation was revised before the single actual offline invocation to preserve the14 failure. Only four path/expected-major literals were adapted in the original prefix; no original assertion was changed. The final standalone additive function matches its workflow definition. `compact-review.py` only replaces repeated live descriptor dictionaries with shared descriptors and every original scalar row (46/47/31); no gate or pixel algorithm was rerun. `preparation.json` records the pre-execution revision history. The provisional checksum list was replaced by final SHA256SUMS.
+
+No app launch, compile, CI dispatch, signing mutation or image/pixel decoding occurred in this review. Actual tone mapping, visible-flight correctness, color equivalence and unique cause remain unestablished.

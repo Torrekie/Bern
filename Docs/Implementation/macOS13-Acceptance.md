@@ -2,7 +2,7 @@
 
 本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
 
-最新检查点（2026-10-25）：[实际快照的系统SDR候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)已在13完成；named主残差明显下降，但两phase分别有7/9通道及一阶段ramp退步，未合入产品、仍非等效。下一步为新SDK/min13的真实Standard named transition，验证同key两snapshot、进入动画前转换延迟及原生命周期；本轮静态259ms不能替代它。下列整应用交付版本未改变，其它未通过项保留，goal active。
+最新检查点（2026-10-25）：[真实coordinator的SDR候选](../Evidence/macOS14-hero-coordinator-sdr-40129608288/README.md)已由SDK26.2构建min13并在本机完成default→candidate：原native/execution、新两snapshot gate及四个对应端点原RGB/ICC控制均通过。两转换47.474/2.598ms，触发→Flight.started为58.058ms（default27.438ms）；单次观察不证明全局冷缓存或动画等效。新14确实运行，但进度0→.8457错过原arm区间，仅before PNG，按原deadline报未完成，CI measure失败原样保留、未重试。上一[静态候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)混合色差仍未解决，产品intent路由也未加入，未合入产品。下一步仅界定默认路径首次tick/观察空档，有新证据才安排新采集。下列整应用交付版本及其它未通过项保留，goal active。
 
 ## 已有可复核结果
 

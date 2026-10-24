@@ -1,0 +1,62 @@
+[
+  {
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/run-one.py",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/HeroCoordinatorSDRProbe",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/assets/source-named-pq.png",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/runtime13-baked-pair",
+      "13",
+      "baked-pair"
+    ],
+    "exit_code": 0,
+    "finished_utc": "2026-10-24T20:27:10.745772+00:00",
+    "started_utc": "2026-10-24T20:27:09.363129+00:00",
+    "step": "wrapper"
+  },
+  {
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/tools/run-native-base.py",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/runtime13-baked-pair",
+      "13",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/probe/HeroCoordinatorSDRProbe"
+    ],
+    "exit_code": 0,
+    "finished_utc": "2026-10-24T20:27:10.806914+00:00",
+    "started_utc": "2026-10-24T20:27:10.745994+00:00",
+    "step": "native-base"
+  },
+  {
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/tools/flight-sdr-gate.py",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/runtime13-baked-pair/report.json",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/runtime13-baked-pair/run-receipt.json",
+      "baked-pair",
+      "13"
+    ],
+    "exit_code": 0,
+    "finished_utc": "2026-10-24T20:27:10.835431+00:00",
+    "started_utc": "2026-10-24T20:27:10.807121+00:00",
+    "step": "native-sdr"
+  },
+  {
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/check-endpoint-controls.py",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/pixel-analysis/analyze.py",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/runtime13-default",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/runtime13-baked-pair",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-coordinator-sdr-20261025/runtime13-baked-pair/endpoint-controls.json"
+    ],
+    "exit_code": 0,
+    "finished_utc": "2026-10-24T20:27:11.241849+00:00",
+    "started_utc": "2026-10-24T20:27:10.835604+00:00",
+    "step": "endpoint-controls"
+  }
+]

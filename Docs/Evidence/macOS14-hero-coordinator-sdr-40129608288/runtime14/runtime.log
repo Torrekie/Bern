@@ -1,0 +1,27 @@
+2026-10-24 20:25:02.386 HeroCoordinatorSDRProbe[1618:8142] NSWindow warning: adding an unknown subview: <_TtC23HeroCoordinatorSDRProbeP33_73C928DD40729CF018DBFE0EB6C7F5C515BernHeroOverlay: 0x15380d130>. Break on NSLog to debug.
+2026-10-24 20:25:02.735 HeroCoordinatorSDRProbe[1618:8142] Call stack:
+(
+	0   AppKit                              0x000000018c3fa61c -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x000000018c3fa190 -[NSView addSubview:positioned:relativeTo:] + 372
+	2   AppKit                              0x000000018c3f9f98 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroCoordinatorSDRProbe             0x0000000100539f70 $s23HeroCoordinatorSDRProbe21BernWindowImageHeroesC14prepareOverlay33_73C928DD40729CF018DBFE0EB6C7F5C5LLSbyF + 300
+	4   HeroCoordinatorSDRProbe             0x0000000100538404 $s23HeroCoordinatorSDRProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 452
+	5   HeroCoordinatorSDRProbe             0x0000000100542f34 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x00000001888e8750 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x00000001888ea3e8 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x00000001888f8bb8 _dispatch_main_queue_drain + 988
+	9   libdispatch.dylib                   0x00000001888f87cc _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x0000000188bbb834 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x0000000188b78fb8 __CFRunLoopRun + 1996
+	12  CoreFoundation                      0x0000000188b78194 CFRunLoopRunSpecific + 608
+	13  HIToolbox                           0x000000019332719c RunCurrentEventLoopInMode + 292
+	14  HIToolbox                           0x0000000193326fd8 ReceiveNextEventCommon + 648
+	15  HIToolbox                           0x0000000193326d30 _BlockUntilNextEventMatchingListInModeWithFilter + 76
+	16  AppKit                              0x000000018c3d8de8 _DPSNextEvent + 660
+	17  AppKit                              0x000000018cbcf600 -[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 700
+	18  AppKit                              0x000000018c3cc11c -[NSApplication run] + 476
+	19  HeroCoordinatorSDRProbe             0x0000000100557444 $s23HeroCoordinatorSDRProbe0aB4Main33_73C928DD40729CF018DBFE0EB6C7F5C5LLO3runs5Int32VyFZTf4d_n + 4928
+	20  HeroCoordinatorSDRProbe             0x000000010054aae8 main + 12
+	21  dyld                                0x000000018870f154 start + 2476
+)
+Coordinator gate incomplete: FixtureFailure(message: "Collection entry deadline/sample bound; incomplete")

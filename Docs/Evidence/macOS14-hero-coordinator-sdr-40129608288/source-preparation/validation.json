@@ -1,0 +1,17 @@
+{
+  "method": "Static source/byte/hash/patch checks only; not Swift typechecking or runtime acceptance.",
+  "checks": {
+    "base_hero_exact": true,
+    "base_driver_exact": true,
+    "hero_outside_snapshot_byte_identical": true,
+    "original_single_renderer_read": true,
+    "no_provider_or_nsimage_readback_in_helper": true,
+    "one_context_constructor_one_create_call": true,
+    "original_sampler_method_exact": true,
+    "original_arm_nextsample_capture_block_exact": true,
+    "original_scene_exact": true,
+    "original_binary_argument_count_unchanged": true,
+    "no_compile_ui_ci_performed": true,
+    "canonical_patch_zero_fuzz_roundtrip": true
+  }
+}

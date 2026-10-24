@@ -1,0 +1,20 @@
+{
+  "exception_sha256": {
+    "Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/runtime14/requested-normal.txt": "1a00dc60a188e869f8ff9ae1b78a7ce6938c8114336037046e7d4df16f8521cf",
+    "Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/source-preparation/coordinator-sdr.patch": "c280544dc729aa73bb85f901fed5a90d3cb47ada2a3370d15b9d9c18d0a7d136"
+  },
+  "full_staged_check": {
+    "exit_code": 2,
+    "stderr": "",
+    "stdout": "Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/runtime14/requested-normal.txt:1: trailing whitespace.\n+2026-10-24 20:25:01.893 defaults[1613:8122] \nDocs/Evidence/macOS14-hero-coordinator-sdr-40129608288/source-preparation/coordinator-sdr.patch:4: trailing whitespace.\n+ \nDocs/Evidence/macOS14-hero-coordinator-sdr-40129608288/source-preparation/coordinator-sdr.patch:29: trailing whitespace.\n+ \n"
+  },
+  "no_source_or_assertion_whitespace_relaxation": true,
+  "other_staged_paths_strict_check": {
+    "exit_code": 0,
+    "paths": 151
+  },
+  "preserved_raw_exceptions": {
+    "Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/runtime14/requested-normal.txt": "Exact remote defaults diagnostic contains its original trailing space; not implementation source.",
+    "Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/source-preparation/coordinator-sdr.patch": "Frozen canonical patch contains mandatory single-space blank context lines; original zero-fuzz replay and bytes retained."
+  }
+}

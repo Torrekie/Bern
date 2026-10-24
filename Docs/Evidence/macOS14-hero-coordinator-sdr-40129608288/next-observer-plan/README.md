@@ -1,0 +1,24 @@
+# 14 default: next timing boundary, not a retry plan
+
+The existing run is incomplete:197 samples, only before PNG, no band arm/mid/settled. Helper context/conversions are0. Two snapshots returned at144.762416417/144.764971875; Flight.started=144.764975. First helper live observation=144.980301083 (**215.326083ms later**), with sample6 progress0; sample7 at144.994212917 is.845710569. No screenshot call occurs in that gap: the only before capture bracket144.727103500…144.734098458 precedes trigger144.746268917. `existing-timeline.json` retains exact fields and input hashes, not fitted times.
+
+Source bounds in frozen `work/hero-coordinator-sdr-20261025/probe-source/`:
+
+| Possible part of started→observation | Exact source boundary; what is missing |
+|---|---|
+| Native synchronous construction/mount | ProductHero:208 captures started before213–214 creates FlightView/sets frame. enter254–264 then stores Flight, invokes original SwiftUI visibility transactions, adds view to overlay and creates/registers timer. Completion times for all these calls are absent. |
+| Return to normal event dispatch | Native timer registration and return from anchor/SwiftUI work to NSApplication.run are untimed. The report confirms normal default-mode sampling and no sampler reentrancy; it does not quantify dispatch wait or exclude main-thread work. |
+| First sampler prefix | Driver249–282: callback/deadline checks, fixtureWindowInfo (CGWindowListCopyWindowInfo, root/overlay noMTK traversal, window/front/normal queries), anchor traversal, and entry scalar collection all precede the first stamp. No callback-entry or query begin/end time exists. |
+| Added matching observer prefix | Driver71 calls helper observeFlight; FlightSDR123–137 performs weak-wrapper matching, scalar identity formatting and record updates before first_live_observation_uptime. Its beginning is untimed. The first scalar sample's final uptime is only25.708µs after the helper stamp; this does not bound work before it. |
+
+The **recorded synchronous snapshot execution and before PNG encode/hash lie outside the post-start215ms interval by call order**; this14 default also created no helper CI context/output. This does not exclude other automatic image drawing/compositing during native mount. No evidence assigns215ms to NSView creation, visibility, addSubview, WindowServer IPC, event scheduling or the observer itself. Progress0 does not prove no tick ran: registration/first tick/attachment-guard skips/first applied progress were not logged. The current report records no rendering/presentation timestamp.
+
+At sample37 (145.585948125) flight/timer are already0; subsequent samples remain unable to satisfy settled readiness because arm/capture never happened. Thus the final collection deadline is a bounded consequence of missing the original band, not proof an animation lasted7.2s. It is still **not a complete14 native gate**: final validation/cache_after/native_gates were not reached.
+
+Old actual-app14 success is context only: its first live sample was0, next sample.646607109 about144.943ms later, followed by a valid arm/capture. That archive did not report Flight.started, so no comparable old started→first-observation duration can be reconstructed. Different processes/jobs and extra current observation forbid attributing this difference to one source or OS behavior.
+
+## One bounded next observation, only if a new collection is chosen
+
+Use the same default14 path and unchanged NSApplication.run/native clock/phase band/deadlines. Add only a compact in-memory timing trace to divide the already-proven gap: (a) one stamp immediately after the existing native RunLoop.add(clock,.common); (b) callback entry plus begin/end of its **existing** fixtureWindowInfo and scalar collection for the first two live samples (keep callback identity); (c) begin of existing observeFlight, using its present stamp as the end of matching; (d) first native tick's already-computed `now` and first applied progress's existing `now/p`. No additional window/image query, timer, dispatch, flush, layout, image retention, file I/O during animation or progress assignment. These few markers split pre-registration native work, dispatch/prefix and matching; they do not individually time every AppKit call or establish rendering synchronization.
+
+The native stamp is diagnostic data only—no clock replacement, manual pump, slow motion, shifted trigger, widened band, extra PNG, re-arm or retry. First-tick data must distinguish entry from applied progress without changing existing guards. Preserve real partials if the band is missed again. Serialize after original teardown; keep count/size bounds and old control gates. An instrumented control has its own observer effect and needs source review/endpoint control; this analysis does not trigger that run or authorize a root-cause claim. No new collection/source implementation was performed here.
