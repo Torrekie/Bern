@@ -1,0 +1,7 @@
+# Reproducible offline scope
+
+`RESULTS.md` is the concise conclusion. `summary.json` contains full12-pane control comparisons, complete10-patch and gray comparisons, residual changes and candidate geometry/native metadata. Each `*-analysis/` retains the unchanged atlas analyzer's68 comparisons plus per-column raw/normalized gray data; each `*-crosshost/` retains all signed patch RGB residuals and oracle controls.
+
+`analyze.py`, `compare.py` and `atlas-rois.json` are byte-identical copies of the frozen macOS14-hero-snapshot-40080838898 analyzer/spec. `run-analysis.py` adds only independent source/report/PNG verification, paired same-host crop comparisons and residual-summary bookkeeping. It never invokes an app or copies PNGs. `INPUT-SHA256SUMS` identifies original inputs in place, `execution.json` records versions/commands, and `validation.json` records checks. Final `SHA256SUMS` covers all retained regular files except itself.
+
+The run already completed. To reproduce without overwriting this result, copy only those four scripts/spec files to a fresh direct child of this workspace's work/ directory and invoke `python3 -B work/<fresh-name>/run-analysis.py`. Its fixed source paths are explicitly the current13 control/candidate, frozen13 overlay and frozen14 baseline; no hidden media or generated image is used. Existing summary/child-analysis directories cause refusal. If versions differ from frozen14, the script stops rather than mixing statistics. Logs and partial outputs remain on failure. No equivalence threshold or root-cause inference is encoded.

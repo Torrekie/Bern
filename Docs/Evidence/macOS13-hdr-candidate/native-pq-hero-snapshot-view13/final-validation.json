@@ -1,0 +1,32 @@
+{
+  "all6_work_paths_are_archive_symlinks": true,
+  "archive_all_submanifests_verified": true,
+  "created_utc": "2026-10-24T17:14:13.064378+00:00",
+  "delivered_invariance_receipt": "fixture/delivered-invariance.json",
+  "new_ci_runs": 0,
+  "overall_macos13_goal_complete": false,
+  "owned_binary_and_modules_absent": true,
+  "pixel_complete_and_frozen14_recompute_exact": true,
+  "pixel_original_input_hashes_verified": 14,
+  "product_template_changes": false,
+  "same_binary_and_limited_native_verification": "native-analysis/summary.json",
+  "staged_whitespace_check": {
+    "all_other_staged_paths_exit_code": 0,
+    "exact_output": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-view13/fixture/native-display-hero-draw-only.patch:5: trailing whitespace.\n+ \nDocs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-view13/source-preparation/native-display-hero-draw-only.patch:5: trailing whitespace.\n+ \n",
+    "exceptions": [
+      {
+        "line": 5,
+        "path": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-view13/fixture/native-display-hero-draw-only.patch",
+        "reason": "Canonical unified-diff context for an empty source line is one space; preserve exact reviewed patch, not a source-code trailing-whitespace addition.",
+        "sha256": "166e993afefe6885d4fba55bbcd64650d75c8bef05919741a7e6ad2cb90ffcf4"
+      },
+      {
+        "line": 5,
+        "path": "Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-view13/source-preparation/native-display-hero-draw-only.patch",
+        "reason": "Canonical unified-diff context for an empty source line is one space; preserve exact reviewed patch, not a source-code trailing-whitespace addition.",
+        "sha256": "166e993afefe6885d4fba55bbcd64650d75c8bef05919741a7e6ad2cb90ffcf4"
+      }
+    ],
+    "full_exit_code": 2
+  }
+}

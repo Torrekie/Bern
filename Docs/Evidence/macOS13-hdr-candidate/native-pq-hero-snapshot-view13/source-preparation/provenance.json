@@ -1,0 +1,90 @@
+{
+  "assembly": "patched ProductHero.clock-adapted.swift + base FloatCapture.swift.inc + NativeDisplay.swift.inc + patched Driver.swift.inc; unchanged base Image/Style/Dependencies",
+  "base_files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.swift.inc": {
+      "bytes": 34860,
+      "sha256": "a6b483d48f468f3479d6ac36ba7b95464c037d3c792f7efe134edfc1ba9109ca"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15534,
+      "sha256": "5be2a6cc4e5683ce44d75e43a5c32768eabce0cfb38a12ea1ab4fa8f527a4e6d"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "StaticRoute.swift.inc": {
+      "bytes": 3531,
+      "sha256": "1480c3e71ffd0e1618e56330af5c68d97dbdd37657bd34d609f3386b9609400d"
+    },
+    "assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    }
+  },
+  "base_fixture": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/fixture",
+  "candidate_scope": "index0 named snapshot only; exact original NSImage; stock NSImageView; original draw skipped; weak tracking",
+  "control_hook_scope": "No new image/view getter; report/weak scalar state only",
+  "generated_files": {
+    "Driver.swift.inc": {
+      "bytes": 35821,
+      "sha256": "192f62f84a6fef7af71664a81b40844be3915089ddb748fdfa73fe66c6dd033d"
+    },
+    "NativeDisplay.swift.inc": {
+      "bytes": 7286,
+      "sha256": "7f48e05a391ad8ba4a8babfffcc6895f6f489f103e103def4591bc8c0758f2b3"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15693,
+      "sha256": "6f7e77675e7202169e238cc2755641ad53cd939809d25b22f724655d51b7b0a7"
+    },
+    "README.md": {
+      "bytes": 4085,
+      "sha256": "3bb298453406dd4334e270458d124435c96cc13bbce9518c944dfad44885f1f5"
+    },
+    "native-display-driver.patch": {
+      "bytes": 5342,
+      "sha256": "3d0b5cc4ef786c29ca9058ef6f62e2744acd08ace093579ded722820cdb58396"
+    },
+    "native-display-hero-draw-only.patch": {
+      "bytes": 916,
+      "sha256": "166e993afefe6885d4fba55bbcd64650d75c8bef05919741a7e6ad2cb90ffcf4"
+    }
+  },
+  "kind": "private_source_only_original_snapshot_stock_nsimageview",
+  "not_claimed": [
+    "Runtime/typecheck success",
+    "Color or HDR equivalence",
+    "Real coordinator lifecycle",
+    "General alpha/orientation/corner behavior",
+    "All NSImages deallocated",
+    "Zero observer effect"
+  ],
+  "static_validation": {
+    "both_unified_patches_apply_with_zero_fuzz_and_match_generated_files": true,
+    "driver_prefix_before_main_unchanged": true,
+    "hero_reverse_draw_only_transform_matches_base": true,
+    "new_helper_has_no_explicit_display_layout_layer_provider_or_cgimage_readback": true
+  },
+  "status": "frozen_not_compiled_or_run"
+}

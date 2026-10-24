@@ -1,0 +1,73 @@
+--- a/Driver.swift.inc
++++ b/Driver.swift.inc
+@@ -305,7 +305,7 @@
+ @main private enum HeroBaselineMain {
+     @MainActor static func main() {
+         let status = run()
+-        exit(status == 0 && FixtureSnapshotFloatCapture.finalizationFailed ? 1 : status)
++        exit(status == 0 && (FixtureSnapshotFloatCapture.finalizationFailed || FixtureNativeDisplay.finalizationFailed) ? 1 : status)
+     }
+     @MainActor private static func run() -> Int32 {
+         guard CommandLine.arguments.count == 4 else { return 2 }
+@@ -325,6 +325,7 @@
+             "image_equality_collection_gate": false,
+             "snapshot_cgimage_metadata": "Fixture-only public CGImage scalar descriptors and color-space reference at the actual renderer.cgImage result; classification/ICC hash/bounded profile serialization only after all PNG captures and original window teardown. The v2 metadata observer retains no image; separate opt-in raw capture lifetime/provider reads are reported in snapshot_float_capture. No NSImage recache, conversion or relabel. Not a zero-observer-effect claim."
+         ]
++        report["native_display"] = FixtureNativeDisplay.report()
+         report["backing_observation"] = FixtureBackingObservation.initial()
+         report["static_route"] = ["requested": FixtureStaticRouteMode.requested.map { $0 as Any } ?? NSNull(),
+             "selected": FixtureStaticRouteMode.selected.map { $0 as Any } ?? NSNull(),
+@@ -338,6 +339,7 @@
+                 "increase_contrast": NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast]
+             if let r = root { report["metal_count_before_cleanup"] = fixtureDescendants(r).filter { $0 is MTKView }.count }
+             window?.orderOut(nil)
++            FixtureNativeDisplay.cleanup()
+             // Only views created by this fixture in overlay mode; no manager lifecycle calls.
+             for flight in fixtureOwnedOverlayFlights { flight.removeFromSuperview() }
+             fixtureOwnedOverlayFlights.removeAll()
+@@ -355,11 +357,17 @@
+                 report["success"] = false
+                 if report["error"] == nil { report["error"] = floatCapture["error"] }
+             }
++            report["native_display"] = FixtureNativeDisplay.report()
++            if FixtureNativeDisplay.finalizationFailed {
++                report["success"] = false
++                if report["error"] == nil { report["error"] = "Native display cleanup failed" }
++            }
+             try? JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
+                 .write(to: output.appendingPathComponent("report.json"))
+         }
+         do {
+             try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
++            try FixtureNativeDisplay.validateModes()
+             guard FixtureStaticRouteMode.selected != nil, FixtureBackingMode.selected == "off",
+                   FixtureFloatCaptureMode.selected == .off else {
+                 throw FixtureFailure(message: "Static route root/overlay requires backing observer off and float capture off before window creation")
+@@ -465,6 +473,8 @@
+                         try FixtureStaticRoute.mount(f, desired: desiredFlightRects[i], root: r, manager: manager, window: w)
+                         if FixtureStaticRouteMode.selected == "overlay" { fixtureOwnedOverlayFlights.append(f) }
+                         flights.append(f); regions[i == 0 ? "flight-named" : "flight-custom"] = f
++                        try FixtureNativeDisplay.mount(f, picture: p, index: i,
++                            sourceMetadata: before[urls[i].lastPathComponent] as? [String: Any], manager: manager, window: w)
+                     }
+                     report["static_route_mount"] = try FixtureStaticRoute.check(flights, desired: desiredFlightRects, root: r, manager: manager, window: w)
+                     report["snapshots"] = anchorInfo; snapshotTaken = true; phaseBegan = Date(); continue
+@@ -511,6 +521,7 @@
+                     try fixtureSavePNG(shot, url)
+                     var capture = sample; capture["png"] = filename
+                     capture["png_sha256"] = fixtureHash(try Data(contentsOf: url)); captures.append(capture)
++                    try FixtureNativeDisplay.check(stage: "post_progress_\(phase)_png", flights: flights, manager: manager, window: w)
+                     phase += 1; identical = 0; previousHash = ""; phaseBegan = Date()
+                     for f in flights { f.progress = CGFloat(phase); f.needsDisplay = true }
+                 }
+@@ -526,8 +537,10 @@
+             }
+             report["static_route_post_png"] = try FixtureStaticRoute.check(flights, desired: desiredFlightRects, root: r, manager: manager, window: w)
+             report["backing_observation"] = try FixtureBackingObservation.finish(flights, root: r, manager: manager, window: w)
++            try FixtureNativeDisplay.finish(flights: flights, manager: manager, window: w)
+             report["success"] = true; return 0
+         } catch {
++            FixtureNativeDisplay.fail(error)
+             var backing = report["backing_observation"] as? [String: Any] ?? FixtureBackingObservation.initial()
+             if backing["success"] as? Bool != true { backing["error"] = String(describing: error) }
+             report["backing_observation"] = backing

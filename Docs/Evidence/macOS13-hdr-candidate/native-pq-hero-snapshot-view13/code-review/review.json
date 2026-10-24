@@ -1,0 +1,52 @@
+{
+  "kind": "bounded_private_original_snapshot_native_display_source_review",
+  "recorded_at_utc": "2026-10-24T17:00:11Z",
+  "disposition": "pass_source_review_with_inherited_report_limits",
+  "new_obvious_swift_or_input_or_cleanup_blocker_found": false,
+  "inputs": {
+    "NativeDisplay.swift.inc": "7f48e05a391ad8ba4a8babfffcc6895f6f489f103e103def4591bc8c0758f2b3",
+    "Driver.swift.inc": "192f62f84a6fef7af71664a81b40844be3915089ddb748fdfa73fe66c6dd033d",
+    "ProductHero.clock-adapted.swift": "6f7e77675e7202169e238cc2755641ad53cd939809d25b22f724655d51b7b0a7",
+    "native-display-driver.patch": "3d0b5cc4ef786c29ca9058ef6f62e2744acd08ace093579ded722820cdb58396",
+    "native-display-hero-draw-only.patch": "166e993afefe6885d4fba55bbcd64650d75c8bef05919741a7e6ad2cb90ffcf4",
+    "README.md": "3bb298453406dd4334e270458d124435c96cc13bbce9518c944dfad44885f1f5"
+  },
+  "base_fixture": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/fixture",
+  "source_checks": {
+    "all_10_base_file_hashes_and_sizes_match_provenance": true,
+    "all_6_generated_file_hashes_and_sizes_match_provenance": true,
+    "both_patches_equal_complete_unified_diffs": true,
+    "driver_prefix_before_main_byte_equal": true,
+    "hero_reverse_false_flag_and_draw_return_transform_byte_equal_to_base": true,
+    "same_actual_snapshot_NSImage_identity": "helper38,45,55,64; driver465,471,476",
+    "named_index0_only_before_picture_image_read": "helper36-38",
+    "control_before_new_native_image_view_getters": "helper36,62,90-98",
+    "weak_tracking_and_scalar_records": "helper10-18,75-86",
+    "owned_flight_survives_ordinary_throw_until_defer_cleanup": "driver319,341-346,473-477",
+    "cleanup_failure_affects_report_and_exit": "helper96-113; driver308,360-364",
+    "no_new_explicit_layer_display_layout_RunLoop_or_pixel_readback": true
+  },
+  "unchanged_driver_call_site_counts_base_and_prepared": {
+    "RunLoop_main_run": [2, 2],
+    "layoutSubtreeIfNeeded": [1, 1],
+    "displayIfNeeded": [1, 1],
+    "needsDisplay_assignment": [1, 1],
+    "CGWindowListCreateImage": [1, 1],
+    "FixtureSnapshotFloatCapture_finish": [1, 1]
+  },
+  "inherited_reporting_limits": [
+    "Final report write uses try? and does not change exit status on write failure; source does not refuse prior report/PNG overwrite. Caller must provide fresh owned output.",
+    "Hard watchdog writes hard-deadline.txt then _exit, bypassing defer and full partial report preservation.",
+    "Legacy top-level scope describes actual Flight.draw; candidate named draw is skipped, so native_display must qualify that inherited description."
+  ],
+  "other_limits": [
+    "Control adds scalar branches, ledger lookup and parameter passing; it is not zero observer effect.",
+    "Stock NSImageView visibility/orientation/pixels/colors and same-host control equality require actual acquisition; source gates cannot prove them.",
+    "Current candidate authorization is local13; inherited source permits expected13/14.",
+    "Opaque/up/same-aspect/corner0/from==to static endpoints only; no custom, alpha, other orientation/fit/corner, crossfade/lifecycle, High/HLG or product acceptance."
+  ],
+  "performed": ["source_read", "bounded_diff", "source_hash_and_call_site_inventory", "small_private_review"],
+  "not_performed": ["source_edit", "compile", "typecheck", "tests", "UI", "CI", "pixel_algorithm", "large_image_copy"],
+  "artifacts": ["README.md", "review.json", "SHA256SUMS"],
+  "freeze": "read-only files and directory after manifest generation"
+}

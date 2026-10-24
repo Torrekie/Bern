@@ -1,0 +1,129 @@
+{
+  "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+  "argv": [
+    "xcrun",
+    "swiftc",
+    "-O",
+    "-parse-as-library",
+    "-swift-version",
+    "5",
+    "-j",
+    "2",
+    "-target",
+    "arm64-apple-macos13.0",
+    "-module-cache-path",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/modules",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/Dependencies.swift",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/ProductImage.swift",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/ProductStyle.swift",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/ProductHero.swift",
+    "-framework",
+    "AppKit",
+    "-framework",
+    "SwiftUI",
+    "-framework",
+    "MetalKit",
+    "-framework",
+    "CoreImage",
+    "-framework",
+    "ColorSync",
+    "-framework",
+    "ImageIO",
+    "-framework",
+    "CryptoKit",
+    "-o",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/HeroNativeDisplayProbe"
+  ],
+  "binary_bytes": 601224,
+  "binary_sha256": "514079a0f294f1bc47e761e37b281f7d18271c9ecae6ab31e1b1f416f8679f1b",
+  "build_log_sha256": "41d50adfbaadee47a30ba6ac5f6243c1c2f954af0651e55f8589e5a549eff0bb",
+  "checks": {
+    "codesign_details": {
+      "argv": [
+        "codesign",
+        "-dvvv",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/HeroNativeDisplayProbe"
+      ],
+      "exit_code": 0,
+      "output": "Executable=/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/HeroNativeDisplayProbe\nIdentifier=HeroNativeDisplayProbe\nFormat=Mach-O thin (arm64)\nCodeDirectory v=20400 size=4783 flags=0x20002(adhoc,linker-signed) hashes=146+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=40e32579d931134c0f12811ee77188f2ed10a054\nCandidateCDHashFull sha256=40e32579d931134c0f12811ee77188f2ed10a0548ba2d77f2bfebfef9afbc08e\nHash choices=sha256\nCMSDigest=40e32579d931134c0f12811ee77188f2ed10a0548ba2d77f2bfebfef9afbc08e\nCMSDigestType=2\nLaunch Constraints:\n\tNone\nCDHash=40e32579d931134c0f12811ee77188f2ed10a054\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\n"
+    },
+    "codesign_verify": {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/HeroNativeDisplayProbe"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    "file": {
+      "argv": [
+        "file",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/HeroNativeDisplayProbe"
+      ],
+      "exit_code": 0,
+      "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/HeroNativeDisplayProbe: Mach-O 64-bit executable arm64\n"
+    },
+    "mach_build": {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/HeroNativeDisplayProbe"
+      ],
+      "exit_code": 0,
+      "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/HeroNativeDisplayProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 14.2\n   ntools 1\n     tool LD\n  version 1022.1\n"
+    }
+  },
+  "environment": {
+    "arch": {
+      "argv": [
+        "uname",
+        "-m"
+      ],
+      "exit_code": 0,
+      "output": "arm64\n"
+    },
+    "os": {
+      "argv": [
+        "sw_vers"
+      ],
+      "exit_code": 0,
+      "output": "ProductName:\t\tmacOS\nProductVersion:\t\t13.7.8\nBuildVersion:\t\t22H730\n"
+    },
+    "sdk": {
+      "argv": [
+        "xcrun",
+        "--sdk",
+        "macosx",
+        "--show-sdk-version"
+      ],
+      "exit_code": 0,
+      "output": "14.2\n"
+    },
+    "sdk_path": {
+      "argv": [
+        "xcrun",
+        "--sdk",
+        "macosx",
+        "--show-sdk-path"
+      ],
+      "exit_code": 0,
+      "output": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk\n"
+    },
+    "swift": {
+      "argv": [
+        "xcrun",
+        "swiftc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "swift-driver version: 1.87.3 Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\n"
+    }
+  },
+  "exit_code": 0,
+  "finished_utc": "2026-10-24T16:59:13.935480+00:00",
+  "source_provenance_sha256": "1bee2d61a3769e95d661ec93c9520f1853a38c8f5a66120131a89b609d32cdce",
+  "started_utc": "2026-10-24T16:59:02.715060+00:00"
+}

@@ -1,0 +1,19 @@
+--- a/ProductHero.clock-adapted.swift
++++ b/ProductHero.clock-adapted.swift
+@@ -157,6 +157,8 @@
+ }
+ 
+ private final class BernHeroFlightView: NSView {
++    // Fixture only; false preserves the original draw path.
++    var fixtureNativeDisplaySkipsDraw = false
+     let from: NSImage
+     let to: NSImage
+     var progress: CGFloat = 0
+@@ -169,6 +171,7 @@
+     override var isFlipped: Bool { true }
+     override func hitTest(_ point: NSPoint) -> NSView? { nil }
+     override func draw(_ dirtyRect: NSRect) {
++        if fixtureNativeDisplaySkipsDraw { return }
+         NSBezierPath(roundedRect: bounds, xRadius: max(0, corner), yRadius: max(0, corner)).addClip()
+         from.draw(in: bounds, from: .zero, operation: .sourceOver, fraction: 1, respectFlipped: true, hints: nil)
+         to.draw(in: bounds, from: .zero, operation: .sourceOver, fraction: min(1, max(0, progress)), respectFlipped: true, hints: nil)

@@ -1,0 +1,73 @@
+{
+  "all_recorded_inputs_reverified": true,
+  "analysis_driver_sha256": "2c156bb600dbf24dfc14d8101b136bcbd7790d6d47397f61a2969614e040727e",
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/analyze.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/runtime13-control/report.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/control-analysis"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/analyze.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view13/runtime13-image-view/report.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/image-view-analysis"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/analyze.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-snapshot-40080838898/runtime40080838898/runtime14/report.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/reference14-analysis"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/compare.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/control-analysis/analysis.json",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/reference14-analysis/analysis.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/control-crosshost"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/compare.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/image-view-analysis/analysis.json",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/reference14-analysis/analysis.json",
+        "--output",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-native-view-pixel-analysis/image-view-crosshost"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "crosshost_comparison_invocations": 2,
+  "finished_utc": "2026-10-24T17:04:53.507083+00:00",
+  "host_analyzer_invocations": 3,
+  "littlecms": "2.19",
+  "no_ui_compile_ci_or_input_writes": true,
+  "pillow": "12.3.0",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 15.0.0 (clang-1500.1.0.2.5)]",
+  "started_utc": "2026-10-24T17:04:50.800159+00:00",
+  "summary_complete": true,
+  "top_level_offline_executions": 1
+}

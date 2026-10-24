@@ -1,0 +1,29 @@
+{
+  "actual_binary_rehashed_before_root_cleanup": true,
+  "build_py_sha256": "f3099b66b8bf1cae06e1e440f297911742c61c974616e38495c760911bd84ae1",
+  "current_binary_sha256": "514079a0f294f1bc47e761e37b281f7d18271c9ecae6ab31e1b1f416f8679f1b",
+  "input_files_fingerprinted": 39,
+  "input_fixture": "work/hero-snapshot-native-view13",
+  "known_boundaries": [
+    "Binary itself does not reject existing report/PNG paths; pinned wrapper requires a fresh absent output directory.",
+    "Report finalization uses try? and may suppress write errors; this verifier instead requires fresh receipt/report/output hashes and exit0.",
+    "Hard watchdog writes a separate marker with try? and _exit124 bypasses defer/report cleanup; both present runs exited0 without marker. Failure-path cleanup was not exercised.",
+    "NativeDisplay helper reads no snapshot pixels/providers; inherited harness still reads WindowServer screenshot buffers.",
+    "Static manual progress0/1 and stock NSImageView are not actual coordinator flight/lifecycle or pixel/color acceptance.",
+    "Cleanup proves fixture-child detach/image=nil/helper weak-ref clearing, not all NSImage deallocation."
+  ],
+  "parent_announced_binary_match": true,
+  "pixel_analysis": "NOT PERFORMED",
+  "png_scope": "PNG file bytes independently hashed; WindowServer raw-buffer hashes and five-equal sequence checked for report consistency only; no raw capture buffers exported or independently decoded.",
+  "root_pixel_results": "Not independently rerun or used as verifier gates.",
+  "scope": "PRIVATE bounded offline native/static verifier for one local control/candidate fixture; no source/repo edits, compile/UI/CI execution, image decoding or pixel comparison.",
+  "script_sha256": "1312f35217056b736f030825f1d61de45ea6b92874511aa37947f7cd102e3591",
+  "signature_and_build_scope": "Read and checked saved build-fingerprint records of strict signature, arm64, min13 and SDK14.2; no fresh codesign/xcrun/native command.",
+  "source_map_members_verified": 21,
+  "source_provenance_sha256": "1bee2d61a3769e95d661ec93c9520f1853a38c8f5a66120131a89b609d32cdce",
+  "stock_enum_scope": "Read SDK14.2 NSCell.h / NSImageCell.h and fingerprinted them: scaleAxesIndependently=1, frameNone=0.",
+  "summary_sha256": "766c4fe107683fa88bc592a0d5a9d5d4c1ec879991d1ad5fefdaa8e965fb2de0",
+  "verifier_ast": "PASS",
+  "verifier_execution": "One offline run after parent explicitly confirmed both processes ready; control/candidate native PASS.",
+  "wrapper_sha256": "565f6246c70325bcb37ed2a3bc97394a430103be7290aa623c5150ceb4cf7025"
+}

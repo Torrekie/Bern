@@ -27,3 +27,5 @@
 - [余量切换的有限尝试](native-sdr-headroom13/validation.json)：7.5秒采集上限内仅取得初始Hd1两张相同buffer，其它阶段未完成，不推断失败原因或动态Standard恒定性。
 
 以上补证均为本机13独立窗口，非激活状态，不是14彩色采集或一般High等同证明。原exe/cache已清。
+
+- [同一Hero snapshot的系统NSImageView显示对照](native-pq-hero-snapshot-view13/README.md)：先复现12ROI默认控制，候选只改变named Hero且max1/255，其余10ROI exact；完整14残差有改善亦有恶化，主要色差未解决，未换入产品。原PNG/ICC、同对象身份/清理、完整色块/灰阶与构建证据保留，binary/cache已清。

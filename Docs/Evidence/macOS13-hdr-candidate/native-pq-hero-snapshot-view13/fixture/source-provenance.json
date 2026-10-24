@@ -1,0 +1,105 @@
+{
+  "assembly": [
+    "ProductHero.clock-adapted.swift",
+    "FloatCapture.swift.inc",
+    "NativeDisplay.swift.inc",
+    "Driver.swift.inc"
+  ],
+  "base_fixture": "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/native-pq-hero-static-route13/fixture",
+  "base_manifest_sha256": "c8916d1371f5648ad66411723ae624716577248bb0a26343c136c85f0196473a",
+  "diagnostic_only": true,
+  "join": "single LF between byte inputs; no added final LF",
+  "kind": "local_static_same_snapshot_stock_nsimageview",
+  "legacy_adaptations": "Inherited documented SDK14 unreachable-gainmap and unused-clock guards; not actual coordinator/lifecycle evidence",
+  "new_cache": "modules (owned new directory, remove after verification)",
+  "preparation_manifest_sha256": "e29138684917728202d70d66e9c6a14d0127bedf4545a63147dc1353c79c7d17",
+  "preparation_provenance_sha256": "89dee7d2c0d7915ceee78dd1db4ff102775d5f590045101b51f268568077ee0e",
+  "product_changes": false,
+  "source_files": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "Driver.swift.inc": {
+      "bytes": 35821,
+      "sha256": "192f62f84a6fef7af71664a81b40844be3915089ddb748fdfa73fe66c6dd033d"
+    },
+    "FloatCapture.swift.inc": {
+      "bytes": 8102,
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388"
+    },
+    "NativeDisplay.swift.inc": {
+      "bytes": 7286,
+      "sha256": "7f48e05a391ad8ba4a8babfffcc6895f6f489f103e103def4591bc8c0758f2b3"
+    },
+    "ProductHero.clock-adapted.swift": {
+      "bytes": 15693,
+      "sha256": "6f7e77675e7202169e238cc2755641ad53cd939809d25b22f724655d51b7b0a7"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "ProductHero.swift": {
+      "bytes": 66905,
+      "sha256": "e76d887be060271450cee97ab99a0f09ec0746bc980b4f040586f869d088090f"
+    },
+    "ProductHero.v2.base.swift": {
+      "bytes": 15038,
+      "sha256": "7269a2d0f9c17ee1d641c9d338e211af33a81879b0d03552d2dca9fcefa22e4f"
+    },
+    "ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "ProductImage.swift": {
+      "bytes": 24284,
+      "sha256": "1b2855c2605d2e49d9f05331d0775a26b0364864dd6c0ac326529fbf3346fa54"
+    },
+    "ProductImage.v2.base.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "StaticRoute.swift.inc": {
+      "bytes": 3531,
+      "sha256": "1480c3e71ffd0e1618e56330af5c68d97dbdd37657bd34d609f3386b9609400d"
+    },
+    "assets/source-ffb-icc.png": {
+      "bytes": 15470,
+      "sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    },
+    "assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "local-image-imports-and-sdk14.patch": {
+      "bytes": 1225,
+      "sha256": "accf273f917d98447768b76a28d738b530c4efca9f430120dc051d23b3db75c5"
+    },
+    "local-sdk14-clock.patch": {
+      "bytes": 904,
+      "sha256": "71cf918174cd726e61f9359cc0696750be68a77e4040841336d246372706991a"
+    },
+    "native-display-driver.patch": {
+      "bytes": 5342,
+      "sha256": "3d0b5cc4ef786c29ca9058ef6f62e2744acd08ace093579ded722820cdb58396"
+    },
+    "native-display-hero-draw-only.patch": {
+      "bytes": 916,
+      "sha256": "166e993afefe6885d4fba55bbcd64650d75c8bef05919741a7e6ad2cb90ffcf4"
+    },
+    "sdk14-unreachable-gainmap.patch": {
+      "bytes": 985,
+      "sha256": "b8638b926fe67d7c4b0b3965cf58c747246efd12e9f277792b2531b3243995bf"
+    }
+  },
+  "target": "arm64-apple-macos13.0"
+}

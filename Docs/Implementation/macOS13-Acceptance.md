@@ -231,3 +231,13 @@ source审查还确认：当前固定端点夹具将真实FlightView挂在Fixture
 root原mid目检两边都有位移，14本次已离开source；固定12pt opaque inset非白内容bounds为13 [96,76.5,416,256.5]、14 [233,166,554,347]，不是精确flight配准。arm→capture为13 index8→9/p.237941→.362234，14 index7→8/p.646607→.693877；保留分开的状态/时间和CG bracket，不要求它们等于画面，也不归因内部提交步骤。四项同host旧delay→新app端点ROI原RGB/ICC归一均exact；新before→settled仍为13 sRGB MAE.294106/max5、14 .271169/max2，均非exact。本例已有可见中间运动证据，颜色、完整轨迹/时序和其他输入/中断仍未验收。
 
 下一步只补[同一actual snapshot NSImage的原生显示对照](../Evidence/macOS14-hero-coordinator-app-40110795231/next-native-view-plan/README.md)，尚未实现/运行：保留默认Flight控制，比较NSImageView，而不换原图或绕过ImageRenderer。旧NSImageView/body exact不是同输入，14 Hero也不等于body，不能直接以body为目标或合入产品。候选先复现13默认静态控制，再对完整色块/灰阶报告改善与恶化；不加层setter、RGB补偿、图像白名单或自创tonemap，不为此未知再触发14CI。本轮binary/tar和逐字归档work重复副本已清理，见[收据](../Evidence/macOS14-hero-coordinator-app-40110795231/cleanup.json)。其余未通过项和完整阶段门槛保持，goal active，11/Swift5.3/Objective-C/iOS仍延期。
+
+## 同一snapshot的系统显示组件对照（2026-10-25）
+
+上节[同snapshot NSImageView限定诊断](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-view13/README.md)已在本机13实际完成。SDK14.2/Swift5.9.2、语言模式5、arm64/min13、O/j2构建成功，原ad-hoc严格签名binary`514079a0…8679f1b`依次运行control/image-view；继承静态fixture已有的gain-map/unused-clock编译适配，不冒充真实coordinator或完整应用构建。只把named Flight原同一snapshot NSImage交给stock NSImageView，跳过该父view原draw；custom、body/oracle、actual overlay、几何和原采样循环均保留。未换原图、再次缓存/渲染、加入layer setter或产品代码。
+
+control先精确复现冻结13-overlay的全部12ROI原RGB/ICC归一，才运行candidate。独立native核验构建/同binary/21输入组装、normal/cache/前台9292保持、五stable/noMTK/managerFlight0/timernil、route回转0pt均通过，窗口1.787775/1.607795秒。candidate四阶段保持同child/flight/image、320×180、stock配置与原parent/window；orderOut后child.image=nil并detach，仅证明child/helper清理。原普通catch/try?report写和hardwatchdog绕defer的边界保留，由fresh-output wrapper和实际完整输出分别核验，不声称所有失败均保存完整report。
+
+root已目检两张原p0，candidate named内容实际可见。control→candidate只两phase的flight-named变化：raw fullRGB MAE0.103565/255、max1，ICC intent0→sRGB MAE0.086730/255、max1；其余10ROI原RGB/归一均exact，嵌入ICC相同。完整十色块和灰阶、固定14参考重算保留：`|D13−D14|`的30通道平均p0为5.210863→5.272487，p1为5.224399→5.216157；p0有4通道改善/19恶化/7不变，p1为13/10/7。最大残差两phase都变大（112.616329→112.724330、113.048334→113.156336）。不能只挑平均或一块颜色宣称改进，也不把max1变化指定为取整根因；该显示组件替换未解决主色差，停止这一限定方向，未合入产品、不追加14 CI或真实flight。
+
+下一检查点转回已经保留的actual snapshot float样本：只读确定能否建立13/14平坦内区的行/通道语义，再比较边界两侧；尚无新离线语义分析或修复。保留同snapshot原PNG/ICC、源码、日志、独立审查和数值结果；自有binary及module cache57,493,320B已清理，work重复副本另以逐字归档收据记录，不当作APFS实际回收。四项原交付binary hash及两app严格签名保持。颜色、完整动画及其余Film/chrome/Picture/Frame/交互/HDR门槛未通过，goal active，不进入11/Swift5.3/Objective-C/iOS。
