@@ -1,0 +1,52 @@
+{
+  "base_inputs": [
+    {
+      "bytes": 17959,
+      "commit": "151609a950f95403ecdeb9451e99693f5628ee5a",
+      "private_file": "delay-workflow.original.yml",
+      "repository_path": ".github/workflows/macos14-hero-coordinator-delay-probe.yml",
+      "sha256": "5f0d71da1a07504e0bee49e6a6b8c3a750b10b667d5f97b68b3ad7fa4700bb28"
+    },
+    {
+      "bytes": 1646,
+      "commit": "151609a950f95403ecdeb9451e99693f5628ee5a",
+      "private_file": "run-one.py",
+      "repository_path": ".github/scripts/hero-coordinator-delay-probe/run-one.py",
+      "sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6"
+    }
+  ],
+  "driver_path": "work/hero-coordinator-app-preparation/Driver.swift.inc",
+  "driver_sha256": "571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270",
+  "execution_model_gate": {
+    "flags": "sampler invalidation source-path flag and terminal applicationDefined own-queue wake flags must be true",
+    "interval_seconds": "1/60",
+    "kind": "nsapplication_run_delegate_default_timer",
+    "max_depth": 1,
+    "mode": "nonempty raw declared default mode equals sole observed mode; frozen source pins .default registration and callback guard",
+    "one_counts": [
+      "launch_completed_count",
+      "loop_entry_count",
+      "loop_return_count",
+      "terminal_count",
+      "stop_calls",
+      "wake_count"
+    ],
+    "scope_limits": "callback count includes preload; no independent Timer.isValid getter, pixel/state synchronization, cause/fix or zero-observer-effect claim",
+    "timing": "finite ordered entry/launch/preload/before/settled/terminal/return; preload elapsed <=3 seconds",
+    "zero_counts": [
+      "sampler_reentrant_callbacks",
+      "sampler_callbacks_after_terminal"
+    ]
+  },
+  "kind_expected": "actual_coordinator_app_loop_fixture",
+  "runtime_gate_scope": "All old delay native/endpoint/normal/cache/front/identity/arm-nextsample guards retained as an exact prefix except binary identity. Append execution_model count/mode/stop-wake/timing gate. No actual app-loop reports used.",
+  "scope": "PRIVATE frozen workflow/wrapper preparation; static syntax, inherited-native-gate exact-prefix proof and source hash validation only. No repo/index/UI/compiler/CI execution.",
+  "source_contract": "Original b08 product/exactHero/Image/Style/Dependencies/assets hashes remain; local_compile_attempted=false, no inherited typecheck field.",
+  "source_provenance_input": {
+    "bytes": 2466,
+    "path": "work/hero-coordinator-app-source-preparation/source-provenance.json",
+    "sha256": "d6b7618c096259167ba45834ae23f7c934cc922327d2f11b9ca6ebafb6bf58f0"
+  },
+  "wake_scope_from_parent": "One terminal-only applicationDefined process wake after sampler stopped; not physical input, extra sample, animation flush, or timing evidence.",
+  "wrapper": "Exact original committed bytes; unchanged behavior."
+}

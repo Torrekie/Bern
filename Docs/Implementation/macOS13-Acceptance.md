@@ -222,3 +222,12 @@ source审查还确认：当前固定端点夹具将真实FlightView挂在Fixture
 四项same-host旧→新before/source、settled/destination ROI的原RGB和ICC intent0归一sRGB均exact，端点内容保持。新before→settled仍非exact：13 sRGB MAE0.294106/max5，14为0.271169/max2。root原mid目检和固定12pt opaque inset非白内容bounds显示13已有位移[109.5,85,429.5,265]，14仍source[16,24,336,204]；capture逻辑原点却为(139.7547,105.0299)/(256.0963,181.2059)，CG前后native bracket未变。bounds不作精确flight配准；新的trigger字段是arm别名，不能误当capture状态。额外一次原循环仍未建立presentation同步，不通过中间帧/颜色/动画，也不唯一归因系统或手动泵。
 
 下一检查点为[正常NSApplication.run生命周期](../Evidence/macOS14-hero-coordinator-delay-40107406624/next-app-loop-plan/README.md)的单一observer执行模型对照，尚未实现/运行：原采样body以MainActor timer调度，保留原产品/clock/scene/key/action/arm/截图与门槛，terminal后stop→run返回→正常defer。此入口更接近实际应用，但不是同步fence或已知修复。原7.2s入口deadline及hard watchdog minimal-report限制明确保留；不叠加等待、flush/layout/display或进度控制。本批原binary/tar和逐字校验work副本已清理，见[收据](../Evidence/macOS14-hero-coordinator-delay-40107406624/cleanup.json)。其它未通过项与goal active保持，不进入11/Swift5.3/Objective-C/iOS。
+
+
+## 正常AppKit循环中的可见过渡（2026-10-25）
+
+上节执行模型已由[CI40110795231及同binary13/14](../Evidence/macOS14-hero-coordinator-app-40110795231/README.md)实跑。新SDK26.2/min13原签名binary`a98bd3d4…255e8d0d`保留完整原Hero与capture/save helpers，用唯一NSApplication.run、delegate async preload和default-mode selector sampler代替手动泵；launch/entry/实际return/terminal/stop/terminal-only own wake各1，depth1/reentry0/terminal后callback0。两边native/execution门槛、normal/cache/front/noMTK、singleFlight运动及真实结束归零通过，窗口1.295/1.617秒。本例weak source均为nil，未当通用内存验收。本机未编译、重签或生成模块缓存。
+
+root原mid目检两边都有位移，14本次已离开source；固定12pt opaque inset非白内容bounds为13 [96,76.5,416,256.5]、14 [233,166,554,347]，不是精确flight配准。arm→capture为13 index8→9/p.237941→.362234，14 index7→8/p.646607→.693877；保留分开的状态/时间和CG bracket，不要求它们等于画面，也不归因内部提交步骤。四项同host旧delay→新app端点ROI原RGB/ICC归一均exact；新before→settled仍为13 sRGB MAE.294106/max5、14 .271169/max2，均非exact。本例已有可见中间运动证据，颜色、完整轨迹/时序和其他输入/中断仍未验收。
+
+下一步只补[同一actual snapshot NSImage的原生显示对照](../Evidence/macOS14-hero-coordinator-app-40110795231/next-native-view-plan/README.md)，尚未实现/运行：保留默认Flight控制，比较NSImageView，而不换原图或绕过ImageRenderer。旧NSImageView/body exact不是同输入，14 Hero也不等于body，不能直接以body为目标或合入产品。候选先复现13默认静态控制，再对完整色块/灰阶报告改善与恶化；不加层setter、RGB补偿、图像白名单或自创tonemap，不为此未知再触发14CI。本轮binary/tar和逐字归档work重复副本已清理，见[收据](../Evidence/macOS14-hero-coordinator-app-40110795231/cleanup.json)。其余未通过项和完整阶段门槛保持，goal active，11/Swift5.3/Objective-C/iOS仍延期。

@@ -1,0 +1,1464 @@
+{
+  "ci_run": 40110795231,
+  "exact_gate_adaptation": {
+    "adapted_gate_sha256": "684f073ed85f0cd08f858f931b4c143d0148e59c8de73ddc96fda5a59842b765",
+    "literal_changes_only": {
+      "Path('evidence/runtime14')": "Path('/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231')/('runtime'+str(major))",
+      "Path('probe/HeroCoordinatorAppProbe')": "Path('/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/HeroCoordinatorAppProbe')",
+      "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==major and d['actual_os_major']==major",
+      "receipt['expected_os_major']==14": "receipt['expected_os_major']==major"
+    },
+    "original_gate_sha256": "4bae8b7d7b0c08efa628584682d5836a9b5f07d6feb4fecd191808a72eedb193"
+  },
+  "harness_commit": "be6eb08a91e74d900cdaccc6d8730c81aefb96bc",
+  "input_files": {
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/build/hero-coordinator-app-probe.tar.gz": {
+      "bytes": 238340,
+      "sha256": "7a3f4cb660797e3307d22dc73bfed58718123f49bb4245ca7635878d64a6bed8"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/package-verification-local.json": {
+      "bytes": 1722,
+      "sha256": "948df51831616d87b57cc05bffda5dd5c0b7a01f71e17a82bcf91547d8d0e8e3"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/Driver.swift.inc": {
+      "bytes": 34816,
+      "sha256": "571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/HeroCoordinatorAppProbe": {
+      "bytes": 609968,
+      "sha256": "a98bd3d415e98fbd84daa3d9c4bdbe21f2d731b3858b82fa66b20b59255e8d0d"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/ProductHero.swift": {
+      "bytes": 49797,
+      "sha256": "5a87ce79c72b0317ac0f04ec9841369176cf67851133513f60273750c8b83b45"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/ProductImage.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/README.md": {
+      "bytes": 3326,
+      "sha256": "8f684493a9f85e7e4bc2312a5a27079189aefe66809d9acacce2a6bfbc73887b"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/SHA256SUMS": {
+      "bytes": 1544,
+      "sha256": "e4635f527d31766f692d2d0d1ad18cba7293f1e393559f50844aaf970202b815"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/build/binary.txt": {
+      "bytes": 3968,
+      "sha256": "c49456c16028420e011fa82a7f5f16cef873b4769970479d34e0a847016745a8"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/build/command.txt": {
+      "bytes": 424,
+      "sha256": "5f4a0d4729552fb89f28cef479bec379690ac390b1dd3d441372e0b1b6a6a4d2"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/build/compile.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/build/environment.txt": {
+      "bytes": 453,
+      "sha256": "f63ec31f7158952c58d0488aae5a7d601434a2f48ae80bf185083d72398286b0"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/build/signature.txt": {
+      "bytes": 1063,
+      "sha256": "8b33fce00bc033191458105c1f27a505b10322ca37088ed18ced04da370fc209"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/run-one.py": {
+      "bytes": 1646,
+      "sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/probe/source-provenance.json": {
+      "bytes": 2466,
+      "sha256": "d6b7618c096259167ba45834ae23f7c934cc922327d2f11b9ca6ebafb6bf58f0"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime13/before.png": {
+      "bytes": 187059,
+      "sha256": "df988c9f218040aafddd4e7fef9de6dd8a29348d1ddb829f70d965335407ae49"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime13/in-flight.png": {
+      "bytes": 114341,
+      "sha256": "e6bffec82b772725e1bd3e59659df221689f5492cf20b54f18b7772a09642dc0"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime13/report.json": {
+      "bytes": 135444,
+      "sha256": "fca7642a63ecf552029ad00901a884f1eda7eeb20532f8b0676d7e127106ca06"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime13/run-receipt.json": {
+      "bytes": 1003,
+      "sha256": "1408f32dcb798eea2d0c6af5935560be892cd20867907db89d7eb11afd75c805"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime13/settled.png": {
+      "bytes": 187238,
+      "sha256": "c705e24e5bbf25290e5fbc0230d959c7883f9d8cdc7afe351aa40c1ef176515f"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime14/before.png": {
+      "bytes": 56671,
+      "sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime14/in-flight.png": {
+      "bytes": 47235,
+      "sha256": "c4d14fc44fe92b3137f6ebd6d1a8854ab14cf02ce4bc217036f4bfee0591cd67"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime14/report.json": {
+      "bytes": 118620,
+      "sha256": "b965a1d15a2518bb073ef50ef8fa00060058021c073a2393a1ee7d93529438db"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime14/run-receipt.json": {
+      "bytes": 701,
+      "sha256": "a041316dce77b75614b890f93186cb8400c944154a25f067b39aebb669fd9cfd"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime14/settled.png": {
+      "bytes": 55695,
+      "sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba"
+    }
+  },
+  "interpretation": "Full native and app-loop metadata gates pass only acquisition. Armed/capture are adjacent observer callbacks under NSApplication.run, not presentation timestamps. Terminal own-queue applicationDefined wake is not physical input, a sampling action, animation flush or presentation fence. Invalidation flag records a source path, not an independent Timer.isValid getter. No pixel/state synchrony, visibility, color equality, fix/cause or zero-observer-effect claim.",
+  "package_verification": {
+    "current_binary_sha256": "a98bd3d415e98fbd84daa3d9c4bdbe21f2d731b3858b82fa66b20b59255e8d0d",
+    "current_tar_sha256": "7a3f4cb660797e3307d22dc73bfed58718123f49bb4245ca7635878d64a6bed8",
+    "original_product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604",
+    "package_members_verified": 18,
+    "signature_scope": "Saved root verification receipt; no fresh signing command.",
+    "source_map_members_verified": 10
+  },
+  "parent_product_checkpoint_commit": "ace6e1ee4acda71e26616ef0a21a3fc94d085829",
+  "pixel_acceptance": "NOT PERFORMED",
+  "processes": {
+    "13": {
+      "activation_calls": 0,
+      "before_cleanup_state": {
+        "departed": {},
+        "entries": {
+          "coordinator-one": [
+            {
+              "attached": true,
+              "identity": "ObjectIdentifier(0x000000015a128610)",
+              "last_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              },
+              "reduced": false,
+              "window_number": 10701
+            }
+          ]
+        },
+        "entry_keys": [
+          "coordinator-one"
+        ],
+        "flight_count": 0,
+        "flights": [],
+        "overlay_attached": true,
+        "overlay_frame": {
+          "height": 468,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "temporary_flight_view_count": 0,
+        "timer_exists": false,
+        "uptime": 260099.23031437502
+      },
+      "binary_sha256": "a98bd3d415e98fbd84daa3d9c4bdbe21f2d731b3858b82fa66b20b59255e8d0d",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "bracket_counts": {
+            "state_after": {
+              "flight_count": 0,
+              "temporary_flight_view_count": 0,
+              "timer_exists": false,
+              "uptime": 260098.1639605
+            },
+            "state_before": {
+              "flight_count": 0,
+              "temporary_flight_view_count": 0,
+              "timer_exists": false,
+              "uptime": 260098.15829516668
+            }
+          },
+          "capture_after_uptime": 260098.163888375,
+          "capture_before_uptime": 260098.15828970834,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 25577,
+          "phase": "before",
+          "png": "before.png",
+          "png_sha256": "df988c9f218040aafddd4e7fef9de6dd8a29348d1ddb829f70d965335407ae49",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "f67435fdb003c31670a2e137350343d506213e53258fce1bd74c962ddab1b166",
+          "rois": {
+            "anchor-ObjectIdentifier(0x0000000158608e30)": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 24
+              },
+              "screenshot_pixels": {
+                "height": 360,
+                "width": 640,
+                "x": 32,
+                "y": 104
+              }
+            },
+            "source": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 24
+              },
+              "screenshot_pixels": {
+                "height": 360,
+                "width": 640,
+                "x": 32,
+                "y": 104
+              }
+            }
+          },
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10701
+        },
+        {
+          "active": false,
+          "capture_after_uptime": 260098.310032375,
+          "capture_before_uptime": 260098.3054161667,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers_required": false,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 25577,
+          "phase": "in-flight",
+          "png": "in-flight.png",
+          "png_sha256": "e6bffec82b772725e1bd3e59659df221689f5492cf20b54f18b7772a09642dc0",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "a247086b6bd808506f59a3ffe73494dd05ffb3363a05d29ea0417f08a12609d5",
+          "rois": {
+            "anchor-ObjectIdentifier(0x000000015a128610)": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 244
+              },
+              "screenshot_pixels": {
+                "height": 360,
+                "width": 640,
+                "x": 704,
+                "y": 544
+              }
+            },
+            "flight": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 137.71070934744694,
+                "y": 103.69153588225691
+              },
+              "screenshot_pixels": {
+                "height": 360,
+                "width": 640,
+                "x": 275.4214186948939,
+                "y": 263.38307176451383
+              }
+            }
+          },
+          "state_after": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000015a128610)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 10701
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000015a128610)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 137.71070934744694,
+                  "y": 131.69153588225691
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.36223425401025877,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 137.71070934744694,
+                  "y": 103.69153588225691
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000015a12ee60)",
+                "window_number": 10701
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 260098.31006545835
+          },
+          "state_before": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000015a128610)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 10701
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000015a128610)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 137.71070934744694,
+                  "y": 131.69153588225691
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.36223425401025877,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 137.71070934744694,
+                  "y": 103.69153588225691
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000015a12ee60)",
+                "window_number": 10701
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 260098.30542508335
+          },
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10701
+        },
+        {
+          "active": false,
+          "bracket_counts": {
+            "state_after": {
+              "flight_count": 0,
+              "temporary_flight_view_count": 0,
+              "timer_exists": false,
+              "uptime": 260099.18467845835
+            },
+            "state_before": {
+              "flight_count": 0,
+              "temporary_flight_view_count": 0,
+              "timer_exists": false,
+              "uptime": 260099.17673200002
+            }
+          },
+          "capture_after_uptime": 260099.18466804168,
+          "capture_before_uptime": 260099.17672520835,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 25577,
+          "phase": "settled",
+          "png": "settled.png",
+          "png_sha256": "c705e24e5bbf25290e5fbc0230d959c7883f9d8cdc7afe351aa40c1ef176515f",
+          "potential_headroom": 2,
+          "raw_buffer_sha256": "13155319adb23e566c298262e68231d245ce90a97397d19249cdacaa626b2e82",
+          "rois": {
+            "anchor-ObjectIdentifier(0x000000015a128610)": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 244
+              },
+              "screenshot_pixels": {
+                "height": 360,
+                "width": 640,
+                "x": 704,
+                "y": 544
+              }
+            },
+            "destination": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 244
+              },
+              "screenshot_pixels": {
+                "height": 360,
+                "width": 640,
+                "x": 704,
+                "y": 544
+              }
+            }
+          },
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 10701
+        }
+      ],
+      "default_motion_environment": "unset",
+      "derived_execution_durations": {
+        "launch_after_loop_entry_seconds": 0.06353491666959599,
+        "loop_elapsed_seconds": 1.5202112083497923,
+        "preload_seconds": 0.047364166675833985,
+        "terminal_to_loop_return_seconds": 0.00030083334422670305
+      },
+      "derived_sampling_gaps": {
+        "armed_to_capture_before_seconds": 0.015621500002453104,
+        "capture_call_elapsed_seconds": 0.004616208316292614,
+        "capture_sample_to_capture_before_seconds": 0.00019908335525542498,
+        "progress_gap": 0.12429359054608613,
+        "sample_index_gap": 1,
+        "uptime_gap_seconds": 0.015422416647197679
+      },
+      "execution_model": {
+        "kind": "nsapplication_run_delegate_default_timer",
+        "launch_completed_count": 1,
+        "launch_completed_uptime": 260097.77362079168,
+        "loop_entry_count": 1,
+        "loop_entry_uptime": 260097.710085875,
+        "loop_return_count": 1,
+        "loop_return_uptime": 260099.23029708336,
+        "preload_completed_uptime": 260097.82098495835,
+        "preload_started_uptime": 260097.77362079168,
+        "sampler_callback_count": 57,
+        "sampler_callbacks_after_terminal": 0,
+        "sampler_interval_seconds": 0.016666666666666666,
+        "sampler_invalidated_before_stop": true,
+        "sampler_max_depth": 1,
+        "sampler_mode": "kCFRunLoopDefaultMode",
+        "sampler_observed_modes": [
+          "kCFRunLoopDefaultMode"
+        ],
+        "sampler_reentrant_callbacks": 0,
+        "stop_calls": 1,
+        "terminal_count": 1,
+        "terminal_uptime": 260099.22999625,
+        "wake_after_terminal": true,
+        "wake_count": 1,
+        "wake_posted_to_own_app_queue": true,
+        "wake_type": "applicationDefined"
+      },
+      "execution_model_gate": "PASS",
+      "flat_mid_fields_crosschecked_by_original_gate": true,
+      "frontmost_after": 9292,
+      "frontmost_before": 9292,
+      "live_sample_count": 44,
+      "midflight_sampling": {
+        "armed": {
+          "flight_identity": "ObjectIdentifier(0x000000015a12ee60)",
+          "progress": 0.23794066346417264,
+          "sample_index": 8,
+          "state": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000015a128610)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 10701
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000015a128610)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 95.94806292396201,
+                  "y": 104.34694596211799
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.23794066346417264,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 95.94806292396201,
+                  "y": 76.34694596211796
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000015a12ee60)",
+                "window_number": 10701
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 260098.2897946667
+          },
+          "uptime": 260098.2897946667
+        },
+        "capture_attempted": true,
+        "capture_sample": {
+          "flight_identity": "ObjectIdentifier(0x000000015a12ee60)",
+          "progress": 0.36223425401025877,
+          "sample_index": 9,
+          "state": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000015a128610)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 10701
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000015a128610)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 137.71070934744694,
+                  "y": 131.69153588225691
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.36223425401025877,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 137.71070934744694,
+                  "y": 103.69153588225691
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000015a12ee60)",
+                "window_number": 10701
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 260098.30521708334
+          },
+          "uptime": 260098.30521708334
+        },
+        "next_sample_captured": true,
+        "policy": "first_band_arm_then_next_original_loop_sample"
+      },
+      "native_gate": "PASS",
+      "native_gates": {
+        "actual_flight_seen": true,
+        "actual_frame_and_progress_changed": true,
+        "midband_armed": true,
+        "next_sample_captured": true,
+        "observed_flight_identities": [
+          "ObjectIdentifier(0x000000015a12ee60)"
+        ],
+        "source_detached_observed": false,
+        "source_no_longer_attached": true,
+        "source_weak_deallocated": true,
+        "temporary_view_removed": true,
+        "transition_count": 1
+      },
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "observed_flight_identities": [
+        "ObjectIdentifier(0x000000015a12ee60)"
+      ],
+      "own_pid": 25577,
+      "pixel_acceptance": "Not performed; before/mid/settled PNGs require offline visibility/color/timing review",
+      "pixel_analysis_performed": false,
+      "receipt_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime13/run-receipt.json",
+      "report_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime13/report.json",
+      "sample_count": 55,
+      "trigger_refers_to": "armed_sample",
+      "window_seconds": 1.2954957083566114,
+      "wrapper_elapsed_seconds": 1.7653712909959722,
+      "wrapper_exit_code": 0
+    },
+    "14": {
+      "activation_calls": 0,
+      "before_cleanup_state": {
+        "departed": {},
+        "entries": {
+          "coordinator-one": [
+            {
+              "attached": true,
+              "identity": "ObjectIdentifier(0x000000014d827d90)",
+              "last_rect": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              },
+              "reduced": false,
+              "window_number": 24
+            }
+          ]
+        },
+        "entry_keys": [
+          "coordinator-one"
+        ],
+        "flight_count": 0,
+        "flights": [],
+        "overlay_attached": true,
+        "overlay_frame": {
+          "height": 468,
+          "width": 1024,
+          "x": 0,
+          "y": 0
+        },
+        "temporary_flight_view_count": 0,
+        "timer_exists": false,
+        "uptime": 66.52018041666668
+      },
+      "binary_sha256": "a98bd3d415e98fbd84daa3d9c4bdbe21f2d731b3858b82fa66b20b59255e8d0d",
+      "cache_before_equals_after": true,
+      "cache_unchanged": true,
+      "captures": [
+        {
+          "active": false,
+          "bracket_counts": {
+            "state_after": {
+              "flight_count": 0,
+              "temporary_flight_view_count": 0,
+              "timer_exists": false,
+              "uptime": 65.45630066666666
+            },
+            "state_before": {
+              "flight_count": 0,
+              "temporary_flight_view_count": 0,
+              "timer_exists": false,
+              "uptime": 65.45000266666668
+            }
+          },
+          "capture_after_uptime": 65.45623604166667,
+          "capture_before_uptime": 65.44998600000001,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 995,
+          "phase": "before",
+          "png": "before.png",
+          "png_sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "214ebcd6e0f1e59ee8a6dfe7ae7cd5a3f07bbff45dd4589343ce75ff30fa2ce1",
+          "rois": {
+            "anchor-ObjectIdentifier(0x000000014d82f200)": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 24
+              },
+              "screenshot_pixels": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 52
+              }
+            },
+            "source": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 24
+              },
+              "screenshot_pixels": {
+                "height": 180,
+                "width": 320,
+                "x": 16,
+                "y": 52
+              }
+            }
+          },
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 24
+        },
+        {
+          "active": false,
+          "capture_after_uptime": 65.66520120833334,
+          "capture_before_uptime": 65.64710079166667,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers_required": false,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 995,
+          "phase": "in-flight",
+          "png": "in-flight.png",
+          "png_sha256": "c4d14fc44fe92b3137f6ebd6d1a8854ab14cf02ce4bc217036f4bfee0591cd67",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "c557928997690c7d5a9634838e342108737084a62ea5677712d737a802f006aa",
+          "rois": {
+            "anchor-ObjectIdentifier(0x000000014d827d90)": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 244
+              },
+              "screenshot_pixels": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              }
+            },
+            "flight": {
+              "root_points": {
+                "height": 180,
+                "width": 320.00000000000006,
+                "x": 249.14275521571147,
+                "y": 176.65299448647772
+              },
+              "screenshot_pixels": {
+                "height": 180,
+                "width": 320.00000000000006,
+                "x": 249.14275521571147,
+                "y": 204.65299448647772
+              }
+            }
+          },
+          "state_after": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000014d827d90)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 24
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000014d827d90)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 249.14275521571147,
+                  "y": 204.65299448647775
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.6938772476658079,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320.00000000000006,
+                  "x": 249.14275521571147,
+                  "y": 176.65299448647772
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000014d82f890)",
+                "window_number": 24
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 65.66525591666667
+          },
+          "state_before": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000014d827d90)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 24
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000014d827d90)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 249.14275521571147,
+                  "y": 204.65299448647775
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.6938772476658079,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320.00000000000006,
+                  "x": 249.14275521571147,
+                  "y": 176.65299448647772
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000014d82f890)",
+                "window_number": 24
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 65.64711545833333
+          },
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 24
+        },
+        {
+          "active": false,
+          "bracket_counts": {
+            "state_after": {
+              "flight_count": 0,
+              "temporary_flight_view_count": 0,
+              "timer_exists": false,
+              "uptime": 66.50853608333334
+            },
+            "state_before": {
+              "flight_count": 0,
+              "temporary_flight_view_count": 0,
+              "timer_exists": false,
+              "uptime": 66.502926375
+            }
+          },
+          "capture_after_uptime": 66.50850354166667,
+          "capture_before_uptime": 66.50291800000001,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "consecutive_equal_buffers": 5,
+          "current_headroom": 1,
+          "key": false,
+          "live_metal_count": 0,
+          "owner_pid": 995,
+          "phase": "settled",
+          "png": "settled.png",
+          "png_sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba",
+          "potential_headroom": 1,
+          "raw_buffer_sha256": "2834cf7b41b39291d93cede8ea0581e1f58219ccc713dfcaa73b85825445adfc",
+          "rois": {
+            "anchor-ObjectIdentifier(0x000000014d827d90)": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 244
+              },
+              "screenshot_pixels": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              }
+            },
+            "destination": {
+              "root_points": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 244
+              },
+              "screenshot_pixels": {
+                "height": 180,
+                "width": 320,
+                "x": 352,
+                "y": 272
+              }
+            }
+          },
+          "window_frame": {
+            "height": 468,
+            "width": 1024,
+            "x": 100,
+            "y": 100
+          },
+          "window_id": 24
+        }
+      ],
+      "default_motion_environment": "unset",
+      "derived_execution_durations": {
+        "launch_after_loop_entry_seconds": 0.019584249999994086,
+        "loop_elapsed_seconds": 1.816907333333333,
+        "preload_seconds": 0.034515874999996754,
+        "terminal_to_loop_return_seconds": 0.00021795833333726478
+      },
+      "derived_sampling_gaps": {
+        "armed_to_capture_before_seconds": 0.009160583333340355,
+        "capture_call_elapsed_seconds": 0.018100416666669616,
+        "capture_sample_to_capture_before_seconds": 0.00042637500000353157,
+        "progress_gap": 0.047270138709389675,
+        "sample_index_gap": 1,
+        "uptime_gap_seconds": 0.008734208333336824
+      },
+      "execution_model": {
+        "kind": "nsapplication_run_delegate_default_timer",
+        "launch_completed_count": 1,
+        "launch_completed_uptime": 64.72283554166667,
+        "loop_entry_count": 1,
+        "loop_entry_uptime": 64.70325129166667,
+        "loop_return_count": 1,
+        "loop_return_uptime": 66.52015862500001,
+        "preload_completed_uptime": 64.75735158333333,
+        "preload_started_uptime": 64.72283570833333,
+        "sampler_callback_count": 49,
+        "sampler_callbacks_after_terminal": 0,
+        "sampler_interval_seconds": 0.016666666666666666,
+        "sampler_invalidated_before_stop": true,
+        "sampler_max_depth": 1,
+        "sampler_mode": "kCFRunLoopDefaultMode",
+        "sampler_observed_modes": [
+          "kCFRunLoopDefaultMode"
+        ],
+        "sampler_reentrant_callbacks": 0,
+        "stop_calls": 1,
+        "terminal_count": 1,
+        "terminal_uptime": 66.51994066666667,
+        "wake_after_terminal": true,
+        "wake_count": 1,
+        "wake_posted_to_own_app_queue": true,
+        "wake_type": "applicationDefined"
+      },
+      "execution_model_gate": "PASS",
+      "flat_mid_fields_crosschecked_by_original_gate": true,
+      "frontmost_after": 314,
+      "frontmost_before": 314,
+      "live_sample_count": 36,
+      "midflight_sampling": {
+        "armed": {
+          "flight_identity": "ObjectIdentifier(0x000000014d82f890)",
+          "progress": 0.6466071089564183,
+          "sample_index": 7,
+          "state": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000014d827d90)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 24
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000014d827d90)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 233.25998860935653,
+                  "y": 194.25356397041202
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.6466071089564183,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 319.99999999999994,
+                  "x": 233.25998860935653,
+                  "y": 166.25356397041202
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000014d82f890)",
+                "window_number": 24
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 65.63794020833333
+          },
+          "uptime": 65.63794020833333
+        },
+        "capture_attempted": true,
+        "capture_sample": {
+          "flight_identity": "ObjectIdentifier(0x000000014d82f890)",
+          "progress": 0.6938772476658079,
+          "sample_index": 8,
+          "state": {
+            "departed": {},
+            "entries": {
+              "coordinator-one": [
+                {
+                  "attached": true,
+                  "identity": "ObjectIdentifier(0x000000014d827d90)",
+                  "last_rect": {
+                    "height": 180,
+                    "width": 320,
+                    "x": 352,
+                    "y": 272
+                  },
+                  "reduced": false,
+                  "window_number": 24
+                }
+              ]
+            },
+            "entry_keys": [
+              "coordinator-one"
+            ],
+            "flight_count": 1,
+            "flights": [
+              {
+                "bounds": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 0,
+                  "y": 0
+                },
+                "corner": 0,
+                "destination_attached": true,
+                "destination_identity": "ObjectIdentifier(0x000000014d827d90)",
+                "frame": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 249.14275521571147,
+                  "y": 204.65299448647775
+                },
+                "from_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 16,
+                  "y": 52
+                },
+                "key": "coordinator-one",
+                "parent_is_actual_overlay": true,
+                "progress": 0.6938772476658079,
+                "rect_in_root": {
+                  "height": 180,
+                  "width": 320.00000000000006,
+                  "x": 249.14275521571147,
+                  "y": 176.65299448647772
+                },
+                "source_attached": null,
+                "source_identity": null,
+                "to_rect": {
+                  "height": 180,
+                  "width": 320,
+                  "x": 352,
+                  "y": 272
+                },
+                "view_identity": "ObjectIdentifier(0x000000014d82f890)",
+                "window_number": 24
+              }
+            ],
+            "overlay_attached": true,
+            "overlay_frame": {
+              "height": 468,
+              "width": 1024,
+              "x": 0,
+              "y": 0
+            },
+            "temporary_flight_view_count": 1,
+            "timer_exists": true,
+            "uptime": 65.64667441666667
+          },
+          "uptime": 65.64667441666667
+        },
+        "next_sample_captured": true,
+        "policy": "first_band_arm_then_next_original_loop_sample"
+      },
+      "native_gate": "PASS",
+      "native_gates": {
+        "actual_flight_seen": true,
+        "actual_frame_and_progress_changed": true,
+        "midband_armed": true,
+        "next_sample_captured": true,
+        "observed_flight_identities": [
+          "ObjectIdentifier(0x000000014d82f890)"
+        ],
+        "source_detached_observed": false,
+        "source_no_longer_attached": true,
+        "source_weak_deallocated": true,
+        "temporary_view_removed": true,
+        "transition_count": 1
+      },
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "observed_flight_identities": [
+        "ObjectIdentifier(0x000000014d82f890)"
+      ],
+      "own_pid": 995,
+      "pixel_acceptance": "Not performed; before/mid/settled PNGs require offline visibility/color/timing review",
+      "pixel_analysis_performed": false,
+      "receipt_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime14/run-receipt.json",
+      "report_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-pq-hero-coordinator-app-ci-40110795231/runtime14/report.json",
+      "sample_count": 48,
+      "trigger_refers_to": "armed_sample",
+      "window_seconds": 1.6170482083333297,
+      "wrapper_elapsed_seconds": 1.9867632499999957,
+      "wrapper_exit_code": 0
+    }
+  },
+  "scope": "Offline native-gate/input-hash review only; no UI, compile, CI, source/image copy or pixel algorithm execution.",
+  "success": true,
+  "workflow_source": {
+    "commit": "be6eb08a91e74d900cdaccc6d8730c81aefb96bc",
+    "path": ".github/workflows/macos14-hero-coordinator-app-probe.yml",
+    "sha256": "875747591a581fde4b4381482961405ab990cb279a878929a5627adc3791c7af"
+  }
+}

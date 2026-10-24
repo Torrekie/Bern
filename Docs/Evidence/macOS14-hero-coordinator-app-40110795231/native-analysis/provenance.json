@@ -1,0 +1,30 @@
+{
+  "analyzer_preparation_ast": "PASS",
+  "base_analyzer": {
+    "path": "work/hero-coordinator-delay-native-analysis/analyze.py",
+    "sha256": "d1cc2b6241ef9854d44c3e6593fbf9b76be18346969732b9d58a6dcb0190a665"
+  },
+  "binary_archive_strategy": "Read declared hashes from root package-verification-local.json, independently rehash still-present binary/tar, verify package/source maps and both report receipts. No unpublished hash placeholders.",
+  "ci_run": 40110795231,
+  "current_binary_sha256": "a98bd3d415e98fbd84daa3d9c4bdbe21f2d731b3858b82fa66b20b59255e8d0d",
+  "current_tar_sha256": "7a3f4cb660797e3307d22dc73bfed58718123f49bb4245ca7635878d64a6bed8",
+  "exact_gate_adaptation": "Only report directory, expected report OS, expected receipt OS and binary path; all native and appended execution_model assertions unchanged.",
+  "four_adaptation_literals_unique": "PASS",
+  "harness_commit": "be6eb08a91e74d900cdaccc6d8730c81aefb96bc",
+  "input_cohort": "work/native-pq-hero-coordinator-app-ci-40110795231",
+  "input_files_final_hash_verified": 31,
+  "original_gate_sha256": "4bae8b7d7b0c08efa628584682d5836a9b5f07d6feb4fecd191808a72eedb193",
+  "parent_announced_binary_and_tar_match": "PASS \u2014 independently rehashed actual files equal parent-announced a98bd3...e8d0d and7a3f4c...6bed8 and saved package receipt.",
+  "parent_product_checkpoint_commit": "ace6e1ee4acda71e26616ef0a21a3fc94d085829",
+  "pinned_native_execution_gate_ast": "PASS",
+  "pixel_analysis": "NOT PERFORMED",
+  "runtime_gate_execution": "Analyzer executed once after parent input-ready authorization; both original native and execution_model report gates PASS with only four path/OS substitutions.",
+  "scope": "PRIVATE reproducible offline native+execution_model gate/input-hash analysis only. No native/UI/compiler/CI/poll/download/pixel execution or large input copies.",
+  "script_sha256": "834d8a683223839335b4dd6c6f2ffac7817e835bef3d8b25d476a78d01905001",
+  "summary_sha256": "349cd43e6be2b7a51c0e1e636d2384dea160eb854411989693266ac9c1c09cb9",
+  "workflow": {
+    "bytes": 19830,
+    "path": ".github/workflows/macos14-hero-coordinator-app-probe.yml",
+    "sha256": "875747591a581fde4b4381482961405ab990cb279a878929a5627adc3791c7af"
+  }
+}

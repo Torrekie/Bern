@@ -1,0 +1,196 @@
+--- a/.github/workflows/macos14-hero-coordinator-delay-probe.yml
++++ b/.github/workflows/macos14-hero-coordinator-app-probe.yml
+@@ -1,11 +1,11 @@
+-name: macOS 14 actual hero coordinator next-sample capture
+-run-name: actual hero coordinator next-sample capture
++name: macOS 14 actual hero coordinator app-loop capture
++run-name: actual hero coordinator app-loop capture
+ 'on':
+   workflow_dispatch: null
+ permissions:
+   contents: read
+ concurrency:
+-  group: macos14-hero-coordinator-delay-${{ github.ref }}
++  group: macos14-hero-coordinator-app-${{ github.ref }}
+   cancel-in-progress: false
+ jobs:
+   build:
+@@ -17,7 +17,7 @@
+     - uses: actions/checkout@v5
+       with:
+         persist-credentials: false
+-    - name: Build exact ARM64/min13 next-sample coordinator package
++    - name: Build exact ARM64/min13 app-loop coordinator package
+       shell: bash
+       run: |
+         set -euo pipefail
+@@ -37,13 +37,13 @@
+         case "$(uname -m)" in arm64|x86_64) ;; *) exit 1 ;; esac
+         sdk="$(xcrun --sdk macosx --show-sdk-version)"
+         test "$sdk" = 26.2
+-        ditto .github/scripts/hero-coordinator-delay-probe work/probe
++        ditto .github/scripts/hero-coordinator-app-probe work/probe
+         python3 - <<'PY'
+         import hashlib,json
+         from pathlib import Path
+         p=Path('work/probe'); d=json.loads((p/'source-provenance.json').read_text())
+         assert d['product_source_commit']=='b08db54e01ac2ec54fb84e6f2a70041f1f4c3604'
+-        assert d['kind']=='actual_coordinator_next_sample_fixture'
++        assert d['kind']=='actual_coordinator_app_loop_fixture'
+         assert 'local_static_preflight' not in d and d['local_compile_attempted'] is False
+         assert d['original_hero_sha256']=='8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c'
+         assert d['files']['ProductHero.exact.swift']['sha256']==d['original_hero_sha256']
+@@ -51,14 +51,14 @@
+         assert d['files']['ProductStyle.swift']['sha256']=='550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984'
+         assert d['files']['Dependencies.swift']['sha256']=='d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9'
+         assert 'Driver.swift.inc' in d['files'] and 'run-one.py' in d['files']
+-        assert d['files']['Driver.swift.inc']['sha256']=='b9d6b699af43128b0658ecb9e81df8ef346e6f9b3be253c07cca80968bcd8ec6'
++        assert d['files']['Driver.swift.inc']['sha256']=='571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270'
+         for name,m in d['files'].items():
+             assert hashlib.sha256((p/name).read_bytes()).hexdigest()==m['sha256'],name
+         PY
+         printf 'import AppKit\nimport SwiftUI\n' > work/probe/ProductHero.swift
+         cat work/probe/ProductHero.exact.swift work/probe/Driver.swift.inc >> work/probe/ProductHero.swift
+         cat > evidence/build/command.txt <<'COMMAND'
+-        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage -framework ColorSync -framework ImageIO -framework CryptoKit work/probe/Dependencies.swift work/probe/ProductImage.swift work/probe/ProductStyle.swift work/probe/ProductHero.swift -o work/probe/HeroCoordinatorDelayProbe
++        xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache -framework AppKit -framework SwiftUI -framework MetalKit -framework CoreImage -framework ColorSync -framework ImageIO -framework CryptoKit work/probe/Dependencies.swift work/probe/ProductImage.swift work/probe/ProductStyle.swift work/probe/ProductHero.swift -o work/probe/HeroCoordinatorAppProbe
+         COMMAND
+         xcrun swiftc -O -parse-as-library -swift-version 5 -j 2 \
+           -target arm64-apple-macos13.0 -module-cache-path work/hero-module-cache \
+@@ -66,14 +66,14 @@
+           -framework ColorSync -framework ImageIO -framework CryptoKit \
+           work/probe/Dependencies.swift work/probe/ProductImage.swift \
+           work/probe/ProductStyle.swift work/probe/ProductHero.swift \
+-          -o work/probe/HeroCoordinatorDelayProbe > evidence/build/compile.log 2>&1
+-        test "$(xcrun lipo -archs work/probe/HeroCoordinatorDelayProbe)" = arm64
+-        xcrun vtool -show-build work/probe/HeroCoordinatorDelayProbe > evidence/build/binary.txt
++          -o work/probe/HeroCoordinatorAppProbe > evidence/build/compile.log 2>&1
++        test "$(xcrun lipo -archs work/probe/HeroCoordinatorAppProbe)" = arm64
++        xcrun vtool -show-build work/probe/HeroCoordinatorAppProbe > evidence/build/binary.txt
+         test "$(awk '/minos/ {print $2; exit}' evidence/build/binary.txt)" = 13.0
+-        xcrun otool -L work/probe/HeroCoordinatorDelayProbe >> evidence/build/binary.txt
+-        codesign --force --sign - work/probe/HeroCoordinatorDelayProbe > evidence/build/signature.txt 2>&1
+-        codesign --verify --strict --verbose=4 work/probe/HeroCoordinatorDelayProbe >> evidence/build/signature.txt 2>&1
+-        codesign --display --verbose=4 work/probe/HeroCoordinatorDelayProbe >> evidence/build/signature.txt 2>&1
++        xcrun otool -L work/probe/HeroCoordinatorAppProbe >> evidence/build/binary.txt
++        codesign --force --sign - work/probe/HeroCoordinatorAppProbe > evidence/build/signature.txt 2>&1
++        codesign --verify --strict --verbose=4 work/probe/HeroCoordinatorAppProbe >> evidence/build/signature.txt 2>&1
++        codesign --display --verbose=4 work/probe/HeroCoordinatorAppProbe >> evidence/build/signature.txt 2>&1
+         mkdir work/probe/build
+         cp evidence/build/{environment.txt,command.txt,compile.log,binary.txt,signature.txt} work/probe/build/
+         python3 - <<'PY'
+@@ -85,13 +85,13 @@
+             if f.is_file(): lines.append(hashlib.sha256(f.read_bytes()).hexdigest()+'  '+f.relative_to(p).as_posix()+'\n')
+         (p/'SHA256SUMS').write_text(''.join(lines))
+         PY
+-        tar -czf evidence/build/hero-coordinator-delay-probe.tar.gz -C work/probe .
+-        (cd evidence/build && shasum -a 256 hero-coordinator-delay-probe.tar.gz > hero-coordinator-delay-probe.tar.gz.sha256)
++        tar -czf evidence/build/hero-coordinator-app-probe.tar.gz -C work/probe .
++        (cd evidence/build && shasum -a 256 hero-coordinator-app-probe.tar.gz > hero-coordinator-app-probe.tar.gz.sha256)
+         cp work/probe/{source-provenance.json,SHA256SUMS} evidence/build/
+     - uses: actions/upload-artifact@v5
+       if: always()
+       with:
+-        name: macos14-hero-coordinator-delay-probe-build
++        name: macos14-hero-coordinator-app-probe-build
+         path: evidence/build/
+         if-no-files-found: error
+         retention-days: 3
+@@ -103,9 +103,9 @@
+     steps:
+     - uses: actions/download-artifact@v5
+       with:
+-        name: macos14-hero-coordinator-delay-probe-build
++        name: macos14-hero-coordinator-app-probe-build
+         path: build
+-    - name: Collect one next-sample coordinator process on14 without rebuilding
++    - name: Collect one NSApplication.run coordinator process on14 without rebuilding
+       env:
+         BERN_HERO_EXPECT_OS: '14'
+       shell: bash
+@@ -121,23 +121,23 @@
+         test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+         test "$(uname -m)" = arm64
+         test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+-        (cd build && shasum -a 256 -c hero-coordinator-delay-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1
++        (cd build && shasum -a 256 -c hero-coordinator-app-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1
+         python3 - <<'PY'
+         from pathlib import PurePosixPath
+         import tarfile
+-        with tarfile.open('build/hero-coordinator-delay-probe.tar.gz') as t:
++        with tarfile.open('build/hero-coordinator-app-probe.tar.gz') as t:
+             for m in t.getmembers():
+                 p=PurePosixPath(m.name)
+                 assert not p.is_absolute() and '..' not in p.parts,m.name
+                 assert m.isdir() or m.isfile(),m.name
+         PY
+-        tar -xzf build/hero-coordinator-delay-probe.tar.gz -C probe
++        tar -xzf build/hero-coordinator-app-probe.tar.gz -C probe
+         (cd probe && shasum -a 256 -c SHA256SUMS) > evidence/runtime14/package-verification.txt 2>&1
+-        test "$(xcrun lipo -archs probe/HeroCoordinatorDelayProbe)" = arm64
+-        codesign --verify --strict --verbose=4 probe/HeroCoordinatorDelayProbe > evidence/runtime14/signature-verification.txt 2>&1
+-        shasum -a 256 probe/HeroCoordinatorDelayProbe > evidence/runtime14/binary-sha256.txt
++        test "$(xcrun lipo -archs probe/HeroCoordinatorAppProbe)" = arm64
++        codesign --verify --strict --verbose=4 probe/HeroCoordinatorAppProbe > evidence/runtime14/signature-verification.txt 2>&1
++        shasum -a 256 probe/HeroCoordinatorAppProbe > evidence/runtime14/binary-sha256.txt
+         cp build/environment.txt evidence/runtime14/build-environment.txt
+-        cp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-coordinator-delay-probe.tar.gz.sha256} evidence/runtime14/
++        cp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-coordinator-app-probe.tar.gz.sha256} evidence/runtime14/
+         defaults write com.apple.universalaccess reduceMotion -bool false
+         defaults write com.apple.universalaccess reduceTransparency -bool false
+         defaults write com.apple.universalaccess increaseContrast -bool false
+@@ -149,7 +149,7 @@
+           defaults read com.apple.universalaccess reduceTransparency || true
+           defaults read com.apple.universalaccess increaseContrast || true
+         } > evidence/runtime14/requested-normal.txt 2>&1
+-        python3 probe/run-one.py "$PWD/probe/HeroCoordinatorDelayProbe" "$PWD/probe/assets/source-named-pq.png" \
++        python3 probe/run-one.py "$PWD/probe/HeroCoordinatorAppProbe" "$PWD/probe/assets/source-named-pq.png" \
+           "$PWD/evidence/runtime14" 14
+         python3 - <<'PY'
+         import hashlib,json,math
+@@ -163,7 +163,7 @@
+         assert receipt['exit_code']==0 and not receipt.get('wrapper_timeout',False)
+         assert receipt['expected_os_major']==14 and receipt['timeout_seconds']==15
+         assert receipt['bern_motion_environment']=='unset' and type(receipt['bern_motion_was_present']) is bool
+-        assert receipt['binary_sha256']==hashlib.sha256(Path('probe/HeroCoordinatorDelayProbe').read_bytes()).hexdigest()
++        assert receipt['binary_sha256']==hashlib.sha256(Path('probe/HeroCoordinatorAppProbe').read_bytes()).hexdigest()
+         asset_sha='3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b'
+         assert receipt['named_asset_sha256']==asset_sha
+         assert d['activation_calls']==0 and 0<d['window_seconds']<7.9
+@@ -280,11 +280,35 @@
+                 observed.append(flights[0])
+         assert any(a['frame']!=b['frame'] and a['progress']!=b['progress'] for a,b in zip(observed,observed[1:]))
+         resting(d['before_cleanup_state'])
++        # Append-only app-loop metadata gate; inherited native acquisition gate above is unchanged.
++        execution=d['execution_model']
++        assert execution['kind']=='nsapplication_run_delegate_default_timer'
++        for key in ('launch_completed_count','loop_entry_count','loop_return_count','terminal_count','stop_calls','wake_count'):
++            assert type(execution[key]) is int and execution[key]==1
++        for key in ('sampler_reentrant_callbacks','sampler_callbacks_after_terminal'):
++            assert type(execution[key]) is int and execution[key]==0
++        assert type(execution['sampler_max_depth']) is int and execution['sampler_max_depth']==1
++        assert type(execution['sampler_callback_count']) is int and execution['sampler_callback_count']>0
++        assert isinstance(execution['sampler_mode'],str) and execution['sampler_mode']
++        assert execution['sampler_observed_modes']==[execution['sampler_mode']]
++        number(execution['sampler_interval_seconds'])
++        assert execution['sampler_interval_seconds']==1/60
++        assert execution['sampler_invalidated_before_stop'] is True
++        assert execution['wake_after_terminal'] is True and execution['wake_posted_to_own_app_queue'] is True
++        assert execution['wake_type']=='applicationDefined'
++        times=[execution[key] for key in ('loop_entry_uptime','launch_completed_uptime',
++               'preload_started_uptime','preload_completed_uptime')]
++        times += [captures[0]['capture_before_uptime'],captures[0]['capture_after_uptime'],
++                  captures[2]['capture_before_uptime'],captures[2]['capture_after_uptime'],
++                  execution['terminal_uptime'],execution['loop_return_uptime']]
++        for value in times: number(value)
++        assert 0<=times[0] and times==sorted(times)
++        assert 0<=execution['preload_completed_uptime']-execution['preload_started_uptime']<=d['preload_seconds_limit']
+         PY
+     - uses: actions/upload-artifact@v5
+       if: always()
+       with:
+-        name: macos14-hero-coordinator-delay-evidence
++        name: macos14-hero-coordinator-app-evidence
+         path: evidence/runtime14/
+         if-no-files-found: error
+         retention-days: 3

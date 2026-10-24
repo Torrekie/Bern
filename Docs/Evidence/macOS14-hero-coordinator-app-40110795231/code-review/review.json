@@ -1,0 +1,69 @@
+{
+  "kind": "bounded_private_NSApplication_observer_source_review",
+  "recorded_at_utc": "2026-10-24T16:12:47Z",
+  "disposition": "pass_source_review_runtime_return_unverified",
+  "author_final_hash_confirmed_by_root": true,
+  "reviewed_driver": {
+    "path": "work/hero-coordinator-app-preparation/Driver.swift.inc",
+    "sha256": "571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270",
+    "lines": 469
+  },
+  "base_driver": {
+    "path": "work/hero-coordinator-delay-preparation/Driver.swift.inc",
+    "sha256": "b9d6b699af43128b0658ecb9e81df8ef346e6f9b3be253c07cca80968bcd8ec6"
+  },
+  "new_obvious_swift_type_lifetime_or_control_flow_defects_found": false,
+  "source_equivalence": {
+    "scene_and_helper_prefix_lines_1_173": "byte_equal",
+    "sampling_body": "equal_after_indent_continue_to_return_and_two_post_shot_terminal_guards",
+    "final_lifecycle_cache_native_gates": "equal_after_indent"
+  },
+  "reviewed_paths": {
+    "strong_run_stack_state_and_weak_manager_source_flight": "174-224,457-458",
+    "local_anchors_released_before_model_action": "265-379",
+    "late_load_completion_terminal_guard": "219-224",
+    "watchdog_output_value_capture": "233-238",
+    "default_selector_timer_and_reentry_guard": "213-264",
+    "preload_readiness_collection_sample_and_window_bounds": "216-218,233-260,271-275,335-338",
+    "same_flight_adjacent_actual_sample_schema_and_save": "288-334",
+    "endpoint_five_buffer_gate_and_single_action": "335-379",
+    "terminal_invalidate_stop_single_own_wake": "395-406",
+    "normal_return_recording_and_contract": "408-430,450-466",
+    "normal_defer_partial_and_finalization_exit": "432-449,453-458"
+  },
+  "source_inventory": {
+    "manual_RunLoop_main_run": 0,
+    "NSApplication_run": 1,
+    "Task_only_for_load": 1,
+    "selector_observer_Timer": 1,
+    "global_watchdog": 1,
+    "stop_call": 1,
+    "own_postEvent_call": 1,
+    "model_action": 1,
+    "CG_acquisition": 1,
+    "shot_call_sites_excluding_declaration": 2,
+    "save_call_sites_excluding_declaration": 2
+  },
+  "execution_model_fields": [
+    "kind", "launch_completed_count", "launch_completed_uptime",
+    "loop_entry_count", "loop_entry_uptime", "loop_return_count", "loop_return_uptime",
+    "sampler_mode", "sampler_observed_modes", "sampler_interval_seconds", "sampler_callback_count",
+    "sampler_reentrant_callbacks", "sampler_max_depth", "sampler_callbacks_after_terminal",
+    "sampler_invalidated_before_stop", "terminal_count", "terminal_uptime", "stop_calls",
+    "wake_count", "wake_after_terminal", "wake_type", "wake_posted_to_own_app_queue",
+    "preload_started_uptime", "preload_completed_uptime"
+  ],
+  "limits": [
+    "Source reachability and record ordering do not prove actual native app.run return; root will verify that in one CI run.",
+    "sampler_callback_count includes preload callbacks; the existing policy string means the next actual observer callback/sample under the new execution model.",
+    "sampler_invalidated_before_stop is a source-path flag, not a Timer.isValid observation; wake fields record posting, not processing.",
+    "The 7.2s callback-entry deadline is not a strict post-capture cutoff; independent watchdog and outer wrapper bounds remain distinct. External wrapper was not rereviewed.",
+    "The unchanged hard watchdog writes a minimal failure report then _exit, bypassing defer; full arm/attempt preservation requires normal defer and successful report writing.",
+    "Separate product Hero files were outside this two-Driver review. The Driver scene/helper prefix is byte-equal.",
+    "No proven CF/WindowServer cause, synchronization guarantee, zero observer effect, image/color/animation acceptance or macOS13 equivalence is claimed."
+  ],
+  "performed": ["source_read", "bounded_diff_and_byte_comparison", "source_hash_and_call_site_inventory", "private_review_artifacts"],
+  "not_performed": ["new_Driver", "product_edit", "compile", "typecheck", "tests", "UI", "CI", "native_run", "API_research"],
+  "artifacts": ["README.md", "review.json", "SHA256SUMS"],
+  "freeze": "read-only artifact files and directory after manifest generation"
+}

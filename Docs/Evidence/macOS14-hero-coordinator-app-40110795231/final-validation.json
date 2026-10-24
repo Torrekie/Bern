@@ -1,0 +1,66 @@
+{
+  "all_retained_JSON_parse": true,
+  "cleanup_arithmetic_matches": true,
+  "created_utc": "2026-10-24T16:37:19.736810+00:00",
+  "delivered_hashes": {
+    "Gallery.app/Contents/MacOS/Gallery": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "Showcase.app/Contents/MacOS/Showcase": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+    "bin/gallery": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "bin/showcase": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170"
+  },
+  "excluded_artifacts_absent": true,
+  "git_whitespace": {
+    "all_other_diagnostics": "",
+    "all_other_staged_paths_check_exit_code": 0,
+    "full_check_exit_code": 2,
+    "full_diagnostics": "Docs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/runtime14/requested-normal.txt:1: trailing whitespace.\n+2026-10-24 16:18:22.850 defaults[991:5586] \nDocs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/runtime14/requested-normal.txt:3: trailing whitespace.\n+2026-10-24 16:18:22.860 defaults[992:5589] \nDocs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/runtime14/requested-normal.txt:5: trailing whitespace.\n+2026-10-24 16:18:22.869 defaults[993:5593] \n",
+    "raw_immutable_exceptions": [
+      {
+        "lines": [
+          1,
+          3,
+          5
+        ],
+        "path": "Docs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/runtime14/requested-normal.txt",
+        "reason": "Original CI defaults stderr timestamp lines; preserve exact bytes rather than normalize evidence.",
+        "sha256": "b0899da06240f0f7a2767246ccceeb92ab67152db5e81113aea53cebce70b003"
+      }
+    ]
+  },
+  "original_mid_review": {
+    "13": "Root viewed original in-flight PNG: translated content visible.",
+    "14": "Root viewed original in-flight PNG: translated content visible beyond the source.",
+    "scope": "Limited original-image observation, not color/trajectory/synchrony acceptance."
+  },
+  "pixel_input_manifest_verified": "a8fc9ad4afd1d34c0c9ee36fefe4bc2937201a6d85f6d8ce9d8298e09f05f6a2",
+  "public_source_byte_comparisons": {
+    "Driver.swift.inc": "571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270",
+    "ProductHero.exact.swift": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c",
+    "ProductImage.swift": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc",
+    "ProductStyle.swift": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984",
+    "run-one.py": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6",
+    "source-provenance.json": "d6b7618c096259167ba45834ae23f7c934cc922327d2f11b9ca6ebafb6bf58f0"
+  },
+  "scope": "Final retained sources/manifests/delivered-app invariance. No runtime rerun, rebuild, pixel recomputation or deleted-binary rehash.",
+  "strict_app_signatures": {
+    "Gallery.app": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "Showcase.app": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "submanifests": {
+    "ci-preparation": "16b216cb6cbec6bfdf95bdf28f4ba8a2c116cea0e7ab14181f44af22af562325",
+    "code-review": "2c4eb1d06fd1dc01b84e85289e93c7c717752bd948cec4d9b0d97e08a0f6eeff",
+    "driver-preparation": "fbf96831df956f8a506d82eca50c28ce205d9100f9f49f9686fce6c43ae35b04",
+    "native-analysis": "256edaf982dc117ed4dbfb60cf5f2a85c696dec77bb0d336fdda776a62358743",
+    "next-native-view-plan": "5abf4e32715afcd982623dd400e8321477d9752335db2439f126513c14625596",
+    "pixel-analysis": "f4ba28246db0c269243b398788cf34de62aa4839ceb8920a60e9ec0d9afe1af2"
+  },
+  "workflow_sha256": "875747591a581fde4b4381482961405ab990cb279a878929a5627adc3791c7af"
+}

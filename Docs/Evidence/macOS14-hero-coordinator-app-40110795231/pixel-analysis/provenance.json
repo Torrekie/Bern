@@ -1,0 +1,18 @@
+{
+  "analysis_executions": 0,
+  "base_analyzer": "work/hero-coordinator-delay-pixel-analysis/analyze.py",
+  "base_analyzer_sha256": "8023c0b902e668e30581edb3646d7ab11761a726f039a1059da15b62d65cf299",
+  "changes": [
+    "New AppKit execution_model reporting and source-contract check",
+    "New reported execution_model/native_gates retained even if separate contract check fails",
+    "Input paths and README updated; endpoint/ICC/mid inset algorithms unchanged"
+  ],
+  "new_root": "work/native-pq-hero-coordinator-app-ci-40110795231",
+  "old_root": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-delay-40107406624/same-binary-13-14",
+  "source_only_checks": [
+    "Python ast.parse; no analyzer execution",
+    "No input/report/PNG reads from new CI directory",
+    "No source/repository/archive modifications"
+  ],
+  "state": "prepared_not_executed"
+}

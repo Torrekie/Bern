@@ -1,0 +1,26 @@
+2026-10-25 00:20:19.957 HeroCoordinatorAppProbe[25577:5308679] NSWindow warning: adding an unknown subview: <_TtC23HeroCoordinatorAppProbeP33_BCF859494BD29FF7EF72FEF62D06AFE115BernHeroOverlay: 0x15a013240>. Break on NSLog to debug.
+2026-10-25 00:20:19.971 HeroCoordinatorAppProbe[25577:5308679] Call stack:
+(
+	0   AppKit                              0x00000001a0a3a004 -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x00000001a0a39ce4 -[NSView addSubview:positioned:relativeTo:] + 176
+	2   AppKit                              0x00000001a0a39bb0 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroCoordinatorAppProbe             0x0000000104de99ec $s23HeroCoordinatorAppProbe21BernWindowImageHeroesC14prepareOverlay33_BCF859494BD29FF7EF72FEF62D06AFE1LLSbyF + 300
+	4   HeroCoordinatorAppProbe             0x0000000104de83fc $s23HeroCoordinatorAppProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 452
+	5   HeroCoordinatorAppProbe             0x0000000104df19c0 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x000000019d556874 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x000000019d558400 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x000000019d566bf8 _dispatch_main_queue_drain + 928
+	9   libdispatch.dylib                   0x000000019d566848 _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x000000019d827b24 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x000000019d7e52a4 __CFRunLoopRun + 1992
+	12  CoreFoundation                      0x000000019d7e4388 CFRunLoopRunSpecific + 612
+	13  HIToolbox                           0x00000001a7047df0 RunCurrentEventLoopInMode + 292
+	14  HIToolbox                           0x00000001a7047c2c ReceiveNextEventCommon + 648
+	15  HIToolbox                           0x00000001a7047984 _BlockUntilNextEventMatchingListInModeWithFilter + 76
+	16  AppKit                              0x00000001a0a1813c _DPSNextEvent + 636
+	17  AppKit                              0x00000001a0a172d8 -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 716
+	18  AppKit                              0x00000001a0a0b73c -[NSApplication run] + 464
+	19  HeroCoordinatorAppProbe             0x0000000104e026e8 $s23HeroCoordinatorAppProbe0aB4Main33_BCF859494BD29FF7EF72FEF62D06AFE1LLO3runs5Int32VyFZTf4d_n + 4928
+	20  HeroCoordinatorAppProbe             0x0000000104df8170 main + 12
+	21  dyld                                0x000000019d3affd8 start + 2412
+)

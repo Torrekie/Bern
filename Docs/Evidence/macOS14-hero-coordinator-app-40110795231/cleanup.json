@@ -1,0 +1,87 @@
+{
+  "byte_verified_duplicate_logical_bytes": 1547322,
+  "created_utc": "2026-10-24T16:35:39.517343+00:00",
+  "duplicates": [
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14",
+      "logical_bytes": 1115041,
+      "verified_files": 51,
+      "work": "work/native-pq-hero-coordinator-app-ci-40110795231"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/native-analysis",
+      "logical_bytes": 70226,
+      "verified_files": 5,
+      "work": "work/hero-coordinator-app-native-analysis"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/pixel-analysis",
+      "logical_bytes": 67747,
+      "verified_files": 12,
+      "work": "work/hero-coordinator-app-pixel-analysis"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/driver-preparation",
+      "logical_bytes": 82955,
+      "verified_files": 5,
+      "work": "work/hero-coordinator-app-preparation"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/ci-preparation",
+      "logical_bytes": 67784,
+      "verified_files": 9,
+      "work": "work/hero-coordinator-app-ci-preparation"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/code-review",
+      "logical_bytes": 8848,
+      "verified_files": 3,
+      "work": "work/hero-coordinator-app-code-review"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/next-native-view-plan",
+      "logical_bytes": 3995,
+      "verified_files": 2,
+      "work": "work/hero-native-view-next-plan"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/tools/verify-hero-coordinator-app-package.py",
+      "logical_bytes": 2587,
+      "verified_files": 1,
+      "work": "work/verify-hero-coordinator-app-package.py"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/source-static-validation.json",
+      "logical_bytes": 423,
+      "verified_files": 1,
+      "work": "work/hero-coordinator-app-root-static.json"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/api-notes.md",
+      "logical_bytes": 1697,
+      "verified_files": 1,
+      "work": "work/hero-coordinator-app-api-notes.md"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/probe",
+      "logical_bytes": 126019,
+      "scope": "Source package subset byte-equal to exact execution package; destination includes assembly/build metadata.",
+      "verified_files": 11,
+      "work": "work/hero-coordinator-app-source-preparation"
+    }
+  ],
+  "excluded_artifacts": [
+    {
+      "logical_bytes": 238340,
+      "path": "work/native-pq-hero-coordinator-app-ci-40110795231/build/hero-coordinator-app-probe.tar.gz",
+      "sha256": "7a3f4cb660797e3307d22dc73bfed58718123f49bb4245ca7635878d64a6bed8"
+    },
+    {
+      "logical_bytes": 609968,
+      "path": "work/native-pq-hero-coordinator-app-ci-40110795231/probe/HeroCoordinatorAppProbe",
+      "sha256": "a98bd3d415e98fbd84daa3d9c4bdbe21f2d731b3858b82fa66b20b59255e8d0d"
+    }
+  ],
+  "expendable_artifact_logical_bytes": 848308,
+  "scope": "Owned completed normal-AppKit-loop cohort only. CI terminal and wrapper exit0; no active HeroCoordinatorAppProbe/swiftc observed. No local compiler/module cache was created. Retained work duplicates byte-verified before removal; logical bytes do not represent APFS extents or net free-space change."
+}

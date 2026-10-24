@@ -1,0 +1,32 @@
+{
+  "base_workflow_hash": "PASS",
+  "checks": [
+    {
+      "bash_n": "PASS",
+      "job": "build",
+      "python_heredocs_ast": 2,
+      "shell_body_executed": false,
+      "step": 1
+    },
+    {
+      "bash_n": "PASS",
+      "job": "measure",
+      "python_heredocs_ast": 2,
+      "shell_body_executed": false,
+      "step": 1
+    }
+  ],
+  "driver_bytes": 34816,
+  "driver_lines": 469,
+  "driver_sha256": "571354d2cee32df6bac30fab4ce338bb6dce85b07f2adeffa08df24022530270",
+  "inherited_delay_native_gate": "PASS \u2014 exact prefix except binary identity",
+  "new_driver_local_compile_attempted": false,
+  "runtime_schema_execution": "NOT PERFORMED \u2014 no actual app-loop runtime report used",
+  "scope": "Static YAML/Python AST/bash syntax, inherited gate exact-prefix proof and source hashes only; no Swift typecheck, compilation, app, wrapper, workflow or runtime-schema execution.",
+  "source_map_members_verified": 10,
+  "success": true,
+  "workflow_sha256": "875747591a581fde4b4381482961405ab990cb279a878929a5627adc3791c7af",
+  "wrapper_ast": "PASS",
+  "wrapper_sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6",
+  "yaml": "PASS"
+}
