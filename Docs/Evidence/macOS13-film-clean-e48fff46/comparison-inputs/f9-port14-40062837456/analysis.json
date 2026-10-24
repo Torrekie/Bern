@@ -1,0 +1,43 @@
+{
+  "run_id": 40062837456,
+  "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+  "harness_sha": "13c52d4919805bcbfbebd6d8aa60f91f09e56d73",
+  "normal_profile": {
+    "increase_contrast": false,
+    "reduce_motion": false,
+    "reduce_transparency": false
+  },
+  "cases": [
+    {
+      "scenario": "immediate",
+      "pid": 1290,
+      "session": "25332409050a00-ui",
+      "largest": "Glen",
+      "center_x": 565.0,
+      "width": 268.7997528076171,
+      "png": "immediate-film.png",
+      "png_sha256": "d819e44a4b9d2287223d73399d52ce097be9515c31368617600b35171d609ba9"
+    },
+    {
+      "scenario": "wait",
+      "pid": 1398,
+      "session": "4c79c77b057600-ui",
+      "largest": "Glen",
+      "center_x": 601.0,
+      "width": 267.53478698730476,
+      "png": "wait-film.png",
+      "png_sha256": "98a5011e15da1851862387ea181e424dd3bf0552e874c1866369844ec0b6c496"
+    },
+    {
+      "scenario": "direct",
+      "pid": 1492,
+      "session": "83688c9d05d400-ui",
+      "largest": "Glen",
+      "center_x": 601.0,
+      "width": 267.53478698730476,
+      "png": "direct-film.png",
+      "png_sha256": "fbabd8ab3210fc7f52e5d045750950ef68c8994f80ce14cad39abc98675c0da6"
+    }
+  ],
+  "scope": "Unmodified f9 port on14. Largest AXImage identity and final geometry only; native setter/target/nearest not observed. Diagnostic trace copy has not run."
+}

@@ -6,19 +6,19 @@
 
 | 检查 | 结果 | 范围 |
 |---|---|---|
-| 新编译器、新 SDK、target 13.0 | Showcase / Gallery 均编译、链接、签名验证成功 | 已交付Showcase `9dd99b7`、Gallery `f9e08b1`：Swift 6.2.4、SDK 26.2、Rust 1.99；此前参考构建为 Swift 6.3.3/SDK26.5；仍需要新工具链，并未移植至 Swift 5.3 |
+| 新编译器、新 SDK、target 13.0 | Showcase / Gallery 均编译、链接、签名验证成功 | 已交付Showcase `9dd99b7`、Gallery `e48fff46`：Swift 6.2.4、SDK 26.2、Rust 1.99；此前参考构建为 Swift 6.3.3/SDK26.5；仍需要新工具链，并未移植至 Swift 5.3 |
 | 同一 target 13 应用在本机 13.7.8 启动 | 两个真正的 SwiftUI 应用均启动、建立 UI 会话 | arm64；Info.plist 与 Mach-O 的最低版本均为 13.0 |
 | 原上游 A 与迁移 B，同在 macOS 14.8.9 运行 | 21 张 PNG：17 张 RGB 像素完全相同；3 张分别只有 12/35/76 个像素相差 1 级 | 余下图片页首个 section 多 1 点，后续内容随之下移；尚未把原因归给任何观察机制 |
 | 13 系统圆形图标按钮 | 实际应用中的 AX 对齐尺寸为 20×20 点，位置与 14 参考一致 | 使用系统 `NSButton.circular`，没有自画 bezel；实际 AXPress 一次只运行一次引擎命令 |
 | 13 Query 错误占位页 | 实际截图的图标、标题、两行说明、按钮与 14 参考的边界差不超过 1 点 | 错误卡高约 226.5 点，14 为 227；重试按钮绘制边界相同 |
-| 13 Film 明确 Last 落点 | 浅、深两种外观中，放大卡片四边相对14差值为 [0, -0.5, +1, +0.5] 点 | 原始2x截图，无图像缩放补偿；初始Film身份仍不同，见未通过项 |
+| 13 Film 明确 Last 落点 | 浅、深两种外观中，放大卡片四边相对14差值为 [0, -0.5, +1, +0.5] 点 | 原始2x截图，无图像缩放补偿；旧46初始身份仍不同；本轮e48及后续操作序列见未通过项 |
 | 13 默认侧栏与宽度恢复 | 真正整应用、干净独立 defaults 首开210；AX调为260后，页面重建和进程重启均保留260 | 仅为隔离改变bundle ID及临时签名，可执行文件字节与CI产物相同；没有清用户窗口历史 |
 | 空白与媒体占位、语言切换 | 空白/错误媒体占位测量边界均在1pt内；Ready→Failed→Ready恢复后原始画面像素相同；中英文切换及取消关闭保留草稿 | 状态切换通过实际控件绑定，语言测试不冒称真实输入法或菜单点击 |
 | 14 Frame 原生对照 | f9与固定上游在同一14机器中的视频区/按钮/弹出层/滑块几何一致，Frame detail像素一致，独立音量popup PNG文件相同 | 仅浅色；主窗侧栏选中行仍5284像素灰/蓝差异；13对应验收及物理输入不由此通过 |
 | 13 Frame 原生运行 | f9通过Ready→Paused0、3.2秒保活、native AXPress开关、raw窗口ID回读与3张稳定原图；Clip/popup/slider点几何精确同14 | active浅色，前台1390→1390；Volume可见bezel差≤.5pt，仍有配色、Caption/Size宽度及文字位置差异，不是全视觉或物理输入通过 |
 | 原生交互 | 通知 AXPress 改变会话草稿；音量 AXIncrement 从 50 到 60，只产生一次引擎提交；Command-Comma 打开原生 Settings scene | 这些不是鼠标拖动验证；CLI 状态与原生 AX 操作分别记录 |
 
-目前交付的Showcase来自 `9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0`，[CI40066468884](https://github.com/Torrekie/Bern/actions/runs/40066468884)成功；Gallery仍为 `f9e08b1d55bed4b9d880b19934abe48281057bb3`，[CI39991406873](https://github.com/Torrekie/Bern/actions/runs/39991406873)成功。两者使用Swift6.2.4、SDK26.2、Rust1.99。新版Showcase独立签名副本在本机13.7.8通过启动、唯一main窗口和control inspect，6.575秒结束，未激活、前台PID1390→1390；完整原件、section/签名比较、早期startup gate不足的partial以及原始轮询见[交付证据](../Evidence/macOS13-native-standard-full-app-9dd/README.md)。未经修改的CI原件已移动到交付目录，旧Showcase及重复副本已清理。
+目前交付的Showcase来自 `9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0`，[CI40066468884](https://github.com/Torrekie/Bern/actions/runs/40066468884)成功；Gallery现为 `e48fff46b3a92a28465ad74295bd273a9d69af7d`，[CI40070407306](https://github.com/Torrekie/Bern/actions/runs/40070407306)成功。两者使用Swift6.2.4、SDK26.2、Rust1.99。新版Showcase独立签名副本在本机13.7.8通过启动、唯一main窗口和control inspect，6.575秒结束，未激活、前台PID1390→1390；完整原件、section/签名比较、早期startup gate不足的partial以及原始轮询见[交付证据](../Evidence/macOS13-native-standard-full-app-9dd/README.md)。未经修改的CI原件已移动到交付目录，旧Showcase及重复副本已清理。 Gallery e48原件也已[核验并交付](../Evidence/macOS13-gallery-clean-delivery-e48/README.md)，旧f9 App与重复CLI已清理。其[精确版本三场景记录](../Evidence/macOS13-film-clean-e48fff46/README.md)覆盖immediate/wait/direct独立进程，三者均Glen601，wait/direct全6图的frame对14最大分量差约0.0000098pt；immediate仍差35/36pt，卡宽差约−1.265pt。合同为inactive13，不能扩充为全Film视觉通过。
 
 f9包含HDR路由/系统SDR修复、14原生Pinch路径恢复和音量PopoverButton系统按钮复用。此前两份f9应用均已在本机启动、建立唯一会话并完成window/control inspect；实际Gallery通过原绑定进入Frame、打开音量弹出层并将草稿0.7改为0.55。原始记录见[Showcase历史记录](../Evidence/macOS13-popover/full-app/showcase/report.json)和[当前Gallery记录](../Evidence/macOS13-popover/full-app/gallery/report.json)。组件内native action与关闭对照见[独立组件记录](../Evidence/macOS13-popover/component/README.md)。整应用绑定操作不替代真实鼠标或14/13 Frame视觉对照。这轮没有重拍全部视觉/交互样本，不能把下述0f/46截图改标为f9或9dd。
 
@@ -68,7 +68,7 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 
 | 项目 | 当前证据与后续条件 |
 |---|---|
-| Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。新增整应用trace已记录14的target始终3，nearest变4，quiet释放后由Bern follow明确写position3→4；13后台trace则nearest保持3。14原生只读快照确认clip709、insets左右234.5、document1638；13使用真实padding。d146诊断候选已使direct初始Glen完整frame对14差小于0.00001pt，默认3及nearest保留。与旧f9同collector对照确认wide约16.5pt偏差旧13已有，First/Last-again/restore候选相对旧13约+0.186pt；首Last仍差且时序/前台条件不同。去插桩的clean修复已提交e48fff46，精确整应用CI40070407306已成功，13三场景运行仍待；不把诊断构建通过套给clean应用，也不改默认值。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
+| Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。新增整应用trace已记录14的target始终3，nearest变4，quiet释放后由Bern follow明确写position3→4；13后台trace则nearest保持3。14原生只读快照确认clip709、insets左右234.5、document1638；13使用真实padding。d146诊断候选已使direct初始Glen完整frame对14差小于0.00001pt，默认3及nearest保留。与旧f9同collector对照确认wide约16.5pt偏差旧13已有，First/Last-again/restore候选相对旧13约+0.186pt；首Last仍差且时序/前台条件不同。去插桩的clean修复已提交e48fff46，精确整应用CI40070407306及13三场景运行合同已成功，wait/direct几何吻合，immediate仍差35/36pt且启动恢复/resize历史未分离；不把诊断构建通过套给clean应用，也不改默认值。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
 | 未覆盖控件变体 | `f9e08b1`已让生成器选中的普通volume PopoverButton复用系统圆形NSButton，独立native action检查通过（单次触发、快捷键、disabled、外部打开和WindowServer alpha=0的关闭，与原Button配对一致）；整应用该版本构建、本机启动及Frame绑定打开/编辑均通过；14浅色Frame detail与原生popup已完成f9/上游配对：内容像素与几何一致，主窗侧栏仍有选中配色差异；新增13 active Frame已通过媒体/idle/AX与主要几何，仍有popup/视频色差、Caption/Size宽度约2pt及Size文字约3pt差异。icon风格Menu、显式尺寸等仍有独立路径，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |

@@ -1,0 +1,77 @@
+   Compiling bern-protocol v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-protocol)
+   Compiling bern-svg v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-svg)
+   Compiling bern-theme v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-theme)
+   Compiling bern-media v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-media)
+   Compiling bern-ir v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-ir)
+   Compiling bern-adapter-json v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-adapter-json)
+   Compiling bern-target-api v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-target-api)
+   Compiling bern-runtime v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-runtime)
+   Compiling bern-command v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-command)
+   Compiling bern-syntax v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-syntax)
+   Compiling bern-transport-ipc v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-transport-ipc)
+   Compiling bern-backend-objc v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-objc)
+   Compiling bern-compiler v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-compiler)
+   Compiling bern-backend-swiftui v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-swiftui)
+   Compiling bern-backend-compose v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-compose)
+   Compiling bern-transport-ws v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-transport-ws)
+   Compiling bern-backend-gtk v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-gtk)
+   Compiling bern-backend-winui3 v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-winui3)
+   Compiling bern-backend-web v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-web)
+   Compiling bern-cli v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-cli)
+    Finished `release` profile [optimized] target(s) in 1m 12s
+     Running `target/release/bern build --manifest examples/gallery/Bern.toml --target macos_modern --release`
+    [1;32mChecked[0m gallery for swiftui-modern-macos (6 components, 2 windows)
+  [1;32mGenerated[0m 19 files (15 changed) in /Users/runner/work/Bern/Bern/source/target/bern/macos_modern
+     [1;32mRunning[0m Build the Rust engine and bridge
+     Locking 2 packages to highest Rust 1.99.0 compatible versions
+      Adding gallery-core v0.1.0 (/Users/runner/work/Bern/Bern/source/examples/gallery/gallery-core)
+      Adding gallery-protocol v0.1.0 (/Users/runner/work/Bern/Bern/source/examples/gallery/gallery-protocol)
+   Compiling bern-protocol v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-protocol)
+   Compiling bern-media v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-media)
+   Compiling bern-runtime v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-runtime)
+   Compiling bern-command v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-command)
+   Compiling bern-syntax v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-syntax)
+   Compiling bern-adapter-json v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-adapter-json)
+   Compiling bern-ir v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-ir)
+   Compiling bern-macros v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-macros)
+   Compiling bern-transport-ipc v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-transport-ipc)
+   Compiling bern v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern)
+   Compiling gallery-protocol v0.1.0 (/Users/runner/work/Bern/Bern/source/examples/gallery/gallery-protocol)
+   Compiling gallery-core v0.1.0 (/Users/runner/work/Bern/Bern/source/examples/gallery/gallery-core)
+   Compiling bern-ffi v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-ffi)
+   Compiling bern-adapter-mcp v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-adapter-mcp)
+   Compiling bern-adapter-cli v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-adapter-cli)
+   Compiling bern-glue-gallery v0.1.0 (/Users/runner/work/Bern/Bern/source/target/bern/macos_modern/glue)
+    Finished `release` profile [optimized] target(s) in 38.77s
+     [1;32mRunning[0m List the native libraries the engine links
+   Compiling bern-glue-gallery v0.1.0 (/Users/runner/work/Bern/Bern/source/target/bern/macos_modern/glue)
+note: native artifacts to link against have been written to /Users/runner/work/Bern/Bern/source/target/bern-glue/aarch64-apple-darwin/release/libbern_app.native-libs. The order and any duplication can be significant on some platforms
+
+    Finished `release` profile [optimized] target(s) in 13.68s
+     [1;32mRunning[0m Compile the SwiftUI frontend
+/Users/runner/work/Bern/Bern/source/target/bern/macos_modern/Sources/BernStyle.swift:2111:47: warning: converting non-Sendable function value to '@MainActor @Sendable () -> Bool' may introduce data races
+2109 |                     axis: axis, reduce: reduce || bernForcedReduceMotion,
+2110 |                     snap: { start, length in items.rest(start, length: length, axis: axis, center: center) },
+2111 |                     snapAllowed: initialOwner.map { owner in { [weak owner] in owner?.waiting != true } },
+     |                                               `- warning: converting non-Sendable function value to '@MainActor @Sendable () -> Bool' may introduce data races
+2112 |                     snapGeneration: initialOwner.map { owner in { [weak owner] in owner?.generation ?? 0 } }))
+2113 |                     .environment(\.bernLegacyScrollMargin, legacyMargin)
+
+/Users/runner/work/Bern/Bern/source/target/bern/macos_modern/Sources/BernStyle.swift:2112:50: warning: converting non-Sendable function value to '@MainActor @Sendable () -> UInt64' may introduce data races
+2110 |                     snap: { start, length in items.rest(start, length: length, axis: axis, center: center) },
+2111 |                     snapAllowed: initialOwner.map { owner in { [weak owner] in owner?.waiting != true } },
+2112 |                     snapGeneration: initialOwner.map { owner in { [weak owner] in owner?.generation ?? 0 } }))
+     |                                                  `- warning: converting non-Sendable function value to '@MainActor @Sendable () -> UInt64' may introduce data races
+2113 |                     .environment(\.bernLegacyScrollMargin, legacyMargin)
+2114 |                     .preference(key: BernLegacyScrollMarginPreference.self, value: legacyMargin)
+     [1;32mRunning[0m Move the debug symbols out of the bundle
+     [1;32mRunning[0m Strip the symbols the dSYM keeps from the executable
+     [1;32mRunning[0m Sign the app for local use
+/Users/runner/work/Bern/Bern/source/target/bern/macos_modern/Gallery.app: replacing existing signature
+     [1;32mRunning[0m Refresh the app's icon in Finder and the Dock
+     [1;32mRunning[0m Register the app again with Launch Services
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/Gallery.app
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/bin/gallery
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/bin/gallery-mcp
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/Gallery.app.dSYM
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/skills/gallery/SKILL.md

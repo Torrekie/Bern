@@ -101,4 +101,21 @@ Film 恰好 `L=Ve=240`，因此算出 0；没有写死 leading、id4 或 234.5 �
 
 父任务已将上述语义去除全部 logger/nativeSnapshot 后应用为 `e48fff46`，仅修改 Style（119 行增加、10 行删除）。Style SHA256 为 `3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89`。主 Runtime 保留现有 9dd/HDR 修复，未被 f9 诊断版本覆盖。
 
-准备时 `git apply --check`、回调/150–160 毫秒 timer 计数合同及独立只读审查通过；这不是该 clean 整应用已经编译或运行的声明。父任务已单次触发 [Gallery CI 40070407306](https://github.com/Torrekie/Bern/actions/runs/40070407306)（source e48fff46）；该次完整构建现已成功（job 120802424623），下一门槛是该精确 clean source 的一次隔离 macOS 13 实际验证。仍需保留首次 Last、宽度变化、重现/动态目标尺寸及物理手势的未等同边界；不得硬改初始 draft3，或把首次 anchor 变换套到所有后续目标。
+准备时 `git apply --check`、回调/150–160 毫秒 timer 计数合同及独立只读审查通过。随后 [Gallery CI 40070407306](https://github.com/Torrekie/Bern/actions/runs/40070407306)（source e48fff46，build harness 25e18cbc）完整构建成功（job 120802424623）。父任务的单次本机 session 67853 也已 exit 0；它实际运行这一 clean 构建，而非借用 d146 结果。
+
+
+### 精确 clean 应用的三场景后台验证
+
+[完整原始归档](../Evidence/macOS13-film-clean-e48fff46/README.md)保留 219 个本机 run 文件、102 个已有 f9/14 参考文件，以及 source/build、合法唯一 bundle 签名、section/hash 与未改的 collector 3f434cf。运行采用 inactive13 / all / followup=none / trace unset，三个 fresh process，无 activation，normal 三项 false。Film 的 AX 每组都完整且有六张图片，PNG 各通过四次相同原始 buffer 比较。
+
+| 场景 | clean 13 Glen 中心 / 宽度 | 上游 14 Glen 中心 / 宽度 | f9/14 Glen 中心 / 宽度 |
+|---|---|---|---|
+| immediate | 601.000 / 267.534781 | 566.000 / 268.799753 | 565.000 / 268.799753 |
+| wait | 601.000 / 267.534781 | 601.000 / 267.534787 | 601.000 / 267.534787 |
+| direct | 601.000 / 267.534781 | 601.000 / 267.534787 | 601.000 / 267.534787 |
+
+wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001 点。immediate 的身份也为 Glen，但中心相差 35/36 点，不能宣布三组均在 1 点内。三组数据中的 immediate 都先从 900×652 实际 resize 到 920×668；wait/direct 启动时已恢复至 920×668。Inspector 退出、首次布局与窗口恢复仍混杂，不能指定单一原因。
+
+精确原 GUI SHA256：`d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c`；CLI：`31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5`。后台运行副本采用唯一 bundleID 和 ad-hoc 签名，完整 GUI hash 因此不同，但各 section 与归一签名存储 payload 相同。原 exact app/CLI 留给父任务交付，此分析没有替换现有应用。
+
+本机 13 为 inactive/2x，两组 14参考为 active/1x；同 AX 几何不等于相同 active 色彩/材质。本次未测后续 Last/resize，也没有内部 logger 或物理 gesture。仍需保留首次 Last、加宽窗口、重现/动态目标尺寸及物理手势的未等同边界；不得硬改初始 draft3，或把首次 anchor 变换套到所有后续目标。
