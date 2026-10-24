@@ -33,3 +33,9 @@ normal accessibility flags are required; failure does not prompt or alter TCC.
 The collection loop is bounded at7.2 seconds with a7.9-second window watchdog,
 in addition to a maximum10-second source preload. Keep the raw PNGs and ICC;
 cross-OS color/ROI comparisons remain a separate offline step.
+
+The initial build40080291082 succeeded; its first14 job stopped before launching
+the executable because an optional raw defaults lookup was treated as fatal.
+The runtime-only workflow pins that same tar and signed binary by SHA256 and
+does not rebuild. Missing raw keys remain in the log; actual NSWorkspace normal
+flags are still mandatory before and after acquisition.

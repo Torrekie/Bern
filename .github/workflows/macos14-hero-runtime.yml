@@ -1,0 +1,101 @@
+name: macOS 14 exact hero snapshot runtime
+run-name: actual hero snapshot from retained build40080291082
+
+# Manual, runtime only. The successful build artifact is pinned by tar and binary SHA.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: macos14-hero-probe-retained
+  cancel-in-progress: false
+jobs:
+  measure:
+    runs-on: macos-14
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos14-hero-probe-build
+          run-id: 40080291082
+          github-token: ${{ github.token }}
+          path: build
+      - name: Run the exact packaged binary on14 without rebuilding
+        env:
+          BERN_HERO_EXPECT_OS: '14'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p probe evidence/runtime14
+          trap 'rm -rf probe build' EXIT
+          {
+            printf 'harness_sha=%s\nexpected_os_major=%s\n' "$GITHUB_SHA" "$BERN_HERO_EXPECT_OS"
+            sw_vers
+            uname -m
+          } > evidence/runtime14/environment.txt 2>&1
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = cc0eb1ead71e2912180a8f8b4a349849f3775b7e
+          test "$(shasum -a 256 build/hero-snapshot-probe.tar.gz | awk '{print $1}')" = 1b1312eb01ebdbed5baec9b9fd69dd7d9ee066ef1e6a1cb7cda686c589ffe807
+          (cd build && shasum -a 256 -c hero-snapshot-probe.tar.gz.sha256) > evidence/runtime14/archive-verification.txt 2>&1
+          python3 - <<'PY'
+          from pathlib import PurePosixPath
+          import tarfile
+          with tarfile.open('build/hero-snapshot-probe.tar.gz') as t:
+              for m in t.getmembers():
+                  p=PurePosixPath(m.name)
+                  assert not p.is_absolute() and '..' not in p.parts,m.name
+                  assert m.isdir() or m.isfile(),m.name
+          PY
+          tar -xzf build/hero-snapshot-probe.tar.gz -C probe
+          (cd probe && shasum -a 256 -c SHA256SUMS) > evidence/runtime14/package-verification.txt 2>&1
+          test "$(xcrun lipo -archs probe/HeroSnapshotProbe)" = arm64
+          codesign --verify --strict --verbose=4 probe/HeroSnapshotProbe > evidence/runtime14/signature-verification.txt 2>&1
+          shasum -a 256 probe/HeroSnapshotProbe > evidence/runtime14/binary-sha256.txt
+          test "$(shasum -a 256 probe/HeroSnapshotProbe | awk '{print $1}')" = f50acd4dee545befeaafa500532c76dd9cd094c46e68e700ce403ce32f8aead2
+          cp build/environment.txt evidence/runtime14/build-environment.txt
+          cp build/{binary.txt,signature.txt,source-provenance.json,SHA256SUMS,hero-snapshot-probe.tar.gz.sha256} evidence/runtime14/
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          defaults write com.apple.universalaccess increaseContrast -bool false
+          killall cfprefsd || true
+          {
+            # Raw defaults absence is diagnostic; effective NSWorkspace flags
+            # remain mandatory before/after in the executable and assertions.
+            defaults read com.apple.universalaccess reduceMotion || true
+            defaults read com.apple.universalaccess reduceTransparency || true
+            defaults read com.apple.universalaccess increaseContrast || true
+          } > evidence/runtime14/requested-normal.txt 2>&1
+          probe/HeroSnapshotProbe "$PWD/probe/assets/source-named-pq.png" \
+            "$PWD/probe/assets/source-ffb-icc.png" "$PWD/evidence/runtime14" \
+            > evidence/runtime14/runtime.log 2>&1
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('evidence/runtime14'); d=json.loads((p/'report.json').read_text())
+          assert d['success'] is True,d.get('error')
+          assert d['expected_os_major']==14 and d['actual_os_major']==14
+          assert d['completed_phases']==2 and len(d['captures'])==2
+          assert d['cache_unchanged'] is True and d['metal_count_before_cleanup']==0
+          assert d['frontmost_before']==d['frontmost_after']
+          assert all(v is False for k in ('normal_before','normal_after') for v in d[k].values())
+          assert {s['key'] for s in d['snapshots']}=={'baseline-body-named','baseline-body-custom'}
+          assert [c['phase'] for c in d['captures']]==['progress-0','progress-1']
+          for c in d['captures']:
+              assert c['consecutive_equal_buffers']>=5 and c['live_metal_count']==0
+              assert c['key'] is False and c['active'] is False
+              assert c['manager']['flight_count']==0 and c['manager']['timer_exists'] is False
+              assert c['capture_icc_sha256']!='absent'
+          wanted={'source-named-pq.png':'3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b','source-ffb-icc.png':'fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e'}
+          assert set(d['cache_before'])==set(wanted)
+          assert all(d['cache_before'][n]['file_sha256']==s and d['cache_before'][n]['orientation']=='up' for n,s in wanted.items())
+          assert len(list(p.glob('*.png')))==2
+          PY
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: macos14-hero-snapshot-evidence
+          path: evidence/runtime14/
+          if-no-files-found: error
+          retention-days: 3
