@@ -1,0 +1,126 @@
+{
+  "verdict": "static_source_CI_review_pass_with_root_owned_native_and_outer_digest_acceptance",
+  "preparation_manifest_sha256": "7dbff4d25a9345ca7fd6aaf35040e5561ee2ce09c846cec34ced95b936856062",
+  "core_inputs": [
+    {
+      "path": ".github/scripts/picture-grid-width/build.py",
+      "bytes": 10048,
+      "sha256": "3ca51ca81333d20fd7512f6fe7093b14e14a3ef0efc5f4290342d3dc9d9b6812"
+    },
+    {
+      "path": ".github/scripts/picture-grid-width/patch.py",
+      "bytes": 4971,
+      "sha256": "06a8b12d24ede2bec754f297a9f3bc3ae1fd650c9831f6c6ab42e9f36e746914"
+    },
+    {
+      "path": ".github/scripts/picture-grid-width/GridWidthTrace.swift",
+      "bytes": 3234,
+      "sha256": "027c778fe272cf388e38ea0d2d5cab5089fa1d51b7b50768dca33da67227311b"
+    },
+    {
+      "path": ".github/workflows/macos14-picture-grid-width.yml",
+      "bytes": 8489,
+      "sha256": "687d69ce890cc0fd6e0bc0886b3f404accaa34ed911d4bf68ead4b281d9aff93"
+    }
+  ],
+  "frozen_21_package_width_helpers_source_export_hashes_verified": {
+    "picture-scene-observer/build.py": "70f388f8a7346d2edb68a8e428c40350fb67025ab0bd86e35ab375b055d7d97d",
+    "picture-scene-observer/patch.py": "9de84f9da6b52602e1bdc9613c3e32b884b68335e8da789c3a161ae8c1f9f4cd",
+    "picture-scene-observer/Observer.swift": "14532e7960a7138ae3be48b26fe08ecb0f0d6b347e6cd7faa76be08eb01709da",
+    "picture-source-export.py": "e4f7bc61dce0241c53858d8c0f28250f13fa6bcac3c4c13759985ebb3b80df2e",
+    "picture-grid-width/patch.py": "06a8b12d24ede2bec754f297a9f3bc3ae1fd650c9831f6c6ab42e9f36e746914",
+    "picture-grid-width/GridWidthTrace.swift": "027c778fe272cf388e38ea0d2d5cab5089fa1d51b7b50768dca33da67227311b"
+  },
+  "all55_archived_input_rows_vs_Git9dd_verified": true,
+  "collector_current_sha256": "3dcaaf994cd7b61655e202ac76f79cc0e0b7c161b608ed2800378652207f0ac6",
+  "collector_expected_SHA_asserted_in_workflow": false,
+  "Python_AST_and_YAML_parsed": true,
+  "independent_bash_n_checks": [
+    {
+      "job": "build",
+      "step": "Record exact source and compiler",
+      "bash_n_exit_code": 0
+    },
+    {
+      "job": "build",
+      "step": "Prepare the sole diagnostic generation hook",
+      "bash_n_exit_code": 0
+    },
+    {
+      "job": "build",
+      "step": "Generate, patch, and continue the original product build plan",
+      "bash_n_exit_code": 0
+    },
+    {
+      "job": "build",
+      "step": "Collect exact source and hook metadata including partial failures",
+      "bash_n_exit_code": 0
+    },
+    {
+      "job": "build",
+      "step": "Verify min13 and strict signatures and retain the reusable product",
+      "bash_n_exit_code": 0
+    },
+    {
+      "job": "capture",
+      "step": "Create a fresh capture evidence directory",
+      "bash_n_exit_code": 0
+    },
+    {
+      "job": "capture",
+      "step": "Verify that exact product without rebuilding",
+      "bash_n_exit_code": 0
+    },
+    {
+      "job": "capture",
+      "step": "Restore the original normal reference appearance",
+      "bash_n_exit_code": 0
+    },
+    {
+      "job": "capture",
+      "step": "Capture the original complete route with both bounded packets",
+      "bash_n_exit_code": 0
+    }
+  ],
+  "manual_source_review": {
+    "source_and_hook": "prepare requires exact9dd and clean tracked checkout, compares55 source rows to fixed Git, accepts only expected original CLI hash and one target.plan needle, inserts env-gated diagnostic hook, then asserts CLI-only tracked diff. Generated subtree reset is bounded; Rust caches remain. No skip-target-plan return is introduced.",
+    "patch": "original21 patcher and Observer are read from SHA-locked existing package; compiled Generated must be106494B/f4cac696…06d2. Actual Style must first be e1cad857…1c6f, then209558B/09d8f99a…987f with reversible patch proof. Original21Generated SHA is checked unchanged after width patch.",
+    "build_exit_and_collect": "cargo command return code is saved and returned without a pipe. collect runs on always after successful prepare, checks rc0/one hook marker, fixedHEAD, soleCLI diff/hash, same package hashes, all55 inputs except deliberateCLI, both compiled source SHAs, release/min13 metadata and nonempty binaries. collect defaults false and returns nonzero on failure.",
+    "failure_evidence": "build/capture artifacts upload on always and preserve partial metadata/logs; capture needs successful build. An artifact existing or job green does not establish trace coverage or visual acceptance. Bounded build.log records full-log byte/hash/truncation; full build log is excluded from artifact.",
+    "capture": "capture uses same-run named build artifact, verifies fixedsource/harness SHA and internal tar checksum before extraction, preserves App/CLI signatures, and does not rebuild. It sets normal profile and precreates evidence/observer before invoking original collector. Original collector supplies en/en_US,920x668 and Layout0.8s; it has no selected13PNG equivalence gate.",
+    "package_binding": "Six existing/baseline width inputs are hard SHA-locked. Newbuild.py selfSHA is recorded in prepare and rechecked patch/collect; harness commit and harness-inputs receipt bind workflow/collector. Baseline package is read-only. New wrapper is a sibling under .github/scripts after publication, preserving imports."
+  },
+  "artifact_container_contract": {
+    "build_artifact": "picture-grid-width-build",
+    "capture_artifact": "picture-grid-width-on14",
+    "same_run_download_root": "build/",
+    "internal_payload": "build/showcase-grid-width.tar.gz",
+    "internal_checksum": "(cd build && shasum -a256 -c showcase-grid-width.tar.gz.sha256)",
+    "internal_checksum_container_correct": true,
+    "retention_days": 3,
+    "outer_artifact_digest_limit": "The artifact API digest identifies outer artifact ZIP bytes, not the contained tar, extracted directory or member hash list. The workflow delegates outer download to actions/download-artifact. Root must independently compare the downloaded outer ZIP bytes to its exact artifact API id/name/size/digest before extraction/deletion if claiming that gate.",
+    "root_prepared_local_download_helper": {
+      "path": "work/github-ci.py",
+      "sha256": "52d183af039474d51c728ba2a896049ecbcf8d9f3d34347d8d2343803a67719b",
+      "review_scope": "Read-only source/AST inspected after root update; not executed or network tested. Source now compares actual downloadedZIP SHA against available API digest before extraction/deletion, retains mismatchZIP, records unavailable digest honestly, and writes sibling receipt. Fresh unique artifact/path guards, member/count/size/type checks are present. Actual future download/receipt still required; old evidence is not retroactively validated."
+    }
+  },
+  "root_acceptance_still_required": [
+    "Confirm actual committed/published4files and harnessSHA; actual remote generatedsource proofs and package/input receipts must match frozen inputs.",
+    "Confirm collector receipt SHA3dcaaf99…0ac6. Workflow records it but has no independent expected-SHA pre-execution assertion.",
+    "Confirm GUI and CLI Mach-O architecture, minimumOS13.0, exact tar members and strict original signatures. Workflow hardchecks GUIminos only; CLIvtool is recorded.",
+    "Check effective increaseContrast false in actual result, alongside normal reduceMotion/reduceTransparency. Original collector profile guard checks the latter two and records contrast.",
+    "Compare all13 selected original14PNG files against accepted baseline and confirm125/147 card heights, unchanged21-label coverage and ownPID/window/context before interpreting width trace.",
+    "Require separate width packet bound to ownPID, finite/main-thread target120/192 rows and no written cap; optional140rows retained; prefix/end_not_observed limitations remain.",
+    "Only after14 new diagnostic noninterference passes, run exact same binary on13 with locked route/timing and compare actual result; equal widths are not a causal diagnosis."
+  ],
+  "author_fixture_scope": "Author check really applied old21patch+Observer and newwidthpatch to private retained/generated text. Git HEAD/status/diff and input_rows checks were explicit substitutes. It did not run cargo/target.plan, Swiftcompile, binary signing, UI, CI, artifact transfer or native acceptance.",
+  "reviewer_execution_scope": "Read-only hashes/AST/YAML/Git blobs and nine bash -n checks. No fixture rerun, compiler/cache/UI/CI/repo/index/input mutation.",
+  "future_runtime_result": "not_run_not_accepted",
+  "canonical4_files_at_review": {
+    ".github/scripts/picture-grid-width/build.py": "3ca51ca81333d20fd7512f6fe7093b14e14a3ef0efc5f4290342d3dc9d9b6812",
+    ".github/scripts/picture-grid-width/patch.py": "06a8b12d24ede2bec754f297a9f3bc3ae1fd650c9831f6c6ab42e9f36e746914",
+    ".github/scripts/picture-grid-width/GridWidthTrace.swift": "027c778fe272cf388e38ea0d2d5cab5089fa1d51b7b50768dca33da67227311b",
+    ".github/workflows/macos14-picture-grid-width.yml": "687d69ce890cc0fd6e0bc0886b3f404accaa34ed911d4bf68ead4b281d9aff93"
+  }
+}

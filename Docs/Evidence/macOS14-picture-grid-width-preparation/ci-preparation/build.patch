@@ -1,0 +1,129 @@
+--- .github/scripts/picture-scene-observer/build.py
++++ .github/scripts/picture-grid-width/build.py
+@@ -1,14 +1,27 @@
+ #!/usr/bin/env python3
+-"""Apply the exact-source diagnostic observer before the original product build plan."""
++"""Preserve the frozen Scene observer, then trace the existing grid width action."""
+ import hashlib
+ import importlib.util
+ import json
+ import os
+ from pathlib import Path
+ import shutil
++import subprocess
+ import sys
+ 
+ PACKAGE = Path(__file__).resolve().parent
++BASE = PACKAGE.parent / "picture-scene-observer"
++GENERATED_SHA = "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2"
++STYLE_ORIGINAL_SHA = "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f"
++STYLE_PATCHED_SHA = "09d8f99a26a73498e7ef4d7d597eca646be751f32b4fe99f63482b944a81987f"
++LOCKED_INPUTS = {
++    "picture-scene-observer/build.py": "70f388f8a7346d2edb68a8e428c40350fb67025ab0bd86e35ab375b055d7d97d",
++    "picture-scene-observer/patch.py": "9de84f9da6b52602e1bdc9613c3e32b884b68335e8da789c3a161ae8c1f9f4cd",
++    "picture-scene-observer/Observer.swift": "14532e7960a7138ae3be48b26fe08ecb0f0d6b347e6cd7faa76be08eb01709da",
++    "picture-source-export.py": "e4f7bc61dce0241c53858d8c0f28250f13fa6bcac3c4c13759985ebb3b80df2e",
++    "picture-grid-width/patch.py": "06a8b12d24ede2bec754f297a9f3bc3ae1fd650c9831f6c6ab42e9f36e746914",
++    "picture-grid-width/GridWidthTrace.swift": "027c778fe272cf388e38ea0d2d5cab5089fa1d51b7b50768dca33da67227311b",
++}
+ MARKER = "BERN_PICTURE_OBSERVER_PATCHED: original target.plan follows"
+ HOOK = ('''        if let Some(driver) = std::env::var_os("BERN_PICTURE_OBSERVER_DRIVER") {
+             let status = Command::new("python3")
+@@ -35,8 +48,10 @@
+ 
+ 
+ def package_hashes():
+-    return {p.name: sha(p.read_bytes()) for p in
+-            [PACKAGE / "build.py", PACKAGE / "patch.py", PACKAGE / "Observer.swift"]}
++    rows = {name: sha((PACKAGE.parent / name).read_bytes()) for name in LOCKED_INPUTS}
++    assert rows == LOCKED_INPUTS, "frozen baseline/width helper changed"
++    rows["picture-grid-width/build.py"] = sha((PACKAGE / "build.py").read_bytes())
++    return rows
+ 
+ 
+ def prepare(repo, out):
+@@ -52,11 +67,13 @@
+     assert (repo / "target").resolve() == repo / "target"
+     assert target.resolve() == repo / "target/bern/macos_modern"
+     assert not target.is_symlink()
++    inputs = export.input_rows(repo)
++    assert len(inputs) == 55
+     out.mkdir(parents=True, exist_ok=True)
+     assert not (out / "observer-before.json").exists()
+     write_json(out / "observer-before.json", {
+         "source_sha": export.SOURCE_SHA, "harness_sha": os.environ.get("GITHUB_SHA"),
+-        "inputs": export.input_rows(repo), "package_hashes": package_hashes(),
++        "inputs": inputs, "package_hashes": package_hashes(),
+         "cli_original_sha256": sha(original), "cli_patched_sha256": sha(patched),
+         "expected_output": str(target), "cached_before_removal": export.source_meta(repo),
+     })
+@@ -77,11 +94,12 @@
+     assert package_hashes() == before["package_hashes"]
+     source = target / "Sources/BernGenerated.swift"
+     original = source.read_bytes()
+-    patcher = module("picture_scene_exact_patch", PACKAGE / "patch.py")
++    patcher = module("picture_scene_exact_patch", BASE / "patch.py")
+     patcher.patch(source, out / "picture-patch")
+     measured = (out / "picture-patch/BernGenerated.measured.swift").read_bytes()
+-    helper = (PACKAGE / "Observer.swift").read_bytes()
++    helper = (BASE / "Observer.swift").read_bytes()
+     combined = measured + b"\n// Diagnostic observer; original Scene and layout declarations above.\n" + helper
++    assert len(combined) == 106494 and sha(combined) == GENERATED_SHA
+     source.write_bytes(combined)
+     assert source.read_bytes() == combined and sha(original) == patcher.SOURCE_SHA
+     write_json(out / "instrumentation.json", {
+@@ -89,6 +107,22 @@
+         "generated_measured_sha256": sha(measured), "observer_helper_sha256": sha(helper),
+         "compiled_generated_sha256": sha(combined), "compiled_generated_bytes": len(combined),
+         "hook_count": 21, "scope": "21 appended background modifiers plus file-scope observer; original Scene/children preserved",
++    })
++    style = target / "Sources/BernStyle.swift"
++    assert sha(style.read_bytes()) == STYLE_ORIGINAL_SHA
++    subprocess.run([sys.executable, str(PACKAGE / "patch.py"), str(target),
++                    str(out / "grid-width-patch")], check=True)
++    width = json.loads((out / "grid-width-patch/patch-proof.json").read_text())
++    assert sha(style.read_bytes()) == STYLE_PATCHED_SHA == width["written_style_sha256"]
++    assert sha(source.read_bytes()) == GENERATED_SHA
++    assert width["generated_21point_sha256_before"] == width["generated_21point_sha256_after"] == GENERATED_SHA
++    assert width["original_guard_transaction_write_bytes_unchanged"] is True
++    assert width["removing_only_insertion_and_appended_helper_restores_original"] is True
++    write_json(out / "width-instrumentation.json", {
++        "success": True, "style_original_sha256": STYLE_ORIGINAL_SHA,
++        "style_compiled_sha256": STYLE_PATCHED_SHA, "style_compiled_bytes": style.stat().st_size,
++        "generated_21point_sha256": GENERATED_SHA, "width_patch": width,
++        "packet_schemas": ["bern_picture_public_geometry_v1", "bern_picture_grid_width_action_v1"],
+     })
+ 
+ 
+@@ -105,6 +139,7 @@
+         assert git(repo, "diff", "--name-only").decode().splitlines() == [export.CLI]
+         assert sha((repo / export.CLI).read_bytes()) == before["cli_patched_sha256"]
+         assert package_hashes() == before["package_hashes"]
++        assert len(before["inputs"]) == 55
+         for row in before["inputs"]:
+             if row["path"] != export.CLI:
+                 assert sha((repo / row["path"]).read_bytes()) == row["sha256"], row["path"]
+@@ -113,13 +148,21 @@
+         instrument = json.loads((out / "instrumentation.json").read_text())
+         assert instrument["success"] is True
+         base = repo / "target/bern/macos_modern"
+-        assert sha((base / "Sources/BernGenerated.swift").read_bytes()) == instrument["compiled_generated_sha256"]
++        assert sha((base / "Sources/BernGenerated.swift").read_bytes()) == instrument["compiled_generated_sha256"] == GENERATED_SHA
++        assert instrument["compiled_generated_bytes"] == 106494 and instrument["hook_count"] == 21
++        width = json.loads((out / "width-instrumentation.json").read_text())
++        assert width["success"] is True
++        assert width["style_original_sha256"] == STYLE_ORIGINAL_SHA
++        assert width["style_compiled_sha256"] == STYLE_PATCHED_SHA
++        assert width["generated_21point_sha256"] == GENERATED_SHA
++        assert width["style_compiled_bytes"] == 209558
++        assert sha((base / "Sources/BernStyle.swift").read_bytes()) == STYLE_PATCHED_SHA
+         build = json.loads((base / "build.json").read_text())
+         assert build["ui"] == "swiftui-modern" and build["minimum_macos"] == "13.0" and build["profile"] == "release"
+         binaries = {str(p.relative_to(base)): {"sha256": sha(p.read_bytes()), "bytes": p.stat().st_size}
+                     for p in [base / "Showcase.app/Contents/MacOS/Showcase", base / "bin/showcase"]}
+         assert all(row["bytes"] > 0 for row in binaries.values())
+-        result.update({"success": True, "instrumentation": instrument, "binaries": binaries, "build": build})
++        result.update({"success": True, "instrumentation": instrument, "width_instrumentation": width, "binaries": binaries, "build": build})
+     except Exception as exc:
+         result["success"] = False
+         result["error"] = str(exc)

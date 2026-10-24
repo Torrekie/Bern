@@ -1,0 +1,7 @@
+Private initial inline source/path check returned 1 after the real two-stage
+text patch had succeeded. Its final whitespace assertion wrongly included
+unified-diff context blank lines (one ASCII space). Active Python/Swift/YAML
+files had no trailing whitespace. finally removed all temporary sources and
+baseline symlinks. No cargo, compiler, UI, CI or product execution occurred.
+The retained check-preparation.py scopes whitespace to active files; its fresh
+run passes and is recorded in check.log and validation.json.

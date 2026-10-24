@@ -1,0 +1,115 @@
+{
+  "actual_layout_page_range": [
+    1268,
+    1409
+  ],
+  "actual_retained_generated_file": "BernGenerated.swift",
+  "archived_template_input_entry_exact": true,
+  "baseline_21point_generated_sha256": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+  "baseline_21point_helper_sha256": "14532e7960a7138ae3be48b26fe08ecb0f0d6b347e6cd7faa76be08eb01709da",
+  "configuration_is_source_callsite_hint_not_instance_or_remount_identity": true,
+  "generated_style_path": "Sources/BernStyle.swift",
+  "git_files": [
+    {
+      "bytes": 34003,
+      "matching_lines": [
+        {
+          "line": 143,
+          "text": "const STYLE: &str = include_str!(\"../templates/BernStyle.swift\");"
+        },
+        {
+          "line": 278,
+          "text": "            GeneratedFile::text(\"Sources/BernStyle.swift\", STYLE),"
+        }
+      ],
+      "path": "crates/bern-backend-swiftui/src/lib.rs",
+      "sha256": "aa8c31577c941bd35b66ec99101b287bdf3d99f41da1d4af996c5e3bcbbaf8ff"
+    },
+    {
+      "bytes": 28503,
+      "matching_lines": [
+        {
+          "line": 498,
+          "text": "    pub fn text(path: impl Into<PathBuf>, contents: impl Into<String>) -> Self {"
+        }
+      ],
+      "path": "crates/bern-target-api/src/lib.rs",
+      "sha256": "6bd12fbc4caca45c0163a86c6feb5f8d104994568401e2512edb7c2745af9097"
+    },
+    {
+      "bytes": 205764,
+      "matching_lines": [
+        {
+          "line": 3053,
+          "text": "struct BernAdaptiveGrid<Content: View>: View {"
+        },
+        {
+          "line": 3067,
+          "text": "        let columns = max(1, Int((width + gap) / max(1, minimum + gap)))"
+        },
+        {
+          "line": 3080,
+          "text": "            guard measured.isFinite, measured != width else { return }"
+        }
+      ],
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f"
+    }
+  ],
+  "retained_inputs": [
+    {
+      "bytes": 10608,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-picture-source-40136458675/raw/before.json",
+      "sha256": "db608bf45b8a5380958f0ae561b1eed2dc027feec1c1c2f96dc16b4d5fe2d6eb"
+    },
+    {
+      "bytes": 2482,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-picture-source-40136458675/raw/after.json",
+      "sha256": "dd8571b1d091ccad96862e8a12958193eac2eaec3a9af709782fa3179965eb18"
+    },
+    {
+      "bytes": 2720,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-picture-source-40136458675/raw/generate.log",
+      "sha256": "47209ab6115c409f98311af5c306a237911957fa715ed02833e145c295503aa4"
+    },
+    {
+      "bytes": 95129,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-picture-source-40136458675/raw/BernGenerated.swift",
+      "sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083"
+    },
+    {
+      "bytes": 580,
+      "path": "work/picture-scene-observed14/build/instrumentation.json",
+      "sha256": "6b2f46888def0f71b1c4ce657755979fbd636678c00767424a7925c924d5b0df"
+    },
+    {
+      "bytes": 96430,
+      "path": "work/picture-scene-observed14/build/picture-patch/BernGenerated.measured.swift",
+      "sha256": "f152c30b1ed4e3107c7198db2652c536ea0f5cddf81a046ecc9b0fed0ea47c10"
+    },
+    {
+      "bytes": 9993,
+      "path": "outputs/Bern/.github/scripts/picture-scene-observer/Observer.swift",
+      "sha256": "14532e7960a7138ae3be48b26fe08ecb0f0d6b347e6cd7faa76be08eb01709da"
+    }
+  ],
+  "source_export_changed_count": 20,
+  "source_export_generated_count": 20,
+  "source_export_has_per_output_20file_list": false,
+  "source_kind": "exact git template and generator mapping; actual Style not retained in source-export artifact",
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "three_grid_callsites": [
+    {
+      "declaration": "BernAdaptiveGrid(minimum: 120.0, gap: 16.0, rowGap: 16.0, motion: nil) {",
+      "line": 1280
+    },
+    {
+      "declaration": "BernAdaptiveGrid(minimum: 192.0, gap: 16.0, rowGap: 16.0, motion: nil) {",
+      "line": 1314
+    },
+    {
+      "declaration": "BernAdaptiveGrid(minimum: 140.0, gap: 12.0, rowGap: 12.0, motion: nil) {",
+      "line": 1376
+    }
+  ]
+}

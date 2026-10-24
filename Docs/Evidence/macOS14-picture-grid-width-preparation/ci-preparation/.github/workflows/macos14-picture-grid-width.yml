@@ -1,0 +1,190 @@
+name: Picture actual grid width trace
+run-name: Build exact 9dd grid width trace once and capture on macOS 14
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: picture-grid-width
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+      CARGO_INCREMENTAL: "0"
+      CARGO_BUILD_JOBS: "2"
+      CARGO_TERM_COLOR: never
+      MACOSX_DEPLOYMENT_TARGET: "13.0"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/checkout@v5
+        with:
+          ref: 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0
+          path: source
+          persist-credentials: false
+      - name: Record exact source and compiler
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir evidence
+          {
+            printf 'source_sha=%s\nharness_sha=%s\n' "$(git -C source rev-parse HEAD)" "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+          } > evidence/environment.txt 2>&1
+          test "$(git -C source rev-parse HEAD)" = 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0
+          test "$(uname -m)" = arm64
+          rustup toolchain install 1.99.0 --profile minimal
+          rustc +1.99.0 -Vv >> evidence/environment.txt
+          shasum -a 256 harness/.github/scripts/picture-grid-width/build.py harness/.github/scripts/picture-grid-width/patch.py harness/.github/scripts/picture-grid-width/GridWidthTrace.swift harness/.github/scripts/picture-scene-observer/build.py harness/.github/scripts/picture-scene-observer/patch.py harness/.github/scripts/picture-scene-observer/Observer.swift harness/.github/scripts/picture-source-export.py harness/.github/scripts/macos14-reference.swift > evidence/harness-inputs.sha256
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            source/target
+          key: bern-macos13-cargo-macos15-v1-${{ hashFiles('source/Cargo.lock') }}
+      - name: Prepare the sole diagnostic generation hook
+        id: prepare
+        shell: bash
+        run: |
+          set -euo pipefail
+          export BERN_PICTURE_OBSERVER_DRIVER="$PWD/harness/.github/scripts/picture-grid-width/build.py"
+          export BERN_PICTURE_OBSERVER_EVIDENCE="$PWD/evidence"
+          python3 harness/.github/scripts/picture-grid-width/build.py prepare source evidence
+      - name: Generate, patch, and continue the original product build plan
+        shell: bash
+        run: |
+          set +e
+          export BERN_PICTURE_OBSERVER_DRIVER="$PWD/harness/.github/scripts/picture-grid-width/build.py"
+          export BERN_PICTURE_OBSERVER_EVIDENCE="$PWD/evidence"
+          (cd source && cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest examples/showcase/Bern.toml --target macos_modern --release) > evidence/build.full.log 2>&1
+          result=$?
+          printf '%s\n' "$result" > evidence/build.exit-code.txt
+          exit "$result"
+      - name: Collect exact source and hook metadata including partial failures
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        shell: bash
+        run: python3 harness/.github/scripts/picture-grid-width/build.py collect source evidence
+      - name: Verify min13 and strict signatures and retain the reusable product
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d = json.loads(Path('source/target/bern/macos_modern/build.json').read_text())
+          assert d['ui'] == 'swiftui-modern', d
+          assert d['minimum_macos'] == '13.0', d
+          assert d['profile'] == 'release', d
+          PY
+          app=source/target/bern/macos_modern/Showcase.app
+          cli=source/target/bern/macos_modern/bin/showcase
+          test -x "$app/Contents/MacOS/Showcase"
+          test -x "$cli"
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - "$app/Contents/Info.plist")" = 13.0
+          test "$(xcrun vtool -show-build "$app/Contents/MacOS/Showcase" | awk '/minos/ {print $2;exit}')" = 13.0
+          {
+            xcrun vtool -show-build "$app/Contents/MacOS/Showcase"
+            xcrun vtool -show-build "$cli"
+            xcrun otool -L "$app/Contents/MacOS/Showcase"
+            codesign --verify --deep --strict "$app"
+            codesign --verify --strict "$cli"
+          } > evidence/binary.txt 2>&1
+          cp source/target/bern/macos_modern/build.json evidence/build.json
+          tar -czf evidence/showcase-grid-width.tar.gz -C source/target/bern/macos_modern Showcase.app bin/showcase
+          (cd evidence && shasum -a 256 showcase-grid-width.tar.gz > showcase-grid-width.tar.gz.sha256)
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: picture-grid-width-build
+          path: |
+            evidence/
+            !evidence/build.full.log
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+
+  capture:
+    needs: build
+    runs-on: macos-14
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - name: Create a fresh capture evidence directory
+        shell: bash
+        run: mkdir evidence
+      - uses: actions/download-artifact@v5
+        with:
+          name: picture-grid-width-build
+          path: build
+          github-token: ${{ github.token }}
+          run-id: ${{ github.run_id }}
+      - name: Verify that exact product without rebuilding
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir candidate
+          test "$(sed -n 's/^source_sha=//p' build/environment.txt)" = 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0
+          test "$(sed -n 's/^harness_sha=//p' build/environment.txt)" = "$GITHUB_SHA"
+          (cd build && shasum -a 256 -c showcase-grid-width.tar.gz.sha256)
+          tar -xzf build/showcase-grid-width.tar.gz -C candidate
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - candidate/Showcase.app/Contents/Info.plist)" = 13.0
+          codesign --verify --deep --strict candidate/Showcase.app
+          codesign --verify --strict candidate/bin/showcase
+          cp build/environment.txt evidence/build-environment.txt
+          cp build/build.json evidence/build.json
+          cp build/binary.txt evidence/build-binary.txt
+          cp build/harness-inputs.sha256 evidence/
+          cp build/showcase-grid-width.tar.gz.sha256 evidence/
+          {
+            printf 'source_sha=%s\nharness_sha=%s\n' 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0 "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+          } > evidence/environment.txt
+      - name: Restore the original normal reference appearance
+        shell: bash
+        run: |
+          set -euo pipefail
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          killall cfprefsd || true
+      - name: Capture the original complete route with both bounded packets
+        env:
+          BERN_REFERENCE_PROFILE: normal
+          BERN_SOURCE_SHA: 9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir evidence/observer
+          export BERN_PICTURE_OBSERVER_OUTPUT_DIR="$PWD/evidence/observer"
+          # Both picture-observer-PID.json and picture-grid-width-PID.json use this precreated directory.
+          # The unmodified full collector supplies en/en_US and 920x668 outer size.
+          # It retains its original Layout 0.8s wait; this is not a settled-pixels gate.
+          xcrun swift -swift-version 5 harness/.github/scripts/macos14-reference.swift "$PWD/candidate/Showcase.app" "$PWD/candidate/bin/showcase" "$PWD/evidence" 2>&1 | tee evidence/capture.log
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: picture-grid-width-on14
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 3
