@@ -319,7 +319,7 @@ do {
         entry["first_second_ax"] = samples
         cases.append(entry); try save()
         entry["film"] = try stable(p.processIdentifier, name: scenario + "-film")
-        entry["settled_ax"] = axSample(root)
+        entry["settled_ax"] = axSample(root, timeBudget: 2)
         entry["controls"] = try cli(["ui", "inspect"], id) ?? NSNull()
         if let directory = environment["BERN_SCROLL_TRACE_DIR"] {
             let trace = URL(fileURLWithPath: directory).appendingPathComponent("scroll-\(p.processIdentifier).json")
