@@ -256,10 +256,19 @@ func frameStage(_ name: String, open: Bool, paused: Bool = true) throws {
 func capture(_ name: String, ids: [CGWindowID], canvas: CGRect, open: Bool) throws {
     var previous = "", equal = 0, samples = 0; let end = min(deadline,Date().addingTimeInterval(8))
     let expectedBounds = Dictionary(uniqueKeysWithValues:ownWindows().filter { ids.contains(windowID($0)) }.map { (windowID($0),bounds($0)) })
+    guard let owner = process?.processIdentifier, let windowArray = CFArrayCreateMutable(kCFAllocatorDefault,0,nil) else { throw Failure(description:"Cannot allocate own window-ID array") }
+    try require(Set(ids).count == ids.count && !ids.isEmpty && !ids.contains(0),"Invalid capture window IDs")
+    // This API family requires raw CGWindowID slots, not NSNumber object pointers.
+    for id in ids { CFArrayAppendValue(windowArray,UnsafeRawPointer(bitPattern:UInt(id))) }
     while Date() < end {
         try healthy(); let visible = ownWindows(); try require(ids.allSatisfy { id in visible.contains { windowID($0) == id && bounds($0) == expectedBounds[id] } },"Selected capture window disappeared or moved")
         if !ids.allSatisfy({ id in visible.contains { windowID($0) == id && (($0[kCGWindowAlpha as String] as? NSNumber)?.doubleValue ?? 0) >= 0.99 } }) { try pause(0.05); continue }
-        guard let image = CGImage(windowListFromArrayScreenBounds:canvas,windowArray:ids.map { NSNumber(value:$0) } as CFArray,imageOption:[.boundsIgnoreFraming,.bestResolution]) else { throw Failure(description:"WindowServer capture failed") }
+        let descriptions = CGWindowListCreateDescriptionFromArray(windowArray) as? [[String:Any]] ?? [], describedIDs = descriptions.map(windowID)
+        let exact = descriptions.count == ids.count && Set(describedIDs) == Set(ids) && descriptions.allSatisfy { ($0[kCGWindowOwnerPID as String] as? NSNumber)?.int32Value == owner }
+        var checks = report["window_array_checks"] as? [[String:Any]] ?? []
+        checks.append(["capture":name,"elapsed":Date().timeIntervalSince(began),"encoding":"raw CGWindowID pointer slots; CFArray callbacks=nil","requested_ids":ids,"described_ids":describedIDs,"descriptions":descriptions,"own_pid":owner,"exact_ids_and_owner":exact]); report["window_array_checks"] = checks; try save()
+        try require(exact,"Raw CGWindowID array did not round-trip exact IDs and own PID")
+        guard let image = CGImage(windowListFromArrayScreenBounds:canvas,windowArray:windowArray,imageOption:[.boundsIgnoreFraming,.bestResolution]) else { throw Failure(description:"WindowServer capture failed") }
         var rgba = [UInt8](repeating:0,count:image.width*image.height*4)
         let ok = rgba.withUnsafeMutableBytes { b -> Bool in
             guard let c = CGContext(data:b.baseAddress,width:image.width,height:image.height,bitsPerComponent:8,bytesPerRow:image.width*4,space:CGColorSpace(name:CGColorSpace.sRGB)!,bitmapInfo:CGImageAlphaInfo.premultipliedLast.rawValue|CGBitmapInfo.byteOrder32Big.rawValue) else { return false }
