@@ -20,6 +20,7 @@ let originalFront = NSWorkspace.shared.frontmostApplication
 let trusted = AXIsProcessTrusted()
 var environment = ProcessInfo.processInfo.environment
 var commands = [[String: Any]](), cases = [[String: Any]]()
+var ipcPaths = [String]()
 var report: [String: Any] = [
     "source_sha": environment["BERN_SOURCE_SHA"] ?? "unknown",
     "harness_sha": environment["GITHUB_SHA"] ?? "unknown",
@@ -37,6 +38,7 @@ var report: [String: Any] = [
 func now() -> Double { ProcessInfo.processInfo.systemUptime }
 func save() throws {
     report["commands"] = commands; report["cases"] = cases
+    report["ipc_directories"] = ipcPaths
     try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
         .write(to: output.appendingPathComponent("result.json"), options: .atomic)
 }
@@ -186,8 +188,11 @@ do {
         }
     }
     for scenario in ["immediate", "wait", "direct"] {
-        let ipc = output.appendingPathComponent("ipc-" + scenario, isDirectory: true)
+        let ipc = URL(fileURLWithPath: "/tmp/bern-film-\(getpid())-\(scenario)", isDirectory: true)
+        // The transport appends /bern-<16hex>/<14hex>.sock (42 bytes), capped at 100.
+        guard ipc.path.utf8.count + 42 <= 100 else { throw Failure(description: "IPC socket path exceeds transport limit") }
         try fm.createDirectory(at: ipc, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
+        ipcPaths.append(ipc.path); try save()
         environment["BERN_IPC_DIR"] = ipc.path; environment["BERN_APPEARANCE"] = "light"
         environment.removeValue(forKey: "BERN_SNAPSHOT_DIR")
         let p = Process(); p.executableURL = app.appendingPathComponent("Contents/MacOS/Gallery")
@@ -215,7 +220,7 @@ do {
         _ = try cli(["window", "resize", "--window", win, "--width", "920", "--height", "668"], id)
         let pages = try target(id, suffix: ".pages"), details = try target(id, suffix: ".show_details")
         let root = AXUIElementCreateApplication(p.processIdentifier); AXUIElementSetMessagingTimeout(root, 0.04)
-        var entry: [String: Any] = ["scenario": scenario, "pid": p.processIdentifier, "session": id,
+        var entry: [String: Any] = ["scenario": scenario, "pid": p.processIdentifier, "session": id, "ipc_dir": ipc.path,
             "patterns": try stable(p.processIdentifier, name: scenario + "-patterns")]
         if scenario != "direct" {
             _ = try cli(["ui", "set-bool", "--target", details, "--value", "true"], id)
