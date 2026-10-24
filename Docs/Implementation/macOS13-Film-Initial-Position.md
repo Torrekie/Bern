@@ -146,3 +146,5 @@ wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001
 900/920/920的ready宽度均成立，但高度及恢复过程并不恒定；同样900×600已对应三个不同末态。不能从单个ready样本确定原因，仍缺首次窗口恢复/Inspector退出到Film安装期间的native clip/insets/TargetContext观测。13clean在wait/direct的已测几何等效结论保留；immediate、首次Last、加宽、生命周期与物理手势仍未通过。本次没有进行跨组像素/ICC比较。
 
 [源码差异审查](../Evidence/macOS14-film-source-delta-f9-e48/README.md)另列明14仍具有新增Environment属性、共享闭包及Picture结构差异；13-only owner动作不等于14视图/存储无变化。这些是源码事实，并非对本次可变落点的原因认定。远端已清除自有应用、observer/cache及下载目录，未遗留自有进程；本机原始证据只保留一份。
+
+新增[只读时间表](../Evidence/macOS14-film-abba-timeline-40074197486/README.md)确认12场景的首个完整六图walk均与各自末态逐值相同。四次immediate的首完整walk位于select CLI调用起点后约701–990毫秒；此前截断样本不补造几何。close CLI结束距select启动仅0.733–1.873毫秒，但不是Inspector动画结束间隔；select的command.end还包含强制首1秒观测，不能当作动作ack。整个ABBA都未记录native clip/insets或TargetContext，不能把这张时间表当作完整布局轨迹。原始数据的[纯Python离线复算器](../Evidence/macOS14-film-abba-analyzer/README.md)已独立归档，不执行artifact代码、不改变原图。

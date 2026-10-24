@@ -1,0 +1,4046 @@
+{
+  "input_raw": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-film-abba-40074197486/raw",
+  "input_ledger_sha256": "84d8fb444a9a698bbb7e9e1320f35c68619bd41dc149125812cab827f6930c5a",
+  "ledger_entries_verified": 495,
+  "coordinate_contract": "All raw AX frames are screen points. Reference-normalized values subtract final Film PNG origin, not a concurrent early CG measurement.",
+  "command_contract": "select end includes the observer first-second loop; CLI return does not prove application animation/layout completion.",
+  "cases": [
+    {
+      "leg": "A1",
+      "source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "scenario": "immediate",
+      "pid": 1617,
+      "select_cli_start_uptime": 118.47068904166667,
+      "select_marker_uptime": 118.469761125,
+      "close_return_marker_uptime": 118.46975841666668,
+      "startup_deadline_uptime": 126.04981441666668,
+      "startup_samples": [
+        {
+          "uptime": 111.62868891666668,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": []
+        },
+        {
+          "uptime": 111.885658625,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": []
+        },
+        {
+          "uptime": 112.15178691666668,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": null,
+              "lifecycle": "Opening",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 112.36468191666667,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        },
+        {
+          "uptime": 112.56222295833334,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        },
+        {
+          "uptime": 112.88918554166668,
+          "native_bounds": {
+            "Height": 600,
+            "Width": 900,
+            "X": 510,
+            "Y": 210
+          },
+          "native_window_id": 24,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "22bc5a42065100-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 113.984040375,
+            "start_uptime": 113.77481287500001,
+            "status": 0,
+            "stderr": "014-stderr.txt",
+            "stdout": "014-stdout.json"
+          },
+          "start_ms_from_select": -4695.876166666665,
+          "end_ms_from_select": -4486.648666666668,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "Command",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 158.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "inspector_open": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "22bc5a42065100-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "true"
+            ],
+            "end_uptime": 115.83341279166667,
+            "start_uptime": 115.72813558333334,
+            "status": 0,
+            "stderr": "017-stderr.txt",
+            "stdout": "017-stdout.json"
+          },
+          "start_ms_from_select": -2742.553458333333,
+          "end_ms_from_select": -2637.2762499999994,
+          "response": null,
+          "stdout_empty": true
+        },
+        "inspector_close": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "22bc5a42065100-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "false"
+            ],
+            "end_uptime": 118.46955187500001,
+            "start_uptime": 118.36310158333335,
+            "status": 0,
+            "stderr": "018-stderr.txt",
+            "stdout": "018-stdout.json"
+          },
+          "start_ms_from_select": -107.58745833332739,
+          "end_ms_from_select": -1.1371666666661895,
+          "response": null,
+          "stdout_empty": true
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "22bc5a42065100-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 119.55875400000001,
+            "start_uptime": 118.47068904166667,
+            "status": 0,
+            "stderr": "019-stderr.txt",
+            "stdout": "019-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1088.0649583333338,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 118.47124141666667,
+          "end_uptime": 118.85982925,
+          "start_ms_from_select": 0.552374999998051,
+          "end_ms_from_select": 389.1402083333304,
+          "visited": 6,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 118.96598570833333,
+          "end_uptime": 119.086425375,
+          "start_ms_from_select": 495.29666666666117,
+          "end_ms_from_select": 615.7363333333308,
+          "visited": 43,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 119.18437816666668,
+          "end_uptime": 119.30449358333334,
+          "start_ms_from_select": 713.6891250000019,
+          "end_ms_from_select": 833.804541666666,
+          "visited": 149,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 3,
+          "start_uptime": 119.38111383333334,
+          "end_uptime": 119.46063233333334,
+          "start_ms_from_select": 910.4247916666708,
+          "end_ms_from_select": 989.9432916666626,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 3,
+        "start_uptime": 119.38111383333334,
+        "end_uptime": 119.46063233333334,
+        "start_ms_from_select": 910.4247916666708,
+        "end_ms_from_select": 989.9432916666626,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 257,
+            "y": 234
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 527,
+            "y": 234
+          },
+          "Madras": {
+            "height": 138.8969570159912,
+            "width": 246.92792358398447,
+            "x": 793.5360382080078,
+            "y": 231.7051253128052
+          },
+          "Glen": {
+            "height": 144.08606586456298,
+            "width": 256.1530059814454,
+            "x": 1058.9234970092773,
+            "y": 228.64931676864626
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1337,
+            "y": 234
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1607,
+            "y": 234
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 677.0,
+        "glen_width": 256.1530059814454
+      },
+      "settled_walk": {
+        "start_uptime": 120.63680245833334,
+        "end_uptime": 120.70597191666667,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "native_clip_or_swiftui_viewport_observations": 0,
+      "inspector_ax": {
+        "start_uptime": 118.13496958333334,
+        "end_uptime": 118.36176745833335,
+        "truncated": true
+      }
+    },
+    {
+      "leg": "A1",
+      "source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "scenario": "wait",
+      "pid": 1667,
+      "select_cli_start_uptime": 129.04095875000002,
+      "select_marker_uptime": 129.04047391666668,
+      "close_return_marker_uptime": 126.83624754166668,
+      "startup_deadline_uptime": 135.91287775,
+      "startup_samples": [
+        {
+          "uptime": 121.41879420833334,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": []
+        },
+        {
+          "uptime": 121.68665729166668,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 158
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 121.96580125000001,
+          "native_bounds": {
+            "Height": 616,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "native_window_id": 33,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 158
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "93b7417c068300-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 122.68046583333334,
+            "start_uptime": 122.57725520833334,
+            "status": 0,
+            "stderr": "031-stderr.txt",
+            "stdout": "031-stdout.json"
+          },
+          "start_ms_from_select": -6463.703541666675,
+          "end_ms_from_select": -6360.4929166666725,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "System",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 106.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "inspector_open": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "93b7417c068300-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "true"
+            ],
+            "end_uptime": 124.41582062500001,
+            "start_uptime": 124.363515875,
+            "status": 0,
+            "stderr": "034-stderr.txt",
+            "stdout": "034-stdout.json"
+          },
+          "start_ms_from_select": -4677.442875000012,
+          "end_ms_from_select": -4625.138125000007,
+          "response": null,
+          "stdout_empty": true
+        },
+        "inspector_close": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "93b7417c068300-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "false"
+            ],
+            "end_uptime": 126.83608120833334,
+            "start_uptime": 126.73103204166668,
+            "status": 0,
+            "stderr": "035-stderr.txt",
+            "stdout": "035-stdout.json"
+          },
+          "start_ms_from_select": -2309.926708333336,
+          "end_ms_from_select": -2204.877541666676,
+          "response": null,
+          "stdout_empty": true
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "93b7417c068300-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 130.166305375,
+            "start_uptime": 129.04095875000002,
+            "status": 0,
+            "stderr": "036-stderr.txt",
+            "stdout": "036-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1125.3466249999917,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 129.041507875,
+          "end_uptime": 129.20054175,
+          "start_ms_from_select": 0.5491249999920456,
+          "end_ms_from_select": 159.5829999999978,
+          "visited": 7,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 129.30426579166667,
+          "end_uptime": 129.4244216666667,
+          "start_ms_from_select": 263.30704166664987,
+          "end_ms_from_select": 383.462916666673,
+          "visited": 141,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 129.52613120833334,
+          "end_uptime": 129.618683,
+          "start_ms_from_select": 485.1724583333237,
+          "end_ms_from_select": 577.7242499999886,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 3,
+          "start_uptime": 129.71993037500002,
+          "end_uptime": 129.77871233333335,
+          "start_ms_from_select": 678.9716250000026,
+          "end_ms_from_select": 737.7535833333297,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 129.84476495833334,
+          "end_uptime": 129.89781991666666,
+          "start_ms_from_select": 803.8062083333273,
+          "end_ms_from_select": 856.861166666647,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 5,
+          "start_uptime": 130.00012075,
+          "end_uptime": 130.06719629166668,
+          "start_ms_from_select": 959.1619999999921,
+          "end_ms_from_select": 1026.23754166666,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 2,
+        "start_uptime": 129.52613120833334,
+        "end_uptime": 129.618683,
+        "start_ms_from_select": 485.1724583333237,
+        "end_ms_from_select": 577.7242499999886,
+        "visited": 172,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 182
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 182
+          },
+          "Madras": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 181.99043794631962
+          },
+          "Glen": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 172.87910181045527
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 182
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 182
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 158
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 158
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 158
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 158
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 601.0,
+        "glen_width": 267.53478698730476
+      },
+      "settled_walk": {
+        "start_uptime": 130.73744737500002,
+        "end_uptime": 130.79430079166667,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "native_clip_or_swiftui_viewport_observations": 0,
+      "inspector_ax": {
+        "start_uptime": 126.61017229166667,
+        "end_uptime": 126.73043162500001,
+        "truncated": true
+      }
+    },
+    {
+      "leg": "A1",
+      "source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "scenario": "direct",
+      "pid": 1784,
+      "select_cli_start_uptime": 133.78954625,
+      "select_marker_uptime": 133.789159375,
+      "close_return_marker_uptime": null,
+      "startup_deadline_uptime": 145.95975804166667,
+      "startup_samples": [
+        {
+          "uptime": 131.443367,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 106
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 131.70934245833334,
+          "native_bounds": {
+            "Height": 616,
+            "Width": 920,
+            "X": 510,
+            "Y": 106
+          },
+          "native_window_id": 40,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 106
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "c4a3783e06f800-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 132.4006576666667,
+            "start_uptime": 132.30148366666668,
+            "status": 0,
+            "stderr": "047-stderr.txt",
+            "stdout": "047-stdout.json"
+          },
+          "start_ms_from_select": -1488.062583333317,
+          "end_ms_from_select": -1388.888583333312,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "System",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 54.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "c4a3783e06f800-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 134.814786125,
+            "start_uptime": 133.78954625,
+            "status": 0,
+            "stderr": "050-stderr.txt",
+            "stdout": "050-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1025.2398750000111,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 133.79012475000002,
+          "end_uptime": 133.94826741666668,
+          "start_ms_from_select": 0.5785000000173568,
+          "end_ms_from_select": 158.72116666668035,
+          "visited": 1,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 134.041342125,
+          "end_uptime": 134.16168079166667,
+          "start_ms_from_select": 251.7958749999991,
+          "end_ms_from_select": 372.13454166666793,
+          "visited": 10,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 134.21007041666667,
+          "end_uptime": 134.331373125,
+          "start_ms_from_select": 420.5241666666666,
+          "end_ms_from_select": 541.8268749999982,
+          "visited": 34,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 3,
+          "start_uptime": 134.434332625,
+          "end_uptime": 134.55494033333335,
+          "start_ms_from_select": 644.7863749999954,
+          "end_ms_from_select": 765.3940833333479,
+          "visited": 157,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 4,
+          "start_uptime": 134.65750408333335,
+          "end_uptime": 134.71865687500002,
+          "start_ms_from_select": 867.9578333333495,
+          "end_ms_from_select": 929.1106250000212,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 4,
+        "start_uptime": 134.65750408333335,
+        "end_uptime": 134.71865687500002,
+        "start_ms_from_select": 867.9578333333495,
+        "end_ms_from_select": 929.1106250000212,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 130
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 130
+          },
+          "Madras": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 129.99043794631962
+          },
+          "Glen": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 120.87910181045527
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 130
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 130
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 106
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 106
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 106
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 106
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 601.0,
+        "glen_width": 267.53478698730476
+      },
+      "settled_walk": {
+        "start_uptime": 135.45167941666668,
+        "end_uptime": 135.50649454166668,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 54
+      },
+      "native_clip_or_swiftui_viewport_observations": 0
+    },
+    {
+      "leg": "B1",
+      "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "scenario": "immediate",
+      "pid": 1824,
+      "select_cli_start_uptime": 141.801327125,
+      "select_marker_uptime": 141.80083308333334,
+      "close_return_marker_uptime": 141.800829375,
+      "startup_deadline_uptime": 150.88508020833333,
+      "startup_samples": [
+        {
+          "uptime": 136.38289779166666,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": null,
+              "lifecycle": "Opening",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 136.64237545833333,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        },
+        {
+          "uptime": 136.84488679166668,
+          "native_bounds": {
+            "Height": 600,
+            "Width": 900,
+            "X": 510,
+            "Y": 210
+          },
+          "native_window_id": 47,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "19537330072000-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 137.61970845833335,
+            "start_uptime": 137.55293841666668,
+            "status": 0,
+            "stderr": "011-stderr.txt",
+            "stdout": "011-stdout.json"
+          },
+          "start_ms_from_select": -4248.388708333323,
+          "end_ms_from_select": -4181.618666666651,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "Command",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 158.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "inspector_open": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "19537330072000-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "true"
+            ],
+            "end_uptime": 139.34719754166667,
+            "start_uptime": 139.26250950000002,
+            "status": 0,
+            "stderr": "014-stderr.txt",
+            "stdout": "014-stdout.json"
+          },
+          "start_ms_from_select": -2538.8176249999788,
+          "end_ms_from_select": -2454.1295833333265,
+          "response": null,
+          "stdout_empty": true
+        },
+        "inspector_close": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "19537330072000-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "false"
+            ],
+            "end_uptime": 141.80059395833334,
+            "start_uptime": 141.693072,
+            "status": 0,
+            "stderr": "015-stderr.txt",
+            "stdout": "015-stdout.json"
+          },
+          "start_ms_from_select": -108.25512499999945,
+          "end_ms_from_select": -0.7331666666630099,
+          "response": null,
+          "stdout_empty": true
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "19537330072000-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 142.8874015,
+            "start_uptime": 141.801327125,
+            "status": 0,
+            "stderr": "016-stderr.txt",
+            "stdout": "016-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1086.0743750000097,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 141.80275975,
+          "end_uptime": 142.01647,
+          "start_ms_from_select": 1.4326250000067375,
+          "end_ms_from_select": 215.14287499999796,
+          "visited": 7,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 142.071225,
+          "end_uptime": 142.19138766666669,
+          "start_ms_from_select": 269.89787499999807,
+          "end_ms_from_select": 390.0605416666849,
+          "visited": 31,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 142.29181625,
+          "end_uptime": 142.416230375,
+          "start_ms_from_select": 490.4891250000105,
+          "end_ms_from_select": 614.9032499999976,
+          "visited": 113,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 3,
+          "start_uptime": 142.5055756666667,
+          "end_uptime": 142.55523887500001,
+          "start_ms_from_select": 704.2485416666864,
+          "end_ms_from_select": 753.9117500000145,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 142.65344820833334,
+          "end_uptime": 142.69623433333334,
+          "start_ms_from_select": 852.1210833333441,
+          "end_ms_from_select": 894.9072083333363,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 5,
+          "start_uptime": 142.79255666666668,
+          "end_uptime": 142.83633916666668,
+          "start_ms_from_select": 991.2295416666836,
+          "end_ms_from_select": 1035.0120416666755,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 3,
+        "start_uptime": 142.5055756666667,
+        "end_uptime": 142.55523887500001,
+        "start_ms_from_select": 704.2485416666864,
+        "end_ms_from_select": 753.9117500000145,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 145,
+            "y": 234
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 415,
+            "y": 234
+          },
+          "Madras": {
+            "height": 135,
+            "width": 240,
+            "x": 685,
+            "y": 234
+          },
+          "Glen": {
+            "height": 151.19986095428467,
+            "width": 268.7997528076171,
+            "x": 940.6001235961915,
+            "y": 224.46008188247674
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1225,
+            "y": 234
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1495,
+            "y": 234
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 565.0,
+        "glen_width": 268.7997528076171
+      },
+      "settled_walk": {
+        "start_uptime": 143.5459835416667,
+        "end_uptime": 143.59450295833335,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "native_clip_or_swiftui_viewport_observations": 0,
+      "inspector_ax": {
+        "start_uptime": 141.52452645833336,
+        "end_uptime": 141.69181383333336,
+        "truncated": true
+      }
+    },
+    {
+      "leg": "B1",
+      "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "scenario": "wait",
+      "pid": 1983,
+      "select_cli_start_uptime": 150.87153404166668,
+      "select_marker_uptime": 150.8712324166667,
+      "close_return_marker_uptime": 148.68433908333336,
+      "startup_deadline_uptime": 158.68852295833335,
+      "startup_samples": [
+        {
+          "uptime": 144.17722058333334,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 158
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 144.43601258333334,
+          "native_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 106
+          },
+          "native_window_id": 54,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 158
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "ca6a751907bf00-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 145.20131904166666,
+            "start_uptime": 145.09546225,
+            "status": 0,
+            "stderr": "027-stderr.txt",
+            "stdout": "027-stdout.json"
+          },
+          "start_ms_from_select": -5776.071791666681,
+          "end_ms_from_select": -5670.215000000013,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "System",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 106.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "inspector_open": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "ca6a751907bf00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "true"
+            ],
+            "end_uptime": 146.482113875,
+            "start_uptime": 146.37731208333335,
+            "status": 0,
+            "stderr": "030-stderr.txt",
+            "stdout": "030-stdout.json"
+          },
+          "start_ms_from_select": -4494.221958333327,
+          "end_ms_from_select": -4389.420166666668,
+          "response": null,
+          "stdout_empty": true
+        },
+        "inspector_close": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "ca6a751907bf00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "false"
+            ],
+            "end_uptime": 148.68403791666668,
+            "start_uptime": 148.61408887500002,
+            "status": 0,
+            "stderr": "031-stderr.txt",
+            "stdout": "031-stdout.json"
+          },
+          "start_ms_from_select": -2257.4451666666564,
+          "end_ms_from_select": -2187.4961249999956,
+          "response": null,
+          "stdout_empty": true
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "ca6a751907bf00-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 151.993868375,
+            "start_uptime": 150.87153404166668,
+            "status": 0,
+            "stderr": "032-stderr.txt",
+            "stdout": "032-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1122.3343333333275,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 150.871988125,
+          "end_uptime": 150.99761595833334,
+          "start_ms_from_select": 0.4540833333237515,
+          "end_ms_from_select": 126.08191666666357,
+          "visited": 9,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 151.09772495833334,
+          "end_uptime": 151.22696620833335,
+          "start_ms_from_select": 226.1909166666669,
+          "end_ms_from_select": 355.43216666667377,
+          "visited": 108,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 151.31419529166666,
+          "end_uptime": 151.41195979166667,
+          "start_ms_from_select": 442.66124999998624,
+          "end_ms_from_select": 540.4257499999972,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 3,
+          "start_uptime": 151.51860054166667,
+          "end_uptime": 151.57501291666668,
+          "start_ms_from_select": 647.066499999994,
+          "end_ms_from_select": 703.4788750000018,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 151.66632337500002,
+          "end_uptime": 151.71805020833335,
+          "start_ms_from_select": 794.7893333333411,
+          "end_ms_from_select": 846.5161666666745,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 5,
+          "start_uptime": 151.82700254166667,
+          "end_uptime": 151.88255670833334,
+          "start_ms_from_select": 955.468499999995,
+          "end_ms_from_select": 1011.022666666662,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 2,
+        "start_uptime": 151.31419529166666,
+        "end_uptime": 151.41195979166667,
+        "start_ms_from_select": 442.66124999998624,
+        "end_ms_from_select": 540.4257499999972,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 182
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 182
+          },
+          "Madras": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 181.99043794631962
+          },
+          "Glen": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 172.87910181045527
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 182
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 182
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 158
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 158
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 158
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 158
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 601.0,
+        "glen_width": 267.53478698730476
+      },
+      "settled_walk": {
+        "start_uptime": 152.778577625,
+        "end_uptime": 152.83752,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "native_clip_or_swiftui_viewport_observations": 0,
+      "inspector_ax": {
+        "start_uptime": 148.48444416666666,
+        "end_uptime": 148.61325241666668,
+        "truncated": true
+      }
+    },
+    {
+      "leg": "B1",
+      "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "scenario": "direct",
+      "pid": 2146,
+      "select_cli_start_uptime": 156.01121108333334,
+      "select_marker_uptime": 156.01083570833333,
+      "close_return_marker_uptime": null,
+      "startup_deadline_uptime": 167.95346229166668,
+      "startup_samples": [
+        {
+          "uptime": 153.45393800000002,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 106
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 153.706293875,
+          "native_bounds": {
+            "Height": 616,
+            "Width": 920,
+            "X": 510,
+            "Y": 106
+          },
+          "native_window_id": 61,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 106
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "e39286db086200-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 154.40888916666668,
+            "start_uptime": 154.30359804166667,
+            "status": 0,
+            "stderr": "043-stderr.txt",
+            "stdout": "043-stdout.json"
+          },
+          "start_ms_from_select": -1707.6130416666615,
+          "end_ms_from_select": -1602.3219166666536,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "System",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 54.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "e39286db086200-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 157.02925466666667,
+            "start_uptime": 156.01121108333334,
+            "status": 0,
+            "stderr": "046-stderr.txt",
+            "stdout": "046-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1018.0435833333377,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 156.01172608333334,
+          "end_uptime": 156.18244154166666,
+          "start_ms_from_select": 0.5150000000071486,
+          "end_ms_from_select": 171.2304583333264,
+          "visited": 2,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 156.257098125,
+          "end_uptime": 156.44861958333334,
+          "start_ms_from_select": 245.88704166666275,
+          "end_ms_from_select": 437.40850000000364,
+          "visited": 25,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 156.54525891666668,
+          "end_uptime": 156.67081033333335,
+          "start_ms_from_select": 534.0478333333465,
+          "end_ms_from_select": 659.5992500000136,
+          "visited": 113,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 3,
+          "start_uptime": 156.77456329166668,
+          "end_uptime": 156.822192,
+          "start_ms_from_select": 763.3522083333446,
+          "end_ms_from_select": 810.980916666665,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 156.92252487500002,
+          "end_uptime": 156.97094779166667,
+          "start_ms_from_select": 911.3137916666858,
+          "end_ms_from_select": 959.7367083333381,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 3,
+        "start_uptime": 156.77456329166668,
+        "end_uptime": 156.822192,
+        "start_ms_from_select": 763.3522083333446,
+        "end_ms_from_select": 810.980916666665,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 130
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 130
+          },
+          "Madras": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 129.99043794631962
+          },
+          "Glen": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 120.87910181045527
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 130
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 130
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 106
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 106
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 106
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 106
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 601.0,
+        "glen_width": 267.53478698730476
+      },
+      "settled_walk": {
+        "start_uptime": 157.72630975,
+        "end_uptime": 157.78918791666666,
+        "visited": 174,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 54
+      },
+      "native_clip_or_swiftui_viewport_observations": 0
+    },
+    {
+      "leg": "B2",
+      "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "scenario": "immediate",
+      "pid": 2271,
+      "select_cli_start_uptime": 163.88212558333333,
+      "select_marker_uptime": 163.88126820833335,
+      "close_return_marker_uptime": 163.88126175000002,
+      "startup_deadline_uptime": 173.33284333333333,
+      "startup_samples": [
+        {
+          "uptime": 158.82791658333335,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        },
+        {
+          "uptime": 159.08550620833336,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        },
+        {
+          "uptime": 159.36126745833334,
+          "native_bounds": {
+            "Height": 652,
+            "Width": 900,
+            "X": 510,
+            "Y": 158
+          },
+          "native_window_id": 68,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "23570c6d08df00-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 159.95781541666668,
+            "start_uptime": 159.88998733333335,
+            "status": 0,
+            "stderr": "011-stderr.txt",
+            "stdout": "011-stdout.json"
+          },
+          "start_ms_from_select": -3992.1382499999822,
+          "end_ms_from_select": -3924.3101666666576,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "Command",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 158.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "inspector_open": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "23570c6d08df00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "true"
+            ],
+            "end_uptime": 161.45853183333335,
+            "start_uptime": 161.35759325,
+            "status": 0,
+            "stderr": "014-stderr.txt",
+            "stdout": "014-stdout.json"
+          },
+          "start_ms_from_select": -2524.5323333333263,
+          "end_ms_from_select": -2423.593749999981,
+          "response": null,
+          "stdout_empty": true
+        },
+        "inspector_close": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "23570c6d08df00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "false"
+            ],
+            "end_uptime": 163.88096525,
+            "start_uptime": 163.77501125,
+            "status": 0,
+            "stderr": "015-stderr.txt",
+            "stdout": "015-stdout.json"
+          },
+          "start_ms_from_select": -107.1143333333282,
+          "end_ms_from_select": -1.1603333333312094,
+          "response": null,
+          "stdout_empty": true
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "23570c6d08df00-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 164.92367358333334,
+            "start_uptime": 163.88212558333333,
+            "status": 0,
+            "stderr": "016-stderr.txt",
+            "stdout": "016-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1041.548000000006,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 163.88429770833335,
+          "end_uptime": 164.25342929166666,
+          "start_ms_from_select": 2.1721250000155123,
+          "end_ms_from_select": 371.30370833332904,
+          "visited": 3,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 164.35845029166668,
+          "end_uptime": 164.47974816666667,
+          "start_ms_from_select": 476.32470833335105,
+          "end_ms_from_select": 597.6225833333331,
+          "visited": 113,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 164.583078375,
+          "end_uptime": 164.62785025000002,
+          "start_ms_from_select": 700.9527916666798,
+          "end_ms_from_select": 745.724666666689,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 3,
+          "start_uptime": 164.73141170833335,
+          "end_uptime": 164.77208979166667,
+          "start_ms_from_select": 849.2861250000203,
+          "end_ms_from_select": 889.964208333339,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 164.83313020833333,
+          "end_uptime": 164.87704991666666,
+          "start_ms_from_select": 951.0046249999959,
+          "end_ms_from_select": 994.92433333333,
+          "visited": 173,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 2,
+        "start_uptime": 164.583078375,
+        "end_uptime": 164.62785025000002,
+        "start_ms_from_select": 700.9527916666798,
+        "end_ms_from_select": 745.724666666689,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 257,
+            "y": 234
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 527,
+            "y": 234
+          },
+          "Madras": {
+            "height": 138.8969570159912,
+            "width": 246.92792358398447,
+            "x": 793.5360382080078,
+            "y": 231.7051253128052
+          },
+          "Glen": {
+            "height": 144.08606586456298,
+            "width": 256.1530059814454,
+            "x": 1058.9234970092773,
+            "y": 228.64931676864626
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1337,
+            "y": 234
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1607,
+            "y": 234
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 677.0,
+        "glen_width": 256.1530059814454
+      },
+      "settled_walk": {
+        "start_uptime": 166.01746004166668,
+        "end_uptime": 166.0917015,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "native_clip_or_swiftui_viewport_observations": 0,
+      "inspector_ax": {
+        "start_uptime": 163.6504894166667,
+        "end_uptime": 163.77457354166668,
+        "truncated": true
+      }
+    },
+    {
+      "leg": "B2",
+      "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "scenario": "wait",
+      "pid": 2378,
+      "select_cli_start_uptime": 174.16870012500002,
+      "select_marker_uptime": 174.16775783333335,
+      "close_return_marker_uptime": 171.96153445833335,
+      "startup_deadline_uptime": 181.27883791666667,
+      "startup_samples": [
+        {
+          "uptime": 166.7763045,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 158
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 167.04248404166668,
+          "native_bounds": {
+            "Height": 616,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "native_window_id": 75,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 158
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "0ef7ec4f094a00-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 167.7753191666667,
+            "start_uptime": 167.67581758333336,
+            "status": 0,
+            "stderr": "027-stderr.txt",
+            "stdout": "027-stdout.json"
+          },
+          "start_ms_from_select": -6492.88254166666,
+          "end_ms_from_select": -6393.380958333324,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "System",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 106.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "inspector_open": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "0ef7ec4f094a00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "true"
+            ],
+            "end_uptime": 169.54188075000002,
+            "start_uptime": 169.43651466666668,
+            "status": 0,
+            "stderr": "030-stderr.txt",
+            "stdout": "030-stdout.json"
+          },
+          "start_ms_from_select": -4732.185458333333,
+          "end_ms_from_select": -4626.819374999996,
+          "response": null,
+          "stdout_empty": true
+        },
+        "inspector_close": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "0ef7ec4f094a00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "false"
+            ],
+            "end_uptime": 171.95963575000002,
+            "start_uptime": 171.85138545833334,
+            "status": 0,
+            "stderr": "031-stderr.txt",
+            "stdout": "031-stdout.json"
+          },
+          "start_ms_from_select": -2317.3146666666753,
+          "end_ms_from_select": -2209.064374999997,
+          "response": null,
+          "stdout_empty": true
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "0ef7ec4f094a00-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 175.21998970833334,
+            "start_uptime": 174.16870012500002,
+            "status": 0,
+            "stderr": "032-stderr.txt",
+            "stdout": "032-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1051.289583333329,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 174.1697437916667,
+          "end_uptime": 174.37800825000002,
+          "start_ms_from_select": 1.0436666666748806,
+          "end_ms_from_select": 209.30812500000684,
+          "visited": 13,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 174.48165008333334,
+          "end_uptime": 174.66621754166667,
+          "start_ms_from_select": 312.94995833331996,
+          "end_ms_from_select": 497.5174166666534,
+          "visited": 111,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 174.77300966666667,
+          "end_uptime": 174.83407862500002,
+          "start_ms_from_select": 604.3095416666517,
+          "end_ms_from_select": 665.3785000000028,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 3,
+          "start_uptime": 174.93752654166667,
+          "end_uptime": 175.0056465,
+          "start_ms_from_select": 768.8264166666556,
+          "end_ms_from_select": 836.9463749999966,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 175.07889325000002,
+          "end_uptime": 175.12251154166668,
+          "start_ms_from_select": 910.1931250000064,
+          "end_ms_from_select": 953.8114166666674,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 2,
+        "start_uptime": 174.77300966666667,
+        "end_uptime": 174.83407862500002,
+        "start_ms_from_select": 604.3095416666517,
+        "end_ms_from_select": 665.3785000000028,
+        "visited": 172,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 182
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 182
+          },
+          "Madras": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 181.99043794631962
+          },
+          "Glen": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 172.87910181045527
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 182
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 182
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 158
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 158
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 158
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 158
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 601.0,
+        "glen_width": 267.53478698730476
+      },
+      "settled_walk": {
+        "start_uptime": 175.92283316666666,
+        "end_uptime": 175.97167658333333,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "native_clip_or_swiftui_viewport_observations": 0,
+      "inspector_ax": {
+        "start_uptime": 171.72311766666667,
+        "end_uptime": 171.8451547916667,
+        "truncated": true
+      }
+    },
+    {
+      "leg": "B2",
+      "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "scenario": "direct",
+      "pid": 2542,
+      "select_cli_start_uptime": 178.9760916666667,
+      "select_marker_uptime": 178.97574837500002,
+      "close_return_marker_uptime": null,
+      "startup_deadline_uptime": 191.09671379166667,
+      "startup_samples": [
+        {
+          "uptime": 176.57855575000002,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 106
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 176.82943004166668,
+          "native_bounds": {
+            "Height": 616,
+            "Width": 920,
+            "X": 510,
+            "Y": 106
+          },
+          "native_window_id": 82,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 106
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "46ddd54909ee00-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 177.59185720833335,
+            "start_uptime": 177.488935,
+            "status": 0,
+            "stderr": "043-stderr.txt",
+            "stdout": "043-stdout.json"
+          },
+          "start_ms_from_select": -1487.1566666666922,
+          "end_ms_from_select": -1384.2344583333386,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "System",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 54.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "46ddd54909ee00-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 180.02902425000002,
+            "start_uptime": 178.9760916666667,
+            "status": 0,
+            "stderr": "046-stderr.txt",
+            "stdout": "046-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1052.9325833333303,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 178.976585875,
+          "end_uptime": 179.09730416666667,
+          "start_ms_from_select": 0.4942083333219216,
+          "end_ms_from_select": 121.2124999999844,
+          "visited": 4,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 179.20286583333333,
+          "end_uptime": 179.32680933333336,
+          "start_ms_from_select": 226.77416666664385,
+          "end_ms_from_select": 350.71766666666804,
+          "visited": 31,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 179.43391250000002,
+          "end_uptime": 179.54897366666668,
+          "start_ms_from_select": 457.82083333332935,
+          "end_ms_from_select": 572.8819999999928,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 3,
+          "start_uptime": 179.65032266666668,
+          "end_uptime": 179.69061316666668,
+          "start_ms_from_select": 674.2309999999918,
+          "end_ms_from_select": 714.5214999999894,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 179.79204558333333,
+          "end_uptime": 179.84186233333335,
+          "start_ms_from_select": 815.9539166666434,
+          "end_ms_from_select": 865.7706666666627,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 5,
+          "start_uptime": 179.92050983333334,
+          "end_uptime": 179.96128845833334,
+          "start_ms_from_select": 944.4181666666509,
+          "end_ms_from_select": 985.1967916666524,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 2,
+        "start_uptime": 179.43391250000002,
+        "end_uptime": 179.54897366666668,
+        "start_ms_from_select": 457.82083333332935,
+        "end_ms_from_select": 572.8819999999928,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 130
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 130
+          },
+          "Madras": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 129.99043794631962
+          },
+          "Glen": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 120.87910181045527
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 130
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 130
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 106
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 106
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 106
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 106
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 601.0,
+        "glen_width": 267.53478698730476
+      },
+      "settled_walk": {
+        "start_uptime": 180.81925900000002,
+        "end_uptime": 180.87159758333334,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 54
+      },
+      "native_clip_or_swiftui_viewport_observations": 0
+    },
+    {
+      "leg": "A2",
+      "source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "scenario": "immediate",
+      "pid": 2670,
+      "select_cli_start_uptime": 186.86462858333334,
+      "select_marker_uptime": 186.86316270833333,
+      "close_return_marker_uptime": 186.86314933333335,
+      "startup_deadline_uptime": 196.28224183333333,
+      "startup_samples": [
+        {
+          "uptime": 181.768858125,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        },
+        {
+          "uptime": 182.02473,
+          "native_bounds": {
+            "Height": 600,
+            "Width": 900,
+            "X": 510,
+            "Y": 210
+          },
+          "native_window_id": 89,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 600,
+                "width": 900,
+                "x": 510,
+                "y": 210
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "8b8c989a0a6e00-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 182.67259283333334,
+            "start_uptime": 182.626084625,
+            "status": 0,
+            "stderr": "010-stderr.txt",
+            "stdout": "010-stdout.json"
+          },
+          "start_ms_from_select": -4238.543958333338,
+          "end_ms_from_select": -4192.035750000003,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "Command",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 158.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "inspector_open": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "8b8c989a0a6e00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "true"
+            ],
+            "end_uptime": 184.43489866666667,
+            "start_uptime": 184.333485125,
+            "status": 0,
+            "stderr": "013-stderr.txt",
+            "stdout": "013-stdout.json"
+          },
+          "start_ms_from_select": -2531.143458333332,
+          "end_ms_from_select": -2429.7299166666735,
+          "response": null,
+          "stdout_empty": true
+        },
+        "inspector_close": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "8b8c989a0a6e00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "false"
+            ],
+            "end_uptime": 186.86275600000002,
+            "start_uptime": 186.75727933333334,
+            "status": 0,
+            "stderr": "014-stderr.txt",
+            "stdout": "014-stdout.json"
+          },
+          "start_ms_from_select": -107.34924999999862,
+          "end_ms_from_select": -1.8725833333235187,
+          "response": null,
+          "stdout_empty": true
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "8b8c989a0a6e00-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 187.90103075000002,
+            "start_uptime": 186.86462858333334,
+            "status": 0,
+            "stderr": "015-stderr.txt",
+            "stdout": "015-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1036.4021666666758,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 186.86666208333335,
+          "end_uptime": 187.22050970833334,
+          "start_ms_from_select": 2.0335000000102355,
+          "end_ms_from_select": 355.88112499999625,
+          "visited": 2,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 187.325471875,
+          "end_uptime": 187.475174,
+          "start_ms_from_select": 460.84329166666294,
+          "end_ms_from_select": 610.5454166666675,
+          "visited": 109,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 187.58062466666667,
+          "end_uptime": 187.65928675,
+          "start_ms_from_select": 715.996083333323,
+          "end_ms_from_select": 794.6581666666646,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 3,
+          "start_uptime": 187.75553079166667,
+          "end_uptime": 187.79900941666668,
+          "start_ms_from_select": 890.9022083333298,
+          "end_ms_from_select": 934.3808333333357,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 2,
+        "start_uptime": 187.58062466666667,
+        "end_uptime": 187.65928675,
+        "start_ms_from_select": 715.996083333323,
+        "end_ms_from_select": 794.6581666666646,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 242,
+            "y": 234
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 512,
+            "y": 234
+          },
+          "Madras": {
+            "height": 137.58251152038574,
+            "width": 244.59113159179697,
+            "x": 779.7044342041015,
+            "y": 232.47918766021735
+          },
+          "Glen": {
+            "height": 145.76949234008794,
+            "width": 259.1457641601563,
+            "x": 1042.4271179199218,
+            "y": 227.65796562194828
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1322,
+            "y": 234
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1592,
+            "y": 234
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 662.0,
+        "glen_width": 259.1457641601563
+      },
+      "settled_walk": {
+        "start_uptime": 188.806379625,
+        "end_uptime": 188.85289891666667,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 158
+      },
+      "native_clip_or_swiftui_viewport_observations": 0,
+      "inspector_ax": {
+        "start_uptime": 186.63391679166668,
+        "end_uptime": 186.75559941666668,
+        "truncated": true
+      }
+    },
+    {
+      "leg": "A2",
+      "source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "scenario": "wait",
+      "pid": 2799,
+      "select_cli_start_uptime": 196.51848279166668,
+      "select_marker_uptime": 196.51797691666667,
+      "close_return_marker_uptime": 194.35167108333334,
+      "startup_deadline_uptime": 204.01597958333335,
+      "startup_samples": [
+        {
+          "uptime": 189.506274125,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 158
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 189.70395150000002,
+          "native_bounds": {
+            "Height": 616,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "native_window_id": 96,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 158
+              },
+              "lifecycle": "Open",
+              "visibility": "Visible"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "78a2b4540aef00-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 190.48397283333335,
+            "start_uptime": 190.3813240416667,
+            "status": 0,
+            "stderr": "026-stderr.txt",
+            "stdout": "026-stdout.json"
+          },
+          "start_ms_from_select": -6137.158749999998,
+          "end_ms_from_select": -6034.50995833333,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "System",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 106.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "inspector_open": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "78a2b4540aef00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "true"
+            ],
+            "end_uptime": 192.03348075000002,
+            "start_uptime": 191.93183687500002,
+            "status": 0,
+            "stderr": "029-stderr.txt",
+            "stdout": "029-stdout.json"
+          },
+          "start_ms_from_select": -4586.645916666668,
+          "end_ms_from_select": -4485.002041666661,
+          "response": null,
+          "stdout_empty": true
+        },
+        "inspector_close": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "78a2b4540aef00-ui",
+              "ui",
+              "set-bool",
+              "--target",
+              "main_window.show_details",
+              "--value",
+              "false"
+            ],
+            "end_uptime": 194.35154558333335,
+            "start_uptime": 194.2480764166667,
+            "status": 0,
+            "stderr": "030-stderr.txt",
+            "stdout": "030-stdout.json"
+          },
+          "start_ms_from_select": -2270.406374999993,
+          "end_ms_from_select": -2166.9372083333374,
+          "response": null,
+          "stdout_empty": true
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "78a2b4540aef00-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 197.54157966666668,
+            "start_uptime": 196.51848279166668,
+            "status": 0,
+            "stderr": "031-stderr.txt",
+            "stdout": "031-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1023.0968749999931,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 196.51912141666668,
+          "end_uptime": 196.68328891666667,
+          "start_ms_from_select": 0.6386249999934535,
+          "end_ms_from_select": 164.80612499998415,
+          "visited": 8,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 196.78023220833336,
+          "end_uptime": 196.90030225,
+          "start_ms_from_select": 261.7494166666745,
+          "end_ms_from_select": 381.8194583333252,
+          "visited": 127,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 196.989567125,
+          "end_uptime": 197.03574208333333,
+          "start_ms_from_select": 471.084333333323,
+          "end_ms_from_select": 517.2592916666474,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 3,
+          "start_uptime": 197.13053679166669,
+          "end_uptime": 197.1767859166667,
+          "start_ms_from_select": 612.0540000000005,
+          "end_ms_from_select": 658.3031250000033,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 197.23685629166667,
+          "end_uptime": 197.2770132916667,
+          "start_ms_from_select": 718.3734999999842,
+          "end_ms_from_select": 758.5305000000062,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 5,
+          "start_uptime": 197.34890470833335,
+          "end_uptime": 197.389019375,
+          "start_ms_from_select": 830.4219166666655,
+          "end_ms_from_select": 870.536583333319,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 6,
+          "start_uptime": 197.4351151666667,
+          "end_uptime": 197.49889225,
+          "start_ms_from_select": 916.632375000006,
+          "end_ms_from_select": 980.4094583333267,
+          "visited": 172,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 2,
+        "start_uptime": 196.989567125,
+        "end_uptime": 197.03574208333333,
+        "start_ms_from_select": 471.084333333323,
+        "end_ms_from_select": 517.2592916666474,
+        "visited": 172,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 182
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 182
+          },
+          "Madras": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 181.99043794631962
+          },
+          "Glen": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 172.87910181045527
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 182
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 182
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 158
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 158
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 158
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 158
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 601.0,
+        "glen_width": 267.53478698730476
+      },
+      "settled_walk": {
+        "start_uptime": 198.19152108333336,
+        "end_uptime": 198.24778154166668,
+        "visited": 172,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 106
+      },
+      "native_clip_or_swiftui_viewport_observations": 0,
+      "inspector_ax": {
+        "start_uptime": 194.126029375,
+        "end_uptime": 194.24765270833333,
+        "truncated": true
+      }
+    },
+    {
+      "leg": "A2",
+      "source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "scenario": "direct",
+      "pid": 2835,
+      "select_cli_start_uptime": 201.50176508333334,
+      "select_marker_uptime": 201.50133612500002,
+      "close_return_marker_uptime": null,
+      "startup_deadline_uptime": 213.41011125,
+      "startup_samples": [
+        {
+          "uptime": 198.9014894166667,
+          "native_bounds": null,
+          "native_window_id": null,
+          "native_alpha": 0,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 106
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        },
+        {
+          "uptime": 199.17052095833336,
+          "native_bounds": {
+            "Height": 616,
+            "Width": 920,
+            "X": 510,
+            "Y": 106
+          },
+          "native_window_id": 103,
+          "native_alpha": 1,
+          "cli_windows": [
+            {
+              "window": "main#1",
+              "frame": {
+                "height": 616,
+                "width": 920,
+                "x": 510,
+                "y": 106
+              },
+              "lifecycle": "Open",
+              "visibility": "Hidden"
+            }
+          ]
+        }
+      ],
+      "commands": {
+        "resize": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "8acc52ae0b1300-ui",
+              "window",
+              "resize",
+              "--window",
+              "main#1",
+              "--width",
+              "920",
+              "--height",
+              "668"
+            ],
+            "end_uptime": 199.87508516666668,
+            "start_uptime": 199.774766625,
+            "status": 0,
+            "stderr": "042-stderr.txt",
+            "stdout": "042-stdout.json"
+          },
+          "start_ms_from_select": -1726.9984583333269,
+          "end_ms_from_select": -1626.6799166666601,
+          "response": {
+            "actions": [
+              "Activate",
+              "Close",
+              "Minimize",
+              "Maximize",
+              "Move",
+              "Resize"
+            ],
+            "changed_by": "System",
+            "focused": true,
+            "frame": {
+              "height": 668.0,
+              "width": 920.0,
+              "x": 510.0,
+              "y": 54.0
+            },
+            "kind": "main",
+            "lifecycle": "Open",
+            "presentation": "Native",
+            "size": "Normal",
+            "version": 4,
+            "visibility": "Visible",
+            "window": "main#1"
+          },
+          "stdout_empty": false
+        },
+        "select": {
+          "raw": {
+            "arguments": [
+              "--session",
+              "8acc52ae0b1300-ui",
+              "ui",
+              "select",
+              "--target",
+              "main_window.pages",
+              "--option",
+              "Film"
+            ],
+            "end_uptime": 202.50543791666666,
+            "start_uptime": 201.50176508333334,
+            "status": 0,
+            "stderr": "045-stderr.txt",
+            "stdout": "045-stdout.json"
+          },
+          "start_ms_from_select": 0.0,
+          "end_ms_from_select": 1003.6728333333258,
+          "response": null,
+          "stdout_empty": true
+        }
+      },
+      "early_walks": [
+        {
+          "index": 0,
+          "start_uptime": 201.50330350000002,
+          "end_uptime": 201.62532704166668,
+          "start_ms_from_select": 1.5384166666763122,
+          "end_ms_from_select": 123.56195833334027,
+          "visited": 2,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 1,
+          "start_uptime": 201.72723562500002,
+          "end_uptime": 201.85138320833335,
+          "start_ms_from_select": 225.4705416666809,
+          "end_ms_from_select": 349.61812500000633,
+          "visited": 27,
+          "truncated": true,
+          "complete_six_images": false
+        },
+        {
+          "index": 2,
+          "start_uptime": 201.93449783333335,
+          "end_uptime": 202.02903912500003,
+          "start_ms_from_select": 432.73275000001377,
+          "end_ms_from_select": 527.2740416666863,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 3,
+          "start_uptime": 202.13054254166667,
+          "end_uptime": 202.17285195833335,
+          "start_ms_from_select": 628.7774583333317,
+          "end_ms_from_select": 671.0868750000145,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 4,
+          "start_uptime": 202.259299875,
+          "end_uptime": 202.30181704166668,
+          "start_ms_from_select": 757.5347916666715,
+          "end_ms_from_select": 800.0519583333414,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        },
+        {
+          "index": 5,
+          "start_uptime": 202.39874691666668,
+          "end_uptime": 202.43432458333334,
+          "start_ms_from_select": 896.9818333333421,
+          "end_ms_from_select": 932.5594999999964,
+          "visited": 174,
+          "truncated": false,
+          "complete_six_images": true
+        }
+      ],
+      "first_complete_walk": {
+        "index": 2,
+        "start_uptime": 201.93449783333335,
+        "end_uptime": 202.02903912500003,
+        "start_ms_from_select": 432.73275000001377,
+        "end_ms_from_select": 527.2740416666863,
+        "visited": 174,
+        "truncated": false,
+        "complete_six_images": true,
+        "raw_screen_frames": {
+          "Gingham": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 130
+          },
+          "Tartan": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 130
+          },
+          "Madras": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 129.99043794631962
+          },
+          "Glen": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 120.87910181045527
+          },
+          "Houndstooth": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 130
+          },
+          "Windowpane": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 130
+          }
+        },
+        "accessibility_container_frames": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 106
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 106
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 106
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 106
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          }
+        ],
+        "max_frame_difference_to_settled_pt": 0,
+        "glen_center_x_minus_final_window_x": 601.0,
+        "glen_width": 267.53478698730476
+      },
+      "settled_walk": {
+        "start_uptime": 203.0569252916667,
+        "end_uptime": 203.11026945833333,
+        "visited": 174,
+        "truncated": false
+      },
+      "final_png_reference": {
+        "Height": 668,
+        "Width": 920,
+        "X": 510,
+        "Y": 54
+      },
+      "native_clip_or_swiftui_viewport_observations": 0
+    }
+  ]
+}
