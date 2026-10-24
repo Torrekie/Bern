@@ -126,4 +126,4 @@ wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001
 
 该次使用新增startup gate的collector3f434/79da4a84，而旧14参考使用早期版本，因此补了一次[旧f9/current-harness控制run40072273422](../Evidence/macOS14-film-f9-current-harness-40072273422/README.md)。同一当前collector与harness25e下，旧f9的immediate仍为Glen565.0，三组全部6图的frame都与其旧observer记录逐值相同；wait/direct也与e48/current14一致。故startup gate变化单独不足以解释已观测677，但每个跨源码/构建/作业序列只有一次，尚不能给具体补丁或原生机制定因。
 
-两次current14的immediate均900×652首开，再由CLI改为920×668；wait/direct先恢复目标尺寸。首个完整AX只出现在Film选择后约.498/.873秒，均已见709/240，前段截断，不能补造当时viewport/insets。13clean的601相对旧14immediate差35/36pt，相对本次e48/14差−76pt，应保留各自证据身份。下一小步是同一14 VM内、独立bundle恢复历史、同observer的有界A/B/B/A配对，先验证差异可重复性；不设补偿常数，不提前改default/nearest或移植到11。
+两次current14的后续resize记录均从900宽改为920×668，但启动ready采样时e48的CG外框为900×652、f9为900×600；两者wait的ready均920×616、direct均920×668。不能把不同阶段简化成完全相同的首开高度或恢复历史。首个完整AX只出现在Film选择后约.498/.873秒，均已见709/240，前段截断，不能补造当时viewport/insets。13clean的601相对旧14immediate差35/36pt，相对本次e48/14差−76pt，应保留各自证据身份。下一小步是同一14 VM内、独立bundle恢复历史、同observer的有界A/B/B/A配对，先验证差异可重复性；不设补偿常数，不提前改default/nearest或移植到11。
