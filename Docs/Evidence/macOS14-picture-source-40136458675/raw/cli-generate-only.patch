@@ -1,0 +1,15 @@
+--- a/crates/bern-cli/src/main.rs
++++ b/crates/bern-cli/src/main.rs
+@@ -914,6 +914,12 @@
+             files.len(),
+             context.output_dir.display()
+         );
++        if std::env::var_os("BERN_DIAGNOSTIC_GENERATE_ONLY").as_deref()
++            == Some(std::ffi::OsStr::new("1"))
++        {
++            eprintln!("BERN_DIAGNOSTIC_GENERATE_ONLY: generated files written; skipped target.plan and product build");
++            return ExitCode::SUCCESS;
++        }
+         let plan = match target.plan(&app, &context) {
+             Ok(plan) => plan,
+             Err(errors) => {

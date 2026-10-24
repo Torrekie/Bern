@@ -1,0 +1,89 @@
+{
+  "BernApp.swift": {
+    "exists": false,
+    "reason": "not a generated file in exact 9dd target; BernApplication is inside BernGenerated.swift"
+  },
+  "build": {
+    "app_bundle": "Showcase.app",
+    "architecture": "arm64",
+    "channels": [
+      "ipc"
+    ],
+    "color_source": "native",
+    "engine_deployment": "in-process",
+    "generator": "bern-backend-swiftui",
+    "generator_version": "0.1.0",
+    "ir_version": 8,
+    "languages": [
+      "zh-Hans",
+      "en"
+    ],
+    "media": {
+      "backend": "avfoundation",
+      "backend_version": "1",
+      "contract": 1,
+      "players": [
+        "preview"
+      ],
+      "presenter": "avplayerview",
+      "presenter_version": "1"
+    },
+    "minimum_macos": "13.0",
+    "platform": "macos",
+    "profile": "release",
+    "protocol": "showcase",
+    "protocol_fingerprint": "2490f5e67cff9fac",
+    "resources": [
+      "images/bern.png",
+      "images/hdr-gainmap.jpg",
+      "images/hdr-pq.png",
+      "images/landscape.jpg",
+      "media/aurora.mp4",
+      "media/broken.mp4",
+      "media/tides.mp4"
+    ],
+    "target": "swiftui-modern-macos",
+    "ui": "swiftui-modern",
+    "ui_bridge": "c-abi"
+  },
+  "cargo_exit_code": 0,
+  "generate_only_marker_count": 1,
+  "generated": {
+    "bytes": 95129,
+    "layout_page": {
+      "component_comment": "/// Generated from the `layout_page` component.",
+      "end_line_inclusive": 1409,
+      "range_policy": "component comment through before next component comment",
+      "slice_sha256": "e1479772ed383a7e1bd3b4fbf4749146b5601806194c217c797b7cd072527e87",
+      "start_line": 1268
+    },
+    "path": "BernGenerated.swift",
+    "sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083"
+  },
+  "generated_after": {
+    "Sources/BernApp.swift": {
+      "exists": false
+    },
+    "Sources/BernGenerated.swift": {
+      "bytes": 95129,
+      "exists": true,
+      "sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083"
+    },
+    "build.json": {
+      "bytes": 921,
+      "exists": true,
+      "sha256": "e7e12bc06672384c3d75e7b6e669b687c004d97a769e479f9592ce2de5c2bff5"
+    }
+  },
+  "log": {
+    "full_bytes": 2720,
+    "full_sha256": "47209ab6115c409f98311af5c306a237911957fa715ed02833e145c295503aa4",
+    "truncated": false
+  },
+  "product_compile_attempted_by_this_driver": false,
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "success": true,
+  "tracked_diff_paths": [
+    "crates/bern-cli/src/main.rs"
+  ]
+}

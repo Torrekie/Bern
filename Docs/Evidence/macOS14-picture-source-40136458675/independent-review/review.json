@@ -1,0 +1,252 @@
+{
+  "kind": "independent_source_generation_evidence_review",
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "source_tree": "89a5cda2ae6e47b9f1228abde0ec493b617f6a2a",
+  "harness_sha": "213b515df0834d73778fe49cd4ad7dcf97d59686",
+  "ci_run": 40136458675,
+  "status": "pass_bounded_source_generation_evidence",
+  "original_manifest_sha256": "3e99953bce2efa2ceeb9d0633b8961da903ac5c8491ef897d26b577c2add71b3",
+  "manifest_entries": [
+    {
+      "file": "BernGenerated.swift",
+      "bytes": 95129,
+      "sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083"
+    },
+    {
+      "file": "after.json",
+      "bytes": 2482,
+      "sha256": "dd8571b1d091ccad96862e8a12958193eac2eaec3a9af709782fa3179965eb18"
+    },
+    {
+      "file": "before.json",
+      "bytes": 10608,
+      "sha256": "db608bf45b8a5380958f0ae561b1eed2dc027feec1c1c2f96dc16b4d5fe2d6eb"
+    },
+    {
+      "file": "cli-generate-only.patch",
+      "bytes": 589,
+      "sha256": "f25bc60e74eca8add62454d862ace0261dc2291deaec9cb2b0a1b8bcb0d5a92e"
+    },
+    {
+      "file": "environment.txt",
+      "bytes": 533,
+      "sha256": "8818a3f6c5fc25bd57465890bb94242d5d51a5c483784b70405b116440141a77"
+    },
+    {
+      "file": "generate.exit-code.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "file": "generate.log",
+      "bytes": 2720,
+      "sha256": "47209ab6115c409f98311af5c306a237911957fa715ed02833e145c295503aa4"
+    }
+  ],
+  "selected_inputs": {
+    "count": 55,
+    "all_match_git_9dd_bytes_and_sha": true,
+    "paths": [
+      "Cargo.lock",
+      "Cargo.toml",
+      "crates/bern-backend-swiftui/Cargo.toml",
+      "crates/bern-backend-swiftui/src/glue.rs",
+      "crates/bern-backend-swiftui/src/lib.rs",
+      "crates/bern-backend-swiftui/src/names.rs",
+      "crates/bern-backend-swiftui/src/resources.rs",
+      "crates/bern-backend-swiftui/src/style.rs",
+      "crates/bern-backend-swiftui/src/swift/app.rs",
+      "crates/bern-backend-swiftui/src/swift/content.rs",
+      "crates/bern-backend-swiftui/src/swift/controls.rs",
+      "crates/bern-backend-swiftui/src/swift/drawing.rs",
+      "crates/bern-backend-swiftui/src/swift/expr.rs",
+      "crates/bern-backend-swiftui/src/swift/layout.rs",
+      "crates/bern-backend-swiftui/src/swift/mod.rs",
+      "crates/bern-backend-swiftui/src/swift/motion.rs",
+      "crates/bern-backend-swiftui/src/swift/navigation.rs",
+      "crates/bern-backend-swiftui/src/swift/toolbar.rs",
+      "crates/bern-backend-swiftui/src/swift/values.rs",
+      "crates/bern-backend-swiftui/src/swift/windows.rs",
+      "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "crates/bern-backend-swiftui/templates/BernCompatibility.swift",
+      "crates/bern-backend-swiftui/templates/BernMedia.swift",
+      "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "crates/bern-backend-swiftui/templates/BernSvg.swift",
+      "crates/bern-backend-swiftui/templates/bern.h",
+      "crates/bern-cli/Cargo.toml",
+      "crates/bern-cli/src/main.rs",
+      "examples/showcase/Bern.toml",
+      "examples/showcase/images/bern.png",
+      "examples/showcase/images/hdr-gainmap.jpg",
+      "examples/showcase/images/hdr-pq.png",
+      "examples/showcase/images/landscape.jpg",
+      "examples/showcase/images/make-images.sh",
+      "examples/showcase/media/aurora.mp4",
+      "examples/showcase/media/broken.mp4",
+      "examples/showcase/media/live/live.m3u8",
+      "examples/showcase/media/live/segment0.ts",
+      "examples/showcase/media/live/segment1.ts",
+      "examples/showcase/media/live/segment2.ts",
+      "examples/showcase/media/make-media.sh",
+      "examples/showcase/media/tides.mp4",
+      "examples/showcase/showcase-core/Cargo.toml",
+      "examples/showcase/showcase-core/src/lib.rs",
+      "examples/showcase/showcase-protocol/Cargo.toml",
+      "examples/showcase/showcase-protocol/src/lib.rs",
+      "examples/showcase/showcase-ui/Cargo.toml",
+      "examples/showcase/showcase-ui/src/lib.rs",
+      "examples/showcase/showcase-ui/src/media.rs",
+      "examples/showcase/showcase-ui/src/pages.rs",
+      "examples/showcase/showcase-ui/src/settings.rs",
+      "examples/showcase/showcase-widgets/Bern.toml",
+      "examples/showcase/showcase-widgets/Cargo.toml",
+      "examples/showcase/showcase-widgets/src/lib.rs"
+    ]
+  },
+  "cli": {
+    "before_sha256": "63af68fa7f763b118ca34ed432b0f1b9fdfa2b3190582ebde747135303d0fa64",
+    "reconstructed_after_sha256": "5a05a83bf51900641e88f0502d6acd39e6446c62427324a4542af55d23ff8233",
+    "single_unified_hunk": true,
+    "canonical_hook_exact": true,
+    "only_added_lines": 6,
+    "write_loop_precedes_stop": true
+  },
+  "harness": {
+    "helper_sha256": "e4f7bc61dce0241c53858d8c0f28250f13fa6bcac3c4c13759985ebb3b80df2e",
+    "workflow_sha256": "cad33c10a896d3d405717550c5bec2a31230bf77eeaf0f40c4f7cf2756a254ed",
+    "checked_from_exact_harness_commit": true,
+    "cache_restore_only": true,
+    "realpath_guarded_output_reset_before_generate": true,
+    "both_product_executable_absence_guards_before_export": true
+  },
+  "actual_generation": {
+    "original_cache_contained_same_source_sha": true,
+    "log_generated_count": 20,
+    "log_changed_count": 20,
+    "log_components": 11,
+    "log_windows": 2,
+    "rc": 0,
+    "marker_count": 1,
+    "log_sha256": "47209ab6115c409f98311af5c306a237911957fa715ed02833e145c295503aa4",
+    "log_untruncated": true,
+    "source_bytes": 95129,
+    "source_sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083",
+    "source_after_metadata_exact": true,
+    "no_product_build_plan_evidence": true
+  },
+  "source_shape": {
+    "layout_start_line": 1268,
+    "layout_end_line": 1409,
+    "shape_markers": [
+      {
+        "name": "real_app",
+        "first_line": 1848
+      },
+      {
+        "name": "main_scene",
+        "first_line": 1860
+      },
+      {
+        "name": "main_root",
+        "first_line": 1776
+      },
+      {
+        "name": "split_view",
+        "first_line": 850
+      },
+      {
+        "name": "selected_layout",
+        "first_line": 883
+      },
+      {
+        "name": "layout_form",
+        "first_line": 1270
+      },
+      {
+        "name": "first_grid",
+        "first_line": 1280
+      },
+      {
+        "name": "hdr_grid",
+        "first_line": 1314
+      },
+      {
+        "name": "main_context",
+        "first_line": 1768
+      },
+      {
+        "name": "engine_environment",
+        "first_line": 1862
+      },
+      {
+        "name": "default_size",
+        "first_line": 1864
+      },
+      {
+        "name": "content_resizability",
+        "first_line": 1865
+      },
+      {
+        "name": "settings_scene",
+        "first_line": 1866
+      }
+    ],
+    "grouped_form": true,
+    "five_existing_form_row_modifiers": true,
+    "literal_first_four_columns": true,
+    "three_120x90_and_two_hdr192x108": true,
+    "BernApp_swift_absent": true
+  },
+  "limits": [
+    "No local regeneration/compile/UI/CI/download was performed.",
+    "Remote product-executable absence is inferred from the audited passed collect guards; remote filesystem was not separately retained.",
+    "Input metadata covers selected55 paths plus exact source tree, not every dependency/environment input.",
+    "Same generated source hash is not binary or UI equivalence."
+  ],
+  "job_log": {
+    "path": "work/picture-source-export-run/generate-job.log",
+    "bytes": 30695,
+    "sha256": "99b5ee93f47a7c22391a85ec3634aca630a43121c0fbf72c4f95c26220f4dcbf",
+    "job_id": 120998905656,
+    "harness_checkout_lines": [
+      100,
+      114
+    ],
+    "source_checkout_lines": [
+      191,
+      204
+    ],
+    "cache_restore_lines": [
+      251,
+      273
+    ],
+    "prepare_lines": [
+      274,
+      284
+    ],
+    "generate_env_and_command_lines": [
+      285,
+      298
+    ],
+    "collect_lines": [
+      299,
+      309
+    ],
+    "upload_lines": [
+      324,
+      340
+    ],
+    "chain_order_confirmed": true,
+    "artifact_file_count": 8,
+    "artifact_id": 12576963498,
+    "artifact_zip_sha256_from_upload_log": "d56f9c9a3b447e44d4ab59034cb716f007fcf642c29ba444071a67862cb7eed2",
+    "artifact_zip_locally_rehashed_by_this_review": false
+  },
+  "cleanup_recommendation": {
+    "path": "work/picture-source-export-preparation",
+    "action": "root may remove after actual evidence/archive handoff",
+    "deleted_by_this_review": false,
+    "reason": "superseded private draft; formal committed helper/workflow and actual raw export remain authoritative"
+  }
+}

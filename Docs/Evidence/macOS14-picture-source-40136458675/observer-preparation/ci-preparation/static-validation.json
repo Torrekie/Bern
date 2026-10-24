@@ -1,0 +1,60 @@
+{
+  "kind": "private_draft_static_check",
+  "status": "ready_for_root_review_not_frozen",
+  "workflow_sha256": "29382ffea9dda304ef4eaa00332c6947c6570e9bff57fbd52a0e7cf4eb67d879",
+  "yaml_parsed": true,
+  "bash_blocks": [
+    {
+      "job": "build",
+      "step": "Record exact source and compiler",
+      "bash_n": true
+    },
+    {
+      "job": "build",
+      "step": "Prepare the sole diagnostic generation hook",
+      "bash_n": true
+    },
+    {
+      "job": "build",
+      "step": "Generate, patch, and continue the original product build plan",
+      "bash_n": true
+    },
+    {
+      "job": "build",
+      "step": "Collect exact source and hook metadata including partial failures",
+      "bash_n": true
+    },
+    {
+      "job": "build",
+      "step": "Verify min13 and strict signatures and retain the reusable product",
+      "bash_n": true
+    },
+    {
+      "job": "capture",
+      "step": "Create a fresh capture evidence directory",
+      "bash_n": true
+    },
+    {
+      "job": "capture",
+      "step": "Verify that exact product without rebuilding",
+      "bash_n": true
+    },
+    {
+      "job": "capture",
+      "step": "Restore the original normal reference appearance",
+      "bash_n": true
+    },
+    {
+      "job": "capture",
+      "step": "Capture the original complete route with bounded observer events",
+      "bash_n": true
+    }
+  ],
+  "no_cache_save": true,
+  "prepare_and_cargo_absolute_driver_evidence_env": true,
+  "full_build_log_excluded": true,
+  "compile_attempted": false,
+  "ui_attempted": false,
+  "dispatch_attempted": false,
+  "repo_or_index_modified": false
+}
