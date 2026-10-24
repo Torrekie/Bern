@@ -1,0 +1,11 @@
+# Native HDR color calibration on macOS14, normal profile
+
+Run40062048900 uses the exact SDK26.5 ARM64/min13 binary from build39987622874 that already ran on actual13. `runtime14/profile.json` independently records reduce motion, reduce transparency and increased contrast all false before this run. `validation.json` compares both native paths against the retained13 atlas evidence. This is native SwiftUI Image on13 versus Image.allowedDynamicRange(.high) on14, not Bern product mapper acceptance.
+
+On actual14 current/potential headroom1/1, namedPQ and the custom CICP9/16/0/1 ICC both resolve to named BT.2100 PQ and produce exactly identical native image RGB pixels before/after ICC normalization. Ten patches and the gray ramp agree between those two paths. On13 the custom ICC is not recognized by those HDR flags and gives different output. Actual13 namedPQ versus14 namedPQ still differs in color (10patch mean absolute channel difference1.293673/255, maximum26.514595); virtual14 is1x, physical13 is2x with another ICC/display. These measurements do not isolate OS as a single cause or establish a unique tone mapper.
+
+`existing13-vs-native14.json` reuses saved patch means only:13 NSImageView equals13 native SwiftUI, and is closer to14 on these samples than the existing e06 product Standard helper, but still differs. No product change or new13 UI run was made for that comparison.
+
+The earlier run40061839104 is retained under `profile-unrecorded-40061839104`; its appearance flags were not recorded. Its atlas patch/ramp numbers agree with the normal run, while the whole-window PNGs differ. `prior-run-comparison.json` records the exact comparison. `png-manifest.json` hashes every original PNG filename before replacing only byte-identical copies with relative symlinks. The normal screenshot, distinct prior screenshot and shared source atlas each retain one original byte stream. Reports, environments, build hashes and raw original file hashes remain separate per run. Old work paths are symlinks here.
+
+Only current headroom1 was observed; no HLG, arbitrary metadata, alpha/EXIF, physical brightness or product Standard/High equality is established. Raw screenshot values are encoded display output, not linear EDR or measured nits. Acceptance and top-level references were not edited.

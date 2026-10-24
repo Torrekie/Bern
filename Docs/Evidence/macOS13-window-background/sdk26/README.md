@@ -1,0 +1,5 @@
+# Same SDK26.5 public background probe on actual13
+
+Build40061827350 produced ARM64/min13 WindowBackgroundProbe, SHA25697370fa13ee1f117797604ec4cfa63086c017c93a520051cb39c93da19d21de2. This first public-script local13 run completed five groups in5.130342seconds. The one manually-created Aqua window remained inactive/nonkey with foreground PID1390 unchanged and activation_calls0. Original raw five PNGs/report and packaged source are retained. This is not the older SDK14.2 fixture run in the parent directory.
+
+All five fixed40x40point ROI statistics exactly reproduce the older13 run: explicit NSView/Color/Canvas/filled-detail mode236gray, transparent split-detail240,236,237. Four whole PNGs are byte-identical across those runs; SwiftUI Color differs outside the fixed ROI. `validation13-sdk.json` retains those comparisons and limits: source metadata/deadlines also changed, so this is not an isolated SDK-only causal test. Full Gallery, active/dark appearance and14 fullfive-group parity are outside this evidence. The old work runtime13 path is a symlink here; build executable/tar remain in work for root-managed cleanup after all runs.

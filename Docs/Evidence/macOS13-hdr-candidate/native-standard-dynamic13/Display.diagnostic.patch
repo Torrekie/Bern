@@ -1,0 +1,35 @@
+--- prototype/Display.swift
++++ work/Display.swift
+@@ -5,6 +5,7 @@
+ @MainActor var prototypeStage = "standard-initial"
+ @MainActor var osEvents: [[String:Any]] = []
+ @MainActor var textureSamples: [[String:Any]] = []
++@MainActor var submissionEvents: [[String:Any]] = []
+ 
+ @MainActor final class ToneView: MTKView {
+     let fixture: PQFixture
+@@ -62,7 +63,15 @@
+             pixels = fixture.image(headroom:effective)
+             mappedHeadroom = effective
+         }
+-        guard let pixels,let drawable=currentDrawable,let command=commands.makeCommandBuffer() else{return}
++        let submission=draws,stage=prototypeStage
++        submissionEvents.append(["event":"draw-enter","uptime":ProcessInfo.processInfo.systemUptime,"submission":submission,"stage":stage,"current":headroom,"potential":potential,"requested":requested,"visible_rect":[visibleRect.minX,visibleRect.minY,visibleRect.width,visibleRect.height],"drawable_size":[drawableSize.width,drawableSize.height]])
++        guard let pixels else {submissionEvents.append(["event":"pixels-nil","submission":submission,"stage":stage]);return}
++        guard let drawable=currentDrawable else {submissionEvents.append(["event":"drawable-nil","submission":submission,"stage":stage]);return}
++        guard let command=commands.makeCommandBuffer() else {submissionEvents.append(["event":"command-buffer-nil","submission":submission,"stage":stage]);return}
++        command.addCompletedHandler { completed in
++            let status=completed.status.rawValue,error=completed.error?.localizedDescription ?? "none"
++            DispatchQueue.main.async {submissionEvents.append(["event":"gpu-completed","uptime":ProcessInfo.processInfo.systemUptime,"submission":submission,"stage":stage,"status":status,"error":error])}
++        }
+         let input = CIImage(cgImage:pixels)
+         let scale = CGAffineTransform(scaleX:CGFloat(drawable.texture.width)/CGFloat(fixture.width),y:CGFloat(drawable.texture.height)/CGFloat(fixture.height))
+         let image = input.transformed(by:scale)
+@@ -83,6 +92,7 @@
+             }
+         }
+         command.present(drawable);command.commit()
++        submissionEvents.append(["event":"committed-present","uptime":ProcessInfo.processInfo.systemUptime,"submission":submission,"stage":stage])
+     }
+     func stop() {NotificationCenter.default.removeObserver(self);(layer as! CAMetalLayer).wantsExtendedDynamicRangeContent=false;pixels=nil;releaseDrawables()}
+ }

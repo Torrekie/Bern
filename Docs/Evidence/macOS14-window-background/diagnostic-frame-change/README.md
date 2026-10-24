@@ -1,0 +1,3 @@
+# Background14 exterior-frame diagnostic
+
+Diagnostic run40062915620 retains the original per-install/per-shot observations. The sole failed condition is window_frame_unchanged on split-transparent. The exterior changed from(x100,y100,800x548) to(x100,y113,800x572), while content bounds and contentLayoutRect stayed800x520. It remained visible, nonkey, inactive and onscreen; foreground336 was unchanged and no capture was attempted after the failed frame guard. This is native window toolbar/titlebar exterior behavior, not evidence of content dimensions becoming uncontrolled. It completed only the first three paths, not the fullfive-group sequence. Root manages the later contract and next same-binary13/14 run; this archive applies no layout repair or toolbar disabling.

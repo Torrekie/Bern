@@ -1,0 +1,776 @@
+{
+  "binary_provenance": {
+    "build_run": 39987622874,
+    "manifest": {
+      "HDRToneProbe": "7c5ee0c59293b713ae953192731a705744d1ac99383d7bfc02c6eeddea0bc6b5",
+      "hdr-pq.png": "96f80d2f1c06070dac29e3b7e2924a6aed8e54286bc73921f62cf75420a599ed",
+      "hdr-tone-probe.swift": "44b1fb981b857a9807b9d696c12ceae4ff2b2c5b4ff4ec6971f93f8ef7e3b64c"
+    },
+    "runtime_artifact": {
+      "archive_download_url": "https://api.github.com/repos/Torrekie/Bern/actions/artifacts/12547971108/zip",
+      "created_at": "2026-10-24T04:19:00Z",
+      "digest": "sha256:1a406dfc36c90e3f07d27583ba2e0e9b5ac679ffed87f45fd3a832ebdfad2304",
+      "expired": false,
+      "expires_at": "2026-10-27T04:18:59Z",
+      "id": 12547971108,
+      "name": "macos14-hdr-exact-runtime",
+      "node_id": "MDg6QXJ0aWZhY3QxMjU0Nzk3MTEwOA==",
+      "size_in_bytes": 64724,
+      "updated_at": "2026-10-24T04:19:00Z",
+      "url": "https://api.github.com/repos/Torrekie/Bern/actions/artifacts/12547971108",
+      "workflow_run": {
+        "head_branch": "master",
+        "head_repository_id": 1430931787,
+        "head_sha": "9ff20becf678957f3f4b9765bb9cabac29e13cc6",
+        "id": 40061839104,
+        "repository_id": 1430931787
+      }
+    },
+    "runtime_run": {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T04:18:45Z",
+      "databaseId": 40061839104,
+      "headSha": "9ff20becf678957f3f4b9765bb9cabac29e13cc6",
+      "status": "completed",
+      "updatedAt": "2026-10-24T04:19:04Z",
+      "url": "https://github.com/Torrekie/Bern/actions/runs/40061839104"
+    },
+    "same_build_manifest": true
+  },
+  "capture_validation": {
+    "13": {
+      "all_inactive_nonkey": true,
+      "all_png_bytes_equal": true,
+      "capture_pixels": [
+        1392,
+        576
+      ],
+      "capture_profile": {
+        "cicp_hex": "absent",
+        "icc_available": true,
+        "icc_bytes": 4032,
+        "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+        "is_pq": false,
+        "name": "unnamed",
+        "uses_2100": false
+      },
+      "current_headroom": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "elapsed_seconds": 4.669983983039856,
+      "four_canonical_buffers_equal": true,
+      "frontmost_after": 75891,
+      "frontmost_before": 75891,
+      "image_geometry": {
+        "ffb-icc": {
+          "height": 360,
+          "width": 640,
+          "x": 720,
+          "y": 170
+        },
+        "named-pq": {
+          "height": 360,
+          "width": 640,
+          "x": 32,
+          "y": 170
+        }
+      },
+      "native_allowed_dynamic_range_high": false,
+      "os": "Version 13.7.8 (Build 22H730)",
+      "potential_headroom": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "screen_points": {
+        "height": 900,
+        "width": 1440,
+        "x": 0,
+        "y": 0
+      },
+      "system_preferences": "not recorded by this unchanged probe"
+    },
+    "14": {
+      "all_inactive_nonkey": true,
+      "all_png_bytes_equal": true,
+      "capture_pixels": [
+        696,
+        288
+      ],
+      "capture_profile": {
+        "cicp_hex": "absent",
+        "icc_available": true,
+        "icc_bytes": 3300,
+        "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+        "is_pq": false,
+        "name": "unnamed",
+        "uses_2100": false
+      },
+      "current_headroom": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "elapsed_seconds": 5.00081193447113,
+      "four_canonical_buffers_equal": true,
+      "frontmost_after": 317,
+      "frontmost_before": 317,
+      "image_geometry": {
+        "ffb-icc": {
+          "height": 180,
+          "width": 320,
+          "x": 360,
+          "y": 85
+        },
+        "named-pq": {
+          "height": 180,
+          "width": 320,
+          "x": 16,
+          "y": 85
+        }
+      },
+      "native_allowed_dynamic_range_high": true,
+      "os": "Version 14.8.9 (Build 23J631)",
+      "potential_headroom": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "screen_points": {
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "system_preferences": "not recorded by this unchanged probe"
+    }
+  },
+  "comparisons": {
+    "13/ffb-icc minus 14/ffb-icc": {
+      "patch_mean_rgb_delta": {
+        "blue812": [
+          0.134615,
+          0.127747,
+          0.0
+        ],
+        "cool812": [
+          135.892256,
+          -0.101477,
+          -0.11487
+        ],
+        "green812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pastel812": [
+          -0.107744,
+          7.898523,
+          53.88513
+        ],
+        "red812": [
+          0.0,
+          0.0,
+          16.964372
+        ],
+        "warm406": [
+          -0.107744,
+          43.898523,
+          105.88513
+        ],
+        "warm812": [
+          -0.107744,
+          26.898523,
+          95.88513
+        ],
+        "white203": [
+          25.891913,
+          25.897064,
+          25.883413
+        ],
+        "white812": [
+          -0.108087,
+          -0.102936,
+          -0.116587
+        ],
+        "yellow812": [
+          -0.107744,
+          -0.101477,
+          0.0
+        ]
+      },
+      "patch_mean_rgb_mae_codes": 18.873958333333334,
+      "patch_mean_rgb_max_absolute_delta_codes": 135.8922561813187,
+      "ramp_column_rgb_mae_codes": 15.317912710970466,
+      "ramp_column_rgb_max_absolute_delta_codes": 68.5,
+      "ramp_common_column_count": 316,
+      "ramp_input_column_counts": [
+        632,
+        316
+      ],
+      "ramp_method": "Aggregate adjacent native column means into common source intervals; no image resizing/interpolation/phase fit. Cross-OS 13 has2x output pixels while14 has1x.",
+      "whole_image_normalized_pixels_exactly_equal": null,
+      "whole_image_raw_profile_pixels_exactly_equal": null
+    },
+    "13/named-pq minus 13/ffb-icc": {
+      "patch_mean_rgb_delta": {
+        "blue812": [
+          0.001803,
+          0.000515,
+          0.0
+        ],
+        "cool812": [
+          -162.406851,
+          0.101477,
+          0.11487
+        ],
+        "green812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pastel812": [
+          0.107744,
+          -9.714715,
+          -53.953211
+        ],
+        "red812": [
+          0.0,
+          0.0,
+          -16.964372
+        ],
+        "warm406": [
+          0.107744,
+          -46.203554,
+          -104.96669
+        ],
+        "warm812": [
+          0.107744,
+          -31.839028,
+          -94.711882
+        ],
+        "white203": [
+          -25.962397,
+          -25.962655,
+          -25.966346
+        ],
+        "white812": [
+          0.000429,
+          0.002146,
+          -0.058723
+        ],
+        "yellow812": [
+          0.000343,
+          0.002232,
+          0.0
+        ]
+      },
+      "patch_mean_rgb_mae_codes": 19.975248969780225,
+      "patch_mean_rgb_max_absolute_delta_codes": 162.40685096153845,
+      "ramp_column_rgb_mae_codes": 15.30774657172996,
+      "ramp_column_rgb_max_absolute_delta_codes": 69.01249999999999,
+      "ramp_common_column_count": 632,
+      "ramp_input_column_counts": [
+        632,
+        632
+      ],
+      "ramp_method": "Aggregate adjacent native column means into common source intervals; no image resizing/interpolation/phase fit. Cross-OS 13 has2x output pixels while14 has1x.",
+      "whole_image_normalized_pixels_exactly_equal": false,
+      "whole_image_raw_profile_pixels_exactly_equal": false
+    },
+    "13/named-pq minus 14/named-pq": {
+      "patch_mean_rgb_delta": {
+        "blue812": [
+          0.136418,
+          0.128262,
+          0.0
+        ],
+        "cool812": [
+          -26.514595,
+          0.0,
+          0.0
+        ],
+        "green812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pastel812": [
+          0.0,
+          -1.816192,
+          -0.06808
+        ],
+        "red812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warm406": [
+          0.0,
+          -2.305031,
+          0.918441
+        ],
+        "warm812": [
+          0.0,
+          -4.940505,
+          1.173249
+        ],
+        "white203": [
+          -0.070484,
+          -0.065591,
+          -0.082933
+        ],
+        "white812": [
+          -0.107658,
+          -0.10079,
+          -0.175309
+        ],
+        "yellow812": [
+          -0.1074,
+          -0.099245,
+          0.0
+        ]
+      },
+      "patch_mean_rgb_mae_codes": 1.2936727335164846,
+      "patch_mean_rgb_max_absolute_delta_codes": 26.51459478021978,
+      "ramp_column_rgb_mae_codes": 0.25655327004219447,
+      "ramp_column_rgb_max_absolute_delta_codes": 0.6500000000000057,
+      "ramp_common_column_count": 316,
+      "ramp_input_column_counts": [
+        632,
+        316
+      ],
+      "ramp_method": "Aggregate adjacent native column means into common source intervals; no image resizing/interpolation/phase fit. Cross-OS 13 has2x output pixels while14 has1x.",
+      "whole_image_normalized_pixels_exactly_equal": null,
+      "whole_image_raw_profile_pixels_exactly_equal": null
+    },
+    "14/named-pq minus 14/ffb-icc": {
+      "patch_mean_rgb_delta": {
+        "blue812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cool812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "green812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "pastel812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "red812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warm406": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "warm812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white203": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white812": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "yellow812": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patch_mean_rgb_mae_codes": 0.0,
+      "patch_mean_rgb_max_absolute_delta_codes": 0.0,
+      "ramp_column_rgb_mae_codes": 0.0,
+      "ramp_column_rgb_max_absolute_delta_codes": 0.0,
+      "ramp_common_column_count": 316,
+      "ramp_input_column_counts": [
+        316,
+        316
+      ],
+      "ramp_method": "Aggregate adjacent native column means into common source intervals; no image resizing/interpolation/phase fit. Cross-OS 13 has2x output pixels while14 has1x.",
+      "whole_image_normalized_pixels_exactly_equal": true,
+      "whole_image_raw_profile_pixels_exactly_equal": true
+    }
+  },
+  "limitations": [
+    "No system_preferences flags in unchanged HDR report or exact-runtime artifact; defaults on this run are unmeasured. Separate image-run preferences cannot establish this run profile.",
+    "Actual13 2x M1 display/current1 potential2 vs14 1x virtual SDR/current1 potential1, distinct capture ICC and OS. Cross-OS measurements characterize those complete pipelines.",
+    "No product mapper/Standard/High acceptance; no headroom>1/HLG/alpha/EXIF/arbitrary metadata or unique algorithm/physical-nits inference."
+  ],
+  "littlecms": "2.19",
+  "measurement": "Each screenshot own embedded ICC -> encoded8-bit sRGB via Pillow ImageCms/LittleCMS perceptual intent0 flags0. Means over recorded112x104 source-pixel interiors (13output112x104,14output56x52); gray ramp source4..635,y260..339. Different output scale/display/profile/OS; no OS-only causal attribution.",
+  "native_mean_srgb_rgb": {
+    "13/ffb-icc": {
+      "blue812": [
+        0.134615,
+        0.127747,
+        255.0
+      ],
+      "cool812": [
+        254.892256,
+        254.898523,
+        254.88513
+      ],
+      "green812": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "pastel812": [
+        254.892256,
+        254.898523,
+        254.88513
+      ],
+      "red812": [
+        255.0,
+        0.0,
+        16.964372
+      ],
+      "warm406": [
+        254.892256,
+        254.898523,
+        254.88513
+      ],
+      "warm812": [
+        254.892256,
+        254.898523,
+        254.88513
+      ],
+      "white203": [
+        254.891913,
+        254.897064,
+        254.883413
+      ],
+      "white812": [
+        254.891913,
+        254.897064,
+        254.883413
+      ],
+      "yellow812": [
+        254.892256,
+        254.898523,
+        0.0
+      ]
+    },
+    "13/named-pq": {
+      "blue812": [
+        0.136418,
+        0.128262,
+        255.0
+      ],
+      "cool812": [
+        92.485405,
+        255.0,
+        255.0
+      ],
+      "green812": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "pastel812": [
+        255.0,
+        245.183808,
+        200.93192
+      ],
+      "red812": [
+        255.0,
+        0.0,
+        0.0
+      ],
+      "warm406": [
+        255.0,
+        208.694969,
+        149.918441
+      ],
+      "warm812": [
+        255.0,
+        223.059495,
+        160.173249
+      ],
+      "white203": [
+        228.929516,
+        228.934409,
+        228.917067
+      ],
+      "white812": [
+        254.892342,
+        254.89921,
+        254.824691
+      ],
+      "yellow812": [
+        254.8926,
+        254.900755,
+        0.0
+      ]
+    },
+    "14/ffb-icc": {
+      "blue812": [
+        0.0,
+        0.0,
+        255.0
+      ],
+      "cool812": [
+        119.0,
+        255.0,
+        255.0
+      ],
+      "green812": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "pastel812": [
+        255.0,
+        247.0,
+        201.0
+      ],
+      "red812": [
+        255.0,
+        0.0,
+        0.0
+      ],
+      "warm406": [
+        255.0,
+        211.0,
+        149.0
+      ],
+      "warm812": [
+        255.0,
+        228.0,
+        159.0
+      ],
+      "white203": [
+        229.0,
+        229.0,
+        229.0
+      ],
+      "white812": [
+        255.0,
+        255.0,
+        255.0
+      ],
+      "yellow812": [
+        255.0,
+        255.0,
+        0.0
+      ]
+    },
+    "14/named-pq": {
+      "blue812": [
+        0.0,
+        0.0,
+        255.0
+      ],
+      "cool812": [
+        119.0,
+        255.0,
+        255.0
+      ],
+      "green812": [
+        0.0,
+        255.0,
+        0.0
+      ],
+      "pastel812": [
+        255.0,
+        247.0,
+        201.0
+      ],
+      "red812": [
+        255.0,
+        0.0,
+        0.0
+      ],
+      "warm406": [
+        255.0,
+        211.0,
+        149.0
+      ],
+      "warm812": [
+        255.0,
+        228.0,
+        159.0
+      ],
+      "white203": [
+        229.0,
+        229.0,
+        229.0
+      ],
+      "white812": [
+        255.0,
+        255.0,
+        255.0
+      ],
+      "yellow812": [
+        255.0,
+        255.0,
+        0.0
+      ]
+    }
+  },
+  "old13_patch_analysis_reproduced": true,
+  "pillow": "12.3.0",
+  "runtime14_png_manifest": {
+    "capture-0.png": {
+      "bytes": 15319,
+      "sha256": "51ed5b68a93dc6de2907bdc1fce0a8f3631c880550fe355e5c3746757457bff8"
+    },
+    "capture-1.png": {
+      "bytes": 15319,
+      "sha256": "51ed5b68a93dc6de2907bdc1fce0a8f3631c880550fe355e5c3746757457bff8"
+    },
+    "capture-2.png": {
+      "bytes": 15319,
+      "sha256": "51ed5b68a93dc6de2907bdc1fce0a8f3631c880550fe355e5c3746757457bff8"
+    },
+    "capture-3.png": {
+      "bytes": 15319,
+      "sha256": "51ed5b68a93dc6de2907bdc1fce0a8f3631c880550fe355e5c3746757457bff8"
+    },
+    "source-ffb-icc.png": {
+      "bytes": 15498,
+      "sha256": "577b39f0ab155a751cf1f619df3b1c9d17d3d97af8de6d3971ab0d910921818f"
+    },
+    "source-named-pq.png": {
+      "bytes": 15498,
+      "sha256": "577b39f0ab155a751cf1f619df3b1c9d17d3d97af8de6d3971ab0d910921818f"
+    }
+  },
+  "scope": "Same SDK26.5 ARM64 min13 binary: actual13 native SwiftUI Image without allowedDynamicRange modifier vs14 native Image.allowedDynamicRange(.high), each at current headroom1. Two in-memory equal-code PQ atlas color-space paths; not Bern product HDR mapper or hardware HDR validation.",
+  "sources": {
+    "13": {
+      "ffb-icc": {
+        "color": {
+          "cicp_hex": "636963700000000009100001",
+          "icc_available": true,
+          "icc_bytes": 13300,
+          "icc_sha256": "63cd9f4a8443c71df3633aa0a2ec4594aa8fbca23b1a3231b517bc726a567b16",
+          "is_pq": false,
+          "name": "unnamed",
+          "uses_2100": false
+        },
+        "decoded_png_bitmap_info": 4099,
+        "name": "ffb-icc",
+        "png": "source-ffb-icc.png",
+        "png_sha256": "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e",
+        "raw_rgb16be_sha256": "78542db9c7fc7e1fece6efd2f726e1ef74e263f0d0c176c61408e82b65e2b73d",
+        "raw_rgba16be_sha256": "29339554132137a1db6e48a560ae53d1727e13d59b12656d97824acea02b221f",
+        "saved_png_color": {
+          "cicp_hex": "636963700000000009100001",
+          "icc_available": true,
+          "icc_bytes": 13300,
+          "icc_sha256": "63cd9f4a8443c71df3633aa0a2ec4594aa8fbca23b1a3231b517bc726a567b16",
+          "is_pq": false,
+          "name": "unnamed",
+          "uses_2100": false
+        }
+      },
+      "named-pq": {
+        "color": {
+          "cicp_hex": "absent",
+          "icc_available": true,
+          "icc_bytes": 13464,
+          "icc_sha256": "6f756c9ba8ab35eab3ca429edaa3f468a7f8389121da6455ff47cbf1ae89b91a",
+          "is_pq": true,
+          "name": "kCGColorSpaceITUR_2100_PQ",
+          "uses_2100": true
+        },
+        "decoded_png_bitmap_info": 4099,
+        "name": "named-pq",
+        "png": "source-named-pq.png",
+        "png_sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+        "raw_rgb16be_sha256": "78542db9c7fc7e1fece6efd2f726e1ef74e263f0d0c176c61408e82b65e2b73d",
+        "raw_rgba16be_sha256": "29339554132137a1db6e48a560ae53d1727e13d59b12656d97824acea02b221f",
+        "saved_png_color": {
+          "cicp_hex": "absent",
+          "icc_available": true,
+          "icc_bytes": 13464,
+          "icc_sha256": "6f756c9ba8ab35eab3ca429edaa3f468a7f8389121da6455ff47cbf1ae89b91a",
+          "is_pq": true,
+          "name": "kCGColorSpaceITUR_2100_PQ",
+          "uses_2100": true
+        }
+      }
+    },
+    "14": {
+      "ffb-icc": {
+        "color": {
+          "cicp_hex": "636963700000000009100001",
+          "icc_available": true,
+          "icc_bytes": 13300,
+          "icc_sha256": "c77b8cfa01220ebb495ef7901718d310e0cdde06f53a57feaeb3261391eeca94",
+          "is_pq": true,
+          "name": "kCGColorSpaceITUR_2100_PQ",
+          "uses_2100": true
+        },
+        "decoded_png_bitmap_info": 4099,
+        "name": "ffb-icc",
+        "png": "source-ffb-icc.png",
+        "png_sha256": "577b39f0ab155a751cf1f619df3b1c9d17d3d97af8de6d3971ab0d910921818f",
+        "raw_rgb16be_sha256": "78542db9c7fc7e1fece6efd2f726e1ef74e263f0d0c176c61408e82b65e2b73d",
+        "raw_rgba16be_sha256": "29339554132137a1db6e48a560ae53d1727e13d59b12656d97824acea02b221f",
+        "saved_png_color": {
+          "cicp_hex": "636963700000000009100001",
+          "icc_available": true,
+          "icc_bytes": 13300,
+          "icc_sha256": "c77b8cfa01220ebb495ef7901718d310e0cdde06f53a57feaeb3261391eeca94",
+          "is_pq": true,
+          "name": "kCGColorSpaceITUR_2100_PQ",
+          "uses_2100": true
+        }
+      },
+      "named-pq": {
+        "color": {
+          "cicp_hex": "636963700000000009100001",
+          "icc_available": true,
+          "icc_bytes": 13300,
+          "icc_sha256": "c77b8cfa01220ebb495ef7901718d310e0cdde06f53a57feaeb3261391eeca94",
+          "is_pq": true,
+          "name": "kCGColorSpaceITUR_2100_PQ",
+          "uses_2100": true
+        },
+        "decoded_png_bitmap_info": 4099,
+        "name": "named-pq",
+        "png": "source-named-pq.png",
+        "png_sha256": "577b39f0ab155a751cf1f619df3b1c9d17d3d97af8de6d3971ab0d910921818f",
+        "raw_rgb16be_sha256": "78542db9c7fc7e1fece6efd2f726e1ef74e263f0d0c176c61408e82b65e2b73d",
+        "raw_rgba16be_sha256": "29339554132137a1db6e48a560ae53d1727e13d59b12656d97824acea02b221f",
+        "saved_png_color": {
+          "cicp_hex": "636963700000000009100001",
+          "icc_available": true,
+          "icc_bytes": 13300,
+          "icc_sha256": "c77b8cfa01220ebb495ef7901718d310e0cdde06f53a57feaeb3261391eeca94",
+          "is_pq": true,
+          "name": "kCGColorSpaceITUR_2100_PQ",
+          "uses_2100": true
+        }
+      }
+    }
+  }
+}

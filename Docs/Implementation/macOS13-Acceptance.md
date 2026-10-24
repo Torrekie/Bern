@@ -39,7 +39,7 @@ macOS 14 上的 A/B 对照使用此前的 `fa820f706e5faf1bae8b8f07e23545842a164
 | [Gallery 原始参考](../Evidence/macOS14-gallery-normal/reference.json) | 8 张浅/深色 PNG，4 个 Inspector/滚动 GIF；[采集](https://github.com/Torrekie/Bern/actions/runs/39964126654) |
 | [本机13候选证据](../Evidence/macOS13-candidate/reference.json) | 14张原始窗口PNG，分开注明0f/46源码版本；[Gallery量化](../Evidence/macOS13-candidate/gallery-comparison.json)、[侧栏宽度](../Evidence/macOS13-candidate/sidebar-width.json)、[语言/关闭](../Evidence/macOS13-candidate/language-close.json) |
 | [同系统迁移比较](../Evidence/macOS14-port-comparison/comparison.json) | 每张图片的 RGB 比较、原始文件哈希、不同 PNG、图片页差异测量；相同图片复用 A 的原图，避免重复保存 |
-| [13图片布局SDK复核](../Evidence/macOS13-image-layout/sdk26/validation.json) | SDK26.2与既有SDK14.2在同一13宿主的9组配置/27位置中，1800个公开坐标框、45次卡片检测均一致，27张PNG哈希全部相同。此结论仅限该夹具条件；14同项测量仍待完成。 |
+| [13图片布局SDK复核](../Evidence/macOS13-image-layout/sdk26/validation.json) | SDK26.2与既有SDK14.2在同一13宿主的9组配置/27位置中，1800个公开坐标框、45次卡片检测均一致，27张PNG哈希全部相同。[同binary14普通效果](../Evidence/macOS14-image-layout/validation.json)也已完成，首卡129点相同；该夹具仍未复现完整14应用的124/125点。 |
 | [13背景路径隔离](../Evidence/macOS13-window-background/README.md) | 同一个inactive浅色窗口中，语义颜色直接绘制为236灰；透明NavigationSplitView detail为240/236/237，显式填充后恢复236灰。五组各两次稳定缓冲，窗口2.446秒、前台不变；这不是完整Gallery或14对照。 |
 | [13 toolbarRole候选](../Evidence/macOS13-toolbar-role/README.md) | 同一Showcase式固定标题样例中，automatic、split上的editor和detail上的editor共9个原生框样本均不移位，标题仍存在；未扩充为Gallery或所有公开composition均已排除。 |
 
@@ -64,15 +64,15 @@ GIF 实际采样间隔约 0.135–0.147 秒，第一帧间隔可能更长；GIF 
 
 | 项目 | 当前证据与后续条件 |
 |---|---|
-| Film 初始身份 | 第三轮已经修复原生探针/SwiftUI绘制坐标分离，并通过9种居中/缩放/减少动态效果小样例；整应用Last几何在1pt内。14参考为Glen，13为Madras。最新只读复核已排除最终外框和侧栏尺寸差异，但原记录没有关闭→Film的viewport或target/nearest轨迹，不能断言3写回成4。[事实与三组最小区分采样](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
+| Film 初始身份 | 第三轮整应用Last几何在1pt内，14初始Glen、13初始Madras。新14普通效果上游三场景均为Glen，wait/direct原始Film PNG相同，说明Inspector关闭过渡不是该身份的必要条件；immediate仍有约35pt落点差异，且启动窗口恢复/实际resize是混杂。当前f9移植应用在14三场景也均Glen。AX几何并非NSClipView bounds，内部target/nearest仍未观测，不能断言3写回成4。[事实、原始证据与下一最小trace](macOS13-Film-Initial-Position.md)；不硬改默认值。 |
 | 吸附轨迹 | 13 暂在原生惯性结束后校正，14 在原生目标计算阶段吸附；落点与运动过程应分开验收。 |
 | 未覆盖控件变体 | `f9e08b1`已让生成器选中的普通volume PopoverButton复用系统圆形NSButton，独立native action检查通过（单次触发、快捷键、disabled、外部打开和WindowServer alpha=0的关闭，与原Button配对一致）；整应用该版本构建、本机启动及Frame绑定打开/编辑均通过；14/13 Frame视觉仍待验收。icon风格Menu、显式尺寸等仍有独立路径，不能套用普通IconButton的20pt系统按钮验收。Planner的styled SidebarItem才进入自定义侧栏键盘分支；Showcase/Gallery截图没有覆盖它。 |
 | 工具栏 chrome | 13 与 14 自动 sidebar toggle / 标题的位置不同。公开 NSToolbar 临时重排会被下一次 SwiftUI 更新覆盖，不能作为产品修复。需要验证源级 composition 或独立原生 chrome 所有权，不能持续争夺 delegate/items。 |
-| 图片页首卡高度 | A14/B14/C13首卡分别124/125/129pt。图片均在y108…198，caption墨迹只差0.5pt；后续HDR卡均147pt，仅继承首卡偏移。三个13图片包装结构的公开Column/Grid框均109pt，[13独立公开框探针](../Evidence/macOS13-image-layout/reference.json)的9组合/27截图确认固定109pt行卡也为129pt，最小行高24/0/150均未改变卡高。尚缺14同一公开框测量；不能归因字体或用负padding抵消。 |
+| 图片页首卡高度 | 完整应用A14/B14/C13首卡分别124/125/129pt，图片和caption边界接近，后续HDR卡均147pt。新增[同binary14普通效果探针](../Evidence/macOS14-image-layout/validation.json)九组合/27位置中，首卡与fixed109卡均129、HDR147，均与13同binary相同；其它公开坐标仍有最高2.5pt差异。进一步[静态四子节点隔离](../Evidence/macOS13-image-layout/static-children/validation.json)在13和14各1800个公开坐标框均与原ForEach夹具相同，首卡仍129，已排除该单独因素；13全部27 PNG字节相同，14为25/27，未宣称全像素相等。独立probe仍未复现完整应用14首卡124/125，完整Scene及其余简化包装待隔离，不能把probe匹配当整应用修复，也不以负padding抵消。 |
 | PQ/HLG 色彩 | `e06e080`的严格cICP识别、系统SDR转换、无Metal备用与真实余量通知已随`5226454`及最新`f9e08b1`完整构建并启动。原产品High尚未等同；新增独立Annex5候选在已知中性PQ样本上，Hd1完整ramp对14 MAE0.104109/255，Hd2提交linear EDR为1/1.996094，真实通知观察到1→2→1→2。这是未接入产品的有限输入实验，彩色/metadata/HLG及同条件14High未通过。[原系统路径证据](../Evidence/macOS13-hdr/reference.json)、[候选证据与限制](../Evidence/macOS13-hdr-candidate/reference.json)。 |
 | 真正鼠标拖动 | 独立系统NSSlider也未收到自动化drag的mouseDown，值仍50；同控件AXIncrement能产生一次action并变55，因而已在Bern外复现输入交付限制。尚未证明“拖动时只预览，松手仅提交一次”。AXIncrement 单次提交不替代它。 |
 | 物理 HDR、输入法、完整动画时序 | 未验收。屏幕潜在EDR为2，实际值会随HDR surface启动从1升到约2；不能把启动前的1当作设备不支持HDR，也不能用SDR截图证明物理HDR亮度等效。 |
-| 原生材质配色 | ICC归一后的活动窗口背景仍有差异。原比较中canvas只是空白点位昵称；Patterns/Film该处是透明detail，并未填surface.canvas。五组局部实窗隔离已证明：没有Bern tint/overlay，透明split detail也能与同窗的语义颜色实画不同；公开原生树中存在系统windowBackground材质。该inactive手建窗口未精确复现完整Gallery238/237/239，也不能唯一归因系统着色输入；14同binary和活动窗口仍待。raised panel可相同，但整窗口颜色尚不能宣称等效，不以固定RGB抵销。 |
+| 原生材质配色 | ICC归一后的活动窗口背景仍有差异。原比较中canvas只是空白点位昵称；Patterns/Film该处是透明detail，并未填surface.canvas。[同binary13/14五组实窗比较](../Evidence/macOS13-window-background/sdk26-content-stable/comparison.json)已完成：语义颜色实画、SwiftUI Color、canvas和显式填detail模式RGB均236灰；透明split却为13的240/236/237与14的234灰。两边内容尺寸均800×520，原生外框/sidebar/chrome不同。该inactive手建窗口不能替代完整Gallery活动窗口，也不能唯一归因材质或系统tint；不以固定RGB抵销。 |
 
 GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的故意失败时段，并计划11月2日退役：[官方公告](https://github.com/actions/runner-images/issues/13518)。已取得的普通外观参考继续可用；该时段的 runner 失败不能归为源码失败。
 
@@ -84,21 +84,25 @@ GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的�
 
 原型只占前台约0.369秒后恢复即时前台，后续均采自有inactive窗口。CPU动态转换median18.64ms/max88.08ms，不能原样放在主线程产品化；进程resident采样峰60.1MB不是GPU峰值。彩色应用空间、合法元数据缺省/优先级和14实际High适配仍需新probe；当前没有用图片SHA/中性条件作为产品功能白名单，也没有修改产品色调映射。
 
-新增[当前产品Standard彩色对照](../Evidence/macOS13-hdr-candidate/standard-color-e06/validation.json)确认：cICP规范化后的自定义ICC与命名PQ在现有产品helper中输出一致；但对13原生SwiftUI，10色块的通道均值MAE约1.087/255、最大差约4.759/255，不能只凭灰阶认定色彩等同。[公开原生组件比较](../Evidence/macOS13-hdr-candidate/native-sdr-components13/validation.json)中，NSImageView在真实Hd1与13原生SwiftUI整图逐像素相同；CGContext 8位转换仍有约5级色块差。[动态余量检查](../Evidence/macOS13-hdr-candidate/native-sdr-headroom13/validation.json)在7.5秒采集上限内只完成初始Hd1，不能推断其它余量条件恒定。此原生候选尚未进入产品，14彩色基线仍待。
+新增[当前产品Standard彩色对照](../Evidence/macOS13-hdr-candidate/standard-color-e06/validation.json)确认：cICP规范化后的自定义ICC与命名PQ在现有产品helper中输出一致；但对13原生SwiftUI，10色块的通道均值MAE约1.087/255、最大差约4.759/255，不能只凭灰阶认定色彩等同。[公开原生组件比较](../Evidence/macOS13-hdr-candidate/native-sdr-components13/validation.json)中，NSImageView在真实Hd1与13原生SwiftUI整图逐像素相同；CGContext 8位转换仍有约5级色块差。早期[动态余量检查](../Evidence/macOS13-hdr-candidate/native-sdr-headroom13/validation.json)只完成初始Hd1；本轮[缩小后的完整动态采样](../Evidence/macOS13-hdr-candidate/native-standard-dynamic13/validation.json)已实际完成current1→2→1，20次trajectory、27次GPU完成/读回、76次真实屏幕通知、6张截图。两原生图像的12个ROI均逐像素相同，并复现旧静态基线；窗口3.218秒、未激活、前台不变。这仅证明该PQ彩色atlas在此13环境的截图稳定，不扩充为HLG、EXIF、alpha或物理亮度。
 
-## 下一次14运行采集
+[14普通效果彩色基线](../Evidence/macOS14-hdr-color-normal/validation.json)已取得：同一binary在14的custom ICC与named PQ均识别为BT.2100 PQ并逐像素相同；13需要严格cICP规范化。13原生named PQ对14的10色块MAE约1.294/255，最大约26.515；现产品Standard helper更远。两个宿主的显示器/ICC/缩放也不同，不能单因归为系统版本，原生候选尚未进入产品。
 
-已发布[轻量runtime probe工作流](https://github.com/Torrekie/Bern/actions/workflows/macos14-probe-runtime.yml)，仅下载运行现有exact artifact，不重新构建。截至本次记录尚未dispatch14。计划在brownout结束的北京时间2026-10-24 08:00后，图片公开框测量使用`probe=image, build_run=39986052533`（[已构建输入](https://github.com/Torrekie/Bern/actions/runs/39986052533)）；HDR中性/彩色探针使用`probe=hdr, build_run=39987622874`（[已构建输入](https://github.com/Torrekie/Bern/actions/runs/39987622874)）。这些是待执行输入，不是14通过结果。
+## 恢复后的14普通效果采集
+
+远程macOS14已实际运行。普通效果[图片run40062046351](https://github.com/Torrekie/Bern/actions/runs/40062046351)和[HDR run40062048900](https://github.com/Torrekie/Bern/actions/runs/40062048900)均成功，复用此前已在13运行的exact binary，不重新构建应用。独立profile.json从NSWorkspace验证reduceMotion/reduceTransparency/increaseContrast均false；图片probe还独立重复记录这三项。第一轮图片40061735500沿用runner的reduced默认值，已分开归档，不能冒充normal；第一轮HDR40061839104缺少profile记录，普通效果重采后的像素与它相同，但仍保持不同证据身份。
 
 新SDK26.2与旧SDK14.2在同一13图片夹具中的框、卡片检测和全部27张PNG一致，只排除这组13条件下本轮编译组合造成的差异；不能据此解释14/13图片首卡高度或其它未测布局。HDR新probe也不能自动覆盖metadata、HLG或实际Hd>1。
 
-新增两项只运行既有Gallery构建的独立采集：`macos14-film-probe.yml`使用`variant=upstream, build_run=39959549054`，每组新进程区分Inspector立即关闭、等待关闭、从未打开三种首次Film；`macos14-frame-compare.yml`锁定同一A构建和`f9e08b1`的Gallery构建39991406873，在同一runner配对Frame和真实音量弹出层。两脚本已通过本机Swift5.9.2/SDK14.2类型检查和工作流语法检查，尚未运行14。Frame的own-PID鼠标移动仅限CI采集，必须实际撑过3.2秒idle门槛，否则失败；不算物理输入验收。Film缺失AX节点会明确留下测量缺口，PNG完成不等于内部target/nearest已观测。
+上游Film[run40062194628](https://github.com/Torrekie/Bern/actions/runs/40062194628)已成功，使用既有Gallery构建39959549054，每组新进程区分立即关闭、等待关闭、从未打开Inspector；[原始证据与分析](../Evidence/macOS14-film-timing/analysis.json)。首次采集40061845578在建立会话前失败，已根据上游100字节socket上限将测试临时路径缩短；该失败没有Film结果。当前f9应用在14的同场景run40062837456也成功，进一步确认身份差异属于13路径，尚未证明内部绑定变化。
 
-新增`macos14-background-probe.yml`准备构建同一个target13的背景探针供13/14分别运行，默认`build_only=true`；随后通用runtime工作流接受`probe=background`。本次仅完成采集代码和局部检查，没有触发该构建或14运行，不能把旧SDK14.2局部记录标成新SDK同binary结果。
+Frame仍未采集通过。首跑40062043370视频已Ready→Paused0，但own-PID事件后控件消失；第二跑40062688905事件往返保留窗口编号、CLI仍有音量控件，但AXButton查找失败。完整AX诊断确认native标识被上游覆盖为main_window.find；同父组中的真实Clip/Volume控件存在。严格限定窗口/父组/label/role的选择器在[40064763940](../Evidence/macOS14-frame-volume/attempt-40064763940/README.md)通过3.2秒idle及native几何，随后首张PNG因采集器将NSNumber对象传给要求原始CGWindowID的数组接口而失败。已修正原始ID编码，并在每帧前回读核对窗口ID和所属PID；新paired run40065164350验收中。此前均未进入B，PNG=0，不算视觉或物理输入验收，媒体/idle/AXPress/稳定buffer门槛保持。
+
+背景探针[14 run40063500033](https://github.com/Torrekie/Bern/actions/runs/40063500033)及同一SDK26.5二进制在本机13均完成五组运行，归档见[13](../Evidence/macOS13-window-background/sdk26-content-stable/README.md)和[14](../Evidence/macOS14-window-background/content-stable/README.md)。早期“外框全程不变”断言阻止后两组；诊断已确认原生NavigationSplitView自动加toolbar改变外框，内容尺寸保持。新合同实际通过内容800×520、各variant双buffer像素/几何稳定及不激活条件，并保留真实外框变化。透明detail的跨系统颜色差异已复现，其余四组模式RGB相同；不将手建窗口结果冒充整应用等效。
 
 ## 暂停检查点（2026-10-24，北京时间）
 
-按用户要求，在macOS14远程采集还将停用数小时的情况下暂停goal；已有实现和未通过项保留，不标记完成。已设置本对话08:05的一次性定时检查（`bern-macos-14`）。目前模型工具没有恢复paused goal的状态接口；定时检查若仍无正式恢复能力，只报告环境并提示用户`/goal resume`，不创建替代goal或空转。恢复后先取得上述14缺失证据，再按最小差异调整产品。macOS11、Swift5.3、Objective-C和iOS仍暂停。
+此前按用户要求暂停，08:05一次性检查已执行并删除。用户/系统于12:16恢复同一个goal，当前active；实际14运行已恢复，不再因brownout空等。已有实现和上述未通过项均保留，不标记完成。macOS11、Swift5.3、Objective-C和iOS仍暂停。
 
 ## 空间控制
 

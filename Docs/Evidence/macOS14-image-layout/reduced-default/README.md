@@ -1,0 +1,1 @@
+Initial run40061735500 used the same exact binary on14 with runner defaults reduceMotion=true/reduceTransparency=true. It is not the ordinary-effects reference. All27 PNG hashes were recorded before removing these duplicate diagnostic downloads; complete geometry remains in report.json. The ordinary run40062046351 is archived in the parent directory.
