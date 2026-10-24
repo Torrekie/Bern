@@ -1,0 +1,93 @@
+{
+  "byte_verified_duplicate_logical_bytes": 1350515,
+  "created_utc": "2026-10-24T15:00:28.189628+00:00",
+  "duplicates": [
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/same-binary-13-14",
+      "logical_bytes": 1022921,
+      "verified_files": 51,
+      "work": "work/native-pq-hero-coordinator-ci-40103369574"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/native-analysis",
+      "logical_bytes": 51979,
+      "verified_files": 3,
+      "work": "work/hero-coordinator-crosshost-analysis"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/pixel-analysis",
+      "logical_bytes": 33037,
+      "verified_files": 6,
+      "work": "work/hero-coordinator-pixel-analysis"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/source-preparation",
+      "logical_bytes": 32549,
+      "verified_files": 4,
+      "work": "work/hero-coordinator-preparation"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/ci-preparation",
+      "logical_bytes": 71253,
+      "verified_files": 9,
+      "work": "work/hero-coordinator-ci-preparation"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/local-static-preflight",
+      "logical_bytes": 113978,
+      "verified_files": 10,
+      "work": "work/hero-coordinator-preflight"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/next-sampling-plan",
+      "logical_bytes": 3411,
+      "verified_files": 1,
+      "work": "work/hero-coordinator-sampling-plan"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/tools/prepare-hero-coordinator-base.py",
+      "logical_bytes": 849,
+      "verified_files": 1,
+      "work": "work/prepare-hero-coordinator-base.py"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/tools/verify-hero-coordinator-package.py",
+      "logical_bytes": 2579,
+      "verified_files": 1,
+      "work": "work/verify-hero-coordinator-package.py"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/tools/archive-hero-coordinator.py",
+      "logical_bytes": 4498,
+      "verified_files": 1,
+      "work": "work/archive-hero-coordinator.py"
+    },
+    {
+      "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574/archive-review",
+      "logical_bytes": 13461,
+      "verified_files": 4,
+      "work": "work/hero-coordinator-archive-review"
+    }
+  ],
+  "excluded_artifacts": [
+    {
+      "logical_bytes": 217659,
+      "path": "work/native-pq-hero-coordinator-ci-40103369574/build/hero-coordinator-probe.tar.gz",
+      "sha256": "a8b62da12b02c0a33803bf82c44b8921ad84beb5c4761e4eae80e03fcc99a0f5"
+    },
+    {
+      "logical_bytes": 582160,
+      "path": "work/native-pq-hero-coordinator-ci-40103369574/probe/HeroCoordinatorProbe",
+      "sha256": "5739a0405bf78c04e71a46116c99fd48a7fa7b0b659bf8e97744ee3982ecea36"
+    },
+    {
+      "files": 81,
+      "logical_bytes": 56891568,
+      "path": "work/hero-coordinator-preflight/modules",
+      "purpose": "Completed local target14 typecheck module cache; no executable built."
+    }
+  ],
+  "expendable_artifact_logical_bytes": 57691387,
+  "final_review_retention_note": "Root appended the frozen review outputs after their review snapshot of cleanup.json; its input_document_hashes_at_review is historical. No raw/native/pixel data changed.",
+  "scope": "Owned completed coordinator cohort only. No active HeroCoordinatorProbe/swiftc or lsof open module writers observed before archive. All retained work files are byte-verified before duplicate removal. Logical byte counts are not APFS recovered space or net free-space change."
+}

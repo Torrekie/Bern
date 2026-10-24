@@ -1,0 +1,31 @@
+{
+  "base_workflow": {
+    "bytes": 16439,
+    "commit": "c34866855288b215f41cb9f058748225857f1b62",
+    "private_original_file": "route-workflow.original.yml",
+    "repository_path": ".github/workflows/macos14-hero-route-probe.yml",
+    "sha256": "7e9ace3e8dc718acc64b717603936726f3cb1f66d435da1f5a4ddddf941ae586"
+  },
+  "binary_name": "HeroCoordinatorProbe",
+  "compile_concat": "import AppKit + import SwiftUI + ProductHero.exact.swift + Driver.swift.inc; no old capture/backing/static helpers",
+  "expected_os_environment": "BERN_HERO_EXPECT_OS",
+  "frozen_driver_input": {
+    "bytes": 26597,
+    "lines": 353,
+    "path": "work/hero-coordinator-preparation/Driver.swift.inc",
+    "sha256": "d8ed3e8d5716f65b00a6d14fd1007d89eaf30d5aca58446344263d59375a739b"
+  },
+  "motion_environment_scope": "Only child env copy unsets BERN_MOTION; no parent/system defaults changes by wrapper.",
+  "package_directory": ".github/scripts/hero-coordinator-probe",
+  "pending": [],
+  "runtime_gates_scope": "One same-key actual conditional replacement; one observed flight identity; native motion/removal/settling and bounded captures. Mid trigger is live/in-band; snapshot bracket actual states are not forced live. Pixel acceptance remains explicitly not performed.",
+  "runtime_validation": "Not performed: no actual coordinator runtime report available. Static checks are not runtime/schema acceptance.",
+  "scope": "PRIVATE frozen source preparation only. No repository/index edit, publication, compiler/typecheck, UI/CI or spawning by this agent.",
+  "source_contract": {
+    "kind": "actual_coordinator_replacement_fixture",
+    "original_hero_sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c",
+    "product_source_commit": "b08db54e01ac2ec54fb84e6f2a70041f1f4c3604"
+  },
+  "workflow_sha256": "5fbeb0f00b79e59c4a4c32bbbc397a090e52b7aba01c457144ae6516ae66da69",
+  "wrapper_sha256": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6"
+}

@@ -1,0 +1,112 @@
+{
+  "archive": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-40103369574",
+  "archive_symlinks": 0,
+  "assembled_hero_exact_imports_plus_original_plus_driver": true,
+  "cleanup_receipt": {
+    "arithmetic_matches": true,
+    "byte_verified_duplicate_logical_bytes": 1337054,
+    "expendable_artifact_logical_bytes": 57691387,
+    "not_APFS_or_net_free_space": true
+  },
+  "committed_source_byte_comparisons": {
+    "Dependencies.swift": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9",
+    "Driver.swift.inc": "d8ed3e8d5716f65b00a6d14fd1007d89eaf30d5aca58446344263d59375a739b",
+    "ProductHero.exact.swift": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c",
+    "ProductImage.exact.swift": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11",
+    "ProductImage.swift": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc",
+    "ProductStyle.exact.swift": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1",
+    "ProductStyle.swift": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984",
+    "README.md": "6701d84f2b25bfeda15ab8146c6884a9e2b60b7dd8583ad909590db50ba3030c",
+    "assets/source-named-pq.png": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+    "run-one.py": "9ab93068745f9338c076328bfe28ceb1814b55b011972af34be1999736c5acf6",
+    "source-provenance.json": "c23c81c7c5fcfb23c786ffb693f63b33358fa883da6ec37a59541020cbaa51e7",
+    "workflow": "5fbeb0f00b79e59c4a4c32bbbc397a090e52b7aba01c457144ae6516ae66da69"
+  },
+  "documentation_corrections_verified": [
+    "Acceptance binary suffix corrected to82ecea36",
+    "Pixel README describes perceptual intent0"
+  ],
+  "historical_native_inputs": {
+    "deleted_binary_tar_not_rehashed": true,
+    "explicitly_removed_artifacts_verified_against_inventory": [
+      "work/native-pq-hero-coordinator-ci-40103369574/build/hero-coordinator-probe.tar.gz",
+      "work/native-pq-hero-coordinator-ci-40103369574/probe/HeroCoordinatorProbe"
+    ],
+    "present_hashes_verified": 33
+  },
+  "historical_package_manifest": "17 retained members match; one deleted binary matches explicit historical receipt/inventory only.",
+  "input_document_hashes_at_review": {
+    "Acceptance.md": "7fb96175588ee32e242dc0662e98ef36eb8ac470497f0aa6405c25dde1cca7dc",
+    "cleanup.json": "3ee62dd5fb4b50019673f642adab087abc828d31ffcf57cf34d071143b2e1b4d",
+    "pixel-analysis/SHA256SUMS": "b3a2ca6ba52982d23a7114a1799ab5c7411a2ae9e4b917bdb2ec8fcbfc12776c",
+    "retention-validation.json": "1e77ef19db9343ffca5b08acd1ecef680372b9a2d63d3b4953bcd33d5f80f957"
+  },
+  "pixel_report_input_links": {
+    "13": {
+      "algorithms_reexecuted": false,
+      "endpoint_srgb": {
+        "exact": false,
+        "mae": 0.29410590277777776,
+        "max": 5
+      },
+      "opaque_inset_nonwhite_bbox": [
+        80.5,
+        66.0,
+        400.5,
+        246.0
+      ],
+      "report_and_3png_hashes": "PASS"
+    },
+    "14": {
+      "algorithms_reexecuted": false,
+      "endpoint_srgb": {
+        "exact": false,
+        "mae": 0.27116898148148144,
+        "max": 2
+      },
+      "opaque_inset_nonwhite_bbox": [
+        16.0,
+        24.0,
+        336.0,
+        204.0
+      ],
+      "report_and_3png_hashes": "PASS"
+    }
+  },
+  "remaining_root_owned": [
+    "Whole-archive final manifest after including review/documents",
+    "Final Git whitespace/commit/push",
+    "No rerun of delivered app signatures or large pixel algorithms in this review"
+  ],
+  "scope": "PRIVATE read-only bounded archive review. No archive/repo modifications, runtime/compiler/CI execution, pixel algorithm rerun, fresh signature check or deleted-binary rehash.",
+  "source_repo_head_at_review": "fe7f30d21494a290f363572c6556a138804fb1ba",
+  "submanifests": {
+    "ci-preparation": {
+      "inventory_exact": true,
+      "members_verified": 8,
+      "sha256": "ccc5dadfad55a69d0a634855b15f971e9eaf2df662eba2ff5dd889e494a251fc"
+    },
+    "native-analysis": {
+      "inventory_exact": true,
+      "members_verified": 2,
+      "sha256": "e2732432b18c8bad6db8c6ebfa182a4282ec37d92b9b9f29f461c131572a0afa"
+    },
+    "pixel-analysis": {
+      "inventory_exact": true,
+      "members_verified": 5,
+      "sha256": "b3a2ca6ba52982d23a7114a1799ab5c7411a2ae9e4b917bdb2ec8fcbfc12776c"
+    },
+    "source-preparation": {
+      "inventory_exact": true,
+      "members_verified": 3,
+      "sha256": "10d4ea07f6395e645b1bb6c1205051036ceadaea7aac584c6841a4333f709e15"
+    }
+  },
+  "success": true,
+  "two_script_boundaries": {
+    "analyze.py": "Same-host opaque source/settled endpoints, raw and ICC intent0 sRGB. V1 whole-root mid nonwhite bbox is contaminated by corners and not a flight bound; logical8pt nonwhite fraction is descriptive only.",
+    "mid-opaque-bounds.py": "Fixed12pt geometric inset, asserts alpha255, reports nonwhite content bounds. White atlas cells may be excluded; not complete image registration, presentation sync or cause.",
+    "pixel_acceptance": "Limited endpoint visibility supported by root review; endpoints nonexact, no crosshost color or middle-frame/full-animation acceptance.",
+    "rendering_intent": "Both scripts use0; installed Pillow confirmed PERCEPTUAL=0, RELATIVE_COLORIMETRIC=1. README has been corrected by root; algorithms/JSON unchanged."
+  }
+}

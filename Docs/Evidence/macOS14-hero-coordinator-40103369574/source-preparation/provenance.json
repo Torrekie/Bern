@@ -1,0 +1,34 @@
+{
+  "argc": 3,
+  "assembly": "imports AppKit/SwiftUI + exact ProductHero.exact.swift + Driver.swift.inc; other dependencies compiled as existing sources",
+  "compile_runtime_pixel_acceptance": "not performed",
+  "driver_lines": 353,
+  "driver_sha256": "d8ed3e8d5716f65b00a6d14fd1007d89eaf30d5aca58446344263d59375a739b",
+  "input_asset_sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+  "kind": "one_real_coordinator_conditional_replacement_driver",
+  "prepared_only": true,
+  "required_build": "Root SDK26.2/newSwift, Swift5mode, arm64/min13; samebinary13/14; no SDK14 unused-clock guard",
+  "source_dependencies": {
+    "Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9",
+      "source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/.github/scripts/hero-snapshot-probe/Dependencies.swift"
+    },
+    "ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c",
+      "source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/.github/scripts/hero-snapshot-probe/ProductHero.exact.swift"
+    },
+    "ProductImage.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc",
+      "source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/.github/scripts/hero-snapshot-probe/ProductImage.swift"
+    },
+    "ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984",
+      "source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/.github/scripts/hero-snapshot-probe/ProductStyle.swift"
+    }
+  },
+  "static_checks": "One Boolean transition/different ids; no manual manager/flight/snapshot/layer operation; weak retained identities; existing-report refusal before defer; first live identity pinned; source array release before transition; bounded capture/sample/window/preload contracts."
+}

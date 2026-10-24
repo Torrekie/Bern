@@ -1,0 +1,22 @@
+2026-10-24 14:38:51.930 HeroCoordinatorProbe[972:5567] NSWindow warning: adding an unknown subview: <_TtC20HeroCoordinatorProbeP33_9901785AFBB999111207BBAE454C3AC915BernHeroOverlay: 0x12380b350>. Break on NSLog to debug.
+2026-10-24 14:38:52.175 HeroCoordinatorProbe[972:5567] Call stack:
+(
+	0   AppKit                              0x0000000196b5261c -[NSThemeFrame addSubview:] + 116
+	1   AppKit                              0x0000000196b52190 -[NSView addSubview:positioned:relativeTo:] + 372
+	2   AppKit                              0x0000000196b51f98 -[NSThemeFrame addSubview:positioned:relativeTo:] + 52
+	3   HeroCoordinatorProbe                0x0000000100f5d9e4 $s20HeroCoordinatorProbe21BernWindowImageHeroesC14prepareOverlay33_9901785AFBB999111207BBAE454C3AC9LLSbyF + 300
+	4   HeroCoordinatorProbe                0x0000000100f5c3f4 $s20HeroCoordinatorProbe011BernPictureA6AnchorC8scheduleyyFyyYbScMYccfU_TA + 452
+	5   HeroCoordinatorProbe                0x0000000100f64c74 $sIegh_IeyBh_TRTm + 28
+	6   libdispatch.dylib                   0x0000000193040750 _dispatch_call_block_and_release + 32
+	7   libdispatch.dylib                   0x00000001930423e8 _dispatch_client_callout + 20
+	8   libdispatch.dylib                   0x0000000193050bb8 _dispatch_main_queue_drain + 988
+	9   libdispatch.dylib                   0x00000001930507cc _dispatch_main_queue_callback_4CF + 44
+	10  CoreFoundation                      0x0000000193313834 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+	11  CoreFoundation                      0x00000001932d0fb8 __CFRunLoopRun + 1996
+	12  CoreFoundation                      0x00000001932d0194 CFRunLoopRunSpecific + 608
+	13  Foundation                          0x00000001944066b8 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 212
+	14  Foundation                          0x000000019447bbd0 -[NSRunLoop(NSRunLoop) runUntilDate:] + 100
+	15  HeroCoordinatorProbe                0x0000000100f70724 $s20HeroCoordinatorProbe0aB4Main33_9901785AFBB999111207BBAE454C3AC9LLO3runs5Int32VyFZTf4d_n + 7916
+	16  HeroCoordinatorProbe                0x0000000100f6567c main + 12
+	17  dyld                                0x0000000192e67154 start + 2476
+)

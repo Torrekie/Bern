@@ -202,3 +202,14 @@ source审查还确认：当前固定端点夹具将真实FlightView挂在Fixture
 下一检查点转为[一次真实coordinator条件替换](../Evidence/macOS14-hero-route-40097558084/next-coordinator-plan/README.md)及[至多三PNG的补充](../Evidence/macOS14-hero-route-40097558084/next-coordinator-plan/Supplement.md)：真实BernImage同非空key、source/destination不同.id/位置，用正常SwiftUI dismantle/update触发，不手调enter/leave/flight/tick/visibility；只读实际maps/timer/frame/progress，须见运动、自动finish归零/timer停止/overlay临时view移除、目的图可见。before/settled各5stable，中途首次.2<p<.8取一张原窗口并记录capture前后状态，需目检实际绘制，不能用不同步13/14逐像素相等代替动画验收。仅新SDK原Hero exact+imports同binary13/14，不带旧SDK fatal clock guard或旧float双key/双snapshot合同；单次失败保留证据，不隐式重试。此方案尚未实现或运行。
 
 其它Film/chrome/图片布局/Frame/交互/HDR和动画未通过项继续保留，完整macOS13阶段未验收，goal active；不进入11/Swift5.3/Objective-C/iOS。本轮清理自有binary/tar/cache 58,335,236B与逐字核验的work副本5,392,458B（约63.7MB逻辑文件），见[收据](../Evidence/macOS13-hdr-candidate/hero-route-format-cleanup-20261024.json)；不当作APFS实际回收或磁盘净变化。
+
+
+## 一次真实hero协调的原生结果与采样边界（2026-10-24）
+
+上节未执行方案现已由[CI40103369574及同binary13/14运行](../Evidence/macOS14-hero-coordinator-40103369574/README.md)落实。新SDK26.2/min13原签名binary`5739a040…82ecea36`使用完整原Hero计时回调，单个同key的BernImage在不同.id/位置间由一次真实SwiftUI条件替换驱动；无manual Flight、手调enter/leave/tick/finish或visibility/frame/progress。两端均观察到同一真实flight及live timer/位移，最终flight/timer/overlay临时view归零，source离开原层级但weak未dealloc。normal/cache/noMTK/前台/原窗口界限、before/settled五stable通过；13/14窗口1.547/2.044秒。CI成功仅为原生采集门槛通过。
+
+原始起点/终点均可见，完全opaque同宿主ROI经ICC归一sRGB后13 MAE0.294106/255、max5，14 MAE0.271169、max2，均非exact。原中图13已有位移、14仍在source；固定几何inset内非白内容bounds分别root[80.5,66,400.5,246]与[16,24,336,204]，而逻辑trigger为p.287/root(112.5062,87.1886)与p.692/(248.5375,176.2567)。native前后bracket不等于画面同步，不据此唯一归因系统、RunLoop或渲染阶段；中间帧、颜色和完整动画仍未验收。
+
+下一检查点只调整[采样时机](../Evidence/macOS14-hero-coordinator-40103369574/next-sampling-plan/README.md)：首次.2<p<.8仅arm，恰下一原自然RunLoop/sample后拍一次mid，保留分开的index/state/uptime；失去同一live flight则incomplete、不寻第二次band或强制flush/进度。尚未实现/运行，它不承诺同步修复。产品没有合入颜色/layer请求；Film/chrome/Picture/Frame/交互/HDR和完整动画未通过项保持，goal active，11/Swift5.3/Objective-C/iOS仍推迟。
+
+本批原binary/tar和已用完module cache清理57,691,387B；逐字核验后的work重复副本另行清理，见[收据](../Evidence/macOS14-hero-coordinator-40103369574/cleanup.json)。保留六张原PNG/ICC、报告、源码与最终现存清单；数字为逻辑文件量，不代表APFS实际回收或磁盘净变化。
