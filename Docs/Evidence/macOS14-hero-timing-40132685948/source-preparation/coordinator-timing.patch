@@ -1,0 +1,212 @@
+--- a/ProductHero.swift
++++ b/ProductHero.swift
+@@ -262,6 +262,7 @@
+             }
+             timer = clock
+             RunLoop.main.add(clock, forMode: .common)
++            FixtureFlightTiming.timerAdded(key: key, started: flight.started)
+         }
+     }
+ 
+@@ -308,6 +309,7 @@
+     private func tick() {
+         let now = ProcessInfo.processInfo.systemUptime
+         for (key, flight) in flights {
++            FixtureFlightTiming.tick(key: key, started: flight.started, now: now)
+             guard window?.isVisible == true, flight.destination?.reduced != true else { finish(key); continue }
+             // Keep the last pixels while the next layout pass mounts a
+             // replacement; leave() retires abandoned destinations.
+@@ -333,6 +335,7 @@
+                 height: max(1, mix(flight.from.rect.height, flight.to.rect.height)))
+             flight.view.corner = mix(flight.from.corner, flight.to.corner)
+             flight.view.progress = p
++            FixtureFlightTiming.applied(key: key, started: flight.started, now: now, progress: p)
+             flight.view.needsDisplay = true
+             let settled = abs(p - 1) < 0.0001 && abs(p - flight.progress) < 0.0001
+             flight.progress = p
+--- a/FlightSDR.swift.inc
++++ b/FlightSDR.swift.inc
+@@ -121,6 +121,7 @@
+     }
+     static func noteTransition(_ time: Double) { transitionTime = time }
+     static func observeFlight(_ from: NSImage, _ to: NSImage, started: Double, view: BernHeroFlightView) {
++        FixtureFlightTiming.matchingEntered()
+         // Called by the existing scalar observer, never creates/retains a flight or image.
+         let left = observations.enumerated().filter { $0.element.displayImage === from }
+         let right = observations.enumerated().filter { $0.element.displayImage === to }
+@@ -138,6 +139,7 @@
+                        "from_ordinal": left[0].offset + 1, "to_ordinal": right[0].offset + 1,
+                        "from_nsimage_id": fixtureID(from), "to_nsimage_id": fixtureID(to)]
+         }
++        FixtureFlightTiming.existingFirstStamp(mapping["first_live_observation_uptime"] as? Double)
+     }
+     static func check() throws { if let problem { throw FixtureFailure(message: problem) } }
+     static func freezePrimary() { primary = false }
+@@ -183,3 +185,99 @@
+                 "helper_retained_original_cgimage_count": 0, "helper_original_provider_read_count": 0]
+     }
+ }
++
++// Independent bounded scalar observer. No object references, queries or animation control.
++@MainActor private enum FixtureFlightTiming {
++    private static var recording = true
++    private static var native: [String: [String: Any]] = [:] // Exactly three named slots.
++    private static var live: [[String: Any]] = [] // First two live sampler callbacks only.
++    private static var pending: [String: Any]?
++    private static var timerAddedCount = 0
++    private static var problem: String?
++
++    static func timerAdded(key: String, started: Double) {
++        guard recording else { return }
++        timerAddedCount += 1
++        guard timerAddedCount == 1 else { problem = problem ?? "More than one native timer registration"; return }
++        native["timer_added"] = ["key": key, "flight_started_uptime": started, "uptime": fixtureUptime()]
++    }
++    static func tick(key: String, started: Double, now: Double) {
++        guard recording, native["first_tick"] == nil else { return }
++        native["first_tick"] = ["key": key, "flight_started_uptime": started, "now_uptime": now]
++    }
++    static func applied(key: String, started: Double, now: Double, progress: Double) {
++        guard recording, native["first_applied"] == nil else { return }
++        native["first_applied"] = ["key": key, "flight_started_uptime": started,
++                                   "now_uptime": now, "progress": progress]
++    }
++    static func callbackEntered(_ identity: Int) {
++        guard recording, live.count < 2 else { return }
++        pending = ["callback_id": identity, "callback_entered_uptime": fixtureUptime()]
++    }
++    static func mark(_ field: String) {
++        guard recording, live.count < 2, pending != nil else { return }
++        pending?[field] = fixtureUptime()
++    }
++    static func matchingEntered() { mark("matching_begin_uptime") }
++    static func existingFirstStamp(_ time: Double?) {
++        guard recording, live.count < 2, pending != nil else { return }
++        pending?["existing_first_live_observation_uptime"] = time.map { $0 as Any } ?? NSNull()
++    }
++    static func keepLive(sample: Int, stateTime: Double, identity: String, started: Double?, progress: Double) {
++        guard recording, live.count < 2 else { return }
++        guard var value = pending else { problem = problem ?? "Missing live callback prefix"; return }
++        value["sample_index"] = sample; value["state_uptime"] = stateTime
++        value["flight_identity"] = identity; value["flight_started_uptime"] = started.map { $0 as Any } ?? NSNull()
++        value["progress"] = progress; live.append(value); pending = nil
++    }
++    static func freeze() { recording = false }
++    static func finish(acquisitionSucceeded: Bool) -> [String: Any] {
++        let required = ["callback_entered_uptime", "window_info_begin_uptime", "window_info_end_uptime",
++                        "scalars_begin_uptime", "matching_begin_uptime", "state_uptime", "scalars_end_uptime"]
++        if problem == nil, recording || native.count != 3 || timerAddedCount != 1 || live.count != 2 {
++            problem = "Incomplete frozen three-event/two-live-sample timing trace"
++        }
++        for sample in live {
++            let times = required.compactMap { sample[$0] as? Double }
++            if times.count != required.count || !times.allSatisfy({ $0.isFinite }) ||
++                zip(times, times.dropFirst()).contains(where: { $0.0 > $0.1 }) {
++                problem = problem ?? "Missing/nonfinite/out-of-order callback timing fields"
++            }
++        }
++        if live.count == 2 {
++            let a = live[0], b = live[1]
++            if let ca = a["callback_id"] as? Int, let cb = b["callback_id"] as? Int,
++               let sa = a["sample_index"] as? Int, let sb = b["sample_index"] as? Int,
++               let identity = a["flight_identity"] as? String, !identity.isEmpty,
++               let started = a["flight_started_uptime"] as? Double,
++               let stamp = a["existing_first_live_observation_uptime"] as? Double,
++               let matching = a["matching_begin_uptime"] as? Double, let state = a["state_uptime"] as? Double {
++                if cb != ca + 1 || sb != sa + 1 || b["flight_identity"] as? String != identity ||
++                    b["flight_started_uptime"] as? Double != started || b["existing_first_live_observation_uptime"] as? Double != stamp ||
++                    !started.isFinite || !stamp.isFinite || stamp < matching || stamp > state {
++                    problem = problem ?? "Live samples are not adjacent observations of one pinned native flight"
++                }
++                for event in native.values {
++                    let time = (event["uptime"] ?? event["now_uptime"]) as? Double
++                    if event["key"] as? String != fixtureHeroKey || event["flight_started_uptime"] as? Double != started ||
++                        time == nil || time?.isFinite != true || (time ?? 0) < started {
++                        problem = problem ?? "Native scalar event identity/time incomplete"
++                    }
++                }
++                if let tick = native["first_tick"]?["now_uptime"] as? Double,
++                   let applied = native["first_applied"]?["now_uptime"] as? Double,
++                   let progress = native["first_applied"]?["progress"] as? Double {
++                    if applied < tick || !progress.isFinite { problem = problem ?? "First applied scalar timing incomplete" }
++                } else { problem = problem ?? "Missing first native tick/applied scalars" }
++            } else { problem = problem ?? "Missing live callback/sample/native identity fields" }
++        }
++        let complete = problem == nil
++        return ["kind": "bounded_native_sampler_scalar_timing", "complete": complete,
++                "success": complete && acquisitionSucceeded,
++                "error": problem.map { $0 as Any } ?? (acquisitionSucceeded ? NSNull() : "Original acquisition incomplete" as Any),
++                "native_events": native, "timer_added_count": timerAddedCount, "live_samples": live,
++                "pending_callback": pending.map { $0 as Any } ?? NSNull(), "frozen_before_teardown": !recording,
++                "limits": ["native_event_slots": 3, "live_samples": 2, "pending_callbacks": 1],
++                "scope": "Monotonic scalar call boundaries only; neither rendered frames nor root cause"]
++    }
++}
+--- a/Driver.swift.inc
++++ b/Driver.swift.inc
+@@ -208,6 +208,7 @@
+               sdrMode == .default || expected == 13 else {
+             throw FixtureFailure(message: "Flight SDR requires default/baked-pair; macOS14 permits default only before window creation")
+         }
++        guard sdrMode == .default else { throw FixtureFailure(message: "Timing collection permits default13/default14 only") }
+         guard [13, 14].contains(expected), ProcessInfo.processInfo.operatingSystemVersion.majorVersion == expected,
+               CGPreflightScreenCaptureAccess(), !bernForcedReduceMotion, bernMotionScale == 1,
+               fixtureHash(try Data(contentsOf: asset)) == "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b" else {
+@@ -248,6 +249,7 @@
+     }
+     @objc private func sampleTimer(_ timer: Timer) {
+         callbackCount += 1
++        FixtureFlightTiming.callbackEntered(callbackCount)
+         guard !terminal else { afterTerminalCallbacks += 1; return }
+         depth += 1; maximumDepth = max(maximumDepth, depth); defer { depth -= 1 }
+         guard depth == 1 else { reentrantCount += 1; finish(FixtureFailure(message: "Reentrant sampler callback")); return }
+@@ -271,7 +273,9 @@
+     private func sampleOnce() throws {
+         guard let w = window, let root = host else { throw FixtureFailure(message: "Missing owned window/root") }
+         if midArmed != nil && !nextSampleCaptured && manager == nil { throw FixtureFailure(message: "Armed flight manager lost on the next original iteration") }
++        FixtureFlightTiming.mark("window_info_begin_uptime")
+         _ = try fixtureWindowInfo(w, initialFrame: initialFrame, front: front, manager: manager, root: root)
++        FixtureFlightTiming.mark("window_info_end_uptime")
+         // These local arrays end this iteration, before the next runloop/dismantle pass.
+         var anchors = fixtureDescendants(root).compactMap { $0 as? BernPictureHeroAnchor }
+         if manager == nil {
+@@ -279,7 +283,9 @@
+             manager = anchors.first(where: { $0.key == fixtureHeroKey && $0.attached && $0.picture != nil })?.heroes
+         }
+         guard let heroes = manager else { return }
++        FixtureFlightTiming.mark("scalars_begin_uptime")
+         let state = heroes.fixtureScalars(root: root)
++        FixtureFlightTiming.mark("scalars_end_uptime")
+         try FixtureFlightSDR.check()
+         guard let sampleUptime = state["uptime"] as? Double else { throw FixtureFailure(message: "Missing actual sample uptime") }
+         let sampleIndex = samples.count
+@@ -302,6 +308,8 @@
+                   live["from_rect"] as? [String: Double] != live["to_rect"] as? [String: Double] else { throw FixtureFailure(message: "Actual flight/timer/overlay/distinct rect gate failed") }
+             if let first = observedFlightID, first != identity { throw FixtureFailure(message: "Observed flight identity changed during the single transition") }
+             observedFlightID = identity; report["observed_flight_identities"] = [identity]
++            FixtureFlightTiming.keepLive(sample: sampleIndex, stateTime: sampleUptime, identity: identity,
++                started: live["started_uptime"] as? Double, progress: progress)
+             sawFlight = true; heroes.fixtureTrackFlight(refs)
+             if let old = previousLiveFrame, old != frame, let p = previousProgress, p != progress { sawMovement = true }
+             previousLiveFrame = frame; previousProgress = progress
+@@ -440,6 +448,7 @@
+          "preload_completed_uptime": preloadCompleted.map { $0 as Any } ?? NSNull()]
+     }
+     func cleanupAndWrite() {
++        FixtureFlightTiming.freeze()
+         FixtureFlightSDR.freezePrimary()
+         report["samples"] = samples; report["captures"] = captures; report["execution_model"] = executionModel()
+         if let root = host, let heroes = manager { report["before_cleanup_state"] = heroes.fixtureScalars(root: root) }
+@@ -456,6 +465,12 @@
+         if flightSDR["success"] as? Bool != true {
+             report["success"] = false; HeroCoordinatorMain.finalizationFailed = true
+             if report["error"] == nil { report["error"] = flightSDR["error"] }
++        }
++        let timing = FixtureFlightTiming.finish(acquisitionSucceeded: report["success"] as? Bool == true)
++        report["flight_timing_trace"] = timing
++        if timing["success"] as? Bool != true {
++            report["success"] = false; HeroCoordinatorMain.finalizationFailed = true
++            if report["error"] == nil { report["error"] = timing["error"] }
+         }
+         do { try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys]).write(to: output.appendingPathComponent("report.json"), options: .atomic) }
+         catch { HeroCoordinatorMain.finalizationFailed = true; FileHandle.standardError.write(Data("Report write failed: \(error)\n".utf8)) }

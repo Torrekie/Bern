@@ -1,0 +1,1028 @@
+{
+  "actual_binary": {
+    "actual_read_after_gates": true,
+    "actual_read_before_gates": true,
+    "bytes": 661776,
+    "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe",
+    "sha256": "723896fc46a2a5e29a1c02293ebc138948f5bffdff10cbe0eec2cf0cdb1108b6"
+  },
+  "actual_readonly_checks": {
+    "arch": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "arm64\n"
+    },
+    "build": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 26.2\n   ntools 1\n     tool LD\n  version 1230.1\n"
+    },
+    "signature": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "analysis_execution": {
+    "actual_analyzer_invocations": 1,
+    "analyzer_exit_code": 0,
+    "analyzer_sha256": "a24a5e7312ee0ccfbaea998c64b70078c1cae75e3a473cbd2a55818b397f1442",
+    "native_app_compile_ci_or_pixel_runs": 0,
+    "post_analysis": "Five git overlay hashes additionally compared to already-recorded actual package fingerprints; command and source commit recorded under git_base.",
+    "report_compaction": "Original samples/captures/source/gate bodies are referenced by hashes, not copied. New trace3slots/2prefix rows and interval values retained."
+  },
+  "ci_run": 40132685948,
+  "gate_adaptations": {
+    "13": {
+      "adapted_prefix_sha256": "43cdbce1dfe4b6a1a9bba3e390cf0870dbd1f23c6ca6d8c7894d01f9d2650e02",
+      "five_literal_path_or_major_changes_only": {
+        "Path('evidence/runtime14')": "Path('/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime13')",
+        "Path('probe/HeroTimingProbe')": "Path('/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe')",
+        "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==13 and d['actual_os_major']==13",
+        "receipt['expected_os_major']==14": "receipt['expected_os_major']==13",
+        "validate_flight_sdr(d,receipt,'default',14)": "validate_flight_sdr(d,receipt,'default',13)"
+      }
+    },
+    "14": {
+      "adapted_prefix_sha256": "dc84acfce35b0afd1865ccc38f69e3a65aa08b7f4767812df989280e73960035",
+      "five_literal_path_or_major_changes_only": {
+        "Path('evidence/runtime14')": "Path('/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14')",
+        "Path('probe/HeroTimingProbe')": "Path('/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe')",
+        "d['expected_os_major']==14 and d['actual_os_major']==14": "d['expected_os_major']==14 and d['actual_os_major']==14",
+        "receipt['expected_os_major']==14": "receipt['expected_os_major']==14",
+        "validate_flight_sdr(d,receipt,'default',14)": "validate_flight_sdr(d,receipt,'default',14)"
+      }
+    }
+  },
+  "git_base": {
+    "commit": "4fc027626aa33b5140a4881708a100fc4d2a7c7d",
+    "directory": ".github/scripts/hero-coordinator-sdr-probe",
+    "five_overlays": [
+      "ProductHero.swift",
+      "FlightSDR.swift.inc",
+      "Driver.swift.inc",
+      "README.md",
+      "source-provenance.json"
+    ],
+    "post_analysis_five_overlay_git_verification": {
+      "command_template": [
+        "git",
+        "show",
+        "COMMIT:DIRECTORY/FILE"
+      ],
+      "commit": "cc96030b22c74010df79423979aee1abf83b7cb5",
+      "directory": ".github/scripts/hero-timing-probe",
+      "files": {
+        "Driver.swift.inc": {
+          "exact": true,
+          "git_sha256": "d066c050b338cfe26ec3bee5b726e4ec62cfb4b36c49d3fb12c5e316c4ec7e07",
+          "recorded_actual_package_sha256": "d066c050b338cfe26ec3bee5b726e4ec62cfb4b36c49d3fb12c5e316c4ec7e07"
+        },
+        "FlightSDR.swift.inc": {
+          "exact": true,
+          "git_sha256": "8c7ba5ad8230d8ba26f006f33ede3a37616f84b5739f6c43084b9c2d1194e6a5",
+          "recorded_actual_package_sha256": "8c7ba5ad8230d8ba26f006f33ede3a37616f84b5739f6c43084b9c2d1194e6a5"
+        },
+        "ProductHero.swift": {
+          "exact": true,
+          "git_sha256": "2bcfacc968f15ffe4f77aa6a8cc832c5b138ba8fb0ec2fc0725c702e45e17cd5",
+          "recorded_actual_package_sha256": "2bcfacc968f15ffe4f77aa6a8cc832c5b138ba8fb0ec2fc0725c702e45e17cd5"
+        },
+        "README.md": {
+          "exact": true,
+          "git_sha256": "2d7be7f38a57f7b8cb82d950c90d98050d6d32dead49b8e73218de3de7b52493",
+          "recorded_actual_package_sha256": "2d7be7f38a57f7b8cb82d950c90d98050d6d32dead49b8e73218de3de7b52493"
+        },
+        "source-provenance.json": {
+          "exact": true,
+          "git_sha256": "ec4908eb35a7ee289bb311e6c4522917c6903d0a074d00e38dbc6cd5075c201e",
+          "recorded_actual_package_sha256": "ec4908eb35a7ee289bb311e6c4522917c6903d0a074d00e38dbc6cd5075c201e"
+        }
+      },
+      "scope": "Additional read-only git comparison against actual package fingerprints recorded before cleanup. No cohort file reread, gate replay or source mutation."
+    },
+    "source_map_binding": {
+      "Dependencies.swift": {
+        "byte_identical": true,
+        "git_base_sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+      },
+      "Driver.swift.inc": {
+        "current_sha256": "d066c050b338cfe26ec3bee5b726e4ec62cfb4b36c49d3fb12c5e316c4ec7e07",
+        "overlay": true
+      },
+      "FlightSDR.swift.inc": {
+        "current_sha256": "8c7ba5ad8230d8ba26f006f33ede3a37616f84b5739f6c43084b9c2d1194e6a5",
+        "overlay": true
+      },
+      "ProductHero.exact.swift": {
+        "byte_identical": true,
+        "git_base_sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+      },
+      "ProductHero.swift": {
+        "current_sha256": "2bcfacc968f15ffe4f77aa6a8cc832c5b138ba8fb0ec2fc0725c702e45e17cd5",
+        "overlay": true
+      },
+      "ProductImage.exact.swift": {
+        "byte_identical": true,
+        "git_base_sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+      },
+      "ProductImage.swift": {
+        "byte_identical": true,
+        "git_base_sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+      },
+      "ProductStyle.exact.swift": {
+        "byte_identical": true,
+        "git_base_sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+      },
+      "ProductStyle.swift": {
+        "byte_identical": true,
+        "git_base_sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+      },
+      "README.md": {
+        "current_sha256": "2d7be7f38a57f7b8cb82d950c90d98050d6d32dead49b8e73218de3de7b52493",
+        "overlay": true
+      },
+      "assets/source-named-pq.png": {
+        "byte_identical": true,
+        "git_base_sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+      },
+      "run-one.py": {
+        "byte_identical": true,
+        "git_base_sha256": "200403b0b4e07f49dc4f74b6af8e0b5b14d67f36a3de022f44e4c44419d8621c"
+      }
+    }
+  },
+  "harness_commit": "d72cb5f9bcec8a90fa394bca1060ed0f392ba8f3",
+  "input_files": {
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/runtime13-default/before.png": {
+      "bytes": 187059,
+      "sha256": "df988c9f218040aafddd4e7fef9de6dd8a29348d1ddb829f70d965335407ae49"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/runtime13-default/report.json": {
+      "bytes": 154988,
+      "sha256": "3b175f82b18d7304abc74a17ff634e72e070efd430c6db40fa103e661096698f"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/runtime13-default/settled.png": {
+      "bytes": 187238,
+      "sha256": "c705e24e5bbf25290e5fbc0230d959c7883f9d8cdc7afe351aa40c1ef176515f"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/build/SHA256SUMS": {
+      "bytes": 1719,
+      "sha256": "9780a4eba60397ab9ee280fa4e0e6421e9221180f21d95f1dbd34423c298b8a2"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/build/hero-timing-probe.tar.gz": {
+      "bytes": 268039,
+      "sha256": "372136e696820c2ebc332e5d069b4c78267f80b7fe6ff5416189befe73528a7d"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/local13-ready.json": {
+      "bytes": 672,
+      "sha256": "06751630dd4b250a3a34418780e947ac0eb764b38f32c6340a0eab7051aff7e8"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/CoordinatorSDR.assembled.swift": {
+      "bytes": 71317,
+      "sha256": "af2a4b8bd95f373b790b1ffd427730f696d5d537cca30ef967863f2c9a426638"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/Dependencies.swift": {
+      "bytes": 232,
+      "sha256": "d13aae68a81cbe8fe6755a57b9539312c571cb21fe5cbe5870732062347048f9"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/Driver.swift.inc": {
+      "bytes": 36982,
+      "sha256": "d066c050b338cfe26ec3bee5b726e4ec62cfb4b36c49d3fb12c5e316c4ec7e07"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/FlightSDR.swift.inc": {
+      "bytes": 18602,
+      "sha256": "8c7ba5ad8230d8ba26f006f33ede3a37616f84b5739f6c43084b9c2d1194e6a5"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe": {
+      "bytes": 661776,
+      "sha256": "723896fc46a2a5e29a1c02293ebc138948f5bffdff10cbe0eec2cf0cdb1108b6"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/ProductHero.exact.swift": {
+      "bytes": 14952,
+      "sha256": "8e1e90a00ff2f386a38ed8c4977af27a505571051560d50406e9e54b69ed186c"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/ProductHero.swift": {
+      "bytes": 15704,
+      "sha256": "2bcfacc968f15ffe4f77aa6a8cc832c5b138ba8fb0ec2fc0725c702e45e17cd5"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/ProductImage.exact.swift": {
+      "bytes": 23920,
+      "sha256": "cdc32792b8f8096b813087735e133d6b8bf89ddd2189a83125eed50088d5ee11"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/ProductImage.swift": {
+      "bytes": 24115,
+      "sha256": "8f70fb732441dda51c112730ba85734c78e2c2ab7fe72a316d0363573e26b3dc"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/ProductStyle.exact.swift": {
+      "bytes": 2471,
+      "sha256": "cfef54195a5762a2ba81cd0c5358ddbca6c3b26593f743950e23d024e5514aa1"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/ProductStyle.swift": {
+      "bytes": 2487,
+      "sha256": "550205c225996774925d4cf7d54fd54a9245d6c155ba5ba101db792ec7f1a984"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/README.md": {
+      "bytes": 1296,
+      "sha256": "2d7be7f38a57f7b8cb82d950c90d98050d6d32dead49b8e73218de3de7b52493"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/SHA256SUMS": {
+      "bytes": 1719,
+      "sha256": "9780a4eba60397ab9ee280fa4e0e6421e9221180f21d95f1dbd34423c298b8a2"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/assets/source-named-pq.png": {
+      "bytes": 15588,
+      "sha256": "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/build/binary.txt": {
+      "bytes": 3952,
+      "sha256": "21835a052b269971d26e461b2bac3ce4a0e62f4b7ca1617df37de75c3e4c7638"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/build/command.txt": {
+      "bytes": 429,
+      "sha256": "f7901c0c93861d6d524b0db02a6fc6544db39d4597b825767d46de5341544080"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/build/compile.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/build/environment.txt": {
+      "bytes": 453,
+      "sha256": "7c845c3552a69479579c8f11a9ef700f24b327c970e2a386af904c781dc18584"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/build/signature.txt": {
+      "bytes": 1023,
+      "sha256": "db25f7cc3a374703e985a9e0d207be03f0d749884979543f0a31e6f9bc295232"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/run-one.py": {
+      "bytes": 2431,
+      "sha256": "200403b0b4e07f49dc4f74b6af8e0b5b14d67f36a3de022f44e4c44419d8621c"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/source-provenance.json": {
+      "bytes": 2422,
+      "sha256": "ec4908eb35a7ee289bb311e6c4522917c6903d0a074d00e38dbc6cd5075c201e"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime13/before.png": {
+      "bytes": 187059,
+      "sha256": "df988c9f218040aafddd4e7fef9de6dd8a29348d1ddb829f70d965335407ae49"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime13/endpoint-controls.json": {
+      "bytes": 3821,
+      "sha256": "c0a65d96d08eb42c6ef38da4f459f4e3eddf6ef7b51b44968d89656cf4ecd9ed"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime13/in-flight.png": {
+      "bytes": 115072,
+      "sha256": "3ecdb1e93e63ff0be12dea38032b49c4b715858f8eb9287a437e3b5bd2533121"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime13/report.json": {
+      "bytes": 158200,
+      "sha256": "dafa945d230d0f894ebd4dc716a8fdb2a39a78fb61a4ea3f5427e408c99c6691"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime13/root-steps.json": {
+      "bytes": 3108,
+      "sha256": "ec4574af93e9ded70b1096b6383d4e868d219e8374cc8ffa729769a029119d8b"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime13/run-receipt.json": {
+      "bytes": 1046,
+      "sha256": "75798e67f7e8573a3c76d5e28a6be9288af7e3f214996937c5fd9c7c95cfa3aa"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime13/settled.png": {
+      "bytes": 187238,
+      "sha256": "c705e24e5bbf25290e5fbc0230d959c7883f9d8cdc7afe351aa40c1ef176515f"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/SHA256SUMS": {
+      "bytes": 1719,
+      "sha256": "9780a4eba60397ab9ee280fa4e0e6421e9221180f21d95f1dbd34423c298b8a2"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/before.png": {
+      "bytes": 56671,
+      "sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/in-flight.png": {
+      "bytes": 46795,
+      "sha256": "17e140e10217dd4efe84f5feefd43638fb487a84e7f413c0bc81b29905985a8a"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/report.json": {
+      "bytes": 123764,
+      "sha256": "58ba63d04448bce6c087cf8eb1795a6c2d9d525aeeb5295b524bace4b481b1a7"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/run-receipt.json": {
+      "bytes": 820,
+      "sha256": "52b4f6304d9d9d63f8e1dda44c0323158970ea37ff9a267ece5bdef52cdef3b9"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/settled.png": {
+      "bytes": 55695,
+      "sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/tools/macos14-hero-timing-probe.yml": {
+      "bytes": 39915,
+      "sha256": "4d6d9a3491d66ecabc341e51aafdeab2e901855eea59b63107359baef3cb2e08"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/tools/timing-gate.py": {
+      "bytes": 8931,
+      "sha256": "df434f5fe79e0c048376018ccb3e5103cafa5d3e88543ff62a5c41f066ce8352"
+    }
+  },
+  "limits": "Trace complete is bounded coverage only. Trace-only preserves report.success and never claims strict pass. Original now/p and first-observation stamp are not presentation/matching-end timestamps. No cause or zero observer effect claim.",
+  "original_prefix_bytes": 19155,
+  "original_prefix_sha256": "db503c085d257c7102062fc209074ded13fa431aac8e0ec1395fdde0decf60a8",
+  "package": {
+    "assembly_sha256": "af2a4b8bd95f373b790b1ffd427730f696d5d537cca30ef967863f2c9a426638",
+    "manifest_members": 20,
+    "source_map_members": 12,
+    "tar_map_exact": true,
+    "tar_sha256": "372136e696820c2ebc332e5d069b4c78267f80b7fe6ff5416189befe73528a7d"
+  },
+  "pixel_acceptance": "NOT PERFORMED",
+  "processes": {
+    "13": {
+      "cache_unchanged": true,
+      "coverage_is_not_native_completion": true,
+      "coverage_result": {
+        "acquisition_reported_success": true,
+        "live_call_intervals_seconds": [
+          {
+            "callback_entry_minus_flight_started": 0.005678666639141738,
+            "callback_id": 9,
+            "matching_minus_original_first_live_stamp": -1.875002635642886e-05,
+            "sample_index": 7,
+            "scalars": 4.762498429045081e-05,
+            "state_minus_flight_started": 0.006123416649643332,
+            "window_info": 0.00038845837116241455
+          },
+          {
+            "callback_entry_minus_flight_started": 0.04331974999513477,
+            "callback_id": 10,
+            "matching_minus_original_first_live_stamp": 0.0375604999717325,
+            "sample_index": 8,
+            "scalars": 2.558337291702628e-05,
+            "state_minus_flight_started": 0.04368045832961798,
+            "window_info": 0.00032712501706555486
+          }
+        ],
+        "mode": "strict",
+        "native_event_offsets_seconds": {
+          "first_applied": 0.00915929168695584,
+          "first_tick": 0.00915929168695584,
+          "timer_added": 0.00012854166561737657
+        },
+        "original_acquisition_error": null,
+        "reported_sampler_callback_count": 60,
+        "scope": "Scalar call boundaries only; no rendered-frame, causal or responsiveness acceptance.",
+        "sdr_reported_success": true,
+        "strict_gate_passed": true,
+        "structure_error": null,
+        "trace_coverage_verified": true
+      },
+      "first_row_sdr_mapping_binding": {
+        "comparisons": {
+          "existing_first_live_observation_uptime": {
+            "exact": true,
+            "mapping": 277337.75433637504,
+            "trace": 277337.75433637504
+          },
+          "flight_identity": {
+            "exact": true,
+            "mapping": "ObjectIdentifier(0x000000014970ac20)",
+            "trace": "ObjectIdentifier(0x000000014970ac20)"
+          },
+          "flight_started_uptime": {
+            "exact": true,
+            "mapping": 277337.74822875,
+            "trace": 277337.74822875
+          }
+        },
+        "scope": "Exact three-field first-row binding; separate from gate exit/coverage status.",
+        "verified": true
+      },
+      "front": [
+        9292,
+        9292
+      ],
+      "interval_table": {
+        "boundary": "No callback-exit marker: remaining callback work, automatic drawing and dispatch are not separated. Existing tick now is not callback return, assignment completion or presentation time.",
+        "first_scalars_end_to_first_tick_existing_now_unattributed_seconds": 0.0030329583678394556,
+        "live_prefix_seconds": [
+          {
+            "callback_id": 9,
+            "entry_to_window_info_begin": 7.541675586253405e-06,
+            "matching_begin_to_original_first_stamp_first_row_only": 1.875002635642886e-05,
+            "progress": 0,
+            "sample_index": 7,
+            "scalars": 4.762498429045081e-05,
+            "total_entry_to_scalars_end": 0.0004476666799746454,
+            "window_info": 0.00038845837116241455,
+            "window_info_end_to_scalars_begin": 4.041648935526609e-06
+          },
+          {
+            "callback_id": 10,
+            "entry_to_window_info_begin": 6.83334656059742e-06,
+            "matching_begin_to_original_first_stamp_first_row_only": null,
+            "progress": 0.11586832268226133,
+            "sample_index": 8,
+            "scalars": 2.558337291702628e-05,
+            "total_entry_to_scalars_end": 0.0003632083535194397,
+            "window_info": 0.00032712501706555486,
+            "window_info_end_to_scalars_begin": 3.666616976261139e-06
+          }
+        ],
+        "native_offsets_seconds": {
+          "first_applied": 0.00915929168695584,
+          "first_tick": 0.00915929168695584,
+          "timer_added": 0.00012854166561737657
+        }
+      },
+      "loop_counts": {
+        "loop_entry_count": 1,
+        "loop_return_count": 1,
+        "sampler_callback_count": 60,
+        "stop_calls": 1,
+        "terminal_count": 1,
+        "wake_count": 1
+      },
+      "native_execution_sdr_gate": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "native_gates_present": true,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 54283,
+      "pixel_analysis": false,
+      "report_error": null,
+      "report_success": true,
+      "report_unchanged_by_all_gates": true,
+      "sample_count": 59,
+      "shots": [
+        {
+          "capture_after_uptime": 277337.6919595417,
+          "capture_before_uptime": 277337.68797770835,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "phase": "before",
+          "png": "before.png",
+          "png_sha256": "df988c9f218040aafddd4e7fef9de6dd8a29348d1ddb829f70d965335407ae49"
+        },
+        {
+          "capture_after_uptime": 277337.84200479166,
+          "capture_before_uptime": 277337.8371686667,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "phase": "in-flight",
+          "png": "in-flight.png",
+          "png_sha256": "3ecdb1e93e63ff0be12dea38032b49c4b715858f8eb9287a437e3b5bd2533121"
+        },
+        {
+          "capture_after_uptime": 277338.69639887504,
+          "capture_before_uptime": 277338.68759833334,
+          "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+          "capture_size": [
+            2048,
+            936
+          ],
+          "phase": "settled",
+          "png": "settled.png",
+          "png_sha256": "c705e24e5bbf25290e5fbc0230d959c7883f9d8cdc7afe351aa40c1ef176515f"
+        }
+      ],
+      "snapshot_counts": {
+        "context_create_count": 0,
+        "conversion_count": 0,
+        "helper_references_cleared": true,
+        "primary_snapshot_count": 2
+      },
+      "strict_result": {
+        "acquisition_reported_success": true,
+        "live_call_intervals_seconds": [
+          {
+            "callback_entry_minus_flight_started": 0.005678666639141738,
+            "callback_id": 9,
+            "matching_minus_original_first_live_stamp": -1.875002635642886e-05,
+            "sample_index": 7,
+            "scalars": 4.762498429045081e-05,
+            "state_minus_flight_started": 0.006123416649643332,
+            "window_info": 0.00038845837116241455
+          },
+          {
+            "callback_entry_minus_flight_started": 0.04331974999513477,
+            "callback_id": 10,
+            "matching_minus_original_first_live_stamp": 0.0375604999717325,
+            "sample_index": 8,
+            "scalars": 2.558337291702628e-05,
+            "state_minus_flight_started": 0.04368045832961798,
+            "window_info": 0.00032712501706555486
+          }
+        ],
+        "mode": "strict",
+        "native_event_offsets_seconds": {
+          "first_applied": 0.00915929168695584,
+          "first_tick": 0.00915929168695584,
+          "timer_added": 0.00012854166561737657
+        },
+        "original_acquisition_error": null,
+        "reported_sampler_callback_count": 60,
+        "scope": "Scalar call boundaries only; no rendered-frame, causal or responsiveness acceptance.",
+        "sdr_reported_success": true,
+        "strict_gate_passed": true,
+        "structure_error": null,
+        "trace_coverage_verified": true
+      },
+      "strict_timing_gate": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout_sha256": "e7859322dd2f96614e0dd5f50d7f270903416b78aa07569e9370b238e657ef8d"
+      },
+      "timing_trace": {
+        "complete": true,
+        "error": null,
+        "frozen_before_teardown": true,
+        "kind": "bounded_native_sampler_scalar_timing",
+        "limits": {
+          "live_samples": 2,
+          "native_event_slots": 3,
+          "pending_callbacks": 1
+        },
+        "live_samples": [
+          {
+            "callback_entered_uptime": 277337.75390741666,
+            "callback_id": 9,
+            "existing_first_live_observation_uptime": 277337.75433637504,
+            "flight_identity": "ObjectIdentifier(0x000000014970ac20)",
+            "flight_started_uptime": 277337.74822875,
+            "matching_begin_uptime": 277337.754317625,
+            "progress": 0,
+            "sample_index": 7,
+            "scalars_begin_uptime": 277337.75430745835,
+            "scalars_end_uptime": 277337.75435508334,
+            "state_uptime": 277337.75435216667,
+            "window_info_begin_uptime": 277337.75391495833,
+            "window_info_end_uptime": 277337.7543034167
+          },
+          {
+            "callback_entered_uptime": 277337.7915485,
+            "callback_id": 10,
+            "existing_first_live_observation_uptime": 277337.75433637504,
+            "flight_identity": "ObjectIdentifier(0x000000014970ac20)",
+            "flight_started_uptime": 277337.74822875,
+            "matching_begin_uptime": 277337.791896875,
+            "progress": 0.11586832268226133,
+            "sample_index": 8,
+            "scalars_begin_uptime": 277337.791886125,
+            "scalars_end_uptime": 277337.79191170837,
+            "state_uptime": 277337.79190920835,
+            "window_info_begin_uptime": 277337.79155533336,
+            "window_info_end_uptime": 277337.7918824584
+          }
+        ],
+        "native_events": {
+          "first_applied": {
+            "flight_started_uptime": 277337.74822875,
+            "key": "coordinator-one",
+            "now_uptime": 277337.7573880417,
+            "progress": 0.006709852975671837
+          },
+          "first_tick": {
+            "flight_started_uptime": 277337.74822875,
+            "key": "coordinator-one",
+            "now_uptime": 277337.7573880417
+          },
+          "timer_added": {
+            "flight_started_uptime": 277337.74822875,
+            "key": "coordinator-one",
+            "uptime": 277337.7483572917
+          }
+        },
+        "pending_callback": null,
+        "scope": "Monotonic scalar call boundaries only; neither rendered frames nor root cause",
+        "success": true,
+        "timer_added_count": 1
+      },
+      "trace_only_gate": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout_sha256": "967d64f9b5d38668e4c7195cd4daf0ba827d4367fd5a002044bc6ac18b2d48e5"
+      },
+      "trace_only_result": {
+        "acquisition_reported_success": true,
+        "live_call_intervals_seconds": [
+          {
+            "callback_entry_minus_flight_started": 0.005678666639141738,
+            "callback_id": 9,
+            "matching_minus_original_first_live_stamp": -1.875002635642886e-05,
+            "sample_index": 7,
+            "scalars": 4.762498429045081e-05,
+            "state_minus_flight_started": 0.006123416649643332,
+            "window_info": 0.00038845837116241455
+          },
+          {
+            "callback_entry_minus_flight_started": 0.04331974999513477,
+            "callback_id": 10,
+            "matching_minus_original_first_live_stamp": 0.0375604999717325,
+            "sample_index": 8,
+            "scalars": 2.558337291702628e-05,
+            "state_minus_flight_started": 0.04368045832961798,
+            "window_info": 0.00032712501706555486
+          }
+        ],
+        "mode": "trace-only",
+        "native_event_offsets_seconds": {
+          "first_applied": 0.00915929168695584,
+          "first_tick": 0.00915929168695584,
+          "timer_added": 0.00012854166561737657
+        },
+        "original_acquisition_error": null,
+        "overall_status": "trace coverage only; native gates not rerun here",
+        "reported_sampler_callback_count": 60,
+        "scope": "Scalar call boundaries only; no rendered-frame, causal or responsiveness acceptance.",
+        "sdr_reported_success": true,
+        "strict_gate_passed": false,
+        "structure_error": null,
+        "trace_coverage_verified": true
+      },
+      "window_seconds": 1.261349958309438,
+      "wrapper_exit": 0
+    },
+    "14": {
+      "cache_unchanged": true,
+      "coverage_is_not_native_completion": true,
+      "coverage_result": {
+        "acquisition_reported_success": true,
+        "live_call_intervals_seconds": [
+          {
+            "callback_entry_minus_flight_started": 0.017926125000002457,
+            "callback_id": 9,
+            "matching_minus_original_first_live_stamp": -2.8458333332537222e-05,
+            "sample_index": 7,
+            "scalars": 6.787500001337321e-05,
+            "state_minus_flight_started": 0.0185881666666603,
+            "window_info": 0.0005719999999769243
+          },
+          {
+            "callback_entry_minus_flight_started": 0.16478179166668383,
+            "callback_id": 10,
+            "matching_minus_original_first_live_stamp": 0.14729500000001394,
+            "sample_index": 8,
+            "scalars": 4.025000001206536e-05,
+            "state_minus_flight_started": 0.1658837500000061,
+            "window_info": 0.0010491250000086438
+          }
+        ],
+        "mode": "strict",
+        "native_event_offsets_seconds": {
+          "first_applied": 0.15942666666666128,
+          "first_tick": 0.15942666666666128,
+          "timer_added": 0.0004350833333433002
+        },
+        "original_acquisition_error": null,
+        "reported_sampler_callback_count": 45,
+        "scope": "Scalar call boundaries only; no rendered-frame, causal or responsiveness acceptance.",
+        "sdr_reported_success": true,
+        "strict_gate_passed": true,
+        "structure_error": null,
+        "trace_coverage_verified": true
+      },
+      "first_row_sdr_mapping_binding": {
+        "comparisons": {
+          "existing_first_live_observation_uptime": {
+            "exact": true,
+            "mapping": 190.77570295833334,
+            "trace": 190.77570295833334
+          },
+          "flight_identity": {
+            "exact": true,
+            "mapping": "ObjectIdentifier(0x000000013b72d060)",
+            "trace": "ObjectIdentifier(0x000000013b72d060)"
+          },
+          "flight_started_uptime": {
+            "exact": true,
+            "mapping": 190.757135,
+            "trace": 190.757135
+          }
+        },
+        "scope": "Exact three-field first-row binding; separate from gate exit/coverage status.",
+        "verified": true
+      },
+      "front": [
+        342,
+        342
+      ],
+      "interval_table": {
+        "boundary": "No callback-exit marker: remaining callback work, automatic drawing and dispatch are not separated. Existing tick now is not callback return, assignment completion or presentation time.",
+        "first_scalars_end_to_first_tick_existing_now_unattributed_seconds": 0.14083458333331578,
+        "live_prefix_seconds": [
+          {
+            "callback_id": 9,
+            "entry_to_window_info_begin": 1.716666668016842e-05,
+            "matching_begin_to_original_first_stamp_first_row_only": 2.8458333332537222e-05,
+            "progress": 0,
+            "sample_index": 7,
+            "scalars": 6.787500001337321e-05,
+            "total_entry_to_scalars_end": 0.0006659583333430419,
+            "window_info": 0.0005719999999769243,
+            "window_info_end_to_scalars_begin": 8.916666672575957e-06
+          },
+          {
+            "callback_id": 10,
+            "entry_to_window_info_begin": 8.416666645416626e-06,
+            "matching_begin_to_original_first_stamp_first_row_only": null,
+            "progress": 0.6745014386841288,
+            "sample_index": 8,
+            "scalars": 4.025000001206536e-05,
+            "total_entry_to_scalars_end": 0.0011062499999923148,
+            "window_info": 0.0010491250000086438,
+            "window_info_end_to_scalars_begin": 8.45833332618895e-06
+          }
+        ],
+        "native_offsets_seconds": {
+          "first_applied": 0.15942666666666128,
+          "first_tick": 0.15942666666666128,
+          "timer_added": 0.0004350833333433002
+        }
+      },
+      "loop_counts": {
+        "loop_entry_count": 1,
+        "loop_return_count": 1,
+        "sampler_callback_count": 45,
+        "stop_calls": 1,
+        "terminal_count": 1,
+        "wake_count": 1
+      },
+      "native_execution_sdr_gate": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "native_gates_present": true,
+      "normal_after": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "normal_before": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 2251,
+      "pixel_analysis": false,
+      "report_error": null,
+      "report_success": true,
+      "report_unchanged_by_all_gates": true,
+      "sample_count": 44,
+      "shots": [
+        {
+          "capture_after_uptime": 190.70312958333335,
+          "capture_before_uptime": 190.69746683333335,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "phase": "before",
+          "png": "before.png",
+          "png_sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83"
+        },
+        {
+          "capture_after_uptime": 190.94551479166668,
+          "capture_before_uptime": 190.93580204166668,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "phase": "in-flight",
+          "png": "in-flight.png",
+          "png_sha256": "17e140e10217dd4efe84f5feefd43638fb487a84e7f413c0bc81b29905985a8a"
+        },
+        {
+          "capture_after_uptime": 191.65489945833335,
+          "capture_before_uptime": 191.64870604166668,
+          "capture_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+          "capture_size": [
+            1024,
+            468
+          ],
+          "phase": "settled",
+          "png": "settled.png",
+          "png_sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba"
+        }
+      ],
+      "snapshot_counts": {
+        "context_create_count": 0,
+        "conversion_count": 0,
+        "helper_references_cleared": true,
+        "primary_snapshot_count": 2
+      },
+      "strict_result": {
+        "acquisition_reported_success": true,
+        "live_call_intervals_seconds": [
+          {
+            "callback_entry_minus_flight_started": 0.017926125000002457,
+            "callback_id": 9,
+            "matching_minus_original_first_live_stamp": -2.8458333332537222e-05,
+            "sample_index": 7,
+            "scalars": 6.787500001337321e-05,
+            "state_minus_flight_started": 0.0185881666666603,
+            "window_info": 0.0005719999999769243
+          },
+          {
+            "callback_entry_minus_flight_started": 0.16478179166668383,
+            "callback_id": 10,
+            "matching_minus_original_first_live_stamp": 0.14729500000001394,
+            "sample_index": 8,
+            "scalars": 4.025000001206536e-05,
+            "state_minus_flight_started": 0.1658837500000061,
+            "window_info": 0.0010491250000086438
+          }
+        ],
+        "mode": "strict",
+        "native_event_offsets_seconds": {
+          "first_applied": 0.15942666666666128,
+          "first_tick": 0.15942666666666128,
+          "timer_added": 0.0004350833333433002
+        },
+        "original_acquisition_error": null,
+        "reported_sampler_callback_count": 45,
+        "scope": "Scalar call boundaries only; no rendered-frame, causal or responsiveness acceptance.",
+        "sdr_reported_success": true,
+        "strict_gate_passed": true,
+        "structure_error": null,
+        "trace_coverage_verified": true
+      },
+      "strict_timing_gate": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout_sha256": "932ec5c799611e8af5295f229e908c52e3ba22114300a6fb01b40258ad3bc237"
+      },
+      "timing_trace": {
+        "complete": true,
+        "error": null,
+        "frozen_before_teardown": true,
+        "kind": "bounded_native_sampler_scalar_timing",
+        "limits": {
+          "live_samples": 2,
+          "native_event_slots": 3,
+          "pending_callbacks": 1
+        },
+        "live_samples": [
+          {
+            "callback_entered_uptime": 190.775061125,
+            "callback_id": 9,
+            "existing_first_live_observation_uptime": 190.77570295833334,
+            "flight_identity": "ObjectIdentifier(0x000000013b72d060)",
+            "flight_started_uptime": 190.757135,
+            "matching_begin_uptime": 190.7756745,
+            "progress": 0,
+            "sample_index": 7,
+            "scalars_begin_uptime": 190.77565920833334,
+            "scalars_end_uptime": 190.77572708333335,
+            "state_uptime": 190.77572316666667,
+            "window_info_begin_uptime": 190.7750782916667,
+            "window_info_end_uptime": 190.77565029166666
+          },
+          {
+            "callback_entered_uptime": 190.9219167916667,
+            "callback_id": 10,
+            "existing_first_live_observation_uptime": 190.77570295833334,
+            "flight_identity": "ObjectIdentifier(0x000000013b72d060)",
+            "flight_started_uptime": 190.757135,
+            "matching_begin_uptime": 190.92299795833335,
+            "progress": 0.6745014386841288,
+            "sample_index": 8,
+            "scalars_begin_uptime": 190.92298279166667,
+            "scalars_end_uptime": 190.92302304166668,
+            "state_uptime": 190.92301875,
+            "window_info_begin_uptime": 190.92192520833333,
+            "window_info_end_uptime": 190.92297433333334
+          }
+        ],
+        "native_events": {
+          "first_applied": {
+            "flight_started_uptime": 190.757135,
+            "key": "coordinator-one",
+            "now_uptime": 190.91656166666667,
+            "progress": 0.6745014386841288
+          },
+          "first_tick": {
+            "flight_started_uptime": 190.757135,
+            "key": "coordinator-one",
+            "now_uptime": 190.91656166666667
+          },
+          "timer_added": {
+            "flight_started_uptime": 190.757135,
+            "key": "coordinator-one",
+            "uptime": 190.75757008333335
+          }
+        },
+        "pending_callback": null,
+        "scope": "Monotonic scalar call boundaries only; neither rendered frames nor root cause",
+        "success": true,
+        "timer_added_count": 1
+      },
+      "trace_only_gate": {
+        "exit_code": 0,
+        "stderr": "",
+        "stdout_sha256": "5fd1c3fa8d62b3c77989cc8d1176f9d56760c77f2f05e10d8293c54f5a31d6d8"
+      },
+      "trace_only_result": {
+        "acquisition_reported_success": true,
+        "live_call_intervals_seconds": [
+          {
+            "callback_entry_minus_flight_started": 0.017926125000002457,
+            "callback_id": 9,
+            "matching_minus_original_first_live_stamp": -2.8458333332537222e-05,
+            "sample_index": 7,
+            "scalars": 6.787500001337321e-05,
+            "state_minus_flight_started": 0.0185881666666603,
+            "window_info": 0.0005719999999769243
+          },
+          {
+            "callback_entry_minus_flight_started": 0.16478179166668383,
+            "callback_id": 10,
+            "matching_minus_original_first_live_stamp": 0.14729500000001394,
+            "sample_index": 8,
+            "scalars": 4.025000001206536e-05,
+            "state_minus_flight_started": 0.1658837500000061,
+            "window_info": 0.0010491250000086438
+          }
+        ],
+        "mode": "trace-only",
+        "native_event_offsets_seconds": {
+          "first_applied": 0.15942666666666128,
+          "first_tick": 0.15942666666666128,
+          "timer_added": 0.0004350833333433002
+        },
+        "original_acquisition_error": null,
+        "overall_status": "trace coverage only; native gates not rerun here",
+        "reported_sampler_callback_count": 45,
+        "scope": "Scalar call boundaries only; no rendered-frame, causal or responsiveness acceptance.",
+        "sdr_reported_success": true,
+        "strict_gate_passed": false,
+        "structure_error": null,
+        "trace_coverage_verified": true
+      },
+      "window_seconds": 1.5595354999999813,
+      "wrapper_exit": 0
+    }
+  },
+  "root_controls": {
+    "endpoint_summary": {
+      "before": {
+        "embedded_icc_identical": true,
+        "raw_exact": true,
+        "srgb_exact": true
+      },
+      "settled": {
+        "embedded_icc_identical": true,
+        "raw_exact": true,
+        "srgb_exact": true
+      }
+    },
+    "four_root_step_exits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "readiness_flags_verified": true,
+    "scope": "Root pixel results bound to input hashes; no pixel algorithm recalculated. No candidate-order requirement in this default-only cohort."
+  },
+  "root_readiness_receipt": {
+    "contents": {
+      "all_steps_exit_zero": true,
+      "binary_sha256": "723896fc46a2a5e29a1c02293ebc138948f5bffdff10cbe0eec2cf0cdb1108b6",
+      "default13_corresponding_endpoints_raw_and_icc_exact": true,
+      "input_hashes": {
+        "endpoint-controls.json": "c0a65d96d08eb42c6ef38da4f459f4e3eddf6ef7b51b44968d89656cf4ecd9ed",
+        "report.json": "dafa945d230d0f894ebd4dc716a8fdb2a39a78fb61a4ea3f5427e408c99c6691",
+        "root-steps.json": "ec4574af93e9ded70b1096b6383d4e868d219e8374cc8ffa729769a029119d8b",
+        "run-receipt.json": "75798e67f7e8573a3c76d5e28a6be9288af7e3f214996937c5fd9c7c95cfa3aa"
+      },
+      "ready_for_observation_analysis": true,
+      "recorded_utc": "2026-10-24T21:07:41.433866+00:00"
+    },
+    "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/local13-ready.json",
+    "result": "Actual readiness flags, referenced file hashes, four root exits and saved endpoint controls verified; no pixel recomputation."
+  },
+  "scope": "Offline original gate/package/source checks and bounded timing extraction; no native app, compile, CI or pixel operation.",
+  "source_commit": "cc96030b22c74010df79423979aee1abf83b7cb5",
+  "status": "strict13_and14_native_trace_pass",
+  "timing_function_same_as_workflow": true,
+  "timing_gate_sha256": "df434f5fe79e0c048376018ccb3e5103cafa5d3e88543ff62a5c41f066ce8352",
+  "workflow_sha256": "4d6d9a3491d66ecabc341e51aafdeab2e901855eea59b63107359baef3cb2e08"
+}

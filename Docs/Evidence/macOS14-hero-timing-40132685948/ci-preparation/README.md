@@ -1,0 +1,20 @@
+# PRIVATE final bounded timing CI preparation
+
+Source/schema locked; static-final-review.json reports final_source_ready=true, zero unresolved workflow markers, effective5-file overlay/full12-input hashes verified, YAML/AST/bash syntax valid. Active workflow and timing-gate.py were frozen before metadata completion and are unchanged afterward. No repo/index/old archive mutation, compile, UI/native run, schema simulation or dispatch occurred here.
+
+Committed base is4fc027626aa33b5140a4881708a100fc4d2a7c7d; old workflow SHA d222f36f67f2a5014e4970ed6484dd60023735f5d8e28ceecb12018ff62b1335 and wrapper SHA200403b0b4e07f49dc4f74b6af8e0b5b14d67f36a3de022f44e4c44419d8621c are referenced without duplicate old files. New `.github/scripts/hero-timing-probe` has exactly3derived+README+source-provenance. Build ditto's old SDR package, overlays those5files, verifies all12effective inputs and emits a complete standalone tar. SDK26.2/Xcode26.3/macOS15 single arm64/min13 build and signature/arch/minos checks remain; assembly output CoordinatorSDR.assembled.swift, exe HeroTimingProbe, kind actual_coordinator_timing_fixture. measure14 is default only; root13 also default only. Original wrapper is unchanged, no retries or fallback.
+
+Complete inherited native/execution/flightSDR prefix is19155bytes exact after binary name substitution, SHA db503c085d257c7102062fc209074ded13fa431aac8e0ec1395fdde0decf60a8. New marker is `# Append-only bounded timing metadata gate; inherited native/execution/SDR gates above remain unchanged.` The standalone timing definitions are embedded byte-identically afterward. Old arm/deadline/threePNG/native/normal/cache/front/SDR failure behavior is unchanged. A partial14 still fails original acquisition/workflow and retains its report/upload; timing never bypasses those gates.
+
+Frozen `flight_timing_trace` has3named native slots, first2live rows and at most1pending callback. Strict structure mirrors the source event/time/identity contract and additionally ties both rows to report.samples' actual earliest2live sample_index/uptime/flight identity/started/progress, adjacent callback/sample IDs, actual execution callback counter and index sequence. Each row has its own ordered window-info/scalars/matching boundaries. Only row1's original first-live stamp belongs inside its matching interval; row2 preserves that old stamp without a false matching≤oldstamp assertion. There is no callback-entry≥timer-added assumption, new progress band, new deadline or causal/frame claim.
+
+Interfaces:
+
+```sh
+python3 -B work/hero-timing-ci-preparation/timing-gate.py report.json
+python3 -B work/hero-timing-ci-preparation/timing-gate.py report.json --trace-only
+```
+
+Function is validate_flight_timing_trace(d,strict=True/False). Strict requires verified complete trace plus original report/SDR/trace success and no errors, and is called only after the full inherited workflow gate. Standalone strict does not replace those inherited gates. Trace-only preserves raw available trace, original report.success/error and SDR.success; returns coverage/error and scalar intervals separately, with strict_gate_passed=false always. Its exit0 is analysis completion, never native/overall success; inspect trace_coverage_verified/structure_error and original status. Incomplete coverage remains incomplete, including absent slots/pending fields. Neither mode modifies input data.
+
+Timer-added is a post-registration checkpoint, first tick/applied use existing tick now/p, first-live is an observer stamp; none establishes first visible frame. Preserved callback-entry offsets may be negative relative to flight start and are not rejected. No render synchronization, unique cause, responsiveness, zero observer effect, product or HDR acceptance follows. Source and overlay hashes are in provenance; initial static-review.json remains the historical unready checkpoint. Final SHA256SUMS covers this private handoff. The directory remains writable only to allow a fresh root-owned static report; files are read-only.

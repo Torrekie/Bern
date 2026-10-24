@@ -1,0 +1,18 @@
+{
+  "adapted_sha256": "913720b38654c9cde945a7fbb92dad6b81c8605d5fa066e97b74c06a5d34216b",
+  "base": "outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-sdr-40129608288/verify-package.py",
+  "base_sha256": "db213e39bf3c43a58d28c2d4009a76b13da260561f0ce3c5e3ead4d8c1c02087",
+  "counts": {
+    "HeroCoordinatorSDRProbe": 1,
+    "actual_coordinator_sdr_fixture": 1,
+    "hero-coordinator-sdr-probe.tar.gz": 1,
+    "probe-source": 2
+  },
+  "replacements": {
+    "HeroCoordinatorSDRProbe": "HeroTimingProbe",
+    "actual_coordinator_sdr_fixture": "actual_coordinator_timing_fixture",
+    "hero-coordinator-sdr-probe.tar.gz": "hero-timing-probe.tar.gz",
+    "probe-source": "package-source"
+  },
+  "scope": "Only package/executable/kind/source-directory identifiers changed; extraction, signature and source/assembly checks retained."
+}

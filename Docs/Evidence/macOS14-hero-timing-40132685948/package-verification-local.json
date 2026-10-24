@@ -1,0 +1,67 @@
+{
+  "archive_sha256": "372136e696820c2ebc332e5d069b4c78267f80b7fe6ff5416189befe73528a7d",
+  "assembly_sha256": "af2a4b8bd95f373b790b1ffd427730f696d5d537cca30ef967863f2c9a426638",
+  "binary_bytes": 661776,
+  "binary_sha256": "723896fc46a2a5e29a1c02293ebc138948f5bffdff10cbe0eec2cf0cdb1108b6",
+  "checks": {
+    "arch": {
+      "argv": [
+        "xcrun",
+        "lipo",
+        "-archs",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "arm64\n"
+    },
+    "build": {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 26.2\n   ntools 1\n     tool LD\n  version 1230.1\n"
+    },
+    "signature": {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "--verbose=4",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe"
+      ],
+      "exit_code": 0,
+      "stderr": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe: valid on disk\n/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/probe/HeroTimingProbe: satisfies its Designated Requirement\n",
+      "stdout": ""
+    }
+  },
+  "local_compile_or_resign": false,
+  "package_manifest_sha256": "9780a4eba60397ab9ee280fa4e0e6421e9221180f21d95f1dbd34423c298b8a2",
+  "source_map_members": 12,
+  "verified_package_members": [
+    "CoordinatorSDR.assembled.swift",
+    "Dependencies.swift",
+    "Driver.swift.inc",
+    "FlightSDR.swift.inc",
+    "HeroTimingProbe",
+    "ProductHero.exact.swift",
+    "ProductHero.swift",
+    "ProductImage.exact.swift",
+    "ProductImage.swift",
+    "ProductStyle.exact.swift",
+    "ProductStyle.swift",
+    "README.md",
+    "assets/source-named-pq.png",
+    "build/binary.txt",
+    "build/command.txt",
+    "build/compile.log",
+    "build/environment.txt",
+    "build/signature.txt",
+    "run-one.py",
+    "source-provenance.json"
+  ]
+}

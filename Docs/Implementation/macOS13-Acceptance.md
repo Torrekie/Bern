@@ -2,7 +2,7 @@
 
 本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
 
-最新检查点（2026-10-25）：[真实coordinator的SDR候选](../Evidence/macOS14-hero-coordinator-sdr-40129608288/README.md)已由SDK26.2构建min13并在本机完成default→candidate：原native/execution、新两snapshot gate及四个对应端点原RGB/ICC控制均通过。两转换47.474/2.598ms，触发→Flight.started为58.058ms（default27.438ms）；单次观察不证明全局冷缓存或动画等效。新14确实运行，但进度0→.8457错过原arm区间，仅before PNG，按原deadline报未完成，CI measure失败原样保留、未重试。上一[静态候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)混合色差仍未解决，产品intent路由也未加入，未合入产品。下一步仅界定默认路径首次tick/观察空档，有新证据才安排新采集。下列整应用交付版本及其它未通过项保留，goal active。
+最新检查点（2026-10-25）：[真实coordinator的bounded timing](../Evidence/macOS14-hero-timing-40132685948/README.md)已完成：SDK26.2/min13同binary在13/14各一次default，原native/execution/SDR及新增strict timing均通过，6原PNG、四个对应端点raw/ICC exact。14注册后checkpoint距started0.435ms、首callback前缀0.666ms、first tick159.427ms；其中scalars结束→tick140.835ms尚未区分尾部/自动draw/分派，不是根因或等效响应性声明。上一[14缺样失败](../Evidence/macOS14-hero-coordinator-sdr-40129608288/README.md)保留；本次有效参考不因未归因间隔停用，也不据此改产品clock或盲CI。此前[静态SDR候选](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/README.md)混合色差及产品intent链仍未解决，候选未采用。下一步回实际Picture Scene首卡布局等未通过项。下列整应用交付版本及其它未通过项保留，goal active。
 
 ## 已有可复核结果
 

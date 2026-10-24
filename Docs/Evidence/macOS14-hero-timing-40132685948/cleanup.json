@@ -1,0 +1,113 @@
+{
+  "internal_hardlink_aliases": [
+    {
+      "alias": "tools/macos14-hero-timing-probe.yml",
+      "bytes": 39915,
+      "canonical": "ci-preparation/macos14-hero-timing-probe.yml"
+    },
+    {
+      "alias": "tools/timing-gate.py",
+      "bytes": 8931,
+      "canonical": "ci-preparation/timing-gate.py"
+    },
+    {
+      "alias": "runtime14/hero-timing-probe.tar.gz.sha256",
+      "bytes": 91,
+      "canonical": "build/hero-timing-probe.tar.gz.sha256"
+    },
+    {
+      "alias": "runtime14/signature.txt",
+      "bytes": 1023,
+      "canonical": "build/signature.txt"
+    },
+    {
+      "alias": "runtime14/source-provenance.json",
+      "bytes": 2422,
+      "canonical": "build/source-provenance.json"
+    },
+    {
+      "alias": "runtime14/SHA256SUMS",
+      "bytes": 1719,
+      "canonical": "build/SHA256SUMS"
+    },
+    {
+      "alias": "runtime14/build-environment.txt",
+      "bytes": 453,
+      "canonical": "build/environment.txt"
+    },
+    {
+      "alias": "runtime14/binary.txt",
+      "bytes": 3952,
+      "canonical": "build/binary.txt"
+    },
+    {
+      "alias": "runtime13/endpoint-controls.stderr.txt",
+      "bytes": 0,
+      "canonical": "build/compile.log"
+    },
+    {
+      "alias": "runtime13/inherited-gate.stderr.txt",
+      "bytes": 0,
+      "canonical": "build/compile.log"
+    },
+    {
+      "alias": "runtime13/strict-timing.stderr.txt",
+      "bytes": 0,
+      "canonical": "build/compile.log"
+    },
+    {
+      "alias": "runtime13/wrapper.stderr.txt",
+      "bytes": 0,
+      "canonical": "build/compile.log"
+    },
+    {
+      "alias": "ci-preparation/static-root-review.json",
+      "bytes": 541,
+      "canonical": "ci-preparation/static-final-review.json"
+    }
+  ],
+  "logical_duplicate_work_bytes_removed": 1302653,
+  "nominal_internal_duplicate_bytes": 59047,
+  "one_off_builder_archived_and_removed_from_work_bytes": 3534,
+  "recorded_utc": "2026-10-24T21:25:07.424596+00:00",
+  "recovery": {
+    "copy_verification_and_internal_dedup_completed_before_error": true,
+    "initial_error": "PermissionError removing last frozen task-owned picture-scene-next-step work directory",
+    "owned_work_dir_mode_before": "0o555",
+    "owned_work_dir_mode_for_removal": "0o755",
+    "preceding_work_copies_already_replaced_by_symlinks": 6,
+    "remaining_source_rechecked_against_archive": true,
+    "resolution": "Added owner write only to the owned work directory, removed its byte-verified duplicate, created archive symlink; archived frozen data bytes untouched."
+  },
+  "scope": "Only frozen task-owned copies, byte-checked before removal; hardlinks internal. Artifact cleanup in artifact-cleanup.json. No unrelated/cache/toolchain/defaults/TCC/history cleanup. Logical bytes are not APFS/net space measurements.",
+  "verified_work_copies_replaced_by_archive_symlinks": {
+    ".": {
+      "files": 60,
+      "logical_bytes": 1065435
+    },
+    "ci-preparation": {
+      "files": 10,
+      "logical_bytes": 66568
+    },
+    "closure": {
+      "files": 2,
+      "logical_bytes": 3195
+    },
+    "code-review": {
+      "files": 3,
+      "logical_bytes": 6094
+    },
+    "native-review": {
+      "files": 4,
+      "logical_bytes": 62762
+    },
+    "picture-scene-next-step": {
+      "files": 2,
+      "logical_bytes": 5391
+    },
+    "source-preparation": {
+      "files": 6,
+      "logical_bytes": 89674
+    }
+  }
+}

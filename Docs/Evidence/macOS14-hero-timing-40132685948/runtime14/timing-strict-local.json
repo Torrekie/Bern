@@ -1,0 +1,101 @@
+{
+  "acquisition_reported_success": true,
+  "live_call_intervals_seconds": [
+    {
+      "callback_entry_minus_flight_started": 0.017926125000002457,
+      "callback_id": 9,
+      "matching_minus_original_first_live_stamp": -2.8458333332537222e-05,
+      "sample_index": 7,
+      "scalars": 6.787500001337321e-05,
+      "state_minus_flight_started": 0.0185881666666603,
+      "window_info": 0.0005719999999769243
+    },
+    {
+      "callback_entry_minus_flight_started": 0.16478179166668383,
+      "callback_id": 10,
+      "matching_minus_original_first_live_stamp": 0.14729500000001394,
+      "sample_index": 8,
+      "scalars": 4.025000001206536e-05,
+      "state_minus_flight_started": 0.1658837500000061,
+      "window_info": 0.0010491250000086438
+    }
+  ],
+  "mode": "strict",
+  "native_event_offsets_seconds": {
+    "first_applied": 0.15942666666666128,
+    "first_tick": 0.15942666666666128,
+    "timer_added": 0.0004350833333433002
+  },
+  "original_acquisition_error": null,
+  "reported_sampler_callback_count": 45,
+  "scope": "Scalar call boundaries only; no rendered-frame, causal or responsiveness acceptance.",
+  "sdr_reported_success": true,
+  "strict_gate_passed": true,
+  "structure_error": null,
+  "trace": {
+    "complete": true,
+    "error": null,
+    "frozen_before_teardown": true,
+    "kind": "bounded_native_sampler_scalar_timing",
+    "limits": {
+      "live_samples": 2,
+      "native_event_slots": 3,
+      "pending_callbacks": 1
+    },
+    "live_samples": [
+      {
+        "callback_entered_uptime": 190.775061125,
+        "callback_id": 9,
+        "existing_first_live_observation_uptime": 190.77570295833334,
+        "flight_identity": "ObjectIdentifier(0x000000013b72d060)",
+        "flight_started_uptime": 190.757135,
+        "matching_begin_uptime": 190.7756745,
+        "progress": 0,
+        "sample_index": 7,
+        "scalars_begin_uptime": 190.77565920833334,
+        "scalars_end_uptime": 190.77572708333335,
+        "state_uptime": 190.77572316666667,
+        "window_info_begin_uptime": 190.7750782916667,
+        "window_info_end_uptime": 190.77565029166666
+      },
+      {
+        "callback_entered_uptime": 190.9219167916667,
+        "callback_id": 10,
+        "existing_first_live_observation_uptime": 190.77570295833334,
+        "flight_identity": "ObjectIdentifier(0x000000013b72d060)",
+        "flight_started_uptime": 190.757135,
+        "matching_begin_uptime": 190.92299795833335,
+        "progress": 0.6745014386841288,
+        "sample_index": 8,
+        "scalars_begin_uptime": 190.92298279166667,
+        "scalars_end_uptime": 190.92302304166668,
+        "state_uptime": 190.92301875,
+        "window_info_begin_uptime": 190.92192520833333,
+        "window_info_end_uptime": 190.92297433333334
+      }
+    ],
+    "native_events": {
+      "first_applied": {
+        "flight_started_uptime": 190.757135,
+        "key": "coordinator-one",
+        "now_uptime": 190.91656166666667,
+        "progress": 0.6745014386841288
+      },
+      "first_tick": {
+        "flight_started_uptime": 190.757135,
+        "key": "coordinator-one",
+        "now_uptime": 190.91656166666667
+      },
+      "timer_added": {
+        "flight_started_uptime": 190.757135,
+        "key": "coordinator-one",
+        "uptime": 190.75757008333335
+      }
+    },
+    "pending_callback": null,
+    "scope": "Monotonic scalar call boundaries only; neither rendered frames nor root cause",
+    "success": true,
+    "timer_added_count": 1
+  },
+  "trace_coverage_verified": true
+}

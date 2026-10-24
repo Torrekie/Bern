@@ -1,0 +1,17 @@
+{
+  "full_staged_check": {
+    "exit_code": 2,
+    "stderr": "",
+    "stdout": "Docs/Evidence/macOS14-hero-timing-40132685948/source-preparation/coordinator-timing.patch:10: trailing whitespace.\n+ \n"
+  },
+  "other_staged_paths_strict_check": {
+    "exit_code": 0,
+    "paths": 93
+  },
+  "preserved_raw_exception": {
+    "path": "Docs/Evidence/macOS14-hero-timing-40132685948/source-preparation/coordinator-timing.patch",
+    "reason": "Frozen canonical patch has one required single-space blank context line; original zero-fuzz replay preserved. Not implementation source.",
+    "sha256": "e6c156bf0b371ee3b20bca2fec4e161377c0dbad96f806164e9820c82d8232bf"
+  },
+  "source_or_gate_whitespace_relaxed": false
+}

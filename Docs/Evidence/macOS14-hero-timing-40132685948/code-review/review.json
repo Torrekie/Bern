@@ -1,0 +1,56 @@
+{
+  "base_directory": "outputs/Bern/.github/scripts/hero-coordinator-sdr-probe",
+  "base_three_source_sha256": {
+    "Driver.swift.inc": "16d366612fdb55a4a2a1e39ce731cc7ad247fa71608a89f65a1c8d241230ec92",
+    "FlightSDR.swift.inc": "5f79ae281bb743ee7af87dc737e66195b4bd85c5e50c84d0c5183f53766d8f65",
+    "ProductHero.swift": "cf924d4fa27df6486b65b30be1a194ec7daf4016674b79bd4084e045eba8beea"
+  },
+  "findings": [
+    "ProductHero adds exactly three calls: timerAdded after original RunLoop timer registration, first tick with the existing now, and first applied with the existing now/p after original view.progress assignment. Timer setup, original guards, spring calculations, frame/corner/progress/needsDisplay, phase band and deadlines are preserved.",
+    "Observer state is three native slots, at most two live rows and one transient pending callback. callbackEntered uses the existing callback counter; nonlive callbacks only replace pending. keepLive runs after the original scalar/sample record and single-flight identity guards. After two live rows, prefix/matching hooks return before taking another new clock; native first slots also stop updating.",
+    "WindowInfo begin/end brackets the existing whole fixtureWindowInfo call; scalars begin/end brackets the existing whole fixtureScalars call. matchingBegin is inside the existing weak-wrapper matching observer. No extra UI/window/view/layer/provider query, image/object holder, formatting, timer, run-loop action, progress readback or presentation flush is added by the timing enum.",
+    "The two live rows carry actual callback_id/sample_index, existing scalar state uptime, identity, started and progress values. Adjacent callback/sample and pinned-flight conditions are checked at finish. These fields describe those recorded callbacks, not rendered frames.",
+    "The second row intentionally copies the first mapping observation timestamp. It is not the second matching end. first_applied.now is reused tick-entry now, not a fresh timestamp at assignment completion. Timer-added time follows registration; WindowInfo/scalars brackets include their existing internal work and do not isolate a single query or weak comparison.",
+    "Trace freezes before original cleanup/teardown and is serialized after teardown. Missing slots/rows or invalid ordering remain incomplete, preserving partial live/pending records. complete describes trace coverage only; success additionally requires original acquisition. Failed acquisition or trace finalization propagates to nonzero without manufactured rows or original acceptance.",
+    "The only new mode guard narrows this diagnostic to default13/default14; original native/execution/cache/normal/front/3PNG and sampling limits are retained. The SDR snapshot/conversion logic and original application loop are preserved."
+  ],
+  "incremental_check": {
+    "added_lines_per_source": {
+      "Driver.swift.inc": 15,
+      "FlightSDR.swift.inc": 98,
+      "ProductHero.swift": 3
+    },
+    "all_existing_lines_preserved_in_order": true
+  },
+  "limits": [
+    "No build/typecheck/runtime acceptance is claimed. Future native review must execute unchanged full original and appended gates, distinguishing strict success from partial acquisition.",
+    "Instrumentation allocates bounded scalar dictionaries and takes additional monotonic clocks before two live rows. No zero observer-effect or unique cause claim; a fresh default control remains necessary.",
+    "Trace timestamps do not prove visual timing, sampling/pixel synchrony or presentation order. First tick can precede first application when original guards skip work.",
+    "Inherited hard watchdog bypasses normal finish. Helper-reference/coverage observations do not prove global deallocation or whole-goal acceptance."
+  ],
+  "preparation_manifest_sha256": "b13968e982d707ebebb62def041fa9af2a9f3a42538ec6cac424d12d7cb831b3",
+  "preparation_members": {
+    "Driver.swift.inc": {
+      "bytes": 36982,
+      "sha256": "d066c050b338cfe26ec3bee5b726e4ec62cfb4b36c49d3fb12c5e316c4ec7e07"
+    },
+    "FlightSDR.swift.inc": {
+      "bytes": 18602,
+      "sha256": "8c7ba5ad8230d8ba26f006f33ede3a37616f84b5739f6c43084b9c2d1194e6a5"
+    },
+    "ProductHero.swift": {
+      "bytes": 15704,
+      "sha256": "2bcfacc968f15ffe4f77aa6a8cc832c5b138ba8fb0ec2fc0725c702e45e17cd5"
+    },
+    "README.md": {
+      "bytes": 4220,
+      "sha256": "0112e5abfddeb2e4f5233c8b4710ef8b63075c2250fe9532f105970f813e38da"
+    },
+    "coordinator-timing.patch": {
+      "bytes": 13746,
+      "sha256": "e6c156bf0b371ee3b20bca2fec4e161377c0dbad96f806164e9820c82d8232bf"
+    }
+  },
+  "scope": "Static incremental review only; no compiler/native/UI/CI/pixel operation and no product or source mutation.",
+  "status": "no_blocking_source_finding_bounded_timing_fixture"
+}

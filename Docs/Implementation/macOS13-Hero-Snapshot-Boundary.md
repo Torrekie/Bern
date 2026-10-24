@@ -73,3 +73,11 @@ filter0 source parser拒绝及pretty JSON体积失败分开保留；成功版本
 14 default确实运行并记录两个原float snapshot，但firstlive进度0、下一个.845710569，未进入(.2,.8)arm区间，197样本后原collection deadline失败，仅before PNG。CI build成功/measure失败及原收据/日志保留；没有新14中间与settled对照，不扩充为全native通过，不放宽门槛或重跑。远程设备在本次可运行，尚非等待数小时仍无14环境的暂停条件。
 
 13原mid有可见位移、候选settled非空；白格与背景不能区分，视觉检查不证明完整像素覆盖/全动画等效，也不按不同progress配准计算颜色。此前静态recipe仍有7/9恶化通道等残差，产品intent传递仍是独立门槛，候选不采用。下一小步只读界定默认路径首次tick/观察空档；High/其它输入与完整UI验收保留，goal active，不提前后续系统/语言阶段。
+
+## 正常效果14参考已补齐，结束本轮追时序（2026-10-25）
+
+[Timing CI40132685948](../Evidence/macOS14-hero-timing-40132685948/README.md)以同一SDK26.2/min13 binary在13/14完成default；原native/execution/SDR及新增strict timing均通过，各3PNG。13两个对应端点复现旧SDR default13，14两个端点复现旧正常app-loop14，raw/ICC exact。两mid目检有可见位移、14最终目标非空，非同步帧/完整颜色或动画验收。旧40129608288缺样仍为失败，没有改band/期限或重试该run。
+
+新增固定3native slots和前2live callback的内存标量使本次14空档范围缩小：started→timer注册后0.435ms、首callback前缀0.666ms、started→first tick159.427ms；首scalars结束→tick140.835ms仍未区分采样尾部、自动绘制或分派。13相应注册0.129ms、first tick9.159ms。first_applied复用tick的now/p，不是赋值结束或呈现；不同VM/进程与observer开销不允许据此回推旧215ms的唯一解释。
+
+本次参考合同已完整满足，现有证据不支持产品clock改动；未知细段不阻挡使用此有限14参考，也不要求继续盲CI。回到实际UI的颜色退化、生产intent及Picture Scene布局等未通过项；SDR候选仍未采用，其余High/输入/物理HDR/全动画及后续平台/语言阶段边界保持，goal active。原binary/tar和重建source副本在独立实际pre/posthash后已清，源仍由提交的5-file overlay+base保存；详见本轮清理收据。

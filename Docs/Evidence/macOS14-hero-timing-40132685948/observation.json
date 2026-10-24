@@ -1,0 +1,181 @@
+{
+  "interpretation": "This new14 run bounds its native construction/registration and first callback prefix below1ms each;140.835ms between scalar prefix end and first tick remains unattributed without callback-exit/draw boundaries. It does not locate the prior different-VM215ms gap, establish cause, or justify changing the original clock. Successful14 reference is retained; previous failed acquisition remains failed.",
+  "original_pngs": {
+    "runtime13/before.png": {
+      "bytes": 187059,
+      "sha256": "df988c9f218040aafddd4e7fef9de6dd8a29348d1ddb829f70d965335407ae49"
+    },
+    "runtime13/in-flight.png": {
+      "bytes": 115072,
+      "sha256": "3ecdb1e93e63ff0be12dea38032b49c4b715858f8eb9287a437e3b5bd2533121"
+    },
+    "runtime13/settled.png": {
+      "bytes": 187238,
+      "sha256": "c705e24e5bbf25290e5fbc0230d959c7883f9d8cdc7afe351aa40c1ef176515f"
+    },
+    "runtime14/before.png": {
+      "bytes": 56671,
+      "sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83"
+    },
+    "runtime14/in-flight.png": {
+      "bytes": 46795,
+      "sha256": "17e140e10217dd4efe84f5feefd43638fb487a84e7f413c0bc81b29905985a8a"
+    },
+    "runtime14/settled.png": {
+      "bytes": 55695,
+      "sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba"
+    }
+  },
+  "recorded_utc": "2026-10-24T21:18:21.050605+00:00",
+  "runtimes": {
+    "13": {
+      "acquisition_success": true,
+      "derived_ms": {
+        "first_callback_entry_to_original_stamp": 0.42895838851109147,
+        "first_callback_entry_to_scalar_end": 0.4476666799746454,
+        "first_matching_to_original_stamp": 0.01875002635642886,
+        "first_scalar_end_to_first_tick_unattributed": 3.0329583678394556,
+        "first_window_info": 0.38845837116241455,
+        "start_to_first_tick": 9.15929168695584,
+        "start_to_timer_added": 0.12854166561737657,
+        "timer_added_to_first_tick": 9.030750021338463
+      },
+      "endpoint_controls": true,
+      "first_two_rows": [
+        {
+          "callback_entered_uptime": 277337.75390741666,
+          "callback_id": 9,
+          "existing_first_live_observation_uptime": 277337.75433637504,
+          "flight_identity": "ObjectIdentifier(0x000000014970ac20)",
+          "flight_started_uptime": 277337.74822875,
+          "matching_begin_uptime": 277337.754317625,
+          "progress": 0,
+          "sample_index": 7,
+          "scalars_begin_uptime": 277337.75430745835,
+          "scalars_end_uptime": 277337.75435508334,
+          "state_uptime": 277337.75435216667,
+          "window_info_begin_uptime": 277337.75391495833,
+          "window_info_end_uptime": 277337.7543034167
+        },
+        {
+          "callback_entered_uptime": 277337.7915485,
+          "callback_id": 10,
+          "existing_first_live_observation_uptime": 277337.75433637504,
+          "flight_identity": "ObjectIdentifier(0x000000014970ac20)",
+          "flight_started_uptime": 277337.74822875,
+          "matching_begin_uptime": 277337.791896875,
+          "progress": 0.11586832268226133,
+          "sample_index": 8,
+          "scalars_begin_uptime": 277337.791886125,
+          "scalars_end_uptime": 277337.79191170837,
+          "state_uptime": 277337.79190920835,
+          "window_info_begin_uptime": 277337.79155533336,
+          "window_info_end_uptime": 277337.7918824584
+        }
+      ],
+      "mid_progress": {
+        "armed": 0.28122191940618957,
+        "capture_sample": 0.339015154959887
+      },
+      "native_events": {
+        "first_applied": {
+          "flight_started_uptime": 277337.74822875,
+          "key": "coordinator-one",
+          "now_uptime": 277337.7573880417,
+          "progress": 0.006709852975671837
+        },
+        "first_tick": {
+          "flight_started_uptime": 277337.74822875,
+          "key": "coordinator-one",
+          "now_uptime": 277337.7573880417
+        },
+        "timer_added": {
+          "flight_started_uptime": 277337.74822875,
+          "key": "coordinator-one",
+          "uptime": 277337.7483572917
+        }
+      },
+      "report_sha256": "dafa945d230d0f894ebd4dc716a8fdb2a39a78fb61a4ea3f5427e408c99c6691",
+      "trace_coverage_reported_complete": true
+    },
+    "14": {
+      "acquisition_success": true,
+      "derived_ms": {
+        "first_callback_entry_to_original_stamp": 0.6418333333328974,
+        "first_callback_entry_to_scalar_end": 0.6659583333430419,
+        "first_matching_to_original_stamp": 0.028458333332537222,
+        "first_scalar_end_to_first_tick_unattributed": 140.83458333331578,
+        "first_window_info": 0.5719999999769243,
+        "start_to_first_tick": 159.42666666666128,
+        "start_to_timer_added": 0.4350833333433002,
+        "timer_added_to_first_tick": 158.99158333331798
+      },
+      "endpoint_controls": true,
+      "first_two_rows": [
+        {
+          "callback_entered_uptime": 190.775061125,
+          "callback_id": 9,
+          "existing_first_live_observation_uptime": 190.77570295833334,
+          "flight_identity": "ObjectIdentifier(0x000000013b72d060)",
+          "flight_started_uptime": 190.757135,
+          "matching_begin_uptime": 190.7756745,
+          "progress": 0,
+          "sample_index": 7,
+          "scalars_begin_uptime": 190.77565920833334,
+          "scalars_end_uptime": 190.77572708333335,
+          "state_uptime": 190.77572316666667,
+          "window_info_begin_uptime": 190.7750782916667,
+          "window_info_end_uptime": 190.77565029166666
+        },
+        {
+          "callback_entered_uptime": 190.9219167916667,
+          "callback_id": 10,
+          "existing_first_live_observation_uptime": 190.77570295833334,
+          "flight_identity": "ObjectIdentifier(0x000000013b72d060)",
+          "flight_started_uptime": 190.757135,
+          "matching_begin_uptime": 190.92299795833335,
+          "progress": 0.6745014386841288,
+          "sample_index": 8,
+          "scalars_begin_uptime": 190.92298279166667,
+          "scalars_end_uptime": 190.92302304166668,
+          "state_uptime": 190.92301875,
+          "window_info_begin_uptime": 190.92192520833333,
+          "window_info_end_uptime": 190.92297433333334
+        }
+      ],
+      "mid_progress": {
+        "armed": 0.6745014386841288,
+        "capture_sample": 0.733330074694377
+      },
+      "native_events": {
+        "first_applied": {
+          "flight_started_uptime": 190.757135,
+          "key": "coordinator-one",
+          "now_uptime": 190.91656166666667,
+          "progress": 0.6745014386841288
+        },
+        "first_tick": {
+          "flight_started_uptime": 190.757135,
+          "key": "coordinator-one",
+          "now_uptime": 190.91656166666667
+        },
+        "timer_added": {
+          "flight_started_uptime": 190.757135,
+          "key": "coordinator-one",
+          "uptime": 190.75757008333335
+        }
+      },
+      "report_sha256": "58ba63d04448bce6c087cf8eb1795a6c2d9d525aeeb5295b524bace4b481b1a7",
+      "trace_coverage_reported_complete": true
+    }
+  },
+  "visual_inspection": {
+    "inspected_originals": [
+      "runtime13/in-flight.png",
+      "runtime14/in-flight.png",
+      "runtime14/settled.png"
+    ],
+    "limits": "Visual-only; white cells/background cannot certify full coverage or all overdraw. Different scale/progress, no registration or cross-host mid pixel/color equality. No complete trajectory/retarget/physical HDR acceptance.",
+    "observed": "Both mid PNGs show displaced nonwhite atlas content, and14 settled shows nonblank destination content. No separate visible source/destination duplicate is apparent."
+  }
+}

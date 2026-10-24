@@ -1,0 +1,106 @@
+{
+  "analyzer_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/pixel-analysis/analyze.py",
+  "analyzer_sha256": "ef5ec900d6f4e28f54a1d966ab0e88014ce63c1910e6b9b0aff9e4a7e745ebf9",
+  "checks": {
+    "before": {
+      "embedded_icc_identical": true,
+      "left_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "left_roi_pixels": [
+        16,
+        52,
+        336,
+        232
+      ],
+      "opaque": true,
+      "raw": {
+        "exact": true,
+        "mae": 0.0,
+        "max": 0
+      },
+      "right_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "right_roi_pixels": [
+        16,
+        52,
+        336,
+        232
+      ],
+      "size_pixels": [
+        320,
+        180
+      ],
+      "srgb": {
+        "exact": true,
+        "mae": 0.0,
+        "max": 0
+      },
+      "status": "performed"
+    },
+    "settled": {
+      "embedded_icc_identical": true,
+      "left_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "left_roi_pixels": [
+        352,
+        272,
+        672,
+        452
+      ],
+      "opaque": true,
+      "raw": {
+        "exact": true,
+        "mae": 0.0,
+        "max": 0
+      },
+      "right_icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "right_roi_pixels": [
+        352,
+        272,
+        672,
+        452
+      ],
+      "size_pixels": [
+        320,
+        180
+      ],
+      "srgb": {
+        "exact": true,
+        "mae": 0.0,
+        "max": 0
+      },
+      "status": "performed"
+    }
+  },
+  "exact_endpoint_controls": true,
+  "inputs": {
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/runtime14/before.png": {
+      "bytes": 56671,
+      "kind": "original_png",
+      "sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/runtime14/report.json": {
+      "bytes": 118620,
+      "kind": "report",
+      "sha256": "b965a1d15a2518bb073ef50ef8fa00060058021c073a2393a1ee7d93529438db"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-coordinator-app-40110795231/same-binary-13-14/runtime14/settled.png": {
+      "bytes": 55695,
+      "kind": "original_png",
+      "sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/before.png": {
+      "bytes": 56671,
+      "kind": "original_png",
+      "sha256": "35d9995f9227e512b5b5e79149f44777226ddf9154b3a2151aa2bc7a99425e83"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/report.json": {
+      "bytes": 123764,
+      "kind": "report",
+      "sha256": "58ba63d04448bce6c087cf8eb1795a6c2d9d525aeeb5295b524bace4b481b1a7"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-timing-20261025/runtime14/settled.png": {
+      "bytes": 55695,
+      "kind": "original_png",
+      "sha256": "a8b7f4385c0a174d28ac55e9e3505b3c266d97198b155864348f484836c9a1ba"
+    }
+  },
+  "scope": "Corresponding measured opaque endpoint ROIs within one OS major, raw and ICC intent0 sRGB; host/display identity remains a separate observation. No mid registration, source-to-destination equality or general visual acceptance"
+}

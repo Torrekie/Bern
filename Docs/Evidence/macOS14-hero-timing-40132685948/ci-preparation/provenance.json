@@ -1,0 +1,92 @@
+{
+  "assembly_output": "CoordinatorSDR.assembled.swift",
+  "base_commit": "4fc027626aa33b5140a4881708a100fc4d2a7c7d",
+  "base_workflow": {
+    "path": ".github/workflows/macos14-hero-coordinator-sdr-probe.yml",
+    "sha256": "d222f36f67f2a5014e4970ed6484dd60023735f5d8e28ceecb12018ff62b1335"
+  },
+  "derived_sources": {
+    "Driver.swift.inc": "d066c050b338cfe26ec3bee5b726e4ec62cfb4b36c49d3fb12c5e316c4ec7e07",
+    "FlightSDR.swift.inc": "8c7ba5ad8230d8ba26f006f33ede3a37616f84b5739f6c43084b9c2d1194e6a5",
+    "ProductHero.swift": "2bcfacc968f15ffe4f77aa6a8cc832c5b138ba8fb0ec2fc0725c702e45e17cd5"
+  },
+  "final_checks": {
+    "active_trailing_whitespace": 0,
+    "inherited_prefix_bytes": 19155,
+    "inline_gate_definitions_byte_exact": true,
+    "no_runtime_or_schema_simulation_executed": true,
+    "strict_and_trace_only_actual_first2_sample_counter_binding": true,
+    "unresolved_active_markers": 0
+  },
+  "final_static_review": {
+    "compile_ui_dispatch": false,
+    "effective_overlay_map_verified": true,
+    "error": null,
+    "final_source_ready": true,
+    "framework_valid": true,
+    "inherited_prefix": {
+      "byte_exact_after_binary_rename": true,
+      "bytes": 19155,
+      "sha256": "db503c085d257c7102062fc209074ded13fa431aac8e0ec1395fdde0decf60a8"
+    },
+    "overlay_provenance_sha256": "ec4908eb35a7ee289bb311e6c4522917c6903d0a074d00e38dbc6cd5075c201e",
+    "pending_markers": [],
+    "timing_gate_sha256": "df434f5fe79e0c048376018ccb3e5103cafa5d3e88543ff62a5c41f066ce8352"
+  },
+  "full_package_map_count": 12,
+  "initial_framework_manifest_sha256": "9bc152da964b7a966b5ba18538cef6f6b82aef98b38cd78cd128782704a6e5d0",
+  "kind": "actual_coordinator_timing_fixture",
+  "new_binary": "HeroTimingProbe",
+  "new_overlay_folder": ".github/scripts/hero-timing-probe",
+  "new_workflow_path": ".github/workflows/macos14-hero-timing-probe.yml",
+  "overlay_files": [
+    "ProductHero.swift",
+    "FlightSDR.swift.inc",
+    "Driver.swift.inc",
+    "README.md",
+    "source-provenance.json"
+  ],
+  "partial_policy": "Original failed native/arm/deadline remains failed; no timing gate can override or manufacture success.",
+  "performed": {
+    "compile_ui_dispatch": false,
+    "copied_source_tree_or_images_or_wrapper": false,
+    "repo_index_archive_mutation": false
+  },
+  "preserved_old_gate": "Entire committed native/execution/flightSDR gate; only binary name substitution. New timing validation appends after it.",
+  "schema_origin": "Frozen work/hero-coordinator-timing-preparation sources and README, actual source schema read after freeze",
+  "source_preparation_manifest_sha256": "b13968e982d707ebebb62def041fa9af2a9f3a42538ec6cac424d12d7cb831b3",
+  "source_references": {
+    "callback_brackets_and_binding": "Driver.swift.inc:250-312",
+    "native_hooks": "ProductHero.swift:265,312,338",
+    "original_cleanup_append": "Driver.swift.inc:450-475",
+    "timing_enum": "FlightSDR.swift.inc:190-282"
+  },
+  "source_schema_pending": false,
+  "static_framework_review": {
+    "compile_ui_dispatch": false,
+    "error": null,
+    "final_source_ready": false,
+    "framework_valid": true,
+    "inherited_prefix": {
+      "byte_exact_after_binary_rename": true,
+      "bytes": 19155,
+      "sha256": "db503c085d257c7102062fc209074ded13fa431aac8e0ec1395fdde0decf60a8"
+    },
+    "pending_markers": [
+      "PENDING_DRIVER_SHA256",
+      "PENDING_FLIGHT_SDR_SHA256",
+      "PENDING_HERO_SHA256",
+      "PENDING_TIMING_SCHEMA"
+    ]
+  },
+  "status": "final_timing_source_and_schema_locked_private_not_dispatched",
+  "timing_gate_sha256": "df434f5fe79e0c048376018ccb3e5103cafa5d3e88543ff62a5c41f066ce8352",
+  "trace_only_policy": "Offline trace coverage may be reported separately; original native/acquisition success and failure remain unchanged; strict remote default still requires acquisition success.",
+  "unchanged_wrapper": {
+    "copied_to_preparation": false,
+    "path": ".github/scripts/hero-coordinator-sdr-probe/run-one.py",
+    "sha256": "200403b0b4e07f49dc4f74b6af8e0b5b14d67f36a3de022f44e4c44419d8621c"
+  },
+  "validator_sha256": "9346216b0e064d63a4b65e38ecf9b14ef1ecb6db059e22348839dedf84f9acc7",
+  "workflow_sha256": "4d6d9a3491d66ecabc341e51aafdeab2e901855eea59b63107359baef3cb2e08"
+}
