@@ -1,0 +1,4661 @@
+{
+  "conclusion": "The same exact clean e48 application succeeds on native 14. Wait/direct reproduce all six AX image frames of both old 14 references exactly and match inactive 13 within 0.00001 pt. Immediate is Glen 677, distinct from upstream 566, f9-port 565 and inactive 13 clean 601; runtime success is not full visual parity.",
+  "runs": {
+    "clean14": {
+      "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "observer_harness_sha": "25e18cbc7cd760c1c399042f1d7364c3d755a9dc",
+      "os": "Version 14.8.9 (Build 23J631)",
+      "normal_flags": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "observation": "active",
+      "activation_requests": [
+        {
+          "accepted": true,
+          "after": {
+            "front_bundle": "dev.bern.gallery",
+            "front_pid": 8021,
+            "own_pid": 8021,
+            "uptime": 500.08012533333334
+          },
+          "before": {
+            "front_bundle": "com.apple.finder",
+            "front_pid": 337,
+            "own_pid": 8021,
+            "uptime": 499.91812333333337
+          },
+          "options": [
+            "activateAllWindows"
+          ],
+          "pid": 8021,
+          "samples": [
+            {
+              "front_bundle": "com.apple.finder",
+              "front_pid": 337,
+              "own_pid": 8021,
+              "uptime": 499.9187745416667
+            },
+            {
+              "front_bundle": "dev.bern.gallery",
+              "front_pid": 8021,
+              "own_pid": 8021,
+              "uptime": 500.07969145833334
+            }
+          ],
+          "scenario": "immediate"
+        },
+        {
+          "accepted": true,
+          "after": {
+            "front_bundle": "dev.bern.gallery",
+            "front_pid": 8066,
+            "own_pid": 8066,
+            "uptime": 507.58767987500005
+          },
+          "before": {
+            "front_bundle": "com.apple.finder",
+            "front_pid": 337,
+            "own_pid": 8066,
+            "uptime": 507.38750287500005
+          },
+          "options": [
+            "activateAllWindows"
+          ],
+          "pid": 8066,
+          "samples": [
+            {
+              "front_bundle": "com.apple.finder",
+              "front_pid": 337,
+              "own_pid": 8066,
+              "uptime": 507.3889720833334
+            },
+            {
+              "front_bundle": "dev.bern.gallery",
+              "front_pid": 8066,
+              "own_pid": 8066,
+              "uptime": 507.58727004166667
+            }
+          ],
+          "scenario": "wait"
+        },
+        {
+          "accepted": true,
+          "after": {
+            "front_bundle": "dev.bern.gallery",
+            "front_pid": 8381,
+            "own_pid": 8381,
+            "uptime": 517.6033613750001
+          },
+          "before": {
+            "front_bundle": "com.apple.finder",
+            "front_pid": 337,
+            "own_pid": 8381,
+            "uptime": 517.403547375
+          },
+          "options": [
+            "activateAllWindows"
+          ],
+          "pid": 8381,
+          "samples": [
+            {
+              "front_bundle": "com.apple.finder",
+              "front_pid": 337,
+              "own_pid": 8381,
+              "uptime": 517.4047948333333
+            },
+            {
+              "front_bundle": "dev.bern.gallery",
+              "front_pid": 8381,
+              "own_pid": 8381,
+              "uptime": 517.6028944166667
+            }
+          ],
+          "scenario": "direct"
+        }
+      ],
+      "sampled_fronts": [],
+      "sampled_inactive_count": 0,
+      "cases": {
+        "immediate": {
+          "pid": 8021,
+          "session": "3501a8041f5500-ui",
+          "largest": "Glen",
+          "center_x": 677.0,
+          "largest_rect": [
+            548.9234970092773,
+            70.64931676864626,
+            256.1530059814454,
+            144.08606586456298
+          ],
+          "images": {
+            "Gingham": [
+              -253,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              17,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              283.53603820800777,
+              73.7051253128052,
+              246.92792358398447,
+              138.8969570159912
+            ],
+            "Glen": [
+              548.9234970092773,
+              70.64931676864626,
+              256.1530059814454,
+              144.08606586456298
+            ],
+            "Houndstooth": [
+              827,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1097,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "014-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 652.0,
+                  "width": 900.0,
+                  "x": 510.0,
+                  "y": 158.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 3,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "015-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "Command",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 158.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 4,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": 6.291666636570881e-06,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.0021320000000173422,
+              "end_after_select": 0.28264195833332906,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.4619148333333669,
+              "end_after_select": 0.5819380000000365,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.6622493750000444,
+              "end_after_select": 0.7826918750000118,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8726205000000391,
+              "end_after_select": 0.9255441250000445,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "immediate-film.png",
+            "sha256": "5a4c309eb63dbed390b63f467f323d6becf38e5304b4cbb1f52f1d8a98c73aa3",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        },
+        "wait": {
+          "pid": 8066,
+          "session": "243ba2d61f8200-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.2326065063477,
+            66.87910181045527,
+            267.53478698730476,
+            150.48831768035888
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855667114258,
+              75.99043794631962,
+              240.0288665771484,
+              135.01623744964604
+            ],
+            "Glen": [
+              467.2326065063477,
+              66.87910181045527,
+              267.53478698730476,
+              150.48831768035888
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 106
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "029-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 668.0,
+                  "width": 920.0,
+                  "x": 510.0,
+                  "y": 106.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 4,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "030-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "System",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 106.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 4,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": 2.031621458333234,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.001994625000065753,
+              "end_after_select": 0.19838316666675837,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.26169350000009217,
+              "end_after_select": 0.4123953750000737,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.5112837083333943,
+              "end_after_select": 0.6313190416667567,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.7725172083333973,
+              "end_after_select": 0.8326454583333316,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.937868250000065,
+              "end_after_select": 0.9898323750001055,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "wait-film.png",
+            "sha256": "307f7af71d8b0d0f45c8d6d47a1d08bd1cedd555c6e3e8b86f9fb164632a396b",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        },
+        "direct": {
+          "pid": 8381,
+          "session": "97210e8820bd00-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.2326065063477,
+            66.87910181045527,
+            267.53478698730476,
+            150.48831768035888
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855667114258,
+              75.99043794631962,
+              240.0288665771484,
+              135.01623744964604
+            ],
+            "Glen": [
+              467.2326065063477,
+              66.87910181045527,
+              267.53478698730476,
+              150.48831768035888
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 54
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "044-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 668.0,
+                  "width": 920.0,
+                  "x": 510.0,
+                  "y": 54.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 4,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "045-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "System",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 54.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 4,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": null,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.003027541666710931,
+              "end_after_select": 0.19705183333337573,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.32305445833333124,
+              "end_after_select": 0.4559358333333421,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.6347843749999811,
+              "end_after_select": 0.7526281250000011,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8462120833332847,
+              "end_after_select": 0.8939082083333005,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.9349514583333303,
+              "end_after_select": 0.9834851250000156,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "direct-film.png",
+            "sha256": "222903777e42c21251579917b5fe8d2b5ea934edb07077a84b2d067c1149ff4c",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        }
+      }
+    },
+    "clean13": {
+      "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "observer_harness_sha": "3f434cf0313d5657a136b1f98d0ac1293b60f169",
+      "os": "Version 13.7.8 (Build 22H730)",
+      "normal_flags": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "observation": "inactive13",
+      "activation_requests": [],
+      "sampled_fronts": [
+        [
+          1390,
+          "com.openai.codex"
+        ]
+      ],
+      "sampled_inactive_count": 102,
+      "cases": {
+        "immediate": {
+          "pid": 3104,
+          "session": "1a3a27490c2000-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.23260958251853,
+            66.8791038484186,
+            267.53478083496293,
+            150.48831421966656
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855618272785,
+              75.990434710572,
+              240.02887634544288,
+              135.01624294431164
+            ],
+            "Glen": [
+              467.23260958251853,
+              66.8791038484186,
+              267.53478083496293,
+              150.48831421966656
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 80
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "047-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": false,
+                "frame": {
+                  "height": 652.0,
+                  "width": 900.0,
+                  "x": 270.0,
+                  "y": 80.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 5,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "048-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "Command",
+              "focused": false,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 270.0,
+                "y": 80.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 6,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": 0.0008085416629910469,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.0010499166673980653,
+              "end_after_select": 0.21685858332784846,
+              "truncated": false,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.2500666666601319,
+              "end_after_select": 0.46326116667478345,
+              "truncated": false,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.4975831249903422,
+              "end_after_select": 0.6813433333300054,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.7163153750007041,
+              "end_after_select": 0.8504741666547488,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 132
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 132
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 132
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8851773333444726,
+              "end_after_select": 1.005251083348412,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 132
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 132
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 132
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 709,
+                    "x": 481,
+                    "y": 132
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "immediate-film.png",
+            "sha256": "eee55e4930b01baee28fa55cab89d134c61e6bb3d5da446cef0ae31626a8304f",
+            "pixels": [
+              1840,
+              1336
+            ],
+            "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+            "raw_equal_comparisons": 4
+          }
+        },
+        "wait": {
+          "pid": 3279,
+          "session": "08dfbcac0ccf00-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.23260958251853,
+            66.8791038484186,
+            267.53478083496293,
+            150.48831421966656
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855618272785,
+              75.990434710572,
+              240.02887634544288,
+              135.01624294431164
+            ],
+            "Glen": [
+              467.23260958251853,
+              66.8791038484186,
+              267.53478083496293,
+              150.48831421966656
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 28
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "069-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": false,
+                "frame": {
+                  "height": 668.0,
+                  "width": 920.0,
+                  "x": 270.0,
+                  "y": 28.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 6,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "070-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "System",
+              "focused": false,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 270.0,
+                "y": 28.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 6,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": 1.9788110416848212,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.012294791667954996,
+              "end_after_select": 0.24736837498494424,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.28226325000287034,
+              "end_after_select": 0.4479507083306089,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.48271208332153037,
+              "end_after_select": 0.6238936249865219,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 80
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.6592119166743942,
+              "end_after_select": 0.8005063333257567,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 80
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 80
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 80
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8326838333159685,
+              "end_after_select": 0.9193417916540056,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 80
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 80
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 80
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 709,
+                    "x": 481,
+                    "y": 80
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.954242208332289,
+              "end_after_select": 0.9816407499893103,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 80
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 80
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 80
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 709,
+                    "x": 481,
+                    "y": 80
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "wait-film.png",
+            "sha256": "26b55802334b4706a2e305bb74280dc81e892bc32b82380aa0c1c9f43b179f17",
+            "pixels": [
+              1840,
+              1336
+            ],
+            "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+            "raw_equal_comparisons": 4
+          }
+        },
+        "direct": {
+          "pid": 3405,
+          "session": "08dbf49e0d4d00-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.23260958251853,
+            66.8791038484186,
+            267.53478083496293,
+            150.48831421966656
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855618272785,
+              75.990434710572,
+              240.02887634544288,
+              135.01624294431164
+            ],
+            "Glen": [
+              467.23260958251853,
+              66.8791038484186,
+              267.53478083496293,
+              150.48831421966656
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 270,
+            "Y": 25
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "089-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": false,
+                "frame": {
+                  "height": 668.0,
+                  "width": 920.0,
+                  "x": 270.0,
+                  "y": 25.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 6,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "090-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "System",
+              "focused": false,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 270.0,
+                "y": 25.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 6,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": null,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.003049916645977646,
+              "end_after_select": 0.15722020831890404,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.18876504164654762,
+              "end_after_select": 0.32975245831767097,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.3622112083248794,
+              "end_after_select": 0.4827426666452084,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.5157301666622516,
+              "end_after_select": 0.5569425833236892,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.5918447083095089,
+              "end_after_select": 0.6287402083107736,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.6621896249998827,
+              "end_after_select": 0.7074747083242983,
+              "truncated": false,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.7382254999829456,
+              "end_after_select": 0.8606195416650735,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8955046249902807,
+              "end_after_select": 0.9225563749787398,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.9566694999812171,
+              "end_after_select": 0.9833474999759346,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 270,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 709,
+                    "x": 481,
+                    "y": 77
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "direct-film.png",
+            "sha256": "26b55802334b4706a2e305bb74280dc81e892bc32b82380aa0c1c9f43b179f17",
+            "pixels": [
+              1840,
+              1336
+            ],
+            "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+            "raw_equal_comparisons": 4
+          }
+        }
+      }
+    },
+    "upstream14": {
+      "source_sha": "ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee",
+      "observer_harness_sha": "2aa4e63cb96b413de7d0113faf7f512f5e5df7a6",
+      "os": "Version 14.8.9 (Build 23J631)",
+      "normal_flags": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "observation": "active14 original observer",
+      "activation_requests": null,
+      "sampled_fronts": [],
+      "sampled_inactive_count": 0,
+      "cases": {
+        "immediate": {
+          "pid": 1266,
+          "session": "5bc2209904f200-ui",
+          "largest": "Glen",
+          "center_x": 566.0,
+          "largest_rect": [
+            431.60012359619145,
+            66.46008188247674,
+            268.7997528076171,
+            151.19986095428467
+          ],
+          "images": {
+            "Gingham": [
+              -364,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -94,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              176,
+              76,
+              240,
+              135
+            ],
+            "Glen": [
+              431.60012359619145,
+              66.46008188247674,
+              268.7997528076171,
+              151.19986095428467
+            ],
+            "Houndstooth": [
+              716,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              986,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "007-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 652.0,
+                  "width": 900.0,
+                  "x": 510.0,
+                  "y": 158.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 3,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "008-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "Command",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 158.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 4,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": 4.291666670042105e-06,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.001455291666658809,
+              "end_after_select": 0.22412004166666577,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.32629229166666107,
+              "end_after_select": 0.4608187499999872,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.5658920416666575,
+              "end_after_select": 0.6165984583333284,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.7109328333333309,
+              "end_after_select": 0.7727234166666648,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8724779583333202,
+              "end_after_select": 0.9359149166666612,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "immediate-film.png",
+            "sha256": "0e494f5ea4dfa701466d52512e564d323850d09d40d24a13f259f02d5e649ae7",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        },
+        "wait": {
+          "pid": 1373,
+          "session": "26fafaa3055d00-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.2326065063477,
+            66.87910181045527,
+            267.53478698730476,
+            150.48831768035888
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855667114258,
+              75.99043794631962,
+              240.0288665771484,
+              135.01623744964604
+            ],
+            "Glen": [
+              467.2326065063477,
+              66.87910181045527,
+              267.53478698730476,
+              150.48831768035888
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 106
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "021-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 668.0,
+                  "width": 920.0,
+                  "x": 510.0,
+                  "y": 106.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 3,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "022-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "System",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 106.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 3,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": 2.224603541666667,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.0010762916666635647,
+              "end_after_select": 0.12279049999999359,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.22471370833333992,
+              "end_after_select": 0.2912763333333288,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.39030091666666067,
+              "end_after_select": 0.4466178333333346,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.5102802499999939,
+              "end_after_select": 0.5620878333333366,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.655260416666664,
+              "end_after_select": 0.7042610000000025,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8065157083333361,
+              "end_after_select": 0.8566059999999993,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.9404278333333309,
+              "end_after_select": 0.986638208333332,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "wait-film.png",
+            "sha256": "11aca852e8bda60e98d9079171932efd3d876891d1613a8c4fb3053cb5896351",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        },
+        "direct": {
+          "pid": 1429,
+          "session": "985727f5059500-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.2326065063477,
+            66.87910181045527,
+            267.53478698730476,
+            150.48831768035888
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855667114258,
+              75.99043794631962,
+              240.0288665771484,
+              135.01623744964604
+            ],
+            "Glen": [
+              467.2326065063477,
+              66.87910181045527,
+              267.53478698730476,
+              150.48831768035888
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 54
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "035-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 668.0,
+                  "width": 920.0,
+                  "x": 510.0,
+                  "y": 54.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 3,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "036-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "System",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 54.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 3,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": null,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.0020021250000041846,
+              "end_after_select": 0.1676936249999983,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.26290679166666564,
+              "end_after_select": 0.38680374999999856,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.4890473749999984,
+              "end_after_select": 0.609305875000004,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.7035309999999981,
+              "end_after_select": 0.758687666666674,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8623181250000016,
+              "end_after_select": 0.9129954583333415,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.974481041666678,
+              "end_after_select": 1.0404768750000102,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "direct-film.png",
+            "sha256": "11aca852e8bda60e98d9079171932efd3d876891d1613a8c4fb3053cb5896351",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        }
+      }
+    },
+    "f9_port14": {
+      "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "observer_harness_sha": "13c52d4919805bcbfbebd6d8aa60f91f09e56d73",
+      "os": "Version 14.8.9 (Build 23J631)",
+      "normal_flags": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "observation": "active14 original observer",
+      "activation_requests": null,
+      "sampled_fronts": [],
+      "sampled_inactive_count": 0,
+      "cases": {
+        "immediate": {
+          "pid": 1290,
+          "session": "25332409050a00-ui",
+          "largest": "Glen",
+          "center_x": 565.0,
+          "largest_rect": [
+            430.60012359619145,
+            66.46008188247674,
+            268.7997528076171,
+            151.19986095428467
+          ],
+          "images": {
+            "Gingham": [
+              -365,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -95,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              175,
+              76,
+              240,
+              135
+            ],
+            "Glen": [
+              430.60012359619145,
+              66.46008188247674,
+              268.7997528076171,
+              151.19986095428467
+            ],
+            "Houndstooth": [
+              715,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              985,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 158
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "007-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 652.0,
+                  "width": 900.0,
+                  "x": 510.0,
+                  "y": 158.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 3,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "008-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "Command",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 158.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 4,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": 2.9166666593027912e-06,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.000976750000006632,
+              "end_after_select": 0.33220762499999523,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.43542883333333293,
+              "end_after_select": 0.5557155416666717,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.6624432083333289,
+              "end_after_select": 0.7883999583333292,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8907722916666643,
+              "end_after_select": 1.0310246250000006,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 210
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 210
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "immediate-film.png",
+            "sha256": "d819e44a4b9d2287223d73399d52ce097be9515c31368617600b35171d609ba9",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        },
+        "wait": {
+          "pid": 1398,
+          "session": "4c79c77b057600-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.2326065063477,
+            66.87910181045527,
+            267.53478698730476,
+            150.48831768035888
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855667114258,
+              75.99043794631962,
+              240.0288665771484,
+              135.01623744964604
+            ],
+            "Glen": [
+              467.2326065063477,
+              66.87910181045527,
+              267.53478698730476,
+              150.48831768035888
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 106
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "021-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 668.0,
+                  "width": 920.0,
+                  "x": 510.0,
+                  "y": 106.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 3,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "022-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "System",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 106.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 3,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": 2.1409034166666743,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.0008819583333234959,
+              "end_after_select": 0.12601041666665935,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.21699308333332112,
+              "end_after_select": 0.3440274999999957,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.43191766666666354,
+              "end_after_select": 0.4790769166666564,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.5866083333333307,
+              "end_after_select": 0.6270129583333244,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.701306708333334,
+              "end_after_select": 0.74477233333333,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.8500137083333215,
+              "end_after_select": 0.8914607499999931,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.9862266250000005,
+              "end_after_select": 1.0275233333333205,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 158
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 158
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "wait-film.png",
+            "sha256": "98a5011e15da1851862387ea181e424dd3bf0552e874c1866369844ec0b6c496",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        },
+        "direct": {
+          "pid": 1492,
+          "session": "83688c9d05d400-ui",
+          "largest": "Glen",
+          "center_x": 601.0,
+          "largest_rect": [
+            467.2326065063477,
+            66.87910181045527,
+            267.53478698730476,
+            150.48831768035888
+          ],
+          "images": {
+            "Gingham": [
+              -329,
+              76,
+              240,
+              135
+            ],
+            "Tartan": [
+              -59,
+              76,
+              240,
+              135
+            ],
+            "Madras": [
+              210.9855667114258,
+              75.99043794631962,
+              240.0288665771484,
+              135.01623744964604
+            ],
+            "Glen": [
+              467.2326065063477,
+              66.87910181045527,
+              267.53478698730476,
+              150.48831768035888
+            ],
+            "Houndstooth": [
+              751,
+              76,
+              240,
+              135
+            ],
+            "Windowpane": [
+              1021,
+              76,
+              240,
+              135
+            ]
+          },
+          "ax_complete": true,
+          "ax_image_count": 6,
+          "final_window_bounds": {
+            "Height": 668,
+            "Width": 920,
+            "X": 510,
+            "Y": 54
+          },
+          "pre_resize_list": {
+            "kind": "list",
+            "command_stdout": "035-stdout.json",
+            "value": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": true,
+                "frame": {
+                  "height": 668.0,
+                  "width": 920.0,
+                  "x": 510.0,
+                  "y": 54.0
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 3,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          "resize_response": {
+            "kind": "resize",
+            "command_stdout": "036-stdout.json",
+            "value": {
+              "actions": [
+                "Activate",
+                "Close",
+                "Minimize",
+                "Maximize",
+                "Move",
+                "Resize"
+              ],
+              "changed_by": "System",
+              "focused": true,
+              "frame": {
+                "height": 668.0,
+                "width": 920.0,
+                "x": 510.0,
+                "y": 54.0
+              },
+              "kind": "main",
+              "lifecycle": "Open",
+              "presentation": "Native",
+              "size": "Normal",
+              "version": 3,
+              "visibility": "Visible",
+              "window": "main#1"
+            }
+          },
+          "close_to_select_seconds": null,
+          "first_second_geometry": [
+            {
+              "start_after_select": 0.0009232916666661595,
+              "end_after_select": 0.1222093333333305,
+              "truncated": true,
+              "elements": []
+            },
+            {
+              "start_after_select": 0.22518725000000472,
+              "end_after_select": 0.34553900000000226,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.45249491666666586,
+              "end_after_select": 0.5725046250000076,
+              "truncated": true,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.6717763750000074,
+              "end_after_select": 0.7169142500000021,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.81326845833334,
+              "end_after_select": 0.8719969583333409,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.9024907499999983,
+              "end_after_select": 0.9539347916666685,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            },
+            {
+              "start_after_select": 0.9917689583333384,
+              "end_after_select": 1.0378536249999968,
+              "truncated": false,
+              "elements": [
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 920,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 580,
+                    "width": 210,
+                    "x": 510,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 616,
+                    "width": 709,
+                    "x": 721,
+                    "y": 106
+                  },
+                  "role": "AXSplitGroup",
+                  "text": "",
+                  "text_attribute": "missing"
+                },
+                {
+                  "frame": {
+                    "height": 207,
+                    "width": 240,
+                    "x": 955.5,
+                    "y": 106
+                  },
+                  "role": "AXScrollArea",
+                  "text": "",
+                  "text_attribute": "missing"
+                }
+              ]
+            }
+          ],
+          "picture": {
+            "png": "direct-film.png",
+            "sha256": "fbabd8ab3210fc7f52e5d045750950ef68c8994f80ce14cad39abc98675c0da6",
+            "pixels": [
+              920,
+              668
+            ],
+            "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+            "raw_equal_comparisons": 4
+          }
+        }
+      }
+    }
+  },
+  "comparison": [
+    {
+      "scenario": "immediate",
+      "clean14_identity": "Glen",
+      "clean14_center": 677.0,
+      "references": {
+        "clean13": {
+          "identity": "Glen",
+          "center_x": 601.0,
+          "center_delta": 76.0,
+          "frame_deltas": {
+            "Gingham": [
+              76,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              76,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              72.55047638072926,
+              -2.2853093977668095,
+              6.899047238541584,
+              3.880714071679563
+            ],
+            "Glen": [
+              81.69088742675876,
+              3.7702129202276637,
+              -11.381774853517527,
+              -6.4022483551035805
+            ],
+            "Houndstooth": [
+              76,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              76,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 81.69088742675876,
+          "film_png_byte_identical": false
+        },
+        "upstream14": {
+          "identity": "Glen",
+          "center_x": 566.0,
+          "center_delta": 111.0,
+          "frame_deltas": {
+            "Gingham": [
+              111,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              111,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              107.53603820800777,
+              -2.294874687194806,
+              6.927923583984466,
+              3.8969570159912053
+            ],
+            "Glen": [
+              117.32337341308585,
+              4.1892348861695154,
+              -12.646746826171693,
+              -7.113795089721691
+            ],
+            "Houndstooth": [
+              111,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              111,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 117.32337341308585,
+          "film_png_byte_identical": false
+        },
+        "f9_port14": {
+          "identity": "Glen",
+          "center_x": 565.0,
+          "center_delta": 112.0,
+          "frame_deltas": {
+            "Gingham": [
+              112,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              112,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              108.53603820800777,
+              -2.294874687194806,
+              6.927923583984466,
+              3.8969570159912053
+            ],
+            "Glen": [
+              118.32337341308585,
+              4.1892348861695154,
+              -12.646746826171693,
+              -7.113795089721691
+            ],
+            "Houndstooth": [
+              112,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              112,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 118.32337341308585,
+          "film_png_byte_identical": false
+        }
+      }
+    },
+    {
+      "scenario": "wait",
+      "clean14_identity": "Glen",
+      "clean14_center": 601.0,
+      "references": {
+        "clean13": {
+          "identity": "Glen",
+          "center_x": 601.0,
+          "center_delta": 0.0,
+          "frame_deltas": {
+            "Gingham": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              4.884147301709163e-06,
+              3.235747612961859e-06,
+              -9.768294489731488e-06,
+              -5.494665600735971e-06
+            ],
+            "Glen": [
+              -3.076170855820237e-06,
+              -2.037963326984027e-06,
+              6.152341825327312e-06,
+              3.46069231227375e-06
+            ],
+            "Houndstooth": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 9.768294489731488e-06,
+          "film_png_byte_identical": false
+        },
+        "upstream14": {
+          "identity": "Glen",
+          "center_x": 601.0,
+          "center_delta": 0.0,
+          "frame_deltas": {
+            "Gingham": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Glen": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Houndstooth": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 0,
+          "film_png_byte_identical": false
+        },
+        "f9_port14": {
+          "identity": "Glen",
+          "center_x": 601.0,
+          "center_delta": 0.0,
+          "frame_deltas": {
+            "Gingham": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Glen": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Houndstooth": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 0,
+          "film_png_byte_identical": false
+        }
+      }
+    },
+    {
+      "scenario": "direct",
+      "clean14_identity": "Glen",
+      "clean14_center": 601.0,
+      "references": {
+        "clean13": {
+          "identity": "Glen",
+          "center_x": 601.0,
+          "center_delta": 0.0,
+          "frame_deltas": {
+            "Gingham": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              4.884147301709163e-06,
+              3.235747612961859e-06,
+              -9.768294489731488e-06,
+              -5.494665600735971e-06
+            ],
+            "Glen": [
+              -3.076170855820237e-06,
+              -2.037963326984027e-06,
+              6.152341825327312e-06,
+              3.46069231227375e-06
+            ],
+            "Houndstooth": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 9.768294489731488e-06,
+          "film_png_byte_identical": false
+        },
+        "upstream14": {
+          "identity": "Glen",
+          "center_x": 601.0,
+          "center_delta": 0.0,
+          "frame_deltas": {
+            "Gingham": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Glen": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Houndstooth": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 0,
+          "film_png_byte_identical": false
+        },
+        "f9_port14": {
+          "identity": "Glen",
+          "center_x": 601.0,
+          "center_delta": 0.0,
+          "frame_deltas": {
+            "Gingham": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Tartan": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Madras": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Glen": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Houndstooth": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "Windowpane": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "max_abs_frame_component_delta": 0,
+          "film_png_byte_identical": false
+        }
+      }
+    }
+  ],
+  "limits": [
+    "The current observer content is 3f434cf/79da4a84 and adds a startup-window readiness gate. Old upstream14/f9-port14 three-scenario observers predate that gate. Source and observer changes are not isolated in this comparison.",
+    "Every dataset runs immediate first after an actual 900x652\u2192920x668 resize; wait/direct restore 920x668 before a no-change resize. First-process/layout/window-restoration and Inspector exit remain coupled.",
+    "Each sequence was sampled once. Settled AX and actual stable PNG are observed; no internal target/nearest/native-snap trace or complete early width transition is supplied.",
+    "The 13 sample is inactive 2x/unique bundle signature while all 14 references are active 1x/original identity. Equal AX frames are not active color/material parity. All compared PNG pairs differ in bytes.",
+    "No Last/resize followup or physical gesture was requested. Earlier open endpoint/resize boundaries remain."
+  ]
+}

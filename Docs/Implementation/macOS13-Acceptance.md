@@ -121,3 +121,7 @@ GitHub 的 macos-14 在 2026-10-23 14:00 UTC 至次日00:00 UTC 进入公告的�
 ## 空间控制
 
 只保留需要复核的源码、原始证据和当前候选应用。传输 ZIP、提取后的重复 tar、经哈希验证的重复参考已清理；小型编译试验的 module cache 在完成后删除。没有安装新 Xcode、Swift 工具链或 iOS 模拟器，也不清理用户的窗口历史、其它项目产物或系统缓存。
+
+## e48原件在14的补充状态
+
+[新14复核40071892408](../Evidence/macOS14-film-clean-e48fff46-40071892408/README.md)成功且wait/direct全部几何保持；immediate却为Glen677，而旧参考为565/566、13clean为601。为控制新增startup gate，补做[旧f9同collector40072273422](../Evidence/macOS14-film-f9-current-harness-40072273422/README.md)，其immediate仍565，全部frames与旧f9参考一致。当前不能宣称e48的14三路径均保持，也不据单次跨job观测锁定具体源代码原因。即刻关闭路径、firstLast与resize仍未通过，下一门槛为同VM配对与恢复历史控制；goal继续active，后续11/ObjC/iOS阶段保持暂停。

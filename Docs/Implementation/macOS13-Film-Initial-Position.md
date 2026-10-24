@@ -119,3 +119,11 @@ wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001
 精确原 GUI SHA256：`d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c`；CLI：`31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5`。后台运行副本采用唯一 bundleID 和 ad-hoc 签名，完整 GUI hash 因此不同，但各 section 与归一签名存储 payload 相同。原 exact app/CLI 留给父任务交付，此分析没有替换现有应用。
 
 本机 13 为 inactive/2x，两组 14参考为 active/1x；同 AX 几何不等于相同 active 色彩/材质。本次未测后续 Last/resize，也没有内部 logger 或物理 gesture。仍需保留首次 Last、加宽窗口、重现/动态目标尺寸及物理手势的未等同边界；不得硬改初始 draft3，或把首次 anchor 变换套到所有后续目标。
+
+## 同一原件的14复核与当前采集器对照
+
+[run40071892408](../Evidence/macOS14-film-clean-e48fff46-40071892408/README.md)使用与13完全相同的e48原始GUI（d44f051c…）与CLI，在normal/active14上成功采集三组、完整6图与4次稳定buffer。wait/direct的全部frames与旧f9/14及上游14一致；immediate本次却是Glen677.0、宽256.153006，Madras407.0。不能把“运行成功”改写为三路径视觉保持。
+
+该次使用新增startup gate的collector3f434/79da4a84，而旧14参考使用早期版本，因此补了一次[旧f9/current-harness控制run40072273422](../Evidence/macOS14-film-f9-current-harness-40072273422/README.md)。同一当前collector与harness25e下，旧f9的immediate仍为Glen565.0，三组全部6图的frame都与其旧observer记录逐值相同；wait/direct也与e48/current14一致。故startup gate变化单独不足以解释已观测677，但每个跨源码/构建/作业序列只有一次，尚不能给具体补丁或原生机制定因。
+
+两次current14的immediate均900×652首开，再由CLI改为920×668；wait/direct先恢复目标尺寸。首个完整AX只出现在Film选择后约.498/.873秒，均已见709/240，前段截断，不能补造当时viewport/insets。13clean的601相对旧14immediate差35/36pt，相对本次e48/14差−76pt，应保留各自证据身份。下一小步是同一14 VM内、独立bundle恢复历史、同observer的有界A/B/B/A配对，先验证差异可重复性；不设补偿常数，不提前改default/nearest或移植到11。
