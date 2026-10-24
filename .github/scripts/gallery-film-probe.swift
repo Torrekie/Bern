@@ -19,16 +19,20 @@ let deadline = ProcessInfo.processInfo.systemUptime + 120
 let originalFront = NSWorkspace.shared.frontmostApplication
 let trusted = AXIsProcessTrusted()
 var environment = ProcessInfo.processInfo.environment
+let expectedOS = Int(environment["BERN_FILM_EXPECTED_OS"] ?? "14") ?? 0
+let requestedScenario = environment["BERN_FILM_SCENARIO"] ?? "all"
+let scenarios = requestedScenario == "all" ? ["immediate", "wait", "direct"] : [requestedScenario]
 var commands = [[String: Any]](), cases = [[String: Any]]()
 var ipcPaths = [String]()
 var report: [String: Any] = [
     "source_sha": environment["BERN_SOURCE_SHA"] ?? "unknown",
     "harness_sha": environment["GITHUB_SHA"] ?? "unknown",
     "variant": environment["FILM_VARIANT"] ?? "unknown",
+    "expected_os_major": expectedOS, "requested_scenario": requestedScenario,
     "appearance_profile": "normal",
     "os": ProcessInfo.processInfo.operatingSystemVersionString,
     "accessibility_trusted": trusted, "screen_recording_preflight": CGPreflightScreenCaptureAccess(),
-    "scope": "Light only; three fresh processes, exact app. AX frames are global screen points. No draft/target/nearest introspection; visible labels do not prove a binding write.",
+    "scope": "Light only; each selected scenario uses a fresh process, exact app. AX frames are global screen points. No draft/target/nearest introspection; visible labels do not prove a binding write.",
     "sampling_scope": "First second after Film select CLI launch, including mounting latency; actual AX-walk timestamps, no assumed sampling frequency.",
     "system_preferences": ["reduce_motion": NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
         "reduce_transparency": NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,
@@ -174,20 +178,16 @@ func stop(_ p: Process) {
     if p.isRunning { kill(p.processIdentifier, SIGKILL) }
 }
 do {
-    guard ProcessInfo.processInfo.operatingSystemVersion.majorVersion == 14, CGPreflightScreenCaptureAccess() else {
-        throw Failure(description: "Requires macOS14 and existing Screen Recording access; no TCC changes")
+    guard [13, 14].contains(expectedOS), ProcessInfo.processInfo.operatingSystemVersion.majorVersion == expectedOS,
+          ["all", "immediate", "wait", "direct"].contains(requestedScenario), CGPreflightScreenCaptureAccess() else {
+        throw Failure(description: "Requires the explicitly selected macOS13/14, valid scenario and existing Screen Recording access; no TCC changes")
     }
     guard !NSWorkspace.shared.accessibilityDisplayShouldReduceMotion,
           !NSWorkspace.shared.accessibilityDisplayShouldReduceTransparency,
           !NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast else {
         throw Failure(description: "Effective accessibility preferences do not match normal profile; observer does not change preferences")
     }
-    defer {
-        if NSWorkspace.shared.frontmostApplication?.processIdentifier != originalFront?.processIdentifier {
-            originalFront?.activate(options: [])
-        }
-    }
-    for scenario in ["immediate", "wait", "direct"] {
+    for scenario in scenarios {
         let ipc = URL(fileURLWithPath: "/tmp/bern-film-\(getpid())-\(scenario)", isDirectory: true)
         // The transport appends /bern-<16hex>/<14hex>.sock (42 bytes), capped at 100.
         guard ipc.path.utf8.count + 42 <= 100 else { throw Failure(description: "IPC socket path exceeds transport limit") }
@@ -199,7 +199,13 @@ do {
         p.arguments = ["-AppleLanguages", "(en)", "-AppleLocale", "en_US"]; p.environment = environment
         let log = try handle(scenario + "-application.log"); p.standardOutput = log; p.standardError = log
         try p.run()
-        defer { stop(p); log.closeFile(); try? fm.removeItem(at: ipc) }
+        defer {
+            let ownWasFront = NSWorkspace.shared.frontmostApplication?.processIdentifier == p.processIdentifier
+            stop(p); log.closeFile(); try? fm.removeItem(at: ipc)
+            if ownWasFront, NSWorkspace.shared.frontmostApplication?.processIdentifier != originalFront?.processIdentifier {
+                originalFront?.activate(options: [])
+            }
+        }
         var session: String?
         let ready = now() + 15
         while session == nil && p.isRunning && now() < ready {
@@ -237,6 +243,18 @@ do {
         entry["film"] = try stable(p.processIdentifier, name: scenario + "-film")
         entry["settled_ax"] = axSample(root)
         entry["controls"] = try cli(["ui", "inspect"], id) ?? NSNull()
+        if let directory = environment["BERN_SCROLL_TRACE_DIR"] {
+            let trace = URL(fileURLWithPath: directory).appendingPathComponent("scroll-\(p.processIdentifier).json")
+            let stopAt = min(deadline, (entry["select_start_uptime"] as? Double ?? now()) + 4)
+            while !fm.fileExists(atPath: trace.path), now() < stopAt { try pause(0.05) }
+            guard fm.fileExists(atPath: trace.path),
+                  let record = try JSONSerialization.jsonObject(with: Data(contentsOf: trace)) as? [String: Any],
+                  (record["pid"] as? NSNumber)?.int32Value == p.processIdentifier else {
+                throw Failure(description: "Own diagnostic trace did not flush within the bounded wait")
+            }
+            entry["internal_trace"] = trace.lastPathComponent
+            entry["film_after_trace"] = try stable(p.processIdentifier, name: scenario + "-film-after-trace")
+        }
         cases[cases.count - 1] = entry; try save()
     }
     report["success"] = true; try save()
