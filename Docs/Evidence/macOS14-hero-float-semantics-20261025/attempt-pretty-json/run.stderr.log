@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-float-geometry-png/structure.py", line 126, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-float-geometry-png/structure.py", line 122, in main
+    result['inputs']=inputs;result['script_sha256']=sha((D/'structure.py').read_bytes());encoded=json.dumps(result,indent=2,sort_keys=True,allow_nan=False)+'\n';need(len(encoded.encode())<=128*1024,'bounded structure result');(out/'geometry.json').write_text(encoded)
+                                                                                                                                                                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-float-geometry-png/structure.py", line 11, in need
+    if not x:raise ValueError(m)
+             ^^^^^^^^^^^^^^^^^^^
+ValueError: bounded structure result

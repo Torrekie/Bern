@@ -1,0 +1,73 @@
+{
+  "candidates": [
+    "top-down",
+    "bottom-up"
+  ],
+  "coordinate_policy": "Frozen source640x360 atlas; exact integer width/height scaling; raw y reversal only. No resize, translation, alternate crop, tolerance or threshold tuning.",
+  "failure_scope": "Ordinary failure saves validation/error where possible; a structure no-pass/ambiguity is an analysis result, not an exception or repair. No semantic extraction until independent review confirms valid direction and lane contract.",
+  "flat_regions": "All10 frozen patch interiors must each contain exactly one distinct complete8byte pixel tuple.",
+  "format_scope": "Raw bytes only for structure; no RGB interpretation, expected color, host similarity or PNG-output fitting selects direction.",
+  "kind": "predeclared_exact_bit_tuple_geometry_gate",
+  "not_performed": [
+    "UI",
+    "new capture",
+    "compile",
+    "CI",
+    "product edit",
+    "color conversion",
+    "clamp",
+    "unpremultiply",
+    "expected-value fit",
+    "new image generation"
+  ],
+  "parser_revision": {
+    "previous_policy_sha256": "a5c926bedf258ca1a3e99524283851faf9d9e02a3fed79fdb7462e4d8c051832",
+    "reference": "https://www.w3.org/TR/PNG-Filters.html",
+    "scope": "Only standard source PNG filtering support; previous source-parser premise failed before any snapshot raw read. Exact tuple geometry and raw gates unchanged."
+  },
+  "ramp_bin_x_source_intervals": [
+    [
+      8,
+      120
+    ],
+    [
+      136,
+      248
+    ],
+    [
+      264,
+      376
+    ],
+    [
+      392,
+      504
+    ],
+    [
+      520,
+      632
+    ]
+  ],
+  "ramp_marker_bands_source_rects": [
+    {
+      "height": 80,
+      "width": 632,
+      "x": 4,
+      "y": 20
+    },
+    {
+      "height": 80,
+      "width": 632,
+      "x": 4,
+      "y": 140
+    },
+    {
+      "height": 80,
+      "width": 632,
+      "x": 4,
+      "y": 260
+    }
+  ],
+  "ramp_marker_rule": "All rows of a band bit-identical across full band; in each of5 predeclared patch-interior x bins, first row contains at least2 distinct complete pixel tuples. All3 bands evaluated; only band index2 may satisfy this ramp marker.",
+  "raw_gate": "Each13/14 named/custom raw is independently tested in both directions. A direction is selected iff exactly1 candidate passes; otherwise unknown, without retries or relaxed gates.",
+  "source_gate": "Both SHA-locked source RGBA16BE PNGs decoded losslessly; PNG CRC/IHDR/standard lossless filters0..4/exact length guarded. Source top-down must pass structure; bottom-up must fail; decoded active pixel bytes of the2 source PNGs must match."
+}

@@ -1,0 +1,93 @@
+{
+  "conclusion": "No blocking defect found in the fixed noninterlaced RGBA16 PNG0..4 reversal or unchanged tuple policy. Root may execute within original offline scope.",
+  "decoder_checks": {
+    "average": "floor((left+above)/2), no intermediate overflow",
+    "byte_stride": 8,
+    "final_arithmetic": "(filtered_byte+predictor)&255 only at final reconstruction",
+    "next_row": "Complete decoded current row copied to previous",
+    "none": "predictor0",
+    "paeth": "exact integer prediction and distances;ties left,above,upper-left",
+    "reconstructed_above_and_upper_left": "previous decoded row;first row allzero",
+    "reconstructed_left": "current[x-8] after prior byte restoration;zero for x<8",
+    "source_layout": "640x360 RGBA16 noninterlaced, original big-endian bytes retained",
+    "sub": "left",
+    "unknown_filter": "refuse outside0..4",
+    "up": "above"
+  },
+  "execution": {
+    "compile_ui_ci_repo_edits": false,
+    "snapshot_raw_read": false,
+    "source_png_payloads_decoded": false,
+    "structure_script_executed": false
+  },
+  "inputs": {
+    "work/hero-snapshot-float-geometry-png/PREDECLARED-SHA256SUMS": {
+      "bytes": 243,
+      "sha256": "8a21628c5e2c7f076ff99be7b438d55c7e0dc1dcad23d1b8af624f6e3862fd43"
+    },
+    "work/hero-snapshot-float-geometry-png/policy.json": {
+      "bytes": 2580,
+      "sha256": "e89de719d300dc83faa46e186abd71ae4b5d19315351df87340133e3f64d48b7"
+    },
+    "work/hero-snapshot-float-geometry-png/source-parser.patch": {
+      "bytes": 3604,
+      "sha256": "cf66f874140a6375481e079b2e5c8c768d84e8e521c6447452cab8718f49c7c8"
+    },
+    "work/hero-snapshot-float-geometry-png/structure.py": {
+      "bytes": 10048,
+      "sha256": "9d98d461274444e284e3890be49ab35d6e2e19b1e74e6956ae08a75c01658e7f"
+    },
+    "work/hero-snapshot-float-geometry/policy.json": {
+      "bytes": 2200,
+      "sha256": "a5c926bedf258ca1a3e99524283851faf9d9e02a3fed79fdb7462e4d8c051832"
+    },
+    "work/hero-snapshot-float-geometry/structure.py": {
+      "bytes": 9275,
+      "sha256": "0ef95562c315cc940c6e031c1956bbcb525e544fe455ae42935df4ecbf79349e"
+    }
+  },
+  "kind": "source_only_png_filter_decoder_diff_review",
+  "limitations": [
+    "Source review, not an executed decoder test",
+    "Geometry result still pending;complete/exit0 not semantic approval",
+    "No RGB lane order, color match or cause is established"
+  ],
+  "preserved_gates": [
+    "Encoded PNG SHA",
+    "CRC/IHDR/IEND and no trailing bytes",
+    "Exact bounded zlib output",
+    "Source alphaFFFF and both decoded buffers identical",
+    "Sources must uniquely pass top-down before snapshot reads",
+    "10flat complete-tuple equality",
+    "3fixed bands/per5bin marker",
+    "Only two vertical mappings;unique1 or unknown",
+    "Old runtime/format/ICC/archive-hash guards"
+  ],
+  "reference": {
+    "reviewed_sections": [
+      "6.1",
+      "6.2",
+      "6.3",
+      "6.4",
+      "6.5",
+      "6.6"
+    ],
+    "title": "W3C PNG1.0 chapter6 Filter Algorithms",
+    "url": "https://www.w3.org/TR/PNG-Filters.html"
+  },
+  "report_change": "Per-source png_row_filter_counts scalar histogram; no effect on geometry selection",
+  "static_checks": {
+    "actual_diff_exactly_matches_source_parser_patch": true,
+    "changed_policy_keys_only": [
+      "parser_revision",
+      "source_gate"
+    ],
+    "python_ast_parse_only": true,
+    "unchanged_geometry_function_names": [
+      "scaled_box",
+      "rows_at",
+      "tuple_count",
+      "evaluate"
+    ]
+  }
+}

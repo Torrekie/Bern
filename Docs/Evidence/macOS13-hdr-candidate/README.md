@@ -29,3 +29,4 @@
 以上补证均为本机13独立窗口，非激活状态，不是14彩色采集或一般High等同证明。原exe/cache已清。
 
 - [同一Hero snapshot的系统NSImageView显示对照](native-pq-hero-snapshot-view13/README.md)：先复现12ROI默认控制，候选只改变named Hero且max1/255，其余10ROI exact；完整14残差有改善亦有恶化，主要色差未解决，未换入产品。原PNG/ICC、同对象身份/清理、完整色块/灰阶与构建证据保留，binary/cache已清。
+- [原snapshot行序/十flat语义分析](../macOS14-hero-float-semantics-20261025/README.md)：四raw唯一top-down、RGBA16F LE合同及独立复核完成。named十flat13/14原bits全同，custom五flat有小差；不等于整个图像对象或UI相同。下一步先补CGImage尚缺的绘制语义，未改产品或新增采集。

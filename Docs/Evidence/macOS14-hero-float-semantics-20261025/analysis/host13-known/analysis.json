@@ -1,0 +1,3471 @@
+{
+  "actual_os_major": 13,
+  "analysis_complete": true,
+  "analyzer_sha256": "b616c42b192c13b7fee3d903d90e9553f389c6ac4b6f7da8cc96996877fcca2a",
+  "atlas_spec_sha256": "39ca622a45c0120d08e90daa7a17a0145be1b79485decb4619a0e5a3f23cadaf",
+  "capture_context": [
+    {
+      "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+      "capture_size": [
+        2048,
+        936
+      ],
+      "current_headroom": 1,
+      "phase": "progress-0",
+      "potential_headroom": 2
+    },
+    {
+      "capture_icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+      "capture_size": [
+        2048,
+        936
+      ],
+      "current_headroom": 1,
+      "phase": "progress-1",
+      "potential_headroom": 2
+    }
+  ],
+  "capture_mode": {
+    "cleanup_observation_count": 2,
+    "error": null,
+    "export_elapsed_seconds": 0.010072916658828035,
+    "export_stage": "after_existing_window_teardown",
+    "fixture_retained_images_after_export": 0,
+    "maximum_total_raw_bytes": 4194304,
+    "observer_effect": "Changed object lifetime/provider access requires off/on pixel controls; zero observer effect is not claimed",
+    "primary_frozen_at_uptime_seconds": 244137.74730041667,
+    "primary_observation_count": 2,
+    "primary_observation_keys": [
+      "baseline-body-named",
+      "baseline-body-custom"
+    ],
+    "provider_copy_calls": 2,
+    "released_at_uptime_seconds": 244137.76108366667,
+    "requested": "on",
+    "retained_primary_peak_count": 2,
+    "retention_scope": "on: actual renderer-return object until post-teardown export; off: no CGImage retained; cleanup: no CGImage retained",
+    "row_direction": "unverified",
+    "selected": "on",
+    "success": true,
+    "total_raw_bytes": 3686400
+  },
+  "context": {
+    "cache_unchanged": true,
+    "frontmost_after": 9292,
+    "frontmost_before": 9292,
+    "normal_after": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "normal_before": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "os": "Version 13.7.8 (Build 22H730)",
+    "window_seconds": 1.563573956489563
+  },
+  "independent_orientation_evidence": {
+    "bytes": 57139,
+    "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-float-geometry-compact/result/geometry.json",
+    "scope": "Caller-supplied independent evidence. Script records provenance and cannot itself establish that evidence's truth.",
+    "sha256": "215ccb6ecc2ab77e6039cbc07c08f09f83358fd84747c9228f6aa90881a1ddf2"
+  },
+  "limitations": [
+    "Both row mappings are candidates until independently grounded. Whole-buffer differences cannot identify a semantic patch cause or bypass sampling/scaled-edge limits.",
+    "Descriptor/ICC context and runtime booleans are retained-source claims, not repeated native measurements or a zero-observer-effect guarantee.",
+    "No cross-host semantic patch comparison, expected-value fit, image correction or acceptance threshold is performed.",
+    "Normal-after/teardown timing follows the preserved driver. Cleanup count is reported separately; raw exports cover only the two primary identities."
+  ],
+  "numeric_policy": "Original uint16LE payloads decoded as IEEE754 binary16, RGBA stored premultiplied-last. No clamp, unpremultiplication, color conversion, normalization, rescale, alignment, nits inference or automatic row flip. Min/mean/max use finite numbers only; NaN/Inf counts are separate; <0/>1 counts include infinities but exclude NaNs.",
+  "raw_byte_budget": 4194304,
+  "raw_byte_total": 3686400,
+  "records": [
+    {
+      "candidate_coordinate_mappings_only": {
+        "bottom-up": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              520,
+              248,
+              632,
+              352
+            ],
+            "cool812": [
+              264,
+              128,
+              376,
+              232
+            ],
+            "gray-ramp": [
+              4,
+              20,
+              636,
+              100
+            ],
+            "green812": [
+              392,
+              248,
+              504,
+              352
+            ],
+            "pastel812": [
+              520,
+              128,
+              632,
+              232
+            ],
+            "red812": [
+              264,
+              248,
+              376,
+              352
+            ],
+            "warm406": [
+              392,
+              128,
+              504,
+              232
+            ],
+            "warm812": [
+              136,
+              128,
+              248,
+              232
+            ],
+            "white203": [
+              8,
+              248,
+              120,
+              352
+            ],
+            "white812": [
+              136,
+              248,
+              248,
+              352
+            ],
+            "yellow812": [
+              8,
+              128,
+              120,
+              232
+            ]
+          },
+          "status": "CANDIDATE_COORDINATES_ONLY"
+        },
+        "top-down": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              520,
+              8,
+              632,
+              112
+            ],
+            "cool812": [
+              264,
+              128,
+              376,
+              232
+            ],
+            "gray-ramp": [
+              4,
+              260,
+              636,
+              340
+            ],
+            "green812": [
+              392,
+              8,
+              504,
+              112
+            ],
+            "pastel812": [
+              520,
+              128,
+              632,
+              232
+            ],
+            "red812": [
+              264,
+              8,
+              376,
+              112
+            ],
+            "warm406": [
+              392,
+              128,
+              504,
+              232
+            ],
+            "warm812": [
+              136,
+              128,
+              248,
+              232
+            ],
+            "white203": [
+              8,
+              8,
+              120,
+              112
+            ],
+            "white812": [
+              136,
+              8,
+              248,
+              112
+            ],
+            "yellow812": [
+              8,
+              128,
+              120,
+              232
+            ]
+          },
+          "status": "CANDIDATE_COORDINATES_ONLY"
+        }
+      },
+      "grounded_direction_patch_and_ramp_statistics": {
+        "blue812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x412e"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.58984375,
+              "finite_numeric_mean": 2.58984375,
+              "finite_numeric_min": 2.58984375,
+              "first_32_sorted_unique_bits_hex": [
+                "0x412e"
+              ],
+              "full_bit_histogram_sha256": "fa462bf64e9cd264e0d0b9e38905204bffc9f668a27ac2ac284b2bfc8de98669",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xb49e"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.28857421875,
+              "finite_numeric_mean": -0.28857421875,
+              "finite_numeric_min": -0.28857421875,
+              "first_32_sorted_unique_bits_hex": [
+                "0xb49e"
+              ],
+              "full_bit_histogram_sha256": "e180505776458d9080adbb1b9b0f7c1fc648de7c19cf4ea4efe8296a869bb4e5",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xba58"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.79296875,
+              "finite_numeric_mean": -0.79296875,
+              "finite_numeric_min": -0.79296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0xba58"
+              ],
+              "full_bit_histogram_sha256": "3b1aef3a54af47402e15091dc676502d19d8b271172798ddeabf275998880636",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            520,
+            8,
+            632,
+            112
+          ]
+        },
+        "cool812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x4112"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.53515625,
+              "finite_numeric_mean": 2.53515625,
+              "finite_numeric_min": 2.53515625,
+              "first_32_sorted_unique_bits_hex": [
+                "0x4112"
+              ],
+              "full_bit_histogram_sha256": "384ed1885122c14d297c6d160c1c24594ab4632dd4dda3ab2e2944797e73b39c",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3f83"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.8779296875,
+              "finite_numeric_mean": 1.8779296875,
+              "finite_numeric_min": 1.8779296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3f83"
+              ],
+              "full_bit_histogram_sha256": "cbc9611a43732be98461066b2cd495a3792b1111e3940e88ccd494ebdf3c39d2",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3947"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 0.65966796875,
+              "finite_numeric_mean": 0.65966796875,
+              "finite_numeric_min": 0.65966796875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3947"
+              ],
+              "full_bit_histogram_sha256": "b0d400d1109e547ad0bac292c54cd0fcfd208b290913214770e32879986a05d8",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            264,
+            128,
+            376,
+            232
+          ]
+        },
+        "gray-ramp": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 50560,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "026881523103e14ca1f981128aab6ae1c707278b330f06331b6715f5c694fbb7",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 50560,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 50560,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": null,
+              "finite_count": 50560,
+              "finite_numeric_max": 2.462890625,
+              "finite_numeric_mean": 1.731867729863034,
+              "finite_numeric_min": 0.2498779296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x33ff",
+                "0x3479",
+                "0x34e5",
+                "0x3547",
+                "0x35a2",
+                "0x35f6",
+                "0x3644",
+                "0x368e",
+                "0x36d4",
+                "0x3717",
+                "0x3757",
+                "0x3795",
+                "0x37d0",
+                "0x3804",
+                "0x3820",
+                "0x383b",
+                "0x3854",
+                "0x386d",
+                "0x3886",
+                "0x389e",
+                "0x38b5",
+                "0x38cb",
+                "0x38e1",
+                "0x38f7",
+                "0x390c",
+                "0x3921",
+                "0x3935",
+                "0x3949",
+                "0x395c",
+                "0x3970",
+                "0x3982",
+                "0x3995"
+              ],
+              "full_bit_histogram_sha256": "dc4e42a936f2d6b7ac460b89e1a52f4e8cd4621463ee7af46d7ce82b12d7ba11",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 44560,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 50560,
+              "unique_uint16_bit_pattern_count": 619
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": null,
+              "finite_count": 50560,
+              "finite_numeric_max": 2.462890625,
+              "finite_numeric_mean": 1.731867729863034,
+              "finite_numeric_min": 0.2498779296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x33ff",
+                "0x3479",
+                "0x34e5",
+                "0x3547",
+                "0x35a2",
+                "0x35f6",
+                "0x3644",
+                "0x368e",
+                "0x36d4",
+                "0x3717",
+                "0x3757",
+                "0x3795",
+                "0x37d0",
+                "0x3804",
+                "0x3820",
+                "0x383b",
+                "0x3854",
+                "0x386d",
+                "0x3886",
+                "0x389e",
+                "0x38b5",
+                "0x38cb",
+                "0x38e1",
+                "0x38f7",
+                "0x390c",
+                "0x3921",
+                "0x3935",
+                "0x3949",
+                "0x395c",
+                "0x3970",
+                "0x3982",
+                "0x3995"
+              ],
+              "full_bit_histogram_sha256": "dc4e42a936f2d6b7ac460b89e1a52f4e8cd4621463ee7af46d7ce82b12d7ba11",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 44560,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 50560,
+              "unique_uint16_bit_pattern_count": 619
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": null,
+              "finite_count": 50560,
+              "finite_numeric_max": 2.462890625,
+              "finite_numeric_mean": 1.731867729863034,
+              "finite_numeric_min": 0.2498779296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x33ff",
+                "0x3479",
+                "0x34e5",
+                "0x3547",
+                "0x35a2",
+                "0x35f6",
+                "0x3644",
+                "0x368e",
+                "0x36d4",
+                "0x3717",
+                "0x3757",
+                "0x3795",
+                "0x37d0",
+                "0x3804",
+                "0x3820",
+                "0x383b",
+                "0x3854",
+                "0x386d",
+                "0x3886",
+                "0x389e",
+                "0x38b5",
+                "0x38cb",
+                "0x38e1",
+                "0x38f7",
+                "0x390c",
+                "0x3921",
+                "0x3935",
+                "0x3949",
+                "0x395c",
+                "0x3970",
+                "0x3982",
+                "0x3995"
+              ],
+              "full_bit_histogram_sha256": "dc4e42a936f2d6b7ac460b89e1a52f4e8cd4621463ee7af46d7ce82b12d7ba11",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 44560,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 50560,
+              "unique_uint16_bit_pattern_count": 619
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 50560,
+          "raw_storage_box_half_open": [
+            4,
+            260,
+            636,
+            340
+          ]
+        },
+        "green812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xbb51"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.91455078125,
+              "finite_numeric_mean": -0.91455078125,
+              "finite_numeric_min": -0.91455078125,
+              "first_32_sorted_unique_bits_hex": [
+                "0xbb51"
+              ],
+              "full_bit_histogram_sha256": "ccc1a34ab02c41212fd5fe1bc2b137dff2c200b956096f85566f8509189c28c3",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x4136"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.60546875,
+              "finite_numeric_mean": 2.60546875,
+              "finite_numeric_min": 2.60546875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x4136"
+              ],
+              "full_bit_histogram_sha256": "00fd9bfc3525a28299488531c10663e560be79bd251d2a209079775a06b8bd38",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xbfe0"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -1.96875,
+              "finite_numeric_mean": -1.96875,
+              "finite_numeric_min": -1.96875,
+              "first_32_sorted_unique_bits_hex": [
+                "0xbfe0"
+              ],
+              "full_bit_histogram_sha256": "b10afcf894b2183e9eadf116daf814fb1ca1d39b27aa1ed568660d380c843d5b",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            392,
+            8,
+            504,
+            112
+          ]
+        },
+        "pastel812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3f20"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.78125,
+              "finite_numeric_mean": 1.78125,
+              "finite_numeric_min": 1.78125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3f20"
+              ],
+              "full_bit_histogram_sha256": "2832ecdcd2345e55e7f4663ffdcf3a1df8514046af0a1e96033807a60eacbe9e",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x404c"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.1484375,
+              "finite_numeric_mean": 2.1484375,
+              "finite_numeric_min": 2.1484375,
+              "first_32_sorted_unique_bits_hex": [
+                "0x404c"
+              ],
+              "full_bit_histogram_sha256": "5d8e22875429d303ccf475c8ebf3f07d7208c1844e6b72611725a305a55c61b6",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x414f"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.654296875,
+              "finite_numeric_mean": 2.654296875,
+              "finite_numeric_min": 2.654296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x414f"
+              ],
+              "full_bit_histogram_sha256": "a5d4e17b1c0c56747da462bc8c307db84e9daea68056a7fb6a1495d5473b002e",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            520,
+            128,
+            632,
+            232
+          ]
+        },
+        "red812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xb6b8"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.419921875,
+              "finite_numeric_mean": -0.419921875,
+              "finite_numeric_min": -0.419921875,
+              "first_32_sorted_unique_bits_hex": [
+                "0xb6b8"
+              ],
+              "full_bit_histogram_sha256": "01db8c05ca4ba650a9e985de1e882043c497b229a37a7445ec7578ecaf427a56",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xbc05"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -1.0048828125,
+              "finite_numeric_mean": -1.0048828125,
+              "finite_numeric_min": -1.0048828125,
+              "first_32_sorted_unique_bits_hex": [
+                "0xbc05"
+              ],
+              "full_bit_histogram_sha256": "1afd2617c55ab13480a0b3a240c4fba4b0a1c37ea258afbfd8eb33045b533f94",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x4221"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 3.064453125,
+              "finite_numeric_mean": 3.064453125,
+              "finite_numeric_min": 3.064453125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x4221"
+              ],
+              "full_bit_histogram_sha256": "99be548121514f52a97df2a95d13c2c6ce1c6c467f4983c34e1961abcf82bebc",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            264,
+            8,
+            376,
+            112
+          ]
+        },
+        "warm406": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3b7a"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 0.9345703125,
+              "finite_numeric_mean": 0.9345703125,
+              "finite_numeric_min": 0.9345703125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3b7a"
+              ],
+              "full_bit_histogram_sha256": "6d4235419b2041d3707906869fbc53050dac00f6024c96232946b9902a5e470e",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d27"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.2880859375,
+              "finite_numeric_mean": 1.2880859375,
+              "finite_numeric_min": 1.2880859375,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d27"
+              ],
+              "full_bit_histogram_sha256": "e4c922ae6edaf2a92ad1c37bb7cc8e7fb78412caf4ef446b4ea09e6b835fc40c",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x402d"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.087890625,
+              "finite_numeric_mean": 2.087890625,
+              "finite_numeric_min": 2.087890625,
+              "first_32_sorted_unique_bits_hex": [
+                "0x402d"
+              ],
+              "full_bit_histogram_sha256": "096b346b13d845a31bf12f39aad9674474ad9b1ac48da1418f05f54d7d55a55a",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            392,
+            128,
+            504,
+            232
+          ]
+        },
+        "warm812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d10"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.265625,
+              "finite_numeric_mean": 1.265625,
+              "finite_numeric_min": 1.265625,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d10"
+              ],
+              "full_bit_histogram_sha256": "5547425fdae4c0847feec266846b79396d38fcfb9512ccd472faf75a93b64010",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3ef4"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.73828125,
+              "finite_numeric_mean": 1.73828125,
+              "finite_numeric_min": 1.73828125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3ef4"
+              ],
+              "full_bit_histogram_sha256": "9558fe3a1bdc1d7d43e79ded31c4e8c8cf6ada4cc871381a8fa1a22d2878f5e6",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x419c"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.8046875,
+              "finite_numeric_mean": 2.8046875,
+              "finite_numeric_min": 2.8046875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x419c"
+              ],
+              "full_bit_histogram_sha256": "f88a0f2e59396b8c28db99a6df64fbbb4fe74963f9e4fa1a5081267334c990fa",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            136,
+            128,
+            248,
+            232
+          ]
+        },
+        "white203": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d73"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.3623046875,
+              "finite_numeric_mean": 1.3623046875,
+              "finite_numeric_min": 1.3623046875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d73"
+              ],
+              "full_bit_histogram_sha256": "d119ca7b948181340995a6446d60483921999764b8a259024654a2df2cafdc86",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d73"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.3623046875,
+              "finite_numeric_mean": 1.3623046875,
+              "finite_numeric_min": 1.3623046875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d73"
+              ],
+              "full_bit_histogram_sha256": "d119ca7b948181340995a6446d60483921999764b8a259024654a2df2cafdc86",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d73"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.3623046875,
+              "finite_numeric_mean": 1.3623046875,
+              "finite_numeric_min": 1.3623046875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d73"
+              ],
+              "full_bit_histogram_sha256": "d119ca7b948181340995a6446d60483921999764b8a259024654a2df2cafdc86",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            8,
+            8,
+            120,
+            112
+          ]
+        },
+        "white812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x40f1"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.470703125,
+              "finite_numeric_mean": 2.470703125,
+              "finite_numeric_min": 2.470703125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x40f1"
+              ],
+              "full_bit_histogram_sha256": "5eb92ea007f635050659bb0c247fa22c55931c29cb135ba518c8b4e931abebe0",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x40f1"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.470703125,
+              "finite_numeric_mean": 2.470703125,
+              "finite_numeric_min": 2.470703125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x40f1"
+              ],
+              "full_bit_histogram_sha256": "5eb92ea007f635050659bb0c247fa22c55931c29cb135ba518c8b4e931abebe0",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x40f1"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.470703125,
+              "finite_numeric_mean": 2.470703125,
+              "finite_numeric_min": 2.470703125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x40f1"
+              ],
+              "full_bit_histogram_sha256": "5eb92ea007f635050659bb0c247fa22c55931c29cb135ba518c8b4e931abebe0",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            136,
+            8,
+            248,
+            112
+          ]
+        },
+        "yellow812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xbbdf"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.98388671875,
+              "finite_numeric_mean": -0.98388671875,
+              "finite_numeric_min": -0.98388671875,
+              "first_32_sorted_unique_bits_hex": [
+                "0xbbdf"
+              ],
+              "full_bit_histogram_sha256": "58ddbdd6a5e0a441fa84dd21e1d333bb8f9f278d4934d93916a01a11152c36d5",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x40f5"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.478515625,
+              "finite_numeric_mean": 2.478515625,
+              "finite_numeric_min": 2.478515625,
+              "first_32_sorted_unique_bits_hex": [
+                "0x40f5"
+              ],
+              "full_bit_histogram_sha256": "8ccf08b5121d4ff216bda792b40f998879c876e71041677f5aa3bce715af2779",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x4117"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.544921875,
+              "finite_numeric_mean": 2.544921875,
+              "finite_numeric_min": 2.544921875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x4117"
+              ],
+              "full_bit_histogram_sha256": "84632014ac1c97daece68442b947aea2038c12e5d08d8883cf064c06baeebc16",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            8,
+            128,
+            120,
+            232
+          ]
+        }
+      },
+      "padding": {
+        "byte_count": 0,
+        "excluded_from_pixel_channels": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "raw_record": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_count": 1843200,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 5120,
+        "export_elapsed_seconds": 0.005151541670784354,
+        "export_stage": "after_existing_window_teardown",
+        "file": "snapshot-named.bin",
+        "float_components": true,
+        "height": 360,
+        "key": "baseline-body-named",
+        "pixel_format_raw": 0,
+        "provider_read_at_uptime_seconds": 244137.75110908336,
+        "retained_at_uptime_seconds": 244136.362972,
+        "sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+        "width": 640
+      },
+      "resolved_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/snapshot-named.bin",
+      "snapshot_ICC_context": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 5120,
+        "color_space_components": 3,
+        "color_space_metadata_stage": "after_existing_window_teardown",
+        "color_space_model_raw": 1,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "color_space_present": true,
+        "float_components": true,
+        "height": 360,
+        "icc_base64_omitted_reason": null,
+        "icc_byte_count": 3144,
+        "icc_present": true,
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+        "is_hlg_based": false,
+        "is_pq_based": false,
+        "key": "baseline-body-named",
+        "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+        "pixel_format_raw": 0,
+        "uses_extended_range": true,
+        "uses_itur2100_tf": false,
+        "wide_gamut_rgb": true,
+        "width": 640
+      },
+      "whole_active_pixel_buffer": {
+        "RGBA": {
+          "A": {
+            "all_unique_bits_hex_if_at_most_64": [
+              "0x3c00"
+            ],
+            "finite_count": 230400,
+            "finite_numeric_max": 1.0,
+            "finite_numeric_mean": 1.0,
+            "finite_numeric_min": 1.0,
+            "first_32_sorted_unique_bits_hex": [
+              "0x3c00"
+            ],
+            "full_bit_histogram_sha256": "2a414a08470276288f616bf69bfd6e194bc96fa1577614be9a9d53e4bc291152",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 230400,
+            "numeric_greater_than_one_count": 0,
+            "numeric_less_than_zero_count": 0,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 1
+          },
+          "B": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 2.58984375,
+            "finite_numeric_mean": 1.2835502624511719,
+            "finite_numeric_min": -0.98388671875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318d",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f6",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383b",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389e",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3949"
+            ],
+            "full_bit_histogram_sha256": "168ad3fd78a55d586680cc3b9828f4c03f3cc6ad7c6fc9953926a8444ce13439",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 159480,
+            "numeric_less_than_zero_count": 46080,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 635
+          },
+          "G": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 2.60546875,
+            "finite_numeric_mean": 1.5538953145345051,
+            "finite_numeric_min": -1.0048828125,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318d",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f6",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383b",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389e",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3949"
+            ],
+            "full_bit_histogram_sha256": "35613ccfda4d3825249ff0e61c03e6581d19248c48ed615d4503dce0da82e408",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 190200,
+            "numeric_less_than_zero_count": 30720,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 634
+          },
+          "R": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 3.064453125,
+            "finite_numeric_mean": 1.5679578145345052,
+            "finite_numeric_min": -1.96875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318d",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f6",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383b",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389e",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3947"
+            ],
+            "full_bit_histogram_sha256": "c35a4ba725a4785f67c62223480c57de0699a2528596e74711bced471bfd8a4b",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 174840,
+            "numeric_less_than_zero_count": 30720,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 635
+          }
+        },
+        "alpha_all_numeric_exactly_one": true,
+        "alpha_one_uint16_bits": "0x3c00",
+        "pixel_count": 230400,
+        "raw_storage_box_half_open": [
+          0,
+          0,
+          640,
+          360
+        ]
+      }
+    },
+    {
+      "candidate_coordinate_mappings_only": {
+        "bottom-up": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              520,
+              248,
+              632,
+              352
+            ],
+            "cool812": [
+              264,
+              128,
+              376,
+              232
+            ],
+            "gray-ramp": [
+              4,
+              20,
+              636,
+              100
+            ],
+            "green812": [
+              392,
+              248,
+              504,
+              352
+            ],
+            "pastel812": [
+              520,
+              128,
+              632,
+              232
+            ],
+            "red812": [
+              264,
+              248,
+              376,
+              352
+            ],
+            "warm406": [
+              392,
+              128,
+              504,
+              232
+            ],
+            "warm812": [
+              136,
+              128,
+              248,
+              232
+            ],
+            "white203": [
+              8,
+              248,
+              120,
+              352
+            ],
+            "white812": [
+              136,
+              248,
+              248,
+              352
+            ],
+            "yellow812": [
+              8,
+              128,
+              120,
+              232
+            ]
+          },
+          "status": "CANDIDATE_COORDINATES_ONLY"
+        },
+        "top-down": {
+          "raw_storage_boxes_half_open": {
+            "blue812": [
+              520,
+              8,
+              632,
+              112
+            ],
+            "cool812": [
+              264,
+              128,
+              376,
+              232
+            ],
+            "gray-ramp": [
+              4,
+              260,
+              636,
+              340
+            ],
+            "green812": [
+              392,
+              8,
+              504,
+              112
+            ],
+            "pastel812": [
+              520,
+              128,
+              632,
+              232
+            ],
+            "red812": [
+              264,
+              8,
+              376,
+              112
+            ],
+            "warm406": [
+              392,
+              128,
+              504,
+              232
+            ],
+            "warm812": [
+              136,
+              128,
+              248,
+              232
+            ],
+            "white203": [
+              8,
+              8,
+              120,
+              112
+            ],
+            "white812": [
+              136,
+              8,
+              248,
+              112
+            ],
+            "yellow812": [
+              8,
+              128,
+              120,
+              232
+            ]
+          },
+          "status": "CANDIDATE_COORDINATES_ONLY"
+        }
+      },
+      "grounded_direction_patch_and_ramp_statistics": {
+        "blue812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x412e"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.58984375,
+              "finite_numeric_mean": 2.58984375,
+              "finite_numeric_min": 2.58984375,
+              "first_32_sorted_unique_bits_hex": [
+                "0x412e"
+              ],
+              "full_bit_histogram_sha256": "fa462bf64e9cd264e0d0b9e38905204bffc9f668a27ac2ac284b2bfc8de98669",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xb49f"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.288818359375,
+              "finite_numeric_mean": -0.288818359375,
+              "finite_numeric_min": -0.288818359375,
+              "first_32_sorted_unique_bits_hex": [
+                "0xb49f"
+              ],
+              "full_bit_histogram_sha256": "523f8624932031210bf35961e2ef791a04f125d8bc1c7ae7a9a1a31a0a5eabb6",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xba58"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.79296875,
+              "finite_numeric_mean": -0.79296875,
+              "finite_numeric_min": -0.79296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0xba58"
+              ],
+              "full_bit_histogram_sha256": "3b1aef3a54af47402e15091dc676502d19d8b271172798ddeabf275998880636",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            520,
+            8,
+            632,
+            112
+          ]
+        },
+        "cool812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x4112"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.53515625,
+              "finite_numeric_mean": 2.53515625,
+              "finite_numeric_min": 2.53515625,
+              "first_32_sorted_unique_bits_hex": [
+                "0x4112"
+              ],
+              "full_bit_histogram_sha256": "384ed1885122c14d297c6d160c1c24594ab4632dd4dda3ab2e2944797e73b39c",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3f83"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.8779296875,
+              "finite_numeric_mean": 1.8779296875,
+              "finite_numeric_min": 1.8779296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3f83"
+              ],
+              "full_bit_histogram_sha256": "cbc9611a43732be98461066b2cd495a3792b1111e3940e88ccd494ebdf3c39d2",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3947"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 0.65966796875,
+              "finite_numeric_mean": 0.65966796875,
+              "finite_numeric_min": 0.65966796875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3947"
+              ],
+              "full_bit_histogram_sha256": "b0d400d1109e547ad0bac292c54cd0fcfd208b290913214770e32879986a05d8",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            264,
+            128,
+            376,
+            232
+          ]
+        },
+        "gray-ramp": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 50560,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "026881523103e14ca1f981128aab6ae1c707278b330f06331b6715f5c694fbb7",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 50560,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 50560,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": null,
+              "finite_count": 50560,
+              "finite_numeric_max": 2.462890625,
+              "finite_numeric_mean": 1.7318155795713015,
+              "finite_numeric_min": 0.2498779296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x33ff",
+                "0x3479",
+                "0x34e5",
+                "0x3547",
+                "0x35a2",
+                "0x35f5",
+                "0x3644",
+                "0x368e",
+                "0x36d4",
+                "0x3717",
+                "0x3757",
+                "0x3795",
+                "0x37d0",
+                "0x3804",
+                "0x3820",
+                "0x383a",
+                "0x3854",
+                "0x386d",
+                "0x3886",
+                "0x389d",
+                "0x38b5",
+                "0x38cb",
+                "0x38e1",
+                "0x38f7",
+                "0x390c",
+                "0x3921",
+                "0x3935",
+                "0x3949",
+                "0x395c",
+                "0x3970",
+                "0x3982",
+                "0x3995"
+              ],
+              "full_bit_histogram_sha256": "9a7535de3044c1c1cdced49d69a1dcd226c6ee8116ed456e7db656719fe7c585",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 44560,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 50560,
+              "unique_uint16_bit_pattern_count": 619
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": null,
+              "finite_count": 50560,
+              "finite_numeric_max": 2.462890625,
+              "finite_numeric_mean": 1.73177463193483,
+              "finite_numeric_min": 0.2498779296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x33ff",
+                "0x3479",
+                "0x34e5",
+                "0x3547",
+                "0x35a2",
+                "0x35f5",
+                "0x3644",
+                "0x368e",
+                "0x36d4",
+                "0x3717",
+                "0x3757",
+                "0x3795",
+                "0x37d0",
+                "0x3804",
+                "0x3820",
+                "0x383a",
+                "0x3854",
+                "0x386d",
+                "0x3886",
+                "0x389d",
+                "0x38b5",
+                "0x38cb",
+                "0x38e1",
+                "0x38f7",
+                "0x390c",
+                "0x3921",
+                "0x3935",
+                "0x3949",
+                "0x395c",
+                "0x3970",
+                "0x3982",
+                "0x3995"
+              ],
+              "full_bit_histogram_sha256": "1cdd058410630d1c2a79a8e10cb06a87fb6da88b205603f4e5792adb36373d07",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 44560,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 50560,
+              "unique_uint16_bit_pattern_count": 619
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": null,
+              "finite_count": 50560,
+              "finite_numeric_max": 2.462890625,
+              "finite_numeric_mean": 1.7317669059656844,
+              "finite_numeric_min": 0.2498779296875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x33ff",
+                "0x3479",
+                "0x34e5",
+                "0x3547",
+                "0x35a2",
+                "0x35f5",
+                "0x3644",
+                "0x368e",
+                "0x36d4",
+                "0x3717",
+                "0x3757",
+                "0x3795",
+                "0x37d0",
+                "0x3804",
+                "0x3820",
+                "0x383a",
+                "0x3854",
+                "0x386d",
+                "0x3886",
+                "0x389d",
+                "0x38b5",
+                "0x38cb",
+                "0x38e1",
+                "0x38f7",
+                "0x390c",
+                "0x3921",
+                "0x3935",
+                "0x3949",
+                "0x395c",
+                "0x3970",
+                "0x3982",
+                "0x3995"
+              ],
+              "full_bit_histogram_sha256": "00e0a46cbaa29c8b39b0083e8ee960a16d8bf98382ef1db69bdacb736c946577",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 44560,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 50560,
+              "unique_uint16_bit_pattern_count": 619
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 50560,
+          "raw_storage_box_half_open": [
+            4,
+            260,
+            636,
+            340
+          ]
+        },
+        "green812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xbb51"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.91455078125,
+              "finite_numeric_mean": -0.91455078125,
+              "finite_numeric_min": -0.91455078125,
+              "first_32_sorted_unique_bits_hex": [
+                "0xbb51"
+              ],
+              "full_bit_histogram_sha256": "ccc1a34ab02c41212fd5fe1bc2b137dff2c200b956096f85566f8509189c28c3",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x4136"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.60546875,
+              "finite_numeric_mean": 2.60546875,
+              "finite_numeric_min": 2.60546875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x4136"
+              ],
+              "full_bit_histogram_sha256": "00fd9bfc3525a28299488531c10663e560be79bd251d2a209079775a06b8bd38",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xbfdf"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -1.9677734375,
+              "finite_numeric_mean": -1.9677734375,
+              "finite_numeric_min": -1.9677734375,
+              "first_32_sorted_unique_bits_hex": [
+                "0xbfdf"
+              ],
+              "full_bit_histogram_sha256": "8cd69ff909877b53c464792b123fd66a453c425e73efd7ec72f89ff9cc8bc936",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            392,
+            8,
+            504,
+            112
+          ]
+        },
+        "pastel812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3f20"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.78125,
+              "finite_numeric_mean": 1.78125,
+              "finite_numeric_min": 1.78125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3f20"
+              ],
+              "full_bit_histogram_sha256": "2832ecdcd2345e55e7f4663ffdcf3a1df8514046af0a1e96033807a60eacbe9e",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x404c"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.1484375,
+              "finite_numeric_mean": 2.1484375,
+              "finite_numeric_min": 2.1484375,
+              "first_32_sorted_unique_bits_hex": [
+                "0x404c"
+              ],
+              "full_bit_histogram_sha256": "5d8e22875429d303ccf475c8ebf3f07d7208c1844e6b72611725a305a55c61b6",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x414e"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.65234375,
+              "finite_numeric_mean": 2.65234375,
+              "finite_numeric_min": 2.65234375,
+              "first_32_sorted_unique_bits_hex": [
+                "0x414e"
+              ],
+              "full_bit_histogram_sha256": "aa704fce2ae3cb990c91e8fe747a3c71452b52279c62847fe9dfc0366ce4c22f",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            520,
+            128,
+            632,
+            232
+          ]
+        },
+        "red812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xb6b7"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.419677734375,
+              "finite_numeric_mean": -0.419677734375,
+              "finite_numeric_min": -0.419677734375,
+              "first_32_sorted_unique_bits_hex": [
+                "0xb6b7"
+              ],
+              "full_bit_histogram_sha256": "bcaa13c93e615dba5186546f7a11372a26c0f9a3c11c1127ddc46a393176914c",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xbc05"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -1.0048828125,
+              "finite_numeric_mean": -1.0048828125,
+              "finite_numeric_min": -1.0048828125,
+              "first_32_sorted_unique_bits_hex": [
+                "0xbc05"
+              ],
+              "full_bit_histogram_sha256": "1afd2617c55ab13480a0b3a240c4fba4b0a1c37ea258afbfd8eb33045b533f94",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x4221"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 3.064453125,
+              "finite_numeric_mean": 3.064453125,
+              "finite_numeric_min": 3.064453125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x4221"
+              ],
+              "full_bit_histogram_sha256": "99be548121514f52a97df2a95d13c2c6ce1c6c467f4983c34e1961abcf82bebc",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            264,
+            8,
+            376,
+            112
+          ]
+        },
+        "warm406": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3b7a"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 0.9345703125,
+              "finite_numeric_mean": 0.9345703125,
+              "finite_numeric_min": 0.9345703125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3b7a"
+              ],
+              "full_bit_histogram_sha256": "6d4235419b2041d3707906869fbc53050dac00f6024c96232946b9902a5e470e",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d27"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.2880859375,
+              "finite_numeric_mean": 1.2880859375,
+              "finite_numeric_min": 1.2880859375,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d27"
+              ],
+              "full_bit_histogram_sha256": "e4c922ae6edaf2a92ad1c37bb7cc8e7fb78412caf4ef446b4ea09e6b835fc40c",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x402d"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.087890625,
+              "finite_numeric_mean": 2.087890625,
+              "finite_numeric_min": 2.087890625,
+              "first_32_sorted_unique_bits_hex": [
+                "0x402d"
+              ],
+              "full_bit_histogram_sha256": "096b346b13d845a31bf12f39aad9674474ad9b1ac48da1418f05f54d7d55a55a",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            392,
+            128,
+            504,
+            232
+          ]
+        },
+        "warm812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d10"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.265625,
+              "finite_numeric_mean": 1.265625,
+              "finite_numeric_min": 1.265625,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d10"
+              ],
+              "full_bit_histogram_sha256": "5547425fdae4c0847feec266846b79396d38fcfb9512ccd472faf75a93b64010",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3ef4"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.73828125,
+              "finite_numeric_mean": 1.73828125,
+              "finite_numeric_min": 1.73828125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3ef4"
+              ],
+              "full_bit_histogram_sha256": "9558fe3a1bdc1d7d43e79ded31c4e8c8cf6ada4cc871381a8fa1a22d2878f5e6",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x419c"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.8046875,
+              "finite_numeric_mean": 2.8046875,
+              "finite_numeric_min": 2.8046875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x419c"
+              ],
+              "full_bit_histogram_sha256": "f88a0f2e59396b8c28db99a6df64fbbb4fe74963f9e4fa1a5081267334c990fa",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            136,
+            128,
+            248,
+            232
+          ]
+        },
+        "white203": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d73"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.3623046875,
+              "finite_numeric_mean": 1.3623046875,
+              "finite_numeric_min": 1.3623046875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d73"
+              ],
+              "full_bit_histogram_sha256": "d119ca7b948181340995a6446d60483921999764b8a259024654a2df2cafdc86",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d73"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.3623046875,
+              "finite_numeric_mean": 1.3623046875,
+              "finite_numeric_min": 1.3623046875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d73"
+              ],
+              "full_bit_histogram_sha256": "d119ca7b948181340995a6446d60483921999764b8a259024654a2df2cafdc86",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3d73"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.3623046875,
+              "finite_numeric_mean": 1.3623046875,
+              "finite_numeric_min": 1.3623046875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3d73"
+              ],
+              "full_bit_histogram_sha256": "d119ca7b948181340995a6446d60483921999764b8a259024654a2df2cafdc86",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            8,
+            8,
+            120,
+            112
+          ]
+        },
+        "white812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x40f1"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.470703125,
+              "finite_numeric_mean": 2.470703125,
+              "finite_numeric_min": 2.470703125,
+              "first_32_sorted_unique_bits_hex": [
+                "0x40f1"
+              ],
+              "full_bit_histogram_sha256": "5eb92ea007f635050659bb0c247fa22c55931c29cb135ba518c8b4e931abebe0",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x40f0"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.46875,
+              "finite_numeric_mean": 2.46875,
+              "finite_numeric_min": 2.46875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x40f0"
+              ],
+              "full_bit_histogram_sha256": "8b6f4b1427ea2e98cd833ced9551e2d4cd25c84a44f3bb4efd594146cb19111b",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x40f0"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.46875,
+              "finite_numeric_mean": 2.46875,
+              "finite_numeric_min": 2.46875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x40f0"
+              ],
+              "full_bit_histogram_sha256": "8b6f4b1427ea2e98cd833ced9551e2d4cd25c84a44f3bb4efd594146cb19111b",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            136,
+            8,
+            248,
+            112
+          ]
+        },
+        "yellow812": {
+          "RGBA": {
+            "A": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x3c00"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 1.0,
+              "finite_numeric_mean": 1.0,
+              "finite_numeric_min": 1.0,
+              "first_32_sorted_unique_bits_hex": [
+                "0x3c00"
+              ],
+              "full_bit_histogram_sha256": "f2594fa8246b41e59d83acd269316278552b21520c0db04840dd0e6365c6bc74",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 11648,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "B": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0xbbdf"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": -0.98388671875,
+              "finite_numeric_mean": -0.98388671875,
+              "finite_numeric_min": -0.98388671875,
+              "first_32_sorted_unique_bits_hex": [
+                "0xbbdf"
+              ],
+              "full_bit_histogram_sha256": "58ddbdd6a5e0a441fa84dd21e1d333bb8f9f278d4934d93916a01a11152c36d5",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 0,
+              "numeric_less_than_zero_count": 11648,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "G": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x40f5"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.478515625,
+              "finite_numeric_mean": 2.478515625,
+              "finite_numeric_min": 2.478515625,
+              "first_32_sorted_unique_bits_hex": [
+                "0x40f5"
+              ],
+              "full_bit_histogram_sha256": "8ccf08b5121d4ff216bda792b40f998879c876e71041677f5aa3bce715af2779",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            },
+            "R": {
+              "all_unique_bits_hex_if_at_most_64": [
+                "0x4117"
+              ],
+              "finite_count": 11648,
+              "finite_numeric_max": 2.544921875,
+              "finite_numeric_mean": 2.544921875,
+              "finite_numeric_min": 2.544921875,
+              "first_32_sorted_unique_bits_hex": [
+                "0x4117"
+              ],
+              "full_bit_histogram_sha256": "84632014ac1c97daece68442b947aea2038c12e5d08d8883cf064c06baeebc16",
+              "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+              "nan_count": 0,
+              "negative_infinity_count": 0,
+              "negative_zero_bits_count": 0,
+              "numeric_equal_one_count": 0,
+              "numeric_greater_than_one_count": 11648,
+              "numeric_less_than_zero_count": 0,
+              "positive_infinity_count": 0,
+              "positive_zero_bits_count": 0,
+              "sample_count": 11648,
+              "unique_uint16_bit_pattern_count": 1
+            }
+          },
+          "alpha_all_numeric_exactly_one": true,
+          "alpha_one_uint16_bits": "0x3c00",
+          "pixel_count": 11648,
+          "raw_storage_box_half_open": [
+            8,
+            128,
+            120,
+            232
+          ]
+        }
+      },
+      "padding": {
+        "byte_count": 0,
+        "excluded_from_pixel_channels": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "raw_record": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_count": 1843200,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 5120,
+        "export_elapsed_seconds": 0.004716291674412787,
+        "export_stage": "after_existing_window_teardown",
+        "file": "snapshot-custom.bin",
+        "float_components": true,
+        "height": 360,
+        "key": "baseline-body-custom",
+        "pixel_format_raw": 0,
+        "provider_read_at_uptime_seconds": 244137.75633920834,
+        "retained_at_uptime_seconds": 244136.36338175,
+        "sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+        "width": 640
+      },
+      "resolved_file": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/snapshot-custom.bin",
+      "snapshot_ICC_context": {
+        "alpha_info_raw": 1,
+        "bitmap_info_raw": 4353,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "byte_order_raw": 4096,
+        "bytes_per_row": 5120,
+        "color_space_components": 3,
+        "color_space_metadata_stage": "after_existing_window_teardown",
+        "color_space_model_raw": 1,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "color_space_present": true,
+        "float_components": true,
+        "height": 360,
+        "icc_base64_omitted_reason": null,
+        "icc_byte_count": 3144,
+        "icc_present": true,
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e",
+        "is_hlg_based": false,
+        "is_pq_based": false,
+        "key": "baseline-body-custom",
+        "observation_site": "snapshot_descriptors_before_NSImage_color_metadata_after_window_teardown",
+        "pixel_format_raw": 0,
+        "uses_extended_range": true,
+        "uses_itur2100_tf": false,
+        "wide_gamut_rgb": true,
+        "width": 640
+      },
+      "whole_active_pixel_buffer": {
+        "RGBA": {
+          "A": {
+            "all_unique_bits_hex_if_at_most_64": [
+              "0x3c00"
+            ],
+            "finite_count": 230400,
+            "finite_numeric_max": 1.0,
+            "finite_numeric_mean": 1.0,
+            "finite_numeric_min": 1.0,
+            "first_32_sorted_unique_bits_hex": [
+              "0x3c00"
+            ],
+            "full_bit_histogram_sha256": "2a414a08470276288f616bf69bfd6e194bc96fa1577614be9a9d53e4bc291152",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 230400,
+            "numeric_greater_than_one_count": 0,
+            "numeric_less_than_zero_count": 0,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 0,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 1
+          },
+          "B": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 2.58984375,
+            "finite_numeric_mean": 1.2835493087768555,
+            "finite_numeric_min": -0.98388671875,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318c",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f5",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383a",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389d",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3949"
+            ],
+            "full_bit_histogram_sha256": "d8cc1d4d288a13dcfcb99e89259bf6cb95fe37b7432fdc0397d007f5986eaaf6",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 159480,
+            "numeric_less_than_zero_count": 46080,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 635
+          },
+          "G": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 2.60546875,
+            "finite_numeric_mean": 1.5537171045939127,
+            "finite_numeric_min": -1.0048828125,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318c",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f5",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383a",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389d",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3949"
+            ],
+            "full_bit_histogram_sha256": "961b19ddcff839e496890b7c17bba291d2c3db52435501a28a35c348f00e474a",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 190200,
+            "numeric_less_than_zero_count": 30720,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 633
+          },
+          "R": {
+            "all_unique_bits_hex_if_at_most_64": null,
+            "finite_count": 230400,
+            "finite_numeric_max": 3.064453125,
+            "finite_numeric_mean": 1.5677282333374023,
+            "finite_numeric_min": -1.9677734375,
+            "first_32_sorted_unique_bits_hex": [
+              "0x0000",
+              "0x2f6e",
+              "0x318c",
+              "0x32e5",
+              "0x33ff",
+              "0x3479",
+              "0x34e5",
+              "0x3547",
+              "0x35a2",
+              "0x35f5",
+              "0x3644",
+              "0x368e",
+              "0x36d4",
+              "0x3717",
+              "0x3757",
+              "0x3795",
+              "0x37d0",
+              "0x3804",
+              "0x3820",
+              "0x383a",
+              "0x3854",
+              "0x386d",
+              "0x3886",
+              "0x389d",
+              "0x38b5",
+              "0x38cb",
+              "0x38e1",
+              "0x38f7",
+              "0x390c",
+              "0x3921",
+              "0x3935",
+              "0x3947"
+            ],
+            "full_bit_histogram_sha256": "7690f9df0c517c9047a364dcbc5ab32915e2c255a008c93c5b55618c9925d262",
+            "histogram_hash_encoding": "Sorted pairs of uint16LE bits and uint32LE exact count; not a numeric quantization",
+            "nan_count": 0,
+            "negative_infinity_count": 0,
+            "negative_zero_bits_count": 0,
+            "numeric_equal_one_count": 0,
+            "numeric_greater_than_one_count": 174840,
+            "numeric_less_than_zero_count": 30720,
+            "positive_infinity_count": 0,
+            "positive_zero_bits_count": 120,
+            "sample_count": 230400,
+            "unique_uint16_bit_pattern_count": 634
+          }
+        },
+        "alpha_all_numeric_exactly_one": true,
+        "alpha_one_uint16_bits": "0x3c00",
+        "pixel_count": 230400,
+        "raw_storage_box_half_open": [
+          0,
+          0,
+          640,
+          360
+        ]
+      }
+    }
+  ],
+  "report": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/report.json",
+  "report_sha256": "ebaed7d2ae402fc9ebf81e880a50235bf7e37ac4761c62e4b4bf0fce3dee3c4f",
+  "retained_native_png_hashes": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/progress-0.png",
+      "phase": "progress-0",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/progress-1.png",
+      "phase": "progress-1",
+      "sha256": "f5987c113b5cdb083eefec087ed301cd9bfc761a16342fad9daedf8abedbbe70"
+    }
+  ],
+  "row_direction": "top-down",
+  "runtime_validation_passed": true,
+  "semantic_patch_values_emitted": true
+}

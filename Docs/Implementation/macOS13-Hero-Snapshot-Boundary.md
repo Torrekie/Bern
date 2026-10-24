@@ -20,7 +20,7 @@
 ## 能回答什么
 
 - 若相同ICC、对应平坦内区的原float样本已不同，差异**到该snapshot边界已经存在**；仍不唯一归因ImageRenderer，也不排除后续绘制继续改变结果。
-- 若这些内区样本相同而受控截图仍不同，差异在其后续原生绘制/目标context/窗口合成或捕获路径中；不能只点名NSImage.draw。不同scale意味着局部匹配不证明整幅payload相同。
+- 若这些内区样本相同而受控截图仍不同，还需区分CGImage的其它绘制语义、后续原生绘制/目标context/窗口合成或捕获路径；不能只点名NSImage.draw。不同scale意味着局部匹配不证明整幅payload相同，相同bits/ICC也不等于整个图像对象语义相同。
 - 元数据或API文字本身不能替代上述样本；不新增tone-map组合、跨平台API矩阵或手拟颜色修复。
 
 本机依据：SDK14.2 `CoreGraphics/Headers/CGDataProvider.h:182–188`、`CGImage.h:22–64,219–289`；`AppKit/Headers/NSImage.h:190–218`；`CoreImage/Headers/CIImage.h:101–110`。`CGDataProviderCopyData`保证复制provider数据，不保证任意provider都是可直接按bitmap描述解释的raster，因此保留格式/长度失败门槛。所列头文件位于 `/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/`；本次只读声明，没有做Swift类型检查。
@@ -31,3 +31,13 @@
 已完成[本机SDK14.2 off/on控制](../Evidence/macOS13-hdr-candidate/native-pq-hero-float13/RESULTS.md)以及[新SDK同binary13/14控制与raw导出](../Evidence/macOS14-hero-float-40091326190/RESULTS.md)。所有配对各12个raw/ICC归一区域精确复现，未据此宣称普遍零观察效应。保留完整原provider数据，原始行方向仍未证实；未执行语义色块值的跨宿主比较。
 
 13旧/新SDK的raw各自逐字相同，14的named/custom raw彼此逐字相同。13/14的RGB范围接近而全buffer均值/部分计数有差，实际采样尺寸2×/1×不同；这不足以定位可见主差的原因。原snapshot后的native draw/context/compositor路径仍待分离。[下一观察](macOS13-Hero-Backing-Observation.md)先记录现有flight/root与真正overlay的图层/祖先事实，不假定已有图层或RGBA8，也不将简化父容器中的静态差异冒充完整应用flight缺陷。
+
+## 独立行序与平坦内区语义（2026-10-25）
+
+[纯离线语义归档](../Evidence/macOS14-hero-float-semantics-20261025/README.md)现已补足上述unknown：Apple SDK直接格式合同确定RGBA16F LE lanes；预声明十flat/三band/五x-bin tuple结构只测试两个y方向，四raw都唯一top-down，独立Fraction/struct实现逐项复核。没有以颜色或跨host接近选择方向。两源PNG无损解码active SHA复现旧值，未复制raw/PNG或触发新构建/UI/CI。
+
+冻结原analyzer在独立review绑定之后才运行known方向，另一独立struct<4H/<4e reader确认40flat全区恒定/alpha1、20patch/80delta及4whole/44region统计。named十patch RGBA原half bits13/14全同；custom五patch不同，RGB最大原数值差0.001953125、30项绝对差平均0.000244140625。原负值/>1/NaN/Inf/alpha计数完整保留，不做ICC/transfer/clamp/unpremultiply/nits转换；ramp各自632×80/316×40，仅记native aggregate，不注册跨host列。
+
+named主显示差不能用这些对应平坦内区的raw数值差解释，但仍未证明整幅图或CGImage全部绘制语义相同。下一[唯一检查点](../Evidence/macOS14-hero-float-semantics-20261025/next-display-plan/README.md)是PNG及原teardown后的deferred renderingIntent/isMask/shouldInterpolate/decode getter；RGB非mask decode只可有界读六值，nil单列。它尚未实现/运行，不先加入directCG/cache/图层等变量。任一对象字段差异也只是新的边界证据，不直接指定根因或修产品。
+
+filter0 source parser拒绝及pretty JSON体积失败分开保留；成功版本只补标准PNG无损过滤解码并压缩JSON排版，几何判据与128KiB上限未放宽。这些程序失败不算颜色证据。完整颜色/动画/UI、其它macOS13门槛继续未通过，goal active，11/Swift5.3/Objective-C/iOS仍延期。

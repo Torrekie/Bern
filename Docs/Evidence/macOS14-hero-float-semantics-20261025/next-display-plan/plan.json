@@ -1,0 +1,77 @@
+{
+  "comparison_contract": {
+    "bad_or_missing": "Explicit incomplete; no reconstructed image or fallback.",
+    "comparison_unit": "Per actual host/key record; fields compared literally, nil differs from explicit decode; preserve finiteDouble bits for signedzero",
+    "different": "Falsifies the assumption that these snapshot drawing semantics match, but does not prove visible residual cause. No automatic field copying/fix.",
+    "same": "Excludes only these four public states for this fixture. NSImage adapter/target context/compositor/capture remain unresolved."
+  },
+  "decision": "Observe the four missing public CGImage drawing-semantic fields before an NSImage-adapter direct-CG draw probe.",
+  "existing_fact_scope": {
+    "named_cool812_example": [
+      0.65966796875,
+      1.8779296875,
+      2.53515625
+    ],
+    "not_implied": [
+      "Whole image payload equality across1x/2x",
+      "CompleteCGImage drawing semantics equality",
+      "UniqueNSImage/OS/context/headroom cause"
+    ],
+    "root_reported_pending_independent_numeric_review": "named10flat RGBA half-bit tuples match13/14;custom has5 differing patches,maxfloatdelta0.001953125"
+  },
+  "future_boundary_only": "If all four match under controls, one actual-snapshot CGImage direct draw into the existing Flight CGContext can later isolate the NSImage-adapter route; NSImage.h says equivalent drawing, so it is diagnostic, not a known repair or predicted improvement.",
+  "kind": "one_deferred_original_cgimage_drawing_semantics_observation",
+  "not_this_step": [
+    "DirectCGContext drawing",
+    "NewbitmapCGContext",
+    "NSImage cacheMode/prefersColorMatch",
+    "Reused negative colorMode/container/CI matrices",
+    "RGB compensation/handfit/tonecurve",
+    "Freshsnapshot/CGImage relabel/readback",
+    "Product/CI/runtime/algorithm implementation"
+  ],
+  "performed": {
+    "algorithm_or_product_written": false,
+    "compile_ui_ci": false,
+    "public_headers_and_small_evidence_only": true,
+    "raw_read": false
+  },
+  "references": [
+    {
+      "scope": "Decode is2entries per color component; RGB therefore6;nil is retained as distinct state.",
+      "url": "https://developer.apple.com/documentation/coregraphics/cgimage/decode"
+    }
+  ],
+  "single_new_observation": {
+    "decode_rule": "Record nil distinctly. Only nonmask + existing RGB model/3color-component metadata permits immediate copy of exactly6CGFloat values; do not count alpha. Unknown space/mask/layout or nonfinite serialized values fails bounded observation; no pointer scan/default substitution.",
+    "fields": [
+      "rendering_intent_raw",
+      "is_mask",
+      "should_interpolate",
+      "decode_present",
+      "decode_count",
+      "decode_values",
+      "decode_value_bits"
+    ],
+    "lifetime": "Reuse the already-controlled float-capture retained objects; no additional renderer/provider call/copy/new image/context. Copy scalars and6values while image remains alive, retain no decode pointer.",
+    "object": "Exactly the original once-returned renderer.cgImage already held by frozen float-capture on mode, matched by actual key; not cached source CGImage or NSImage readback",
+    "observer_effect": "No zero-observer-effect claim; require prior12ROI controls/cache/normal/front/native gates; failure stops comparison.",
+    "off": "No new getter or retention; preserve prior lifetime controls.",
+    "time": "After all original PNGs and existing window teardown, before original primary CGImages are released"
+  },
+  "source_proof": {
+    "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSImage.h": {
+      "bytes": 48152,
+      "sha256": "f6e408c49d24a17ca4942bc384f7c288d14323336b566f8b4b0141f41ee4d6f4"
+    },
+    "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGImage.h": {
+      "bytes": 12267,
+      "sha256": "397e96d92d5ec61587c90b5ce55db17afef3ed00468de8f2b5594aab44dbba4c"
+    },
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/crates/bern-backend-swiftui/templates/BernAppKit.swift": {
+      "bytes": 88255,
+      "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+    }
+  },
+  "status": "proposal_only_no_code_or_execution"
+}

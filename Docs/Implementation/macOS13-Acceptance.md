@@ -241,3 +241,13 @@ control先精确复现冻结13-overlay的全部12ROI原RGB/ICC归一，才运行
 root已目检两张原p0，candidate named内容实际可见。control→candidate只两phase的flight-named变化：raw fullRGB MAE0.103565/255、max1，ICC intent0→sRGB MAE0.086730/255、max1；其余10ROI原RGB/归一均exact，嵌入ICC相同。完整十色块和灰阶、固定14参考重算保留：`|D13−D14|`的30通道平均p0为5.210863→5.272487，p1为5.224399→5.216157；p0有4通道改善/19恶化/7不变，p1为13/10/7。最大残差两phase都变大（112.616329→112.724330、113.048334→113.156336）。不能只挑平均或一块颜色宣称改进，也不把max1变化指定为取整根因；该显示组件替换未解决主色差，停止这一限定方向，未合入产品、不追加14 CI或真实flight。
 
 下一检查点转回已经保留的actual snapshot float样本：只读确定能否建立13/14平坦内区的行/通道语义，再比较边界两侧；尚无新离线语义分析或修复。保留同snapshot原PNG/ICC、源码、日志、独立审查和数值结果；自有binary及module cache57,493,320B已清理，work重复副本另以逐字归档收据记录，不当作APFS实际回收。四项原交付binary hash及两app严格签名保持。颜色、完整动画及其余Film/chrome/Picture/Frame/交互/HDR门槛未通过，goal active，不进入11/Swift5.3/Objective-C/iOS。
+
+## Named平坦快照内区的原bits相同（2026-10-25）
+
+上节[离线语义分析](../Evidence/macOS14-hero-float-semantics-20261025/README.md)已完成：Apple公开SDK直接确定RGBA16F LE lane，预先固定十flat/三band/五x-bin的完整tuple结构，四份原raw均唯一top-down。独立Fraction/struct复核两个方向的全部结构细项和原hash；不是按PQ预期数值、RGB大小关系或13/14更接近来选方向。source PNG无损active SHA与旧验证一致，raw/PNG只引用旧cohort，未新构建/UI/CI。
+
+独立review冻结并绑定后才运行原analyzer known-direction，另一struct<4H/<4e reader确认40flat整区恒定、alpha1、20patch/80delta以及4whole/44region统计。named十patch RGBA原half bits13/14全部相同，包括主差涉及的cool812；custom仅white812/red812/green812/blue812/pastel812不同，RGB最大原数值差0.001953125、30项绝对差平均0.000244140625。保留负值/>1/finite/NaN/Inf；无ICC/transfer/clamp/unpremultiply/nits换算。13/14每flat11648/2912原pixels，只比较对应恒定值，不resize或配对ramp列。
+
+这排除了named十对应平坦内区的原数值差作为其主显示差解释，仍不能宣称整个CGImage或最终显示相同。下一[单一检查点](../Evidence/macOS14-hero-float-semantics-20261025/next-display-plan/README.md)先补deferred renderingIntent/isMask/shouldInterpolate/decode，尚未实施；不提前把未读对象语义或NSImage/context/显示余量指定为根因，也不把directCG当已知修复。
+
+首轮source filter0限制在读snapshot raw前停止，第二轮在pretty JSON体积guard处未写结果；原失败均保留。成功版本只补标准PNG过滤器并压缩JSON空白，原几何判据/128KiB上限不变。没有新binary/cache，九个work重复树673116B逐字核验归档后清理，不当作磁盘净回收。完整macOS13颜色/布局/交互/动画及其它未通过项保持，goal active，不进入11/Swift5.3/Objective-C/iOS。

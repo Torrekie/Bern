@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-float-geometry/structure.py", line 82, in main
+    p=BASE/'same-binary-13-14/package/assets'/source['png'];data=png16(p,source['png_sha256']);source_data.append(data)
+                                                                 ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-float-geometry/structure.py", line 33, in png16
+    need(all(raw[y*(row+1)]==0 for y in range(360)),'only predeclared filter0 source PNG supported')
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/hero-snapshot-float-geometry/structure.py", line 11, in need
+    if not x:raise ValueError(m)
+             ^^^^^^^^^^^^^^^^^^^
+ValueError: only predeclared filter0 source PNG supported

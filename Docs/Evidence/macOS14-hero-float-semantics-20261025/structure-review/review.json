@@ -1,0 +1,125 @@
+{
+  "acceptance_boundary": [
+    "Unique exactly1 candidate required per raw file;0 or2 remain unknown",
+    "complete or exit0 means assessment completed, not direction/semantic approval",
+    "Existing analyze_float.py row-direction argument is per-run global; named/custom must independently agree to reuse it",
+    "This gate does not prove RGBA lane order; lane evidence must separately precede RGB-labelled numeric extraction",
+    "No threshold relaxation for sampling/dither/degeneration; failure stays unknown",
+    "Unique structure is limited to these two y mappings and fixed atlas; no general CGImage origin convention or display cause is established"
+  ],
+  "conclusion": "No blocking implementation inconsistency found for the fixed archived inputs; runtime structure result pending.",
+  "execution": {
+    "compile_ui_ci_repo_edits": false,
+    "new_algorithm_written": false,
+    "snapshot_raw_payloads_read": false,
+    "structure_algorithm_run": false
+  },
+  "fixed_geometry_gate": {
+    "bands_source_x_interval": [
+      4,
+      636
+    ],
+    "bands_source_y_intervals": [
+      [
+        20,
+        100
+      ],
+      [
+        140,
+        220
+      ],
+      [
+        260,
+        340
+      ]
+    ],
+    "bin_source_x_intervals": [
+      [
+        8,
+        120
+      ],
+      [
+        136,
+        248
+      ],
+      [
+        264,
+        376
+      ],
+      [
+        392,
+        504
+      ],
+      [
+        520,
+        632
+      ]
+    ],
+    "candidates": [
+      "top-down",
+      "bottom-up"
+    ],
+    "coordinates": "Exactly scaled frozen source rectangles, integer boundaries only, y reversal only",
+    "extra_total_unique_count_gt5_required": false,
+    "flat_regions": "All10 original patch interiors each have distinct tuple count exactly1",
+    "ramp_predicate": "All full-band rows exact-identical AND each of5 fixed bins has >=2 complete tuples in its first row",
+    "reason_no_extra_count": "Five-flat-tile rows fail the per-tile nonconstant condition, even if the full row has horizontal changes or edge interpolation. Fixed-band uniqueness also excludes a reversed ramp at band0.",
+    "tuple_unit": "Complete original8byte pixel; equality is bitwise, no float/NaN/signed-zero normalization",
+    "unique_marker_requirement": "Marker true indices must equal exactly[2]; full flat10 AND this requirement determine candidate pass"
+  },
+  "input_guards_reviewed": [
+    "Pinned policy/analyzer/spec via predeclared manifest",
+    "Old validate_runtime and validate_record functions reused without edits",
+    "Report and raw archive SHA checks, descriptor format/ICC/profile checks, bounded lengths and no padding",
+    "Each host/source evaluated separately; no host agreement or expected color affects selection"
+  ],
+  "inputs": {
+    "outputs/Bern/.github/scripts/hdr-tone-probe.swift": {
+      "bytes": 15251,
+      "sha256": "44b1fb981b857a9807b9d696c12ceae4ff2b2c5b4ff4ec6971f93f8ef7e3b64c"
+    },
+    "outputs/Bern/Docs/Evidence/macOS13-hdr-candidate/color-probe13/report.json": {
+      "bytes": 29556,
+      "sha256": "873a5a71c2fc0779cb78927e26faa25e08e94380d74180c48d87f3bc97608635"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/analysis/analyze_float.py": {
+      "bytes": 22415,
+      "sha256": "b616c42b192c13b7fee3d903d90e9553f389c6ac4b6f7da8cc96996877fcca2a"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/analysis/atlas-rois.json": {
+      "bytes": 4157,
+      "sha256": "39ca622a45c0120d08e90daa7a17a0145be1b79485decb4619a0e5a3f23cadaf"
+    },
+    "work/hero-snapshot-float-geometry/PREDECLARED-SHA256SUMS": {
+      "bytes": 243,
+      "sha256": "e1494ac491d480a6c4002da2d67f83728904ddb620896db9cf39f84098043b26"
+    },
+    "work/hero-snapshot-float-geometry/policy.json": {
+      "bytes": 2200,
+      "sha256": "a5c926bedf258ca1a3e99524283851faf9d9e02a3fed79fdb7462e4d8c051832"
+    },
+    "work/hero-snapshot-float-geometry/structure.py": {
+      "bytes": 9275,
+      "sha256": "0ef95562c315cc940c6e031c1956bbcb525e544fe455ae42935df4ecbf79349e"
+    },
+    "work/hero-snapshot-next-boundary-plan/README.md": {
+      "bytes": 4428,
+      "sha256": "5b833ed95cd0792c3283d0e9ff831718f91609b05b3f6dc84fe8f70b91b18df8"
+    }
+  },
+  "kind": "source_only_strict_bit_tuple_structure_review",
+  "source_gate": {
+    "checks": [
+      "Exact encoded PNG SHA before decoding",
+      "PNG CRC, first IHDR, exact640x360 RGBA16/noninterlaced, IEND/no trailing bytes",
+      "Bounded exact zlib output and filter0-only refusal, no implicit conversion",
+      "Alpha source bytes FFFF, two decoded active buffers identical",
+      "Both source candidates evaluated; exactly top-down passes before snapshot payloads are read"
+    ],
+    "locked_source_pngs": [
+      "3efb40d42933dade20c11d2654d86afd25b1e02c838d9b080bb1233faa36da5b",
+      "fa3fdc43d91518c145c08b01ba6181ec063c68158e57d312a1ff942571c2a12e"
+    ],
+    "source_report_rgba16be_sha256_context": "29339554132137a1db6e48a560ae53d1727e13d59b12656d97824acea02b221f"
+  }
+}

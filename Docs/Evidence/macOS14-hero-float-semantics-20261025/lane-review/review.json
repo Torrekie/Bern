@@ -1,0 +1,367 @@
+{
+  "kind": "public_format_contract_review_for_retained_snapshot_lanes",
+  "recorded_at_utc": "2026-10-24T17:19:53Z",
+  "conclusion": "Actual exported metadata supports fixed premultiplied RGBA16F memory lanes, each IEEE754 binary16 little-endian; no channel search required.",
+  "bitmap_decomposition": {
+    "raw_decimal": 4353,
+    "raw_hex": "0x1101",
+    "alpha": "0x0001 premultipliedLast",
+    "component": "0x0100 floating-point",
+    "byte_order": "0x1000 16Little",
+    "pixel_format": "0x00000 packed"
+  },
+  "memory_lanes": [
+    {
+      "lane": 0,
+      "byte_offsets": [
+        0,
+        1
+      ],
+      "semantic": "R"
+    },
+    {
+      "lane": 1,
+      "byte_offsets": [
+        2,
+        3
+      ],
+      "semantic": "G"
+    },
+    {
+      "lane": 2,
+      "byte_offsets": [
+        4,
+        5
+      ],
+      "semantic": "B"
+    },
+    {
+      "lane": 3,
+      "byte_offsets": [
+        6,
+        7
+      ],
+      "semantic": "A"
+    }
+  ],
+  "numeric_representation": "IEEE754-2008 binary16, little-endian within each component, stored premultiplied",
+  "sources": [
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGImage.h",
+      "resolved_path": "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Headers/CGImage.h",
+      "sha256": "397e96d92d5ec61587c90b5ce55db17afef3ed00468de8f2b5594aab44dbba4c",
+      "bytes": 12267,
+      "lines": 300,
+      "reviewed_regions": [
+        {
+          "first_line": 22,
+          "last_line": 65,
+          "sha256": "53899c960cac68a1f03a7bd340365cbed2eb73c1bacee8f3f16dd9e2ae89e1da"
+        }
+      ]
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGColorSpace.h",
+      "resolved_path": "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Headers/CGColorSpace.h",
+      "sha256": "ce22b9ab8cead8a80e6d62e07d2cdc210af470c71b3bbc77738082bd8fc504c5",
+      "bytes": 20586,
+      "lines": 495,
+      "reviewed_regions": [
+        {
+          "first_line": 31,
+          "last_line": 40,
+          "sha256": "750833b6866f2117ed772d92f81c6018fe3cc86d221d79ddcbbc4f19a5a4cdd7"
+        }
+      ]
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGBitmapContext.h",
+      "resolved_path": "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Headers/CGBitmapContext.h",
+      "sha256": "85dbbc8c963dad2dad37135e67d981763af0190404520dfcb2beac308f977f26",
+      "bytes": 6687,
+      "lines": 148,
+      "reviewed_regions": [
+        {
+          "first_line": 24,
+          "last_line": 40,
+          "sha256": "8fb4cda34a84276f42a94bee7a3fdd9869f6759c2dd99445092bb15d016791db"
+        },
+        {
+          "first_line": 49,
+          "last_line": 63,
+          "sha256": "11dd11193cba685d666d2a19eb76292024edbc5e3ac93995d3f5709deb23e313"
+        }
+      ]
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/Headers/vImage_Utilities.h",
+      "resolved_path": "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Headers/vImage_Utilities.h",
+      "sha256": "bca093ee9a78cde7bebeaf047624da87a204414f407c984be3985d75dd2ddd69",
+      "bytes": 107179,
+      "lines": 1491,
+      "reviewed_regions": [
+        {
+          "first_line": 55,
+          "last_line": 60,
+          "sha256": "aa3b89cf45b6f4dcfd3e8b446a1ad7364d04ae2c9147cead112706d69f6f9900"
+        },
+        {
+          "first_line": 84,
+          "last_line": 99,
+          "sha256": "95c085f32c6fc815123f7636461c62c6b83087eda8dbec26feca234c8e7b17ff"
+        },
+        {
+          "first_line": 452,
+          "last_line": 470,
+          "sha256": "16cac7fd6ed394a0351b4a6253539be399ed4652946c0caa7fb2e3a8e1c6aa08"
+        },
+        {
+          "first_line": 677,
+          "last_line": 679,
+          "sha256": "b7d6daa545fa38c0b83910936d9ead4add8a193337cd7cc55f1f85ddc2235310"
+        }
+      ]
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/package/FloatCapture.swift.inc",
+      "resolved_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/package/FloatCapture.swift.inc",
+      "sha256": "d119b65bb7526fead228ada52706d44b7959d07b7e07277f087bc255a021b388",
+      "bytes": 8102,
+      "lines": 151,
+      "reviewed_regions": [
+        {
+          "first_line": 29,
+          "last_line": 40,
+          "sha256": "8a45db67760e50d7bde2c069c0b139389f943a458805514e8bdc2142748f2913"
+        },
+        {
+          "first_line": 48,
+          "last_line": 105,
+          "sha256": "cfb7db4b2a251d3017a9a0ab9be65b8dd2b47c0759ca092407fa6fac0b049821"
+        }
+      ]
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/package/ProductHero.swift",
+      "resolved_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/package/ProductHero.swift",
+      "sha256": "1de0dfd47fbd9fee55bac431121b42b3f360b33b7240e8dde35049bbaa7830f9",
+      "bytes": 47031,
+      "lines": 849,
+      "reviewed_regions": [
+        {
+          "first_line": 85,
+          "last_line": 102,
+          "sha256": "bb16cda187dc9a9ad2e20dc7d99b65f616c5bc35fa04321917ecd3a46db9f1df"
+        }
+      ]
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/analysis/analyze_float.py",
+      "resolved_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/analysis/analyze_float.py",
+      "sha256": "b616c42b192c13b7fee3d903d90e9553f389c6ac4b6f7da8cc96996877fcca2a",
+      "bytes": 22415,
+      "lines": 338,
+      "reviewed_regions": [
+        {
+          "first_line": 24,
+          "last_line": 28,
+          "sha256": "e2d0d94b09f3ef7ced9ad3ac64470af7529b1fc01c8a53f484bc481987aed628"
+        },
+        {
+          "first_line": 106,
+          "last_line": 122,
+          "sha256": "235914a0775b1a906dc5f71df74bc7d252a217f867cb125615fca6c340bff383"
+        },
+        {
+          "first_line": 185,
+          "last_line": 206,
+          "sha256": "1b163693fcf218caa8b3623fe9ef10b4df62ff4fb14fe1f94ead9ef2bd82662a"
+        }
+      ]
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/report.json",
+      "resolved_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime13/on/report.json",
+      "sha256": "ebaed7d2ae402fc9ebf81e880a50235bf7e37ac4761c62e4b4bf0fce3dee3c4f",
+      "bytes": 74997,
+      "lines": 2184,
+      "reviewed_regions": [
+        {
+          "first_line": 1974,
+          "last_line": 2096,
+          "sha256": "a131657e6053064932a7071ad0c6fc97b1befcda1754ab1f1daf04ca439219e5"
+        }
+      ]
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime14/on/report.json",
+      "resolved_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-hero-float-40091326190/same-binary-13-14/runtime14/on/report.json",
+      "sha256": "aac969c3813411271e07f970a22169b508a8829a596a3d483efba1cefc61826b",
+      "bytes": 74294,
+      "lines": 2184,
+      "reviewed_regions": [
+        {
+          "first_line": 1974,
+          "last_line": 2096,
+          "sha256": "c276109c2c55e0ad50a601d330609306bd29b2eacc3b850783618bb65d5a4541"
+        }
+      ]
+    }
+  ],
+  "actual_export_metadata": [
+    {
+      "host": 13,
+      "key": "baseline-body-named",
+      "raw_file": "snapshot-named.bin",
+      "reported_raw_sha256": "edc1c9380bbf86e35c9830359428b715953cccd0f5952b10ade269923a6a2469",
+      "format": {
+        "width": 640,
+        "height": 360,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "bytes_per_row": 5120,
+        "bitmap_info_raw": 4353,
+        "alpha_info_raw": 1,
+        "byte_order_raw": 4096,
+        "pixel_format_raw": 0,
+        "float_components": true,
+        "byte_count": 1843200
+      },
+      "color": {
+        "color_space_model_raw": 1,
+        "color_space_components": 3,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e"
+      },
+      "row_direction": "unverified"
+    },
+    {
+      "host": 13,
+      "key": "baseline-body-custom",
+      "raw_file": "snapshot-custom.bin",
+      "reported_raw_sha256": "314b9001c1c47eea9f39a23fd6c697d1bcb66cfcda83dbc01153149c2d36e67c",
+      "format": {
+        "width": 640,
+        "height": 360,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "bytes_per_row": 5120,
+        "bitmap_info_raw": 4353,
+        "alpha_info_raw": 1,
+        "byte_order_raw": 4096,
+        "pixel_format_raw": 0,
+        "float_components": true,
+        "byte_count": 1843200
+      },
+      "color": {
+        "color_space_model_raw": 1,
+        "color_space_components": 3,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e"
+      },
+      "row_direction": "unverified"
+    },
+    {
+      "host": 14,
+      "key": "baseline-body-named",
+      "raw_file": "snapshot-named.bin",
+      "reported_raw_sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+      "format": {
+        "width": 320,
+        "height": 180,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "bytes_per_row": 2560,
+        "bitmap_info_raw": 4353,
+        "alpha_info_raw": 1,
+        "byte_order_raw": 4096,
+        "pixel_format_raw": 0,
+        "float_components": true,
+        "byte_count": 460800
+      },
+      "color": {
+        "color_space_model_raw": 1,
+        "color_space_components": 3,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e"
+      },
+      "row_direction": "unverified"
+    },
+    {
+      "host": 14,
+      "key": "baseline-body-custom",
+      "raw_file": "snapshot-custom.bin",
+      "reported_raw_sha256": "807393b1503ad04a08e2dc09cac516e9d2abfcd86c9db3b15ec2761230201962",
+      "format": {
+        "width": 320,
+        "height": 180,
+        "bits_per_component": 16,
+        "bits_per_pixel": 64,
+        "bytes_per_row": 2560,
+        "bitmap_info_raw": 4353,
+        "alpha_info_raw": 1,
+        "byte_order_raw": 4096,
+        "pixel_format_raw": 0,
+        "float_components": true,
+        "byte_count": 460800
+      },
+      "color": {
+        "color_space_model_raw": 1,
+        "color_space_components": 3,
+        "color_space_name": "kCGColorSpaceExtendedSRGB",
+        "icc_sha256": "2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e"
+      },
+      "row_direction": "unverified"
+    }
+  ],
+  "primary_web_sources": [
+    {
+      "url": "https://developer.apple.com/documentation/coregraphics/cgbitmapinfo",
+      "use": "General bitmap descriptor and byte-order contract"
+    },
+    {
+      "url": "https://developer.apple.com/documentation/coregraphics/cgimagealphainfo/premultipliedlast",
+      "use": "Alpha-last and premultiplied definition"
+    },
+    {
+      "url": "https://developer.apple.com/documentation/coregraphics/cgbitmapinfo/byteorder16little",
+      "use": "16-bit little-endian definition"
+    },
+    {
+      "url": "https://developer.apple.com/documentation/accelerate/vimage_cgimageformat",
+      "use": "Public format type; exact RGBA16F bridge read in local SDK header"
+    }
+  ],
+  "basis_excluded": [
+    "Color appearance",
+    "13/14 closeness",
+    "RGB permutation search",
+    "Alpha-one samples as semantic proof"
+  ],
+  "limits": [
+    "Contract binds exported provider data described by actual CGImage getters; it does not identify internal GPU/storage layout.",
+    "Retained metadata/source read only, no current raw rehash/decode or native-object measurement.",
+    "Row direction remains unverified; semantic patch correspondence requires separate geometry evidence.",
+    "No transfer/ICC conversion, clamping, unpremultiplication, nits, visible color equivalence or cause inference."
+  ],
+  "performed": [
+    "Small metadata read",
+    "Public SDK header review and SHA inventory",
+    "Apple primary web enum cross-check",
+    "Existing export/decoder source review"
+  ],
+  "not_performed": [
+    "Source modification",
+    "Algorithm implementation",
+    "Decoder execution",
+    "Raw buffer read or copy",
+    "UI",
+    "CI",
+    "New build"
+  ],
+  "artifacts": [
+    "README.md",
+    "review.json",
+    "SHA256SUMS"
+  ]
+}
