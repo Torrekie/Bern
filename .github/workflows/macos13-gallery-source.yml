@@ -1,0 +1,84 @@
+name: Gallery Frame generated source
+run-name: Generate exact e48 Gallery Frame Swift source only
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: gallery-frame-source
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: macos-15
+    timeout-minutes: 20
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+      CARGO_INCREMENTAL: "0"
+      CARGO_BUILD_JOBS: "2"
+      CARGO_TERM_COLOR: never
+      MACOSX_DEPLOYMENT_TARGET: "13.0"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/checkout@v5
+        with:
+          ref: e48fff46b3a92a28465ad74295bd273a9d69af7d
+          path: source
+          persist-credentials: false
+      - name: Record exact source and generation environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir evidence
+          {
+            printf 'source_sha=%s\nharness_sha=%s\n' "$(git -C source rev-parse HEAD)" "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+          } > evidence/environment.txt 2>&1
+          test "$(uname -m)" = arm64
+          rustup toolchain install 1.99.0 --profile minimal
+          rustc +1.99.0 -Vv >> evidence/environment.txt
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            source/target
+          key: bern-macos13-cargo-macos15-v1-${{ hashFiles('source/Cargo.lock') }}
+      - name: Add one diagnostic stop after generated files are written
+        id: prepare
+        shell: bash
+        run: python3 harness/.github/scripts/frame-source-export.py prepare source evidence
+      - name: Generate the full original Scene and pages without running the product build plan
+        shell: bash
+        env:
+          BERN_DIAGNOSTIC_GENERATE_ONLY: "1"
+        run: |
+          set +e
+          (cd source && cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest examples/gallery/Bern.toml --target macos_modern --release) > evidence/generate.full.log 2>&1
+          result=$?
+          printf '%s\n' "$result" > evidence/generate.exit-code.txt
+          exit "$result"
+      - name: Verify the diagnostic stop and export only bounded source and metadata
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        shell: bash
+        run: python3 harness/.github/scripts/frame-source-export.py collect source evidence
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: gallery-frame-generated-source
+          path: |
+            evidence/
+            !evidence/generate.full.log
+          if-no-files-found: error
+          retention-days: 3
