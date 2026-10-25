@@ -1,0 +1,96 @@
+{
+  "schema": "bern_frame_control13_locks_v1",
+  "kind": "unobserved_baseline_capture",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "control": {
+    "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app",
+    "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/gallery",
+    "bundle_id": "dev.bern.frame13.control.47b6db4f1de440e6abf711dc9e509b83",
+    "private_gui_sha256": "00f753ad41dabd1c14ff89e457ca385f195fe5ed95ab9ba262bac2d7ac32a5b0",
+    "original_gui_sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "receipt": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/control/isolation.json"
+  },
+  "delivery_receipt": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-gallery-clean-delivery-e48/delivery.json",
+  "delivery_receipt_sha256": "e6fbe8ea1c3f62dc89a5e6d56c6cc40c6b369a15eefed2d4e07dbb4c3b9a71c7",
+  "gallery_build_json": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/gallery-build.json",
+  "gallery_build_json_sha256": "a76b48042bb473e4f372e26ef84d480482e543fb876d15037662a42482bd454a",
+  "commands": [
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Gallery.app"
+      ],
+      "status": 0,
+      "log": "control/original-signature.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/gallery"
+      ],
+      "status": 0,
+      "log": "control/original-cli-signature.txt"
+    },
+    {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Gallery.app/Contents/MacOS/Gallery"
+      ],
+      "status": 0,
+      "log": "control/original-gui-build.txt"
+    },
+    {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/gallery"
+      ],
+      "status": 0,
+      "log": "control/original-cli-build.txt"
+    },
+    {
+      "argv": [
+        "ditto",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Gallery.app",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app"
+      ],
+      "status": 0,
+      "log": "control/copy.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--force",
+        "--deep",
+        "--sign",
+        "-",
+        "--identifier",
+        "dev.bern.frame13.control.47b6db4f1de440e6abf711dc9e509b83",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app"
+      ],
+      "status": 0,
+      "log": "control/resign.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app"
+      ],
+      "status": 0,
+      "log": "control/signature.txt"
+    }
+  ],
+  "scope": "Private unobserved baseline preparation only; no UI. Original delivered App and CLI unchanged. Private CFID/signature bytes alone may change; every Mach-O section and normalized non-signature byte verified. Not visual acceptance."
+}

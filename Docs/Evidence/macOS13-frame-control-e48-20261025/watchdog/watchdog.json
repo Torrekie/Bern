@@ -1,0 +1,117 @@
+{
+  "success": true,
+  "kind": "unobserved_baseline_capture",
+  "outer_wait_cap_seconds": 95,
+  "collector_deadline_seconds": 75,
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "scope": "One uninstrumented original-e48 closed Frame fact baseline; not layout acceptance or cross-OS pixel equality",
+  "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app",
+  "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/gallery",
+  "output": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-baseline",
+  "collector_sha256": "d6ab61ae4806d962eb22eecf746c8c137176a59c65f2a69c721d8471c12bdfca",
+  "focus_guard_sha256": "fb6594e71032d7a838fba8ae3529aa2dcfddad1c936a027886948a5b3958b26b",
+  "collector_source_sha256": "7649982511b13e379c973be88c676b7149362afe6aa7e3a792aa25b9983afbd0",
+  "focus_guard_source_sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d",
+  "helper_scope": "local-only kernel-cleanup adapter; acquisition differs from14 only in final cleanup",
+  "reference14_report_sha256": "cc3ce7bcf4c241cc65fd25a1002734f29f04d3f4370a2fe38f178ee3efbe59d1",
+  "reference14_png_sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b",
+  "locks_sha256": "d0ebb3b5af9d30b424ae0772958871eb4a6c2f0fb8380a158ddf8bff06767d91",
+  "delivery_receipt_sha256": "e6fbe8ea1c3f62dc89a5e6d56c6cc40c6b369a15eefed2d4e07dbb4c3b9a71c7",
+  "gallery_build_json_sha256": "a76b48042bb473e4f372e26ef84d480482e543fb876d15037662a42482bd454a",
+  "ipc_cleanup_verified": true,
+  "exact_child_cleanup_verified": true,
+  "reference14_bound_input_sha256": {
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-frame-row-latest1-40158031681/runtime/a/report.json": "cc3ce7bcf4c241cc65fd25a1002734f29f04d3f4370a2fe38f178ee3efbe59d1",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-frame-row-latest1-40158031681/runtime/a/frame-closed-light.png": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b"
+  },
+  "private_bundle_id": "dev.bern.frame13.control.47b6db4f1de440e6abf711dc9e509b83",
+  "original_front": {
+    "bundle_id": "com.openai.codex",
+    "executable_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+    "kernel_start": {
+      "tv_sec": 1792598787,
+      "tv_usec": 261710
+    },
+    "launch_date": null,
+    "pid": 1390
+  },
+  "phase": "collector",
+  "collector_pid": 8073,
+  "bootstrap_inspect": {
+    "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app/Contents/MacOS/Gallery",
+    "front": {
+      "bundle_id": "com.openai.codex",
+      "executable_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+      "kernel_start": {
+        "tv_sec": 1792598787,
+        "tv_usec": 261710
+      },
+      "launch_date": null,
+      "pid": 1390
+    },
+    "front_after": {
+      "bundle_id": "com.openai.codex",
+      "executable_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+      "kernel_start": {
+        "tv_sec": 1792598787,
+        "tv_usec": 261710
+      },
+      "launch_date": null,
+      "pid": 1390
+    },
+    "own": {
+      "bundle_id": "dev.bern.frame13.control.47b6db4f1de440e6abf711dc9e509b83",
+      "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app/Contents/MacOS/Gallery",
+      "kernel_start": {
+        "tv_sec": 1792900590,
+        "tv_usec": 611640
+      },
+      "launch_date": null,
+      "pid": 8075,
+      "collector_pid": 8073
+    },
+    "private_bundle_id": "dev.bern.frame13.control.47b6db4f1de440e6abf711dc9e509b83",
+    "success": true
+  },
+  "ownership_bootstrapped_from_exact_child": true,
+  "collector_exit_code": 0,
+  "collector_original_front_correlated_before_outer_cleanup": true,
+  "outer_cleanup": {
+    "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app/Contents/MacOS/Gallery",
+    "front": {
+      "bundle_id": "com.openai.codex",
+      "executable_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+      "kernel_start": {
+        "tv_sec": 1792598787,
+        "tv_usec": 261710
+      },
+      "launch_date": null,
+      "pid": 1390
+    },
+    "front_after": {
+      "bundle_id": "com.openai.codex",
+      "executable_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+      "kernel_start": {
+        "tv_sec": 1792598787,
+        "tv_usec": 261710
+      },
+      "launch_date": null,
+      "pid": 1390
+    },
+    "front_restore": {
+      "reason": "Private app is no longer running",
+      "requested": false
+    },
+    "own": null,
+    "private_bundle_id": "dev.bern.frame13.control.47b6db4f1de440e6abf711dc9e509b83",
+    "success": true
+  },
+  "exact_child_cleanup_attempted": true,
+  "private_preferences_delete_status": 0,
+  "private_preferences_absent_at_check": true,
+  "ipc_cleanup_scope": "exact collector-reported path after verified exact child cleanup; missing receipt fails closed",
+  "originals_unchanged": true,
+  "collector_defer_original_front_binding_verified": true,
+  "collector_success": true,
+  "cleanup_success": true
+}

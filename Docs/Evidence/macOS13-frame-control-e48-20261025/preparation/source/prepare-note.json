@@ -1,0 +1,98 @@
+{
+  "basis": {
+    "four_original_helper_functions_source_bytes_equal": [
+      "sha",
+      "macho",
+      "members",
+      "app_machos"
+    ],
+    "path": "work/frame-row-local13-latest1/prepare-copies.py",
+    "sha256": "4a0126ebcc2418385b30394afbcac6919af1a39f49448e13653459e620eda5af"
+  },
+  "contract": {
+    "cli": "prepare-control.py [--prepare] --delivery-receipt-sha256 ACTUAL_EXPECTED_SHA CONTROL_APP CONTROL_CLI GALLERY_BUILD_JSON FRESH_WORK",
+    "control_row_keys": [
+      "app",
+      "cli",
+      "bundle_id",
+      "private_gui_sha256",
+      "original_gui_sha256",
+      "cli_sha256",
+      "receipt"
+    ],
+    "kind": "unobserved_baseline_capture",
+    "original_cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "original_gui_sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "private_cfid": "dev.bern.frame13.control.<uuidhex>",
+    "reference14_report_png_binding": "Run wrapper responsibility; no fabricated gate in prepare or locks",
+    "schema": "bern_frame_control13_locks_v1",
+    "source_receipt_keys": [
+      "delivery_receipt",
+      "delivery_receipt_sha256",
+      "gallery_build_json",
+      "gallery_build_json_sha256"
+    ],
+    "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d"
+  },
+  "future_prepare_checks": [
+    "Explicit externally supplied delivery receipt SHA and all real delivery metadata",
+    "Entire delivered App membership/hash/size and original GUI/CLI fixed SHA",
+    "Actual strict original and private signatures",
+    "Arm64 Mach-O plus actual vtool min13/SDK26.2 records",
+    "One stock private copy with only CFBundleIdentifier/signature changes",
+    "Every Mach-O section and signature-storage-normalized non-signature bytes equal",
+    "Original App/CLI and both source receipt bytes rechecked unchanged"
+  ],
+  "kind": "single_control_source_preparation_only",
+  "not_performed": [
+    "No prepare-control.py execution, including plan mode",
+    "No copied or signed App",
+    "No compiler/typecheck",
+    "No helper or App/CLI process execution",
+    "No UI/CI/network/Git mutation",
+    "No total manifest written",
+    "No Swift or peer source file edited"
+  ],
+  "prepare_script": {
+    "bytes": 12150,
+    "path": "work/frame-control13-preparation/prepare-control.py",
+    "sha256": "3dda78fcb178faa7b1a7a5d6fb681c01573ccec5685184821710f417fbb87048"
+  },
+  "read_only_actual_inputs": [
+    {
+      "bytes": 994,
+      "path": "outputs/macOS13/gallery-build.json",
+      "sha256": "a76b48042bb473e4f372e26ef84d480482e543fb876d15037662a42482bd454a"
+    },
+    {
+      "bytes": 2882,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-clean-delivery-e48/delivery.json",
+      "sha256": "e6fbe8ea1c3f62dc89a5e6d56c6cc40c6b369a15eefed2d4e07dbb4c3b9a71c7"
+    },
+    {
+      "bytes": 3734880,
+      "path": "outputs/macOS13/Gallery.app/Contents/MacOS/Gallery",
+      "sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c"
+    },
+    {
+      "bytes": 898336,
+      "path": "outputs/macOS13/bin/gallery",
+      "sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5"
+    }
+  ],
+  "read_only_raw_macho_build_version": {
+    "gui_and_cli": {
+      "minimum_macos": "13.0.0",
+      "platform": 1,
+      "sdk": "26.2.0"
+    },
+    "method": "Independent struct-only LC_BUILD_VERSION read; no helper import/execution or external binary query"
+  },
+  "source_status": "stable_for_root_and_independent_read_only_review_no_total_manifest_yet",
+  "static_validation": {
+    "fresh_output_input_nonoverlap_both_directions": true,
+    "no_observer_variant_pair_field": true,
+    "one_control_only": true,
+    "python_ast_parse": true
+  }
+}

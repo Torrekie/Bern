@@ -1,0 +1,47 @@
+{
+  "baseline": {
+    "path": "work/frame-row-local13-latest1/run-local13.py",
+    "sha256": "edcedde979446acba01db9e07d4a50c6f8d6f2036831f7f55c5eadc386631b78"
+  },
+  "cli": "run-control13.py --run --collector BINARY --focus-guard BINARY --collector-sha256 SHA --focus-guard-sha256 SHA --locks LOCKS_JSON --locks-sha256 SHA --reference14-report PATH_TO_SUCCESSFUL_A_REPORT OUTPUT",
+  "compiled_helper_contract": "Runtime uses externally reviewed compiled binary SHA arguments and strict codesign. No helper SDK14.2 assertion exists; SDK26.2 check applies only to the original Gallery delivery metadata.",
+  "constraints": {
+    "no_ledger_directory_creation": true,
+    "no_ledger_inherited_env": "Rejected before launch and cleared defensively in child env",
+    "no_obsolete_mode_cli": true,
+    "old_wrapper_or_gates_changed": false,
+    "only_two_owned_outputs": [
+      "work/frame-control13-preparation/run-control13.py",
+      "work/frame-control13-preparation/run-note.json"
+    ],
+    "swift_changed": false
+  },
+  "derivation": {
+    "body_edits": [
+      "Remove disabled-branch directory creation and instead assert no ledger environment",
+      "Fix collector label to control",
+      "Require ledger disabled/no ledger evidence and original provenance files unchanged after cleanup"
+    ],
+    "header": "Single-control schema/delivery/reference source pins replace former paired preflight; no change to kernel ownership, foreground, timeout or cleanup algorithms",
+    "old_kernel_and_cleanup_body_reconstructs_byte_exact_after_reversing_three_control_only_edits": true
+  },
+  "frozen": true,
+  "inputs": {
+    "collector_source_sha256": "7649982511b13e379c973be88c676b7149362afe6aa7e3a792aa25b9983afbd0",
+    "delivery_receipt_sha256": "e6fbe8ea1c3f62dc89a5e6d56c6cc40c6b369a15eefed2d4e07dbb4c3b9a71c7",
+    "gallery_build_json_sha256": "a76b48042bb473e4f372e26ef84d480482e543fb876d15037662a42482bd454a",
+    "guard_source_sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d",
+    "reference14_png_sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b",
+    "reference14_report_sha256": "cc3ce7bcf4c241cc65fd25a1002734f29f04d3f4370a2fe38f178ee3efbe59d1"
+  },
+  "kind": "unobserved_baseline_capture",
+  "locks_contract": "bern_frame_control13_locks_v1; kind; source_sha; control old single-row fields; delivery_receipt + SHA; gallery_build_json + SHA; commands; scope",
+  "output": {
+    "bytes": 24869,
+    "path": "work/frame-control13-preparation/run-control13.py",
+    "sha256": "bdb7c3502a81d177fbe50b83be003adaeae97cee5e641f48ab8e29a9970dd091"
+  },
+  "schema": 1,
+  "status": "frozen_source_for_root_review_not_execution",
+  "validation": "Python AST and source-only inverse comparison. No wrapper mode, helper, compiler, signatures, copies, process operation, UI or CI executed. Root owns runtime and compiled binary/signature acceptance."
+}

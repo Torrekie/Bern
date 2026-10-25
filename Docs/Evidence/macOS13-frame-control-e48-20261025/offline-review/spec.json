@@ -1,0 +1,30 @@
+{
+  "fixed_frame_roi_half_open_points": [
+    211,
+    52,
+    920,
+    668
+  ],
+  "kind": "unobserved_cross_os_offline_diagnostic_only",
+  "metrics": "Complete normalized ROI RGBA bytes including alpha compared at1pixel/point. Record all4 channel absolute differences; additionally RGB difference only where both normalized alpha=255 to avoid assigning visible color meaning to transparent RGB. This alpha-semantic mask does not change the fixed spatial ROI. No pass threshold or PixelGate result.",
+  "native_geometry": "Match frame.volume/frame.clip by existing scoped CLI labels, native role/action and shared content AXGroup; use report relative_to_main_outer_points and verify against screen minus canvas origin. Never treat inherited main_window.find identifier as target match. Compare stable/closed-end, retain within-report range checks.",
+  "outputs": "Small text/target ICC only; no original or processed image copies.",
+  "raster_policy": "If both embedded source profiles are valid supported RGB input profiles, transform each original fixed native ROI RGB8 through its own ICC to one fixed sRGB output profile via Pillow ImageCms/LittleCMS intent0(perceptual), flags0, no BPC. Preserve original alpha. If unsupported or conversion fails, stop processed raster stage and retain native/raw facts.",
+  "scale_policy": "13 only: fixed exact integer2x2 BOX downsample to709x616 at original window point phase(0,0), after sRGB conversion; Pillow RGBA resize uses premultiplied RGBa and unpremultiplies, on encoded8bit sRGB values, not linear light.14 stays1x. ROI is predeclared, not fitted.",
+  "sources": {
+    "13": {
+      "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+      "pixels_per_point": 2,
+      "png_sha256": "ece61b2d4e05da32f3598e1f56da8369bb2029814fb3a66b4129bf363aff37f3",
+      "report": "work/frame-control13-baseline/report.json",
+      "report_sha256": "60d71641769e1e7630b8d235512f700db416a8a0646cf559cc6bb75f6f5ac480"
+    },
+    "14": {
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "pixels_per_point": 1,
+      "png_sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b",
+      "report": "outputs/Bern/Docs/Evidence/macOS14-frame-row-latest1-40158031681/runtime/a/report.json",
+      "report_sha256": "cc3ce7bcf4c241cc65fd25a1002734f29f04d3f4370a2fe38f178ee3efbe59d1"
+    }
+  }
+}

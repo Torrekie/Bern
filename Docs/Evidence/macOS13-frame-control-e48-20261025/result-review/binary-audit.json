@@ -1,0 +1,120 @@
+{
+  "scope": "Offline raw Mach-O parsing only; no binary execution or external verification command by this reviewer. Normalization zeroes only __LINKEDIT vmsize/filesize before excluding LC_CODE_SIGNATURE and its blob. Section hashes checked per ordinal against actual original/private bytes and saved isolation metadata.",
+  "binary_results": {
+    "original_gui": {
+      "file": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Gallery.app/Contents/MacOS/Gallery",
+        "bytes": 3734880,
+        "sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c"
+      },
+      "architecture": "arm64",
+      "normalized_non_signature_sha256": "68dd5190745bac89cc07d993070496c5dbe4bbf2872aef991046816e188b8fbb",
+      "build_version": [
+        {
+          "platform": 1,
+          "minimum_macos": "13.0.0",
+          "sdk": "26.2.0",
+          "tool_count": 1
+        }
+      ],
+      "signature_command_blob_excluded_sha256": "ce3b83c1b1996d9ecc44dde7a78893356e759650d780269238eccfd24004a67d",
+      "section_count": 40,
+      "section_manifest_canonical_json_sha256": "1f1fe943705ab80688a1f703c9749875386e56551df142a9e1a79597e2db8da7"
+    },
+    "private_gui": {
+      "file": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/frame-control13-private/runtime-work/control/Gallery.app/Contents/MacOS/Gallery",
+        "bytes": 3734912,
+        "sha256": "00f753ad41dabd1c14ff89e457ca385f195fe5ed95ab9ba262bac2d7ac32a5b0"
+      },
+      "architecture": "arm64",
+      "normalized_non_signature_sha256": "68dd5190745bac89cc07d993070496c5dbe4bbf2872aef991046816e188b8fbb",
+      "build_version": [
+        {
+          "platform": 1,
+          "minimum_macos": "13.0.0",
+          "sdk": "26.2.0",
+          "tool_count": 1
+        }
+      ],
+      "signature_command_blob_excluded_sha256": "049b0c4ee0a6dbd6b0b4b7cb3f55db4a7dcb9027d27b2e6271128b3fd9b46acc",
+      "section_count": 40,
+      "section_manifest_canonical_json_sha256": "1f1fe943705ab80688a1f703c9749875386e56551df142a9e1a79597e2db8da7"
+    },
+    "original_cli": {
+      "file": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/gallery",
+        "bytes": 898336,
+        "sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5"
+      },
+      "architecture": "arm64",
+      "normalized_non_signature_sha256": "188470a99103b00fb3fc43704ce452acd2c8003b54e0e8b97f82a7439d8c443c",
+      "build_version": [
+        {
+          "platform": 1,
+          "minimum_macos": "13.0.0",
+          "sdk": "26.2.0",
+          "tool_count": 1
+        }
+      ],
+      "signature_command_blob_excluded_sha256": "056ee4145c160f4e5cf8cff3330f7c0d722ca6e7e86d743ae4bee29eaaab86e3",
+      "section_count": 14,
+      "section_manifest_canonical_json_sha256": "63c6bab2597efaaa74caa41fa084ed2995a5adee537b10ebfb11c731c08107b2"
+    },
+    "collector": {
+      "file": {
+        "path": "work/frame-control13-build/FrameClosed",
+        "bytes": 332024,
+        "sha256": "d6ab61ae4806d962eb22eecf746c8c137176a59c65f2a69c721d8471c12bdfca"
+      },
+      "architecture": "arm64",
+      "normalized_non_signature_sha256": "414768df0eb010e39f12e8b87ae02d34fb42339c8d8bfc292f1bd61ecc059277",
+      "build_version": [
+        {
+          "platform": 1,
+          "minimum_macos": "13.0.0",
+          "sdk": "13.0.0",
+          "tool_count": 1
+        }
+      ],
+      "signature_command_blob_excluded_sha256": "b831518b3b112536d6e4312ef871e137c0ad0f673bbcfd007d14aec5e2ad8146",
+      "section_count": 24,
+      "section_manifest_canonical_json_sha256": "95d2ad139d1c47ebad0438ca46d274a407224e22a863b5586c9c3eaee95951ef"
+    },
+    "focus_guard": {
+      "file": {
+        "path": "work/frame-control13-build/FocusGuard",
+        "bytes": 104088,
+        "sha256": "fb6594e71032d7a838fba8ae3529aa2dcfddad1c936a027886948a5b3958b26b"
+      },
+      "architecture": "arm64",
+      "normalized_non_signature_sha256": "37807e62876a15c21067b7cf349854c4920ac4647400e8ef795bccbcc3041e55",
+      "build_version": [
+        {
+          "platform": 1,
+          "minimum_macos": "13.0.0",
+          "sdk": "13.0.0",
+          "tool_count": 1
+        }
+      ],
+      "signature_command_blob_excluded_sha256": "1967b9a51d592927416e37505efb9964e1110a748e57bb152843eca52deef810",
+      "section_count": 22,
+      "section_manifest_canonical_json_sha256": "ad9a76d9f13111ca9c74ad76df5f476a11362d2f52ed4e5fef28534ea5f4bbbe"
+    }
+  },
+  "original_private_all_sections_equal": true,
+  "original_private_normalized_non_signature_equal": true,
+  "all_ten_members_each_equal_to_saved_receipt": true,
+  "changed_members": [
+    "Contents/Info.plist",
+    "Contents/MacOS/Gallery"
+  ],
+  "info_dictionary_only_cfid_changed": true,
+  "helper_requested_header_sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+  "helper_actual_embedded_sdk": "13.0.0",
+  "metadata_assertion_preserved": {
+    "path": "work/frame-control13-build/initial-metadata-check-failure.json",
+    "bytes": 354,
+    "sha256": "b0737be3cca97937eebec8b61b7489196eef2096d7cc3d66f281bbef56eb1549"
+  }
+}

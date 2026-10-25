@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "kind": "append_only_final_source_package_binding",
+  "verdict": "no_blocking_source_finding",
+  "original_review_manifest_sha256": "11bc36165e6180a549eae19dbfd92fe7fc9a7b50c2a27142ba0dc21ab326093c",
+  "source_package_manifest": "work/frame-control13-preparation/SHA256SUMS",
+  "source_package_manifest_sha256": "8a90ccfbe1eda65b25b5480b35f3aed2e2dcac9ac3d5381e6d4914e784a9c3f1",
+  "all_eight_listed_members_match": true,
+  "source_package_rows": [
+    {
+      "file": "FocusGuard.swift",
+      "bytes": 8082,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d"
+    },
+    {
+      "file": "FrameClosed.swift",
+      "bytes": 54597,
+      "sha256": "7649982511b13e379c973be88c676b7149362afe6aa7e3a792aa25b9983afbd0"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3139,
+      "sha256": "d669ef50c9fcf38220465da6270abf49e7b2ccb5652aa6f9edac1b8ff7993e57"
+    },
+    {
+      "file": "prepare-control.py",
+      "bytes": 12150,
+      "sha256": "3dda78fcb178faa7b1a7a5d6fb681c01573ccec5685184821710f417fbb87048"
+    },
+    {
+      "file": "prepare-note.json",
+      "bytes": 3715,
+      "sha256": "9036e97252bebe524cba50073620f138e6b2338ffd6ddb2af429d5a5f8319865"
+    },
+    {
+      "file": "run-control13.py",
+      "bytes": 24869,
+      "sha256": "bdb7c3502a81d177fbe50b83be003adaeae97cee5e641f48ab8e29a9970dd091"
+    },
+    {
+      "file": "run-note.json",
+      "bytes": 2908,
+      "sha256": "8ecc9cd8d7d0daf1814894435293e7569f1ef1a7163f90486b6bbcf6afc4905f"
+    },
+    {
+      "file": "source-validation.json",
+      "bytes": 878,
+      "sha256": "cf37b1d4c72ed6c2c9b9ce578ac834dd90930f758c8af6ef21e86a0f4a6642cb"
+    }
+  ],
+  "readme_checked": [
+    "Distinct uninstrumented baseline; failed observer gates remain failed.",
+    "Local helper differs from14 only by final cleanup source adaptation; no same-binary claim.",
+    "Requested helper SDK14.2 distinguished from embedded Mach-O SDK13.0; original product min13/SDK26.2 retained.",
+    "Root owns native build/signature/runtime receipts; this reviewer did not run a compiler or any native process."
+  ],
+  "scope": "Read-only package hash and README verification only. Original four frozen review files left byte-identical. No compilation/UI/CI/execution/Git; no runtime acceptance."
+}

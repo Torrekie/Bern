@@ -1,0 +1,15 @@
+# One uninstrumented original-e48 control13 baseline
+
+This is a distinct descriptive baseline, not acceptance of either failed Row observer and not a UI compatibility fix. The original product is fixed e48 / GUI d44f051c…49126c / CLI31a75c0a…379f5, identical to the successful actual14 control in CI40158031681. No original product is rebuilt. No observer product, pair gate, trace output or substitute original is accepted.
+
+prepare-control.py creates exactly one private stock App copy from the delivered original, binds real gallery-build/delivery receipts and every member, verifies min13/SDK26.2/strict signatures and every Mach-O section/signature-storage-normalized non-signature byte. Only private CFBundleIdentifier and signing bytes may differ. CLI and original App/receipts are read-only. The private bundle is dev.bern.frame13.control.UUID; output/input overlap is rejected in both directions.
+
+run-control13.py requires actual macOS13/arm64, independently pinned source/helper/locks/delivery hashes and the exact success14 control report/actual PNG. It rejects inherited ledger environment, clears it in the child, does not create a ledger directory, and requires row_ledger_enabled=false with no ledger metadata. Existing observer wrappers/gates remain unchanged and failed; there is no pair-success result here.
+
+The two Swift sources are exact copies of already-reviewed local cleanup adapter764998 and Guardab78. The acquisition body remains the actual14 collector3613; only its final cleanup defer is adapted to associate the original foreground with the outer kernel receipt and restore-before-stop. Source/binary helper differences versus14, OS/scale/ICC and private CFID/signature changes must be disclosed. New local helpers use requested SDK14.2 headers/Swift5.9.2, but actual Mach-O SDK field13.0; both min13/arm64/strict signatures are separately recorded. Do not label their embedded SDK14.2.
+
+One original closed Frame path only: en/Light/normal3false/920×668, real Ready→Paused0 with original source identity, original own-active-PID awake heartbeat/CG-window/ICC/stable4. This is generated CLI and own-PID heartbeat behavior, not physical mouse/keyboard acceptance. Keep actual PNG/scale and source/native geometry; do not infer Layout widths or use final Row records. Full colors/interactions/animation acceptance remains open.
+
+All original kernel/parent/foreground ownership checks, outer95s/collector75s deadline, both-direction path isolation, cursor preservation and exact restore-before-stop cleanup remain. Missing IPC receipt, unidentified/living child or failed restoration prevents successful cleanup or broad deletion. Private preferences/state and exact IPC may be removed only after exact child cleanup. No TCC/user settings changes or foreign application stops are allowed.
+
+At source freeze no App copy or UI acquisition has run. Root owns the native build/signature receipts, actual input pins, one reversible private preparation, independent desktop lease, single execution and cleanup. Future archive/work aliases are read-only evidence pointers: never build or execute through them.

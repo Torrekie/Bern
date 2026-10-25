@@ -1,0 +1,286 @@
+{
+  "api_boundaries": {
+    "closed_popover": "bernPopoverMaterial differs only below13.3; existing13.7.8 and14 use same public branch; no popover is open in this target",
+    "direct_selected_label_path": "No macOS14-only branch found in ControlGroup/Toggle/ButtonToggleStyle/Label/tint chain",
+    "local_sdk_availability": "ButtonToggleStyle macOS12 and ControlGroup macOS12; not14-only APIs",
+    "not_selected": "extraLarge14 fallback and capsule custom font are not selected by this Generated Caption",
+    "nscolor_header": "Dynamic semantic named colors may vary by OS and appearance; selectedControlTextColor is documented as text on selected controls. No actual resolved RGBA was read.",
+    "upstream_compatibility": "ThemeChoice uses bernOnChange (native14 versus existing13 adapter); direct accent environment is assigned on both. Source alone does not establish a propagation defect."
+  },
+  "chain": [
+    {
+      "fact": "Frame SplitButton checked=app.caption, icon captions.bubble; no Caption-specific style override",
+      "source": "gallery-ui/src/lib.rs:389"
+    },
+    {
+      "fact": "BernSplitButton capsule=false, binding to bernEngine.caption; entire Frame region explicitly colorScheme.dark",
+      "source": "BernGenerated.swift:1275;1342-1344"
+    },
+    {
+      "fact": "Generator emits BernSplitButton; no conditional selected foreground/font added",
+      "source": "controls.rs:324-345"
+    },
+    {
+      "fact": "Noncapsule branch is native ControlGroup containing Toggle(isOn) with toggleLabel and bernButtonToggle; separate chevron Button",
+      "source": "BernStyle.swift:1062-1156"
+    },
+    {
+      "fact": "toggleLabel is Label(...).labelStyle(titleAndIcon); macOS bernButtonToggle uses toggleStyle(.button) on both13 and14",
+      "source": "BernStyle.swift:1090-1097;72-79"
+    },
+    {
+      "fact": "Optional accent .tint only; no selected label foreground override",
+      "source": "BernStyle.swift:655-665;1136-1141"
+    },
+    {
+      "fact": "Explicit system13/medium font belongs only to unused capsule branch; popover headline/slider and following secondary rest text do not style the Caption label",
+      "source": "BernStyle.swift:1110-1124"
+    },
+    {
+      "fact": "BernAppearanceRegion records a menu-tracking region; it sets the tracking menu appearance, not a Caption NSButton foreground",
+      "source": "BernAppKit.swift:1693-1766"
+    },
+    {
+      "fact": "Optional BERN_RENDER=active root modifier may override controlActiveState; actual effective SwiftUI state is not recorded by these screenshots/registry rows",
+      "source": "BernRuntime.swift:2106-2119"
+    }
+  ],
+  "future_acceptance_conditions": [
+    "Root decides implementation. One source-variable candidate only; no font/padding/row-width/toolbar/appearance/tint/bezel/layout changes.",
+    "Use existing exact original13 baseline and actual14 reference; preserve native source/asset/lang/window/profile/own-active/paused/stable4/ICC/scale provenance.",
+    "At selected enabled key Caption, independently compare title AND captions.bubble foreground against14; keep rawPNG/ICC and explicit scale differences; no claim from source names alone.",
+    "Check target and neighboring geometry/bezel/tint/video unchanged from13 baseline. No old width or failed ledger evidence may explain a color result.",
+    "14 actual original-vs-candidate capture remains unchanged before claiming14 preservation; source branch preservation alone is insufficient.",
+    "Unselected/disabled/inactive states retain source-original branch; do not claim their runtime equivalence unless actually checked.",
+    "Binding, selected value and popover action must remain the original native behavior; no new control needed for this first candidate."
+  ],
+  "git_source_blobs": [
+    {
+      "bytes": 22898,
+      "git_commit": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "path": "examples/gallery/gallery-ui/src/lib.rs",
+      "reviewed_line_ranges_1based": [
+        [
+          10,
+          34
+        ],
+        [
+          378,
+          410
+        ]
+      ],
+      "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+    },
+    {
+      "bytes": 39644,
+      "git_commit": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "path": "crates/bern-backend-swiftui/src/swift/controls.rs",
+      "reviewed_line_ranges_1based": [
+        [
+          324,
+          345
+        ]
+      ],
+      "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+    },
+    {
+      "bytes": 210785,
+      "git_commit": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "reviewed_line_ranges_1based": [
+        [
+          72,
+          79
+        ],
+        [
+          647,
+          666
+        ],
+        [
+          990,
+          1011
+        ],
+        [
+          1062,
+          1156
+        ],
+        [
+          5305,
+          5335
+        ]
+      ],
+      "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+    },
+    {
+      "bytes": 88255,
+      "git_commit": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "path": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "reviewed_line_ranges_1based": [
+        [
+          1693,
+          1766
+        ]
+      ],
+      "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+    },
+    {
+      "bytes": 119201,
+      "git_commit": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "reviewed_line_ranges_1based": [
+        [
+          2106,
+          2119
+        ]
+      ],
+      "sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e"
+    },
+    {
+      "bytes": 4537,
+      "git_commit": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "path": "crates/bern-backend-swiftui/templates/BernCompatibility.swift",
+      "reviewed_line_ranges_1based": [
+        [
+          45,
+          61
+        ]
+      ],
+      "sha256": "7f46dcf0d23d280465ea5139c21a760fed047c3a3b383a203f9b642fc1a8807d"
+    }
+  ],
+  "not_performed": [
+    "No implementation/patch",
+    "No compiler or helper execution",
+    "No UI/CI/network",
+    "No pixel extraction/comparison or new image algorithm",
+    "No old evidence edited",
+    "No spawning"
+  ],
+  "one_optional_candidate": {
+    "14_preservation": "macOS14+ executes original label branch. New generic view structure still requires actual14 no-effect verification before claiming preserved pixels.",
+    "eligibility": "macOS13 only, target frame.caption, capsule=false, isOn=true, inherited isEnabled=true, controlActiveState.key, colorScheme.dark",
+    "location": "Existing BernSplitButton toggle label only; preserve native ControlGroup/Toggle/actions",
+    "no_assumption": "Semantic color is not presumed white and native toggle may ignore/override it; no pre-resolution/components/fixed RGB/forced appearance/custom control",
+    "operation": "Apply dynamic Color(nsColor: NSColor.selectedControlTextColor) to title+symbol label only; every noneligible branch returns the original label without any foreground modifier",
+    "status": "Diagnostic proposal only, not implemented or adopted",
+    "stop": "If unchanged, wrong, or geometry/other UI changes, record the negative and return to root; no second color/hardcoded fallback in this proposal"
+  },
+  "read_only_inputs": [
+    {
+      "bytes": 81110,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/BernGenerated.swift",
+      "sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+    },
+    {
+      "bytes": 9021,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/Frame.component.swift",
+      "sha256": "9e67b6890dcacdc2f8f84d330c422206dd2c05e19d08c1e2265213e2166d4a67"
+    },
+    {
+      "bytes": 135017,
+      "path": "work/frame-control13-baseline/report.json",
+      "sha256": "60d71641769e1e7630b8d235512f700db416a8a0646cf559cc6bb75f6f5ac480"
+    },
+    {
+      "bytes": 136239,
+      "path": "work/frame-control13-baseline/frame-closed-light.png",
+      "sha256": "ece61b2d4e05da32f3598e1f56da8369bb2029814fb3a66b4129bf363aff37f3"
+    },
+    {
+      "bytes": 3682,
+      "path": "work/frame-control13-baseline/025-stdout.json",
+      "sha256": "97471d884edb64b70c6d5cd9bab196d091f16b0d088345c42707df4f0f0ad083"
+    },
+    {
+      "bytes": 1321,
+      "path": "work/frame-control13-baseline/026-stdout.json",
+      "sha256": "7c5e0195684a5781a236a483bf117d6d1d09db2a719fc19a9f1270b387b9cb8d"
+    },
+    {
+      "bytes": 1321,
+      "path": "work/frame-control13-baseline/054-stdout.json",
+      "sha256": "7c5e0195684a5781a236a483bf117d6d1d09db2a719fc19a9f1270b387b9cb8d"
+    },
+    {
+      "bytes": 93001,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-frame-row-latest1-40158031681/runtime/a/report.json",
+      "sha256": "cc3ce7bcf4c241cc65fd25a1002734f29f04d3f4370a2fe38f178ee3efbe59d1"
+    },
+    {
+      "bytes": 49907,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-frame-row-latest1-40158031681/runtime/a/frame-closed-light.png",
+      "sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b"
+    },
+    {
+      "bytes": 1133,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-frame-row-latest1-40158031681/runtime/a/019-stdout.json",
+      "sha256": "3d011c65e1870d025ef275a4b4c02c5d16f6a36af2befd266c567ab998fa93e5"
+    },
+    {
+      "bytes": 1133,
+      "path": "outputs/Bern/Docs/Evidence/macOS14-frame-row-latest1-40158031681/runtime/a/039-stdout.json",
+      "sha256": "3d011c65e1870d025ef275a4b4c02c5d16f6a36af2befd266c567ab998fa93e5"
+    },
+    {
+      "bytes": 38411,
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSColor.h",
+      "sha256": "f3916e4436f09c86f1e7519fdc965fd9a4a161c30a0a84ba290ba3934a7dc6bd"
+    },
+    {
+      "bytes": 1520489,
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "sha256": "f1a9f2592019d14603bacaaba32f782af2f6572cb665646e8246fe29be5de43c"
+    }
+  ],
+  "runtime_context_from_existing_reports": {
+    "13": {
+      "app_executable_sha256": "00f753ad41dabd1c14ff89e457ca385f195fe5ed95ab9ba262bac2d7ac32a5b0",
+      "final_context": {
+        "appearance": "Light",
+        "caption": true,
+        "frame_appearance": "dark from exact generated source",
+        "video": "Paused0",
+        "volume": "closed"
+      },
+      "os": "Version 13.7.8 (Build 22H730)",
+      "row_ledger_enabled": false,
+      "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "success": true,
+      "system_preferences": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      }
+    },
+    "13_registry": "frame.caption role=split_button enabled=true value=true; registration state is not native NSControl.isEnabled or resolved foreground evidence",
+    "14": {
+      "app_executable_sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+      "final_context": {
+        "appearance": "Light",
+        "caption": true,
+        "frame_appearance": "dark from exact generated source",
+        "video": "Paused0",
+        "volume": "closed"
+      },
+      "os": "Version 14.8.9 (Build 23J631)",
+      "row_ledger_enabled": false,
+      "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+      "success": true,
+      "system_preferences": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      }
+    },
+    "engine_state_on_both": "Crimson / Light / caption=true at both recorded state reads"
+  },
+  "scope": "Only fixed-e48 selected Caption title and captions.bubble symbol color; no implementation, new UI/CI, geometry, width, toolbar, or failed-ledger interpretation",
+  "unknowns": [
+    "Actual resolved SwiftUI foreground environment",
+    "Underlying native control class/cell and selected text color decision",
+    "Whether native style applies or discards an explicit label semantic color",
+    "Whether appearance/tint propagation or OS implementation contributes; no unique cause established"
+  ],
+  "verdict": "source_identifies_native_button_toggle_foreground_as_implicit_no_root_cause_or_fix_proven",
+  "visual_observation_provenance": "Parent viewed original PNGs and reported gray title/symbol on13 versus white on14. This source review did not sample pixels or independently classify glyph colors."
+}

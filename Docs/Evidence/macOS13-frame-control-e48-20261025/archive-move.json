@@ -1,0 +1,65 @@
+{
+  "rule": "One canonical move with read-only relative work aliases. Never execute or build through these archive aliases; use fresh verified regular sources.",
+  "moves": [
+    {
+      "work_alias": "work/frame-control13-preparation",
+      "canonical": "preparation/source",
+      "files": 9,
+      "logical_bytes": 111002
+    },
+    {
+      "work_alias": "work/frame-control13-review",
+      "canonical": "preparation/source-review",
+      "files": 6,
+      "logical_bytes": 13943
+    },
+    {
+      "work_alias": "work/frame-control13-build",
+      "canonical": "build",
+      "files": 5,
+      "logical_bytes": 6320
+    },
+    {
+      "work_alias": "work/frame-control13-private",
+      "canonical": "private-copy-receipts",
+      "files": 9,
+      "logical_bytes": 41243
+    },
+    {
+      "work_alias": "work/frame-control13-baseline",
+      "canonical": "runtime",
+      "files": 114,
+      "logical_bytes": 382518
+    },
+    {
+      "work_alias": "work/frame-control13-baseline.watchdog",
+      "canonical": "watchdog",
+      "files": 18,
+      "logical_bytes": 11026
+    },
+    {
+      "work_alias": "work/frame-control13-root",
+      "canonical": "root-review",
+      "files": 11,
+      "logical_bytes": 16130
+    },
+    {
+      "work_alias": "work/frame-control13-result-review",
+      "canonical": "result-review",
+      "files": 4,
+      "logical_bytes": 33642
+    },
+    {
+      "work_alias": "work/frame-control13-offline-review",
+      "canonical": "offline-review",
+      "files": 9,
+      "logical_bytes": 50439
+    },
+    {
+      "work_alias": "work/frame-control13-caption-source-plan",
+      "canonical": "next-caption-color-plan",
+      "files": 3,
+      "logical_bytes": 16258
+    }
+  ]
+}
