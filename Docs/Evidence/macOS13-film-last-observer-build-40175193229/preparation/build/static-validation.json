@@ -1,0 +1,107 @@
+{
+  "actual_remote_build_attempted": false,
+  "artifact_import_or_entry_executed": false,
+  "build_driver": {
+    "bytes": 19537,
+    "sha256": "a48353b777cfc9f9644a5e76c5f66c1fbdaea15358e28df72d736edd291cdf8a"
+  },
+  "build_driver_ast_parse": true,
+  "frozen_source_files": {
+    "FilmLastObservation.swift.inc": {
+      "bytes": 12641,
+      "sha256": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06"
+    },
+    "README.md": {
+      "bytes": 1953,
+      "sha256": "8ffb68285f7f23466e6c6f842446343530255b66b0a6fc11461ebc7bcca47425"
+    },
+    "patch.py": {
+      "bytes": 9622,
+      "sha256": "9a5a0679e2eaaa1fd47c54eefc30957dc9d8bf0f7a7869a2abbb0396b1799dda"
+    },
+    "source-proof.json": {
+      "bytes": 1742,
+      "sha256": "31c97758195b9c40f36ab048735fcc32953e295765e2e766f45d544fe6f20170"
+    }
+  },
+  "frozen_source_manifest_sha256": "f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741",
+  "independent_text_only_derivation": {
+    "derived_not_historical_generated_runtime": {
+      "original": {
+        "bytes": 119529,
+        "sha256": "626c4b7785cf46f9e6d86389d5c64b8221d5f5ead8f7518a67e407b38883ba95"
+      },
+      "patched": {
+        "bytes": 132272,
+        "sha256": "e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663"
+      }
+    },
+    "marker_bytes": 24,
+    "method": "AST literal extraction of immutable patch edit pairs; handwritten replacements with inverse; independent regex extraction of fixed Rust table and JSON-quoted rendering. No artifact function imported/called.",
+    "original_inverse_exact": true,
+    "patched_templates": {
+      "BernRuntime": {
+        "bytes": 131944,
+        "sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77"
+      },
+      "BernStyle": {
+        "bytes": 214581,
+        "sha256": "fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c"
+      }
+    },
+    "replacement_bytes": 352,
+    "svg_scope": "Fixed631 source byte binding plus exact actual-runtime comparison required at collect; supplementary UI regex is not a general SVG audit.",
+    "table_category_counts": [
+      19,
+      13,
+      12
+    ],
+    "template_edit_counts": {
+      "RUNTIME_EDITS": 1,
+      "STYLE_EDITS": 10
+    }
+  },
+  "patcher_driver_compiler_git_ui_ci_executed": false,
+  "relevant_input_byte_bindings": {
+    "crates/bern-backend-swiftui/src/lib.rs": {
+      "bytes": 34003,
+      "retained_fixed_e48_input_match": true,
+      "sha256": "aa8c31577c941bd35b66ec99101b287bdf3d99f41da1d4af996c5e3bcbbaf8ff"
+    },
+    "crates/bern-backend-swiftui/templates/BernRuntime.swift": {
+      "bytes": 119201,
+      "retained_fixed_e48_input_match": true,
+      "sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e"
+    },
+    "crates/bern-backend-swiftui/templates/BernStyle.swift": {
+      "bytes": 210785,
+      "retained_fixed_e48_input_match": true,
+      "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+    },
+    "crates/bern-ir/src/spec.rs": {
+      "bytes": 70376,
+      "retained_fixed_e48_input_match": true,
+      "sha256": "bfaa73d93e3d528757f434eca8ee5c9da4d248ed934301787c78d0f1fb139e3c"
+    },
+    "crates/bern-target-api/src/svg.rs": {
+      "bytes": 2506,
+      "retained_fixed_e48_input_match": true,
+      "sha256": "5beefff2823a4f9a75013385a4bb6c6639c7b31d685fe73b9b769e1624852666"
+    },
+    "examples/gallery/Bern.toml": {
+      "bytes": 1566,
+      "retained_fixed_e48_input_match": true,
+      "sha256": "da3342d31d3cfb92740ab4e2964d08c1b0b8a3a2be84966fad9a1fb2f40d729f"
+    },
+    "examples/gallery/gallery-ui/src/lib.rs": {
+      "bytes": 22898,
+      "retained_fixed_e48_input_match": true,
+      "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+    }
+  },
+  "retained_before_sha256": "c1f38ae72c9a3f732d3832ac4b88dabce639c51396e100b6b8fc5c1f8e5eb5c3",
+  "retained_fixed_e48_input_evidence": "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/before.json",
+  "schema": "bern_film_last_observer_build_static_validation_v1",
+  "source_only": true,
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d"
+}

@@ -1,0 +1,13 @@
+# Full Film Last observer build: preserved failure
+
+[CI40175193229](https://github.com/Torrekie/Bern/actions/runs/40175193229), harness `8ae9e6dcd42d0dd8c699d5e13bed5e16a3a9c161`, source package `62348bb11240ba85223746f3d306f116831303ea`, builds exact product source `e48fff46b3a92a28465ad74295bd273a9d69af7d`. This is a diagnostic build attempt, not a product change or visual acceptance.
+
+The real disposable local prepare exited 0 after validating all 631 original inputs, then changing only two exact templates. Its source-only independent review passed. The temporary source/harness copies were retired after review and empty lsof checks: 42,550,185 logical bytes, not an APFS reclamation measurement. No local compiler, module cache or product was created.
+
+The single CI full normal build failed: cargo exit 1, Swift 6.2.4 compiling the actual Style for arm64/SDK26.2/target13 terminated with signal 6, `Found an ErrorExpr but didn’t emit an error?`, during SIL generation of `BernSnap.body`. The original two Sendable warnings predate this packet; neither those warnings nor the crash location proves a unique root cause. The complete 17,182-byte build log is retained with SHA-256 `5f0184257682c93777f90014ace8cb381ce2b06186fb04eefb1a5cdf9a4c396f`.
+
+Actual generated Runtime is 132,272 bytes / `e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663`; actual Generated is 81,110 bytes / `f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653`. Both raw files are retained. Actual Style metadata is 214,581 bytes / `fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c`; the raw Style was not exported, so independent verification reconstructs it from the exact locked template and actual diff. These are source-generation results, not a successful product build.
+
+`raw/observer-build.json` remains `success=false`. Collection preserved available sources and stopped at the nonzero cargo guard; later success-only product/signature/runtime-inverse gates did not run. No App tar, launch, native capture, diagnostic output or observer-effect acceptance exists for this run. The downloaded 371,675-byte ZIP matched its API digest and was deleted; that statement relies on the retained download receipt, not a later reread of a deleted file.
+
+The next bounded candidate moves only the new optional weak-owner closure expression into an explicitly typed MainActor helper outside the ViewBuilder. It preserves the enable/nil/weak-identity contract and the original snap conditions, arithmetic and delays. It requires a new frozen packet, independent review and actual full Swift6 rebuild; this failure is never overwritten. macOS13 full visual equivalence and macOS11/Swift5.3/Objective-C/iOS stages remain unpassed or deferred.

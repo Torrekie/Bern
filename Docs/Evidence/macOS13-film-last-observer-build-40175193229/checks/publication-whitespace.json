@@ -1,0 +1,38 @@
+{
+  "initial_classifier_exit": 1,
+  "initial_classifier_failure": "Expected only mandatory raw patch contexts, then stopped on raw CI timestamp-only trailing space; no evidence bytes edited.",
+  "default_staged_check_exit_code": 2,
+  "default_output": "Docs/Evidence/macOS13-film-last-observer-build-40175193229/ci/job-121114231194.log:252: trailing whitespace.\n+2026-10-25T08:04:47.9822960Z \nDocs/Evidence/macOS13-film-last-observer-build-40175193229/ci/job-121114231194.log:256: trailing whitespace.\n+2026-10-25T08:04:48.0212240Z \nDocs/Evidence/macOS13-film-last-observer-build-40175193229/prepare-smoke/evidence/patches/BernStyle.swift.patch:26: trailing whitespace.\n+ \nDocs/Evidence/macOS13-film-last-observer-build-40175193229/raw/patches/BernStyle.swift.patch:26: trailing whitespace.\n+ \n",
+  "classified": [
+    {
+      "path": "Docs/Evidence/macOS13-film-last-observer-build-40175193229/ci/job-121114231194.log",
+      "line": 252,
+      "file_sha256": "beec7f4ff3257037af6fa434f1d78a9e4e53afed15586e2302c4c027bd826ebd",
+      "classification": "verbatim external CI log timestamp-only line",
+      "raw_bytes_preserved": true
+    },
+    {
+      "path": "Docs/Evidence/macOS13-film-last-observer-build-40175193229/ci/job-121114231194.log",
+      "line": 256,
+      "file_sha256": "beec7f4ff3257037af6fa434f1d78a9e4e53afed15586e2302c4c027bd826ebd",
+      "classification": "verbatim external CI log timestamp-only line",
+      "raw_bytes_preserved": true
+    },
+    {
+      "path": "Docs/Evidence/macOS13-film-last-observer-build-40175193229/prepare-smoke/evidence/patches/BernStyle.swift.patch",
+      "line": 26,
+      "file_sha256": "b444411d263172a11e981971ef5b46d1515e8ae7bc077a6f276a9591142c1e60",
+      "classification": "mandatory unified-diff blank context prefix",
+      "raw_bytes_preserved": true
+    },
+    {
+      "path": "Docs/Evidence/macOS13-film-last-observer-build-40175193229/raw/patches/BernStyle.swift.patch",
+      "line": 26,
+      "file_sha256": "b444411d263172a11e981971ef5b46d1515e8ae7bc077a6f276a9591142c1e60",
+      "classification": "mandatory unified-diff blank context prefix",
+      "raw_bytes_preserved": true
+    }
+  ],
+  "all_other_staged_paths_default_check_exit": 0,
+  "repo_whitespace_configuration_changed": false
+}

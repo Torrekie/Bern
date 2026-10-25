@@ -22,9 +22,30 @@ STYLE_EDITS = [
          "initial_waiting": legacyInitial.waiting, "initial_generation": legacyInitial.generation]
     }
 '''),
+('''    #if os(macOS)
+    @Environment(\\.bernScrollItems) private var positionItems
+    #endif
+
+    func body(content: Content) -> some View {
+''','''    #if os(macOS)
+    @Environment(\\.bernScrollItems) private var positionItems
+
+    @MainActor
+    private func filmLastObservationOwner() -> (@MainActor () -> AnyObject?)? {
+        guard BernFilmLastObservation.enabled else { return nil }
+        guard let owner = positionItems else { return nil }
+        let readOwner: @MainActor () -> AnyObject? = { [weak owner] in
+            owner as AnyObject?
+        }
+        return readOwner
+    }
+    #endif
+
+    func body(content: Content) -> some View {
+'''),
 ('''                    snapGeneration: initialOwner.map { owner in { [weak owner] in owner?.generation ?? 0 } }))
 ''','''                    snapGeneration: initialOwner.map { owner in { [weak owner] in owner?.generation ?? 0 } },
-                    observationOwner: BernFilmLastObservation.enabled ? positionItems.map { owner in { [weak owner] in owner as AnyObject? } } : nil))
+                    observationOwner: filmLastObservationOwner()))
 '''),
 ('''            withAnimation(animation) { target = wanted }
 ''','''            withAnimation(animation) { target = wanted }

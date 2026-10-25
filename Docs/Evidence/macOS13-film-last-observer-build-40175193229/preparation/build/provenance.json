@@ -1,0 +1,63 @@
+{
+  "api": [
+    "build.py prepare SOURCE EVIDENCE",
+    "build.py collect SOURCE EVIDENCE"
+  ],
+  "observer_original_canonical": "outputs/Bern/Docs/Evidence/macOS13-film-explicit-last-observation-20261025/preparation",
+  "original_four_texts_and_manifest_byte_exact": true,
+  "prerequisite_toolchain": "macOS arm64, Xcode26.3 recipe, Swift6, selected/embeddedSDK26.2, Rust1.99.0, minOS13.0",
+  "published_file_count": 7,
+  "published_files": {
+    ".github/scripts/film-last-observer/FilmLastObservation.swift.inc": {
+      "bytes": 12641,
+      "sha256": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06"
+    },
+    ".github/scripts/film-last-observer/README.build.md": {
+      "bytes": 4234,
+      "sha256": "fc39622ad33fbf3f404d0ef78d44d215a3620cb4b199183c982cff978b311034"
+    },
+    ".github/scripts/film-last-observer/README.md": {
+      "bytes": 1953,
+      "sha256": "8ffb68285f7f23466e6c6f842446343530255b66b0a6fc11461ebc7bcca47425"
+    },
+    ".github/scripts/film-last-observer/build.py": {
+      "bytes": 19537,
+      "sha256": "a48353b777cfc9f9644a5e76c5f66c1fbdaea15358e28df72d736edd291cdf8a"
+    },
+    ".github/scripts/film-last-observer/patch.py": {
+      "bytes": 9622,
+      "sha256": "9a5a0679e2eaaa1fd47c54eefc30957dc9d8bf0f7a7869a2abbb0396b1799dda"
+    },
+    ".github/scripts/film-last-observer/source-SHA256SUMS": {
+      "bytes": 331,
+      "sha256": "f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741"
+    },
+    ".github/scripts/film-last-observer/source-proof.json": {
+      "bytes": 1742,
+      "sha256": "31c97758195b9c40f36ab048735fcc32953e295765e2e766f45d544fe6f20170"
+    }
+  },
+  "published_package_path": ".github/scripts/film-last-observer",
+  "ready_for_parent_source_review": true,
+  "runtime_or_visual_acceptance_claimed": false,
+  "schema": "bern_film_last_observer_build_preparation_v1",
+  "scope": "Source-only preparation; no entry point, artifact function, Git, build, compiler, App, native or CI execution. Parent owns source-only prepare smoke and future CI publication.",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "sourceguard": {
+    "generate_only_entry_not_used": true,
+    "only_fixed_head_input_metadata_utilities_used": true,
+    "path": ".github/scripts/frame-source-export.py",
+    "sha256": "5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017"
+  },
+  "static_validation": "static-validation.json",
+  "workflow_interface_bound": {
+    "original_cli_download_or_parameter": false,
+    "path": "work/film-last-observer-ci-preparation/.github/workflows/macos13-film-last-observer-build.yml",
+    "prepare_existing_evidence_allowlist": [
+      "environment.txt",
+      "harness-inputs.sha256"
+    ],
+    "sha256": "a4b338a7e03d36ab0b3167cff06120c44f66e67c14eba3384a8ffff7fd0a73ce",
+    "tar": "gallery-film-last-observer.tar.gz"
+  }
+}

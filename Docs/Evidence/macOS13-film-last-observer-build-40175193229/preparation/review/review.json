@@ -1,0 +1,100 @@
+{
+  "kind": "independent_film_last_observer_build_strategy_review",
+  "verdict": "no_remaining_source_blocker_full_build_and_acquisition_not_performed_by_reviewer",
+  "blocking_findings": [],
+  "review_method": "Read-only source/AST/YAML and own literal text derivation, file hashes. No retained helper/module function, prepare/collect/patcher, Git, cargo/compiler, App/native/UI/CI/API executed.",
+  "source_files": {
+    "work/film-last-observer-build-preparation/.github/scripts/film-last-observer/build.py": {
+      "bytes": 19537,
+      "sha256": "a48353b777cfc9f9644a5e76c5f66c1fbdaea15358e28df72d736edd291cdf8a"
+    },
+    "work/film-last-observer-build-preparation/.github/scripts/film-last-observer/patch.py": {
+      "bytes": 9622,
+      "sha256": "9a5a0679e2eaaa1fd47c54eefc30957dc9d8bf0f7a7869a2abbb0396b1799dda"
+    },
+    "work/film-last-observer-build-preparation/.github/scripts/film-last-observer/FilmLastObservation.swift.inc": {
+      "bytes": 12641,
+      "sha256": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06"
+    },
+    "work/film-last-observer-build-preparation/.github/scripts/film-last-observer/README.md": {
+      "bytes": 1953,
+      "sha256": "8ffb68285f7f23466e6c6f842446343530255b66b0a6fc11461ebc7bcca47425"
+    },
+    "work/film-last-observer-build-preparation/.github/scripts/film-last-observer/README.build.md": {
+      "bytes": 4234,
+      "sha256": "fc39622ad33fbf3f404d0ef78d44d215a3620cb4b199183c982cff978b311034"
+    },
+    "work/film-last-observer-build-preparation/.github/scripts/film-last-observer/source-proof.json": {
+      "bytes": 1742,
+      "sha256": "31c97758195b9c40f36ab048735fcc32953e295765e2e766f45d544fe6f20170"
+    },
+    "work/film-last-observer-build-preparation/.github/scripts/film-last-observer/source-SHA256SUMS": {
+      "bytes": 331,
+      "sha256": "f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741"
+    }
+  },
+  "workflow": {
+    "path": "work/film-last-observer-ci-preparation/.github/workflows/macos13-film-last-observer-build.yml",
+    "sha256": "a4b338a7e03d36ab0b3167cff06120c44f66e67c14eba3384a8ffff7fd0a73ce",
+    "build_manifest_sha256": "8ee5fc0a9c4130f8728e205098e0159ed68efc36788709258f11ed6f3ceb4bf4",
+    "manual_only_single_build_job": true,
+    "run_blocks_read": 5,
+    "inline_python_AST_parsed": true,
+    "bash_n_not_repeated": "Author retained receipt reports five bash-n0; reviewer read escaping/status logic."
+  },
+  "input_source_hashes": {
+    "outputs/Bern/crates/bern-backend-swiftui/templates/BernRuntime.swift": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+    "outputs/Bern/crates/bern-backend-swiftui/templates/BernStyle.swift": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+    "outputs/Bern/crates/bern-ir/src/spec.rs": "bfaa73d93e3d528757f434eca8ee5c9da4d248ed934301787c78d0f1fb139e3c",
+    "outputs/Bern/crates/bern-backend-swiftui/src/lib.rs": "aa8c31577c941bd35b66ec99101b287bdf3d99f41da1d4af996c5e3bcbbaf8ff",
+    "outputs/Bern/crates/bern-target-api/src/svg.rs": "5beefff2823a4f9a75013385a4bb6c6639c7b31d685fe73b9b769e1624852666",
+    "outputs/Bern/examples/gallery/gallery-ui/src/lib.rs": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07",
+    "outputs/Bern/crates/bern-cli/src/main.rs": "63af68fa7f763b118ca34ed432b0f1b9fdfa2b3190582ebde747135303d0fa64",
+    "outputs/Bern/.github/scripts/frame-source-export.py": "5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017",
+    "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/before.json": "c1f38ae72c9a3f732d3832ac4b88dabce639c51396e100b6b8fc5c1f8e5eb5c3"
+  },
+  "runtime_derivation": {
+    "kind": "pure_text_source_derived_no_Rust_or_historical_actual_claim",
+    "no_SVG_expected": true,
+    "extension_counts": {
+      "video": 19,
+      "audio": 13,
+      "picture": 12
+    },
+    "marker_bytes": 24,
+    "replacement_bytes": 352,
+    "original_template_sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+    "patched_template_sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77",
+    "derived_original": {
+      "bytes": 119529,
+      "sha256": "626c4b7785cf46f9e6d86389d5c64b8221d5f5ead8f7518a67e407b38883ba95"
+    },
+    "derived_patched": {
+      "bytes": 132272,
+      "sha256": "e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663"
+    },
+    "core_exact_suffix": true
+  },
+  "source_binding_findings": [
+    "Exact e48 checkout required; frozen5b4a helper utility module checks all631 regular firstparty input bytes against Git e48 objects. Both pre/post checks require same paths and source HEAD/tree; only Runtime+Style tracked changes, no staged changes, other629 inputs unchanged. This is a firstparty tracked source guard, not an external-dependency closure.",
+    "Only helper utility definitions are imported; generate-only prepare/collect are not invoked. CLI remains63af and original target.plan→run_steps full product build is used; diagnostic generate-only env is rejected/unset.",
+    "Frozen4-file source packet remains f939; added build.py/README.build separate. Original core is included as exact Runtime suffix and Style references the same module symbol.",
+    "Backend runtime_source replaces one24B marker by352B fixed extension table; runtime_with_svg appends SVG only for Svg IR nodes. Gallery source/lockedGenerated have none; source regex is supplementary, actual generatedRuntime exact derived equality is decisive.",
+    "Collect preserves bounded actual Generated/Runtime and build.json before later semantic gates, requires actualGenerated81110/f72 and Styleexact, removes core+inspect hook back to independently derived originalRuntime, rejects unexpected SVG append.",
+    "Full build must report cargo exit0; host Swift6/Rust1.99.0, selected/embeddedSDK26.2, arm64/min13, release/AppInfo and actual strict signature checks. Compiler/SDK metadata are read rather than inferred from requested headers.",
+    "Workflow saves actual cargo status and propagates failure; always collect after successful prepare, upload evidence on failure, bounded128KiB log while retaining full-log size/hash. Prepare failures retain available partial evidence.",
+    "Tar ships only Gallery.app+same observer-build.json, not newly rebuiltCLI. Fresh partial/final/checksum are admission-checked; on packaging error only this attempt owned paths are removed, result false/nonzero. Consumers must require CI/collect success, external JSON true, packagedJSON byte match, tar SHA and actual member hashes.",
+    "Unmodified full plan may rebuild CLI; additional workflow checks its minOS/SDK/arch/strictsignature but does not package it or call it historical31a. Future native run must explicitly bind original CLI separately."
+  ],
+  "resolved_pre_freeze_points": [
+    "ActualGenerated now both saved and hard-pinned to81110/f72, not merely recorded.",
+    "Driver selected/embeddedSDK now exactly26.2, matching workflow.",
+    "Packaging now fresh .partial→rename/checksum with own-only failure cleanup, avoiding trusted embedded success left as a consumable partial package."
+  ],
+  "remaining_gates": [
+    "Review does not claim actual source smoke, CI success, Swift6 compile/link or actual generated source match; root owns execution and retained receipts.",
+    "Actual compiled artifact source/member/digest/strict metadata and packaged/external manifest match must be independently checked before native use.",
+    "No14 no-effect,13 observer-effect, diagnostic coverage, physical input, pixel/geometry parity or product adoption demonstrated by build success.",
+    "Core standalone Swift5.9/headers14.2 typecheck and template parse are prior narrow checks, not substitutes for this full Swift6/min13 build."
+  ]
+}

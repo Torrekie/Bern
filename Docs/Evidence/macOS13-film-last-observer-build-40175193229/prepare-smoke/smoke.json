@@ -1,0 +1,80 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.hooksPath=/dev/null",
+        "clone",
+        "--shared",
+        "--no-checkout",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-last-observer-build-smoke/source"
+      ],
+      "exit_code": 0,
+      "seconds": 0.045795542013365775,
+      "stderr": "Cloning into '/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-last-observer-build-smoke/source'...\ndone.\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-last-observer-build-smoke/source",
+        "-c",
+        "core.hooksPath=/dev/null",
+        "checkout",
+        "--detach",
+        "e48fff46b3a92a28465ad74295bd273a9d69af7d"
+      ],
+      "exit_code": 0,
+      "seconds": 0.8340222910046577,
+      "stderr": "HEAD is now at e48fff4 Align the first macOS 13 centered scroll target with content margins\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-last-observer-build-smoke/harness/.github/scripts/film-last-observer/build.py",
+        "prepare",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-last-observer-build-smoke/source",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-last-observer-build-smoke/evidence"
+      ],
+      "exit_code": 0,
+      "seconds": 18.71161050000228,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-last-observer-build-smoke/source",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "exit_code": 0,
+      "seconds": 0.14769258303567767,
+      "stderr": "",
+      "stdout": " M crates/bern-backend-swiftui/templates/BernRuntime.swift\n M crates/bern-backend-swiftui/templates/BernStyle.swift\n"
+    }
+  ],
+  "driver_sha256": "a48353b777cfc9f9644a5e76c5f66c1fbdaea15358e28df72d736edd291cdf8a",
+  "generated_target_exists": false,
+  "input_count": 631,
+  "scope": "Actual prepare only; no generator/compiler/product/native/CI execution",
+  "seconds": 19.807440374977887,
+  "source_status": " M crates/bern-backend-swiftui/templates/BernRuntime.swift\n M crates/bern-backend-swiftui/templates/BernStyle.swift\n",
+  "success": true,
+  "templates": {
+    "crates/bern-backend-swiftui/templates/BernRuntime.swift": {
+      "bytes": 131944,
+      "sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77"
+    },
+    "crates/bern-backend-swiftui/templates/BernStyle.swift": {
+      "bytes": 214581,
+      "sha256": "fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c"
+    }
+  }
+}

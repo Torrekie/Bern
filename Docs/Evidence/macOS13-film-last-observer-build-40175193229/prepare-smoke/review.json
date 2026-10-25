@@ -1,0 +1,44 @@
+{
+  "verdict": "actual_prepare_smoke_verified_no_blocker",
+  "scope": "Independent read-only hashing/JSON and in-memory unified-diff verification; no smoke/driver/Git/compiler/native rerun",
+  "smoke_receipt_sha256": "3f0fdc2bd712ffb1172e68e1eb269c01c6c90cad18710b48676590660bae32ad",
+  "executor_source_sha256": "74a44d2775e6eab10253d1f8a7a0d84107a2c630d2608b6ada88a21da9de4b80",
+  "before_sha256": "97b6966ed855c82ec10d914d3bca884d7874bccc698390e28706196892d17150",
+  "patch_proof_sha256": "92bb7d3baa3c62e4dbe42a17c78b0c0f66898537b87b294051128f9dbfadf579",
+  "driver_sha256": "a48353b777cfc9f9644a5e76c5f66c1fbdaea15358e28df72d736edd291cdf8a",
+  "actual_prepare_exit": 0,
+  "actual_prepare_seconds": 18.71161050000228,
+  "input_guard": {
+    "631_unique_rows_current_files_checked": true,
+    "other629_match_original_rows": true,
+    "detached_HEAD_text_exact_e48": true,
+    "only_two_reported_and_actual_input_changes": [
+      "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "crates/bern-backend-swiftui/templates/BernStyle.swift"
+    ],
+    "original_CLI_sha256": "63af68fa7f763b118ca34ed432b0f1b9fdfa2b3190582ebde747135303d0fa64"
+  },
+  "templates": {
+    "BernStyle.swift": {
+      "original_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+      "actual_sha256": "fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c",
+      "actual_bytes": 214581,
+      "unified_patch_sha256": "b444411d263172a11e981971ef5b46d1515e8ae7bc077a6f276a9591142c1e60",
+      "independent_forward_inverse_bytes_equal": true
+    },
+    "BernRuntime.swift": {
+      "original_sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+      "actual_sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77",
+      "actual_bytes": 131944,
+      "unified_patch_sha256": "432220396ce2c97723397339becf49dafa0999781b19bbf04222406278fe37d0",
+      "independent_forward_inverse_bytes_equal": true
+    }
+  },
+  "generated_target_exists": false,
+  "limits": [
+    "Actual prepare only: no generator/full product compilation/native/CI acceptance.",
+    "Template Runtime1da1 is not actual generated Runtime after extension expansion.",
+    "Tracked status is root recorded Git output; reviewer did not run Git."
+  ],
+  "payload_release": "Reviewer finished reading source/harness duplicates and does not need them retained; root may retire owned copies while preserving evidence/receipts."
+}

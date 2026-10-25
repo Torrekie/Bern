@@ -1,0 +1,7 @@
+Final a48353b7 driver, fc39622a buildREADME and a4b338a7 workflow have no remaining source blocker. Seven published package files bind to frozen8ee5fc0a build preparation and unchanged f939 observer source packet. Review used source/AST/YAML/hash and own literal text derivation only; no module/entry/patcher, Git, cargo/compiler, native/UI/CI was executed.
+
+631 fixed e48 input bytes are guarded before/after; exactly2 tracked templates may change and original CLI63af/full target.plan remain. Swift6/target13 full build is required. Actual Generated81110/f72, generatedRuntime+core/extension expansion, actual selected/embeddedSDK26.2/arm64/min13/signature and product metadata are explicit gates. Original-vs-patched Runtime119529/132272,626c…/e386… are independently source-derived expectations, not historical actual outputs; unexpected SVG append fails actual equality.
+
+Cargo failure stays nonzero, collection runs after successful prepare even when build failed, and bounded actual generated sources/logs are preserved. Success tar contains only App and matching provenance JSON. Fresh partial archive cleanup removes only owned attempt paths; consumption still requires successful CI/collect, external+embedded JSON equality, tar SHA and App member checks. The rebuilt CLI is not shipped or called the original31a.
+
+Root's prepare smoke and future actual build/native evidence remain separate. This source review supplies no Swift6 build result, observer no-effect, pixel/geometry acceptance, diagnostic coverage or adoption claim.

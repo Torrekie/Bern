@@ -325,3 +325,12 @@ root已目检两张原p0，candidate named内容实际可见。control→candida
 已实现仅显式启用的macOS13诊断源码：五固定槽及有界计数、weak身份、首post-request inspect才序列化导出，记录请求、首eligible snap/首writer owninputs及postcapture native scalar，不增加View/Task/timer/滚动操作。原条件、算式、动画与150/160/180ms不变；有限观测仍有开销，不能先宣称无影响。真实standalone core typecheck0、两完整patch模板parse0（Swift5.9.2/请求SDK14.2/target13）及实际fuzz0补丁应用通过；不等于完整SwiftUI类型检查、Swift6产品构建或运行。template-only patcher故意拒绝generated Runtime。
 
 本轮无产品源码/行为改动、无新native或CI；临时cache与重复源码49,916,983B逻辑文件已核hash/lsof清除，原四个交付exe和两个模板保持。下一先完成新SDK/Swift6/target13 observer构建与实际generated来源，再核观察影响/适用14参考及独立强kernel入口，才可运行。诊断失败不得改写原采集/清理真假；完整13验收及后续平台阶段仍未通过，goal active。
+
+
+## 完整 Swift6 观察版首次构建失败（2026-10-25）
+
+[CI40175193229的原始失败与审查](../Evidence/macOS13-film-last-observer-build-40175193229/README.md)已保留：新SDK26.2/Swift6.2.4/arm64/target13执行原CLI完整构建计划，在`BernSnap.body`的SIL生成阶段出现signal6与ErrorExpr编译器崩溃。cargo1、collector false、无App tar/运行结果。生成Runtime132272/e386、Generated81110/f72及Style214581/fb2符合预期源码身份，但不能据此称产品编译或后续signature/inverse gates通过。完整17,182B日志未截断，API ZIP摘要校验后已删除下载ZIP。
+
+独立源码审查把最小候选限定为将新增可选弱owner闭包移出ViewBuilder，以显式MainActor方法和闭包类型表达相同enabled/nil/weak身份语义；原snapAllowed/snapGeneration、计算及150/160/180ms保持。旧两条Sendable warning在原版已存在，不能当本次根因。该表达式候选仍需完整Swift6重建，不称已修复或观察无影响。
+
+本机只执行真实prepare校验，未调用编译器或生成模块缓存。首轮临时源码/harness副本42,550,185B逻辑文件在独立读完、核hash和lsof为空后清除；证据单处归档，历史work别名只读。原交付产品及模板保持，完整13视觉验收和后续平台阶段仍未通过，goal active。

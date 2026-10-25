@@ -58,7 +58,7 @@ jobs:
           rustup toolchain install 1.99.0 --profile minimal
           rustc +1.99.0 -Vv >> evidence/environment.txt
           packet=harness/.github/scripts/film-last-observer
-          test "$(shasum -a 256 "$packet/source-SHA256SUMS" | awk '{print $1}')" = f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741
+          test "$(shasum -a 256 "$packet/source-SHA256SUMS" | awk '{print $1}')" = 3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250
           (cd "$packet" && shasum -a 256 -c source-SHA256SUMS)
           test "$(shasum -a 256 harness/.github/scripts/frame-source-export.py | awk '{print $1}')" = 5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017
           shasum -a 256 "$packet/build.py" "$packet/patch.py" "$packet/FilmLastObservation.swift.inc" "$packet/README.md" "$packet/source-proof.json" "$packet/source-SHA256SUMS" "$packet/README.build.md" harness/.github/scripts/frame-source-export.py harness/.github/workflows/macos13-film-last-observer-build.yml > evidence/harness-inputs.sha256
