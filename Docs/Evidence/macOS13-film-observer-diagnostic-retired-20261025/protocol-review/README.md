@@ -1,0 +1,7 @@
+Source-only review: no remaining source blocker for the single observer13 initial/first-Last protocol. Final driver e13f7426 and analyzer d501cd0b packages and every listed manifest entry are bound in review.json. No execution authorization or native acceptance is conveyed by this directory.
+
+The former shared-env issue is resolved by the three-place App-only handoff, independently reversed to exact c4. Fresh observer identity/all10 build members and original delivered CLI provenance are separate. Existing Python helper function/class bodies and the inverse-adapted runner runtime tail are byteexact old source. Acquisition, original loop budgets and strong-kernel cleanup order remain unchanged.
+
+The analyzer uses exact whole-window original-mode rasters plus ICC/scale/canvas, exact origin-relative AX frames and controls against fixed original13; no ROI, normalization, tolerance or offset. Endpoint control, diagnostic coverage and capture/cleanup truth remain separate. Export-error marker, incomplete packet or any gate failure prevents interpretation. Five slots do not imply one work item or animation completion; no absolute PNG timestamp or14.5pt cause is inferred.
+
+Review used only text, AST, hashes and in-memory string inverses. No source entry point, compiler, native helper/App/CLI, prepare/run, UI, network, CI or Git was executed; no actual new runtime or pixel comparison was performed. Root must supply fresh actual helper build, signatures/private identity, current strong-front preflight and one runtime before acceptance.

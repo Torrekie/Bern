@@ -1,0 +1,148 @@
+--- a/prepare-film13.py
++++ b/prepare-film-observer13.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""One original-e48 private Film copy; fixed actual14 data prerequisite, no UI."""
++"""One exact-build observer Film copy; original CLI and fixed actual14 data prerequisite, no UI."""
+ import argparse
+ import hashlib
+ import json
+@@ -16,7 +16,11 @@
+ BUILD_RUN = 40070407306
+ ARTIFACT_ID = 12550744117
+ ARCHIVE_SHA256 = "e7ee2c11f7795bf9391b275ec9f6be329feceebf890193ee53434ec0607c3067"
+-KIND = "film_first_last13_capture"
++KIND = "film_last_observer13_capture"
++
++OBSERVER_GUI = 'e2fbcea5fdc4cea6ebcfb00e1214e55badd78d82a31ebd248e18971e2f6c39a2'
++OBSERVER_MANIFEST_SHA = 'fdb3ff8ca2fc2235531289c98fd5724f1eae816babd9646c83bf74587d86243f'
++
+ ALLOWED = {"Contents/Info.plist", "Contents/MacOS/Gallery", "Contents/_CodeSignature/CodeResources"}
+ 
+ # Exact reviewed Mach-O helper logic, read as source; only app basename assertion adapted.
+@@ -129,12 +133,32 @@
+     return ref,[path,*children]
+ 
+ 
++def read_observer_manifest(path):
++    path = path.resolve(strict=True)
++    assert path.is_file() and not path.is_symlink() and file_hash(path) == OBSERVER_MANIFEST_SHA
++    value = json.loads(path.read_text())
++    assert value['schema'] == 'bern_film_last_observer_build_v1' and value['success'] is True
++    assert value['source_sha'] == SOURCE and value['run_id'] == '40176620054'
++    assert value['harness_sha'] == '892c392ffec22a10b282e8d27d41386bac5def64'
++    assert value['gui'] == {'bytes': 3770800, 'sha256': OBSERVER_GUI}
++    assert len(value['app_members']) == 10 and value['app_members']['Contents/MacOS/Gallery'] == value['gui']
++    assert value['build']['architecture'] == 'arm64' and value['build']['minimum_macos'] == '13.0'
++    assert value['build']['profile'] == 'release' and value['toolchain']['actual_app_embedded_sdk'] == '26.2'
++    assert value['generated_actual']['BernRuntime.swift']['sha256'] == 'e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663'
++    assert value['generated_actual']['BernGenerated.swift']['sha256'] == 'f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653'
++    assert value['generated_actual']['BernStyle.swift']['sha256'] == '179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e'
++    return value, path
++
++
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--prepare", action="store_true")
+     parser.add_argument("--delivery-receipt-sha256", required=True)
+     parser.add_argument("--reference14", required=True, type=Path)
+-    parser.add_argument("control_app", type=Path)
++    parser.add_argument("--observer-build", required=True, type=Path)
++    parser.add_argument("--observer-build-sha256", required=True)
++    parser.add_argument("--diagnostic-destination", required=True, type=Path)
++    parser.add_argument("observer_app", type=Path)
+     parser.add_argument("control_cli", type=Path)
+     parser.add_argument("gallery_build_json", type=Path)
+     parser.add_argument("fresh_work", type=Path)
+@@ -142,9 +166,11 @@
+     if not args.prepare:
+         print("Plan only; explicit --prepare required. No copies, signing, commands, UI or cleanup ran.")
+         return 0
++    observer, observer_build_path = read_observer_manifest(args.observer_build)
++    assert args.observer_build_sha256 == OBSERVER_MANIFEST_SHA
+     reference, reference_inputs = read_reference(args.reference14)
+     reference_pins = {str(p):file_hash(p) for p in reference_inputs}
+-    original, cli, build_file = [p.resolve(strict=True) for p in [args.control_app, args.control_cli, args.gallery_build_json]]
++    original, cli, build_file = [p.resolve(strict=True) for p in [args.observer_app, args.control_cli, args.gallery_build_json]]
+     assert original.is_dir() and cli.is_file() and build_file.is_file()
+     build_bytes = build_file.read_bytes(); build = json.loads(build_bytes)
+     assert build["source_sha"] == SOURCE and build["build_run"] == "https://github.com/Torrekie/Bern/actions/runs/"+str(BUILD_RUN)
+@@ -161,21 +187,26 @@
+     assert delivery["artifact_id"] == ARTIFACT_ID and delivery["archive_sha256"] == ARCHIVE_SHA256
+     assert delivery["delivered_gui_sha256"] == CONTROL_GUI and delivery["delivered_cli_sha256"] == CONTROL_CLI
+     assert delivery["strict_signatures_after_move"] is True
+-    assert sha((original / "Contents/MacOS/Gallery").read_bytes()) == CONTROL_GUI
++    assert sha((original / "Contents/MacOS/Gallery").read_bytes()) == OBSERVER_GUI
+     assert sha(cli.read_bytes()) == CONTROL_CLI
+     original_info = plistlib.loads((original / "Contents/Info.plist").read_bytes())
+     assert original_info["CFBundleIdentifier"] == "dev.bern.gallery" and original_info["CFBundleExecutable"] == "Gallery"
+     assert original_info["LSMinimumSystemVersion"] == "13.0"
+     original_members = members(original)
+-    delivered_rows = delivery["original_archive_app_members_verified_after_move"]
+-    assert len({r["path"] for r in delivered_rows}) == len(delivered_rows)
+-    assert original_members == {r["path"]: r["sha256"] for r in delivered_rows}
+-    assert all((original / row["path"]).stat().st_size == row["bytes"] for row in delivered_rows)
++    observer_rows = observer["app_members"]
++    assert original_members == {name: row["sha256"] for name, row in observer_rows.items()}
++    assert all((original / name).stat().st_size == row["bytes"] for name, row in observer_rows.items())
+     out = args.fresh_work.resolve()
+-    inputs = [Path(__file__).resolve().parent, original, cli, build_file, delivery_file, args.reference14.resolve(strict=True).parent, *reference_inputs]
++    assert args.diagnostic_destination.is_absolute()
++    diagnostic_destination = args.diagnostic_destination.resolve()
++    assert diagnostic_destination == out / "diagnostic/film-last-observation.json"
++    inputs = [Path(__file__).resolve().parent, original, cli, build_file, delivery_file, observer_build_path.parent, observer_build_path, args.reference14.resolve(strict=True).parent, *reference_inputs]
+     assert not out.exists() and all(out != p and out not in p.parents and p not in out.parents for p in inputs), "Output and inputs must not overlap in either direction"
+     out.mkdir(parents=True)
+     evidence = out / "film"; evidence.mkdir()
++    diagnostic_destination.parent.mkdir(mode=0o700)
++    assert diagnostic_destination.parent.stat().st_mode & 0o777 == 0o700
++    assert not diagnostic_destination.exists() and not diagnostic_destination.is_symlink()
+     commands = []
+     def command(argv, log):
+         result = subprocess.run([str(v) for v in argv], capture_output=True, timeout=30)
+@@ -194,7 +225,7 @@
+     app = out / "runtime-work/film/Gallery.app"; app.parent.mkdir(parents=True)
+     command(["ditto", original, app], evidence / "copy.txt")
+     assert members(app) == original_members
+-    identifier = "dev.bern.frame13.film."+uuid.uuid4().hex
++    identifier = "dev.bern.frame13.filmobserver."+uuid.uuid4().hex
+     prefs = Path.home() / "Library/Preferences" / (identifier+".plist")
+     state = Path.home() / "Library/Saved Application State" / (identifier+".savedState")
+     assert not any(p.exists() or p.is_symlink() for p in [prefs, state])
+@@ -214,9 +245,10 @@
+         assert before["signature_storage_sizes_normalized_sha256"] == private_machos[name]["signature_storage_sizes_normalized_sha256"]
+     assert members(original) == original_members and sha(cli.read_bytes()) == CONTROL_CLI
+     assert build_file.read_bytes() == build_bytes and delivery_file.read_bytes() == delivery_bytes
++    assert file_hash(observer_build_path) == OBSERVER_MANIFEST_SHA
+     assert all(file_hash(Path(name))==h for name,h in reference_pins.items())
+     receipt = {"reference14":str(args.reference14.resolve(strict=True)),"reference14_sha256":REFERENCE14_SHA,"kind": KIND, "source_sha": SOURCE, "original_app": str(original), "private_app": str(app),
+-        "private_bundle_id": identifier, "original_gui_sha256": CONTROL_GUI,
++        "private_bundle_id": identifier, "original_gui_sha256": OBSERVER_GUI,
+         "private_gui_sha256": sha((app / "Contents/MacOS/Gallery").read_bytes()),
+         "changed_members": changed, "original_members": original_members, "private_members": private_members,
+         "original_machos": original_machos, "private_machos": private_machos, "original_cli_macho": original_cli_macho,
+@@ -224,16 +256,20 @@
+         "originals_unchanged": True, "cli": str(cli), "cli_sha256": CONTROL_CLI,
+         "preferences_path": str(prefs), "saved_state_path": str(state),
+         "delivery_receipt": str(delivery_file), "delivery_receipt_sha256": sha(delivery_bytes),
+-        "gallery_build_json": str(build_file), "gallery_build_json_sha256": sha(build_bytes)}
++        "gallery_build_json": str(build_file), "gallery_build_json_sha256": sha(build_bytes),
++        "observer_build_manifest": str(observer_build_path), "observer_build_manifest_sha256": OBSERVER_MANIFEST_SHA,
++        "observer_source_app_sha256": OBSERVER_GUI, "diagnostic_destination": str(diagnostic_destination)}
+     receipt_file = evidence / "isolation.json"
+     receipt_file.write_text(json.dumps(receipt, indent=2)+"\n")
+     film = {"app": str(app), "cli": str(cli), "bundle_id": identifier,
+-        "private_gui_sha256": receipt["private_gui_sha256"], "original_gui_sha256": CONTROL_GUI,
++        "private_gui_sha256": receipt["private_gui_sha256"], "original_gui_sha256": OBSERVER_GUI,
+         "cli_sha256": CONTROL_CLI, "receipt": str(receipt_file)}
+-    locks = {"schema": "bern_film_first_last13_locks_v1", "kind": KIND, "source_sha": SOURCE,
++    locks = {"schema": "bern_film_last_observer13_locks_v1", "kind": KIND, "source_sha": SOURCE,
+         "film": film, "reference14":str(args.reference14.resolve(strict=True)), "reference14_sha256":REFERENCE14_SHA, "delivery_receipt": str(delivery_file), "delivery_receipt_sha256": sha(delivery_bytes),
+         "gallery_build_json": str(build_file), "gallery_build_json_sha256": sha(build_bytes), "commands": commands,
+-        "scope": "Private original-e48 Film first-Last preparation only; fixed actual14 data prerequisite, no strong14 cleanup claim, no UI. Original delivered App and CLI unchanged. Private CFID/signature bytes alone may change; every Mach-O section and normalized non-signature byte verified. Not visual acceptance."}
++        "observer_build_manifest": str(observer_build_path), "observer_build_manifest_sha256": OBSERVER_MANIFEST_SHA,
++        "observer_source_app_sha256": OBSERVER_GUI, "diagnostic_destination": str(diagnostic_destination),
++        "scope": "Private actual401766 observer Film first-Last preparation only; original CLI31a and fixed actual14 data prerequisite, no strong14 cleanup claim, no UI. Source observer App e2fb and delivered CLI unchanged. Private CFID/signature bytes alone may change; every Mach-O section and normalized non-signature byte verified. Fresh diagnostic destination is separate from capture/cleanup truth. Not visual or diagnostic acceptance."}
+     (out / "locks.json").write_text(json.dumps(locks, indent=2)+"\n")
+     return 0
+ 

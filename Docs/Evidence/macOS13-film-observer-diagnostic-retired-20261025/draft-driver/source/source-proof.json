@@ -1,0 +1,28 @@
+{
+  "FocusGuard_sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d",
+  "UI_queries_sampling_AX_cleanup_order_outside_three_replacements_byte_exact": true,
+  "canonical_sha256": "c4a1bd81e61079a75047e9cfc1f1407b2f12de1ccad7744878ff98975839ee9b",
+  "canonical_source": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/source/FilmFirstLast.swift",
+  "compiled_or_executed": false,
+  "derived_bytes": 32871,
+  "derived_sha256": "8bdf078fd1b75c8e4dd8b5c20725a12462491c9e92108818fd0b6e86b812ad0b",
+  "environment_contract": "Wrapper passes only BERN_FILM_LAST_OBSERVER_DESTINATION. Collector removes it from shared env; CLI and explicit Guard environment receive neither diagnostic key. Only unique App environment copy receives BERN_FILM_LAST_OBSERVATION_FILE. No global user environment changes.",
+  "exact_replacements": 3,
+  "inverse_to_c4_byte_exact": true,
+  "replacement_pairs": [
+    [
+      "var env = ProcessInfo.processInfo.environment, process: Process?, timer: Timer?, heartbeatError: String?, mainID: CGWindowID = 0\n",
+      "var env = ProcessInfo.processInfo.environment, process: Process?, timer: Timer?, heartbeatError: String?, mainID: CGWindowID = 0\nlet filmObservationDestination = env.removeValue(forKey:\"BERN_FILM_LAST_OBSERVER_DESTINATION\")\n"
+    ],
+    [
+      "            helper.arguments = [\"cleanup\",appURL.path,frontPath,owned.path]\n",
+      "            helper.arguments = [\"cleanup\",appURL.path,frontPath,owned.path]\n            helper.environment = env\n"
+    ],
+    [
+      "    let p = Process(); p.executableURL = appURL.appendingPathComponent(\"Contents/MacOS/Gallery\"); p.arguments = [\"-AppleLanguages\",\"(en)\",\"-AppleLocale\",\"en_US\"]; p.environment = env\n",
+      "    var appEnvironment = env\n    appEnvironment[\"BERN_FILM_LAST_OBSERVATION_FILE\"] = filmObservationDestination\n    let p = Process(); p.executableURL = appURL.appendingPathComponent(\"Contents/MacOS/Gallery\"); p.arguments = [\"-AppleLanguages\",\"(en)\",\"-AppleLocale\",\"en_US\"]; p.environment = appEnvironment\n"
+    ]
+  ],
+  "report_schema_and_argument_API_unchanged": true,
+  "schema": "bern_film_observer13_collector_env_only_source_v1"
+}

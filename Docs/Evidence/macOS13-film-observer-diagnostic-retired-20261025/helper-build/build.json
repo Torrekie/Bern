@@ -1,0 +1,201 @@
+{
+  "kind": "film_last_observer13_helpers_build_only",
+  "success": true,
+  "target": "arm64-apple-macosx13.0",
+  "language_mode": "5",
+  "requested_sdk_path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+  "commands": [
+    {
+      "argv": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+        "-swift-version",
+        "5",
+        "-O",
+        "-j",
+        "2",
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-module-cache-path",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/module-cache",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-driver-preparation/source/FilmFirstLast.swift",
+        "-o",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 41.57928504195297,
+      "log": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast.compile.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.07057058298960328,
+      "log": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast.signature.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.1898033749894239,
+      "log": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast.build.txt",
+        "bytes": 274,
+        "sha256": "8bc92232b89c052e34d61497a36d9f95d4cda36fd9b3eccb0ea83db26774f63e"
+      }
+    },
+    {
+      "argv": [
+        "lipo",
+        "-archs",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.06981491699116305,
+      "log": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast.arch.txt",
+        "bytes": 6,
+        "sha256": "c1669e1d8edca98769c37d494b76442a1d6e5ffffd7b4da1fb63aef8ebaf6f01"
+      }
+    },
+    {
+      "argv": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+        "-swift-version",
+        "5",
+        "-O",
+        "-j",
+        "2",
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-module-cache-path",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/module-cache",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-driver-preparation/source/FocusGuard.swift",
+        "-o",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 8.714450458006468,
+      "log": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard.compile.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.16906583297532052,
+      "log": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard.signature.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.22423774999333546,
+      "log": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard.build.txt",
+        "bytes": 271,
+        "sha256": "09f373562022e6de8e8b2ac50d3354d344a7bdc8f2d0fb89439ebab65091d005"
+      }
+    },
+    {
+      "argv": [
+        "lipo",
+        "-archs",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.04538304201560095,
+      "log": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard.arch.txt",
+        "bytes": 6,
+        "sha256": "c1669e1d8edca98769c37d494b76442a1d6e5ffffd7b4da1fb63aef8ebaf6f01"
+      }
+    }
+  ],
+  "binaries": {
+    "FilmFirstLast": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FilmFirstLast",
+      "bytes": 217840,
+      "sha256": "6664532fddac38bf274577c31a9efd07ca40e0127cf5d0711340895367752409"
+    },
+    "FocusGuard": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-helper-build/FocusGuard",
+      "bytes": 104088,
+      "sha256": "fb6594e71032d7a838fba8ae3529aa2dcfddad1c936a027886948a5b3958b26b"
+    }
+  },
+  "scope": "Build-only; no helper, App, native capture or UI execution",
+  "source_package_manifest_sha256": "8b6ac6b1c6997b8affedff173eb7f52626eb5e9c15eb3519505ba22bab1c9240",
+  "source_before": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-driver-preparation/source/FilmFirstLast.swift",
+      "bytes": 32871,
+      "sha256": "8bdf078fd1b75c8e4dd8b5c20725a12462491c9e92108818fd0b6e86b812ad0b"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-driver-preparation/source/FocusGuard.swift",
+      "bytes": 8082,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d"
+    }
+  ],
+  "compiler_version": "Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\n",
+  "actual_metadata": {
+    "FilmFirstLast": {
+      "min_os": "13.0",
+      "embedded_sdk": "13.0"
+    },
+    "FocusGuard": {
+      "min_os": "13.0",
+      "embedded_sdk": "13.0"
+    }
+  },
+  "source_after": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-driver-preparation/source/FilmFirstLast.swift",
+      "bytes": 32871,
+      "sha256": "8bdf078fd1b75c8e4dd8b5c20725a12462491c9e92108818fd0b6e86b812ad0b"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-observer13-driver-preparation/source/FocusGuard.swift",
+      "bytes": 8082,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d"
+    }
+  ],
+  "actual_min_os": "13.0",
+  "actual_embedded_sdk": "13.0",
+  "sdk_metadata_note": "Actual embedded SDK is read from each binary, separately from requested headers."
+}

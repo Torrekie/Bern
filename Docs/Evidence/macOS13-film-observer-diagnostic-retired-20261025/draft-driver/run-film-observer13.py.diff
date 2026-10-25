@@ -1,0 +1,186 @@
+--- a/run-film13.py
++++ b/run-film-observer13.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""One original-e48 Film initial/first-Last capture; no action without --run."""
++"""One exact-build observer Film initial/first-Last capture; no action without --run."""
+ import argparse
+ import ctypes
+ import hashlib
+@@ -16,14 +16,19 @@
+ import time
+ 
+ SOURCE = 'e48fff46b3a92a28465ad74295bd273a9d69af7d'
+-KIND = 'film_first_last13_capture'
++KIND = 'film_last_observer13_capture'
++CAPTURE_KIND = 'film_first_last13_capture'
++
++OBSERVER_GUI = 'e2fbcea5fdc4cea6ebcfb00e1214e55badd78d82a31ebd248e18971e2f6c39a2'
++OBSERVER_MANIFEST_SHA = 'fdb3ff8ca2fc2235531289c98fd5724f1eae816babd9646c83bf74587d86243f'
++
+ CONTROL_GUI = 'd44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c'
+ CONTROL_CLI = '31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5'
+ DELIVERY_SHA = 'e6fbe8ea1c3f62dc89a5e6d56c6cc40c6b369a15eefed2d4e07dbb4c3b9a71c7'
+ GALLERY_BUILD_SHA = 'a76b48042bb473e4f372e26ef84d480482e543fb876d15037662a42482bd454a'
+-COLLECTOR_SOURCE_SHA = 'c4a1bd81e61079a75047e9cfc1f1407b2f12de1ccad7744878ff98975839ee9b'
++COLLECTOR_SOURCE_SHA = '8bdf078fd1b75c8e4dd8b5c20725a12462491c9e92108818fd0b6e86b812ad0b'
+ GUARD_SOURCE_SHA = 'ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d'
+-LOCAL_SOURCE_MANIFEST_SHA = 'fa2fe88074dad1cea738227d7925d6e1be03d8247a7f85ac1f1c8504fff10f26'
++LOCAL_SOURCE_MANIFEST_SHA = '8b6ac6b1c6997b8affedff173eb7f52626eb5e9c15eb3519505ba22bab1c9240'
+ 
+ REFERENCE14_SHA = '8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50'
+ REFERENCE14_RESULT_SHA = '54b06d51178cf8e57d947c2de193f837b36ab0a52fa0e341357f0d6972cba0bf'
+@@ -68,6 +73,23 @@
+     return ref,[path,*children]
+ 
+ 
++def read_observer_manifest(path):
++    path = path.resolve(strict=True)
++    assert path.is_file() and not path.is_symlink() and file_hash(path) == OBSERVER_MANIFEST_SHA
++    value = json.loads(path.read_text())
++    assert value['schema'] == 'bern_film_last_observer_build_v1' and value['success'] is True
++    assert value['source_sha'] == SOURCE and value['run_id'] == '40176620054'
++    assert value['harness_sha'] == '892c392ffec22a10b282e8d27d41386bac5def64'
++    assert value['gui'] == {'bytes': 3770800, 'sha256': OBSERVER_GUI}
++    assert len(value['app_members']) == 10 and value['app_members']['Contents/MacOS/Gallery'] == value['gui']
++    assert value['build']['architecture'] == 'arm64' and value['build']['minimum_macos'] == '13.0'
++    assert value['build']['profile'] == 'release' and value['toolchain']['actual_app_embedded_sdk'] == '26.2'
++    assert value['generated_actual']['BernRuntime.swift']['sha256'] == 'e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663'
++    assert value['generated_actual']['BernGenerated.swift']['sha256'] == 'f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653'
++    assert value['generated_actual']['BernStyle.swift']['sha256'] == '179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e'
++    return value, path
++
++
+ parser = argparse.ArgumentParser(description=__doc__)
+ parser.add_argument('--run', action='store_true')
+ parser.add_argument('--collector', required=True, type=Path)
+@@ -87,17 +109,17 @@
+ 
+ assert platform.mac_ver()[0].split('.')[0] == '13' and platform.machine() == 'arm64'
+ assert os.environ.get('CI') != 'true' and os.environ.get('GITHUB_ACTIONS') != 'true', 'Local13 cannot impersonate CI'
+-assert 'BERN_FRAME_ROW_LEDGER_OUTPUT_DIR' not in os.environ and 'BERN_SCROLL_TRACE_DIR' not in os.environ, 'No ledger or scroll trace environment allowed'
++assert 'BERN_FRAME_ROW_LEDGER_OUTPUT_DIR' not in os.environ and 'BERN_SCROLL_TRACE_DIR' not in os.environ and 'BERN_FILM_LAST_OBSERVATION_FILE' not in os.environ and 'BERN_FILM_LAST_OBSERVER_DESTINATION' not in os.environ, 'No inherited ledger, scroll trace or observer destination allowed'
+ sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+ for value in [args.collector_sha256,args.focus_guard_sha256,args.locks_sha256,args.helper_build_sha256]:
+     assert re.fullmatch(r'[0-9a-f]{64}',value), 'Root-reviewed actual digest required'
+ locks_path=args.locks.resolve(strict=True); assert sha(locks_path)==args.locks_sha256
+ locks=json.loads(locks_path.read_text())
+-assert set(locks)=={'schema','kind','source_sha','film','delivery_receipt','delivery_receipt_sha256','gallery_build_json','gallery_build_json_sha256','commands','scope','reference14','reference14_sha256'}
+-assert locks['schema']=='bern_film_first_last13_locks_v1' and locks['source_sha']==SOURCE and locks['kind']==KIND
++assert set(locks)=={'schema','kind','source_sha','film','delivery_receipt','delivery_receipt_sha256','gallery_build_json','gallery_build_json_sha256','commands','scope','reference14','reference14_sha256','observer_build_manifest','observer_build_manifest_sha256','observer_source_app_sha256','diagnostic_destination'}
++assert locks['schema']=='bern_film_last_observer13_locks_v1' and locks['source_sha']==SOURCE and locks['kind']==KIND
+ group=locks['film']
+ assert set(group)=={'app','cli','bundle_id','private_gui_sha256','original_gui_sha256','cli_sha256','receipt'}
+-assert group['original_gui_sha256']==CONTROL_GUI and group['cli_sha256']==CONTROL_CLI
++assert group['original_gui_sha256']==OBSERVER_GUI and group['cli_sha256']==CONTROL_CLI
+ collector,guard=(p.resolve(strict=True) for p in [args.collector,args.focus_guard])
+ app=Path(group['app']).resolve(strict=True);cli=Path(group['cli']).resolve(strict=True)
+ assert collector.is_file() and guard.is_file() and cli.is_file() and app.is_dir()
+@@ -113,7 +135,7 @@
+ helper_build_path=args.helper_build.resolve(strict=True)
+ assert sha(helper_build_path)==args.helper_build_sha256
+ helper_build=json.loads(helper_build_path.read_text())
+-assert helper_build['kind']=='film_first_last13_helpers_build_only' and helper_build['target']=='arm64-apple-macosx13.0'
++assert helper_build['kind']=='film_last_observer13_helpers_build_only' and helper_build['target']=='arm64-apple-macosx13.0'
+ assert helper_build['actual_min_os']=='13.0' and re.fullmatch(r'[0-9]+(?:\.[0-9]+)+',helper_build['actual_embedded_sdk'])
+ expected_sources={str(sources/'FilmFirstLast.swift'):COLLECTOR_SOURCE_SHA,str(sources/'FocusGuard.swift'):GUARD_SOURCE_SHA}
+ for key in ['source_before','source_after']:
+@@ -123,14 +145,14 @@
+     assert Path(row['path']).resolve(strict=True)==binary and row['sha256']==h and row['bytes']==binary.stat().st_size
+ assert all(row['exit_code']==0 for row in helper_build['commands'])
+ assert sha(app/'Contents/MacOS/Gallery')==group['private_gui_sha256'] and sha(cli)==CONTROL_CLI
+-assert re.fullmatch(r'dev\.bern\.frame13\.film\.[0-9a-f]{32}',group['bundle_id'])
++assert re.fullmatch(r'dev\.bern\.frame13\.filmobserver\.[0-9a-f]{32}',group['bundle_id'])
+ assert plistlib.loads((app/'Contents/Info.plist').read_bytes())['CFBundleIdentifier']==group['bundle_id']
+ isolation_path=Path(group['receipt']).resolve(strict=True)
+ isolation=json.loads(isolation_path.read_text())
+ assert isolation['kind']==KIND and isolation['source_sha']==SOURCE
+ assert isolation['reference14']==locks['reference14'] and isolation['reference14_sha256']==locks['reference14_sha256']==REFERENCE14_SHA
+ assert isolation['private_app']==str(app) and isolation['private_bundle_id']==group['bundle_id']
+-assert isolation['original_gui_sha256']==CONTROL_GUI and isolation['private_gui_sha256']==group['private_gui_sha256']
++assert isolation['original_gui_sha256']==OBSERVER_GUI and isolation['private_gui_sha256']==group['private_gui_sha256']
+ assert isolation['cli']==str(cli) and isolation['cli_sha256']==CONTROL_CLI
+ assert isolation['sections_and_signature_storage_sizes_normalized_equal'] is True and isolation['originals_unchanged'] is True
+ def bundle_members(folder):
+@@ -139,7 +161,7 @@
+ original_app=Path(isolation['original_app']).resolve(strict=True)
+ assert bundle_members(app)==isolation['private_members']
+ assert bundle_members(original_app)==isolation['original_members']
+-assert sha(original_app/'Contents/MacOS/Gallery')==CONTROL_GUI
++assert sha(original_app/'Contents/MacOS/Gallery')==OBSERVER_GUI
+ 
+ delivery_path=Path(locks['delivery_receipt']).resolve(strict=True)
+ build_path=Path(locks['gallery_build_json']).resolve(strict=True)
+@@ -150,7 +172,21 @@
+ delivery=json.loads(delivery_path.read_text());build=json.loads(build_path.read_text())
+ assert delivery['source_sha']==SOURCE and delivery['build_run']==40070407306 and delivery['strict_signatures_after_move'] is True
+ assert delivery['delivered_gui_sha256']==CONTROL_GUI and delivery['delivered_cli_sha256']==CONTROL_CLI
+-assert isolation['original_members']=={row['path']:row['sha256'] for row in delivery['original_archive_app_members_verified_after_move']}
++observer_build_path=Path(locks['observer_build_manifest']).resolve(strict=True)
++observer,observer_build_path=read_observer_manifest(observer_build_path)
++assert locks['observer_build_manifest_sha256']==isolation['observer_build_manifest_sha256']==OBSERVER_MANIFEST_SHA
++assert isolation['observer_build_manifest']==str(observer_build_path)
++assert locks['observer_source_app_sha256']==isolation['observer_source_app_sha256']==OBSERVER_GUI
++assert isolation['original_members']=={name:row['sha256'] for name,row in observer['app_members'].items()}
++assert all((original_app/name).stat().st_size==row['bytes'] for name,row in observer['app_members'].items())
++diagnostic_destination=Path(locks['diagnostic_destination'])
++assert diagnostic_destination.is_absolute() and diagnostic_destination==diagnostic_destination.resolve()
++assert isolation_path.parent.parent==locks_path.parent
++assert diagnostic_destination==locks_path.parent/'diagnostic/film-last-observation.json'
++assert isolation['diagnostic_destination']==str(diagnostic_destination)
++assert diagnostic_destination.parent.is_dir() and not diagnostic_destination.parent.is_symlink()
++assert diagnostic_destination.parent.stat().st_uid==os.getuid() and diagnostic_destination.parent.stat().st_mode & 0o777==0o700
++assert not diagnostic_destination.exists() and not diagnostic_destination.is_symlink()
+ assert build['source_sha']==SOURCE and build['architecture']=='arm64' and build['minimum_macos']=='13.0' and build['sdk']=='26.2'
+ assert build['executable_sha256']==CONTROL_GUI and build['cli_sha256']==CONTROL_CLI
+ assert (build_path.parent/build['delivery_receipt']).resolve(strict=True)==delivery_path
+@@ -160,9 +196,9 @@
+ 
+ output=args.output.resolve();sidecar=Path(str(output)+'.watchdog')
+ assert not output.exists() and not sidecar.exists(), 'Fresh output/watchdog required'
+-inputs=[locks_path,collector,guard,app,cli,isolation_path,original_app,delivery_path,build_path,sources,helper_build_path,reference_path.parent,
++inputs=[locks_path,collector,guard,app,cli,isolation_path,original_app,delivery_path,build_path,observer_build_path,observer_build_path.parent,diagnostic_destination.parent,sources,helper_build_path,reference_path.parent,
+         Path(__file__).resolve().parent,Path(__file__).resolve(),*source_inputs,*reference_inputs]
+-pinned_inputs={str(p):sha(p) for p in [locks_path,isolation_path,helper_build_path,Path(__file__).resolve(),*source_inputs,*reference_inputs]}
++pinned_inputs={str(p):sha(p) for p in [locks_path,isolation_path,helper_build_path,observer_build_path,Path(__file__).resolve(),*source_inputs,*reference_inputs]}
+ assert all(dst!=p and dst not in p.parents and p not in dst.parents for dst in [output,sidecar] for p in inputs), 'Output/watchdog and inputs must not overlap in either direction'
+ sidecar.mkdir(parents=True)
+ for name,path in [('collector',collector),('focus-guard',guard),('private-app',app),('cli',cli)]:
+@@ -170,7 +206,10 @@
+     (sidecar/(name+'-signature.txt')).write_bytes(result.stdout+result.stderr)
+     assert result.returncode==0, name+' signature verification failed'
+ report={'success':False,'kind':KIND,'outer_wait_cap_seconds':95,'collector_deadline_seconds':75,'source_sha':SOURCE,
+-        'scope':'Original-e48 Film initial and first Last only; actual14 data prerequisite is not strong cleanup or cross-OS acceptance',
++        'scope':'Actual401766 observer Film initial and first Last only; original CLI and actual14 data prerequisite is not strong cleanup or cross-OS acceptance; diagnostic validation remains separate',
++        'observer_build_manifest':str(observer_build_path),'observer_build_manifest_sha256':OBSERVER_MANIFEST_SHA,
++        'observer_source_app_sha256':OBSERVER_GUI,'diagnostic_destination':str(diagnostic_destination),
++        'diagnostic_validation_performed':False,
+         'app':str(app),'cli':str(cli),'output':str(output),'collector_sha256':sha(collector),'focus_guard_sha256':sha(guard),
+         'collector_source_sha256':COLLECTOR_SOURCE_SHA,'focus_guard_source_sha256':GUARD_SOURCE_SHA,
+         'helper_scope':'Local Film adaptation with separately documented startup/heartbeat/sampling timing; not the same collector as14',
+@@ -292,13 +331,15 @@
+     (sidecar / 'original-front.json').write_text(json.dumps(front, indent=2) + '\n')
+     output.mkdir(parents=True)
+     env = os.environ.copy()
+-    for key in ['CI','GITHUB_ACTIONS','GITHUB_SHA','GITHUB_RUN_ID','BERN_IPC_DIR','BERN_SNAPSHOT_DIR','BERN_MOTION','BERN_FRAME_ROW_LEDGER_OUTPUT_DIR','BERN_SCROLL_TRACE_DIR']:
++    for key in ['CI','GITHUB_ACTIONS','GITHUB_SHA','GITHUB_RUN_ID','BERN_IPC_DIR','BERN_SNAPSHOT_DIR','BERN_MOTION','BERN_FRAME_ROW_LEDGER_OUTPUT_DIR','BERN_SCROLL_TRACE_DIR','BERN_FILM_LAST_OBSERVATION_FILE','BERN_FILM_LAST_OBSERVER_DESTINATION']:
+         env.pop(key,None)
+     env['BERN_FRAME_LOCAL_EVENTS']='own-pid-active13'
+     env['BERN_SOURCE_SHA']=locks['source_sha']
+     assert 'BERN_FRAME_ROW_LEDGER_OUTPUT_DIR' not in env
+     env['BERN_PICTURE_FOCUS_GUARD'] = str(guard)
+     env['BERN_PICTURE_WATCHDOG_FRONT'] = str(sidecar / 'original-front.json')
++    assert not diagnostic_destination.exists() and not diagnostic_destination.is_symlink()
++    env['BERN_FILM_LAST_OBSERVER_DESTINATION'] = str(diagnostic_destination)
+     report['phase'] = 'collector'; save()
+     with (sidecar / 'collector.log').open('wb') as log:
+         process = subprocess.Popen([str(collector), str(app), str(cli), str(output)],
+@@ -444,7 +485,7 @@
+             assert data['row_ledger_enabled'] is False
+             assert 'row_ledger' not in data and 'row_ledger_arm' not in data
+             assert not (output/'ledger').exists() and not (output/'ledger').is_symlink()
+-            assert data['kind']==KIND and data['label']=='film-first-last' and data['ci_run_id']=='local' and data['collector_executable_sha256']==args.collector_sha256
++            assert data['kind']==CAPTURE_KIND and data['label']=='film-first-last' and data['ci_run_id']=='local' and data['collector_executable_sha256']==args.collector_sha256
+             assert data['deadline_seconds']==75 and data['scenario']=='direct' and data['followup_sequence']=='first-last-only' and data['scroll_trace_enabled'] is False
+             assert data['system_preferences']=={'increase_contrast':False,'reduce_motion':False,'reduce_transparency':False}
+             assert data['final_context']=={'appearance':'Light','page':'Film','requested_action':'first Last only','terminal_states':2}

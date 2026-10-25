@@ -1,5 +1,8 @@
 # modern SwiftUI：macOS 14 → 13 剩余 API 等同审计
 
+> **2026-10-25 当前口径**：用户不要求像素级复现。本文旧视觉门槛与部分早期实现状态是历史记录；当前源分支与实质功能边界以[新 API 审查](../Evidence/macOS13-native-logic-acceptance-20261025/source-audit/README.md)和[原生逻辑验收合同](macOS13-Native-Logic-Acceptance.md)为准。系统外观差异不单独作为缺陷，未验证功能也不自动通过。
+
+
 审计源码：`outputs/Bern`，最终快照 `5226454`（原始上游 `ffbdbdf3d41bb6492a8b13d3fa6182ee636606ee`）。只读检查了 modern SwiftUI 的所有共享 Swift 模板、Mac AppKit 模板及 Rust Swift 生成器；未以旧 Objective-C 原型作为基线。没有 Rust 构建、UI 运行、下载或远程操作。
 
 后续进展：`f9e08b1` 已为生成器选中的普通图标 PopoverButton 复用系统 `NSButton`，保留手写 helper 默认行为及有样式/显式尺寸/toolbar 等排除条件；未修改通用圆形样式或 Menu。独立窗口的 native action 检查已通过，该版两整应用已构建并在13启动，Gallery Frame绑定打开/编辑已通过；14/13 Frame实图对照仍待验收。以下正文保留 `5226454` 审计时的发现；当前状态以[验收记录](macOS13-Acceptance.md)为准。

@@ -1,0 +1,176 @@
+{
+  "schema": "bern_film_observer13_protocol_source_review_v1",
+  "verdict": "no_source_blocker_final_hashes_bound_native_acceptance_not_performed",
+  "scope": "One local13 observer Film initial/first-Last protocol, source-only; no execution authorization by file.",
+  "inputs": [
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/source/FilmFirstLast.swift",
+      "bytes": 32616,
+      "sha256": "c4a1bd81e61079a75047e9cfc1f1407b2f12de1ccad7744878ff98975839ee9b"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/driver/prepare-film13.py",
+      "bytes": 15575,
+      "sha256": "ae223d27e45d894bb6fdd3654427f9ae193056bb36eb89f0a18901e78d3ba065"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/driver/run-film13.py",
+      "bytes": 30344,
+      "sha256": "011615835876decee67583de3c5d95adcaefc54054c6879ac4a44427c4b1fe8b"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-last-observer-build-40176620054/preparation/build/.github/scripts/film-last-observer/FilmLastObservation.swift.inc",
+      "bytes": 12641,
+      "sha256": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/prepare-film-observer13.py",
+      "bytes": 18444,
+      "sha256": "1e00b1275b92b144e5460379caec09e3d5d155f0b8354d2bb88568cc7aec51af"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/run-film-observer13.py",
+      "bytes": 34013,
+      "sha256": "58cac36add8e46b4010c446c41ed3006028def38a4db2c3bb5dc49bcfd79767a"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/source/FilmFirstLast.swift",
+      "bytes": 32871,
+      "sha256": "8bdf078fd1b75c8e4dd8b5c20725a12462491c9e92108818fd0b6e86b812ad0b"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/source/FocusGuard.swift",
+      "bytes": 8082,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/source/source-proof.json",
+      "bytes": 2221,
+      "sha256": "807c8e446f6105389d1993a040dfbfe982058e4a5b9d58b35c6c522b0a5e6fe9"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/source/SHA256SUMS",
+      "bytes": 329,
+      "sha256": "8b6ac6b1c6997b8affedff173eb7f52626eb5e9c15eb3519505ba22bab1c9240"
+    },
+    {
+      "path": "work/film-observer13-analysis-preparation/analyze.py",
+      "bytes": 27282,
+      "sha256": "0c4bb17c5ea544081836bb7d84d3c7b5817f114d73d23916523ef8e31ce0f5f3"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/SHA256SUMS",
+      "bytes": 1065,
+      "sha256": "e13f74261e5b613175bd85047068350c6a8a656fa94cbd8d2574cc6a381f5f2e"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/source-proof.json",
+      "bytes": 4668,
+      "sha256": "4402f1933e0091e4e5bf9fba932712f5e0125a18f01ba4488270b565b1bfa693"
+    },
+    {
+      "path": "work/film-observer13-driver-preparation/README.md",
+      "bytes": 5348,
+      "sha256": "a02b75d1775b51b18453d85c20f43ec3ec94b3daf091c3a745ae979448f33888"
+    },
+    {
+      "path": "work/film-observer13-analysis-preparation/SHA256SUMS",
+      "bytes": 235,
+      "sha256": "d501cd0b945f883ea44231bb8a7950658a6e90939fae5f1a90d362ddb9d3b908"
+    },
+    {
+      "path": "work/film-observer13-analysis-preparation/README.md",
+      "bytes": 4304,
+      "sha256": "418c3e400460df5e1fb918c499b830cb90027757fec2d4fc2874f8708f9671b1"
+    }
+  ],
+  "findings": [
+    {
+      "id": "app_only_environment",
+      "status": "resolved_in_source",
+      "details": "Old c4 shared env with CLI. Exactly three new collector replacements remove the handoff from shared env, explicitly set cleanup Guard env, and put core key only in own App environment copy. Wrapper rejects inherited handoff/core keys. Inverse restoration is byteexact c4; Guard ab78 exact."
+    },
+    {
+      "id": "new_build_identity",
+      "status": "required_in_source",
+      "details": "Fresh schema and private dev.bern.frame13.filmobserver UUID. Observer manifest fdb3/source e48/run401766 locks actual GUI e2fb and all10 members, separately from original delivered CLI31a and old d44 control/reference provenance. Sections and normalized non-signature bytes verified against actual observer source App; original files remain read-only."
+    },
+    {
+      "id": "early_inspect_order",
+      "status": "preserved_in_source",
+      "details": "Initial stable PNG -> terminal AX -> inspect. Pre-Last target lookup inspect occurs before Last activation. After Last activation, stable PNG -> terminal AX -> first postrequest inspect -> window list; no added product inspect in this interval."
+    },
+    {
+      "id": "cleanup_and_deadlines",
+      "status": "preserved_in_source",
+      "details": "Current original-front kernel receipt, exact child parent/path/bundle/kernel bootstrap, restore before stopping owned child, missing ownership/IPC fail closed, output/input bidirectional isolation. 95s outer wait,75s collector,8s CLI,2s terminal AX, original defaults deletion5s. Guard code and existing Python helper function AST retained."
+    },
+    {
+      "id": "endpoint_and_diagnostic",
+      "status": "separate_source_gates",
+      "details": "Offline validator compares two endpoint whole original-mode rasters plus ICC/scale/canvas and exact relative AX xywh against fixed original13, without ROI/tolerance/fit. Diagnostic schema/caps/Last6/owned PID/weak identity/first postAX inspect separately gated. Any failure stops interpretation, without rewriting capture or cleanup truth."
+    }
+  ],
+  "limitations": [
+    "No native acquisition, compilation, signing, prepare/run invocation, Git, network, CI, artifact/helper execution, pixel algorithm execution or app copying performed by reviewer.",
+    "Fresh actual helper build receipt and executable hashes, current App/private signature/members, original-front preflight and one actual runtime remain root execution gates.",
+    "Five slots are first eligible coverage and may represent different work items. Writer records setter request, not animation completion; weak/native identities are source-backed packet claims.",
+    "Request wanted/position/target typed Int64 Last6 and all slots are future validation requirements; missing or malformed diagnostic must remain incomplete.",
+    "PNG and AX are separate observations; no absolute PNG timestamp. No14 runtime/no-effect/cross-OS or14.5pt cause or product fix acceptance."
+  ],
+  "remaining": [],
+  "frozen_package_manifests": {
+    "work/film-observer13-driver-preparation/SHA256SUMS": "e13f74261e5b613175bd85047068350c6a8a656fa94cbd8d2574cc6a381f5f2e",
+    "work/film-observer13-analysis-preparation/SHA256SUMS": "d501cd0b945f883ea44231bb8a7950658a6e90939fae5f1a90d362ddb9d3b908"
+  },
+  "manifest_entries_verified": {
+    "work/film-observer13-driver-preparation/SHA256SUMS": 12,
+    "work/film-observer13-driver-preparation/source/SHA256SUMS": 4,
+    "work/film-observer13-analysis-preparation/SHA256SUMS": 3
+  },
+  "independent_exact_checks": {
+    "existing_python_functions_classes": {
+      "prepare-film-observer13.py": {
+        "old_functions_classes_byte_exact": [
+          "sha",
+          "macho",
+          "members",
+          "app_machos",
+          "file_hash",
+          "read_reference"
+        ],
+        "new_function": [
+          "read_observer_manifest"
+        ]
+      },
+      "run-film-observer13.py": {
+        "old_functions_classes_byte_exact": [
+          "file_hash",
+          "read_reference",
+          "bundle_members",
+          "ProcBSDInfo",
+          "process_info",
+          "valid_start",
+          "same_process",
+          "exact_instance_absent",
+          "executable",
+          "parent",
+          "save",
+          "helper",
+          "refresh_owned",
+          "bootstrap_owned"
+        ],
+        "new_function": [
+          "read_observer_manifest"
+        ]
+      }
+    },
+    "runner_process_none_to_exit_after_three_inverse_substitutions_byte_exact": true,
+    "collector_three_inverse_replacements_to_c4_byte_exact": true,
+    "FocusGuard_ab78_byte_exact": true,
+    "new_collector_and_source_packet_pins_coupled": true,
+    "all_three_python_sources_ast_parse_only": true
+  },
+  "budget_semantics": "75s/8s/2s original collector loop-entry budgets remain unchanged. Offline validator records actual completion duration; it does not invent a tighter wall-clock completion limit around final AX call/PNG encoding.",
+  "runtime_result": "not_performed_by_reviewer; root actual one-case acquisition and endpoint/diagnostic acceptance remain separate"
+}

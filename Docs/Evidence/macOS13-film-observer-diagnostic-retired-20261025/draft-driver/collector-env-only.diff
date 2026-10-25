@@ -1,0 +1,29 @@
+--- a/canonical-c4/FilmFirstLast.swift
++++ b/env-only/FilmFirstLast.swift
+@@ -27,6 +27,7 @@
+ let requestedLocalEvents = ProcessInfo.processInfo.environment["BERN_FRAME_LOCAL_EVENTS"] ?? ""
+ let sendsHeartbeat = requestedLocalEvents == "own-pid-active13"
+ var env = ProcessInfo.processInfo.environment, process: Process?, timer: Timer?, heartbeatError: String?, mainID: CGWindowID = 0
++let filmObservationDestination = env.removeValue(forKey:"BERN_FILM_LAST_OBSERVER_DESTINATION")
+ var session = "", commands = [[String:Any]](), stages = [[String:Any]](), events = [[String:Any]](), activationRequests = [[String:Any]]()
+ var inactiveCaptureSamples = [[String:Any]]()
+ let ciRunID = env["GITHUB_RUN_ID"] ?? "local"
+@@ -308,6 +309,7 @@
+                   row["bundle_id"] as? String == Bundle(url:appURL)?.bundleIdentifier else { throw Failure(description:"Missing/mismatched outer kernel ownership receipt; own child left for guarded cleanup") }
+             let helper = Process(); helper.executableURL = URL(fileURLWithPath:guardPath)
+             helper.arguments = ["cleanup",appURL.path,frontPath,owned.path]
++            helper.environment = env
+             let log = output.appendingPathComponent("cleanup-helper.json"), err = output.appendingPathComponent("cleanup-helper.stderr.txt")
+             _ = fm.createFile(atPath:log.path,contents:nil); _ = fm.createFile(atPath:err.path,contents:nil)
+             let oh = try FileHandle(forWritingTo:log), eh = try FileHandle(forWritingTo:err)
+@@ -357,7 +359,9 @@
+     for key in ["BERN_SNAPSHOT_DIR","BERN_MOTION"] { env.removeValue(forKey:key) }
+     report["app_executable_sha256"] = sha(try Data(contentsOf:appURL.appendingPathComponent("Contents/MacOS/Gallery")))
+     report["cli_sha256"] = sha(try Data(contentsOf:cliURL))
+-    let p = Process(); p.executableURL = appURL.appendingPathComponent("Contents/MacOS/Gallery"); p.arguments = ["-AppleLanguages","(en)","-AppleLocale","en_US"]; p.environment = env
++    var appEnvironment = env
++    appEnvironment["BERN_FILM_LAST_OBSERVATION_FILE"] = filmObservationDestination
++    let p = Process(); p.executableURL = appURL.appendingPathComponent("Contents/MacOS/Gallery"); p.arguments = ["-AppleLanguages","(en)","-AppleLocale","en_US"]; p.environment = appEnvironment
+     let log = output.appendingPathComponent("application.log"); _ = fm.createFile(atPath:log.path,contents:nil); let logHandle = try FileHandle(forWritingTo:log); defer { logHandle.closeFile() }
+     p.standardOutput = logHandle; p.standardError = logHandle; try p.run(); process = p
+     let ready = min(uptimeDeadline,now()+18)

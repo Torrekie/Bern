@@ -1,0 +1,116 @@
+{
+  "actual_manifest": {
+    "all_10_member_rows_bound_by_exact_manifest": true,
+    "bytes": 5507,
+    "gui": {
+      "bytes": 3770800,
+      "sha256": "e2fbcea5fdc4cea6ebcfb00e1214e55badd78d82a31ebd248e18971e2f6c39a2"
+    },
+    "path": "outputs/Bern/Docs/Evidence/macOS13-film-last-observer-build-40176620054/raw/observer-build.json",
+    "sha256": "fdb3ff8ca2fc2235531289c98fd5724f1eae816babd9646c83bf74587d86243f",
+    "success": true
+  },
+  "actual_source_files": {
+    "prepare-film-observer13.py": {
+      "bytes": 18444,
+      "sha256": "1e00b1275b92b144e5460379caec09e3d5d155f0b8354d2bb88568cc7aec51af"
+    },
+    "run-film-observer13.py": {
+      "bytes": 34013,
+      "sha256": "58cac36add8e46b4010c446c41ed3006028def38a4db2c3bb5dc49bcfd79767a"
+    }
+  },
+  "canonical_next_gate": {
+    "bytes": 2278,
+    "path": "outputs/Bern/Docs/Evidence/macOS13-film-last-observer-build-40176620054/next-gate-review/review.json",
+    "sha256": "85e5f6891de193d7a3100a202e1bbeded34f5736dbbc718819cef97e5f4e6c0e"
+  },
+  "canonical_prepare": {
+    "bytes": 15575,
+    "path": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/driver/prepare-film13.py",
+    "sha256": "ae223d27e45d894bb6fdd3654427f9ae193056bb36eb89f0a18901e78d3ba065"
+  },
+  "canonical_runner": {
+    "bytes": 30344,
+    "path": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/driver/run-film13.py",
+    "sha256": "011615835876decee67583de3c5d95adcaefc54054c6879ac4a44427c4b1fe8b"
+  },
+  "collector": {
+    "Guard_ab78_byte_exact": true,
+    "canonical_sha256": "c4a1bd81e61079a75047e9cfc1f1407b2f12de1ccad7744878ff98975839ee9b",
+    "derived_sha256": "8bdf078fd1b75c8e4dd8b5c20725a12462491c9e92108818fd0b6e86b812ad0b",
+    "exact_environment_replacements": 3,
+    "inverse_original_c4_byte_exact": true,
+    "no_UI_query_sampling_sleep_layout_report_API_addition": true,
+    "source_manifest": {
+      "bytes": 329,
+      "sha256": "8b6ac6b1c6997b8affedff173eb7f52626eb5e9c15eb3519505ba22bab1c9240"
+    }
+  },
+  "collector_report_kind_unchanged": "film_first_last13_capture",
+  "compiler_helpers_App_CLI_native_UI_CI_Git_network_cleanup_executed": false,
+  "diagnostic_truth": "No diagnostic parse/retry/repair or success override. Missing/wrong/early/incomplete output fails separate offline route; no rerun.",
+  "entry_functions_or_modes_executed": false,
+  "inverse_replacements_for_runtime_body": [
+    [
+      "'BERN_FRAME_ROW_LEDGER_OUTPUT_DIR','BERN_SCROLL_TRACE_DIR','BERN_FILM_LAST_OBSERVATION_FILE','BERN_FILM_LAST_OBSERVER_DESTINATION']:",
+      "'BERN_FRAME_ROW_LEDGER_OUTPUT_DIR','BERN_SCROLL_TRACE_DIR']:"
+    ],
+    [
+      "    assert not diagnostic_destination.exists() and not diagnostic_destination.is_symlink()\n    env['BERN_FILM_LAST_OBSERVER_DESTINATION'] = str(diagnostic_destination)\n",
+      ""
+    ],
+    [
+      "assert data['kind']==CAPTURE_KIND and data['label']=='film-first-last'",
+      "assert data['kind']==KIND and data['label']=='film-first-last'"
+    ]
+  ],
+  "locks_schema": "bern_film_last_observer13_locks_v1",
+  "machine_timing_equivalence_claimed": false,
+  "new_lock_fields": [
+    "observer_build_manifest",
+    "observer_build_manifest_sha256",
+    "observer_source_app_sha256",
+    "diagnostic_destination"
+  ],
+  "new_manifest_reader_common_byte_exact": true,
+  "prepare_original_helpers_byte_exact": {
+    "app_machos": true,
+    "file_hash": true,
+    "macho": true,
+    "members": true,
+    "read_reference": true,
+    "sha": true
+  },
+  "preserved_gates": [
+    "macOS13 arm64",
+    "fixed originalCLI31a and old14data reference892165",
+    "newGUIe2fb/manifestfdb3/all10members",
+    "all original strict signatures/Mach-O sections and signature-normalized private copy",
+    "actual source/helper binary/locks/build hashes",
+    "95outer/75inner/18startup/defaultsdelete5seconds",
+    "strong PID/parent/path/kernel identity and originalfront correlation",
+    "restore-before-stop and exact owned IPC/preferences cleanup",
+    "raw false retained on capture/cleanup failure"
+  ],
+  "process_none_to_final_exit_inverse_exact_to_canonical": true,
+  "runner_all_original_functions_classes_byte_exact": {
+    "ProcBSDInfo": true,
+    "bootstrap_owned": true,
+    "bundle_members": true,
+    "exact_instance_absent": true,
+    "executable": true,
+    "file_hash": true,
+    "helper": true,
+    "parent": true,
+    "process_info": true,
+    "read_reference": true,
+    "refresh_owned": true,
+    "same_process": true,
+    "save": true,
+    "valid_start": true
+  },
+  "schema": "bern_film_observer13_driver_static_proof_v1",
+  "source_only": true,
+  "wrapper_kind": "film_last_observer13_capture"
+}

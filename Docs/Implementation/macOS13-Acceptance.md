@@ -1,5 +1,10 @@
 # macOS 13 现代 SwiftUI 移植验收
 
+> **当前验收口径（用户于2026-10-25明确调整）**：不要求像素级复现，以目标平台的原生 UI 逻辑、可读可达布局、交互/状态与动画终态正确为准。细微系统配色、间距、轨迹和落点差异不再单独阻断。执行与收束以[原生逻辑验收合同](macOS13-Native-Logic-Acceptance.md)为准。
+>
+> 以下是历史研究日志：旧 exact PNG/RGB/ICC/ROI/frame/14.5pt/observer 门槛已被新口径取代，原数据和 false 收据仍保留。尚缺的实际功能证据不会自动变成通过。未启用的观察器路线已停止并清理；goal 仍 active，后续平台阶段延期。
+
+
 本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
 
 最新检查点（2026-10-25）：[精确e48 Film的14后续参考](../Evidence/macOS14-film-e48-endpoints-40165343690/README.md)已由既有工作流单次CI40165343690取得，不重编App。真实14.8.9、原e48/d44/CLI31a、active/light/normal三false，一个fresh direct进程后原Last/First/Last-again/wide/restore；六终态AX完整六图、全部36组坐标和7PNG/ICC经独立复核。首次Last Windowpane中心573，重复Last565、wide599、restore565，均保留，未选优或套旧f9数。它补足当前port14准确参考，不是未修改上游ffb、本机13、完整动画或物理手势验收。源码未直接证明13兼容bug，不修改anchor/默认/nearest；下一本机只fresh direct后的第一次Last，安全入口另行source-only准备，旧CI stop-before-restore不能在用户桌面原样运行。原defaults5s失败未放宽，一次只读缺失域查询0.652s正常且无文件，不等于删除已证明健康。637806B ZIP核验API digest后清除，本轮没有本机构建缓存/新增App运行，108件约1.12MB小证据单份归档。整阶段颜色/布局/交互/动画仍未通过、goal active；remote14可用，11/Swift5.3/ObjC/iOS继续延期。
