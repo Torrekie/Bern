@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "scope": "Read-only source diagnosis, plus explicit limitations from parent-owned native runs. This child performed no GUI, build, network, or Git mutation.",
+  "input_revision": "b72cb5dee3cf73b376a5e3d28b6e97f777eaf3d8",
+  "delivered_source_revision": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "product_source_diff_e48_to_input": [],
+  "source_sha256": {
+    "crates/bern-backend-swiftui/templates/BernCompatibility.swift": "7f46dcf0d23d280465ea5139c21a760fed047c3a3b383a203f9b642fc1a8807d",
+    "crates/bern-backend-swiftui/templates/BernStyle.swift": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+    "crates/bern-backend-swiftui/templates/BernRuntime.swift": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+    "crates/bern-backend-swiftui/templates/BernAppKit.swift": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598",
+    "crates/bern-backend-swiftui/src/swift/mod.rs": "1204efb2ac063372cda20bb3ebe8423025f89a6493eb7192f4bf0ff90ab9600e",
+    "crates/bern-backend-swiftui/src/swift/values.rs": "add39694eecd3dcb51d94cd1517d5b12a31f02c1f01d8c745f164e471e9f80d3",
+    "crates/bern-backend-swiftui/src/swift/windows.rs": "2ec659c909a5a33d69361700d4d58f70132b1ecc4f4e7500e86bd5f481bf3696",
+    "crates/bern-ffi/src/lib.rs": "c6ded3e0dfcd7bcd72c9887f5647e67a3c84f1ec3159feb0d86fcd76510948ed",
+    "crates/bern-command/src/lib.rs": "0a0adb35d2512e3796dfc1320966a921aa6245f8c656e74e290d7b8273cfe991",
+    "examples/gallery/gallery-core/src/lib.rs": "1c2650ed846a8aa69791d1bd58cf7e68c51f7f37bffa5f939dfd3fa77a81e680"
+  },
+  "findings": [
+    {
+      "claim": "Engine appearance mirrored through @Published; generated window observes engine and passes appearance to ThemeChoice. No source-proven missing observation link.",
+      "refs": [
+        "crates/bern-backend-swiftui/src/swift/values.rs:312-350",
+        "crates/bern-backend-swiftui/src/swift/windows.rs:89",
+        "crates/bern-backend-swiftui/src/swift/windows.rs:135-149",
+        "crates/bern-backend-swiftui/src/swift/mod.rs:132-145"
+      ]
+    },
+    {
+      "claim": "ThemeChoice synchronously changes NSApplication.appearance in a view change callback. Setter logic inherited from origin/master. Possible runtime reentrancy site only; no causal evidence.",
+      "refs": [
+        "crates/bern-backend-swiftui/templates/BernStyle.swift:990-1006"
+      ]
+    },
+    {
+      "claim": "13 uses LegacyOnChange; 14 uses native onChange. Stable ActionBox refreshes latest action during body, tracks previous value, and owns no lock. No source-proven stale appearance capture.",
+      "refs": [
+        "crates/bern-backend-swiftui/templates/BernCompatibility.swift:42-51",
+        "crates/bern-backend-swiftui/templates/BernCompatibility.swift:89-137"
+      ]
+    },
+    {
+      "claim": "MacOS Combine model is shared by this branch on 13 and 14, unlike upstream Observation; potentially broader invalidation is not evidence of lost updates or of a 13-only defect.",
+      "refs": [
+        "crates/bern-backend-swiftui/templates/BernCompatibility.swift:5-10",
+        "crates/bern-backend-swiftui/src/swift/mod.rs:131-145",
+        "crates/bern-backend-swiftui/src/swift/values.rs:312-350"
+      ]
+    },
+    {
+      "claim": "ui.activate ACK follows action closure, not engine-state application or native redraw. Engine dispatch is asynchronous.",
+      "refs": [
+        "crates/bern-backend-swiftui/templates/BernRuntime.swift:1540-1544",
+        "crates/bern-backend-swiftui/templates/BernRuntime.swift:1166-1180",
+        "crates/bern-ffi/src/lib.rs:761-779"
+      ]
+    },
+    {
+      "claim": "State/reply/session callbacks enqueue main.async. Rust releases state/listener locks before listener calls, and pending lock before session callback. No obvious lock cycle found on this inspected path; absence is not an exhaustive proof.",
+      "refs": [
+        "crates/bern-backend-swiftui/templates/BernRuntime.swift:965-981",
+        "crates/bern-command/src/lib.rs:772-805",
+        "crates/bern-ffi/src/lib.rs:250-266"
+      ]
+    },
+    {
+      "claim": "Display-link invalidation waits for in-flight callback. No source or runtime evidence links that path to this appearance action; lower-priority suspect only if a stack actually reaches it.",
+      "refs": [
+        "crates/bern-backend-swiftui/templates/BernAppKit.swift:911-936"
+      ]
+    }
+  ],
+  "clean_run": {
+    "owner": "parent agent",
+    "raw_commands": "../clean-appearance-attempt/appearance-commands.json",
+    "result": "../clean-appearance-attempt/clean-appearance-result.json",
+    "commands": [
+      {
+        "label": "before-state",
+        "returncode": 0,
+        "elapsed_seconds": 0.12527149997185916
+      },
+      {
+        "label": "light",
+        "returncode": 0,
+        "elapsed_seconds": 0.08637979195918888
+      },
+      {
+        "label": "after-state",
+        "returncode": 0,
+        "elapsed_seconds": 0.06469158397521824
+      },
+      {
+        "label": "after-inspect",
+        "returncode": 0,
+        "elapsed_seconds": 0.5169717080425471
+      }
+    ],
+    "result_flags": {
+      "commands_all_zero": true,
+      "model_System_to_Light": true,
+      "native_capture_Light_and_full_AX": true,
+      "own_pid": 76112,
+      "prior_AXClose_not_run_in_this_generation": true,
+      "read_only_sample_timeout_seconds": 8,
+      "no_stack_produced": true,
+      "sample_failure_not_product_failure": true,
+      "earlier_unresponsive_episode_not_root_caused": true,
+      "first_attempt_no_effect_own_identity_guard_blocked_no_additional_actions": true
+    },
+    "native_ui": "../clean-appearance-attempt/clean-light-ui.json",
+    "visual_limit": "Parent reports visible Light UI. Child only inspected structured capture/result, and did not independently inspect screenshot pixels. AX element count 68 is parent-reported."
+  },
+  "earlier_episode": {
+    "paths": [
+      "../narrow-attempt/narrow-native-close-action.json",
+      "../narrow-attempt/narrow-closed.json",
+      "../narrow-attempt/actions/look-light.json",
+      "../narrow-attempt/actions/look-light-state.json",
+      "../narrow-attempt/light-after-command.json",
+      "../narrow-attempt/actions/look-dark.json"
+    ],
+    "observations": "AXClose returned -25204 but Details false and panel disappearance were observed; subsequent Light ACK/engine Light preceded empty AX and dark retained backing; following Dark request timed out. These remain an unexplained sequence, not a diagnosed source defect.",
+    "not_proven": [
+      "causal relation to AXClose",
+      "appearance setter deadlock",
+      "13-only regression",
+      "fixed by restart",
+      "same episode reproduced by clean Light run"
+    ]
+  },
+  "next_if_reproduced": "Capture own PID thread stack at first AX0 or UI command timeout while identity is current; use stack to select appearance/layout/other investigation. Do not change product or launch a parameter matrix merely from this source audit.",
+  "limits": [
+    "Clean-start System-to-Light success proves that sampled action/render path can work; it does not explain or erase prior unresponsive episode.",
+    "Read-only sample timed out after 8 seconds and produced no stack; neither product failure nor stack evidence.",
+    "No patch implemented; no fix claim; no whole macOS13 acceptance claim."
+  ]
+}

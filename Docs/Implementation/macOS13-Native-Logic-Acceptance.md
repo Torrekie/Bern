@@ -23,18 +23,20 @@
 | 要求 | 已有依据 | 剩余工作 |
 |---|---|---|
 | 来源、部署与 API 替代 | 原交付 e48 Gallery、9dd Showcase 已在本机 13 运行；新 SDK/Swift 6 target13 完整构建有实际二进制证据；四模板的替代分支已复核。 | 本次源码审查没有证明新的 13 独有功能删除；后续若修改产品，重验受影响路径。 |
-| Gallery 基本流程 | e48 Patterns→Film→首次 Last、Frame 路径已有成功原件。 | 补尚缺的 Inspector 开关/窄窗可达性和 First 操作，不复刻坐标。 |
+| Gallery 基本流程 | e48 Patterns→Film→首次 Last、Frame 路径已有成功原件；新补720×600 Inspector退出及原生网格扩展、e48 First首卡正确终态。 | 不复刻坐标；仅定点复核下述未解释的响应/挂载观察。 |
 | 状态与错误恢复 | 9dd Showcase 的页面、Query/draft、Library 错误→重试→空结果→恢复链已有证据。 | 原生文本输入→模型→结果链仍须补证，CLI ACK不能替代输入。 |
-| 媒体与弹出层 | e48 Ready、play/pause/seek响应和 paused/awake；系统按钮/Popover另有历史功能证据。 | 对当前整应用补一次实际进度变化、暂停及 Volume 开闭/修改；不穷举样式。 |
-| 外观、布局、动画 | 已有完整窗口与限定可见运动证据；stock13语义色、材质和相应替代真实存在。 | 正常窗口/窄窗、浅深色的可读可达性及代表性过渡终态，按缺口补最少检查。 |
+| 媒体与弹出层 | e48新实测Playing 0→501ms、Paused 848→848ms，sourceVersion1/views1/无error；Volume复用f9原生开闭与草稿同步，加11处相关源码未变证明。 | 此范围已有依据；不重新跑音量样式矩阵，不把draft滑块当实际音量绑定。首次Film→Frame未等Ready便读失败的同代挂载情况仍未观察完整。 |
+| 外观、布局、动画 | 已有完整窗口与限定可见运动证据；新增720×600深色与干净启动Light真实窗口，stock13语义色/材质、可读内容及正确终态有依据。 | 原生Close后的一次外观/UI超时仍未确定原因；干净Light成功不能消去该观察。 |
 | 键盘与能力边界 | 13 局部键盘 monitor 有窗口/焦点过滤；Search 程序化焦点在当前模板13/14均有15前限制。 | 核可见输入及焦点行为；共有平台能力限制不自动视为13回归，但不得合理化产品明示承诺却无效果的动作。 |
 
 2026-10-25 的[普通 Name 输入补查](../Evidence/macOS13-native-input-9dd-20261025/README.md)确认当前深色系统外观下输入页正常绘制，但未补成键盘验收：后台 AXValue 仅改变文本框显示，未确认 Name 焦点或编辑回调到达 SwiftUI；后续 AXConfirm 在工具后端解析失败，原生草稿仍为空、提交计数仍0。截图仍有内容，不能把部分 AX 树误判为空白界面。没有用 CLI edit/submit 补成通过，也没有据此修改产品。此输入交付缺口保留，停止同一组 AX 参数尝试，先完成独立的布局/媒体缺口。
+
+随后[Gallery 功能补验](../Evidence/macOS13-native-gallery-e48-20261025/README.md)补足了表中的窄窗退出、First、浅色及实际播放/暂停，并用精确源码比较复用了Volume旧实测。Close原生AXPress虽报`-25204`，实际草稿和截图均已关闭面板，错误保留。该次后续外观/UI请求超时仍未定因；另一次干净Light成功只证明独立路径。只读采样8秒超时未拿到栈。首次Film→Frame读取`player_not_found`后未继续观察同代挂载；独立等待Ready的媒体成功不能据此解释首轮原因。
 
 详细来源、哈希和限制见[现有证据表](../Evidence/macOS13-native-logic-acceptance-20261025/evidence-audit/README.md)、[当前 API 源码审查](../Evidence/macOS13-native-logic-acceptance-20261025/source-audit/README.md)及[精简验收建议](../Evidence/macOS13-native-logic-acceptance-20261025/acceptance-review/README.md)。它们记录了文档调整前 `dc87117` 的输入快照。
 
 ## 执行顺序与收束
 
-复用原交付与足够的历史证据，只补缺失的功能检查。下一项为 Gallery 现有 Details/Inspector 显隐与一次窄窗可达性，再补 Film First、Frame 音量和真实媒体进度/暂停状态。Gallery Frame 明确 `controls:none`，不要求它显示 Play/Pause；可用已有 CLI 控制加实际状态变化读回，不能只看 ACK。macOS13 Inspector 使用系统 HSplitView，源码没有动画承诺，验显隐、可达性和可继续操作的终态，不为验收增加动画。只在出现可复现的实质缺陷时定点修复；不再运行像素、Row ledger、14.5 pt 或观察器零影响路线，也不为细小色差重新触发远程 CI。
+复用原交付与足够的历史证据，只补缺失的功能检查。下一项收缩为有界复核未解释的Close/外观响应及Film→Frame挂载，在确有无响应时及时采同一自有进程栈；不先判断为13兼容代码故障。再补真正聚焦的原生文本输入路径，不继续后台AXValue参数尝试。Gallery Frame明确`controls:none`；当前实际媒体状态已满足，不再重测。macOS13 Inspector使用系统HSplitView，源码没有动画承诺，不为验收增加动画。只在出现可复现的实质缺陷时定点修复；不再运行像素、Row ledger、14.5 pt或观察器零影响路线，也不为细小色差重新触发远程CI。
 
 新原生检查仍需明确 App/CLI 来源、独立身份和有界清理；历史 work 别名不得直接执行。逐项记录“已有证据满足 / 新实测满足 / 实质问题待修 / 能力范围说明”，才能完成 macOS13 阶段。当前 goal 保持 active，放宽像素要求本身不等于阶段完成。

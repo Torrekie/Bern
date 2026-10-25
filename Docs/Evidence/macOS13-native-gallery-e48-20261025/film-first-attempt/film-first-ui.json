@@ -1,0 +1,1757 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Computer Use state (CUA App Version: 0.1.0-alpha)\n<app_specific_instructions>\n- Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.\n- Use set_value for editable controls when AXValue is settable (1 settable element(s) in the current snapshot).\n- Refresh the snapshot after each mutation to avoid stale paths.\n\nLimitations:\n- Custom drawing regions can still hide controls from AX even in otherwise native apps.\n</app_specific_instructions>\n<app_state>\nApp=dev.bern.native13.gallery.6e2e79c2daa4487fa8f8e9bba2566c5d (pid 77738)\nWindow: \"Film\", App: Gallery.\n\t0 menubaritem Apple Secondary Actions: Cancel\n\t1 menubaritem Gallery Secondary Actions: Cancel\n\t2 menubaritem File Secondary Actions: Cancel\n\t3 menubaritem Edit Secondary Actions: Cancel\n\t4 menubaritem View Secondary Actions: Cancel\n\t5 menubaritem Window Secondary Actions: Cancel\n\t6 menubaritem Help Secondary Actions: Cancel\n\t7 standard window Film ID: main Secondary Actions: Raise\n\t\t8 container\n\t\t\t9 split group ID: main, SidebarNavigationSplitView\n\t\t\t\t10 container\n\t\t\t\t\t11 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down\n\t\t\t\t\t\t12 outline\n\t\t\t\t\t\t\t13 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t14 cell\n\t\t\t\t\t\t\t\t\t15 text Value: Patterns\n\t\t\t\t\t\t\t16 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t17 cell\n\t\t\t\t\t\t\t\t\t18 text Value: Favorites\n\t\t\t\t\t\t\t19 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t20 cell\n\t\t\t\t\t\t\t\t\t21 text Value: Frame\n\t\t\t\t\t\t\t22 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t23 cell\n\t\t\t\t\t\t\t\t\t24 text Value: Film\n\t\t\t\t\t\t\t25 column ID: ListColumn\n\t\t\t\t\t26 text Value: Local user\n\t\t\t\t\t27 button Description: About ID: main_window.about\n\t\t\t\t\t28 button Description: Clear Favorites ID: main_window.clear_favorites\n\t\t\t\t29 splitter (settable) 210 (disabled)\n\t\t\t\t30 container\n\t\t\t\t\t31 split group\n\t\t\t\t\t\t32 container\n\t\t\t\t\t\t\t33 scroll area ID: main_window.find Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down\n\t\t\t\t\t\t\t\t34 image Description: Gingham\n\t\t\t\t\t\t\t\t35 image Description: Tartan\n\t\t\t\t\t\t\t\t36 image Description: Madras\n\t\t\t\t\t\t\t\t37 text Value: Gingham\n\t\t\t\t\t\t\t\t38 text Value: Tartan\n\t\t\t\t\t\t\t\t39 image Description: Glen\n\t\t\t\t\t\t\t\t40 text Value: Madras\n\t\t\t\t\t\t\t\t41 image Description: Houndstooth\n\t\t\t\t\t\t\t\t42 text Value: Glen\n\t\t\t\t\t\t\t\t43 image Description: Windowpane\n\t\t\t\t\t\t\t\t44 text Value: Houndstooth\n\t\t\t\t\t\t\t\t45 text Value: Windowpane\n\t\t\t\t\t\t\t46 text Value: Gingham ID: main_window.find\n\t\t\t\t\t\t\t47 text Value: Tartan ID: main_window.find\n\t\t\t\t\t\t\t48 text Value: Madras ID: main_window.find\n\t\t\t\t\t\t\t49 text Value: Glen ID: main_window.find\n\t\t\t\t\t\t\t50 text Value: Houndstooth ID: main_window.find\n\t\t\t\t\t\t\t51 text Value: Windowpane ID: main_window.find\n\t\t\t\t\t\t\t52 button Description: First ID: main_window.find\n\t\t\t\t\t\t\t53 button Description: Last ID: main_window.find\n\t\t\t\t\t\t\t54 text Value: Drag up or down ID: main_window.find Secondary Actions: Increment, Decrement\n\t\t\t\t\t\t\t55 progressindicator Value: 0.5 Description: Drag up or down ID: main_window.find Secondary Actions: Increment, Decrement\n\t\t56 toolbar Secondary Actions: Show Menu\n\t\t\t57 button Description: Toggle Sidebar Secondary Actions: Increment, Decrement, Delete, Show Menu, Cancel\n\t\t\t\t58 button Description: Toggle Sidebar\n\t\t\t59 button Description: Open Video ID: main_window.open_file Secondary Actions: Increment, Decrement, Delete, Show Menu, Cancel\n\t\t\t\t60 button Description: Open Video ID: main_window.open_file\n\t\t\t61 container\n\t\t\t\t62 popup button Description: paintpalette ID: main_window.choose_poster\n\t\t\t63 container\n\t\t\t\t64 checkbox Value: 0 Description: Details ID: main_window.show_details\n\t\t\t65 container\n\t\t\t\t66 search text field Secondary Actions: Show Menu, Confirm\n\t\t\t\t\t67 button Description: Search\n\t\t68 close button\n\t\t69 fullscreen button Secondary Actions: Zoom Window, Show Menu\n\t\t70 minimize button\n\t\t71 text Value: Film\n</app_state>\nThe focused UI element is 12 outline."
+    }
+  ],
+  "structuredContent": {
+    "screenshot": {
+      "contentRect": {
+        "y": 80,
+        "height": 652,
+        "width": 900,
+        "x": 270
+      },
+      "window": {
+        "pid": 77738,
+        "isOnScreen": true,
+        "appName": "Gallery",
+        "frame": {
+          "y": 80,
+          "height": 652,
+          "width": 900,
+          "x": 270
+        },
+        "title": "Film",
+        "bundleIdentifier": "dev.bern.native13.gallery.6e2e79c2daa4487fa8f8e9bba2566c5d",
+        "windowLayer": 0,
+        "windowID": 11825,
+        "isActive": false
+      },
+      "captureBackend": "screencapture",
+      "virtualCursorApplied": false,
+      "pixelHeight": 652,
+      "requestedScale": 0.5,
+      "pixelWidth": 900,
+      "virtualCursorMarkCount": 0,
+      "pointPixelScale": 2
+    },
+    "desktopSession": {
+      "frontmostAppAtAcquire": "ChatGPT",
+      "sessionID": "2CA6F703-3CA5-46F3-B6D5-7379FF623D9B",
+      "currentCursor": {
+        "x": 642.75390625,
+        "y": 155.28125
+      },
+      "active": true,
+      "actionsUsed": 0,
+      "frontmostPIDAtAcquire": 1390,
+      "cursorMovedDistance": 0,
+      "lockPath": "/Users/torrekie/Library/Caches/claudex-computer-use/desktop-session.lock",
+      "currentFrontmostBundleID": "com.openai.codex",
+      "actionBudget": 2,
+      "externalExclusiveLock": false,
+      "frontmostBundleIDAtAcquire": "com.openai.codex",
+      "interrupted": false,
+      "mode": "exclusive",
+      "currentFrontmostPID": 1390,
+      "currentFrontmostApp": "ChatGPT",
+      "cursorAtAcquire": {
+        "x": 642.75390625,
+        "y": 155.28125
+      },
+      "acquiredAt": 814618710.340019
+    },
+    "snapshot": {
+      "revision": "7cb7b795",
+      "elements": [
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Apple",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            0
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 0
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Gallery",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            1
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 1
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "File",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            2
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 2
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Edit",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            3
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 3
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "View",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            4
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 4
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Window",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            5
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 5
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Help",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            6
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 6
+        },
+        {
+          "depth": 0,
+          "frame": {
+            "y": 80,
+            "height": 652,
+            "width": 900,
+            "x": 270
+          },
+          "role": "standard window",
+          "title": "Film",
+          "windowIndex": 0,
+          "identifier": "main",
+          "settable": false,
+          "path": [],
+          "actions": [
+            "AXRaise"
+          ],
+          "index": 7
+        },
+        {
+          "depth": 1,
+          "frame": {
+            "y": 132,
+            "height": 600,
+            "width": 900,
+            "x": 270
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0
+          ],
+          "actions": [],
+          "index": 8
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 132,
+            "height": 600,
+            "width": 900,
+            "x": 270
+          },
+          "role": "split group",
+          "windowIndex": 0,
+          "identifier": "main, SidebarNavigationSplitView",
+          "settable": false,
+          "path": [
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 9
+        },
+        {
+          "depth": 3,
+          "frame": {
+            "y": 132,
+            "height": 600,
+            "width": 210,
+            "x": 270
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 10
+        },
+        {
+          "depth": 4,
+          "frame": {
+            "y": 132,
+            "height": 564,
+            "width": 210,
+            "x": 270
+          },
+          "role": "scroll area",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXScrollLeftByPage",
+            "AXScrollRightByPage",
+            "AXScrollUpByPage",
+            "AXScrollDownByPage"
+          ],
+          "index": 11
+        },
+        {
+          "depth": 5,
+          "enabled": true,
+          "frame": {
+            "y": 132,
+            "height": 564,
+            "width": 210,
+            "x": 270
+          },
+          "role": "outline",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 12
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 142,
+            "height": 28,
+            "width": 210,
+            "x": 270
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 13
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 142,
+            "height": 28,
+            "width": 190,
+            "x": 280
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 14
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 148,
+            "height": 16,
+            "width": 71,
+            "x": 290
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Patterns",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 15
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 170,
+            "height": 28,
+            "width": 210,
+            "x": 270
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 16
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 170,
+            "height": 28,
+            "width": 190,
+            "x": 280
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "actions": [],
+          "index": 17
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 176.0399169921875,
+            "height": 16,
+            "width": 76,
+            "x": 289
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Favorites",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 18
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 198,
+            "height": 28,
+            "width": 210,
+            "x": 270
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 19
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 198,
+            "height": 28,
+            "width": 190,
+            "x": 280
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "actions": [],
+          "index": 20
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 204,
+            "height": 16,
+            "width": 59.5,
+            "x": 288.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Frame",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 21
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 226,
+            "height": 28,
+            "width": 210,
+            "x": 270
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 22
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 226,
+            "height": 28,
+            "width": 190,
+            "x": 280
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          "actions": [],
+          "index": 23
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 232,
+            "height": 16,
+            "width": 46.5,
+            "x": 288.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Film",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 24
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 132,
+            "height": 564,
+            "width": 190,
+            "x": 280
+          },
+          "role": "column",
+          "windowIndex": 0,
+          "identifier": "ListColumn",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "actions": [],
+          "index": 25
+        },
+        {
+          "depth": 4,
+          "enabled": true,
+          "frame": {
+            "y": 706,
+            "height": 16,
+            "width": 84.5,
+            "x": 281
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Local user",
+          "path": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "actions": [],
+          "index": 26
+        },
+        {
+          "depth": 4,
+          "elementDescription": "About",
+          "enabled": true,
+          "frame": {
+            "y": 704,
+            "height": 20,
+            "width": 20,
+            "x": 422
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.about",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 27
+        },
+        {
+          "depth": 4,
+          "elementDescription": "Clear Favorites",
+          "enabled": true,
+          "frame": {
+            "y": 704,
+            "height": 20,
+            "width": 20,
+            "x": 450
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.clear_favorites",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            3
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 28
+        },
+        {
+          "depth": 3,
+          "enabled": false,
+          "frame": {
+            "y": 132,
+            "height": 600,
+            "width": 1,
+            "x": 480
+          },
+          "role": "splitter",
+          "windowIndex": 0,
+          "settable": true,
+          "value": "210",
+          "path": [
+            0,
+            0,
+            1
+          ],
+          "actions": [],
+          "index": 29
+        },
+        {
+          "depth": 3,
+          "frame": {
+            "y": 132,
+            "height": 600,
+            "width": 689,
+            "x": 481
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2
+          ],
+          "actions": [],
+          "index": 30
+        },
+        {
+          "depth": 4,
+          "frame": {
+            "y": 132,
+            "height": 600,
+            "width": 689,
+            "x": 481
+          },
+          "role": "split group",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "actions": [],
+          "index": 31
+        },
+        {
+          "depth": 5,
+          "frame": {
+            "y": 132,
+            "height": 600,
+            "width": 689,
+            "x": 481
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 32
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 132,
+            "height": 207,
+            "width": 689,
+            "x": 481
+          },
+          "role": "scroll area",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXScrollLeftByPage",
+            "AXScrollRightByPage",
+            "AXScrollUpByPage",
+            "AXScrollDownByPage"
+          ],
+          "index": 33
+        },
+        {
+          "depth": 7,
+          "elementDescription": "Gingham",
+          "enabled": true,
+          "frame": {
+            "y": 146.81164238936162,
+            "height": 150.6028714142915,
+            "width": 267.73843806985155,
+            "x": 684.6307809650742
+          },
+          "role": "image",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 34
+        },
+        {
+          "depth": 7,
+          "elementDescription": "Tartan",
+          "enabled": true,
+          "frame": {
+            "y": 156,
+            "height": 135,
+            "width": 240,
+            "x": 968.5
+          },
+          "role": "image",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            1
+          ],
+          "actions": [],
+          "index": 35
+        },
+        {
+          "depth": 7,
+          "elementDescription": "Madras",
+          "enabled": true,
+          "frame": {
+            "y": 156,
+            "height": 135,
+            "width": 240,
+            "x": 1238.5
+          },
+          "role": "image",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "actions": [],
+          "index": 36
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 306.3391284059817,
+            "height": 17.84922920465675,
+            "width": 64.70345586688074,
+            "x": 684.6307809650742
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Gingham",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            3
+          ],
+          "actions": [],
+          "index": 37
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 299,
+            "height": 16,
+            "width": 42,
+            "x": 968.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Tartan",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            4
+          ],
+          "actions": [],
+          "index": 38
+        },
+        {
+          "depth": 7,
+          "elementDescription": "Glen",
+          "enabled": true,
+          "frame": {
+            "y": 156,
+            "height": 135,
+            "width": 240,
+            "x": 1508.5
+          },
+          "role": "image",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            5
+          ],
+          "actions": [],
+          "index": 39
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 299,
+            "height": 16,
+            "width": 48.5,
+            "x": 1238.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Madras",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          "actions": [],
+          "index": 40
+        },
+        {
+          "depth": 7,
+          "elementDescription": "Houndstooth",
+          "enabled": true,
+          "frame": {
+            "y": 156,
+            "height": 135,
+            "width": 240,
+            "x": 1778.5
+          },
+          "role": "image",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            7
+          ],
+          "actions": [],
+          "index": 41
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 299,
+            "height": 16,
+            "width": 29.5,
+            "x": 1508.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Glen",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            8
+          ],
+          "actions": [],
+          "index": 42
+        },
+        {
+          "depth": 7,
+          "elementDescription": "Windowpane",
+          "enabled": true,
+          "frame": {
+            "y": 156,
+            "height": 135,
+            "width": 240,
+            "x": 2048.5
+          },
+          "role": "image",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            9
+          ],
+          "actions": [],
+          "index": 43
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 299,
+            "height": 16,
+            "width": 85,
+            "x": 1778.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Houndstooth",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            10
+          ],
+          "actions": [],
+          "index": 44
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 299,
+            "height": 16,
+            "width": 84,
+            "x": 2048.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Windowpane",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            11
+          ],
+          "actions": [],
+          "index": 45
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 409,
+            "height": 13,
+            "width": 43,
+            "x": 505
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          "value": "Gingham",
+          "actions": [],
+          "index": 46
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 409,
+            "height": 13,
+            "width": 30.5,
+            "x": 633.2
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          "value": "Tartan",
+          "actions": [],
+          "index": 47
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 409,
+            "height": 13,
+            "width": 36.00000000000006,
+            "x": 761.4000000000001
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            3
+          ],
+          "value": "Madras",
+          "actions": [],
+          "index": 48
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 409,
+            "height": 13,
+            "width": 22.5,
+            "x": 889.5999999999999
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4
+          ],
+          "value": "Glen",
+          "actions": [],
+          "index": 49
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 409,
+            "height": 13,
+            "width": 63,
+            "x": 1017.8000000000001
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            5
+          ],
+          "value": "Houndstooth",
+          "actions": [],
+          "index": 50
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 409,
+            "height": 13,
+            "width": 62,
+            "x": 1146
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            6
+          ],
+          "value": "Windowpane",
+          "actions": [],
+          "index": 51
+        },
+        {
+          "depth": 6,
+          "elementDescription": "First",
+          "enabled": true,
+          "frame": {
+            "y": 479,
+            "height": 16,
+            "width": 27,
+            "x": 505
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            7
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 52
+        },
+        {
+          "depth": 6,
+          "elementDescription": "Last",
+          "enabled": true,
+          "frame": {
+            "y": 479,
+            "height": 16,
+            "width": 26,
+            "x": 560
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            8
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 53
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 569,
+            "height": 16,
+            "width": 131.5,
+            "x": 505
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            9
+          ],
+          "value": "Drag up or down",
+          "actions": [
+            "AXIncrement",
+            "AXDecrement"
+          ],
+          "index": 54
+        },
+        {
+          "elementDescription": "Drag up or down",
+          "index": 55,
+          "actions": [
+            "AXIncrement",
+            "AXDecrement"
+          ],
+          "settable": false,
+          "windowIndex": 0,
+          "frame": {
+            "y": 593,
+            "height": 18,
+            "width": 641,
+            "x": 505
+          },
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            10
+          ],
+          "value": "0.5",
+          "identifier": "main_window.find",
+          "enabled": true,
+          "depth": 6,
+          "role": "progressindicator"
+        },
+        {
+          "depth": 1,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 900,
+            "x": 270
+          },
+          "role": "toolbar",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1
+          ],
+          "actions": [
+            "AXShowMenu"
+          ],
+          "index": 56
+        },
+        {
+          "depth": 2,
+          "elementDescription": "Toggle Sidebar",
+          "enabled": true,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 48,
+            "x": 357
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            0
+          ],
+          "actions": [
+            "AXIncrement",
+            "AXDecrement",
+            "AXDelete",
+            "AXShowMenu",
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 57
+        },
+        {
+          "depth": 3,
+          "elementDescription": "Toggle Sidebar",
+          "enabled": true,
+          "frame": {
+            "y": 94,
+            "height": 18.5,
+            "width": 29.5,
+            "x": 366.5
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            0,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 58
+        },
+        {
+          "depth": 2,
+          "elementDescription": "Open Video",
+          "enabled": true,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 47,
+            "x": 683
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.open_file",
+          "settable": false,
+          "path": [
+            1,
+            1
+          ],
+          "actions": [
+            "AXIncrement",
+            "AXDecrement",
+            "AXDelete",
+            "AXShowMenu",
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 59
+        },
+        {
+          "depth": 3,
+          "elementDescription": "Open Video",
+          "enabled": true,
+          "frame": {
+            "y": 94,
+            "height": 18.5,
+            "width": 29,
+            "x": 692
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.open_file",
+          "settable": false,
+          "path": [
+            1,
+            1,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 60
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 42,
+            "x": 730
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            2
+          ],
+          "actions": [],
+          "index": 61
+        },
+        {
+          "depth": 3,
+          "elementDescription": "paintpalette",
+          "enabled": true,
+          "frame": {
+            "y": 92,
+            "height": 28,
+            "width": 34,
+            "x": 734
+          },
+          "role": "popup button",
+          "windowIndex": 0,
+          "identifier": "main_window.choose_poster",
+          "settable": false,
+          "path": [
+            1,
+            2,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 62
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 48,
+            "x": 772
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            3
+          ],
+          "actions": [],
+          "index": 63
+        },
+        {
+          "elementDescription": "Details",
+          "index": 64,
+          "actions": [
+            "AXPress"
+          ],
+          "settable": false,
+          "windowIndex": 0,
+          "frame": {
+            "y": 94,
+            "height": 18.5,
+            "width": 29.5,
+            "x": 781.5
+          },
+          "path": [
+            1,
+            3,
+            0
+          ],
+          "value": "0",
+          "identifier": "main_window.show_details",
+          "enabled": true,
+          "depth": 3,
+          "role": "checkbox"
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 333,
+            "x": 829
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            4
+          ],
+          "actions": [],
+          "index": 65
+        },
+        {
+          "depth": 3,
+          "enabled": true,
+          "frame": {
+            "y": 91,
+            "height": 31,
+            "width": 327,
+            "x": 832
+          },
+          "role": "search text field",
+          "windowIndex": 0,
+          "settable": true,
+          "path": [
+            1,
+            4,
+            0
+          ],
+          "actions": [
+            "AXShowMenu",
+            "AXConfirm"
+          ],
+          "index": 66
+        },
+        {
+          "depth": 4,
+          "elementDescription": "Search",
+          "enabled": true,
+          "frame": {
+            "y": 95,
+            "height": 22,
+            "width": 25,
+            "x": 834
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            4,
+            0,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 67
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 98,
+            "height": 16,
+            "width": 14,
+            "x": 289
+          },
+          "role": "close button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            2
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 68
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 98,
+            "height": 16,
+            "width": 14,
+            "x": 329
+          },
+          "role": "fullscreen button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            3
+          ],
+          "actions": [
+            "AXPress",
+            "AXZoomWindow",
+            "AXShowMenu"
+          ],
+          "index": 69
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 98,
+            "height": 16,
+            "width": 14,
+            "x": 309
+          },
+          "role": "minimize button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            4
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 70
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 278,
+            "x": 405
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Film",
+          "path": [
+            5
+          ],
+          "actions": [],
+          "index": 71
+        }
+      ],
+      "app": "Gallery",
+      "elementCount": 72,
+      "bundleIdentifier": "dev.bern.native13.gallery.6e2e79c2daa4487fa8f8e9bba2566c5d",
+      "timestamp": 814618714.846136,
+      "windowTitle": "Film",
+      "pid": 77738
+    },
+    "virtualCursor": {
+      "config": {
+        "showTrail": false,
+        "style": "ghostArrow",
+        "maxAgeSeconds": 12,
+        "trailLimit": 6,
+        "mode": "hybrid"
+      },
+      "overlayHelperRunning": false,
+      "totalMarkCount": 0,
+      "desktopOverlayDriver": "same-process",
+      "desktopOverlayReady": true,
+      "desktopOverlayVisible": true,
+      "trackedAppCount": 0
+    },
+    "guidance": {
+      "frameReliability": "high",
+      "summary": "This app appears to expose a mostly native Accessibility tree. Use element-index actions first and coordinates only as fallback.",
+      "confidence": "high",
+      "knownLimitations": [
+        "Custom drawing regions can still hide controls from AX even in otherwise native apps."
+      ],
+      "profile": "native",
+      "recommendedStrategies": [
+        "Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.",
+        "Use set_value for editable controls when AXValue is settable (1 settable element(s) in the current snapshot).",
+        "Refresh the snapshot after each mutation to avoid stale paths."
+      ]
+    }
+  }
+}

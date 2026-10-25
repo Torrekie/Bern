@@ -1,0 +1,732 @@
+{
+  "schema": "bern_volume_source_reuse_v1",
+  "created_at_utc": "2026-10-25T11:08:21.590206+00:00",
+  "conclusion": "Reuse existing f9 native popup and draft-sync evidence for the unchanged current e48 implementation under the platform-native risk-based acceptance contract; no redundant popup run required.",
+  "evidence_classification": "Historical native macOS13 runs plus exact relevant-source equality; not a new e48 runtime test.",
+  "revisions": {
+    "historical_f9": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+    "delivered_e48": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+    "current_reviewed": "b72cb5dee3cf73b376a5e3d28b6e97f777eaf3d8"
+  },
+  "comparison_method": {
+    "source_read_command": [
+      "git",
+      "show",
+      "REVISION:PATH"
+    ],
+    "raw_bytes_only": true,
+    "normalization": null,
+    "region_interval": "Start marker included, end marker excluded; line ranges describe contained bytes.",
+    "equality_checked_in_addition_to_sha256": true,
+    "writes": "Only this new provenance directory; no full source or raw report copy.",
+    "no_gui_build_network_or_git_mutation": true
+  },
+  "regions": [
+    {
+      "name": "Gallery declarations whole file",
+      "path": "examples/gallery/gallery-ui/src/lib.rs",
+      "start_marker_included": null,
+      "end_marker_excluded": null,
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 435,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 22898,
+          "bytes": 22898,
+          "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 435,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 22898,
+          "bytes": 22898,
+          "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 435,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 22898,
+          "bytes": 22898,
+          "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "Gallery frame declaration",
+      "path": "examples/gallery/gallery-ui/src/lib.rs",
+      "start_marker_included": "#[component]\npub fn frame(",
+      "end_marker_excluded": "\n/// One pattern:",
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 377,
+          "end_line_inclusive": 415,
+          "byte_start_inclusive": 19266,
+          "byte_end_exclusive": 22016,
+          "bytes": 2750,
+          "sha256": "c9e57c9673efc86be12aad90a45a24a8cfbbade8e3e798a97cd1c200b8b719ed"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 377,
+          "end_line_inclusive": 415,
+          "byte_start_inclusive": 19266,
+          "byte_end_exclusive": 22016,
+          "bytes": 2750,
+          "sha256": "c9e57c9673efc86be12aad90a45a24a8cfbbade8e3e798a97cd1c200b8b719ed"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 377,
+          "end_line_inclusive": 415,
+          "byte_start_inclusive": 19266,
+          "byte_end_exclusive": 22016,
+          "bytes": 2750,
+          "sha256": "c9e57c9673efc86be12aad90a45a24a8cfbbade8e3e798a97cd1c200b8b719ed"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "PopoverButton and Slider generator whole file",
+      "path": "crates/bern-backend-swiftui/src/swift/controls.rs",
+      "start_marker_included": null,
+      "end_marker_excluded": null,
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 897,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 39644,
+          "bytes": 39644,
+          "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 897,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 39644,
+          "bytes": 39644,
+          "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 897,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 39644,
+          "bytes": 39644,
+          "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "AppKit template whole file",
+      "path": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "start_marker_included": null,
+      "end_marker_excluded": null,
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 2169,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 88255,
+          "bytes": 88255,
+          "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 2169,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 88255,
+          "bytes": 88255,
+          "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 1,
+          "end_line_inclusive": 2169,
+          "byte_start_inclusive": 0,
+          "byte_end_exclusive": 88255,
+          "bytes": 88255,
+          "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "Stock circular icon NSButton bridge",
+      "path": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "start_marker_included": "// MARK: - Circular icon buttons",
+      "end_marker_excluded": "// MARK: - Tab accessory",
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 1342,
+          "end_line_inclusive": 1463,
+          "byte_start_inclusive": 54454,
+          "byte_end_exclusive": 58950,
+          "bytes": 4496,
+          "sha256": "981818231494d934bff3633f7667c0b06f1d62880b26448487eaabc482743482"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 1342,
+          "end_line_inclusive": 1463,
+          "byte_start_inclusive": 54454,
+          "byte_end_exclusive": 58950,
+          "bytes": 4496,
+          "sha256": "981818231494d934bff3633f7667c0b06f1d62880b26448487eaabc482743482"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 1342,
+          "end_line_inclusive": 1463,
+          "byte_start_inclusive": 54454,
+          "byte_end_exclusive": 58950,
+          "bytes": 4496,
+          "sha256": "981818231494d934bff3633f7667c0b06f1d62880b26448487eaabc482743482"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "System popover binding wrapper",
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "start_marker_included": "    @ViewBuilder func bernPopover<Content: View>(",
+      "end_marker_excluded": "\n    /// A toggle shown as a button",
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 59,
+          "end_line_inclusive": 67,
+          "byte_start_inclusive": 1991,
+          "byte_end_exclusive": 2338,
+          "bytes": 347,
+          "sha256": "7e2bafd507a5701a59b51934a9ec2cbcf4db5e54bec3006327c036de639a2791"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 59,
+          "end_line_inclusive": 67,
+          "byte_start_inclusive": 1991,
+          "byte_end_exclusive": 2338,
+          "bytes": 347,
+          "sha256": "7e2bafd507a5701a59b51934a9ec2cbcf4db5e54bec3006327c036de639a2791"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 59,
+          "end_line_inclusive": 67,
+          "byte_start_inclusive": 1991,
+          "byte_end_exclusive": 2338,
+          "bytes": 347,
+          "sha256": "7e2bafd507a5701a59b51934a9ec2cbcf4db5e54bec3006327c036de639a2791"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "PopoverButton component including toggle, presentation and registration",
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "start_marker_included": "// MARK: - Popover buttons",
+      "end_marker_excluded": "// MARK: - Window search palette",
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 3259,
+          "end_line_inclusive": 3336,
+          "byte_start_inclusive": 124617,
+          "byte_end_exclusive": 127335,
+          "bytes": 2718,
+          "sha256": "3a3bfdee2b70426924e75d96e01bbbf8eeea7617ce5eba4582b29802696a4f17"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 3362,
+          "end_line_inclusive": 3439,
+          "byte_start_inclusive": 129218,
+          "byte_end_exclusive": 131936,
+          "bytes": 2718,
+          "sha256": "3a3bfdee2b70426924e75d96e01bbbf8eeea7617ce5eba4582b29802696a4f17"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 3362,
+          "end_line_inclusive": 3439,
+          "byte_start_inclusive": 129218,
+          "byte_end_exclusive": 131936,
+          "bytes": 2718,
+          "sha256": "3a3bfdee2b70426924e75d96e01bbbf8eeea7617ce5eba4582b29802696a4f17"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "Popover system material",
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "start_marker_included": "    @ViewBuilder fileprivate func bernPopoverMaterial(",
+      "end_marker_excluded": "    #if os(macOS)\n    @ViewBuilder func bernDefaultScrollAnchor",
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 5196,
+          "end_line_inclusive": 5210,
+          "byte_start_inclusive": 204221,
+          "byte_end_exclusive": 205019,
+          "bytes": 798,
+          "sha256": "f723c2df86357a289aff928c53b9d3e162a1c3b0cae5e5847ab96ee1483782d5"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 5305,
+          "end_line_inclusive": 5319,
+          "byte_start_inclusive": 209242,
+          "byte_end_exclusive": 210040,
+          "bytes": 798,
+          "sha256": "f723c2df86357a289aff928c53b9d3e162a1c3b0cae5e5847ab96ee1483782d5"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 5305,
+          "end_line_inclusive": 5319,
+          "byte_start_inclusive": 209242,
+          "byte_end_exclusive": 210040,
+          "bytes": 798,
+          "sha256": "f723c2df86357a289aff928c53b9d3e162a1c3b0cae5e5847ab96ee1483782d5"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "Control registration, onAppear/onDisappear and wrapper",
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "start_marker_included": "// MARK: - Controls",
+      "end_marker_excluded": "// MARK: - Host",
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 665,
+          "end_line_inclusive": 930,
+          "byte_start_inclusive": 22931,
+          "byte_end_exclusive": 32583,
+          "bytes": 9652,
+          "sha256": "f79997e93eaa878ed79b8323ed463f32a415d4fcabc59a548c3a06d8fdda18a8"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 665,
+          "end_line_inclusive": 930,
+          "byte_start_inclusive": 22931,
+          "byte_end_exclusive": 32583,
+          "bytes": 9652,
+          "sha256": "f79997e93eaa878ed79b8323ed463f32a415d4fcabc59a548c3a06d8fdda18a8"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 665,
+          "end_line_inclusive": 930,
+          "byte_start_inclusive": 22931,
+          "byte_end_exclusive": 32583,
+          "bytes": 9652,
+          "sha256": "f79997e93eaa878ed79b8323ed463f32a415d4fcabc59a548c3a06d8fdda18a8"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "CLI inspect, activate, edit, submit, setBool and setNumber dispatch",
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "start_marker_included": "    /// Command indices follow the framework session catalog order.",
+      "end_marker_excluded": "        case 6:  // ui.select",
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 1520,
+          "end_line_inclusive": 1567,
+          "byte_start_inclusive": 56038,
+          "byte_end_exclusive": 58508,
+          "bytes": 2470,
+          "sha256": "ed251bacba9282c008d23157f972c18851eba367f4cfce9d381eab03a7d4dcd2"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 1520,
+          "end_line_inclusive": 1567,
+          "byte_start_inclusive": 56038,
+          "byte_end_exclusive": 58508,
+          "bytes": 2470,
+          "sha256": "ed251bacba9282c008d23157f972c18851eba367f4cfce9d381eab03a7d4dcd2"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 1520,
+          "end_line_inclusive": 1567,
+          "byte_start_inclusive": 56038,
+          "byte_end_exclusive": 58508,
+          "bytes": 2470,
+          "sha256": "ed251bacba9282c008d23157f972c18851eba367f4cfce9d381eab03a7d4dcd2"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    },
+    {
+      "name": "Button look wrapper, environment and system style modifier",
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "start_marker_included": "    func bernButtonLook(_ look:",
+      "end_marker_excluded": "/// One system glass surface for related buttons.",
+      "versions": {
+        "historical_f9": {
+          "start_line_inclusive": 689,
+          "end_line_inclusive": 898,
+          "byte_start_inclusive": 26211,
+          "byte_end_exclusive": 34397,
+          "bytes": 8186,
+          "sha256": "fdd02f86bcd13046e3355070e6fdeaf7db46e3a783861cb272c88db34a8b854f"
+        },
+        "delivered_e48": {
+          "start_line_inclusive": 689,
+          "end_line_inclusive": 898,
+          "byte_start_inclusive": 26211,
+          "byte_end_exclusive": 34397,
+          "bytes": 8186,
+          "sha256": "fdd02f86bcd13046e3355070e6fdeaf7db46e3a783861cb272c88db34a8b854f"
+        },
+        "current_reviewed": {
+          "start_line_inclusive": 689,
+          "end_line_inclusive": 898,
+          "byte_start_inclusive": 26211,
+          "byte_end_exclusive": 34397,
+          "bytes": 8186,
+          "sha256": "fdd02f86bcd13046e3355070e6fdeaf7db46e3a783861cb272c88db34a8b854f"
+        }
+      },
+      "all_three_byte_identical": true,
+      "regional_changed_bytes": 0
+    }
+  ],
+  "whole_files": [
+    {
+      "path": "examples/gallery/gallery-ui/src/lib.rs",
+      "versions": {
+        "historical_f9": {
+          "bytes": 22898,
+          "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+        },
+        "delivered_e48": {
+          "bytes": 22898,
+          "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+        },
+        "current_reviewed": {
+          "bytes": 22898,
+          "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+        }
+      },
+      "e48_equals_current": true,
+      "working_tree_equals_current_reviewed": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/src/swift/controls.rs",
+      "versions": {
+        "historical_f9": {
+          "bytes": 39644,
+          "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+        },
+        "delivered_e48": {
+          "bytes": 39644,
+          "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+        },
+        "current_reviewed": {
+          "bytes": 39644,
+          "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+        }
+      },
+      "e48_equals_current": true,
+      "working_tree_equals_current_reviewed": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "versions": {
+        "historical_f9": {
+          "bytes": 88255,
+          "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+        },
+        "delivered_e48": {
+          "bytes": 88255,
+          "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+        },
+        "current_reviewed": {
+          "bytes": 88255,
+          "sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598"
+        }
+      },
+      "e48_equals_current": true,
+      "working_tree_equals_current_reviewed": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "versions": {
+        "historical_f9": {
+          "bytes": 205764,
+          "sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f"
+        },
+        "delivered_e48": {
+          "bytes": 210785,
+          "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+        },
+        "current_reviewed": {
+          "bytes": 210785,
+          "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+        }
+      },
+      "e48_equals_current": true,
+      "working_tree_equals_current_reviewed": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "versions": {
+        "historical_f9": {
+          "bytes": 117967,
+          "sha256": "1ec700f09c9b2488f0253beed0b2134e08b651bd5c6936f0e8e70abad454ac0f"
+        },
+        "delivered_e48": {
+          "bytes": 119201,
+          "sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e"
+        },
+        "current_reviewed": {
+          "bytes": 119201,
+          "sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e"
+        }
+      },
+      "e48_equals_current": true,
+      "working_tree_equals_current_reviewed": true
+    }
+  ],
+  "change_inventory": {
+    "f9_to_e48_numstat": [
+      "25\t6\tcrates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "119\t10\tcrates/bern-backend-swiftui/templates/BernStyle.swift"
+    ],
+    "full_five_file_diff_sha256": "4496fe3785885ebb3c0820ec0d8a43dc56a892c57c0767b630027bf8dee0c6c4",
+    "hunk_headers": [
+      "@@ -2499,3 +2499,3 @@ private extension View {",
+      "@@ -2533,0 +2534,3 @@ struct BernImage: View {",
+      "@@ -2578 +2581,4 @@ struct BernImage: View {",
+      "@@ -2605,0 +2612,10 @@ struct BernImage: View {",
+      "@@ -2608,2 +2624,2 @@ struct BernImage: View {",
+      "@@ -2625,0 +2642,3 @@ struct BernImage: View {",
+      "@@ -2090,0 +2091,3 @@ private struct BernSnap: ViewModifier {",
+      "@@ -2103,0 +2107 @@ private struct BernSnap: ViewModifier {",
+      "@@ -2106 +2110,3 @@ private struct BernSnap: ViewModifier {",
+      "@@ -2185,0 +2192,42 @@ extension View {",
+      "@@ -2208,0 +2257,4 @@ final class BernScrollItems: BernObservableObject {",
+      "@@ -2400,0 +2453 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2415,0 +2469 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2418 +2472 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2425 +2479,4 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2430 +2487,2 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2433,0 +2492 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2441 +2500,3 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2449,0 +2511 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2451,0 +2514,3 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2458,0 +2524,3 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2471 +2539,4 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2477,0 +2549,29 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2488,0 +2589,3 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -4849,0 +4953,2 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {",
+      "@@ -5009,2 +5114,4 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {",
+      "@@ -5014,2 +5121,4 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {"
+    ],
+    "changed_families": [
+      "BernRuntime: Picture/PQ display image implementation",
+      "BernStyle: legacy scrolling initial-position implementation"
+    ],
+    "no_relevant_volume_region_change": true,
+    "e48_to_current_five_file_numstat_empty": true
+  },
+  "original_reports": [
+    {
+      "purpose": "native_open_close",
+      "path_relative_to_repo": "Docs/Evidence/macOS13-frame-volume/paired-f9-aot/run-aot/report.json",
+      "bytes": 177832,
+      "sha256": "79334d78d4a1f8cc2a36e31d91b107270de052d1dee9cb5f2d5276ab697e7398",
+      "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "recorded_success": true,
+      "observed_stages": [
+        {
+          "stage": "frame-closed-light-stable",
+          "controls": [
+            {
+              "target": "frame.volume",
+              "value": "closed"
+            }
+          ],
+          "own_windows": [
+            {
+              "name": "Frame",
+              "bounds_points": {
+                "Height": 668,
+                "Width": 920,
+                "X": 260,
+                "Y": 116
+              }
+            }
+          ]
+        },
+        {
+          "stage": "frame-open-light-stable",
+          "controls": [
+            {
+              "target": "frame.volume",
+              "value": "open"
+            },
+            {
+              "target": "frame.volume_level",
+              "value": "0.7"
+            }
+          ],
+          "own_windows": [
+            {
+              "name": "",
+              "bounds_points": {
+                "Height": 106,
+                "Width": 266,
+                "X": 757,
+                "Y": 669
+              }
+            },
+            {
+              "name": "Frame",
+              "bounds_points": {
+                "Height": 668,
+                "Width": 920,
+                "X": 260,
+                "Y": 116
+              }
+            }
+          ]
+        },
+        {
+          "stage": "volume-popover-light-stable",
+          "controls": [
+            {
+              "target": "frame.volume",
+              "value": "open"
+            },
+            {
+              "target": "frame.volume_level",
+              "value": "0.7"
+            }
+          ],
+          "own_windows": [
+            {
+              "name": "",
+              "bounds_points": {
+                "Height": 106,
+                "Width": 266,
+                "X": 757,
+                "Y": 669
+              }
+            },
+            {
+              "name": "Frame",
+              "bounds_points": {
+                "Height": 668,
+                "Width": 920,
+                "X": 260,
+                "Y": 116
+              }
+            }
+          ]
+        },
+        {
+          "stage": "dismissed",
+          "controls": [
+            {
+              "target": "frame.volume",
+              "value": "closed"
+            }
+          ],
+          "own_windows": [
+            {
+              "name": "Frame",
+              "bounds_points": {
+                "Height": 668,
+                "Width": 920,
+                "X": 260,
+                "Y": 116
+              }
+            }
+          ]
+        }
+      ],
+      "interaction_scope": "Generated CLI and AXPress; explicit local13/CI own-active-PID mouseMoved keeps Frame awake. No physical input claim."
+    },
+    {
+      "purpose": "draft_edit_readback",
+      "path_relative_to_repo": "Docs/Evidence/macOS13-popover/full-app/gallery/report.json",
+      "bytes": 14879,
+      "sha256": "a5e77d3ff9dec6488e107066aae2042be94da1f0917f3800a8fde9dd42c245fc",
+      "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+      "recorded_success": true,
+      "before": {
+        "enabled": true,
+        "label": "Volume",
+        "reason": null,
+        "role": "popover_button",
+        "target": "frame.volume",
+        "value": "closed",
+        "window": "main#1"
+      },
+      "mounted_slider": {
+        "enabled": true,
+        "label": "Volume",
+        "reason": null,
+        "role": "slider",
+        "target": "frame.volume_level",
+        "value": "0.7",
+        "window": "main#1"
+      },
+      "after_edit": [
+        {
+          "enabled": true,
+          "label": "Volume",
+          "reason": null,
+          "role": "popover_button",
+          "target": "frame.volume",
+          "value": "open",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Volume",
+          "reason": null,
+          "role": "slider",
+          "target": "frame.volume_level",
+          "value": "0.55",
+          "window": "main#1"
+        }
+      ],
+      "interaction_scope": "Actual generated app; CLI binding selects Frame, opens popover and edits draft. Does not assert physical mouse, native AX geometry, dismissal or14 visual equivalence."
+    }
+  ],
+  "historical_product_provenance": {
+    "path_relative_to_repo": "Docs/Evidence/macOS13-popover/full-app/gallery/provenance.json",
+    "bytes": 534,
+    "sha256": "27b586d870b443bf5636687a6afc074f0112db38196e9e3b80e0d392c31f3828",
+    "source_sha": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+    "build_run": "https://github.com/Torrekie/Bern/actions/runs/39991406873",
+    "executable_sha256": "887173af876a3f802c68dfff7fef087f318cc6909a61ea4beff69dad536dfd7e",
+    "architecture": "arm64",
+    "minimum_macos": "13.0",
+    "sdk": "26.2",
+    "swift": "6.2.4"
+  },
+  "unchanged_control_flow": [
+    "Generator requests nativeCircular for the unstyled unconstrained icon outside a toolbar.",
+    "On macOS13 BernPopoverButton uses BernCircularIconButton and the stock circular NSButton target/action.",
+    "Native activation toggles the same presentation Binding; SwiftUI popover follows that Binding.",
+    "System dismissal follows the presentation Binding; disappearing popup content removes its BernControl registration.",
+    "Slider binds GalleryDraft.volume with the same generated setNumber and value readback."
+  ],
+  "limitations": [
+    "The native AXPress open/close and CLI draft 0.7-to-0.55 checks are two different historical runs, not one run.",
+    "Do not relabel historical f9 records as newly executed e48 records.",
+    "No physical mouse, actual Slider drag, keyboard focus, VoiceOver, audio or playback progress is proved by these popup records.",
+    "The Gallery Slider binds GalleryDraft.volume only; no Video volume binding is declared in any of these revisions. Draft sync does not establish audible volume change.",
+    "Historical popup coverage is normal-light macOS13.7.8 at the captured window size; it is not a full dark/narrow or macOS13.0-to-13.2 runtime matrix.",
+    "Source equality supports scoped reuse; it does not prove the complete applications or unrelated changed scroll/Picture paths have identical runtime behaviour."
+  ]
+}
