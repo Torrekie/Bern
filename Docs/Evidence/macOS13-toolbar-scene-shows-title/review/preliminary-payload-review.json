@@ -1,0 +1,26 @@
+{
+  "verdict": "preliminary_payload_reads_pass_but_source_unbound_not_accepted",
+  "first_compiled_sha256": "25eeefa9256140c607fa2d90170937e1f098b1a5fea25189267f199641996079",
+  "first_compiled_bytes": 234008,
+  "current_frozen_compile_sha256": "5db7396a34c05f2cd45cc4a35c2631bbd88ee1bbf20b1527fec68a682fee0ed0",
+  "apps": {
+    "true": {
+      "sha256": "066fe93b1d8ae260936ba01dea5d13543a15d10a44748d23eb3380ccae5d4a97",
+      "bytes": 252176,
+      "sections_equal_first_compile": true,
+      "section_count": 26,
+      "normalized_non_signature_sha256": "11f9bac9f8c50c28ddacbcf9f85d92ce448622c5d9a482dac204b4ad4ce06053",
+      "actual_strict_codesign_status": 0
+    },
+    "false": {
+      "sha256": "c90d428daf1247f9c46382fd4223b536244aca7bb493e8c43d065c65899c4c59",
+      "bytes": 252176,
+      "sections_equal_first_compile": true,
+      "section_count": 26,
+      "normalized_non_signature_sha256": "11f9bac9f8c50c28ddacbcf9f85d92ce448622c5d9a482dac204b4ad4ce06053",
+      "actual_strict_codesign_status": 0
+    }
+  },
+  "root_confirmation": "First compiler launch overlapped source writer before final freeze. First25ee cannot be attributed to frozen e590 source. Repaired-chain pair is pending.",
+  "scope": "Actual first apps/first compiler output read; two read-only codesign checks only. No source/parity acceptance. Preliminary evidence retained separately; parent may move already-stopped apps."
+}

@@ -1,0 +1,202 @@
+{
+  "verdict": "frozen_pair_native_acquisition_consistent_diagnostic_no_adoption",
+  "runs": {
+    "true": {
+      "pid": 78961,
+      "window_number": 10751,
+      "own_identity": {
+        "pid": 78961,
+        "bundle_id": "dev.bern.toolbar-showstitle.r20261025f.true",
+        "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-shows-title-frozen-build/ShowsTitle-true.app/Contents/MacOS/Showcase",
+        "kernel_start": {
+          "tv_sec": 1792888632,
+          "tv_usec": 695378
+        }
+      },
+      "ready_and_native_samples_bound": true,
+      "three_samples_geometry_equal": true,
+      "sample_uptimes": [
+        289911.67514866666,
+        289911.8851294167,
+        289912.09736295836
+      ],
+      "all_three_key_main_visible_front_own": true,
+      "native_header": {
+        "safe_area_top": 38,
+        "outer_height": 668,
+        "content_layout_height": 630
+      },
+      "native_title_field": {
+        "logical_title": "Buttons",
+        "hidden": false,
+        "frame_window": {
+          "height": 16,
+          "width": 55,
+          "x": 189,
+          "y_from_bottom": 641,
+          "y_from_top": 11
+        }
+      },
+      "native_toggle_item_view": {
+        "height": 22,
+        "width": 34,
+        "x": 149,
+        "y_from_bottom": 638,
+        "y_from_top": 8
+      },
+      "native_plus_item_view": {
+        "height": 22,
+        "width": 29.5,
+        "x": 882.5,
+        "y_from_bottom": 638,
+        "y_from_top": 8
+      },
+      "AX_toolbar_frame": {
+        "y": 98,
+        "height": 38,
+        "width": 920,
+        "x": 260
+      },
+      "AX_plus_outer_button_frame": {
+        "y": 98,
+        "height": 38,
+        "width": 38,
+        "x": 1138
+      },
+      "AX_header_title_text_count": 1,
+      "AX_and_capture_identity_frame_equal": true,
+      "native_y_bottom": 134,
+      "AX_capture_y_top": 98,
+      "coordinate_conventions_differ": true,
+      "PNG_sha256": "8edf7642bfac1bb0887fad3c0168d479dcd9fbaec9d0a1da1779b8302920c49d",
+      "PNG_byte_equal_preliminary": true,
+      "PNG_dimensions": [
+        1840,
+        1336
+      ],
+      "PNG_visual_review": "Byte-identical to viewed preliminary PNG: true has Buttons/far-right plus; false hides header Buttons and places plus beside toggle. No pixel metric computed.",
+      "cleanup_restored_original_before_stop": true,
+      "own_stopped": true,
+      "original_front_pid": 9292,
+      "interim_AX_desktop_interrupted": true
+    },
+    "false": {
+      "pid": 79051,
+      "window_number": 10756,
+      "own_identity": {
+        "pid": 79051,
+        "bundle_id": "dev.bern.toolbar-showstitle.r20261025f.false",
+        "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-shows-title-frozen-build/ShowsTitle-false.app/Contents/MacOS/Showcase",
+        "kernel_start": {
+          "tv_sec": 1792888655,
+          "tv_usec": 853004
+        }
+      },
+      "ready_and_native_samples_bound": true,
+      "three_samples_geometry_equal": true,
+      "sample_uptimes": [
+        289934.4202629167,
+        289934.6309640417,
+        289934.8394532084
+      ],
+      "all_three_key_main_visible_front_own": true,
+      "native_header": {
+        "safe_area_top": 38,
+        "outer_height": 668,
+        "content_layout_height": 630
+      },
+      "native_title_field": {
+        "logical_title": "Buttons",
+        "hidden": true,
+        "frame_window": {
+          "height": 0,
+          "width": 0,
+          "x": 0,
+          "y_from_bottom": 0,
+          "y_from_top": 668
+        }
+      },
+      "native_toggle_item_view": {
+        "height": 22,
+        "width": 34,
+        "x": 149,
+        "y_from_bottom": 638,
+        "y_from_top": 8
+      },
+      "native_plus_item_view": {
+        "height": 22,
+        "width": 29.5,
+        "x": 191.5,
+        "y_from_bottom": 638,
+        "y_from_top": 8
+      },
+      "AX_toolbar_frame": {
+        "y": 98,
+        "height": 38,
+        "width": 920,
+        "x": 260
+      },
+      "AX_plus_outer_button_frame": {
+        "y": 98,
+        "height": 38,
+        "width": 38,
+        "x": 447
+      },
+      "AX_header_title_text_count": 0,
+      "AX_and_capture_identity_frame_equal": true,
+      "native_y_bottom": 134,
+      "AX_capture_y_top": 98,
+      "coordinate_conventions_differ": true,
+      "PNG_sha256": "ecffb62f1a0336c27e84ea5a40717a416389b2593e8c9c8f06959d41121e302f",
+      "PNG_byte_equal_preliminary": true,
+      "PNG_dimensions": [
+        1840,
+        1336
+      ],
+      "PNG_visual_review": "Byte-identical to viewed preliminary PNG: true has Buttons/far-right plus; false hides header Buttons and places plus beside toggle. No pixel metric computed.",
+      "cleanup_restored_original_before_stop": true,
+      "own_stopped": true,
+      "original_front_pid": 9292,
+      "interim_AX_desktop_interrupted": true
+    }
+  },
+  "source_variable_review": "One immutable true/false UI parameter flows to Scene unifiedCompact(showsTitle:); no mode-dependent layout, delegate, toolbar replacement, custom offset or role tree. Mode/ID/path/time differ for provenance. Same one-shot outer frame normalization/activation and3getter samples.",
+  "result": "Both modes retain38pt native/AX header. false hides header Buttons and moves plus left691pt; toggle position unchanged. Does not meet full-product52pt target; no adoption.",
+  "desktop_final": {
+    "active": false,
+    "front_pid": 9292,
+    "cursor_moved_distance": 0,
+    "actions_used": 0,
+    "interrupted": false
+  },
+  "preliminary_source_binding": "rejected; screenshot byte equality does not attribute first binary to frozen source",
+  "input_hashes": {
+    "work/toolbar-shows-title-frozen-true/driver.json": "a020d9adaf798730aabb6bf064d96f74d04b5f03a4680afa522f8f6a1e3b7134",
+    "work/toolbar-shows-title-frozen-true/ready.json": "6a7cf4b37cc432c1ceacb9909e1c36903543961f47cd62b892156fd50b8740bf",
+    "work/toolbar-shows-title-frozen-true/native.json": "50732c6619fe71ec61be9b50791ff6baa102aff2fbafe19c3cd85548be6835c3",
+    "work/toolbar-shows-title-frozen-true/capture.json": "896309ef80e9c1ae58a2c2ac51aaec4a881bd79cbed04f13b6b0b4f1e79a9178",
+    "work/toolbar-shows-title-frozen-true/ax-state.json": "5b2efd7c8ca25bfd5c301cab41e2e580c5264fe2bdc051da23aa3c6f0354f073",
+    "work/toolbar-shows-title-frozen-true/window.png": "8edf7642bfac1bb0887fad3c0168d479dcd9fbaec9d0a1da1779b8302920c49d",
+    "work/toolbar-shows-title-frozen-true/owned.json": "020a31ed257697c0fb805a5ff29e98edd6100013773a9c566a127d2a35b19982",
+    "work/toolbar-shows-title-frozen-true/original-front.json": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9",
+    "work/toolbar-shows-title-frozen-true/cleanup-289930195885916.json": "6503dd52421c9a54488f0b2264a3473efff65dad5a5f3005da1dd457c709b9e5",
+    "work/toolbar-shows-title-frozen-false/driver.json": "febf55084f351ed47f163bc1663cd08c0b1d4d2c84b99a7d8eccc9b2c9931684",
+    "work/toolbar-shows-title-frozen-false/ready.json": "abf3bf8c56fdeb01fbef4fa6b37b2d056d194e89662c9a1bb5cf480f092789b6",
+    "work/toolbar-shows-title-frozen-false/native.json": "578cb6f02e7dacf8292c18cb7ecfc839a98806aae20395a7bfcfc67ea441be58",
+    "work/toolbar-shows-title-frozen-false/capture.json": "9caaab0eea4a7967ea4bc9bc7e8de3581e9c3b873febee4d9f10ff8d67340a11",
+    "work/toolbar-shows-title-frozen-false/ax-state.json": "1228804357f93fdbdcdee5ef11a3343b8f2fc03c1e4c3484ad649957b13e6df3",
+    "work/toolbar-shows-title-frozen-false/window.png": "ecffb62f1a0336c27e84ea5a40717a416389b2593e8c9c8f06959d41121e302f",
+    "work/toolbar-shows-title-frozen-false/owned.json": "e806858d6909575ded2dffc37fcce75e43e020e32b9951f9d8516611952c75e5",
+    "work/toolbar-shows-title-frozen-false/original-front.json": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9",
+    "work/toolbar-shows-title-frozen-false/cleanup-289948301796375.json": "285ea1bda8f7dc308d2172fac195d70da69180c9fbdbeb915f772b30095e734f",
+    "work/toolbar-shows-title-frozen-build/desktop-end.json": "00d074f89b4dacf6075f5321c1a4ce9ebaf190cb35b551fb62e4d0a9a00ec9c2"
+  },
+  "scope": [
+    "Isolated locally built Scene fixture on macOS13.7.8, SDK14.2/min13; not full Showcase/Gallery or a macOS14 run. Existing52pt reference has different source/Scene scope; no cross-scope pixel equivalence claim.",
+    "Native item-view/field rectangles and AX outer hit/semantic rectangles differ and are separated; logical window title remains Buttons when glyph field is hidden.",
+    "Three native getter snapshots agree; no5stable PNG chain, physical interaction, focus-navigation or animation acceptance. AX text reports focused outline; no real firstResponder object queried.",
+    "Viewed PNGs are dark. No saved normal-preference/effective-appearance gate exists in this fixture; no light/normal color parity assertion.",
+    "Interim AX desktop receipt flags own activation as interrupted; final release separately saysfalse/restored. Earlier records remain unchanged.",
+    "Reviewer only read source/JSON/PNG/native bytes and ran read-only codesign; no UI/compile/network/git/cleanup."
+  ]
+}

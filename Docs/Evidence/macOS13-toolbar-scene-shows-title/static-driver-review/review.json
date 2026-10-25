@@ -1,0 +1,31 @@
+{
+  "verdict": "no_execution_blocking_static_finding_for_root_supervised_single_run",
+  "runtime_performed": false,
+  "source_hashes": {
+    "work/toolbar-shows-title-build/run-one.py": "7c7209196d197d7fb86d485dd8565edfa742db2dece6e9f832f11125e19a1a9f",
+    "work/picture-local13-collector-v2/FocusGuard.swift": "dfe7417c19f0ae334226a3cdd4bc135a444f2aaa71fdb7f3e9f973bcd5f0170d"
+  },
+  "actual_guard_binary_sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+  "guard_binary_whole_equal_previously_read_B4_FocusGuard": true,
+  "static_AST_parse": "pass_without_import_or_execution",
+  "flow_review": {
+    "preflight": "fresh output; initial own absent; original foreground has kernel stamp; original identity saved before child launch",
+    "owned_binding": "Popen child PID must equal FocusGuard own PID; guard supplies private bundle/path/kernel start; executable path is checked and identity saved",
+    "cleanup": "finally reacquires only matching child PID if needed; exact owned receipt passed to unchanged FocusGuard; helper verifies PID/bundle/path/kernel start, conditionally restores original foreground before exact own stop; unavailable identity refuses blind stop",
+    "success": "capture.done and live child required; helper cleanup must succeed; cleanup exception clears success; successful controlled termination may yield nonzero child exit status, which is recorded"
+  },
+  "time_limits_seconds": {
+    "ready_poll": 20,
+    "capture_poll_after_ready": 75,
+    "each_guard_subprocess": 7,
+    "final_child_wait": 3
+  },
+  "limits": [
+    "20s ready and75s capture are phase limits, not a single global75s wall-clock cap; inspect/cleanup/wait add bounded time.",
+    "ready.json and capture.done are file-presence handoff markers. Runner does not parse ready PID/mode/window or validate captured evidence. Root collector must separately bind actual ready/output geometry and acceptance.",
+    "The original foreground restore is conditional on own being foreground; another foreground choice is preserved by FocusGuard.",
+    "Normal exceptions and Python finally cleanup are covered; this small supervised runner is not a separate external hard watchdog and cannot guarantee cleanup after forced interpreter death.",
+    "Pre-launch setup/hash failures occur before try and may leave a fresh directory without driver.json, but no app has been launched then. Helper timeout/invalid JSON may leave only partial failure evidence and no cleanup proof.",
+    "This review did not execute the driver/helper, open UI, compile, use network/git, alter source or mutate signatures. Probe implementation and runtime acceptance are outside this source review."
+  ]
+}

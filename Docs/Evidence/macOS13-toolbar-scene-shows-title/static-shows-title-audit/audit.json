@@ -1,0 +1,116 @@
+{
+  "verdict": "Scene_compact_showsTitle_false_not_excluded_by_retained_tests_minimal_native13_boolean_pair_still_possible",
+  "repo_HEAD_at_audit": "92f636371e2ac8becb0a1d8c61d63437b5ce4008",
+  "inputs": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/crates/bern-backend-swiftui/src/swift/app.rs",
+      "bytes": 18249,
+      "sha256": "016469cc58eb8df628889592558105182d341fbc1f79eaaaa1942609df4de15a"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-toolbar-role/ToolbarProbe.swift",
+      "bytes": 9160,
+      "sha256": "21da88bb6d78a6421c1b2c10328d85f9787cf9c914c60a1eb7316d8f14bcd3bd"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-toolbar-role/README.md",
+      "bytes": 2010,
+      "sha256": "c4551e6b57056e65795380df4308dc4fd19d0a073fc87dcb2d6378bcf3b4517e"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-toolbar-title-host-f6/RESULTS.md",
+      "bytes": 5495,
+      "sha256": "7e123792dc9453216aff2666387f5d7c395fea0090ab8c7089cacd0ae6a304b3"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-scene-fixture/ToolbarProbe.swift",
+      "bytes": 9128,
+      "sha256": "7c61806b361e565605a9e930be3f40e235d65499c9bcdf3e8adc39d2985882b8"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-scene-fixture/README.md",
+      "bytes": 2676,
+      "sha256": "b0f141ae73e4f87146c2b60b7b4a7d1c37ebab0b4f4c59fb40d0642009631e25"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-toolbar-owner-fixture/NativeToolbarProbe.swift",
+      "bytes": 23815,
+      "sha256": "1e9691e10d6348882674122751f140c7537116c6e898306f673cf5b900c0a3cf"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-toolbar-owner-fixture/README.md",
+      "bytes": 7651,
+      "sha256": "7950841475890aa2743b049e2c2403a7e060275ad5300e824f537360bb40cc2f"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/toolbar-next-public-window-plan/README.md",
+      "bytes": 6373,
+      "sha256": "d233d14873e1097b8c6682b731eec6f28e6e076f6006a38373ea04fe96200547"
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Versions/A/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "bytes": 1520489,
+      "sha256": "f1a9f2592019d14603bacaaba32f782af2f6572cb665646e8246fe29be5de43c"
+    }
+  ],
+  "historical_searches": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "outputs/Bern",
+        "log",
+        "--all",
+        "--format=%h %s",
+        "-G",
+        "showsTitle[[:space:]]*:[[:space:]]*false|UnifiedCompactWindowToolbarStyle|\\.unifiedCompact",
+        "--",
+        "crates/bern-backend-swiftui",
+        ".github/scripts"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "scope": "No retained matching implementation/history in selected product,harness,toolbar evidence paths; not proof about external/unretained runs."
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "outputs/Bern",
+        "log",
+        "--all",
+        "--format=%h %s",
+        "-G",
+        "showsTitle[[:space:]]*:[[:space:]]*false|UnifiedCompactWindowToolbarStyle|windowToolbarStyle\\([^\\n]*unifiedCompact",
+        "--",
+        "Docs/Evidence/*toolbar*",
+        "Docs/Implementation/macOS13-Acceptance.md"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "scope": "No retained matching implementation/history in selected product,harness,toolbar evidence paths; not proof about external/unretained runs."
+    }
+  ],
+  "current_workspace_search": "rg showsTitle false / UnifiedCompactWindowToolbarStyle / .unifiedCompact in work + SwiftUI product/harness + Docs evidence found only native-owner setter and prior unrun plan; no Scene compact/showsTitle=false implementation. Scene tests use unified(true).",
+  "SDK14_2_availability": {
+    "Scene.windowToolbarStyle": "macOS11.0",
+    "WindowToolbarStyle.unifiedCompact(showsTitle:)": "macOS11.0",
+    "UnifiedCompactWindowToolbarStyle.init(showsTitle:)": "macOS11.0",
+    "native_interface_path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Versions/A/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+    "interface_lines": [
+      20920,
+      27154,
+      27169,
+      27172
+    ]
+  },
+  "proposal_scope": "Single native13 Boolean pair, compact(true) vscompact(false), preserving existing realScene/title/sidebar/search/toolbar source. No untested repair claim or sidebar-toggle movement prediction. Not an automatic-vscompact two-variable comparison.",
+  "stop_conditions": [
+    "52→38 height change",
+    "title lost/duplicated",
+    "controls missing/clipped",
+    "no title-preserving geometry improvement",
+    "only hidden/nonkey evidence cannot establish full UI equivalence"
+  ],
+  "runtime_compilation_CI_product_or_cache_actions": false
+}

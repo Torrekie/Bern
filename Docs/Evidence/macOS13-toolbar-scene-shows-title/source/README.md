@@ -1,0 +1,15 @@
+# Native13 Scene showsTitle source
+
+`ToolbarShowsTitle.swift` derives the actual App/Window/NavigationSplit/List/search/Form/automatic Button structure from `work/toolbar-scene-fixture/ToolbarProbe.swift`. It fixes the old detail/Button variant and replaces the style choice with only `.unifiedCompact(showsTitle: configuration.showsTitle)`. No editor-role, outer-toolbar, Picker or style matrix remains. The page is fixed Buttons; this is not full Bern navigation acceptance.
+
+Invocation: exactly `true` or `false` as the one process argument. `BERN_TOOLBAR_PROBE_OUTPUT` must be an already existing absolute output directory with fresh `native.json` and `ready.json` names. Root provides fresh private bundle identities, bounded launch/capture/restore/termination and owned preference/saved-state cleanup.
+
+The app uses regular activation. After its onAppear, it searches for its single actual Scene-created normal window at most10 times100ms apart. It records the initial frame, normalizes only the same outer frame to920×668 preserving its origin, and once calls `makeKeyAndOrderFront(nil)` and `NSApp.activate(ignoringOtherApps:true)` for either Boolean. There is no content-height correction, manual layout/flush, toolbar/item/delegate replacement or reassertion. No application/window/toolbar delegate is installed.
+
+Three native snapshots200ms apart are written to `native.json`, then `ready.json` is written with `ready`, `pid`, `mode`, `windowNumber`, `sample_count`, visibility/key/main and frontmostPID. Root should verify these values against its exact owned instance before external WindowServer capture. Ready means metadata collection finished, not stable pixels, visual equivalence or a correct title. There is no further sampling loop. The app stays open for root cleanup; errors write ready=false where possible and also leave the process alive.
+
+Metadata uses public native getters: screen/window/content/contentLayoutRect frames, safe-area insets, toolbarStyle/titleVisibility, logical NSWindow.title, matching native NSTextFields with hidden/alpha/visibleRect/window rect, every native toolbar item and its descendant rects/button labels, and split arranged-subview rects. Matching title fields may be absent; that is evidence rather than a forced failure. Logical title presence and a nonhidden NSTextField do not prove visible glyph ink. Traverse bounds512 nodes and output bound512KiB are diagnostic limits; truncation is reported.
+
+Neither source variant hides/orders-out the window, exits on completion, restores focus itself, reads/writes defaults, requests TCC, changes Dock/user settings or draws a replacement control. Root must stop on missing/duplicate title, changed38pt chrome, clipped controls or no title-preserving improvement. No new CI, matrix or width trace is prepared here.
+
+The author performed no compilation or UI launch. After root review, the Optional frame/toolbar serialization was made explicit and this source was frozen. Root controls compilation, runtime capture and cleanup separately.

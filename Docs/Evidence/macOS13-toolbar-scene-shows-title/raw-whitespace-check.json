@@ -1,0 +1,20 @@
+{
+  "raw_toolchain_stdout_stderr_preserved": true,
+  "sole_exception": {
+    "path": "Docs/Evidence/macOS13-toolbar-scene-shows-title/build/toolchain.txt",
+    "sha256": "be7c797fdfac410a61d2b0de5be4b8156ce1be2d3cefe91e8b48bc022e16abbc",
+    "line": 3,
+    "exact_line": "swift-driver version: 1.87.3 "
+  },
+  "full_staged_check": {
+    "returncode": 2,
+    "stdout": "Docs/Evidence/macOS13-toolbar-scene-shows-title/build/toolchain.txt:3: trailing whitespace.\n+swift-driver version: 1.87.3 \n",
+    "stderr": ""
+  },
+  "all_other_staged_paths_check": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "scope": "Exact compiler output line preserved; no source whitespace exceptions."
+}

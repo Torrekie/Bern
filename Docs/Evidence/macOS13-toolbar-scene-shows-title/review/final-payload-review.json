@@ -1,0 +1,48 @@
+{
+  "verdict": "frozen_pair_actual_payload_sections_normalized_bytes_signatures_pass",
+  "compiled": {
+    "sha256": "5db7396a34c05f2cd45cc4a35c2631bbd88ee1bbf20b1527fec68a682fee0ed0",
+    "bytes": 233768
+  },
+  "apps": {
+    "true": {
+      "sha256": "ffdd06ba3964e2a859394844595b76c41d473fdf929acd9a081d91c289aafc76",
+      "bytes": 251936,
+      "section_count": 26,
+      "all_sections_equal_frozen_compiler_output": true,
+      "normalized_non_signature_sha256": "1bcda2cf48eef5ef2e1707b923750c717c35ab1d03ad149a57f0a71dea35b43f",
+      "arm64": true,
+      "minos": "13.0",
+      "SDK": "14.2",
+      "actual_strict_codesign_status": 0
+    },
+    "false": {
+      "sha256": "a1c8384852c1f9b3a693cf74651b49778a25342059661e62843c6dac34f0b43d",
+      "bytes": 251936,
+      "section_count": 26,
+      "all_sections_equal_frozen_compiler_output": true,
+      "normalized_non_signature_sha256": "1bcda2cf48eef5ef2e1707b923750c717c35ab1d03ad149a57f0a71dea35b43f",
+      "arm64": true,
+      "minos": "13.0",
+      "SDK": "14.2",
+      "actual_strict_codesign_status": 0
+    }
+  },
+  "pair_plist_only_difference": "CFBundleIdentifier",
+  "source_sha256": "e590fec503cfbd63830f911b1e78acb1d3df551deb04a7210cba5c4a008abb0a",
+  "source_binding": "Saved root build-input receipt states compilation after author freeze; frozen source hash independently matches source/provenance/receipt. Not a reproducible-build rerun.",
+  "frozen_prepare_only_change_from_preliminary": "fresh bundle ID r20261025f",
+  "actual_runner_sha256": "4ac106cd561903f0cccab30c3fe27188603582caea46338b017e0b1e01176e28",
+  "actual_guard_sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+  "input_hashes": {
+    "work/toolbar-shows-title-frozen-build/build-input.json": "b98d619ca341e9542f0db98ac544bd576891df0dd91a749ad4c98fbed3dc0bae",
+    "work/toolbar-shows-title-frozen-build/prepare.json": "d59c7a2ea32262b66084b37cb3bb9716b38a0403e0640d0f9c102ee6596a40cc",
+    "work/toolbar-shows-title-frozen-build/prepare.py": "e71b907584f654f6ceb666ea178d0ba61e966286430ab0c6e1b2e368e58b5edf",
+    "work/toolbar-shows-title-frozen-build/run-one.py": "4ac106cd561903f0cccab30c3fe27188603582caea46338b017e0b1e01176e28",
+    "work/toolbar-shows-title-build/rebuild-proof.json": "c9b5d6d4755427b02e562d2de8a654285ced2d0e69c2aec2a7b1c828e4aba060",
+    "work/toolbar-shows-title-source/ToolbarShowsTitle.swift": "e590fec503cfbd63830f911b1e78acb1d3df551deb04a7210cba5c4a008abb0a",
+    "work/toolbar-shows-title-source/source-provenance.json": "03299c3c0027a98533fe77f4ded78fdb2ae09a5e638a7604c7b483bee4774806"
+  },
+  "preliminary_pair": "Preserved separately/source-unbound/not accepted; no attribution of its25ee binary to e590 source.",
+  "scope": "Actual final2Apps, frozen compiler output, old current compiler output and2guards read before cleanup. Read-only signature verification only; no UI/compile/signing mutation."
+}

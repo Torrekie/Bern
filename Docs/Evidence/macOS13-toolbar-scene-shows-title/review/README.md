@@ -1,0 +1,13 @@
+# showsTitle Boolean pair: independent native review
+
+Final verdict: `frozen_pair_native_acquisition_consistent_diagnostic_no_adoption`.
+
+The source-frozen pair, using one immutable Boolean at `.windowToolbarStyle(.unifiedCompact(showsTitle:))`, has consistent native/AX/capture identity records. Both variants retain38pt header geometry. false hides the Buttons title field and moves the plus item691pt left; sidebar toggle geometry remains unchanged. This isolated Scene does not establish full-product52pt behavior or macOS14 equivalence, and is not an adoption result.
+
+- `final-payload-review.json`: actual compiler output SHA`5db7396a34c05f2cd45cc4a35c2631bbd88ee1bbf20b1527fec68a682fee0ed0`; final true/false apps each251936B,26sections and normalized non-signature bytes equal that compiler output. Actual strict signatures pass; arm64/min13/SDK14.2. Source SHA`e590fec503cfbd63830f911b1e78acb1d3df551deb04a7210cba5c4a008abb0a` matches frozen source/provenance and root build-after-freeze receipt. No reproducible-build rerun was performed.
+- `final-runtime-review.json`: true PID78961/window10751; false PID79051/window10756. Three snapshots per process agree and are key/main/visible/frontmost. ready, native, AX, capture and exact own cleanup identities agree. Both restore Simulator9292 before own stop. Final separate desktop release is inactive, front9292, cursor distance0/actions0. Interim AX session interruption flags caused by own activation are preserved.
+- `preliminary-payload-review.json`: first pair uses compiler25ee, while current frozen source produces5db. Root confirmed compilation overlapped source preparation. That preliminary source binding was rejected. Its screenshots are byte-identical to final screenshots; this does not retroactively bind its binary to frozen source.
+
+Native title/item-view bounds, AX semantic/hit rectangles, logical window title and visible PNG are separate evidence. Logical title remains Buttons in both modes. The viewed PNGs are dark; no normal-preference or effective-appearance gate is recorded. These are3native getter samples plus one external screenshot per mode, without a5stable image chain or physical interaction/focus/animation acceptance. There is no new pixel algorithm, macOS14 capture or full Showcase/Gallery comparison here.
+
+The actual source,4App payloads,3bare binaries and guards were read before root cleanup; saved hashes are historical receipts. Reviewer ran only read-only byte/source/JSON/PNG inspection and signature verification, without UI/compile/network/git/signing mutation/cleanup. `SHA256SUMS` covers these4review files only; referenced original artifacts may later be retired by the parent.
