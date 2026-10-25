@@ -1,0 +1,66 @@
+{
+  "scope": "Offline raw stored PNG pixels from failed observer cohort only. This is not PixelGate PASS or accepted ledger; no report fields changed and no CLI/helper rerun.",
+  "run_id": 40155522534,
+  "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "harness": "7987f3527dc4461957eb17b718c58aac11759ab0",
+  "original_report_sha256": [
+    "42b7a82da87254775d72682bde0cff46a0242495afc8ea4351c7069ea08a8169",
+    "ada92ebc52feb8bc2804da34f570c5d8cc26814bc821ed2037ec10d3d07e2eb0"
+  ],
+  "raw_png_sha256": [
+    "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b",
+    "66e16368abbad027b9d51cb43e1af61ae0877eab5a6c6cbb72431c6b5b61919b"
+  ],
+  "image_mode": "RGBA",
+  "pillow": "12.3.0",
+  "numpy": "2.5.0",
+  "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+  "comparisons": [
+    {
+      "name": "whole_window",
+      "half_open_pixels": [
+        0,
+        0,
+        920,
+        668
+      ],
+      "raw_stored_components_equal": false,
+      "changed_pixels": 5284,
+      "changed_bbox_global": [
+        10,
+        118,
+        200,
+        146
+      ],
+      "control_raw_sha256": "3eef36f06f079687472e42599c9f5d16f6b0c2950912ee26a0c4c4ba8774536b",
+      "observer_raw_sha256": "520f672a65fca5f662a946cf9c8294118cb2578e7f7cfd053635b47f241d0b76"
+    },
+    {
+      "name": "fixed_frame_detail",
+      "half_open_pixels": [
+        211,
+        52,
+        920,
+        668
+      ],
+      "raw_stored_components_equal": true,
+      "changed_pixels": 0,
+      "changed_bbox_global": null,
+      "control_raw_sha256": "c6d3ce7ac60f0fea4adddde9dcd07484b631cd554ff5f5a6c678e907e7bc13ff",
+      "observer_raw_sha256": "c6d3ce7ac60f0fea4adddde9dcd07484b631cd554ff5f5a6c678e907e7bc13ff"
+    }
+  ],
+  "observer_failure": "Missing/truncated row placements",
+  "ledger": {
+    "sha256": "8de0029db61cb8ff0b1085d59493abd5aa347608672147604b39ea6acd8b0bcc",
+    "bytes": 63828,
+    "truncated": true,
+    "reason": "byte_limit",
+    "retained_complete_count": 35,
+    "first_enter_uptime": 108.51602929166667,
+    "last_complete_uptime": 108.68820345833333,
+    "elapsed_prefix_seconds": 0.17217416666666452,
+    "scope": "No widths/offers interpreted from rejected prefix"
+  },
+  "native14_access": "Both actual14.8.9 collector instances ran, stable4 PNG captured, app termination0 and stopped; observer finalsource evidence gate failed duebounded retention."
+}

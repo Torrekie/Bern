@@ -1,0 +1,1978 @@
+{
+  "media_commands": [
+    {
+      "doc": "List every player with its merged state",
+      "errors": [
+        "player_not_found",
+        "executor_unavailable",
+        "source_bound",
+        "no_source",
+        "not_seekable",
+        "out_of_range",
+        "media_failed",
+        "stale_source",
+        "media_timeout"
+      ],
+      "external": {
+        "cli": [
+          "media",
+          "players"
+        ],
+        "mcp": "media_players"
+      },
+      "id": "media.players",
+      "kind": "query",
+      "name": "players",
+      "params": [],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "inner": {
+          "kind": "record",
+          "name": "MediaPlayer"
+        },
+        "kind": "list"
+      },
+      "scope": "engine"
+    },
+    {
+      "doc": "Read the merged state of one player",
+      "errors": [
+        "player_not_found",
+        "executor_unavailable",
+        "source_bound",
+        "no_source",
+        "not_seekable",
+        "out_of_range",
+        "media_failed",
+        "stale_source",
+        "media_timeout"
+      ],
+      "external": {
+        "cli": [
+          "media",
+          "state"
+        ],
+        "mcp": "media_state"
+      },
+      "id": "media.state",
+      "kind": "query",
+      "name": "state",
+      "params": [
+        {
+          "doc": "Player identity from media.players",
+          "name": "player_id",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "MediaPlayer"
+      },
+      "scope": "engine"
+    },
+    {
+      "doc": "Load a new source into a player that is not bound to a declaration; returns the new source version",
+      "errors": [
+        "player_not_found",
+        "executor_unavailable",
+        "source_bound",
+        "no_source",
+        "not_seekable",
+        "out_of_range",
+        "media_failed",
+        "stale_source",
+        "media_timeout"
+      ],
+      "external": {
+        "cli": [
+          "media",
+          "open"
+        ],
+        "mcp": "media_open"
+      },
+      "id": "media.open",
+      "kind": "command",
+      "name": "open",
+      "params": [
+        {
+          "doc": "Player identity from media.players",
+          "name": "player_id",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Media to load",
+          "name": "source",
+          "type": {
+            "kind": "record",
+            "name": "MediaSource"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "never"
+      },
+      "result": {
+        "kind": "int"
+      },
+      "scope": "engine"
+    },
+    {
+      "doc": "Start or resume playback; returns the source version it applied to",
+      "errors": [
+        "player_not_found",
+        "executor_unavailable",
+        "source_bound",
+        "no_source",
+        "not_seekable",
+        "out_of_range",
+        "media_failed",
+        "stale_source",
+        "media_timeout"
+      ],
+      "external": {
+        "cli": [
+          "media",
+          "play"
+        ],
+        "mcp": "media_play"
+      },
+      "id": "media.play",
+      "kind": "command",
+      "name": "play",
+      "params": [
+        {
+          "doc": "Player identity from media.players",
+          "name": "player_id",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "int"
+      },
+      "scope": "engine"
+    },
+    {
+      "doc": "Pause playback; returns the source version it applied to",
+      "errors": [
+        "player_not_found",
+        "executor_unavailable",
+        "source_bound",
+        "no_source",
+        "not_seekable",
+        "out_of_range",
+        "media_failed",
+        "stale_source",
+        "media_timeout"
+      ],
+      "external": {
+        "cli": [
+          "media",
+          "pause"
+        ],
+        "mcp": "media_pause"
+      },
+      "id": "media.pause",
+      "kind": "command",
+      "name": "pause",
+      "params": [
+        {
+          "doc": "Player identity from media.players",
+          "name": "player_id",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "int"
+      },
+      "scope": "engine"
+    },
+    {
+      "doc": "Move the playback position of seekable media",
+      "errors": [
+        "player_not_found",
+        "executor_unavailable",
+        "source_bound",
+        "no_source",
+        "not_seekable",
+        "out_of_range",
+        "media_failed",
+        "stale_source",
+        "media_timeout"
+      ],
+      "external": {
+        "cli": [
+          "media",
+          "seek"
+        ],
+        "mcp": "media_seek"
+      },
+      "id": "media.seek",
+      "kind": "command",
+      "name": "seek",
+      "params": [
+        {
+          "doc": "Player identity from media.players",
+          "name": "player_id",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Target position in milliseconds",
+          "name": "position_ms",
+          "type": {
+            "kind": "int"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "int"
+      },
+      "scope": "engine"
+    },
+    {
+      "doc": "Set the volume between 0 and 1",
+      "errors": [
+        "player_not_found",
+        "executor_unavailable",
+        "source_bound",
+        "no_source",
+        "not_seekable",
+        "out_of_range",
+        "media_failed",
+        "stale_source",
+        "media_timeout"
+      ],
+      "external": {
+        "cli": [
+          "media",
+          "set-volume"
+        ],
+        "mcp": "media_set_volume"
+      },
+      "id": "media.set_volume",
+      "kind": "command",
+      "name": "set_volume",
+      "params": [
+        {
+          "doc": "Player identity from media.players",
+          "name": "player_id",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Volume between 0 and 1",
+          "name": "volume",
+          "type": {
+            "kind": "float"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "int"
+      },
+      "scope": "engine"
+    },
+    {
+      "doc": "Mute or unmute audio",
+      "errors": [
+        "player_not_found",
+        "executor_unavailable",
+        "source_bound",
+        "no_source",
+        "not_seekable",
+        "out_of_range",
+        "media_failed",
+        "stale_source",
+        "media_timeout"
+      ],
+      "external": {
+        "cli": [
+          "media",
+          "set-muted"
+        ],
+        "mcp": "media_set_muted"
+      },
+      "id": "media.set_muted",
+      "kind": "command",
+      "name": "set_muted",
+      "params": [
+        {
+          "doc": "Player identity from media.players",
+          "name": "player_id",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Whether audio is muted",
+          "name": "muted",
+          "type": {
+            "kind": "bool"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "int"
+      },
+      "scope": "engine"
+    }
+  ],
+  "protocol": {
+    "commands": [
+      {
+        "doc": "Open a pattern.",
+        "errors": [
+          "unknown_swatch"
+        ],
+        "external": {
+          "cli": [
+            "gallery",
+            "open"
+          ],
+          "mcp": "gallery_open"
+        },
+        "id": "gallery.open",
+        "kind": "command",
+        "name": "open",
+        "params": [
+          {
+            "name": "id",
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "policy": {
+          "cancellable": false,
+          "concurrency": "serial",
+          "retry": "never"
+        },
+        "result": {
+          "kind": "unit"
+        },
+        "scope": "engine"
+      },
+      {
+        "doc": "Mark a pattern as a favorite, or no longer.",
+        "errors": [
+          "unknown_swatch"
+        ],
+        "external": {
+          "cli": [
+            "gallery",
+            "toggle-favorite"
+          ],
+          "mcp": "gallery_toggle_favorite"
+        },
+        "id": "gallery.toggle_favorite",
+        "kind": "command",
+        "name": "toggle_favorite",
+        "params": [
+          {
+            "name": "id",
+            "type": {
+              "kind": "int"
+            }
+          }
+        ],
+        "policy": {
+          "cancellable": false,
+          "concurrency": "serial",
+          "retry": "never"
+        },
+        "result": {
+          "kind": "unit"
+        },
+        "scope": "engine"
+      },
+      {
+        "doc": "No pattern is a favorite any more.",
+        "external": {
+          "cli": [
+            "gallery",
+            "clear-favorites"
+          ],
+          "mcp": "gallery_clear_favorites"
+        },
+        "id": "gallery.clear_favorites",
+        "kind": "command",
+        "name": "clear_favorites",
+        "params": [],
+        "policy": {
+          "cancellable": false,
+          "concurrency": "serial",
+          "retry": "never"
+        },
+        "result": {
+          "kind": "unit"
+        },
+        "scope": "engine"
+      },
+      {
+        "doc": "Show `accent` in every window.",
+        "external": {
+          "cli": [
+            "gallery",
+            "set-accent"
+          ],
+          "mcp": "gallery_set_accent"
+        },
+        "id": "gallery.set_accent",
+        "kind": "command",
+        "name": "set_accent",
+        "params": [
+          {
+            "name": "accent",
+            "type": {
+              "kind": "enum",
+              "name": "Accent"
+            }
+          }
+        ],
+        "policy": {
+          "cancellable": false,
+          "concurrency": "serial",
+          "retry": "idempotent"
+        },
+        "result": {
+          "kind": "unit"
+        },
+        "scope": "engine"
+      },
+      {
+        "doc": "Show every window light, dark, or as the system is.",
+        "external": {
+          "cli": [
+            "gallery",
+            "set-appearance"
+          ],
+          "mcp": "gallery_set_appearance"
+        },
+        "id": "gallery.set_appearance",
+        "kind": "command",
+        "name": "set_appearance",
+        "params": [
+          {
+            "name": "appearance",
+            "type": {
+              "kind": "enum",
+              "name": "Appearance"
+            }
+          }
+        ],
+        "policy": {
+          "cancellable": false,
+          "concurrency": "serial",
+          "retry": "idempotent"
+        },
+        "result": {
+          "kind": "unit"
+        },
+        "scope": "engine"
+      },
+      {
+        "doc": "Show the player page's caption, or hide it.",
+        "external": {
+          "cli": [
+            "gallery",
+            "set-caption"
+          ],
+          "mcp": "gallery_set_caption"
+        },
+        "id": "gallery.set_caption",
+        "kind": "command",
+        "name": "set_caption",
+        "params": [
+          {
+            "name": "shown",
+            "type": {
+              "kind": "bool"
+            }
+          }
+        ],
+        "policy": {
+          "cancellable": false,
+          "concurrency": "serial",
+          "retry": "idempotent"
+        },
+        "result": {
+          "kind": "unit"
+        },
+        "scope": "engine"
+      },
+      {
+        "doc": "Play `source` in the frame.",
+        "external": {
+          "cli": [
+            "gallery",
+            "play"
+          ],
+          "mcp": "gallery_play"
+        },
+        "id": "gallery.play",
+        "kind": "command",
+        "name": "play",
+        "params": [
+          {
+            "name": "source",
+            "type": {
+              "kind": "record",
+              "name": "MediaSource"
+            }
+          }
+        ],
+        "policy": {
+          "cancellable": false,
+          "concurrency": "serial",
+          "retry": "never"
+        },
+        "result": {
+          "kind": "unit"
+        },
+        "scope": "engine"
+      },
+      {
+        "doc": "Show `source` as the poster.",
+        "external": {
+          "cli": [
+            "gallery",
+            "set-poster"
+          ],
+          "mcp": "gallery_set_poster"
+        },
+        "id": "gallery.set_poster",
+        "kind": "command",
+        "name": "set_poster",
+        "params": [
+          {
+            "name": "source",
+            "type": {
+              "kind": "record",
+              "name": "MediaSource"
+            }
+          }
+        ],
+        "policy": {
+          "cancellable": false,
+          "concurrency": "serial",
+          "retry": "idempotent"
+        },
+        "result": {
+          "kind": "unit"
+        },
+        "scope": "engine"
+      },
+      {
+        "doc": "Patterns whose name contains `text`, ignoring case; an empty\ntext finds none.",
+        "external": {
+          "cli": [
+            "gallery",
+            "find"
+          ],
+          "mcp": "gallery_find"
+        },
+        "id": "gallery.find",
+        "kind": "query",
+        "name": "find",
+        "params": [
+          {
+            "name": "text",
+            "type": {
+              "kind": "text"
+            }
+          }
+        ],
+        "policy": {
+          "cancellable": true,
+          "concurrency": "overlapping",
+          "retry": "idempotent"
+        },
+        "reads": [
+          "swatches"
+        ],
+        "result": {
+          "inner": {
+            "kind": "record",
+            "name": "Swatch"
+          },
+          "kind": "list"
+        },
+        "scope": "engine"
+      }
+    ],
+    "descriptor_version": 1,
+    "namespace": "gallery",
+    "state": [
+      {
+        "name": "swatches",
+        "type": {
+          "inner": {
+            "kind": "record",
+            "name": "Swatch"
+          },
+          "kind": "list"
+        }
+      },
+      {
+        "doc": "The favorites, in the order of `swatches`.",
+        "name": "favorites",
+        "type": {
+          "inner": {
+            "kind": "record",
+            "name": "Swatch"
+          },
+          "kind": "list"
+        }
+      },
+      {
+        "doc": "The pattern last opened, or 0.",
+        "name": "opened",
+        "type": {
+          "kind": "int"
+        }
+      },
+      {
+        "content": true,
+        "doc": "Name of the pattern last opened, or empty.",
+        "name": "opened_name",
+        "type": {
+          "kind": "text"
+        }
+      },
+      {
+        "doc": "The latest notice and its number, which changes with each one.",
+        "name": "notice",
+        "type": {
+          "inner": {
+            "kind": "record",
+            "name": "Notice"
+          },
+          "kind": "optional"
+        }
+      },
+      {
+        "name": "notice_id",
+        "type": {
+          "kind": "int"
+        }
+      },
+      {
+        "doc": "The clip the player page shows.",
+        "name": "clip",
+        "type": {
+          "kind": "record",
+          "name": "MediaSource"
+        }
+      },
+      {
+        "doc": "The picture the details panel shows, read at run time.",
+        "name": "poster",
+        "type": {
+          "kind": "record",
+          "name": "MediaSource"
+        }
+      },
+      {
+        "name": "accent",
+        "type": {
+          "kind": "enum",
+          "name": "Accent"
+        }
+      },
+      {
+        "name": "appearance",
+        "type": {
+          "kind": "enum",
+          "name": "Appearance"
+        }
+      },
+      {
+        "doc": "Whether the player page shows its caption.",
+        "name": "caption",
+        "type": {
+          "kind": "bool"
+        }
+      }
+    ],
+    "types": {
+      "enums": [
+        {
+          "name": "Accent",
+          "variants": [
+            {
+              "name": "Crimson"
+            },
+            {
+              "name": "Ultramarine"
+            },
+            {
+              "name": "Neon"
+            }
+          ]
+        },
+        {
+          "name": "Appearance",
+          "variants": [
+            {
+              "name": "System"
+            },
+            {
+              "name": "Light"
+            },
+            {
+              "name": "Dark"
+            }
+          ]
+        },
+        {
+          "name": "NoticeKind",
+          "variants": [
+            {
+              "name": "Favorite"
+            },
+            {
+              "name": "NoLongerFavorite"
+            },
+            {
+              "name": "Playing"
+            },
+            {
+              "name": "PlayingFile"
+            }
+          ]
+        },
+        {
+          "name": "Container",
+          "variants": [
+            {
+              "label": {
+                "key": "Container.Mp4",
+                "translations": {
+                  "en": "MP4",
+                  "zh-Hans": "MP4"
+                }
+              },
+              "name": "Mp4"
+            },
+            {
+              "label": {
+                "key": "Container.Matroska",
+                "translations": {
+                  "en": "Matroska",
+                  "zh-Hans": "Matroska"
+                }
+              },
+              "name": "Matroska"
+            },
+            {
+              "label": {
+                "key": "Container.Other",
+                "translations": {
+                  "en": "Video",
+                  "zh-Hans": "视频"
+                }
+              },
+              "name": "Other"
+            }
+          ]
+        }
+      ],
+      "records": [
+        {
+          "fields": [
+            {
+              "doc": "Location of the media: an http(s) URL or a file URL",
+              "name": "url",
+              "type": {
+                "kind": "text"
+              }
+            }
+          ],
+          "name": "MediaSource"
+        },
+        {
+          "fields": [
+            {
+              "name": "kind",
+              "type": {
+                "kind": "enum",
+                "name": "NoticeKind"
+              }
+            },
+            {
+              "content": true,
+              "doc": "The pattern or the clip, by the name the user knows it by.",
+              "name": "name",
+              "type": {
+                "kind": "text"
+              }
+            },
+            {
+              "name": "container",
+              "type": {
+                "kind": "enum",
+                "name": "Container"
+              }
+            },
+            {
+              "name": "kilobytes",
+              "type": {
+                "kind": "int"
+              }
+            }
+          ],
+          "name": "Notice"
+        },
+        {
+          "fields": [
+            {
+              "name": "id",
+              "type": {
+                "kind": "int"
+              }
+            },
+            {
+              "content": true,
+              "name": "name",
+              "type": {
+                "kind": "text"
+              }
+            },
+            {
+              "name": "favorite",
+              "type": {
+                "kind": "bool"
+              }
+            },
+            {
+              "doc": "Where the pattern sits along all patterns, from 0 to 1.",
+              "name": "at",
+              "type": {
+                "kind": "float"
+              }
+            }
+          ],
+          "name": "Swatch"
+        }
+      ]
+    },
+    "version": 1
+  },
+  "session_commands": [
+    {
+      "doc": "List the mounted controls of the session",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "inspect"
+        ],
+        "mcp": "ui_inspect"
+      },
+      "id": "ui.inspect",
+      "kind": "query",
+      "name": "inspect",
+      "params": [],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "inner": {
+          "kind": "record",
+          "name": "ControlInfo"
+        },
+        "kind": "list"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Activate a button or link through its real control binding",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "activate"
+        ],
+        "mcp": "ui_activate"
+      },
+      "id": "ui.activate",
+      "kind": "command",
+      "name": "activate",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "never"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Replace the draft text of a text input",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "edit"
+        ],
+        "mcp": "ui_edit"
+      },
+      "id": "ui.edit",
+      "kind": "command",
+      "name": "edit",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "New text",
+          "name": "value",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Submit a text input",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "submit"
+        ],
+        "mcp": "ui_submit"
+      },
+      "id": "ui.submit",
+      "kind": "command",
+      "name": "submit",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "never"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Set a switch or checkbox",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "set-bool"
+        ],
+        "mcp": "ui_set_bool"
+      },
+      "id": "ui.set_bool",
+      "kind": "command",
+      "name": "set_bool",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "New state",
+          "name": "value",
+          "type": {
+            "kind": "bool"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Set and commit a slider",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "set-number"
+        ],
+        "mcp": "ui_set_number"
+      },
+      "id": "ui.set_number",
+      "kind": "command",
+      "name": "set_number",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "New value",
+          "name": "value",
+          "type": {
+            "kind": "float"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "never"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Select an option of a picker, sidebar or tab view by variant name",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "select"
+        ],
+        "mcp": "ui_select"
+      },
+      "id": "ui.select",
+      "kind": "command",
+      "name": "select",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Option name",
+          "name": "option",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Go back one step in a navigation container",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "back"
+        ],
+        "mcp": "ui_back"
+      },
+      "id": "ui.back",
+      "kind": "command",
+      "name": "back",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "never"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Give a control the keyboard focus, such as a search field, whose results then show",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "focus"
+        ],
+        "mcp": "ui_focus"
+      },
+      "id": "ui.focus",
+      "kind": "command",
+      "name": "focus",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Give a file to a control that asks for one or takes dropped files, as if the user chose or dropped it; its action then runs",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation",
+        "invalid_url",
+        "unsupported_file"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "set-file"
+        ],
+        "mcp": "ui_set_file"
+      },
+      "id": "ui.set_file",
+      "kind": "command",
+      "name": "set_file",
+      "params": [
+        {
+          "doc": "Control identity from ui.inspect",
+          "name": "target",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "A `file://` or http(s) URL; it must be of a kind the control accepts",
+          "name": "url",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "never"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "The session's interface language tag",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "language"
+        ],
+        "mcp": "ui_language"
+      },
+      "id": "ui.language",
+      "kind": "query",
+      "name": "language",
+      "params": [],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "text"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Switch the interface language; every localized text updates while drafts, navigation and windows stay",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation",
+        "unsupported_language"
+      ],
+      "external": {
+        "cli": [
+          "ui",
+          "set-language"
+        ],
+        "mcp": "ui_set_language"
+      },
+      "id": "ui.set_language",
+      "kind": "command",
+      "name": "set_language",
+      "params": [
+        {
+          "doc": "A supported language tag, such as `en`",
+          "name": "language",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Start the performance trace with rules such as `engine,ui,slow:16ms` or `command:library.*`; a running trace ends first",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation",
+        "invalid_rules"
+      ],
+      "external": {
+        "cli": [
+          "trace",
+          "start"
+        ],
+        "mcp": "trace_start"
+      },
+      "id": "trace.start",
+      "kind": "command",
+      "name": "start",
+      "params": [
+        {
+          "doc": "Categories (engine, ui, frame, span, motion, style, all), filters (command:, query:, control:, field:, feature:), slow:, long:, file:, quiet, buffer:",
+          "name": "rules",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "TraceStarted"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Stop the performance trace and write its timeline",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "trace",
+          "stop"
+        ],
+        "mcp": "trace_stop"
+      },
+      "id": "trace.stop",
+      "kind": "command",
+      "name": "stop",
+      "params": [
+        {
+          "doc": "Also return the timeline itself, for an app whose files are on another device",
+          "name": "timeline",
+          "type": {
+            "inner": {
+              "kind": "bool"
+            },
+            "kind": "optional"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "TraceStopped"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "What the performance trace measured: p50, p95 and maximum per command, the slowest interactions and the long frames",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "trace",
+          "report"
+        ],
+        "mcp": "trace_report"
+      },
+      "id": "trace.report",
+      "kind": "query",
+      "name": "report",
+      "params": [
+        {
+          "doc": "How many of the slowest interactions to list (10)",
+          "name": "top",
+          "type": {
+            "inner": {
+              "kind": "int"
+            },
+            "kind": "optional"
+          }
+        },
+        {
+          "doc": "Start the statistics over after this report",
+          "name": "reset",
+          "type": {
+            "inner": {
+              "kind": "bool"
+            },
+            "kind": "optional"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "TraceReport"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Open a window kind or activate its existing instance",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "open"
+        ],
+        "mcp": "window_open"
+      },
+      "id": "window.open",
+      "kind": "command",
+      "name": "open",
+      "params": [
+        {
+          "doc": "Window kind id",
+          "name": "kind",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "text"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Request closing a window instance; its declared close check may ask for a confirmation",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "close"
+        ],
+        "mcp": "window_close"
+      },
+      "id": "window.close",
+      "kind": "command",
+      "name": "close",
+      "params": [
+        {
+          "doc": "Window instance id",
+          "name": "window",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "CloseResult"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Bring a window instance to the front",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "activate"
+        ],
+        "mcp": "window_activate"
+      },
+      "id": "window.activate",
+      "kind": "command",
+      "name": "activate",
+      "params": [
+        {
+          "doc": "Window instance id",
+          "name": "window",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "unit"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Decide a pending close confirmation, as its dialog would",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "confirm-close"
+        ],
+        "mcp": "window_confirm_close"
+      },
+      "id": "window.confirm_close",
+      "kind": "command",
+      "name": "confirm_close",
+      "params": [
+        {
+          "doc": "Window instance id",
+          "name": "window",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Confirmation id from window.close",
+          "name": "confirmation",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Save, Discard or Cancel",
+          "name": "decision",
+          "type": {
+            "kind": "enum",
+            "name": "CloseDecision"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "never"
+      },
+      "result": {
+        "kind": "record",
+        "name": "CloseResult"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "List the open window instances with their actual presentation and available actions",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "list"
+        ],
+        "mcp": "window_list"
+      },
+      "id": "window.list",
+      "kind": "query",
+      "name": "list",
+      "params": [],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "inner": {
+          "kind": "record",
+          "name": "WindowInfo"
+        },
+        "kind": "list"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Minimize a window instance; its drafts and navigation stay",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "minimize"
+        ],
+        "mcp": "window_minimize"
+      },
+      "id": "window.minimize",
+      "kind": "command",
+      "name": "minimize",
+      "params": [
+        {
+          "doc": "Window instance id",
+          "name": "window",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "WindowInfo"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Undo one step: bring a minimized window back, or leave full screen or the maximized size",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "restore"
+        ],
+        "mcp": "window_restore"
+      },
+      "id": "window.restore",
+      "kind": "command",
+      "name": "restore",
+      "params": [
+        {
+          "doc": "Window instance id",
+          "name": "window",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "never"
+      },
+      "result": {
+        "kind": "record",
+        "name": "WindowInfo"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Grow a window instance to fill its display, as the platform zooms windows",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "maximize"
+        ],
+        "mcp": "window_maximize"
+      },
+      "id": "window.maximize",
+      "kind": "command",
+      "name": "maximize",
+      "params": [
+        {
+          "doc": "Window instance id",
+          "name": "window",
+          "type": {
+            "kind": "text"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "WindowInfo"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Move a window instance so its top-left corner is at x, y; its title bar must stay on a display",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation",
+        "out_of_range"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "move"
+        ],
+        "mcp": "window_move"
+      },
+      "id": "window.move",
+      "kind": "command",
+      "name": "move",
+      "params": [
+        {
+          "doc": "Window instance id",
+          "name": "window",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Left edge in points",
+          "name": "x",
+          "type": {
+            "kind": "float"
+          }
+        },
+        {
+          "doc": "Top edge in points",
+          "name": "y",
+          "type": {
+            "kind": "float"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "WindowInfo"
+      },
+      "scope": "session"
+    },
+    {
+      "doc": "Resize a window instance, keeping its top-left corner; the size must respect the window's minimum",
+      "errors": [
+        "requires_ui_session",
+        "target_not_found",
+        "target_unavailable",
+        "target_blocked",
+        "stale_window",
+        "stale_confirmation",
+        "out_of_range"
+      ],
+      "external": {
+        "cli": [
+          "window",
+          "resize"
+        ],
+        "mcp": "window_resize"
+      },
+      "id": "window.resize",
+      "kind": "command",
+      "name": "resize",
+      "params": [
+        {
+          "doc": "Window instance id",
+          "name": "window",
+          "type": {
+            "kind": "text"
+          }
+        },
+        {
+          "doc": "Outer width in points",
+          "name": "width",
+          "type": {
+            "kind": "float"
+          }
+        },
+        {
+          "doc": "Outer height in points",
+          "name": "height",
+          "type": {
+            "kind": "float"
+          }
+        }
+      ],
+      "policy": {
+        "cancellable": false,
+        "concurrency": "serial",
+        "retry": "idempotent"
+      },
+      "result": {
+        "kind": "record",
+        "name": "WindowInfo"
+      },
+      "scope": "session"
+    }
+  ]
+}

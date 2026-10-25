@@ -1,0 +1,159 @@
+{
+  "collector_guards": {
+    "arm": "fresh nonsymlink OUTPUT/ledger; PID/stage/token bound",
+    "capture": "raw own-PID window IDs/ICC/stable4 retained",
+    "cleanup": "restore original live application before stopping own front child; preserve changed foreground; report failure and retain IPC for live child; final exit uses post-defer result",
+    "closed_only": true,
+    "media": "source-bound Ready to Paused0, error/source checks retained",
+    "mode": "CI14 or explicit own-pid-active13; no CI impersonation",
+    "source": "exact e48 asserted",
+    "temporal": "all entry uptimes at/after arm; last complete placement at/before stable image sample begin"
+  },
+  "fixed_findings": [
+    {
+      "finding": "defer cleanup could overturn success after a zero return had been chosen",
+      "fixed_at": "FrameClosed.swift:459-460",
+      "status": "fixed"
+    },
+    {
+      "finding": "live child after termination could remain successful",
+      "fixed_at": "FrameClosed.swift:363-364",
+      "status": "fixed"
+    },
+    {
+      "finding": "IPC removal while child intentionally remains live",
+      "fixed_at": "FrameClosed.swift:368",
+      "status": "fixed"
+    },
+    {
+      "finding": "prior valid ledger prefix could survive helper I/O failure",
+      "fixed_at": "FrameClosed.swift:33-38,52,365-366",
+      "status": "fixed by bounded application.log checks before completion and after cleanup"
+    },
+    {
+      "finding": "PNG path contents were not bound to capture PNG digest",
+      "fixed_at": "PixelGate.swift:57-60",
+      "status": "fixed; actual digests checked and recorded"
+    },
+    {
+      "finding": "decoded ICC must match capture receipt",
+      "fixed_at": "PixelGate.swift:62-63",
+      "status": "checked"
+    }
+  ],
+  "frozen": true,
+  "inputs": {
+    "author_manifest": {
+      "bytes": 315,
+      "path": "work/frame-row-ledger-preparation/SHA256SUMS",
+      "sha256": "960566394ebc054debe3be4fda152d2ac2bfd89f93c867b3a4b3fbc6aefb3b4d"
+    },
+    "author_validation": {
+      "bytes": 2027,
+      "path": "work/frame-row-ledger-preparation/validation.json",
+      "sha256": "49e76e3b6ad592902b97e1c4dd4f3cf0bbbc54b6e75e897e013338bb34293dcb"
+    },
+    "base_collector": {
+      "bytes": 44721,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-frame-volume/paired-f9-aot/gallery-frame-reference.swift",
+      "sha256": "77e4bb6849ea226cb4bcc4bacac7b08197e8f5a18f4aa991752d81cea44c4db8"
+    },
+    "collector": {
+      "bytes": 49556,
+      "path": "work/frame-row-runtime-preparation/FrameClosed.swift",
+      "sha256": "dcbd5405f31e0797937049feed74c4d54d7136da602636077085a856b2f2cd3d"
+    },
+    "derivation": {
+      "bytes": 422,
+      "path": "work/frame-row-runtime-preparation/derivation.json",
+      "sha256": "f9bcabad701a0ba6f55115fbaf3031173a1d8f28cfd8bd834883871996e85873"
+    },
+    "deriver": {
+      "bytes": 12192,
+      "path": "work/frame-row-runtime-preparation/derive-collector.py",
+      "sha256": "50689971404682902143a70c98b57f45cb6aaa7a5f3e35599c8a43a348acc833"
+    },
+    "helper": {
+      "bytes": 11049,
+      "path": "work/frame-row-ledger-preparation/RowLedger.swift",
+      "sha256": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf"
+    },
+    "patch": {
+      "bytes": 10761,
+      "path": "work/frame-row-ledger-preparation/patch.py",
+      "sha256": "815322661ba0681f89b6737bd70c88e58a5ee28cd4886eabd885f940b833b6ed"
+    },
+    "pixel_gate": {
+      "bytes": 7157,
+      "path": "work/frame-row-runtime-preparation/PixelGate.swift",
+      "sha256": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"
+    },
+    "root_typechecks": {
+      "bytes": 1275,
+      "path": "work/frame-row-runtime-preparation/typechecks.json",
+      "sha256": "3ad04227cb7a9ae09090a7a6c1de30d200286f8af08420cccd2acbf1c98ff116"
+    }
+  },
+  "ledger": {
+    "exact_generated_input": {
+      "bytes": 81110,
+      "sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+    },
+    "exact_style_input": {
+      "bytes": 210785,
+      "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+    },
+    "extra_layout_queries": false,
+    "failure_contract": "missing/truncated/incomplete data rejected; encoding/I/O failure can preserve an old prefix, so stderr marker rejection is required",
+    "layout_state_mutation": false,
+    "limits": {
+      "complete_placements": 64,
+      "file_bytes": 65536,
+      "reserve_bytes": 512
+    },
+    "math_limits": [
+      "offered width need not equal extent",
+      "row_size.width need not equal bounds.width",
+      "row length is sum(extents)+sum(gaps); finalX uses original incremental order, so independent recomputation needs floating tolerance",
+      "recorded points/proposals are Layout requested arguments, not native frames, bezels or ink"
+    ],
+    "original_call_sites": {
+      "dimensions": 1,
+      "place": 1,
+      "sizeThatFits": 3
+    },
+    "original_query_order": "nonspacer sizeThatFits(0), sizeThatFits(nil), sizeThatFits(infinity), dimensions(in:), place; spacers retain original bypasses",
+    "post_place_only": "arm filesystem, packet construction, encoding and write follow all original place calls and final x advance",
+    "row_tag_count": 1,
+    "snapshots": "raw after original queries; normalized from original Item; dimensions after original values; placedX after original place and before original x advance"
+  },
+  "limits": [
+    "instrumentation allocation/timing and post-place I/O may affect behavior; actual original-pixel observer control remains required",
+    "finite complete prefix does not prove settled state or app lifetime; end_state remains not_observed",
+    "placement-before-sample is not a presentation synchronization fence; a later placement may conservatively reject a run",
+    "fixed ROI equality is not whole-window equality or proof of every native Frame boundary",
+    "f9 evidence supplies collector source only; it is not an e48 product/control result"
+  ],
+  "pixel_gate": {
+    "comparison": "all decoded active pixel bytes including stored alpha; row padding excluded; no color conversion/resampling",
+    "pair": "same OS 13 or 14, same canvas920x668, descriptor/ICC exact, scale1or2, control off and observer on",
+    "predeclared_frame_roi_points_half_open": [
+      211,
+      52,
+      920,
+      668
+    ],
+    "report_binding": "success/closed-only/cleanup/source/context + actual PNG SHA and decoded ICC SHA",
+    "whole_window": "difference retained separately; not the pass condition"
+  },
+  "schema": 1,
+  "scope": "Read-only ledger source and final closed collector/pixel-gate guard review; no runtime or visual acceptance.",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "validation": {
+    "reviewer": "source reads, hashes and Python AST parse only; no patch/helper execution, compiler, UI, CI or fixtures",
+    "root_receipt": "typechecks.json binds final collector/pixel gate and extracted Row source to SDK14.2/min13 Swift5 typecheck exit0; performed by root, not this reviewer",
+    "runtime_acceptance": false,
+    "visual_acceptance": false
+  },
+  "verdict": "no_remaining_blocking_source_finding_after_fixes"
+}

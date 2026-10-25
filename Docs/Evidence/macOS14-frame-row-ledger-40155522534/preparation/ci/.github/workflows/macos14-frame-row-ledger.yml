@@ -1,0 +1,238 @@
+name: Gallery Frame Row placement ledger
+run-name: Build exact e48 Frame ledger once and compare closed scene on macOS 14
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: frame-row-ledger
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+      CARGO_INCREMENTAL: "0"
+      CARGO_BUILD_JOBS: "2"
+      CARGO_TERM_COLOR: never
+      MACOSX_DEPLOYMENT_TARGET: "13.0"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/checkout@v5
+        with:
+          ref: e48fff46b3a92a28465ad74295bd273a9d69af7d
+          path: source
+          persist-credentials: false
+      - name: Record exact source and compiler
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir evidence
+          {
+            printf 'source_sha=%s\nharness_sha=%s\n' "$(git -C source rev-parse HEAD)" "$GITHUB_SHA"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+          } > evidence/environment.txt 2>&1
+          test "$(git -C source rev-parse HEAD)" = e48fff46b3a92a28465ad74295bd273a9d69af7d
+          test "$(uname -m)" = arm64
+          test "$(xcrun --sdk macosx --show-sdk-version)" = 26.2
+          rustup toolchain install 1.99.0 --profile minimal
+          rustc +1.99.0 -Vv >> evidence/environment.txt
+          shasum -a 256 harness/.github/scripts/frame-row-ledger/build.py harness/.github/scripts/frame-row-ledger/patch.py harness/.github/scripts/frame-row-ledger/RowLedger.swift harness/.github/scripts/frame-row-ledger/FrameClosed.swift harness/.github/scripts/frame-row-ledger/PixelGate.swift harness/.github/scripts/frame-source-export.py > evidence/harness-inputs.sha256
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            source/target
+          key: bern-macos13-cargo-macos15-v1-${{ hashFiles('source/Cargo.lock') }}
+      - name: Prepare the sole diagnostic generation hook
+        id: prepare
+        shell: bash
+        run: |
+          set -euo pipefail
+          unset BERN_DIAGNOSTIC_GENERATE_ONLY
+          export BERN_FRAME_ROW_OBSERVER_DRIVER="$PWD/harness/.github/scripts/frame-row-ledger/build.py"
+          export BERN_FRAME_ROW_OBSERVER_EVIDENCE="$PWD/evidence"
+          python3 harness/.github/scripts/frame-row-ledger/build.py prepare source evidence
+      - name: Generate, patch, and continue the original product build plan
+        shell: bash
+        run: |
+          set +e
+          unset BERN_DIAGNOSTIC_GENERATE_ONLY
+          export BERN_FRAME_ROW_OBSERVER_DRIVER="$PWD/harness/.github/scripts/frame-row-ledger/build.py"
+          export BERN_FRAME_ROW_OBSERVER_EVIDENCE="$PWD/evidence"
+          (cd source && cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest examples/gallery/Bern.toml --target macos_modern --release) > evidence/build.full.log 2>&1
+          result=$?
+          printf '%s\n' "$result" > evidence/build.exit-code.txt
+          exit "$result"
+      - name: Collect exact source and hook metadata including partial failures
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        shell: bash
+        run: python3 harness/.github/scripts/frame-row-ledger/build.py collect source evidence
+      - name: Verify min13 and strict signatures and retain the reusable product
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d = json.loads(Path('source/target/bern/macos_modern/build.json').read_text())
+          assert d['ui'] == 'swiftui-modern', d
+          assert d['minimum_macos'] == '13.0', d
+          assert d['profile'] == 'release', d
+          PY
+          app=source/target/bern/macos_modern/Gallery.app
+          cli=source/target/bern/macos_modern/bin/gallery
+          test -x "$app/Contents/MacOS/Gallery"
+          test -x "$cli"
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - "$app/Contents/Info.plist")" = 13.0
+          test "$(xcrun vtool -show-build "$app/Contents/MacOS/Gallery" | awk '/minos/ {print $2;exit}')" = 13.0
+          {
+            xcrun vtool -show-build "$app/Contents/MacOS/Gallery"
+            xcrun vtool -show-build "$cli"
+            xcrun otool -L "$app/Contents/MacOS/Gallery"
+            codesign --verify --deep --strict "$app"
+            codesign --verify --strict "$cli"
+          } > evidence/binary.txt 2>&1
+          cp source/target/bern/macos_modern/build.json evidence/build.json
+          tar -czf evidence/gallery-frame-row-ledger.tar.gz -C source/target/bern/macos_modern Gallery.app bin/gallery
+          (cd evidence && shasum -a 256 gallery-frame-row-ledger.tar.gz > gallery-frame-row-ledger.tar.gz.sha256)
+      - name: Build the two frozen reusable helpers once with the same new SDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcrun --sdk macosx swiftc -swift-version 5 -O -j 2 -target arm64-apple-macosx13.0 harness/.github/scripts/frame-row-ledger/FrameClosed.swift -o evidence/FrameClosed
+          xcrun --sdk macosx swiftc -swift-version 5 -O -j 2 -target arm64-apple-macosx13.0 harness/.github/scripts/frame-row-ledger/PixelGate.swift -o evidence/PixelGate
+          {
+            for helper in evidence/FrameClosed evidence/PixelGate; do
+              test "$(lipo -archs "$helper")" = arm64
+              test "$(xcrun vtool -show-build "$helper" | awk '/minos/ {print $2;exit}')" = 13.0
+              test "$(xcrun vtool -show-build "$helper" | awk '/sdk/ {print $2;exit}')" = 26.2
+              codesign --verify --strict "$helper"
+              xcrun vtool -show-build "$helper"
+              codesign -d --verbose=4 "$helper"
+            done
+          } > evidence/helper-binaries.txt 2>&1
+          (cd evidence && shasum -a 256 FrameClosed PixelGate > helper-binaries.sha256)
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: frame-row-ledger-build
+          path: |
+            evidence/
+            !evidence/build.full.log
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+
+  capture:
+    needs: build
+    runs-on: macos-14
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos13-gallery
+          path: control-build
+          github-token: ${{ github.token }}
+          run-id: 40070407306
+      - uses: actions/download-artifact@v5
+        with:
+          name: frame-row-ledger-build
+          path: observer-build
+          github-token: ${{ github.token }}
+          run-id: ${{ github.run_id }}
+      - name: Verify original control and observed product without rebuilding either
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          mkdir evidence control observer
+          (cd control-build && printf '%s  gallery.tar.gz\n' e7ee2c11f7795bf9391b275ec9f6be329feceebf890193ee53434ec0607c3067 | shasum -a 256 -c -)
+          (cd observer-build && shasum -a 256 -c gallery-frame-row-ledger.tar.gz.sha256)
+          tar -xzf control-build/gallery.tar.gz -C control
+          tar -xzf observer-build/gallery-frame-row-ledger.tar.gz -C observer
+          test "$(shasum -a 256 control/Gallery.app/Contents/MacOS/Gallery | awk '{print $1}')" = d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c
+          test "$(shasum -a 256 control/bin/gallery | awk '{print $1}')" = 31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5
+          test "$(sed -n 's/^source_sha=//p' observer-build/environment.txt)" = e48fff46b3a92a28465ad74295bd273a9d69af7d
+          test "$(sed -n 's/^harness_sha=//p' observer-build/environment.txt)" = "$GITHUB_SHA"
+          for app in control/Gallery.app observer/Gallery.app; do
+            codesign --verify --deep --strict "$app"
+            test "$(plutil -extract LSMinimumSystemVersion raw -o - "$app/Contents/Info.plist")" = 13.0
+          done
+          codesign --verify --strict control/bin/gallery
+          codesign --verify --strict observer/bin/gallery
+          cp observer-build/observer-build.json evidence/observer-build.json
+          cp observer-build/harness-inputs.sha256 evidence/
+      - name: Verify and reuse the exact prebuilt collector and pixel gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd observer-build && shasum -a 256 -c helper-binaries.sha256)
+          chmod +x observer-build/FrameClosed observer-build/PixelGate
+          {
+            for helper in observer-build/FrameClosed observer-build/PixelGate; do
+              test "$(lipo -archs "$helper")" = arm64
+              test "$(xcrun vtool -show-build "$helper" | awk '/minos/ {print $2;exit}')" = 13.0
+              test "$(xcrun vtool -show-build "$helper" | awk '/sdk/ {print $2;exit}')" = 26.2
+              codesign --verify --strict "$helper"
+              xcrun vtool -show-build "$helper"
+            done
+          } > evidence/helper-verification14.txt 2>&1
+          cp observer-build/helper-binaries.sha256 observer-build/helper-binaries.txt evidence/
+          {
+            printf 'source_sha=%s\nharness_sha=%s\ncontrol_run_id=%s\n' e48fff46b3a92a28465ad74295bd273a9d69af7d "$GITHUB_SHA" 40070407306
+            sw_vers
+            uname -m
+            cat observer-build/helper-binaries.sha256
+          } > evidence/environment.txt 2>&1
+      - name: Require normal reference appearance
+        shell: bash
+        run: |
+          set -euo pipefail
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          defaults write com.apple.universalaccess increaseContrast -bool false
+          killall cfprefsd || true
+      - name: Original e48 control closed capture must complete first
+        shell: bash
+        run: |
+          set -euo pipefail
+          env -u BERN_FRAME_ROW_LEDGER_OUTPUT_DIR ./observer-build/FrameClosed "$PWD/control/Gallery.app" "$PWD/control/bin/gallery" "$PWD/evidence/a" 14 control e48fff46b3a92a28465ad74295bd273a9d69af7d
+      - name: One observed closed capture with precreated ledger directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/b/ledger
+          export BERN_FRAME_ROW_LEDGER_OUTPUT_DIR="$PWD/evidence/b/ledger"
+          ./observer-build/FrameClosed "$PWD/observer/Gallery.app" "$PWD/observer/bin/gallery" "$PWD/evidence/b" 14 observer e48fff46b3a92a28465ad74295bd273a9d69af7d
+      - name: Require unchanged closed Frame detail pixels and ICC
+        shell: bash
+        run: |
+          set -euo pipefail
+          ./observer-build/PixelGate "$PWD/evidence/a/report.json" "$PWD/evidence/b/report.json" "$PWD/evidence/pair.json"
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: frame-row-ledger-on14
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 3

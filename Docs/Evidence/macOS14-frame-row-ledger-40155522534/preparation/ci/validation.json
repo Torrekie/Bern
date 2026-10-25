@@ -1,0 +1,117 @@
+{
+  "build_helper_compiler_calls": 2,
+  "capture_enabled": true,
+  "capture_swift_compiler_calls": 0,
+  "checker_correction": "Initial checker counted swiftc -version as a compile; corrected to count two -o evidence/ helper outputs. This was a static-check assertion, not compiler or runtime failure.",
+  "helper_compile_recipe": "Sequential Swift5 -O -j2 arm64 min13 on macos15/Xcode26.3/SDK26.2; top-level scripts; reused unchanged on14 and13",
+  "inputs": {
+    "outputs/Bern/.github/scripts/frame-source-export.py": {
+      "bytes": 15448,
+      "sha256": "5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017"
+    },
+    "work/frame-row-ci-preparation/.github/scripts/frame-row-ledger/build.py": {
+      "bytes": 14330,
+      "sha256": "cac961115f0667ab0ddb50bf8fabec3a04df2fa5bf0e63b25208e17debbda862"
+    },
+    "work/frame-row-ci-preparation/.github/workflows/macos14-frame-row-ledger.yml": {
+      "bytes": 11481,
+      "sha256": "d7a274e88daab4b8113e5e30edf6476c280c52a050ebf41535a77838f7a1bde7"
+    },
+    "work/frame-row-ledger-preparation/RowLedger.swift": {
+      "bytes": 11049,
+      "sha256": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf"
+    },
+    "work/frame-row-ledger-preparation/patch.py": {
+      "bytes": 10761,
+      "sha256": "815322661ba0681f89b6737bd70c88e58a5ee28cd4886eabd885f940b833b6ed"
+    },
+    "work/frame-row-runtime-preparation/FrameClosed.swift": {
+      "bytes": 49556,
+      "sha256": "dcbd5405f31e0797937049feed74c4d54d7136da602636077085a856b2f2cd3d"
+    },
+    "work/frame-row-runtime-preparation/PixelGate.swift": {
+      "bytes": 7157,
+      "sha256": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"
+    }
+  },
+  "not_performed": [
+    "No build.py modes executed",
+    "No patcher executed",
+    "No cargo or Swift compiler run",
+    "No artifact download",
+    "No CI dispatch",
+    "No native UI or PNG comparison"
+  ],
+  "original_control_artifact": {
+    "inner_tar_sha256": "e7ee2c11f7795bf9391b275ec9f6be329feceebf890193ee53434ec0607c3067",
+    "name": "macos13-gallery",
+    "run_id": 40070407306
+  },
+  "pixel_gate_scope": "Same-host observer effect; decoded active Frame-detail bytes and ICC equal at fixed points [211,52,920,668], whole-window differences reported separately",
+  "python_ast_parse": true,
+  "run_blocks_bash_n": [
+    {
+      "bash_n_exit_code": 0,
+      "job": "build",
+      "name": "Record exact source and compiler"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "build",
+      "name": "Prepare the sole diagnostic generation hook"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "build",
+      "name": "Generate, patch, and continue the original product build plan"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "build",
+      "name": "Collect exact source and hook metadata including partial failures"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "build",
+      "name": "Verify min13 and strict signatures and retain the reusable product"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "build",
+      "name": "Build the two frozen reusable helpers once with the same new SDK"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "capture",
+      "name": "Verify original control and observed product without rebuilding either"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "capture",
+      "name": "Verify and reuse the exact prebuilt collector and pixel gate"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "capture",
+      "name": "Require normal reference appearance"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "capture",
+      "name": "Original e48 control closed capture must complete first"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "capture",
+      "name": "One observed closed capture with precreated ledger directory"
+    },
+    {
+      "bash_n_exit_code": 0,
+      "job": "capture",
+      "name": "Require unchanged closed Frame detail pixels and ICC"
+    }
+  ],
+  "scope": "Private static preparation only; no prepare/patch/collect, cargo, Swift compiler, CI, or UI execution",
+  "verdict": "static_candidate_ready_for_root_review_not_runtime_acceptance",
+  "yaml_base_loader_parse": true
+}

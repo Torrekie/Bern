@@ -1,0 +1,15 @@
+# Exact e48 Gallery Frame Row ledger CI candidate
+
+Private static preparation, frozen for root review. No build, patcher, compiler, UI, download or CI execution was performed here. `validation.json` records Python AST, YAML and all 12 shell-block syntax checks; it is not runtime acceptance.
+
+Copy the two files under `.github/` into the repository. Root also supplies the four separately frozen core files (`patch.py`, `RowLedger.swift`, `FrameClosed.swift`, `PixelGate.swift`) in `.github/scripts/frame-row-ledger/`. `build.py` pins all four plus the existing `frame-source-export.py` guard. The core files are referenced by hash, not duplicated here.
+
+The build checks out exact e48fff46b3a92a28465ad74295bd273a9d69af7d and locks its 631 tracked local inputs (not an external dependency closure). Its sole CLI hook invokes external Python immediately before the original `target.plan`; success continues the original Gallery product build. It does not use the source-only exporter early return. The patcher adds one Frame Row diagnostic ID and appends the helper to Style. The build verifies exact original/compiled sizes and SHA256s, both unified diffs in both directions, unchanged source-file membership and only Generated/Style changes. This reconstruction logic was read and AST-checked here, not executed.
+
+On macos-15/Xcode26.3/SDK26.2 the product and two top-level helper scripts are built once. Helpers use sequential Swift5 `-O -j 2 -target arm64-apple-macosx13.0` commands without `-parse-as-library`. Their arm64/min13/SDK26.2/strict-signature records and SHA256s accompany the artifact; macOS14 checks and reuses those exact helpers. The artifact keeps reusable helper binaries for the later same-binary macOS13 check. Uploaded helper execute bits are restored only after checksum verification.
+
+The macOS14 job first closes and captures the existing original control from run40070407306, artifact `macos13-gallery`, pinned inner tar/GUI/CLI hashes. It then launches one observed Gallery with a precreated absolute ledger directory and the same collector. It records runtime OS/architecture, source/harness and helper hashes and requires all three normal appearance flags false. All collector identity, readiness, media, awake, stable4, arm/ledger, closed-end and restore-before-stop gates remain in the frozen collector.
+
+PixelGate is called with exactly control report, observer report, and a fresh pair JSON. It validates actual PNG/report SHA and ICC bindings and requires exact decoded active pixel bytes and ICC for the previously fixed Frame-detail half-open rectangle [211,52,920,668] points. Whole-window differences are reported separately. This gate measures observer effect on the same macOS14 host; it does not establish cross-OS parity, native bezel geometry, full UI acceptance or whole-port completion. No successful future acquisition is presumed.
+
+Original control source/artifact identity and all frozen input hashes are in `validation.json`. The original frame-source workflow remains unchanged. Both artifact retentions are 3 days. Root owns final repository staging, actual builds, one dispatch, runtime assessment and cleanup.

@@ -2,7 +2,9 @@
 
 本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
 
-最新检查点（2026-10-25）：[精确e48 Gallery Frame生成源码](../Evidence/macOS13-gallery-frame-source-40152701810/README.md)已由单次CI40152701810取得并独立复核：631项固定输入保持，只有CLI在生成后、target.plan之前加入退出；实际完整Swift81110B、Frame原片段9021B/1248–1353行保留，rc0/标记1。此次只在macOS15生成源码，没有编译Swift产品或新增13/14窗口证据。真实Frame行的源码包含Caption、Size、Volume和条件Group，源码项数不证明运行时Layout.Subviews数；下一步只读取这一行原有查询得到的宽度分配与实际推进，先验证观察不改变画面，再解释数值，不据历史f9的2pt差加入补偿。下载ZIP在实算并匹配API digest后清理，本机没有新增构建缓存或App副本，四个原交付可执行文件hash保持。整阶段仍未通过、goal active，后续11/Swift5.3、ObjC、iOS继续推迟。
+最新检查点（2026-10-25）：[真实e48 Frame行的14采集](../Evidence/macOS14-frame-row-ledger-40155522534/README.md)已由CI40155522534执行：新SDK26.2/min13产品及两helper构建成功，原e48 control与观测版在真实14.8.9均取得稳定关闭状态原图并停止归零。但观测组记录在172ms内35条/63828B后达到64KiB上限，原packet明确truncated，整体失败，PixelGate未运行；不解释有限前缀的宽度值。离线与独立原RGBA/ICC复算仅证明本失败cohort固定Frame detail原像素相同，整窗仍5284像素侧栏选中差异，不冒充全窗或13/14等效。下一唯一修正为新schema的latest1完整置放槽与显式总数/替换数，仍64KiB，不升cap或放宽时间/像素门槛，尚未实现。本机13禁跑；仅cleanup的Gallery guard适配草稿未验收。已清本机约49.8MB逻辑模块缓存及校验后的下载ZIP，交付App保持。此次真实14可用，goal active；整阶段未通过，后续11/Swift5.3、ObjC、iOS继续推迟。
+
+此前检查点（2026-10-25）：[精确e48 Gallery Frame生成源码](../Evidence/macOS13-gallery-frame-source-40152701810/README.md)已由单次CI40152701810取得并独立复核：631项固定输入保持，只有CLI在生成后、target.plan之前加入退出；实际完整Swift81110B、Frame原片段9021B/1248–1353行保留，rc0/标记1。此次只在macOS15生成源码，没有编译Swift产品或新增13/14窗口证据。真实Frame行的源码包含Caption、Size、Volume和条件Group，源码项数不证明运行时Layout.Subviews数；下一步只读取这一行原有查询得到的宽度分配与实际推进，先验证观察不改变画面，再解释数值，不据历史f9的2pt差加入补偿。下载ZIP在实算并匹配API digest后清理，本机没有新增构建缓存或App副本，四个原交付可执行文件hash保持。整阶段仍未通过、goal active，后续11/Swift5.3、ObjC、iOS继续推迟。
 
 此前检查点（2026-10-25）：[原生搜索焦点门槛](../Evidence/macOS13-search-native-focus/README.md)未通过：长IPC启动失败保留；短IPC实例坐标点击后AX仍outline，独立一次Shift-Tab后未取得search焦点，因此均未投递`!`、未进入Library或验收Query。坐标组还保留root超180s后的缺finish/迟到截图错误，不把App退出0当采集通过。来源/签名与清理已独立核验，约62.4MB自有产物/cache退休，原交付保持。停止输入试验，不指定Bern根因；下一项先补精确e48 Gallery Frame源片段，历史f9 Caption/Size耦合2pt变化不足以支持padding/字体补偿。整阶段仍未通过、goal active，后续11/Swift5.3、ObjC、iOS继续推迟。
 

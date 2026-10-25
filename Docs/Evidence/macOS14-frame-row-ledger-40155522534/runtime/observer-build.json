@@ -1,0 +1,85 @@
+{
+  "binaries": {
+    "Gallery.app/Contents/MacOS/Gallery": {
+      "bytes": 3754848,
+      "sha256": "eabdde25cddb78151bfff4c14008c8babe4a21dd1325993a7f8e82fe1e5b06f0"
+    },
+    "bin/gallery": {
+      "bytes": 898336,
+      "sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5"
+    }
+  },
+  "build": {
+    "app_bundle": "Gallery.app",
+    "architecture": "arm64",
+    "channels": [
+      "ipc"
+    ],
+    "color_source": "native",
+    "engine_deployment": "in-process",
+    "generator": "bern-backend-swiftui",
+    "generator_version": "0.1.0",
+    "ir_version": 8,
+    "languages": [
+      "zh-Hans",
+      "en"
+    ],
+    "media": {
+      "backend": "avfoundation",
+      "backend_version": "1",
+      "contract": 1,
+      "players": [],
+      "presenter": "avplayerview",
+      "presenter_version": "1"
+    },
+    "minimum_macos": "13.0",
+    "platform": "macos",
+    "profile": "release",
+    "protocol": "gallery",
+    "protocol_fingerprint": "cfa638eac6dad4e6",
+    "resources": [
+      "media/poster.jpg",
+      "media/tides.mp4"
+    ],
+    "target": "swiftui-modern-macos",
+    "ui": "swiftui-modern",
+    "ui_bridge": "c-abi"
+  },
+  "instrumentation": {
+    "files": {
+      "BernGenerated.swift": {
+        "compiled_bytes": 81150,
+        "compiled_sha256": "709d1c95afbc2b894a3f7d3baf88e423d1f384bfb5c21b893fc7362bc012a511",
+        "diff_sha256": "2526d985052b81f59bb56f030eaee047a4b8d13d0669235f2f45d223ca4dfd1f",
+        "original_bytes": 81110,
+        "original_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+      },
+      "BernStyle.swift": {
+        "compiled_bytes": 222921,
+        "compiled_sha256": "b3361ab4ff9ee1f7a4284cfba06df101c829fdfdd5ea5f8b040eeee1cd7569db",
+        "diff_sha256": "0479d307c252273372bde69b800c4738bcd9010109cb9a1cea57612487471d39",
+        "original_bytes": 210785,
+        "original_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+      }
+    },
+    "observer_style_tail_sha256": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf",
+    "package_hashes": {
+      "FrameClosed.swift": "dcbd5405f31e0797937049feed74c4d54d7136da602636077085a856b2f2cd3d",
+      "PixelGate.swift": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253",
+      "RowLedger.swift": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf",
+      "build.py": "cac961115f0667ab0ddb50bf8fabec3a04df2fa5bf0e63b25208e17debbda862",
+      "patch.py": "815322661ba0681f89b6737bd70c88e58a5ee28cd4886eabd885f940b833b6ed"
+    },
+    "patch_proof_sha256": "425f4ed86950ff25fa74537df872aba26a2eeb27aa509b80c4366258d6f9c8c6",
+    "roundtrip_original_bytes_equal": true,
+    "success": true
+  },
+  "log": {
+    "full_bytes": 7183,
+    "full_sha256": "6f0e7923ce51976b6cba3bcac1cea990ee740952756978fd18a5cfc338a316a8",
+    "marker_count": 1,
+    "truncated": false
+  },
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "success": true
+}

@@ -1,0 +1,53 @@
+{
+  "arm_protocol": {
+    "environment": "BERN_FRAME_ROW_LEDGER_OUTPUT_DIR",
+    "file": "frame-row-ledger.arm.json",
+    "required": [
+      "schema",
+      "pid",
+      "stage",
+      "token"
+    ],
+    "schema": "bern_frame_row_arm_v1",
+    "stage": "frame-closed-light"
+  },
+  "complete_placement_limit": 64,
+  "file_byte_limit": 65536,
+  "frame_original_start_line": 1248,
+  "frame_row_original_line": 1274,
+  "frame_tag_count": 1,
+  "generated": {
+    "after_bytes": 81150,
+    "after_sha256": "709d1c95afbc2b894a3f7d3baf88e423d1f384bfb5c21b893fc7362bc012a511",
+    "before_bytes": 81110,
+    "before_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+  },
+  "helper": {
+    "bytes": 11049,
+    "path": "RowLedger.swift",
+    "sha256": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf"
+  },
+  "inverse_exact_original_generated": true,
+  "inverse_exact_original_row": true,
+  "inverse_exact_original_style": true,
+  "original_layout_query_counts": {
+    "dimensions": 1,
+    "place": 1,
+    "sizeThatFits": 3
+  },
+  "original_measurement_and_place_calls_unchanged": true,
+  "output_name": "frame-row-ledger-<pid>.json",
+  "patch_script_sha256": "815322661ba0681f89b6737bd70c88e58a5ee28cd4886eabd885f940b833b6ed",
+  "row_edit_count": 12,
+  "row_original_start_line": 4419,
+  "scope": "one Frame BernRow optional diagnosticID; original Row queries/algorithm retained with memory snapshots; post-place arm/encode/write; appended helper",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "style": {
+    "after_bytes": 222921,
+    "after_sha256": "b3361ab4ff9ee1f7a4284cfba06df101c829fdfdd5ea5f8b040eeee1cd7569db",
+    "before_bytes": 210785,
+    "before_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+  },
+  "success_scope": "patch construction only; not compile/runtime/visual acceptance",
+  "validation_scope": "Python AST and pure in-memory construction/inverse only; no main(), patch application, build, tests, UI, CI, or Git mutation"
+}

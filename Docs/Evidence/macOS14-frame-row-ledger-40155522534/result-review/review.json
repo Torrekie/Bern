@@ -1,0 +1,273 @@
+{
+  "accepted_ledger": false,
+  "frozen": true,
+  "inputs": [
+    {
+      "bytes": 792,
+      "path": "work/frame-row-ledger-ci14-40155522534.download.json",
+      "sha256": "3442bab9ed9a58d6efad184480bcf56de9dee278cfe08667a28c2ad53b268f68"
+    },
+    {
+      "bytes": 2411,
+      "path": "work/frame-row-failed-cohort-review/offline-result.json",
+      "sha256": "1b388a6e1b634f7ba0ae289b4795488c510eb482811983b9da7205a052930813"
+    },
+    {
+      "bytes": 106967,
+      "path": "work/frame-row-ledger-ci14-40155522534/a/report.json",
+      "sha256": "42b7a82da87254775d72682bde0cff46a0242495afc8ea4351c7069ea08a8169"
+    },
+    {
+      "bytes": 102416,
+      "path": "work/frame-row-ledger-ci14-40155522534/b/report.json",
+      "sha256": "ada92ebc52feb8bc2804da34f570c5d8cc26814bc821ed2037ec10d3d07e2eb0"
+    },
+    {
+      "bytes": 49907,
+      "path": "work/frame-row-ledger-ci14-40155522534/a/frame-closed-light.png",
+      "sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b"
+    },
+    {
+      "bytes": 50001,
+      "path": "work/frame-row-ledger-ci14-40155522534/b/frame-closed-light.png",
+      "sha256": "66e16368abbad027b9d51cb43e1af61ae0877eab5a6c6cbb72431c6b5b61919b"
+    },
+    {
+      "bytes": 403,
+      "path": "work/frame-row-ledger-ci14-40155522534/a/application.log",
+      "sha256": "f43c351fddea2e53c7995ab4f11a89f03ac4823242414387cfef1f5da36f65d5"
+    },
+    {
+      "bytes": 403,
+      "path": "work/frame-row-ledger-ci14-40155522534/b/application.log",
+      "sha256": "27d7d8658d42f1c0ae40d40075423eee3757c7244b2c73cf20968b5abb985494"
+    },
+    {
+      "bytes": 63828,
+      "path": "work/frame-row-ledger-ci14-40155522534/b/ledger/frame-row-ledger-1732.json",
+      "sha256": "8de0029db61cb8ff0b1085d59493abd5aa347608672147604b39ea6acd8b0bcc"
+    },
+    {
+      "bytes": 163,
+      "path": "work/frame-row-ledger-ci14-40155522534/b/ledger/frame-row-ledger.arm.json",
+      "sha256": "490626af27a440e04088c6036a7add1e069475ee52d1992e97bfc4f3829a317e"
+    },
+    {
+      "bytes": 358,
+      "path": "work/frame-row-ledger-ci14-40155522534/environment.txt",
+      "sha256": "1411c7a589c3e7ee6334e5fc67f02b85e9d316577941dd302f42bf633e7cad98"
+    },
+    {
+      "bytes": 716,
+      "path": "work/frame-row-ledger-ci14-40155522534/harness-inputs.sha256",
+      "sha256": "d96cc017c84e1ab4edd27ae47f690f5aa5019d2e8b9809941a6d486161405089"
+    },
+    {
+      "bytes": 154,
+      "path": "work/frame-row-ledger-ci14-40155522534/helper-binaries.sha256",
+      "sha256": "a65497b6b369509f37dd90266bca2c5fc83108d7fc149d277d485192ab77bc4b"
+    },
+    {
+      "bytes": 342,
+      "path": "work/frame-row-ledger-ci14-40155522534/helper-verification14.txt",
+      "sha256": "0a15eda172610f988df479930d83ddfedd3cc3eb95f77b58f26ce333e6057803"
+    },
+    {
+      "bytes": 2980,
+      "path": "work/frame-row-ledger-ci14-40155522534/observer-build.json",
+      "sha256": "826ddfceb0d97ce592a196f6a88fed9b4dd6e1b576782dbca1ac69477e683d0c"
+    }
+  ],
+  "ledger": {
+    "bytes": 63828,
+    "elapsed_prefix_seconds": 0.17217416666666452,
+    "end_state": "not_observed",
+    "file_byte_limit": 65536,
+    "first_enter_uptime": 108.51602929166667,
+    "interpretation": "Rejected prefix retained only as failure/retention evidence. No width values or UI root cause inferred.",
+    "last_complete_uptime": 108.68820345833333,
+    "pid_stage_token_bound": true,
+    "placement_limit": 64,
+    "reason": "byte_limit",
+    "retained_complete_count": 35,
+    "schema": "bern_frame_row_ledger_v1",
+    "sequences": {
+      "contiguous": true,
+      "first": 0,
+      "last": 34
+    },
+    "sha256": "8de0029db61cb8ff0b1085d59493abd5aa347608672147604b39ea6acd8b0bcc",
+    "stable_image_sample_begin_uptime": 114.09463829166667,
+    "truncated": true
+  },
+  "next_step": "LATEST1.md is a proposal only; no code changed or new CI authorized/executed by this review.",
+  "offline_png": {
+    "actual_png_digests_match_report": true,
+    "actual_png_sha256": [
+      "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b",
+      "66e16368abbad027b9d51cb43e1af61ae0877eab5a6c6cbb72431c6b5b61919b"
+    ],
+    "comparisons": [
+      {
+        "changed_bbox_global": [
+          10,
+          118,
+          200,
+          146
+        ],
+        "changed_pixels": 5284,
+        "control_raw_sha256": "3eef36f06f079687472e42599c9f5d16f6b0c2950912ee26a0c4c4ba8774536b",
+        "half_open_pixels": [
+          0,
+          0,
+          920,
+          668
+        ],
+        "name": "whole_window",
+        "observer_raw_sha256": "520f672a65fca5f662a946cf9c8294118cb2578e7f7cfd053635b47f241d0b76",
+        "raw_stored_components_equal": false
+      },
+      {
+        "changed_bbox_global": null,
+        "changed_pixels": 0,
+        "control_raw_sha256": "c6d3ce7ac60f0fea4adddde9dcd07484b631cd554ff5f5a6c678e907e7bc13ff",
+        "half_open_pixels": [
+          211,
+          52,
+          920,
+          668
+        ],
+        "name": "fixed_frame_detail",
+        "observer_raw_sha256": "c6d3ce7ac60f0fea4adddde9dcd07484b631cd554ff5f5a6c678e907e7bc13ff",
+        "raw_stored_components_equal": true
+      }
+    ],
+    "icc_digest_matches_both_reports": true,
+    "icc_equal": true,
+    "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+    "input_modes": [
+      "RGBA",
+      "RGBA"
+    ],
+    "input_size": [
+      920,
+      668
+    ],
+    "limits": [
+      "Stored RGBA comparison only; not sRGB conversion or cross-OS equivalence.",
+      "Fixed ROI equality does not change observer acquisition/ledger failure, and is not a PixelGate PASS.",
+      "Whole-window difference coordinates are retained without assigning a UI cause."
+    ],
+    "method": "Independent Python3 + Pillow12.3.0 only; verify PNG IHDR 920x668,8bpc,colorType6; Image.load without convert/ICC transform; compare four-byte pixel tuples from tobytes; crop fixed ROI without resampling; no numpy or product helper. This computation was executed once before writing this review.",
+    "root_offline_comparison_fields_exact_match": true
+  },
+  "pixel_gate_pass": false,
+  "provenance": {
+    "actual_binary_scope": "observer-build.json/harness and binary receipts cross-checked; actual Mach-O binaries are not in this capture artifact and were not rerun or reread here",
+    "harness": "7987f3527dc4461957eb17b718c58aac11759ab0",
+    "observer_build_minimum": "13.0",
+    "observer_build_success": true,
+    "observer_original_input_hashes_match_frozen_review": true,
+    "recorded_control_build_run": 40070407306,
+    "recorded_runtime": "macOS14.8.9 Build23J631 arm64",
+    "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d"
+  },
+  "run_id": 40155522534,
+  "runs": [
+    {
+      "application_log_has_ledger_io_error": false,
+      "capture_count": 1,
+      "cleanup_receipt": {
+        "app_still_running": false,
+        "cleanup_failure": null,
+        "front_after": 327,
+        "front_before": 327,
+        "restore_activation_requested": true,
+        "termination_status": 0
+      },
+      "failure": null,
+      "final_context": {
+        "appearance": "Light",
+        "caption": true,
+        "frame_appearance": "dark from exact generated source",
+        "video": "Paused0",
+        "volume": "closed"
+      },
+      "mode": "control",
+      "nonzero_command_scope": "Only the initial sessions startup poll has status3; retained as allowed startup evidence, not rewritten.",
+      "nonzero_commands": [
+        {
+          "arguments": [
+            "sessions"
+          ],
+          "status": 3
+        }
+      ],
+      "normal_flags": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 1594,
+      "own_window_id_roundtrips_all_exact": true,
+      "samples": 6,
+      "stable_equal_comparisons": 4,
+      "success": true
+    },
+    {
+      "application_log_has_ledger_io_error": false,
+      "capture_count": 1,
+      "cleanup_receipt": {
+        "app_still_running": false,
+        "cleanup_failure": null,
+        "front_after": 327,
+        "front_before": 327,
+        "restore_activation_requested": true,
+        "termination_status": 0
+      },
+      "failure": "Missing/truncated row placements",
+      "final_context": {
+        "appearance": "Light",
+        "caption": true,
+        "frame_appearance": "dark from exact generated source",
+        "video": "Paused0",
+        "volume": "closed"
+      },
+      "mode": "observer",
+      "nonzero_command_scope": "Only the initial sessions startup poll has status3; retained as allowed startup evidence, not rewritten.",
+      "nonzero_commands": [
+        {
+          "arguments": [
+            "sessions"
+          ],
+          "status": 3
+        }
+      ],
+      "normal_flags": {
+        "increase_contrast": false,
+        "reduce_motion": false,
+        "reduce_transparency": false
+      },
+      "own_pid": 1732,
+      "own_window_id_roundtrips_all_exact": true,
+      "samples": 5,
+      "stable_equal_comparisons": 4,
+      "success": false
+    }
+  ],
+  "schema": 1,
+  "scope": "Independent read-only receipts and original PNG offline check. No width/offer/ordinal interpretation, helper execution, UI, build, CI, network, original artifact edits or report mutation.",
+  "verdict": "observer_cohort_failed_truncated_ledger; offline_png_observation_only",
+  "zip_receipt": {
+    "api_and_measured_receipt_fields_equal": true,
+    "artifact_id": 12584493248,
+    "bytes": 151597,
+    "digest": "sha256:5845fce6497e2ee7a43b5ee303e4e51692f71965457f71a5eb462cd47200a058",
+    "extracted_symlinks": 0,
+    "limit": "Archive was already deleted; this reviewer checked receipt consistency and extracted member count, and did not recompute the ZIP or call the API.",
+    "recorded_api_digest_verified": true,
+    "recorded_archive_deleted": true,
+    "regular_extracted_files": 170,
+    "zip_member_count": 170
+  }
+}

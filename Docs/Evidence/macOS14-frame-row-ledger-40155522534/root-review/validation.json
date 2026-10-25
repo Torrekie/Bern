@@ -1,0 +1,90 @@
+{
+  "scope": "Static AST/YAML/bash and actual-source pure-text forward/reverse reconstruction only; no driver prepare/patch/collect, Cargo, product build or UI.",
+  "package_hashes": {
+    "build.py": "cac961115f0667ab0ddb50bf8fabec3a04df2fa5bf0e63b25208e17debbda862",
+    "patch.py": "815322661ba0681f89b6737bd70c88e58a5ee28cd4886eabd885f940b833b6ed",
+    "RowLedger.swift": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf",
+    "FrameClosed.swift": "dcbd5405f31e0797937049feed74c4d54d7136da602636077085a856b2f2cd3d",
+    "PixelGate.swift": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"
+  },
+  "source_guard_sha256": "5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017",
+  "workflow_sha256": "d7a274e88daab4b8113e5e30edf6476c280c52a050ebf41535a77838f7a1bde7",
+  "python_ast": true,
+  "yaml": true,
+  "bash_blocks": 12,
+  "exact_source_roundtrips": [
+    {
+      "name": "BernStyle.swift",
+      "original_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+      "modified_sha256": "b3361ab4ff9ee1f7a4284cfba06df101c829fdfdd5ea5f8b040eeee1cd7569db",
+      "diff_sha256": "0479d307c252273372bde69b800c4738bcd9010109cb9a1cea57612487471d39",
+      "roundtrip_exact": true
+    },
+    {
+      "name": "BernGenerated.swift",
+      "original_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+      "modified_sha256": "709d1c95afbc2b894a3f7d3baf88e423d1f384bfb5c21b893fc7362bc012a511",
+      "diff_sha256": "2526d985052b81f59bb56f030eaee047a4b8d13d0669235f2f45d223ca4dfd1f",
+      "roundtrip_exact": true
+    }
+  ],
+  "patch_proof": {
+    "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+    "style": {
+      "before_bytes": 210785,
+      "before_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+      "after_bytes": 222921,
+      "after_sha256": "b3361ab4ff9ee1f7a4284cfba06df101c829fdfdd5ea5f8b040eeee1cd7569db"
+    },
+    "generated": {
+      "before_bytes": 81110,
+      "before_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+      "after_bytes": 81150,
+      "after_sha256": "709d1c95afbc2b894a3f7d3baf88e423d1f384bfb5c21b893fc7362bc012a511"
+    },
+    "helper": {
+      "path": "RowLedger.swift",
+      "bytes": 11049,
+      "sha256": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf"
+    },
+    "scope": "one Frame BernRow optional diagnosticID; original Row queries/algorithm retained with memory snapshots; post-place arm/encode/write; appended helper",
+    "frame_original_start_line": 1248,
+    "frame_row_original_line": 1274,
+    "row_original_start_line": 4419,
+    "row_edit_count": 12,
+    "frame_tag_count": 1,
+    "inverse_exact_original_style": true,
+    "inverse_exact_original_row": true,
+    "inverse_exact_original_generated": true,
+    "original_layout_query_counts": {
+      "sizeThatFits": 3,
+      "dimensions": 1,
+      "place": 1
+    },
+    "original_measurement_and_place_calls_unchanged": true,
+    "arm_protocol": {
+      "environment": "BERN_FRAME_ROW_LEDGER_OUTPUT_DIR",
+      "file": "frame-row-ledger.arm.json",
+      "schema": "bern_frame_row_arm_v1",
+      "stage": "frame-closed-light",
+      "required": [
+        "schema",
+        "pid",
+        "stage",
+        "token"
+      ]
+    },
+    "output_name": "frame-row-ledger-<pid>.json",
+    "file_byte_limit": 65536,
+    "complete_placement_limit": 64,
+    "success_scope": "patch construction only; not compile/runtime/visual acceptance"
+  },
+  "original_control_artifact_api_observed": {
+    "run_id": 40070407306,
+    "id": 12550744117,
+    "name": "macos13-gallery",
+    "size_in_bytes": 2131997,
+    "expired": false
+  },
+  "new_ci_dispatches": 0
+}
