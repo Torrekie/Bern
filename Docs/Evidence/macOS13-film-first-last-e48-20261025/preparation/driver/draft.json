@@ -1,0 +1,64 @@
+{
+  "kind": "film13_driver_source_only",
+  "status": "sources_stable_pending_root_actual_helper_build_and_reviewed_private_locks",
+  "locks_schema": "bern_film_first_last13_locks_v1",
+  "capture_kind": "film_first_last13_capture",
+  "group_key": "film",
+  "private_bundle_prefix": "dev.bern.frame13.film.",
+  "fixed_source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "reference14": {
+    "path": "outputs/Bern/Docs/Evidence/macOS14-film-e48-endpoints-40165343690/reference.json",
+    "sha256": "8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50",
+    "strong_cleanup_proven": false,
+    "role": "Data prerequisite only; local13 strong kernel/IPC/prefs conditions independent"
+  },
+  "local_source_manifest": {
+    "path": "work/film-first-last13-preparation/SHA256SUMS",
+    "sha256": "fa2fe88074dad1cea738227d7925d6e1be03d8247a7f85ac1f1c8504fff10f26"
+  },
+  "helper_build_contract": {
+    "required_arguments": [
+      "--helper-build",
+      "--helper-build-sha256",
+      "--collector",
+      "--collector-sha256",
+      "--focus-guard",
+      "--focus-guard-sha256",
+      "--local-sources"
+    ],
+    "kind": "film_first_last13_helpers_build_only",
+    "binaries_keys": [
+      "FilmFirstLast",
+      "FocusGuard"
+    ],
+    "required_fields": [
+      "target",
+      "actual_min_os",
+      "actual_embedded_sdk",
+      "source_before",
+      "source_after",
+      "commands",
+      "binaries"
+    ],
+    "actual_binary_hashes": "Required external values; not invented or defaulted",
+    "sdk_policy": "Bind actual receipt; minimum13 required, embedded SDK value not predicted"
+  },
+  "not_performed": [
+    "Any entry mode/function or artifact code execution",
+    "App copy/signing/preferences or IPC mutation",
+    "CLI/helper/native/UI/compile/CI/Git/API command",
+    "New image read/analysis or geometry/position expectation",
+    "Any change to old source/locks/report/gate or frozen Swift package"
+  ],
+  "source_files": {
+    "prepare-film13.py": {
+      "bytes": 15575,
+      "sha256": "ae223d27e45d894bb6fdd3654427f9ae193056bb36eb89f0a18901e78d3ba065"
+    },
+    "run-film13.py": {
+      "bytes": 30344,
+      "sha256": "011615835876decee67583de3c5d95adcaefc54054c6879ac4a44427c4b1fe8b"
+    }
+  },
+  "source_proof_sha256": "1493ed2dd3b04318285c04763460bece9106bd32fed2696add90178a4119f4c2"
+}

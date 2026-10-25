@@ -1,0 +1,103 @@
+{
+  "kind": "independent_film_first_last13_driver_source_and_preparation_review",
+  "verdict": "no_blocking_driver_source_or_current_preparation_finding_native_not_performed",
+  "blocking_findings": [],
+  "review_method": "AST parsing/source slices plus independent JSON/file SHA/MachO byte reads only. No source functions, driver modes, compiler, helper, App, CLI, UI, API, CI or Git executed.",
+  "input_hashes": {
+    "work/film-first-last13-driver/SHA256SUMS": "68bc0a08e735f689017620fe6a7ded3183f5e8d3fd266cc98c3cb194fcd29d8e",
+    "work/film-first-last13-driver/prepare-film13.py": "ae223d27e45d894bb6fdd3654427f9ae193056bb36eb89f0a18901e78d3ba065",
+    "work/film-first-last13-driver/run-film13.py": "011615835876decee67583de3c5d95adcaefc54054c6879ac4a44427c4b1fe8b",
+    "work/film-first-last13-driver/source-proof.json": "1493ed2dd3b04318285c04763460bece9106bd32fed2696add90178a4119f4c2",
+    "work/film-first-last13-build/build.json": "c171d7a7c288508c88ffe04326c691d4edd138b339a260f275d7cfe27b302d30",
+    "work/film-first-last13-isolation/locks.json": "5eb5a6bc2a0c61ca90cd23b6417957eb9f288a8b7ffb8539456d7b34bc165a5a",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-isolation/film/isolation.json": "1398f73e24ba06e35725468486f7df39da03af0a49ea604255020010a437875d",
+    "work/film-first-last13-prepare-invocation.json": "e6020801f72bc992199abe7265e09c34495d42872b5a18917e95503c700bd397",
+    "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS14-film-e48-endpoints-40165343690/reference.json": "8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50"
+  },
+  "canonical_function_byte_exact_hashes": {
+    "prepare": {
+      "sha": "4e627faf4b903521e935f7c6f3ae93545856f821d0e2565ba7ea6cf97d3d0e6c",
+      "macho": "3a9ede0896f12cdde82babb7b637bda546e788ffb9f6d429bc561edf151e0c9e",
+      "members": "a2b95079ee1a0f594a9c2cfa088ac046abf3932d6c7e270fde99c516c4d87d60",
+      "app_machos": "b4c64e18331f2efaef2a64d2eb2c625013f3d98cade3ed9c1d6457f3cd9a5d8e"
+    },
+    "runner": {
+      "bundle_members": "1be855597b69e21859f8129aaafb0f2d47327f1c4c3a0d3c4a5c826b74bfd766",
+      "ProcBSDInfo": "96dc43245b3f4c36fb5f50d43ddcd9bd1734185e652ca395c772eacbc870348e",
+      "process_info": "6eeb8b21616269c557f1cef4836f3e40faa1dced8ba78c60622c91cc9bcb4cba",
+      "valid_start": "bad7808c69229286faeea866c4e1306b808bac8c93531e824452ee1c2caf18cd",
+      "same_process": "5fa3512ba59adfa8aa93c649f915d5180bdc6573004493c135439ce987a35e37",
+      "exact_instance_absent": "d469717d2a73d621c3f2adae09df9c2aba660328804495c87468fb2e053ae366",
+      "executable": "2bc0b8805fd1334966c281677cd87679cb1a551e07a1cc718bdf9f3c9dc4c383",
+      "parent": "72871c1d2bed1e01f695861a743e79b5edf546ac05a377838fba5326656e997d",
+      "save": "07f64c3136d7072db329c96626b36dc8e42ca22a9229ab1aa63f1daf4d638a69",
+      "helper": "bb2a26fcd28c4bfd6461124ba7e066c0c637a16e048110886206291d0a0ded71",
+      "refresh_owned": "52bf9615c834a78ac5d855158fbfe7a79bc5cc0db9e505b563e9dc4540373fe9",
+      "bootstrap_owned": "335fbc1956c191c40d6eb23d204f79c694b7cc0199f6a5469a7389b5dd479452"
+    }
+  },
+  "runner_process_to_exit_inverse_exact": true,
+  "Film_appended_post_cleanup_checks": {
+    "bytes": 1990,
+    "sha256": "7940c6e42426577069834669667d4f8fc5da37a7a7358bd1811ef1901e174f31"
+  },
+  "source_gate_review": [
+    "Source/hash/reference/build/locks/isolation/member checks occur before collector launch. Prepare and runner both require canonical14 actual e48 report/source/initial and firstLast PNG hashes; reference cleanup limits explicitly checked as false/not local13 proof.",
+    "Prepare keeps original GUI/CLI/min13SDK26.2/delivery/build identity; private UUID CFID only changes allowed Info/signature members, all MachO sections and normalized nonsignature bytes. Runner rechecks member hashes and strict signatures before App launch.",
+    "Fresh output and watchdog required; bidirectional overlap checks cover driver dir, sources, helpers/build, App/CLI/originals/delivery/locks and entire reference archive.",
+    "Original guard inspect must find no private instance and a strong live original-front identity. Bootstrap requires private bundle/path, live kernel stamp and child parent=collector before ownership handoff.",
+    "Collector report front PID must correlate to still-live original outer kernel identity before cleanup. Guard restore precedes exact child stop; direct fallback requires known non-own live front and exact parent/kernel match, never adopts a foreign process.",
+    "Original95s watchdog/75s collector/defaults delete5s remain unchanged. Missing ownership or exact IPC receipt fails closed; verified exact child exit precedes prefs/IPC cleanup. Timeout remains false, no retry/loosening.",
+    "Film collector launched with only APP CLI OUTPUT; inherited CI/ledger/scrolltrace removed/rejected. Success adds source/self hash/normal/light, two Film states and Patterns, rawstable4/920x668 and six finite named AXImage checks; no geometry target or crossOS equality gate."
+  ],
+  "current_actual_inputs": {
+    "helper_build_receipt_sha256": "c171d7a7c288508c88ffe04326c691d4edd138b339a260f275d7cfe27b302d30",
+    "helper_binaries": {
+      "FilmFirstLast": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-build/FilmFirstLast",
+        "bytes": 217696,
+        "sha256": "91f111ceda867e2a22000c5f575114af150dcabcf623013b6514c1e364700fd2"
+      },
+      "FocusGuard": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-build/FocusGuard",
+        "bytes": 104088,
+        "sha256": "fb6594e71032d7a838fba8ae3529aa2dcfddad1c936a027886948a5b3958b26b"
+      }
+    },
+    "requested_headers": "SDK14.2",
+    "actual_embedded_SDK": "13.0",
+    "actual_minos": "13.0",
+    "binary_metadata_read_arm64_min13_sdk13": true,
+    "saved_signature_and_build_log_hashes_verified": 8,
+    "signature_reexecuted": false,
+    "private_bundle": "dev.bern.frame13.film.84ee0f463eb949df97d65d84b943ba7d",
+    "private_gui_sha256": "b4d8e3c236db10538c7b368ef4b7908e6f089f9fefd0dc9a833f5d0f6caf369a",
+    "all_original_and_private_bundle_members_rehashed": true,
+    "section_counts": {
+      "Contents/MacOS/Gallery": 40
+    },
+    "normalized_nonsignature_bytes_independently_recomputed_equal": true,
+    "prepare_invocation_exit": 0,
+    "no_native_invocation_recorded": true
+  },
+  "line_references": {
+    "helper_build_gate": 115,
+    "fresh_output_isolation": 161,
+    "prelaunch_signatures": 168,
+    "strong_front_inspect": 285,
+    "ownership_bootstrap": 266,
+    "Film_launch": 304,
+    "95s_cap": 308,
+    "original_front_cleanup_correlation": 334,
+    "exact_exit_before_prefs_IPC": 409,
+    "defaults5s": 426,
+    "Film_report_gate": 447
+  },
+  "remaining_limits": [
+    "Static review and existing root-produced reversible preparation only; no runtime/native success or desktop cleanup accepted yet.",
+    "Strict signature/build success here comes from hash-bound retained receipts; no codesign/vtool commands were rerun.",
+    "Requested SDK14.2 headers and actual embeddedSDK13.0 are intentionally separate; no invented14.2 MachO SDK claim.",
+    "App/CLI identity equality and canonical14 data prerequisite do not prove same collector/timing, image parity, physical input or product repair.",
+    "Future actual execution must keep supplied reviewed locks/build/helper SHA values and capture real normal/idle/source/PNG/AX/cleanup evidence."
+  ]
+}

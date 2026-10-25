@@ -158,3 +158,13 @@ wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001
 这是当前e48 port运行在14的参考，不冒充未修改上游ffb的独立后续验收。本机clean e48首次Last仍缺实际数据；下一仅fresh direct初始作为setup后一次Last，不继续First/Last-again/resize或immediate矩阵，不改默认3、nearest或套用初始anchor补偿。源码审查没有直接证明13缺陷：显式First/Last会退役initial owner；共享same-target重发死分支与同StateObject重现是静态事实，尚无本机13失败链。
 
 旧CI observer先stop后restore且没有termination/front-after-cleanup收据，不满足本机强kernel cleanup门槛，不能直接在用户桌面运行。本机新入口的source-only接线仍是准备状态，须保留startup/ownPID/前台强身份/restore-before-stop与精确IPC/prefs清理。一次只读缺失私有域defaults查询0.652s正常返回且无文件，不证明删除一定成功，不放宽原5s cap；上一色改wrapper失败保留。下载637806B ZIP已API digest核验后清理；本单元无本机App、helperbinary或编译缓存。goal active，完整13阶段仍未验收，11/Swift5.3/ObjC/iOS仍延期。
+
+## 本机 e48 initial → 首次 Last（单次完成）
+
+上述待采集项现由[本机单次证据](../Evidence/macOS13-film-first-last-e48-20261025/README.md)补齐。13.7.8/arm64 original e48/private CFID-only copy，Light/active/normal三false；原Patterns setup后直接Film，再一次Last，不含First/repeat/resize或重试。collector0/8.599078s、wrapper0/10.444415s；两Film态原stable4、终AX各六个唯一图完整，前台/strongkernel restore-before-stop、exact-child/IPC/prefs全部通过，defaults delete0/原5s上限保持。旧清理false仍保留。
+
+固定对14参考40165343690的initial_setup与首次Last；窗口均920×668pt。initial四个未放大图relative xywh差全0，Madras/Glen非零原浮点差不抹零。首次Last前五图relative x差为−14.5pt；Windowpane差为(x−14.504430837515656,y−0.0029354298540056334,w+0.008861675031312188,h+0.0049846922050562625)pt。完整原始框和逐字段差、源/实际编译/私有App隔离/命令与独立复核均在同一archive。14首次与重复Last自己的差异仍是原事实，未混用repeat来缩小本次差异。
+
+13原PNG1840×1336/2×、ICC4032B，14为920×668/1×、ICC3300B；这里只查元数据，不比较/归一像素、不选ROI或容差。AX walk在PNG之后、collector/startup/heartbeat/时序不同；本次只证明两端点的这组观察，不证明根因、物理手势、历史/resize、完整动画或视觉等效。root已直接查看原13两图及14首次Last原图；没有由目检增加成功判定。
+
+产品未改。下一步先核显式Last程序化滚动的native14/compat13路径与现有几何能证明什么，仍禁止按14.5pt套偏移或改默认3/nearest/initial anchor。自有App/两个helper/cache已清理53,933,813B逻辑文件，原交付四exe不变；work相对别名只读历史，不可执行/构建/清理。完整13验收未通过，goal active，11/Swift5.3/ObjC/iOS继续延期。

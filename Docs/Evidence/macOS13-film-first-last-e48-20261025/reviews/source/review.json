@@ -1,0 +1,129 @@
+{
+  "kind": "independent_source_only_film_first_last13_review",
+  "verdict": "no_remaining_source_blocker_after_owned_CLI_defer_wrapper_not_ready",
+  "blocking_findings": [],
+  "compiled_or_executed": false,
+  "resolved_draft_finding": {
+    "draft_sha256": "149cc0ca7dbe752072a0a4f923866760512fd60515d0a6727ba6062af79a3d66",
+    "issue": "Frame healthy/pause can throw outside old Film CLI timeout, leaving a running owned CLI.",
+    "resolution": "Final source installs exact Frame owned-Process defer immediately after successful try p.run(); inverse CLI comparison verified."
+  },
+  "input_hashes": {
+    "work/film-first-last13-preparation/FilmFirstLast.swift": {
+      "bytes": 32616,
+      "sha256": "c4a1bd81e61079a75047e9cfc1f1407b2f12de1ccad7744878ff98975839ee9b"
+    },
+    "work/film-first-last13-preparation/FocusGuard.swift": {
+      "bytes": 8082,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d"
+    },
+    "work/film-first-last13-preparation/source-proof.json": {
+      "bytes": 6410,
+      "sha256": "21067c597ee1b4f8a7c459a66f6c217ae27da1310d96bae3cba0cb75f2729e28"
+    },
+    "work/film-first-last13-preparation/README.md": {
+      "bytes": 4966,
+      "sha256": "f4d6fb7f0fc5633b49be9c5ad775954f52d595bce5879e457292cc197c749aa0"
+    },
+    "work/film-first-last13-preparation/SHA256SUMS": {
+      "bytes": 329,
+      "sha256": "fa2fe88074dad1cea738227d7925d6e1be03d8247a7f85ac1f1c8504fff10f26"
+    },
+    "work/film-e48-followup14-preparation/gallery-film-probe.swift": {
+      "bytes": 23963,
+      "sha256": "6c4d5c93c9331ba4dd6427aa18799b6a1e720b6e2e006e036fb908ced4f9e635"
+    },
+    "work/split-label-color-local13-preparation/FrameColorCapture.swift": {
+      "bytes": 55439,
+      "sha256": "61426976dbb557d0d8974dcb4da11337bc1611420b04cec0f856bace14bf362c"
+    },
+    "outputs/Bern/Docs/Evidence/macOS14-film-e48-endpoints-40165343690/reference.json": {
+      "bytes": 15061,
+      "sha256": "8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50"
+    }
+  },
+  "independent_byte_checks": {
+    "Film_now_frontState": {
+      "bytes": 365,
+      "sha256": "7cfc41913716c1dadd7e7c523dda109bb1a4411019191f7ef9534917cf4ef2ce",
+      "byte_exact": true
+    },
+    "Film_handle": {
+      "bytes": 262,
+      "sha256": "16d73fb2bdc07d30e7f5ab0157bae7a320a51a109c44d93c96dc308885b1cde7",
+      "byte_exact": true
+    },
+    "Film_target_window_image_stable_attribute_axSample": {
+      "bytes": 7010,
+      "sha256": "a07b4193479eeecc31433bedaef7d1b287140bf944cb656959f67b18031bb6eb",
+      "byte_exact": true
+    },
+    "Frame_activation_healthy_pause": {
+      "bytes": 1233,
+      "sha256": "793661eb1b765fd254c8cda31b216e601145c2d5d46cf78e46af01772640f7e7",
+      "byte_exact": true
+    },
+    "Film_CLI_inverse_three_substitutions_plus_Frame_owned_CLI_defer": {
+      "bytes": 1796,
+      "sha256": "1c5287119da4ea71934a1d79d347b1a8f30adff99ad3f301bee94099b58109a3",
+      "byte_exact": true
+    },
+    "Frame_ownWindows_bounds_heartbeat_excluding_added_separator_LF": {
+      "bytes": 3034,
+      "sha256": "a122f41362ff4ef82edd3592b46b155989179d8139a2493b790fc9df99e7b4e7",
+      "byte_exact": true,
+      "separator_note": "Candidate adds one blank separator LF before terminalAX, outside inherited function body."
+    },
+    "Frame_final_cleanup_except_two_Row_log_checks": {
+      "bytes": 5267,
+      "sha256": "bf4a176579dd4cf596782d1d23d5f539692ba96bf605f37aafb2c90c980bc162",
+      "byte_exact": true
+    }
+  },
+  "source_findings": [
+    "Unique own session and CG/main window readiness precede activation; active PID and same startup window precede mainID/heartbeat timer.",
+    "Existing 75s healthy/18s startup/CLI8s/raw4-stable8s/terminalAX2s and0.5s own-PID mouseMoved heartbeat remain. No physical input claim.",
+    "Only setup Patterns, Film initial, and one original enabled to_last action produce three PNGs/two Film terminal states. No new target geometry or tolerance imposed.",
+    "Final defer invalidates timer, correlates captured original front with outer PID/bundle/path, validates collector/child/path/bundle ownership receipt, and delegates live kernel checks to unchanged private-ID Guard.",
+    "Guard conditional original-front restore precedes exact own-instance terminate/SIGKILL. PID/path/bundle/kernel changes reject actions. No old Film stop-before-restore helper retained.",
+    "Missing/mismatched receipts/guard failure or live child latch failure; no successful exact receipt means IPC retained. Final exit checks report.success after defer.",
+    "Collector does not create ownership.json or prove kernel parent-child bootstrap itself; these remain outer-wrapper duties.",
+    "Core accepts existing OUTPUT and records rather than pins product hashes. No preference restoration/delete policy or wrapper exists."
+  ],
+  "lines": {
+    "CLI_defer": 92,
+    "Film_original_block": 112,
+    "terminalAX": 256,
+    "final_cleanup": 281,
+    "ownership_receipt": 304,
+    "IPC_fail_closed": 329,
+    "startup_gate": 376,
+    "activation": 377,
+    "heartbeat_timer": 383,
+    "Last_action": 405,
+    "final_exit": 418
+  },
+  "execution_prerequisites_not_implemented": [
+    "Separately reviewed wrapper/locks with strict fresh OUTPUT and bidirectional input/output path isolation.",
+    "Bind canonical14 reference/report/firstLast PNG and actual e48 GUI/CLI; private CFID signed copy requires normalized MachO/section identity and strict signature proof.",
+    "Pin actual compiled collector and exact ab78 Guard; BERN_SOURCE_SHA alone proves no binary identity.",
+    "Preflight strong original-front identity/private prefs+IPC, bootstrap exact collector parent/child PID/path/bundle/kernel and promptly write ownership.json.",
+    "Outer watchdog must act only on exact live identities, restore-before-stop, reject missing cleanup receipts and remove private prefs/IPC only after exact cleanup.",
+    "Runtime source/normal start+end/idle/PNG/AX/cleanup evidence still required; no assumed native success."
+  ],
+  "canonical14": {
+    "path": "outputs/Bern/Docs/Evidence/macOS14-film-e48-endpoints-40165343690/reference.json",
+    "sha256": "8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50",
+    "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+    "run_id": 40165343690,
+    "report_sha256": "54b06d51178cf8e57d947c2de193f837b36ab0a52fa0e341357f0d6972cba0bf",
+    "first_last_pointer": "/cases/0/followup_stages/0",
+    "first_last_png_sha256": "13788694f15e1d1c87111de35daac508c6fa65e7f725ae4639136504013e6522",
+    "different_collector_and_timing": true
+  },
+  "limits": [
+    "Static source/text/byte inspection only; no compilation/helper/App execution/UI/API/CI/Git.",
+    "Local13 startup/heartbeat/health/report schema differ from14, and select omits original first-second AX observe loop; no same-collector/no-effect claim.",
+    "No wrapper/runtime readiness, physical-input, crossOS geometry/color acceptance, product fix or root-cause claim."
+  ]
+}

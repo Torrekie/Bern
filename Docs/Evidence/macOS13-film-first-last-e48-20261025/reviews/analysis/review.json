@@ -1,0 +1,362 @@
+{
+  "kind": "independent_first_last13_offline_export_review",
+  "verdict": "export_source_binding_and_numeric_metadata_verified_no_visual_acceptance",
+  "blocking_findings": [],
+  "method": "Stdlib JSON/SHA/exact subtraction and Pillow Image.open metadata only. Frozen script read/AST inspected, never imported/executed. No raster load/tobytes/convert/ROI/resampling/new tolerance.",
+  "inputs": {
+    "work/film-first-last13-analysis-plan/SHA256SUMS": "461cd11453d82a05e9a0b03a58031addc954bc4665e52620c5e390228fbab835",
+    "work/film-first-last13-analysis-plan/analyze.py": "38380e1b6bb74628ef77a212533cd71ee92b2c2102585ca0a9be340598760bea",
+    "work/film-first-last13-analysis/analysis.json": "02c7027a22ce1bc42ee53436b8a2828df7afafa03ef20a448cbdafe32355918f",
+    "work/film-first-last13-actual/report.json": "e47168e331b8c231755d18add58aaaf56541e59090f29e75d60e6d4486fc5c98",
+    "outputs/Bern/Docs/Evidence/macOS14-film-e48-endpoints-40165343690/reference.json": "8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50",
+    "outputs/Bern/Docs/Evidence/macOS14-film-e48-endpoints-40165343690/raw/result.json": "54b06d51178cf8e57d947c2de193f837b36ab0a52fa0e341357f0d6972cba0bf"
+  },
+  "plan_entries_verified": 3,
+  "additional_truth_hash_and_complete_values_verified": {
+    "watchdog": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-actual.watchdog/watchdog.json",
+      "sha256": "fdd2e7776729971bb3d0ba67a094a02e3cb98a1cc9a645cb733bdcc74d350116"
+    },
+    "collector_cleanup": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-actual/cleanup-helper.json",
+      "sha256": "7b65e199ac8522030c06d7aafa5bb4d4d04fdb08778ed8fc3b439126ffa7d4c0"
+    },
+    "ownership": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-actual/ownership.json",
+      "sha256": "8012c167c6a1eb1bc6ca0a2bb9cecb4ecb63e12e3ef0da304f7480fff0e6d2ca"
+    },
+    "original_front": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-actual.watchdog/original-front.json",
+      "sha256": "656f877c7ac186771984aebf5c19a7c085a60054e952cd6365b2ec06cdc4f825"
+    },
+    "helper_build": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-build/build.json",
+      "sha256": "c171d7a7c288508c88ffe04326c691d4edd138b339a260f275d7cfe27b302d30"
+    },
+    "native_invocation": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-native-invocation.json",
+      "sha256": "14478bceb6131d56c5b8e7a7f2ef3f2ea434473481ca13632de44a965545198b"
+    }
+  },
+  "all_commands_and_referenced_logs_verified": {
+    "local13": 27,
+    "reference14": 33
+  },
+  "reference_binding": {
+    "first_last_json_pointer": "/cases/0/followup_stages/0",
+    "first_last_png_sha256": "13788694f15e1d1c87111de35daac508c6fa65e7f725ae4639136504013e6522",
+    "repeat_last_not_used": true
+  },
+  "source_frame_counts": {
+    "hosts": 2,
+    "states_each": [
+      "initial",
+      "last"
+    ],
+    "names_each": 6,
+    "screen_frames": 24,
+    "relative_frames": 24,
+    "exact_delta_vectors": 24
+  },
+  "differences_recomputed": {
+    "initial": {
+      "capture_origin_delta_13_minus_14": {
+        "x": -240,
+        "y": -78
+      },
+      "images": {
+        "Gingham": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -240,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        "Tartan": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -240,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        "Madras": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -240.0000048841473,
+            "y": -78.00000323574761,
+            "width": 9.768294489731488e-06,
+            "height": 5.494665600735971e-06
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": -4.884147301709163e-06,
+            "y": -3.235747612961859e-06,
+            "width": 9.768294489731488e-06,
+            "height": 5.494665600735971e-06
+          }
+        },
+        "Glen": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -239.99999692382914,
+            "y": -77.99999796203667,
+            "width": -6.152341825327312e-06,
+            "height": -3.46069231227375e-06
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": 3.076170855820237e-06,
+            "y": 2.037963326984027e-06,
+            "width": -6.152341825327312e-06,
+            "height": -3.46069231227375e-06
+          }
+        },
+        "Houndstooth": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -240,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        "Windowpane": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -240,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        }
+      }
+    },
+    "last": {
+      "capture_origin_delta_13_minus_14": {
+        "x": -240,
+        "y": -78
+      },
+      "images": {
+        "Gingham": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -254.5,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": -14.5,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        "Tartan": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -254.5,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": -14.5,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        "Madras": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -254.5,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": -14.5,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        "Glen": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -254.5,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": -14.5,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        "Houndstooth": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -254.5,
+            "y": -78,
+            "width": 0,
+            "height": 0
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": -14.5,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        "Windowpane": {
+          "screen_xywh_delta_13_minus_14": {
+            "x": -254.50443083751566,
+            "y": -78.002935429854,
+            "width": 0.008861675031312188,
+            "height": 0.0049846922050562625
+          },
+          "capture_origin_relative_xywh_delta_13_minus_14": {
+            "x": -14.504430837515656,
+            "y": -0.0029354298540056334,
+            "width": 0.008861675031312188,
+            "height": 0.0049846922050562625
+          }
+        }
+      }
+    }
+  },
+  "initial_exact_zero_relative_frame_names": [
+    "Gingham",
+    "Tartan",
+    "Houndstooth",
+    "Windowpane"
+  ],
+  "png_metadata": {
+    "local13": {
+      "initial": {
+        "sha256": "38133c7326467de07e8981affb5b516e782c6c511b4a0a83fe35205e06350879",
+        "pixels": [
+          1840,
+          1336
+        ],
+        "capture_points": [
+          920,
+          668
+        ],
+        "origin": [
+          270,
+          80
+        ],
+        "scale": {
+          "x": 2.0,
+          "y": 2.0
+        },
+        "icc": {
+          "bytes": 4032,
+          "sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4"
+        },
+        "raster_load_or_conversion_called": false
+      },
+      "last": {
+        "sha256": "e31e7385a300e3f686b2a434a627e0a1ad49a0214a16e92ad8188b783393cb69",
+        "pixels": [
+          1840,
+          1336
+        ],
+        "capture_points": [
+          920,
+          668
+        ],
+        "origin": [
+          270,
+          80
+        ],
+        "scale": {
+          "x": 2.0,
+          "y": 2.0
+        },
+        "icc": {
+          "bytes": 4032,
+          "sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4"
+        },
+        "raster_load_or_conversion_called": false
+      }
+    },
+    "reference14": {
+      "initial": {
+        "sha256": "46ae79801159c1a9b26e6a86225e51bcfc34a667bf215ec94a611c6cfe8b00d8",
+        "pixels": [
+          920,
+          668
+        ],
+        "capture_points": [
+          920,
+          668
+        ],
+        "origin": [
+          510,
+          158
+        ],
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        },
+        "icc": {
+          "bytes": 3300,
+          "sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55"
+        },
+        "raster_load_or_conversion_called": false
+      },
+      "last": {
+        "sha256": "13788694f15e1d1c87111de35daac508c6fa65e7f725ae4639136504013e6522",
+        "pixels": [
+          920,
+          668
+        ],
+        "capture_points": [
+          920,
+          668
+        ],
+        "origin": [
+          510,
+          158
+        ],
+        "scale": {
+          "x": 1.0,
+          "y": 1.0
+        },
+        "icc": {
+          "bytes": 3300,
+          "sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55"
+        },
+        "raster_load_or_conversion_called": false
+      }
+    }
+  },
+  "limits": [
+    "Faithful export verified; no geometry/position/visual PASS or cause attribution.",
+    "Initial is setup context only; no reopening stopped wait/direct acceptance.",
+    "13 PNG2x/4032B ICC and14 PNG1x/3300B ICC are preserved, never normalized or color-compared.",
+    "PNG and laterAX are separate observations; collectors/startup/heartbeat/timing/cleanup differ.",
+    "Original watchdog/cleanup false or success values remain unchanged; this is not a new native cleanup acceptance."
+  ]
+}

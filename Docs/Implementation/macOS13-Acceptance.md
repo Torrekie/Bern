@@ -305,3 +305,13 @@ root已目检两张原p0，candidate named内容实际可见。control→candida
 单次完整算法与五子命令均0，保留14参考的68comparisons/16primary/所有ROI/ramp SHA严格重算一致。named mean absolute(D13−D14) p0 5.210863095→1.525197459、p1 5.224399038→1.567882898；最大112.616328984→25.754035027、113.048334478→26.186040522。但p0改善5/恶化7，p1改善3/恶化9；最大新增恶化为green812 R约2.43544码值，全部120通道和16恶化项保留。named ramp p0三通道略改善/p1略恶化，custom全不变；不是单调改善，不据均值采用或改阈值验收。
 
 下一[真实Standard named transition门槛](../Evidence/macOS13-hdr-candidate/native-pq-hero-snapshot-sdr13/next-flight-plan/README.md)尚未实施：新SDK/min13保留实际timer和正常AppKit loop，同key的source/destination必须两次独立snapshot/派生，记录触发→snapshot→Flight.started延迟。静态259ms不证明真实进入动画成本；生产dynamicRange尚未传至Hero链，private Standard不能冒充产品正确门控。本轮无产品改动或新远程CI，exe/cache57485328B及work重复13677124B清理，内部13同字别名硬链接去重名义5077367B，均非APFS实际回收。完整UI/颜色/动画及其它门槛未通过，goal active，后续平台阶段继续延期。
+
+## 原始 Film 首次 Last 的本机对照（2026-10-25）
+
+[唯一原生采集与复核](../Evidence/macOS13-film-first-last-e48-20261025/README.md)已完成，保留原e48 Gallery/CLI，没有产品改动或新CI。13.7.8/arm64正常三false、Light/active，先Patterns setup，再Film initial和一次Last。collector0/8.599078s、wrapper0/10.444415s；两终态AX各六图完整，原buffer四次连续相等。新外部helper使用Swift5.9.2/14.2头文件/target13，但实际内嵌SDK13.0，区别于交付App的SDK26.2/min13。
+
+离线方案在读本机数据前冻结，独立复算两状态的12图原screen/窗口origin-relative xywh与逐字段差。对固定14参考40165343690的首次Last，前五图relative x均为−14.5pt；Windowpane为−14.504430837515656pt，y/width/height的小非零差原样保留。initial四个未放大图的relative xywh精确相同，其余两图保留原浮点差。没有把14的repeat Last混作参考，没有按阈值归零、拟合补偿或新增位置成功判定。13的2×/ICC4032B与14的1×/ICC3300B均原样记录，本轮没有像素比较/归一化；AX在PNG之后，端点不代替完整动画，14参考仍是当前port e48而非未修改上游。
+
+本次强kernel清理完整通过：先恢复原1390/kernel1792598787.261710，再停止自有25080/kernel1792908958.713508，termination0、postown=null；exact-child/IPC/private prefs/state均通过，defaults delete0且原5秒上限不变。旧cohort清理false不改写。独占桌面已释放、cursor位移0、配置不变，空overlay clear-only后的false与原visible状态都保留。自有helper/privateApp及编译cache合计53,933,813B逻辑文件已核hash/lsof后退役，原四个交付exe不变；不把此数字当APFS回收量。
+
+本轮属于采集与证据推进，位置一致性仍未通过；尚不能由单次差异归因或改默认3/nearest/anchor/间距。下一先审查显式Last程序化滚动与现有几何证据，缺口明确后再决定最小观察；不重开已停止的Row/颜色/搜索/Scene路线。完整13颜色/布局/交互/动画门槛及后续macOS11/Swift5.3、Objective-C、iOS阶段保持未通过/延期，goal active。

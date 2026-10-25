@@ -1,0 +1,7 @@
+Frozen461cd114 plan /38380e1b script and02c7027a analysis faithfully bind c4a1 collector, e47168 local report, full watchdog/truth JSONs and canonical89216514 reference. Review used only independent JSON/hash/subtraction and Pillow headers/metadata; no retained script/helper/native/UI/CI execution.
+
+All24 host/state/name screen and origin-relative frames, plus12 screen and12 relative delta vectors, were independently recomputed.14 last is precisely /cases/0/followup_stages/0/direct-last13788694…; repeatLast was not substituted. Initial Gingham/Tartan/Houndstooth/Windowpane relative frames are exactly equal; transformed Madras/Glen retain tiny nonzero residuals. FirstLast's first five relative frames have x−14.5pt and other fields0; Windowpane has x−14.504430837515656/y−0.0029354298540056334/w+0.008861675031312188/h+0.0049846922050562625. No position PASS or root cause follows.
+
+Four compared PNG metadata records match:13 1840×1336/2×,4032B ICC e2473ef4…;14 920×668/1×,3300B ICC3d40c076…. No raster load/decode call, pixel hash, ROI, resampling or color transform occurred. All original commands/log identities and six complete additional truth JSONs match. Full source data remains in its original files.
+
+Verdict covers faithful export only. Initial is setup context, not reopening wait/direct acceptance. Geometry/colour parity, synchronized animation, same collector timing, physical input, product fix and new native cleanup acceptance are not established.

@@ -1,0 +1,61 @@
+{
+  "kind": "film_first_last13_final_packaging_review",
+  "scope": "This exact canonical cohort only; no new runtime, geometry or full-macOS13 acceptance.",
+  "conclusion": "No packaging inconsistency found in checked scope. Root final top-level manifest remains to be generated after this review is inserted.",
+  "canonical": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025",
+  "readme_cohort_docs_consistent_with_frozen_receipts": true,
+  "checked_metadata_sha256": {
+    "README.md": "50989a1fb2a1f700f7c1de6da472a01f9b3ec364cb5bfd3762ad03d27577a5dc",
+    "cohort.json": "148d9fb3afb122de950aa2282505148f6dd95a24a9de31448264d069a7d20ea3",
+    "raw/report.json": "e47168e331b8c231755d18add58aaaf56541e59090f29e75d60e6d4486fc5c98",
+    "watchdog/watchdog.json": "fdd2e7776729971bb3d0ba67a094a02e3cb98a1cc9a645cb733bdcc74d350116",
+    "analysis/analysis.json": "02c7027a22ce1bc42ee53436b8a2828df7afafa03ef20a448cbdafe32355918f",
+    "receipts/cleanup.json": "7e48885403c37fb6fb28da43899e6961f4ca9ce981b88c33ccf7d40fcf76c256"
+  },
+  "implementation_doc_current_sha256": {
+    "macOS13-Film-Initial-Position.md": "bd04d1a655cc9128a95f40782023187a10a16ca134fe9d6010a8459e8b7054f7",
+    "macOS13-Acceptance.md": "0f745625a97077fba3dda4d5cc5369a8f3639063a6614c7f30b293ba1276bcd3"
+  },
+  "markdown": {
+    "files_or_new_sections": 12,
+    "relative_links_checked": 12,
+    "broken": 0
+  },
+  "original_manifests_match_pre_move_freeze_sha256": {
+    "preparation/source/SHA256SUMS": "fa2fe88074dad1cea738227d7925d6e1be03d8247a7f85ac1f1c8504fff10f26",
+    "preparation/driver/SHA256SUMS": "68bc0a08e735f689017620fe6a7ded3183f5e8d3fd266cc98c3cb194fcd29d8e",
+    "analysis-plan/SHA256SUMS": "461cd11453d82a05e9a0b03a58031addc954bc4665e52620c5e390228fbab835",
+    "reviews/source/SHA256SUMS": "f016d57ec45d9fd3ed395172c65813a21d4ad07a16bce249d77137a72dec204f",
+    "reviews/driver/SHA256SUMS": "b72e1ec61a6db88e3718acc4b880d66dcbef5feca3f565cfa998414bcaa54a96",
+    "reviews/runtime/SHA256SUMS": "b84c69d8a6e90191f3b51c24c5ba2c05d7fdc3d653126c36b7be484bc2613b2b",
+    "reviews/runtime/initial-SHA256SUMS": "9e81ef3552a70a530d51b26c5c484f5c2e27565dca50c79f371478ea921a5346",
+    "analysis/SHA256SUMS": "8b170acccb6a39255c3d574c880c9f37d24ffcbc7be9e8b4a603befcb741fc96",
+    "reviews/analysis/SHA256SUMS": "090f0f08c1b4d31408b2de7694de77a513375f2ea5a6c747acf51f9c25cb7988"
+  },
+  "nested_manifest_entries_verified": 30,
+  "canonical_payload_scan": {
+    "symlinks": 0,
+    "MachO_payloads": 0,
+    "private_App_or_module_cache_directories": 0,
+    "retired_targets_absent": true
+  },
+  "history_aliases": {
+    "count": 20,
+    "all_relative_and_canonical_bound": true,
+    "used_for_execution_build_cleanup": false
+  },
+  "current_original_four_exe_sha256": {
+    "outputs/macOS13/Gallery.app/Contents/MacOS/Gallery": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "outputs/macOS13/bin/gallery": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "outputs/macOS13/Showcase.app/Contents/MacOS/Showcase": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+    "outputs/macOS13/bin/showcase": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170"
+  },
+  "facts_preserved": [
+    "Single initial/first Last source e48; product unchanged.",
+    "Collector/wrapper and independent strong-cleanup receipts successful; historical other-cohort failures untouched.",
+    "First Last position differences remain nonzero, no threshold/compensation/root-cause/adoption claim.",
+    "14 reference data-only; collector timing and PNG scale/ICC differ, no pixel normalization or whole13/crossOS pass.",
+    "Retired53933813B is logical file bytes, not physical APFS reclamation."
+  ],
+  "not_performed": "No artifact/helper/entry/App/CLI/vtool/codesign/build/UI/Git/CI/API/cleanup invocation; no raw copy or pixel decoding."
+}

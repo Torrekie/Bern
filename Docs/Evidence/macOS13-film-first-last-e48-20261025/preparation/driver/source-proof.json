@@ -1,0 +1,53 @@
+{
+  "kind": "film13_entry_sources_static_proof",
+  "canonical_prepare": {
+    "path": "outputs/Bern/Docs/Evidence/macOS13-frame-control-e48-20261025/preparation/source/prepare-control.py",
+    "sha256": "3dda78fcb178faa7b1a7a5d6fb681c01573ccec5685184821710f417fbb87048"
+  },
+  "canonical_runner": {
+    "path": "outputs/Bern/Docs/Evidence/macOS13-frame-control-e48-20261025/preparation/source/run-control13.py",
+    "sha256": "bdb7c3502a81d177fbe50b83be003adaeae97cee5e641f48ab8e29a9970dd091"
+  },
+  "prepare_functions_byte_identical": {
+    "sha": true,
+    "macho": true,
+    "members": true,
+    "app_machos": true
+  },
+  "runner_functions_and_classes_byte_identical": {
+    "bundle_members": true,
+    "ProcBSDInfo": true,
+    "process_info": true,
+    "valid_start": true,
+    "same_process": true,
+    "exact_instance_absent": true,
+    "executable": true,
+    "parent": true,
+    "save": true,
+    "helper": true,
+    "refresh_owned": true,
+    "bootstrap_owned": true
+  },
+  "shared_reference_functions_byte_identical": true,
+  "from_process_none_inverse_exact_to_canonical": true,
+  "body_substitutions": [
+    "Clear inherited GITHUB_RUN_ID",
+    "Reject/clear BERN_SCROLL_TRACE_DIR as well as ledger",
+    "Popen fixed FilmFirstLast APP CLI OUTPUT 3arg interface",
+    "Append exact two-state/source/context/rawstable/no-position expectations plus bound-input rehash after original successful cleanup; original defaults5s and final success formula unchanged"
+  ],
+  "appended_report_checks_bytes": 1990,
+  "appended_report_checks_sha256": "7940c6e42426577069834669667d4f8fc5da37a7a7358bd1811ef1901e174f31",
+  "ast_parse_only": true,
+  "entry_functions_or_modes_executed": false,
+  "source_files": {
+    "prepare-film13.py": {
+      "bytes": 15575,
+      "sha256": "ae223d27e45d894bb6fdd3654427f9ae193056bb36eb89f0a18901e78d3ba065"
+    },
+    "run-film13.py": {
+      "bytes": 30344,
+      "sha256": "011615835876decee67583de3c5d95adcaefc54054c6879ac4a44427c4b1fe8b"
+    }
+  }
+}

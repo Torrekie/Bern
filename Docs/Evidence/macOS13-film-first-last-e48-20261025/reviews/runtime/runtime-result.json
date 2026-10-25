@@ -1,0 +1,175 @@
+{
+  "kind": "film_first_last13_single_runtime_and_cleanup_receipt_review",
+  "runtime_receipts_coherent": true,
+  "scope": "The one declared initial/first Last native acquisition and cleanup only; no geometry or full13/crossOS acceptance.",
+  "initial_binding_preserved": {
+    "manifest_sha256": "9e81ef3552a70a530d51b26c5c484f5c2e27565dca50c79f371478ea921a5346",
+    "binary_reads_reused": 7,
+    "binary_or_png_reread": false
+  },
+  "invocation": {
+    "exit_code": 0,
+    "elapsed_seconds": 10.444415416975971,
+    "retry": false,
+    "driver_sha256": "011615835876decee67583de3c5d95adcaefc54054c6879ac4a44427c4b1fe8b"
+  },
+  "collector": {
+    "success": true,
+    "elapsed_seconds": 8.599077939987183,
+    "deadline_seconds": 75,
+    "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+    "collector_sha256": "91f111ceda867e2a22000c5f575114af150dcabcf623013b6514c1e364700fd2",
+    "private_gui_sha256": "b4d8e3c236db10538c7b368ef4b7908e6f089f9fefd0dc9a833f5d0f6caf369a",
+    "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "normal_light_film_first_last": true,
+    "stages": [
+      {
+        "stage": "initial",
+        "pid": 25080,
+        "png_name_only": "direct-film.png",
+        "stable_equal_comparisons": 4,
+        "samples": 6,
+        "terminal_ax_complete": true,
+        "unique_named_image_count": 6
+      },
+      {
+        "stage": "last",
+        "pid": 25080,
+        "png_name_only": "direct-last.png",
+        "stable_equal_comparisons": 4,
+        "samples": 14,
+        "terminal_ax_complete": true,
+        "unique_named_image_count": 6
+      }
+    ],
+    "setup_png_name_only": "setup-patterns.png",
+    "png_count_in_declared_report": 3,
+    "row_ledger_enabled": false,
+    "scroll_trace_enabled": false,
+    "last_activation_count": 1
+  },
+  "strong_identity_cleanup": {
+    "owned": {
+      "bundle_id": "dev.bern.frame13.film.84ee0f463eb949df97d65d84b943ba7d",
+      "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-isolation/runtime-work/film/Gallery.app/Contents/MacOS/Gallery",
+      "kernel_start": {
+        "tv_sec": 1792908958,
+        "tv_usec": 713508
+      },
+      "launch_date": null,
+      "pid": 25080,
+      "collector_pid": 25075
+    },
+    "original_front": {
+      "bundle_id": "com.openai.codex",
+      "executable_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+      "kernel_start": {
+        "tv_sec": 1792598787,
+        "tv_usec": 261710
+      },
+      "launch_date": null,
+      "pid": 1390
+    },
+    "restore_before_stop": true,
+    "app_stopped_status": 0,
+    "post_inspect_own_null": true,
+    "post_inspect_front_same_kernel": true,
+    "wrapper_success": true,
+    "collector_exit_code": 0,
+    "cleanup_success": true,
+    "exact_child_cleanup_verified": true,
+    "exact_ipc_cleanup_verified": true,
+    "defaults_delete_status": 0,
+    "private_preferences_absent_at_wrapper_check": true,
+    "originals_unchanged_from_wrapper_receipt": true,
+    "old_failed_color_wrapper_or_gate_changed": false
+  },
+  "desktop": {
+    "lease": "8897460E-499A-4D58-B315-4514BA1B0A93",
+    "released": true,
+    "active_after_release": false,
+    "front_pid": 1390,
+    "cursor_movement": 0,
+    "cursor_config_unchanged": true,
+    "empty_overlay_visible_before_release": true,
+    "clear_only_receipt_preserved": true,
+    "overlay_visible_after_clear_and_followup_read": false
+  },
+  "source_binding": {
+    "all_initial_source_driver_build_isolation_reference_text_hashes_unchanged": true,
+    "actual_helper_build_sha256": "c171d7a7c288508c88ffe04326c691d4edd138b339a260f275d7cfe27b302d30",
+    "local_source_manifest_sha256": "fa2fe88074dad1cea738227d7925d6e1be03d8247a7f85ac1f1c8504fff10f26",
+    "locks_sha256": "5eb5a6bc2a0c61ca90cd23b6417957eb9f288a8b7ffb8539456d7b34bc165a5a",
+    "reference14_sha256": "8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50",
+    "reference14_strong_cleanup_claimed": false
+  },
+  "inputs": [
+    {
+      "path": "work/film-first-last13-actual/report.json",
+      "bytes": 50618,
+      "sha256": "e47168e331b8c231755d18add58aaaf56541e59090f29e75d60e6d4486fc5c98"
+    },
+    {
+      "path": "work/film-first-last13-actual.watchdog/watchdog.json",
+      "bytes": 8218,
+      "sha256": "fdd2e7776729971bb3d0ba67a094a02e3cb98a1cc9a645cb733bdcc74d350116"
+    },
+    {
+      "path": "work/film-first-last13-native-invocation.json",
+      "bytes": 1743,
+      "sha256": "14478bceb6131d56c5b8e7a7f2ef3f2ea434473481ca13632de44a965545198b"
+    },
+    {
+      "path": "work/film-first-last13-actual/ownership.json",
+      "bytes": 405,
+      "sha256": "8012c167c6a1eb1bc6ca0a2bb9cecb4ecb63e12e3ef0da304f7480fff0e6d2ca"
+    },
+    {
+      "path": "work/film-first-last13-actual/cleanup-helper.json",
+      "bytes": 1900,
+      "sha256": "7b65e199ac8522030c06d7aafa5bb4d4d04fdb08778ed8fc3b439126ffa7d4c0"
+    },
+    {
+      "path": "work/film-first-last13-actual.watchdog/original-front.json",
+      "bytes": 222,
+      "sha256": "656f877c7ac186771984aebf5c19a7c085a60054e952cd6365b2ec06cdc4f825"
+    },
+    {
+      "path": "work/film-first-last13-post-inspect.json",
+      "bytes": 1229,
+      "sha256": "262db3856149648953d832501afea2ef11683bd7eaa8ec2324a8d98b2874187b"
+    },
+    {
+      "path": "work/film-first-last13-desktop-preflight.json",
+      "bytes": 2891,
+      "sha256": "640e7e9df81171513a7580613a6925ff91f5ed7fe09616e59949b1db543e97e3"
+    },
+    {
+      "path": "work/film-first-last13-desktop-acquire.json",
+      "bytes": 944,
+      "sha256": "e88c43fa720f253b6c8f9992e6f973b52a43ac8e70c735dff202c3febf65769a"
+    },
+    {
+      "path": "work/film-first-last13-desktop-release.json",
+      "bytes": 2284,
+      "sha256": "fef866fa3d149932a6465e839f3aa1b4efc0771b4588dd428ddb2f7d74954038"
+    },
+    {
+      "path": "work/film-first-last13-desktop-overlay-clear.json",
+      "bytes": 1283,
+      "sha256": "984ed8c8c02a1265d192f1012bcedb11f49e4fb7e6ab9bc967bf46b3f0c7b0e6"
+    }
+  ],
+  "not_performed": [
+    "Binary or PNG reread",
+    "Native/helper/entry/App/CLI/vtool/codesign/compile/UI/CI/API/Git command",
+    "Any cleanup or initial/raw source/report mutation",
+    "Geometry interpretation or image comparison"
+  ],
+  "limits": [
+    "Receipt review with actual executable hashes already bound before native invocation; no new live process check.",
+    "Only one initial/first Last case; no width/position, complete animation, whole13 or crossOS gate conclusion.",
+    "14 reference is data-only with inherited weaker cleanup; local receipts independently establish this13 restore-before-stop path.",
+    "Private-domain deletion/presence receipt is not a claim that CFPreferences daemon cache was inspected or flushed."
+  ]
+}

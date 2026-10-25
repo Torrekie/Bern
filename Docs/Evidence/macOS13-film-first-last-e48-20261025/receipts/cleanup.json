@@ -1,0 +1,58 @@
+{
+  "kind": "film_first_last13_owned_payload_retirement",
+  "targets": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-isolation/runtime-work/film/Gallery.app",
+      "file_count": 10,
+      "logical_bytes": 3876098,
+      "private_members_match": true
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-build/FilmFirstLast",
+      "logical_bytes": 217696,
+      "sha256": "91f111ceda867e2a22000c5f575114af150dcabcf623013b6514c1e364700fd2"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-build/FocusGuard",
+      "logical_bytes": 104088,
+      "sha256": "fb6594e71032d7a838fba8ae3529aa2dcfddad1c936a027886948a5b3958b26b"
+    }
+  ],
+  "lsof": [
+    {
+      "argv": [
+        "lsof",
+        "-F",
+        "pfn",
+        "--",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-build/FilmFirstLast",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-build/FocusGuard"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-F",
+        "pfn",
+        "+D",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-first-last13-isolation/runtime-work/film/Gallery.app"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "retired_payload_logical_bytes": 4197882,
+  "compiler_cache_retired_logical_bytes": 49735931,
+  "absent_after": true,
+  "original_four_executables_after": {
+    "outputs/macOS13/Gallery.app/Contents/MacOS/Gallery": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "outputs/macOS13/bin/gallery": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "outputs/macOS13/Showcase.app/Contents/MacOS/Showcase": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+    "outputs/macOS13/bin/showcase": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170"
+  },
+  "scope": "Only single completed Film cohort private copy and helpers, after peer byte reads/strong cleanup and exact ownership/hash checks. Retained raw evidence and sources. Logical bytes, not APFS physical reclaim."
+}

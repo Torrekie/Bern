@@ -1,0 +1,152 @@
+{
+  "schema": "bern_film_first_last13_source_delta_v1",
+  "status": "source_only_frozen_candidate_not_compiled_or_executed",
+  "fixed_source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "inputs": {
+    "work/film-e48-followup14-preparation/gallery-film-probe.swift": {
+      "bytes": 23963,
+      "sha256": "6c4d5c93c9331ba4dd6427aa18799b6a1e720b6e2e006e036fb908ced4f9e635"
+    },
+    "work/split-label-color-local13-preparation/FrameColorCapture.swift": {
+      "bytes": 55439,
+      "sha256": "61426976dbb557d0d8974dcb4da11337bc1611420b04cec0f856bace14bf362c"
+    },
+    "work/split-label-color-local13-preparation/FocusGuard.swift": {
+      "bytes": 8082,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d"
+    }
+  },
+  "outputs": {
+    "FocusGuard.swift": {
+      "bytes": 8082,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d"
+    },
+    "FilmFirstLast.swift": {
+      "bytes": 32616,
+      "sha256": "c4a1bd81e61079a75047e9cfc1f1407b2f12de1ccad7744878ff98975839ee9b"
+    }
+  },
+  "checks": {
+    "film_now_frontState": {
+      "byte_equal": true,
+      "bytes": 365,
+      "sha256": "7cfc41913716c1dadd7e7c523dda109bb1a4411019191f7ef9534917cf4ef2ce"
+    },
+    "frame_requestActivation_healthy_pause": {
+      "byte_equal": true,
+      "bytes": 1233,
+      "sha256": "793661eb1b765fd254c8cda31b216e601145c2d5d46cf78e46af01772640f7e7"
+    },
+    "film_handle": {
+      "byte_equal": true,
+      "bytes": 262,
+      "sha256": "16d73fb2bdc07d30e7f5ab0157bae7a320a51a109c44d93c96dc308885b1cde7"
+    },
+    "film_target_window_image_stable_attribute_axSample": {
+      "byte_equal": true,
+      "bytes": 7010,
+      "sha256": "a07b4193479eeecc31433bedaef7d1b287140bf944cb656959f67b18031bb6eb"
+    },
+    "frame_ownWindows_windowID_bounds_heartbeat_minus_unused_mainWindow": {
+      "byte_equal": true,
+      "bytes": 3034,
+      "sha256": "a122f41362ff4ef82edd3592b46b155989179d8139a2493b790fc9df99e7b4e7",
+      "only_removed_unused_function": "mainWindow"
+    },
+    "frame_cleanup": {
+      "original_sha256": "823fe5274110cb6e841c886a2c25af7e6deca043eb67b5c33d80c69546ae8334",
+      "candidate_sha256": "bf4a176579dd4cf596782d1d23d5f539692ba96bf605f37aafb2c90c980bc162",
+      "all_other_bytes_equal": true,
+      "only_removed": "    do { if try ledgerLogHasError() { report[\"success\"] = false; report[\"ledger_io_error_seen_after_cleanup\"] = true } }\n    catch { report[\"success\"] = false; report[\"ledger_log_error_after_cleanup\"] = String(describing:error) }\n",
+      "reason": "No row observer in this fixed original-source collector; trace/ledger environments are rejected pre-UI."
+    },
+    "FocusGuard_complete_file": {
+      "byte_equal": true,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d",
+      "bytes": 8082
+    },
+    "static_body": {
+      "unique_function_names": [
+        "require",
+        "sha",
+        "rect",
+        "integer",
+        "save",
+        "now",
+        "frontState",
+        "requestActivation",
+        "healthy",
+        "pause",
+        "handle",
+        "cli",
+        "target",
+        "window",
+        "image",
+        "stable",
+        "attribute",
+        "axSample",
+        "ownWindows",
+        "windowID",
+        "bounds",
+        "heartbeat",
+        "terminalAX",
+        "checkedFilmControls",
+        "run"
+      ],
+      "inherited_timer_count": 1,
+      "film_terminal_calls": 2,
+      "PNG_names": [
+        "setup-patterns",
+        "direct-film",
+        "direct-last"
+      ],
+      "actions_in_source_order": [
+        "[\"ui\",\"set-language\",\"--language\",\"en\"]",
+        "target(session,suffix:\".light\")",
+        "[\"window\",\"resize\"",
+        "target(session,suffix:\".pages\")",
+        "name:\"setup-patterns\"",
+        "[\"ui\",\"select\",\"--target\",pages,\"--option\",\"Film\"]",
+        "name:\"direct-film\"",
+        "terminalAX(root,state:\"initial\"",
+        "target(session,suffix:\".to_last\")",
+        "name:\"direct-last\"",
+        "terminalAX(root,state:\"last\""
+      ],
+      "source_only_checks": true,
+      "swift_compilation_or_execution": false
+    },
+    "film_cli_three_substitutions_plus_Frame_owned_child_defer": {
+      "byte_equal": true,
+      "bytes": 1901,
+      "sha256": "f1f9888d3b11900af4ebb8c3ded77bdf39ce36b64f325d69d88afdebe808f55a",
+      "inverse_matches_original": true,
+      "substitutions": [
+        {
+          "before": "p.environment = environment;",
+          "after": "p.environment = env;"
+        },
+        {
+          "before": "min(deadline, min(cutoff ?? deadline, now() + 8))",
+          "after": "min(uptimeDeadline, min(cutoff ?? uptimeDeadline, now() + 8))"
+        },
+        {
+          "before": "try pause(0.03)",
+          "after": "try pause(0.03,active:process == nil || mainID != 0)"
+        }
+      ],
+      "frame_owned_CLI_exit_defer": "defer { if p.isRunning { kill(p.processIdentifier,SIGKILL) } }"
+    }
+  },
+  "nonidentical_scope": [
+    "New three-argument fixed-source/macOS13 header, report.json schema and terminal complete-image/context checks.",
+    "Local startup uses Frame readiness/activation/heartbeat,18s startup and total75s rather than old Film15s startup/old scenario loop.",
+    "Original Film CLI8s cap retained with env/global-clock/startup-pause substitutions; exact Frame own-CLI Process defer added so a new healthy/foreground throw cannot leave that owned CLI running; optional observe support stays unused.",
+    "Old Film first-second AX loop and unused show_details target inspection removed; no inspector/wait/trace/history/resize followups.",
+    "Original setup Patterns stable remains before selecting Film; two Film terminal states produce three PNGs total.",
+    "Each Film state has stable PNG then one2s terminal AX walk; exactly6unique images required without position normalization or forced target expectation.",
+    "Exact Frame cleanup except removed Row log checks; independent unchanged FocusGuard required. No old Film stop-before-restore copied.",
+    "Actual14 reference uses another collector/startup/heartbeat/sampling timing and cleanup; same source/binaries alone do not prove equivalent observation.",
+    "External wrapper/identity locks/strong-front+ownership bootstrap/output isolation/prefs policy remain unimplemented here; no standalone safety or runtime readiness claim."
+  ]
+}

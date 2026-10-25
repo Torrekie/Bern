@@ -1,0 +1,9 @@
+Final source c4a1bd81…39ee9b and unchanged Guard ab78c7d3…19345d have no remaining source-only blocker after the owned-CLI defer fix. Draft149cc is superseded: Frame healthy/foreground exceptions could previously leave a CLI outside the old timeout kill path. Final source installs the existing Frame Process defer immediately after try p.run().
+
+Independent inverses verify Film target/window/image/raw4-stable/AX, now/frontState/handle; Frame activation/healthy/pause and own-window heartbeat; final cleanup except two Row log checks; and original Film CLI after reversing three substitutions plus added Frame defer. One extra separator LF before terminalAX is explicitly excluded from inherited function bytes. All four author manifest entries verify.
+
+Readiness precedes activation and the same active startup window precedes mainID/heartbeat. Cleanup invalidates the timer, correlates original-front/ownership receipts and invokes unchanged kernel Guard to restore before stopping the exact private instance. Missing cleanup receipts preserve IPC and force final failure. Old Film stop-before-restore is absent.
+
+This does not authorize standalone execution: core accepts existing OUTPUT and reports product hashes without pinning them. No wrapper implements strict fresh/path isolation, private normalized/signature proof, pinned compiled helpers, original-front and parent/child kernel bootstrap, watchdog or private prefs cleanup. Those future execution requirements are listed in review.json.
+
+Canonical14 reference/report/firstLast PNG identities are bound, but local13 startup, heartbeat and select sampling differ; original first-second AX observe is omitted. No same-collector/no-effect, physical-input, geometry equality, product fix or runtime acceptance follows. No compiler, helper, UI, API, CI or Git was executed.

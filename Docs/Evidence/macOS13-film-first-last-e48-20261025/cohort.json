@@ -1,0 +1,41 @@
+{
+  "schema": "bern_film_first_last13_cohort_v1",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "gui_sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+  "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+  "collector_source_sha256": "c4a1bd81e61079a75047e9cfc1f1407b2f12de1ccad7744878ff98975839ee9b",
+  "report": {
+    "path": "raw/report.json",
+    "sha256": "e47168e331b8c231755d18add58aaaf56541e59090f29e75d60e6d4486fc5c98"
+  },
+  "watchdog": {
+    "path": "watchdog/watchdog.json",
+    "sha256": "fdd2e7776729971bb3d0ba67a094a02e3cb98a1cc9a645cb733bdcc74d350116"
+  },
+  "reference14": {
+    "path": "../macOS14-film-e48-endpoints-40165343690/reference.json",
+    "sha256": "8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50",
+    "data_only_not_strong_cleanup": true,
+    "current_port_e48_not_unmodified_upstream": true
+  },
+  "analysis": {
+    "path": "analysis/analysis.json",
+    "sha256": "02c7027a22ce1bc42ee53436b8a2828df7afafa03ef20a448cbdafe32355918f"
+  },
+  "single_native_run": true,
+  "collector_success": true,
+  "wrapper_success": true,
+  "strong_cleanup_success": true,
+  "position_difference_observed": true,
+  "visual_equivalence_accepted": false,
+  "product_changed": false,
+  "new_CI": false,
+  "macOS11_ObjC_iOS_started": false,
+  "retired_logical_bytes": 53933813,
+  "limitations": [
+    "Only initial and first Last; no physical input/full animation/history/resize acceptance.",
+    "PNG scale/ICC differ; no pixel comparison or conversion.",
+    "AX follows PNG; collectors/timing differ.",
+    "No coordinate compensation, root-cause conclusion or whole macOS13 acceptance."
+  ]
+}
