@@ -181,3 +181,8 @@ wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001
 ### 观察版完整构建的首次失败
 
 [CI40175193229](../Evidence/macOS13-film-last-observer-build-40175193229/README.md)已执行真正Swift6/SDK26.2/target13构建，但在BernSnap.body的SIL生成阶段signal6/ErrorExpr退出；generated Runtime/Generated/Style身份正确不等于产品成功。原false收据与完整日志保留，无App/native结果。下一候选仅将新增弱owner可选闭包移至显式MainActor辅助方法，仍须完整重建及观察影响门槛；不改变已有滚动条件/计算，也不解释−14.5pt差异。
+
+
+### 显式类型闭包版本完整构建通过
+
+[CI40176620054与内存实物核验](../Evidence/macOS13-film-last-observer-build-40176620054/README.md)成功完成Swift6.2.4/SDK26.2/arm64/min13完整产品构建；新App e2fb、实际Runtime e386/Generated f72/Style179b及10成员hash一致。变化仅为新增观察闭包的显式MainActor helper，旧snap逻辑/时长不改，旧失败记录保留。本机未抽出/运行App，无观察输出或no-effect验收，不解释−14.5pt；下一先锁定fresh强kernel入口/原CLI31a和PNG→AX→inspect顺序，建立观察影响端点后再解释诊断。

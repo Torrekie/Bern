@@ -1,0 +1,53 @@
+{
+  "schema": "bern_film_last_observer_next_gate_review_v1",
+  "scope": "source_only_checkpoint",
+  "verdict": "build_gate_passed_native_entry_not_ready",
+  "inputs": [
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-last-observer-build-40175193229/README.md",
+      "sha256": "2cd55deb40732b3bb8115ad0c008225eea509836c54424f4ac5e1e83227dfe59"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-last-observer-build-40176620054/README.md",
+      "sha256": "33fbc26ec5de42ba3d7a29dbfc91073ada41b9556a7874e1ee02827d60adfbee"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-last-observer-build-40176620054/preparation/build/.github/scripts/film-last-observer/FilmLastObservation.swift.inc",
+      "sha256": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/source/FilmFirstLast.swift",
+      "sha256": "c4a1bd81e61079a75047e9cfc1f1407b2f12de1ccad7744878ff98975839ee9b"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/driver/run-film13.py",
+      "sha256": "011615835876decee67583de3c5d95adcaefc54054c6879ac4a44427c4b1fe8b"
+    },
+    {
+      "path": "outputs/Bern/Docs/Implementation/macOS13-Acceptance.md",
+      "sha256": "c916cb906ba1838f7fbab7efaaa797f74538e2fc34e3e9255311334f6a7368ae"
+    }
+  ],
+  "success_run": 40176620054,
+  "failed_run_preserved": 40175193229,
+  "new_gui_sha256": "e2fbcea5fdc4cea6ebcfb00e1214e55badd78d82a31ebd248e18971e2f6c39a2",
+  "required_original_cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+  "confirmed_order": "Last activate -> stable PNG -> terminal AX -> product ui.inspect -> window list",
+  "open_gates": [
+    "fresh observer identity and strong-kernel adapter",
+    "same-process Last6 request and first-post-request inspect association",
+    "endpoint observation-effect control before diagnostic interpretation"
+  ],
+  "diagnostic_capture_cleanup_truths_separate": true,
+  "native_effect_or_14_5pt_cause_proven": false,
+  "not_performed": [
+    "implementation",
+    "compiler",
+    "native",
+    "UI",
+    "CI",
+    "Git",
+    "tar extraction",
+    "binary execution"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "kind": "independent_actual_observer_build_artifact_review",
+  "verdict": "actual_full_build_and_in_memory_package_identity_verified_no_native_acceptance",
+  "blocking_findings": [],
+  "run_id": "40176620054",
+  "job_id": "121118566939",
+  "harness_sha": "892c392ffec22a10b282e8d27d41386bac5def64",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "input_hashes": {
+    "work/film-last-observer-build-success-40176620054/observer-build.json": "fdb3ff8ca2fc2235531289c98fd5724f1eae816babd9646c83bf74587d86243f",
+    "work/film-last-observer-build-success-40176620054/before.json": "097f48e4f48dc915fbf8996fd0617e54769c26f50c264076845e8b0eefa69aad",
+    "work/film-last-observer-build-success-40176620054.download.json": "e1a40fb7d109e07534aaa7f4c6fb721a0c0b2e8c2234c94925f53b72223dda47",
+    "work/film-last-observer-job-121118566939.log": "66e625ab2fdf74ee94a05c12493c97f089ad00ecdd0920f8b9f11ed90e352f3f",
+    "work/film-last-observer-build-success-40176620054/harness-inputs.sha256": "ed98cf40fab02a62a0f2efa932df5aaf3b3635d51f957fece851ed37becf3584",
+    "work/film-last-observer-build-success-40176620054/workflow-binary-verification.txt": "91a46f8cd004c05849de5eec5fd4a557e9df9ada4076c93f24aba4c335b36465",
+    "work/film-last-observer-build-success-40176620054/build.log": "6f796ecb642a510ca35f77a7a4f8bba930ce60cb13ee59dac89cc6faaf6a3e6d",
+    "work/film-last-observer-build-success-40176620054/BernRuntime.generated.swift": "e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663",
+    "work/film-last-observer-build-success-40176620054/BernGenerated.generated.swift": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+    "work/film-last-observer-build-success-40176620054/patches/patch-proof.json": "881dab28562fcfe9b5f5bd508311612e35d04a9fb7da538ace5ce120b592146f"
+  },
+  "manifest_sha256": "fdb3ff8ca2fc2235531289c98fd5724f1eae816babd9646c83bf74587d86243f",
+  "tar": {
+    "bytes": 1729195,
+    "sha256": "5d121615f7e7105be23f55eca508435b2937b34d2a58cb17678d3c204bb37f1a",
+    "members_total": 19,
+    "app_regular_members": 10,
+    "external_internal_JSON_byte_exact": true,
+    "all_actual_members_bytes_hashes_match": true,
+    "extracted_to_disk": false,
+    "CLI_in_tar": false
+  },
+  "actual_GUI": {
+    "bytes": 3770800,
+    "sha256": "e2fbcea5fdc4cea6ebcfb00e1214e55badd78d82a31ebd248e18971e2f6c39a2",
+    "architecture": "arm64",
+    "filetype": "MH_EXECUTE",
+    "minimum": "13.0",
+    "embedded_sdk": "26.2",
+    "LC_CODE_SIGNATURE": {
+      "offset": 3723408,
+      "bytes": 47392,
+      "superblob_magic_present": true
+    },
+    "cryptographic_verification_locally_performed": false
+  },
+  "source_provenance": {
+    "actual_before631_rows_exact_historical_e48_map": true,
+    "source_tree": "9b028204744063ae5c23a336a4eb32dbb41b6d86",
+    "source_manifest": "3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250",
+    "harness9file_hashes_match_current_frozen_sources": true,
+    "typed_Style_179b_derived_and_manifest_match": true,
+    "actualGenerated81110_f72": true,
+    "actualRuntime132272_e386": true,
+    "core_exact_suffix_and_Runtime_inverse119529_626c": true,
+    "only2template_changes_and629_unchanged": "Enforced by hash-bound successful collector source_state, not a local rehash of absent remote source tree.",
+    "original_CLI_source63af_no_plan_hook": true
+  },
+  "CI_evidence": {
+    "full_build_exit_code": 0,
+    "collector_success": true,
+    "selected_and_actual_sdk": "26.2",
+    "swift": "6.2.4",
+    "rust": "1.99.0",
+    "strict_verification": "Pinned collect invokes codesign --deep --strict and fails nonzero; success manifest, empty signature output, plus later workflow App/CLI verification and completed tar SHA check retained. No local signature command executed.",
+    "job_success_status": "Parent reported actual terminal success; retained job log shows pinned checkouts/build/collect/verification/upload without runner error. No API request performed by reviewer.",
+    "outer_ZIP_API_digest_verification_recorded": true,
+    "outer_ZIP_digest_matches_uploaded_joblog": true,
+    "deleted_outer_ZIP_independent_rehash": false
+  },
+  "boundaries": [
+    "Tar read in memory only; no App extraction/resigning/launch, compiler/helper/Git/CI/API invocation.",
+    "Code-signature blob presence is not independent cryptographic verification; CI verification is provenance-bound retained evidence.",
+    "This exact full Swift6 build succeeded after the typed helper change; it does not prove a general compiler root cause or runtime observer behavior.",
+    "No14 no-effect,13 observer-effect, diagnostic coverage, pixel/geometry/color equality or native/product adoption acceptance.",
+    "Original failed40175193229 remains a separate false/cargo1 result.",
+    "Tar payload fully read and hashed; parent may retire this task-only tar while preserving SHA/member/build receipts."
+  ]
+}

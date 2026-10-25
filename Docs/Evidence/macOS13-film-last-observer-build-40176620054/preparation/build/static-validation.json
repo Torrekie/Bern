@@ -1,0 +1,75 @@
+{
+  "candidate": {
+    "build_driver": {
+      "bytes": 19537,
+      "sha256": "cc0d6dccfc54bfe9b626d76f3da19afe9a9fb2456338ce13954b04ea7d374731"
+    },
+    "patch": {
+      "bytes": 10201,
+      "sha256": "2fb7c1a0cb682473c3fc9f3fb2be5c43639255d29719a145928c7578c0b5e583"
+    },
+    "source_manifest": {
+      "bytes": 331,
+      "sha256": "3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250"
+    },
+    "style": {
+      "bytes": 214863,
+      "sha256": "179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e"
+    }
+  },
+  "checks": {
+    "Runtime_edits_and_template_1da_exact": true,
+    "actual_failed_Generated_f72_exact": true,
+    "actual_failed_Runtime_equals_unchanged_derived_e386": true,
+    "core_b9_byte_exact": true,
+    "derived_old_fb2_to_new_style_only_helper_insertion_and_expression_replacement": true,
+    "driver_only_manifest_and_Style_pin_changes": true,
+    "manifest_and_source_proof_consistent": true,
+    "old_10_to_new_11_unique_edits_inverse_original": {
+      "new/BernRuntime.swift": true,
+      "new/BernStyle.swift": true,
+      "old/BernRuntime.swift": true,
+      "old/BernStyle.swift": true
+    },
+    "old_snapAllowed_snapGeneration_exact": true,
+    "patch_functions_and_main_byte_equivalent_AST": true,
+    "python_AST_parses": true
+  },
+  "compiler_or_artifact_entry_executed": false,
+  "helper_contract": {
+    "closure_body": "owner as AnyObject?",
+    "closure_capture": "[weak owner]",
+    "closure_type": "@MainActor () -> AnyObject?",
+    "guard_order": [
+      "enabled",
+      "positionItems optional unwrap",
+      "construct weak owner closure"
+    ],
+    "machine_timing_equivalence_claimed": false,
+    "old_snapAllowed_and_snapGeneration_unchanged": true,
+    "only_derived_style_delta": "insert typed main-actor weak-owner helper in existing macOS block; replace observationOwner expression at existing legacy branch",
+    "result_type": "(@MainActor () -> AnyObject?)?",
+    "runtime_edits_and_core_unchanged": true,
+    "view_Task_timer_queue_arithmetic_getter_setter_changes": false
+  },
+  "limits": "No Swift6 compilation or native/pixel/coverage acceptance. No timing equivalence. Prior failed cohort and all old gates remain unchanged. Existing workflow source-manifest hard pin must be updated by parent before publishing this derived packet.",
+  "original_failure": {
+    "build_log": {
+      "bytes": 17182,
+      "sha256": "5f0184257682c93777f90014ace8cb381ce2b06186fb04eefb1a5cdf9a4c396f"
+    },
+    "cargo_exit": 1,
+    "failure": "ErrorExpr without diagnostic; SILGen BernSnap.body; signal6",
+    "observer_build_json": {
+      "bytes": 1033,
+      "sha256": "56e9e368fdbb0a1d4831598b7ead479ad53bc36ba82d3932e241827ddfb63d2d"
+    },
+    "root_cause_not_established": true,
+    "run": 40175193229,
+    "sdk": "26.2",
+    "success": false,
+    "swift": "6.2.4"
+  },
+  "schema": "bern_film_last_observer_swift6_fix_static_v1",
+  "source_only": true
+}

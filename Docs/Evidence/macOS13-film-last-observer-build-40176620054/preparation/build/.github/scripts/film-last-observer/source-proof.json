@@ -1,0 +1,69 @@
+{
+  "baseline": {
+    "patch_sha256": "9a5a0679e2eaaa1fd47c54eefc30957dc9d8bf0f7a7869a2abbb0396b1799dda",
+    "source_manifest_sha256": "f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741",
+    "source_proof_sha256": "31c97758195b9c40f36ab048735fcc32953e295765e2e766f45d544fe6f20170",
+    "style_sha256": "fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c"
+  },
+  "bounds": "5fixed slots/2048encoded bytes each/16384file; fixed Style snapshot,128byte primitive keys; JSON/finite walk export-only; weak+permanentID+liveidentity. No counters/errors written to IPC. Export is one phase with per-slot/final JSON API calls, not exactly one serialization call.",
+  "compiler_failure": {
+    "ErrorExpr_without_diagnostic": true,
+    "actual_sdk": "26.2",
+    "actual_swift": "6.2.4",
+    "build_log_sha256": "5f0184257682c93777f90014ace8cb381ce2b06186fb04eefb1a5cdf9a4c396f",
+    "phase": "SILGen BernSnap.body",
+    "prior_failure_preserved": true,
+    "root_cause_or_fix_proven": false,
+    "run": 40175193229,
+    "signal": 6
+  },
+  "core": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06",
+  "files": {
+    "BernRuntime.swift": {
+      "before": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+      "candidate": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77",
+      "candidate_bytes": 131944,
+      "unique_inverse_edits": 1
+    },
+    "BernStyle.swift": {
+      "before": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+      "candidate": "179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e",
+      "candidate_bytes": 214863,
+      "unique_inverse_edits": 11
+    }
+  },
+  "narrow_change": {
+    "closure_body": "owner as AnyObject?",
+    "closure_capture": "[weak owner]",
+    "closure_type": "@MainActor () -> AnyObject?",
+    "guard_order": [
+      "enabled",
+      "positionItems optional unwrap",
+      "construct weak owner closure"
+    ],
+    "machine_timing_equivalence_claimed": false,
+    "old_snapAllowed_and_snapGeneration_unchanged": true,
+    "only_derived_style_delta": "insert typed main-actor weak-owner helper in existing macOS block; replace observationOwner expression at existing legacy branch",
+    "result_type": "(@MainActor () -> AnyObject?)?",
+    "runtime_edits_and_core_unchanged": true,
+    "view_Task_timer_queue_arithmetic_getter_setter_changes": false
+  },
+  "patch": "2fb7c1a0cb682473c3fc9f3fb2be5c43639255d29719a145928c7578c0b5e583",
+  "pending": "New full product Swift6 build and later native/diagnostic/pixel gates remain unperformed.",
+  "preserved": "Original conditions, arithmetic/branches/native setters,150/160/180ms and queue. Only maximum selected getter1 hoisted to local. No machine timing equivalence claim.",
+  "root_standalone_validation_for_unchanged_core_only": {
+    "Swift": "5.9.2",
+    "elapsed_seconds": 12.757726,
+    "limit": "Core only; author did not compile; no product/Swift6/runtime proof.",
+    "log_bytes": 0,
+    "rc": 0,
+    "reported_by": "root",
+    "requested_SDK": "14.2",
+    "source_sha256": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06",
+    "swift_version": "5",
+    "target": "arm64-macosx13.0"
+  },
+  "scope": "exact_e48_templates_narrow_observation_owner_expression_candidate",
+  "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "status": "frozen_source_only_AST_memory_no_patchmain_compile_Git_UI_CI"
+}

@@ -334,3 +334,14 @@ root已目检两张原p0，candidate named内容实际可见。control→candida
 独立源码审查把最小候选限定为将新增可选弱owner闭包移出ViewBuilder，以显式MainActor方法和闭包类型表达相同enabled/nil/weak身份语义；原snapAllowed/snapGeneration、计算及150/160/180ms保持。旧两条Sendable warning在原版已存在，不能当本次根因。该表达式候选仍需完整Swift6重建，不称已修复或观察无影响。
 
 本机只执行真实prepare校验，未调用编译器或生成模块缓存。首轮临时源码/harness副本42,550,185B逻辑文件在独立读完、核hash和lsof为空后清除；证据单处归档，历史work别名只读。原交付产品及模板保持，完整13视觉验收和后续平台阶段仍未通过，goal active。
+
+
+## 完整 Swift6 观察版构建通过（2026-10-25）
+
+[修正后CI40176620054与实物复核](../Evidence/macOS13-film-last-observer-build-40176620054/README.md)已通过原CLI完整生成/构建计划：Swift6.2.4、SDK26.2、arm64/target13，cargo0、collector0与额外二进制校验通过。仅把新增可选弱owner表达式移入显式MainActor helper；原snap条件、计算、动画/延时、coreb9及Runtime字节不变。它确认该写法能构建，不唯一解释旧编译器崩溃；首轮失败false及原日志保持。
+
+实际生成Runtime132272/e386、Generated81110/f72与Style214863/179b绑定固定源码，成功collector验证Runtime扩展表/noSVG及逆向恢复626c。App实际3770800B/e2fb，root与独立审查仅内存读取tar：10成员hash、包内外JSON、arm64/MH_EXECUTE/min13.0/SDK26.2一致。严格签名由CI执行通过，本机未重验签名、抽出App、重签或启动UI；新build的CLI未交付或冒称原31a。
+
+两轮prepare临时源码/harness共85,104,782B逻辑文件已清除，成功App tar1,729,195B在双方读完及lsof为空后退役；下载ZIP验证API摘要后删除。保留小源码/收据与远端3日artifact，用前须重查可用性；这些数字不当作APFS回收量。四个原交付exe及两个产品模板的hash保持不变。
+
+本节仅完成编译与来源门槛，没有native13/14、观察JSON或观察影响验收；−14.5pt差异及完整UI等效仍未解决。下一先做与新App/原CLI身份绑定的fresh强kernel入口与固定PNG→AX→inspect顺序，再验证观察对端点的影响，才可用诊断解释路径。完整goal active，macOS11/Swift5.3、Objective-C及iOS继续延期。

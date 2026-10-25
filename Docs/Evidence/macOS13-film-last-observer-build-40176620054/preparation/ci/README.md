@@ -1,0 +1,1 @@
+Build-only workflow v2 source: only source packet hash changed from the published a4b workflow. Core/SDK/recipe/stages/retention unchanged. Publisher reviewed read-only; no Git/CI/compiler execution. Previous failed CI and its false manifest remain unchanged.

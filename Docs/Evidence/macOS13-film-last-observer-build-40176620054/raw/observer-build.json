@@ -1,0 +1,157 @@
+{
+  "app_members": {
+    "Contents/Info.plist": {
+      "bytes": 2633,
+      "sha256": "30c9dfdf5b8718341e1b534f5298451051a6d44eb01dcdb2921f71efda5dd15d"
+    },
+    "Contents/MacOS/Gallery": {
+      "bytes": 3770800,
+      "sha256": "e2fbcea5fdc4cea6ebcfb00e1214e55badd78d82a31ebd248e18971e2f6c39a2"
+    },
+    "Contents/Resources/AppIcon.icns": {
+      "bytes": 63607,
+      "sha256": "8d5ced690e3c1079453b8684010991b8a3bde25b6157337ffa8c0a4fb3ad37de"
+    },
+    "Contents/Resources/en.lproj/InfoPlist.strings": {
+      "bytes": 59,
+      "sha256": "0b456fde30f7a8ce7a04de7305719d704b752a41c5490b02565a426530410426"
+    },
+    "Contents/Resources/en.lproj/Localizable.strings": {
+      "bytes": 6713,
+      "sha256": "2a0722c09210e95dc38c354daa09961c9a90af601c33345a469676cf095a300c"
+    },
+    "Contents/Resources/media/poster.jpg": {
+      "bytes": 8124,
+      "sha256": "76dadce80a79ca2684c9fe23712cff47d11d1e2928ab4bc81f1396b504cf2c6c"
+    },
+    "Contents/Resources/media/tides.mp4": {
+      "bytes": 49327,
+      "sha256": "145a1b5e572bd3ce16207e2b341c0eecb04b4d1e765bf72f5fe3809a24f34957"
+    },
+    "Contents/Resources/zh-Hans.lproj/InfoPlist.strings": {
+      "bytes": 63,
+      "sha256": "72b62e39761f9d14cdef4698153dcbd957a8fa6c0096a09f1a7ded08820b7bd4"
+    },
+    "Contents/Resources/zh-Hans.lproj/Localizable.strings": {
+      "bytes": 6740,
+      "sha256": "1421ca2397bc1e7b3347bb344fa8b4b444e62ae939b9120b2925a356026e46f0"
+    },
+    "Contents/_CodeSignature/CodeResources": {
+      "bytes": 4416,
+      "sha256": "e21b13a5652924ee6f6ac14775a4a8791c174bc9b29859a6ffcfef1212084be4"
+    }
+  },
+  "before_sha256": "097f48e4f48dc915fbf8996fd0617e54769c26f50c264076845e8b0eefa69aad",
+  "build": {
+    "app_bundle": "Gallery.app",
+    "architecture": "arm64",
+    "channels": [
+      "ipc"
+    ],
+    "color_source": "native",
+    "engine_deployment": "in-process",
+    "generator": "bern-backend-swiftui",
+    "generator_version": "0.1.0",
+    "ir_version": 8,
+    "languages": [
+      "zh-Hans",
+      "en"
+    ],
+    "media": {
+      "backend": "avfoundation",
+      "backend_version": "1",
+      "contract": 1,
+      "players": [],
+      "presenter": "avplayerview",
+      "presenter_version": "1"
+    },
+    "minimum_macos": "13.0",
+    "platform": "macos",
+    "profile": "release",
+    "protocol": "gallery",
+    "protocol_fingerprint": "cfa638eac6dad4e6",
+    "resources": [
+      "media/poster.jpg",
+      "media/tides.mp4"
+    ],
+    "target": "swiftui-modern-macos",
+    "ui": "swiftui-modern",
+    "ui_bridge": "c-abi"
+  },
+  "cargo_exit_code": 0,
+  "driver": {
+    "bytes": 19537,
+    "sha256": "cc0d6dccfc54bfe9b626d76f3da19afe9a9fb2456338ce13954b04ea7d374731"
+  },
+  "generated_actual": {
+    "BernGenerated.swift": {
+      "bytes": 81110,
+      "sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+    },
+    "BernRuntime.swift": {
+      "bytes": 132272,
+      "sha256": "e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663"
+    },
+    "BernStyle.swift": {
+      "bytes": 214863,
+      "sha256": "179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e"
+    }
+  },
+  "gui": {
+    "bytes": 3770800,
+    "sha256": "e2fbcea5fdc4cea6ebcfb00e1214e55badd78d82a31ebd248e18971e2f6c39a2"
+  },
+  "harness_sha": "892c392ffec22a10b282e8d27d41386bac5def64",
+  "log": {
+    "full_bytes": 10582,
+    "full_sha256": "6f796ecb642a510ca35f77a7a4f8bba930ce60cb13ee59dac89cc6faaf6a3e6d",
+    "retained_bytes": 10582,
+    "truncated": false
+  },
+  "native_execution_performed": false,
+  "normal_cli_not_hooked": true,
+  "original_cli_source_sha256": "63af68fa7f763b118ca34ed432b0f1b9fdfa2b3190582ebde747135303d0fa64",
+  "other_fixed_inputs_unchanged": 629,
+  "rebuilt_cli_shipped_or_claimed_original": false,
+  "run_id": "40176620054",
+  "runtime_binding": {
+    "actual_matches_derived_patched_bytes": true,
+    "core_and_inspect_hook_inverse_to_derived_original": true,
+    "derived_original": {
+      "bytes": 119529,
+      "sha256": "626c4b7785cf46f9e6d86389d5c64b8221d5f5ead8f7518a67e407b38883ba95"
+    },
+    "derived_patched": {
+      "bytes": 132272,
+      "sha256": "e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663"
+    },
+    "historical_generated_runtime_sha_assumed": false,
+    "no_svg": true
+  },
+  "schema": "bern_film_last_observer_build_v1",
+  "scope": "Build-only diagnostic observer App. No native execution or pixel/diagnostic acceptance.",
+  "source_manifest_sha256": "3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "sourceguard_sha256": "5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017",
+  "success": true,
+  "templates": {
+    "crates/bern-backend-swiftui/templates/BernRuntime.swift": {
+      "bytes": 131944,
+      "sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77"
+    },
+    "crates/bern-backend-swiftui/templates/BernStyle.swift": {
+      "bytes": 214863,
+      "sha256": "179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e"
+    }
+  },
+  "toolchain": {
+    "actual_app_embedded_sdk": "26.2",
+    "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "selected_sdk": "26.2",
+    "swift": "Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)\nTarget: arm64-apple-macosx15.0\nswift-driver version: 1.127.15"
+  },
+  "tracked_changes": [
+    "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+    "crates/bern-backend-swiftui/templates/BernStyle.swift"
+  ]
+}

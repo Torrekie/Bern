@@ -1,0 +1,35 @@
+{
+  "verdict": "actual_v2_prepare_smoke_verified_no_blocker",
+  "scope": "Independent read-only hashing/JSON/in-memory diffs; no Git/driver/compiler/native/CI execution",
+  "smoke_sha256": "863e9f2cbb575367d4cb9fb18ca8587cde1db3ea333f6c3d5e02cb4d1e1f23a8",
+  "before_sha256": "097f48e4f48dc915fbf8996fd0617e54769c26f50c264076845e8b0eefa69aad",
+  "patch_proof_sha256": "881dab28562fcfe9b5f5bd508311612e35d04a9fb7da538ace5ce120b592146f",
+  "source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "builder": "cc0d6dccfc54bfe9b626d76f3da19afe9a9fb2456338ce13954b04ea7d374731",
+  "packet_manifest": "3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250",
+  "all4_recorded_commands_exit0": true,
+  "prepare_seconds": 8.823497083969414,
+  "total_smoke_seconds": 9.60184025001945,
+  "631_unique_current_files_hashed": true,
+  "other629_original_hashes_unchanged": true,
+  "only2_input_changes": [
+    "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+    "crates/bern-backend-swiftui/templates/BernStyle.swift"
+  ],
+  "templates": {
+    "BernStyle.swift": {
+      "bytes": 214863,
+      "sha256": "179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e",
+      "forward_inverse_exact": true
+    },
+    "BernRuntime.swift": {
+      "bytes": 131944,
+      "sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77",
+      "forward_inverse_exact": true
+    }
+  },
+  "original_CLI_source_sha256": "63af68fa7f763b118ca34ed432b0f1b9fdfa2b3190582ebde747135303d0fa64",
+  "generated_target_absent": true,
+  "limits": "Prepare/patch only, not product Swift6 compilation, generated Runtime or runtime acceptance; previous failed CI remains false.",
+  "payload_release": "Reviewer finished reading source/harness duplicates; root may retire its owned copies and retain evidence/receipts."
+}

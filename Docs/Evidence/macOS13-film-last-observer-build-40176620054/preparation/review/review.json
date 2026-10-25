@@ -1,0 +1,87 @@
+{
+  "kind": "independent_swift6_observation_owner_candidate_source_review",
+  "verdict": "narrow_typed_weak_owner_candidate_no_static_blocker_Swift6_build_unproven",
+  "blocking_findings": [],
+  "method": "Source/AST literal data, own in-memory exact replacements/inverses, JSON/log/file hashes only. No retained function/patcher/import/build/compiler/native/UI/CI/Git executed.",
+  "frozen_fix_manifest_sha256": "b0ef684427992253646bf97685d062d117f19798196fa81eeb85c5fa3c9449a6",
+  "published_files": {
+    "work/film-last-observer-swift6-fix/.github/scripts/film-last-observer/build.py": {
+      "bytes": 19537,
+      "sha256": "cc0d6dccfc54bfe9b626d76f3da19afe9a9fb2456338ce13954b04ea7d374731"
+    },
+    "work/film-last-observer-swift6-fix/.github/scripts/film-last-observer/patch.py": {
+      "bytes": 10201,
+      "sha256": "2fb7c1a0cb682473c3fc9f3fb2be5c43639255d29719a145928c7578c0b5e583"
+    },
+    "work/film-last-observer-swift6-fix/.github/scripts/film-last-observer/FilmLastObservation.swift.inc": {
+      "bytes": 12641,
+      "sha256": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06"
+    },
+    "work/film-last-observer-swift6-fix/.github/scripts/film-last-observer/README.md": {
+      "bytes": 3416,
+      "sha256": "1a1b7b46bb7c96c03939c0fef690558bf779c5e4cf3acb96dd3314623be02661"
+    },
+    "work/film-last-observer-swift6-fix/.github/scripts/film-last-observer/README.build.md": {
+      "bytes": 4633,
+      "sha256": "6572fbb1c6613fa4f732eb88edb2b0ec33eeab885c6e24387b188b076db95331"
+    },
+    "work/film-last-observer-swift6-fix/.github/scripts/film-last-observer/source-proof.json": {
+      "bytes": 3431,
+      "sha256": "0648630ba7e973cc72e8fec8403001f79b3968b91db33280ec5b21b416483fc1"
+    },
+    "work/film-last-observer-swift6-fix/.github/scripts/film-last-observer/source-SHA256SUMS": {
+      "bytes": 331,
+      "sha256": "3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250"
+    }
+  },
+  "failure_evidence": {
+    "run_id": "40175193229",
+    "input_hashes": {
+      "work/film-last-observer-build-failure-40175193229/build.log": "5f0184257682c93777f90014ace8cb381ce2b06186fb04eefb1a5cdf9a4c396f",
+      "work/film-last-observer-build-failure-40175193229/observer-build.json": "56e9e368fdbb0a1d4831598b7ead479ad53bc36ba82d3932e241827ddfb63d2d",
+      "work/film-last-observer-build-failure-40175193229/BernRuntime.generated.swift": "e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663",
+      "work/film-last-observer-build-failure-40175193229/BernGenerated.generated.swift": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+    },
+    "collector_success": false,
+    "cargo_exit_code": 1,
+    "compiler": "Swift6.2.4 SDK26.2 target13",
+    "diagnostic_lines": {
+      "signal6": 162,
+      "old_snapAllowed_warning": 163,
+      "old_snapGeneration_warning": 171,
+      "ErrorExpr": 179,
+      "SILGen_BernSnap_body": 186
+    },
+    "interpretation": "Compiler reports ErrorExpr during BernSnap.body SIL lowering and aborts. Old map closures are warnings, not established causes. The new observationOwner ternary+map was the only new body expression in the failing diagnostic Style; this localizes a candidate but does not prove compiler root cause."
+  },
+  "independent_checks": {
+    "base_Style_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+    "old_diagnostic_Style_sha256": "fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c",
+    "new_Style": {
+      "bytes": 214863,
+      "sha256": "179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e"
+    },
+    "new_11_edits_inverse_to_base_exact": true,
+    "old_to_new_only_helper_insertion_and_owner_expression_replacement": true,
+    "old_snapAllowed_and_snapGeneration_byte_exact": true,
+    "core_unchanged_b9": true,
+    "RUNTIME_EDITS_and_template_1da_unchanged": true,
+    "failed_actual_generated_Runtime_e386_and_Generated_f72_preserved": true,
+    "build_py_inverse_exact_except_source_manifest_and_Style_pin": true
+  },
+  "semantic_cases": [
+    "Disabled: helper returns nil before reading owner, preserving old ternary short circuit.",
+    "Enabled with nil positionItems: returns nil, preserving Optional.map-none.",
+    "Enabled with live owner: returned function has explicit @MainActor type, captures only weak owner and returns the same original owner-as-AnyObject? expression; no new strong self/owner storage or native getter.",
+    "Owner expires: weak return semantics remain those of the prior expression; unchanged core live=== identity gate remains authoritative.",
+    "Helper is private and inside macOS conditional, called only where original legacy body argument was evaluated. No View/container/control/type erasure, setter, queue/timer/clock/guard/algorithm changes."
+  ],
+  "why_candidate_is_narrow": "Moves optional actor-function construction out of ViewBuilder contextual ternary/map inference into an explicitly typed helper, without modifying old warning closures or Runtime/core behavior. This is a source isolation candidate, not a successful build/fix verdict.",
+  "publication_and_validation_requirements": [
+    "Workflow source packet literal must bind new3e2 manifest before retry; oldf939 workflow/new packet mismatch must fail rather than be bypassed.",
+    "Publish only corresponding new patch/build/document pins and preserve failed40175193229 raw sources/logs/false status.",
+    "Parent finite local syntax/type checks remain separate and do not prove Swift6 integration. Actual full Swift6/SDK26.2/min13 build must succeed before any native/observer acceptance.",
+    "GeneratedRuntime e386/Generatedf72 and old631/2-template source guards, tar/native gates remain unchanged; new actualStyle must match179b.",
+    "No observer-no-effect, pixel/geometry/diagnostic coverage or product adoption claim is supported by this source review."
+  ]
+}

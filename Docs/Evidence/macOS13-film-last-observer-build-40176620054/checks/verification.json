@@ -1,0 +1,29 @@
+{
+  "App_extracted_or_resigned_or_launched": false,
+  "actual_macho": {
+    "architecture": "arm64",
+    "build_versions": [
+      {
+        "minimum": "13.0",
+        "platform": 1,
+        "sdk": "26.2"
+      }
+    ],
+    "code_signature_command": {
+      "bytes": 47392,
+      "offset": 3723408
+    },
+    "filetype": "MH_EXECUTE"
+  },
+  "app_regular_file_count": 10,
+  "archive_sha256": "5d121615f7e7105be23f55eca508435b2937b34d2a58cb17678d3c204bb37f1a",
+  "gui": {
+    "bytes": 3770800,
+    "sha256": "e2fbcea5fdc4cea6ebcfb00e1214e55badd78d82a31ebd248e18971e2f6c39a2"
+  },
+  "native_or_observation_effect_or_visual_acceptance": false,
+  "observer_build_json_sha256": "fdb3ff8ca2fc2235531289c98fd5724f1eae816babd9646c83bf74587d86243f",
+  "scope": "In-memory source, tar member and actual Mach-O identity verification only",
+  "strict_signature_validation": "CI pinned collect and additional workflow verification; not rerun locally",
+  "success": true
+}

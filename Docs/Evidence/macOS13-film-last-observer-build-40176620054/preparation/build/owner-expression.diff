@@ -1,0 +1,28 @@
+--- a/derived-fb2/BernStyle.swift
++++ b/derived-typed-helper/BernStyle.swift
+@@ -2090,6 +2090,16 @@
+     @State private var viewport: CGFloat = 0
+     #if os(macOS)
+     @Environment(\.bernScrollItems) private var positionItems
++
++    @MainActor
++    private func filmLastObservationOwner() -> (@MainActor () -> AnyObject?)? {
++        guard BernFilmLastObservation.enabled else { return nil }
++        guard let owner = positionItems else { return nil }
++        let readOwner: @MainActor () -> AnyObject? = { [weak owner] in
++            owner as AnyObject?
++        }
++        return readOwner
++    }
+     #endif
+ 
+     func body(content: Content) -> some View {
+@@ -2110,7 +2120,7 @@
+                     snap: { start, length in items.rest(start, length: length, axis: axis, center: center) },
+                     snapAllowed: initialOwner.map { owner in { [weak owner] in owner?.waiting != true } },
+                     snapGeneration: initialOwner.map { owner in { [weak owner] in owner?.generation ?? 0 } },
+-                    observationOwner: BernFilmLastObservation.enabled ? positionItems.map { owner in { [weak owner] in owner as AnyObject? } } : nil))
++                    observationOwner: filmLastObservationOwner()))
+                     .environment(\.bernLegacyScrollMargin, legacyMargin)
+                     .preference(key: BernLegacyScrollMarginPreference.self, value: legacyMargin)
+             }

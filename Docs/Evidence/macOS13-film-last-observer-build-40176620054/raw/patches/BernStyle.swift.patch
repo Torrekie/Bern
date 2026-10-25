@@ -1,0 +1,126 @@
+--- a/BernStyle.swift
++++ b/BernStyle.swift
+@@ -2090,6 +2090,16 @@
+     @State private var viewport: CGFloat = 0
+     #if os(macOS)
+     @Environment(\.bernScrollItems) private var positionItems
++
++    @MainActor
++    private func filmLastObservationOwner() -> (@MainActor () -> AnyObject?)? {
++        guard BernFilmLastObservation.enabled else { return nil }
++        guard let owner = positionItems else { return nil }
++        let readOwner: @MainActor () -> AnyObject? = { [weak owner] in
++            owner as AnyObject?
++        }
++        return readOwner
++    }
+     #endif
+ 
+     func body(content: Content) -> some View {
+@@ -2109,7 +2119,8 @@
+                     axis: axis, reduce: reduce || bernForcedReduceMotion,
+                     snap: { start, length in items.rest(start, length: length, axis: axis, center: center) },
+                     snapAllowed: initialOwner.map { owner in { [weak owner] in owner?.waiting != true } },
+-                    snapGeneration: initialOwner.map { owner in { [weak owner] in owner?.generation ?? 0 } }))
++                    snapGeneration: initialOwner.map { owner in { [weak owner] in owner?.generation ?? 0 } },
++                    observationOwner: filmLastObservationOwner()))
+                     .environment(\.bernLegacyScrollMargin, legacyMargin)
+                     .preference(key: BernLegacyScrollMarginPreference.self, value: legacyMargin)
+             }
+@@ -2257,6 +2268,14 @@
+     #if os(macOS)
+     fileprivate lazy var legacyInitial = BernLegacyInitialScroll()
+     fileprivate func legacyFrame(_ key: AnyHashable) -> CGRect? { frames[key] }
++    fileprivate func filmLastSnapshot(_ wanted: AnyHashable) -> [String: Any] {
++        ["nearest": BernFilmLastObservation.key(nearest), "arrived": BernFilmLastObservation.key(arrived),
++         "arrivals": arrivals, "stops": stops, "coming": BernFilmLastObservation.key(coming),
++         "viewport": ["width": Double(viewport.width), "height": Double(viewport.height)],
++         "anchor": ["x": Double(anchor.x), "y": Double(anchor.y)],
++         "frame_wanted": BernFilmLastObservation.rect(frames[wanted]),
++         "initial_waiting": legacyInitial.waiting, "initial_generation": legacyInitial.generation]
++    }
+     #endif
+ 
+     #if !os(macOS)
+@@ -2595,6 +2614,13 @@
+             items.clearing = false
+             items.expect(AnyHashable(wanted))
+             withAnimation(animation) { target = wanted }
++            #if os(macOS)
++            if BernFilmLastObservation.enabled {
++                BernFilmLastObservation.request(owner: items, wanted: AnyHashable(wanted),
++                    position: AnyHashable(position.wrappedValue), target: target.map { AnyHashable($0) },
++                    snapshot: items.filmLastSnapshot(AnyHashable(wanted)))
++            }
++            #endif
+         }
+         if target == wanted {
+             // The platform only scrolls when its position changes.
+@@ -4952,6 +4978,7 @@
+     var snap: ((CGFloat, CGFloat) -> CGFloat?)? = nil
+     var snapAllowed: (@MainActor () -> Bool)? = nil
+     var snapGeneration: (@MainActor () -> UInt64)? = nil
++    var observationOwner: (@MainActor () -> AnyObject?)? = nil
+     var userScroll: (() -> Void)? = nil
+     var phase: ((Double) -> Void)? = nil
+     var initialAnchor: UnitPoint? = nil
+@@ -5114,6 +5141,9 @@
+             pending?.cancel(); pending = nil
+             guard configuration.snapAllowed?() != false else { return }
+             let generation = configuration.snapGeneration?()
++            if let owner = configuration.observationOwner?() {
++                BernFilmLastObservation.schedule(owner: owner, scroll: scroll, generation: generation, live: live)
++            }
+             let work = DispatchWorkItem { [weak self] in MainActor.assumeIsolated { self?.settle(generation: generation) } }
+             pending = work
+             DispatchQueue.main.asyncAfter(deadline: .now() + 0.16, execute: work)
+@@ -5127,22 +5157,48 @@
+             let bounds = clip.bounds
+             let start = horizontal ? bounds.minX : bounds.minY
+             let length = horizontal ? bounds.width : bounds.height
++            let observationToken: UInt64?
++            if let owner = configuration.observationOwner?() {
++                observationToken = BernFilmLastObservation.beginSettle(owner: owner, scroll: scroll, clip: clip,
++                    document: document, generation: generation, start: start, length: length)
++            } else { observationToken = nil }
+             guard let wanted = snap(start, length) else { return }
+             let insets = scroll.contentInsets
+             let minimum = horizontal ? -insets.left : -insets.top
+-            let maximum = max(minimum, (horizontal ? document.frame.width + insets.right : document.frame.height + insets.bottom) - length)
++            let observationDocumentFrame = document.frame
++            let maximum = max(minimum, (horizontal ? observationDocumentFrame.width + insets.right : observationDocumentFrame.height + insets.bottom) - length)
+             let clamped = max(minimum, min(maximum, wanted))
++            if observationToken != nil {
++                BernFilmLastObservation.finishSettle(observationToken, values: ["wanted": Double(wanted),
++                    "minimum": Double(minimum), "maximum": Double(maximum), "clamped": Double(clamped),
++                    "document_length": Double(horizontal ? observationDocumentFrame.width : observationDocumentFrame.height),
++                    "insets": ["left": Double(insets.left), "right": Double(insets.right), "top": Double(insets.top), "bottom": Double(insets.bottom)]])
++            }
+             guard abs(clamped - start) > 0.5 else { return }
+             var point = bounds.origin
+             if horizontal { point.x = clamped } else { point.y = clamped }
+             if configuration.reduce {
+                 clip.scroll(to: point)
+                 scroll.reflectScrolledClipView(clip)
++                if let owner = configuration.observationOwner?() {
++                    BernFilmLastObservation.writer(owner: owner, token: observationToken, kind: "direct", values: [
++                        "start": Double(start), "length": Double(length), "wanted": Double(wanted),
++                        "minimum": Double(minimum), "maximum": Double(maximum), "clamped": Double(clamped),
++                        "document_length": Double(horizontal ? observationDocumentFrame.width : observationDocumentFrame.height),
++                        "insets": ["left": Double(insets.left), "right": Double(insets.right), "top": Double(insets.top), "bottom": Double(insets.bottom)]])
++                }
+             } else {
+                 NSAnimationContext.runAnimationGroup { context in
+                     context.duration = 0.18
+                     context.timingFunction = CAMediaTimingFunction(name: .easeOut)
+                     clip.animator().setBoundsOrigin(point)
++                    if let owner = configuration.observationOwner?() {
++                        BernFilmLastObservation.writer(owner: owner, token: observationToken, kind: "animator_requested", values: [
++                        "start": Double(start), "length": Double(length), "wanted": Double(wanted),
++                        "minimum": Double(minimum), "maximum": Double(maximum), "clamped": Double(clamped),
++                        "document_length": Double(horizontal ? observationDocumentFrame.width : observationDocumentFrame.height),
++                        "insets": ["left": Double(insets.left), "right": Double(insets.right), "top": Double(insets.top), "bottom": Double(insets.bottom)]])
++                    }
+                 } completionHandler: { [weak scroll] in
+                     MainActor.assumeIsolated {
+                         if let scroll { scroll.reflectScrolledClipView(scroll.contentView) }

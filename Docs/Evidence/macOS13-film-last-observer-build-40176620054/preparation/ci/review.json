@@ -1,0 +1,26 @@
+{
+  "verdict": "no_source_blocker",
+  "scope": "Byte/AST review only; no script/Git/compiler/CI execution",
+  "workflow": {
+    "base_path": "outputs/Bern/.github/workflows/macos13-film-last-observer-build.yml",
+    "base_sha256": "a4b338a7e03d36ab0b3167cff06120c44f66e67c14eba3384a8ffff7fd0a73ce",
+    "sha256": "89c6fff7ae4b74639e2b17e2c14072f373857777003ce04c86ff88e0a5e9c1fe",
+    "only_change": "one packet manifest literal f939->3e2; inverse is byte-exact",
+    "source_packet_manifest_sha256": "3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250",
+    "builder_sha256": "cc0d6dccfc54bfe9b626d76f3da19afe9a9fb2456338ce13954b04ea7d374731",
+    "core_b9a7_unchanged": true,
+    "SDK_recipe_single_job_no_UI_retention_unchanged": true
+  },
+  "publisher": {
+    "path": "work/publish-film-last-observer-swift6.py",
+    "sha256": "910ac752dd6b1110f82e7c875690d1f9b726f4ed0732461904d4a582a873612d",
+    "base_sha256": "9dd63342f9b9adfd75339191eee940e15781fcc6f98266962f5aaa28f4a6324c",
+    "only4_stated_changes": true,
+    "nonempty_subset_of8_changed_paths": true,
+    "all8_blobs_still_checked_exact_source_tree": true,
+    "clean_real_index_then_private_index": true,
+    "CAS_old_parent_preserved": true,
+    "no_push_dispatch": true,
+    "receipt_limit": "Receipt is written after successful local CAS; IO/print failure can leave local ref advanced without complete receipt. Caller must inspect before retry."
+  }
+}
