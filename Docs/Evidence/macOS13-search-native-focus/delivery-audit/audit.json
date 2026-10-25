@@ -1,0 +1,48 @@
+{
+  "verdict": "explicit_unicode_background_has_no_source_fallback_coordinate_click_is_targeted_CG_events",
+  "runtime_or_UI_performed": false,
+  "source_checkout": "/Users/torrekie/Documents/Codex/2026-07-15/plugin-computer-use-openai-bundled/work/open-codex-ventura",
+  "located_by": "Skill named source checkout; installed binary embedded compiled source path gave exact checkout. Only targeted files were searched.",
+  "unicode": {
+    "explicit_unicode_returns_requested_strategy": "InputInjection.swift:568-575",
+    "dispatch": "InputInjection.swift:336-413; unicode branch370-397",
+    "mechanism": "For each Unicode scalar, create virtualKey0 keydown/up; keyboardSetUnicodeString; postToPid. No AXValue write, pasteboard call or fallback in this branch; event creation failure throws.",
+    "pasteboard_selection": "Only explicit pasteboard or auto strategy resolution can choose paste; explicit unicode bypasses auto heuristics.",
+    "background": "InteractionDelivery.swift:27-54 only direct mode initially activates; background with default restore_focus=false makes no activation request.",
+    "MCP_parameters": "main.swift:1229-1269 parses strategy/delivery, passes them directly to InputInjector; background default restore_focus=false.",
+    "evidence_limit": "MCP mutation reply re-snapshots AX/screenshot/desktop/virtualCursor; it does not forward Core TextInjectionResult strategy/delivery/cursor fields. On snapshot failure it returns summary only. Request+source and actual AX/registry observations must be kept distinct."
+  },
+  "click": {
+    "use": "Native MCP coordinate x/y branch, not regular element_index AXPress path. x/y are global screen coordinates; Sky adapter separately maps screenshot coordinates.",
+    "source": "InputInjection.swift:269-334 creates down/up CGEvents at point and postToPid; main.swift:1094-1137 dispatches coordinate branch.",
+    "real_cursor": "No explicit warp/move/restore in click source. Core reads NSEvent.mouseLocation before/after and computes moved >1pt, but current MCP reply does not forward that ClickResult. Actual before/after desktop state must establish movement.",
+    "overlay": "main.swift calls OverlayCursorController.animate/pulse, conditional on current mode rendering on desktop; overlay moves its own NSPanel frame (OverlayCursorController.swift:56-78,225-254). VirtualCursor.record still stores bounded marks even when off; screenshot/desktop rendering is mode-gated. This is separate from real mouse pointer."
+  },
+  "restore": {
+    "native_MCP_move_only_or_restore_cursor_tool_exposed": false,
+    "release": "DesktopSession.swift:132-138,284-291 releases lock/state; MCP release also hides overlay. Neither restores real cursor or original front application.",
+    "consequence": "No source guarantee of unchanged cursor and no exposed native MCP restore-position primitive. Preserve actual cursor before/after rather than assuming release restores it."
+  },
+  "exclusive_session": "DesktopSession.swift:146-180,236-260 rejects mutations if foreground differs from acquisition baseline or cursor distance exceeds24pt; source path is reject, not fallback.",
+  "scope": [
+    "Targeted read-only source/API inventory audit; no MCP desktop/doctor/mutation call, no compile/network/git/settings action.",
+    "Installed binary hash and source hashes are recorded, but no rebuild or binary-to-current-checkout attestation was performed. Embedded path confirms source origin, not complete current-byte identity.",
+    "Targeted CGUnicode events are automated native input delivery, not a physical keyboard/IME route. Successful posting alone does not prove text binding or first query outcome.",
+    "No new test framework, instrumentation or UI algorithm."
+  ],
+  "input_sha256": {
+    "/Users/torrekie/Documents/Codex/2026-07-15/plugin-computer-use-openai-bundled/work/open-codex-ventura/Sources/ClaudexComputerUseCore/InputInjection.swift": "fdcbceaa2bfbd83f5cc9a582e7fd20dc9ff74e013c1e207f87a549241c4e532a",
+    "/Users/torrekie/Documents/Codex/2026-07-15/plugin-computer-use-openai-bundled/work/open-codex-ventura/Sources/ClaudexComputerUseCore/InteractionDelivery.swift": "d6263aa16f35fad3777a0ca964ac49c3689b2ce6cea80a5e83e24f1299fe35ee",
+    "/Users/torrekie/Documents/Codex/2026-07-15/plugin-computer-use-openai-bundled/work/open-codex-ventura/Sources/ClaudexComputerUseCore/DesktopSession.swift": "888881c91ae2d341c0fe21900bfaf12f6f78a5e6ce1b6119854a613bcbefc22c",
+    "/Users/torrekie/Documents/Codex/2026-07-15/plugin-computer-use-openai-bundled/work/open-codex-ventura/Sources/ClaudexComputerUseCore/OverlayCursorController.swift": "7f97f31e7ceb0bfc3ef68d10e5fca6012bf0e433a1da9d2457afb75fa81de6c2",
+    "/Users/torrekie/Documents/Codex/2026-07-15/plugin-computer-use-openai-bundled/work/open-codex-ventura/Sources/ClaudexComputerUseCore/VirtualCursor.swift": "121e278cb4d5cff4c8dd40c6daa780d33dcc62adea3711ab43dc9dff148174b3",
+    "/Users/torrekie/Documents/Codex/2026-07-15/plugin-computer-use-openai-bundled/work/open-codex-ventura/Sources/ClaudexComputerUseMCP/main.swift": "ad0db131d887b1046f53085127a57d08aaac77654bebc906da3a0b6a7ab63939",
+    "/Users/torrekie/.codex/computer-use-macos13/ventura-sky-adapter.mjs": "b5b1852d9e2474a6a3509a88ff3cf3be528a2f66b0295acd8876c4ca8abc23e2",
+    "/Users/torrekie/.agents/skills/macos13-computer-use/SKILL.md": "71cc1f4c08415ef37d9ae2e9429df599d23dbe2473b6f26b9dc49a7a540337b8"
+  },
+  "installed_binary": {
+    "path": "/Users/torrekie/.codex/computer-use-macos13/Codex Computer Use for macOS 13.app/Contents/MacOS/codex-computer-use-macos13",
+    "bytes": 1609536,
+    "sha256": "b68d87a1adc0d4536f45bf1ffaf4daba0fd2adc45819c09726888d64de8107e5"
+  }
+}

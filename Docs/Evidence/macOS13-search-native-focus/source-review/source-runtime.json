@@ -1,0 +1,433 @@
+{
+  "all_three_driver_results_remain_false": true,
+  "case_rows": [
+    {
+      "IPC_removed": true,
+      "Library_select_or_search_write_in_recorded_commands": false,
+      "case": "attempt1",
+      "cleanup_success": true,
+      "command_count": 108,
+      "cursor_distance": 0,
+      "desktop_released": true,
+      "driver_success": false,
+      "error": "",
+      "exact_9dd_transport_binding": "inherited retained failure-analysis record; current bytes match its hash; no new Git query",
+      "exact_kernel_identity_retained": true,
+      "external_command_receipts": 0,
+      "front_restored_or_preserved_PID": 9292,
+      "joint_ready_seconds": null,
+      "no_UI_events_posted_recorded": true,
+      "outcome": "18s startup failed before native input; long IPC base alone is113B, complete socket path has100B guard",
+      "pid": 81490,
+      "private_bundle_id": "dev.bern.search-native13.e6325e3152de4e4ba178cdfd349b04d2",
+      "profile_start_end_three_false": true,
+      "runtime": "work/search-native13-attempt1",
+      "statuses": {
+        "3": 108
+      },
+      "transport_sha256": "41cee628dff3d981c8ac4615d6ef25c8ea2e91de292a7d4b23ef853696e36a54"
+    },
+    {
+      "IPC_removed": true,
+      "Library_select_or_search_write_in_recorded_commands": false,
+      "case": "attempt2",
+      "cleanup_success": true,
+      "command_count": 9,
+      "cursor_distance": 0,
+      "desktop_released": true,
+      "driver_success": false,
+      "error": "[Errno 2] No such file or directory: '/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/search-native13-runtime/finish.json'",
+      "exact_kernel_identity_retained": true,
+      "external_command_receipts": 0,
+      "focus_text_before_after": [
+        "The focused UI element is 12 outline.",
+        "The focused UI element is 12 outline."
+      ],
+      "front_restored_or_preserved_PID": 9292,
+      "initial_Text_empty_search_and_Library_not_mounted": true,
+      "joint_ready_seconds": 1.23760641599074,
+      "late_capture_failed": true,
+      "native_gate_unique_visible_own_window": true,
+      "outcome": "one coordinate click did not confirm search focus; no Unicode input or Library mount;180s supervisor ended without finish.json",
+      "pid": 81989,
+      "private_bundle_id": "dev.bern.search-native13.9c490a2da821476d94d61275a8c03141",
+      "profile_start_end_three_false": true,
+      "runtime": "work/search-native13-runtime",
+      "statuses": {
+        "0": 8,
+        "3": 1
+      },
+      "target_acquire_own_PID": true
+    },
+    {
+      "IPC_removed": true,
+      "Library_select_or_search_write_in_recorded_commands": false,
+      "case": "keyboard",
+      "cleanup_success": true,
+      "command_count": 9,
+      "cursor_distance": 0,
+      "desktop_released": true,
+      "driver_success": false,
+      "error": null,
+      "exact_kernel_identity_retained": true,
+      "external_command_receipts": 0,
+      "front_restored_or_preserved_PID": 9292,
+      "initial_Text_empty_search_and_Library_not_mounted": true,
+      "joint_ready_seconds": 1.3471116249565966,
+      "native_gate_unique_visible_own_window": true,
+      "no_native_search_focus_confirmation": true,
+      "observed_focus": "unavailable",
+      "outcome": "One Shift-Tab did not confirm public search focus; no text event or Library select",
+      "pid": 82774,
+      "private_bundle_id": "dev.bern.search-native13.a0c8fdd18ead47e1ac8d00860eea8f4e",
+      "profile_start_end_three_false": true,
+      "runtime": "work/search-native13-keyboard-runtime",
+      "statuses": {
+        "0": 8,
+        "3": 1
+      },
+      "target_acquire_own_PID": true,
+      "terminal_PNG_dimensions": [
+        1840,
+        1336
+      ]
+    }
+  ],
+  "evidence_files": [
+    {
+      "bytes": 8564,
+      "path": "work/search-native13-build/run.py",
+      "sha256": "252fd11feb8c8cf372fa010a716e84865fcc5f826aef3d9acd9fdc1fda6f2926"
+    },
+    {
+      "bytes": 2667,
+      "path": "work/search-native13-build/control.py",
+      "sha256": "4633b48182b5355c2eb61bfc9ca569ebed72cacb3c27add0e76e215540752237"
+    },
+    {
+      "bytes": 8582,
+      "path": "work/search-native13-build/run-keyboard.py",
+      "sha256": "c46dd1372f85c4fa13149eccc1d61c1db7c48e1378b0e5527e0ab9a31a01034e"
+    },
+    {
+      "bytes": 2676,
+      "path": "work/search-native13-build/control-keyboard.py",
+      "sha256": "94640b07ef2e567aa68045cef99876ae6ca1f23dd30c3b382c6903bf9a742656"
+    },
+    {
+      "bytes": 3477,
+      "path": "work/search-native13-build/prepare.py",
+      "sha256": "ca4c58a752ec0e9c30d1ecfb83bf286efbdc20347fa4f19a5954c4487e32840e"
+    },
+    {
+      "bytes": 3486,
+      "path": "work/search-native13-build/prepare-keyboard.py",
+      "sha256": "137af7dbc38228fa34ee19bb4ab5302b622ce9dd840aad04386ff6dc64c392c5"
+    },
+    {
+      "bytes": 494,
+      "path": "work/search-native13-build/Profile.swift",
+      "sha256": "5047b2abff477e29890bc44ebad2e822e0cbe98da48e5d5dd96edfa535dc0279"
+    },
+    {
+      "bytes": 8094,
+      "path": "work/search-native13-attempt1/run.py",
+      "sha256": "9a472a8e808377fbf0b7c96ad8902ab4b65b5c6d9db1514a26388ccc84881958"
+    },
+    {
+      "bytes": 8564,
+      "path": "work/search-native13-runtime/run.py",
+      "sha256": "252fd11feb8c8cf372fa010a716e84865fcc5f826aef3d9acd9fdc1fda6f2926"
+    },
+    {
+      "bytes": 2667,
+      "path": "work/search-native13-runtime/control.py",
+      "sha256": "4633b48182b5355c2eb61bfc9ca569ebed72cacb3c27add0e76e215540752237"
+    },
+    {
+      "bytes": 1997,
+      "path": "work/search-native13-attempt1/failure-analysis.json",
+      "sha256": "5614a95a4da696aa6ed0e3b21df797d34675ba7a949d92cb4705fcc6c8f4c5a9"
+    },
+    {
+      "bytes": 30604,
+      "path": "outputs/Bern/crates/bern-transport-ipc/src/lib.rs",
+      "sha256": "41cee628dff3d981c8ac4615d6ef25c8ea2e91de292a7d4b23ef853696e36a54"
+    },
+    {
+      "bytes": 270,
+      "path": "work/search-native13-cleanup/failed-ipc.json",
+      "sha256": "6da7aa5498cf9f4c045be698aa58f194d1fb0216eb54907a71a8357df9649e6b"
+    },
+    {
+      "bytes": 31788,
+      "path": "work/search-native13-attempt1/prepare.json",
+      "sha256": "c66897f85214653fe29f7072d3bad9afb063590e809581453fc858f8722babeb"
+    },
+    {
+      "bytes": 21463,
+      "path": "work/search-native13-attempt1/driver.json",
+      "sha256": "8e37e41283466d8de3d149dcc73af10dc75d8cb85f0ff9fe3c67ece205431028"
+    },
+    {
+      "bytes": 360,
+      "path": "work/search-native13-attempt1/owned.json",
+      "sha256": "94b2acc768f2bf01960474bfe9e743c066f13d1544e35aca99d1436f139ca67d"
+    },
+    {
+      "bytes": 291,
+      "path": "work/search-native13-attempt1/original-front.json",
+      "sha256": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9"
+    },
+    {
+      "bytes": 1650,
+      "path": "work/search-native13-attempt1/desktop-end.json",
+      "sha256": "69f343b730317ad13d09dc30a046f5060a72a54c5526267e776f09f7f304ca13"
+    },
+    {
+      "bytes": 1933,
+      "path": "work/search-native13-attempt1/cleanup-291419691428916.json",
+      "sha256": "0694030fb3ffb49e8825a59e842be933606ab9d1bb90afab50eb723def753ee5"
+    },
+    {
+      "bytes": 94,
+      "path": "work/search-native13-attempt1/profile-start.json",
+      "sha256": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3"
+    },
+    {
+      "bytes": 94,
+      "path": "work/search-native13-attempt1/profile-end.json",
+      "sha256": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3"
+    },
+    {
+      "bytes": 60,
+      "path": "work/search-native13-runtime/native-ready.json",
+      "sha256": "56ca6c4640451866dee7f9762f1780fd2aae37c584b229890676278a470b27d9"
+    },
+    {
+      "bytes": 570,
+      "path": "work/search-native13-runtime/native-window-gate.json",
+      "sha256": "535dcb478bcc8860f87201a6d38896da15e9b0a0bada6669d5ab751ad4317069"
+    },
+    {
+      "bytes": 1048,
+      "path": "work/search-native13-runtime/target-acquire.json",
+      "sha256": "0715631f9a38cee840427d2ef13357e7c8cc971389f7f866de7cabf27d453935"
+    },
+    {
+      "bytes": 355,
+      "path": "work/search-native13-runtime/startup-009.stdout.json",
+      "sha256": "d64189193f2cc9f704c38806d65f5c48fdd31248e7ff09338750c3d8c90989b2"
+    },
+    {
+      "bytes": 47663,
+      "path": "work/search-native13-runtime/before-click.json",
+      "sha256": "e3ca30e79ad00dd89a87e48b41819db20e65409ab90aa33c7a31af0ed7a63821"
+    },
+    {
+      "bytes": 47663,
+      "path": "work/search-native13-runtime/after-click.json",
+      "sha256": "b2f616ce1a3f50095bdd9bff29bb4830e2a8f9f81fd6270a21c2e00db40c8445"
+    },
+    {
+      "bytes": 45,
+      "path": "work/search-native13-runtime/click-request.json",
+      "sha256": "24e7b04b2c12f1df1bceb256b051651c867dad4183ff39029d6e715ec1f302c4"
+    },
+    {
+      "bytes": 187,
+      "path": "work/search-native13-runtime/late-capture-error.json",
+      "sha256": "c12fd3066265a930273d8a083b10c44d894e944c30f6e4aa3b911e615b64e038"
+    },
+    {
+      "bytes": 31788,
+      "path": "work/search-native13-build/prepare.json",
+      "sha256": "843f3e1236ff966c24b900d22641b51d2375a65ca03aa7208893dca53ae2f7fd"
+    },
+    {
+      "bytes": 6055,
+      "path": "work/search-native13-runtime/driver.json",
+      "sha256": "ba290b6c0f89b8687079dcb1c90c0d294cbc960e5ce40e66483af74520828124"
+    },
+    {
+      "bytes": 360,
+      "path": "work/search-native13-runtime/owned.json",
+      "sha256": "f7f0bbac5fb4b8392559ccfcde8d9c87c632a12ee5822e85129fef3c5facf597"
+    },
+    {
+      "bytes": 291,
+      "path": "work/search-native13-runtime/original-front.json",
+      "sha256": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9"
+    },
+    {
+      "bytes": 1766,
+      "path": "work/search-native13-runtime/desktop-end.json",
+      "sha256": "6a6d8e271e85702044a37e44203447ed8e182bcfda938f11c926b55289b790e0"
+    },
+    {
+      "bytes": 1983,
+      "path": "work/search-native13-runtime/cleanup-291828682277375.json",
+      "sha256": "5858f863840467e1fbe3c7daa68aab17cec2bdedd54de338029b42ea25ad2157"
+    },
+    {
+      "bytes": 94,
+      "path": "work/search-native13-runtime/profile-start.json",
+      "sha256": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3"
+    },
+    {
+      "bytes": 94,
+      "path": "work/search-native13-runtime/profile-end.json",
+      "sha256": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3"
+    },
+    {
+      "bytes": 60,
+      "path": "work/search-native13-keyboard-runtime/native-ready.json",
+      "sha256": "29ed0cd9060a0cc831f83819299a57e1fa373081e76bbc3a24c6448468c96d58"
+    },
+    {
+      "bytes": 570,
+      "path": "work/search-native13-keyboard-runtime/native-window-gate.json",
+      "sha256": "767c56f3f6e9f2f2c5bf600e0e67a394b54bb0ef26594deab2039eb940fb9226"
+    },
+    {
+      "bytes": 1048,
+      "path": "work/search-native13-keyboard-runtime/target-acquire.json",
+      "sha256": "1b2e777ee5295d2367f0ea4e48c89fa590964ac7b83c9e8087a9fd63c903515a"
+    },
+    {
+      "bytes": 355,
+      "path": "work/search-native13-keyboard-runtime/startup-009.stdout.json",
+      "sha256": "d64189193f2cc9f704c38806d65f5c48fdd31248e7ff09338750c3d8c90989b2"
+    },
+    {
+      "bytes": 47663,
+      "path": "work/search-native13-keyboard-runtime/before-key.json",
+      "sha256": "e6b7a3cbcb97f5b6f39ffd4271140b4edca33d50ca11e4adf08e2852c1ba68de"
+    },
+    {
+      "bytes": 47624,
+      "path": "work/search-native13-keyboard-runtime/after-key.json",
+      "sha256": "2bfe81260fe58fc9c262227bfc4c06708cff8ff6a14ba93db6df3c8e08f67870"
+    },
+    {
+      "bytes": 93,
+      "path": "work/search-native13-keyboard-runtime/key-request.json",
+      "sha256": "fd76d8db908cde5839fb97b25b442206c9ddd531253b8cf63689516e898eb859"
+    },
+    {
+      "bytes": 173,
+      "path": "work/search-native13-keyboard-runtime/finish.json",
+      "sha256": "d8f1530a0894015cf2b4a570b395b115ad0bd3d6279a2ee05a18736c1ab54d9c"
+    },
+    {
+      "bytes": 911,
+      "path": "work/search-native13-keyboard-runtime/terminal-capture.json",
+      "sha256": "54f263d59866ae55e7d48e332c63b4290757cd049f25c931e97f8ac5574e143d"
+    },
+    {
+      "bytes": 31788,
+      "path": "work/search-native13-build/keyboard-prepare.json",
+      "sha256": "04485bb5de67990f76a45764a2a7101350b299eaf517a01af505cfdc65df1293"
+    },
+    {
+      "bytes": 6087,
+      "path": "work/search-native13-keyboard-runtime/driver.json",
+      "sha256": "6a35c96c1ba3ebab93fc931926a983d009513035f2f1b28f0f943568001f7a4f"
+    },
+    {
+      "bytes": 360,
+      "path": "work/search-native13-keyboard-runtime/owned.json",
+      "sha256": "8f1a512d21d06ae631f1b1b69e7d705e43f75b591d0d624a8eff96bce0a0ccec"
+    },
+    {
+      "bytes": 291,
+      "path": "work/search-native13-keyboard-runtime/original-front.json",
+      "sha256": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9"
+    },
+    {
+      "bytes": 1777,
+      "path": "work/search-native13-keyboard-runtime/desktop-end.json",
+      "sha256": "263f0ed47763a351dc2032dd07d80973b234b167f41ab7478e3f6b55af555bca"
+    },
+    {
+      "bytes": 1983,
+      "path": "work/search-native13-keyboard-runtime/cleanup-292221533631833.json",
+      "sha256": "07e6cb2d735e36c3b1c7379d237d7d28f9b80a2247463f9447fd59c8942bf994"
+    },
+    {
+      "bytes": 94,
+      "path": "work/search-native13-keyboard-runtime/profile-start.json",
+      "sha256": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3"
+    },
+    {
+      "bytes": 94,
+      "path": "work/search-native13-keyboard-runtime/profile-end.json",
+      "sha256": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3"
+    }
+  ],
+  "kind": "source_and_retained_runtime_review",
+  "native_Unicode_bang_chain_reached": false,
+  "native_first_Library_invalid_search_acceptance_reached": false,
+  "no_UI_or_compilation_by_reviewer": true,
+  "source_findings": {
+    "Profile_source_only_reads_three_flags": true,
+    "cleanup_source_uses_existing_FocusGuard_restore_then_stop_before_own_tmp_removal": true,
+    "control_allowlist_has_no_search_write": true,
+    "finish180s_boundary_assertion_present_in_short_IPC_runners": true,
+    "keyboard_runners_only_runtime_and_prepare_paths_differ": true,
+    "latest_short_IPC_0700_under_tmp": true,
+    "original_long_IPC_harness_error_not_product_fix": true
+  },
+  "sources": [
+    {
+      "bytes": 8564,
+      "path": "work/search-native13-build/run.py",
+      "sha256": "252fd11feb8c8cf372fa010a716e84865fcc5f826aef3d9acd9fdc1fda6f2926"
+    },
+    {
+      "bytes": 2667,
+      "path": "work/search-native13-build/control.py",
+      "sha256": "4633b48182b5355c2eb61bfc9ca569ebed72cacb3c27add0e76e215540752237"
+    },
+    {
+      "bytes": 8582,
+      "path": "work/search-native13-build/run-keyboard.py",
+      "sha256": "c46dd1372f85c4fa13149eccc1d61c1db7c48e1378b0e5527e0ab9a31a01034e"
+    },
+    {
+      "bytes": 2676,
+      "path": "work/search-native13-build/control-keyboard.py",
+      "sha256": "94640b07ef2e567aa68045cef99876ae6ca1f23dd30c3b382c6903bf9a742656"
+    },
+    {
+      "bytes": 3477,
+      "path": "work/search-native13-build/prepare.py",
+      "sha256": "ca4c58a752ec0e9c30d1ecfb83bf286efbdc20347fa4f19a5954c4487e32840e"
+    },
+    {
+      "bytes": 3486,
+      "path": "work/search-native13-build/prepare-keyboard.py",
+      "sha256": "137af7dbc38228fa34ee19bb4ab5302b622ce9dd840aad04386ff6dc64c392c5"
+    },
+    {
+      "bytes": 494,
+      "path": "work/search-native13-build/Profile.swift",
+      "sha256": "5047b2abff477e29890bc44ebad2e822e0cbe98da48e5d5dd96edfa535dc0279"
+    },
+    {
+      "bytes": 8094,
+      "path": "work/search-native13-attempt1/run.py",
+      "sha256": "9a472a8e808377fbf0b7c96ad8902ab4b65b5c6d9db1514a26388ccc84881958"
+    },
+    {
+      "bytes": 8564,
+      "path": "work/search-native13-runtime/run.py",
+      "sha256": "252fd11feb8c8cf372fa010a716e84865fcc5f826aef3d9acd9fdc1fda6f2926"
+    },
+    {
+      "bytes": 2667,
+      "path": "work/search-native13-runtime/control.py",
+      "sha256": "4633b48182b5355c2eb61bfc9ca569ebed72cacb3c27add0e76e215540752237"
+    }
+  ]
+}

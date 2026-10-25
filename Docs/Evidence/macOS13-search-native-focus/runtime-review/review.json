@@ -1,0 +1,213 @@
+{
+  "verdict": "native_input_chain_not_accepted_focus_gates_unpassed_cleanup_verified",
+  "cases": {
+    "search-native13-attempt1": {
+      "pid": 81490,
+      "private_bundle_id": "dev.bern.search-native13.e6325e3152de4e4ba178cdfd349b04d2",
+      "own_kernel_start": {
+        "tv_sec": 1792890123,
+        "tv_usec": 652672
+      },
+      "driver_success": false,
+      "App_exit_code": 0,
+      "normal_start_end_all_three_false": true,
+      "cleanup_success": true,
+      "original_front9292_present_before_stop": true,
+      "restore_requested": false,
+      "own_stopped": true,
+      "desktop_before_release_interrupted": false,
+      "desktop_release_active": false,
+      "final_front_pid": 9292,
+      "cursor_moved_distance": 0,
+      "original_driver_error": "",
+      "IPC_removed": null,
+      "outcome": "IPC startup gate failed before native input",
+      "sessions_attempts": 108,
+      "sessions_returncode": 3,
+      "IPC_base_bytes": 113,
+      "no_UI_event_reported": true,
+      "query_and_text_validation": "not performed",
+      "transport_limit_evidence": "Retained failure-analysis source excerpt has100byte full socket-path guard; no new Git/source mutation or root-cause claim."
+    },
+    "search-native13-runtime": {
+      "pid": 81989,
+      "private_bundle_id": "dev.bern.search-native13.9c490a2da821476d94d61275a8c03141",
+      "own_kernel_start": {
+        "tv_sec": 1792890369,
+        "tv_usec": 250776
+      },
+      "driver_success": false,
+      "App_exit_code": 0,
+      "normal_start_end_all_three_false": true,
+      "cleanup_success": true,
+      "original_front9292_present_before_stop": true,
+      "restore_requested": true,
+      "own_stopped": true,
+      "desktop_before_release_interrupted": true,
+      "desktop_release_active": false,
+      "final_front_pid": 9292,
+      "cursor_moved_distance": 0,
+      "original_driver_error": "[Errno 2] No such file or directory: '/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/search-native13-runtime/finish.json'",
+      "IPC_removed": true,
+      "window_number": 10762,
+      "joint_ready_elapsed_seconds": 1.23760641599074,
+      "MCP_focus_lines": [
+        [
+          "The focused UI element is 12 outline."
+        ],
+        [
+          "The focused UI element is 12 outline."
+        ],
+        [
+          "The focused UI element is 12 outline."
+        ]
+      ],
+      "one_input_action_recorded": true,
+      "MCP_all_own_front_cursor0": true,
+      "virtual_config_restored": true,
+      "final_overlay_visible": false,
+      "off_update_immediate_overlay_visible": true,
+      "off_during_snapshots_overlay_visible": false,
+      "query_and_text_validation": "not performed",
+      "outcome": "Coordinate click did not confirm search focus; external work cap ended before finish signal",
+      "request": {
+        "app": "81989",
+        "x": 330,
+        "y": 178
+      },
+      "preview_dimensions": [
+        920,
+        668
+      ],
+      "preview_before_after_byte_exact": true,
+      "preview_sha256": "8933de0a86917d1c8a2f0334bfcd7a76e61848cc3de2a60d42d88be82f2c5271",
+      "full1840PNG_acquired": false,
+      "late_capture_error": "appNotFound(\"unknown\")",
+      "timeout_preservation": "Original driver missing-finish Errno2/cap path retained; no late finish or capture backfill. App exit0 means cleanup, not driver/acquisition acceptance."
+    },
+    "search-native13-keyboard-runtime": {
+      "pid": 82774,
+      "private_bundle_id": "dev.bern.search-native13.a0c8fdd18ead47e1ac8d00860eea8f4e",
+      "own_kernel_start": {
+        "tv_sec": 1792890920,
+        "tv_usec": 931339
+      },
+      "driver_success": false,
+      "App_exit_code": 0,
+      "normal_start_end_all_three_false": true,
+      "cleanup_success": true,
+      "original_front9292_present_before_stop": true,
+      "restore_requested": true,
+      "own_stopped": true,
+      "desktop_before_release_interrupted": true,
+      "desktop_release_active": false,
+      "final_front_pid": 9292,
+      "cursor_moved_distance": 0,
+      "original_driver_error": null,
+      "IPC_removed": true,
+      "window_number": 10767,
+      "joint_ready_elapsed_seconds": 1.3471116249565966,
+      "MCP_focus_lines": [
+        [
+          "The focused UI element is 12 outline."
+        ],
+        [],
+        []
+      ],
+      "one_input_action_recorded": true,
+      "MCP_all_own_front_cursor0": true,
+      "virtual_config_restored": true,
+      "final_overlay_visible": false,
+      "off_update_immediate_overlay_visible": true,
+      "off_during_snapshots_overlay_visible": false,
+      "query_and_text_validation": "not performed",
+      "outcome": "One Shift-Tab left focused node unavailable in returned snapshot; search focus unconfirmed",
+      "request": {
+        "app": "82774",
+        "key": "shift+Tab",
+        "delivery": "direct",
+        "restore_focus": false
+      },
+      "missing_focus_is_no_event_proof": false,
+      "finish_success": false,
+      "full1840PNG_acquired": true,
+      "PNG_dimensions": [
+        1840,
+        1336
+      ],
+      "PNG_sha256": "3712f5a57e00c17b45e841bc053aca4e9c3ad8ae970677dbd7d31b6c7deafc49",
+      "PNG_viewed": true,
+      "no_type_text_or_Library_by_retained_finish": true
+    }
+  },
+  "keypress_source_review": "KeyInjection.swift37-84 supports shifted Tab by flags.maskShift/parser117-119 and Tab keycode0x30/table153. Direct delivery asks activation; restore_focus=false avoids automatic previous-app restoration. It posts keyDown/up to PID with no AX focus assignment fallback. This is source behavior, not proof OS delivered/consumed it.",
+  "method_limits": [
+    "All source/native/AX results here are macOS13 only; no macOS14 input baseline or Bern root-cause determination.",
+    "Coordinate click request is retained; public focus remains outline. One Shift-Tab request is retained; absence of focused node afterward is unavailable focus evidence, not proof nothing happened.",
+    "No text injection or Library/query validation was attempted after either unpassed focus gate. Existing programmatic-CLI query behavior is not native input closure.",
+    "Case2 byte equality covers only two920x668 MCP preview PNGs, not a late/raw1840x1336 capture; case3 has one raw1840x1336 capture. No new pixel/color algorithm.",
+    "Off-config update receipts initially report overlay visible=true; subsequent actual MCP snapshots showfalse and capture overlayApplied=false. Only config, not exact prior panel visibility, was restored.",
+    "Before-release interruption reflects the owned app being cleaned up and front restored; final release state is separate. App exit0 does not override driver.success=false.",
+    "Review read records/PNG/source and hashes only, without UI/compile/network/git/mutation."
+  ],
+  "input_sha256": {
+    "work/search-native13-attempt1/driver.json": "8e37e41283466d8de3d149dcc73af10dc75d8cb85f0ff9fe3c67ece205431028",
+    "work/search-native13-attempt1/owned.json": "94b2acc768f2bf01960474bfe9e743c066f13d1544e35aca99d1436f139ca67d",
+    "work/search-native13-attempt1/original-front.json": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9",
+    "work/search-native13-attempt1/profile-start.json": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3",
+    "work/search-native13-attempt1/profile-end.json": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3",
+    "work/search-native13-attempt1/desktop-end.json": "69f343b730317ad13d09dc30a046f5060a72a54c5526267e776f09f7f304ca13",
+    "work/search-native13-attempt1/failure-analysis.json": "5614a95a4da696aa6ed0e3b21df797d34675ba7a949d92cb4705fcc6c8f4c5a9",
+    "work/search-native13-attempt1/prepare.json": "c66897f85214653fe29f7072d3bad9afb063590e809581453fc858f8722babeb",
+    "work/search-native13-attempt1/cleanup-291419691428916.json": "0694030fb3ffb49e8825a59e842be933606ab9d1bb90afab50eb723def753ee5",
+    "work/search-native13-runtime/driver.json": "ba290b6c0f89b8687079dcb1c90c0d294cbc960e5ce40e66483af74520828124",
+    "work/search-native13-runtime/owned.json": "f7f0bbac5fb4b8392559ccfcde8d9c87c632a12ee5822e85129fef3c5facf597",
+    "work/search-native13-runtime/original-front.json": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9",
+    "work/search-native13-runtime/profile-start.json": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3",
+    "work/search-native13-runtime/profile-end.json": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3",
+    "work/search-native13-runtime/desktop-end.json": "6a6d8e271e85702044a37e44203447ed8e182bcfda938f11c926b55289b790e0",
+    "work/search-native13-runtime/before-click.json": "e3ca30e79ad00dd89a87e48b41819db20e65409ab90aa33c7a31af0ed7a63821",
+    "work/search-native13-runtime/click-result.json": "58f610e7ca342fc5f64c49f2ce46c7fbc0227e0bb74fbb06f330e6dbeadbd397",
+    "work/search-native13-runtime/after-click.json": "b2f616ce1a3f50095bdd9bff29bb4830e2a8f9f81fd6270a21c2e00db40c8445",
+    "work/search-native13-runtime/ready.json": "2f8228353047721393cbe0c9a15dfb5d02cf04f9ff21b7ec6c157f8ffff4e5c5",
+    "work/search-native13-runtime/ipc-ready.json": "e54d496bf2ab655d3c0779fcfffaed319882a735eac45c75309a9c7636e279cf",
+    "work/search-native13-runtime/native-ready.json": "56ca6c4640451866dee7f9762f1780fd2aae37c584b229890676278a470b27d9",
+    "work/search-native13-runtime/native-window-gate.json": "535dcb478bcc8860f87201a6d38896da15e9b0a0bada6669d5ab751ad4317069",
+    "work/search-native13-runtime/virtual-before.json": "e100ddee9dae9b5d3f4d5742ad4692183b8b7205a103b645e0393487513ddf15",
+    "work/search-native13-runtime/virtual-off.json": "b07f5542f1b26256f9518baf10b311ba9dea089d8e37cbf9bb5dbfff7279db01",
+    "work/search-native13-runtime/virtual-restored.json": "1951eaaf8adbc9b0544851997950c3c05c7c80edc2ae5a0f4d495e41893f99ed",
+    "work/search-native13-runtime/target-acquire.json": "0715631f9a38cee840427d2ef13357e7c8cc971389f7f866de7cabf27d453935",
+    "work/search-native13-runtime/click-request.json": "24e7b04b2c12f1df1bceb256b051651c867dad4183ff39029d6e715ec1f302c4",
+    "work/search-native13-runtime/external-assessment.json": "873b5b61352abdb5e5893c6d4ace611817b77d7e393e6e5d28cf73079ef7efd4",
+    "work/search-native13-runtime/late-capture-error.json": "c12fd3066265a930273d8a083b10c44d894e944c30f6e4aa3b911e615b64e038",
+    "work/search-native13-runtime/saved-MCP-image-info.json": "e8528ca163c06650b0240397e382dd59c4c8d9730a814057d1b357c0a6e29b5e",
+    "work/search-native13-runtime/before-click.png": "8933de0a86917d1c8a2f0334bfcd7a76e61848cc3de2a60d42d88be82f2c5271",
+    "work/search-native13-runtime/after-click.png": "8933de0a86917d1c8a2f0334bfcd7a76e61848cc3de2a60d42d88be82f2c5271",
+    "work/search-native13-runtime/run.py": "252fd11feb8c8cf372fa010a716e84865fcc5f826aef3d9acd9fdc1fda6f2926",
+    "work/search-native13-runtime/cleanup-291828682277375.json": "5858f863840467e1fbe3c7daa68aab17cec2bdedd54de338029b42ea25ad2157",
+    "work/search-native13-keyboard-runtime/driver.json": "6a35c96c1ba3ebab93fc931926a983d009513035f2f1b28f0f943568001f7a4f",
+    "work/search-native13-keyboard-runtime/owned.json": "8f1a512d21d06ae631f1b1b69e7d705e43f75b591d0d624a8eff96bce0a0ccec",
+    "work/search-native13-keyboard-runtime/original-front.json": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9",
+    "work/search-native13-keyboard-runtime/profile-start.json": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3",
+    "work/search-native13-keyboard-runtime/profile-end.json": "bab08787a0efb376e1e4ab72a2c84908f3d6b2cf5e6f36fa2b3a12ec01f15cb3",
+    "work/search-native13-keyboard-runtime/desktop-end.json": "263f0ed47763a351dc2032dd07d80973b234b167f41ab7478e3f6b55af555bca",
+    "work/search-native13-keyboard-runtime/before-key.json": "e6b7a3cbcb97f5b6f39ffd4271140b4edca33d50ca11e4adf08e2852c1ba68de",
+    "work/search-native13-keyboard-runtime/key-result.json": "5c8d799b05facced0711ee80d6d2197e133106bb1d906d4ed5c18330fdac3d97",
+    "work/search-native13-keyboard-runtime/after-key.json": "2bfe81260fe58fc9c262227bfc4c06708cff8ff6a14ba93db6df3c8e08f67870",
+    "work/search-native13-keyboard-runtime/ready.json": "cbf26844b6566ff2d2e697e3993d2fe0c2f2f08ac000fbfd56f9d3e4b255c744",
+    "work/search-native13-keyboard-runtime/ipc-ready.json": "f615987fd63cdab454a303b0d749a47f3c40165061b4a6391e81bb16e1357f2a",
+    "work/search-native13-keyboard-runtime/native-ready.json": "29ed0cd9060a0cc831f83819299a57e1fa373081e76bbc3a24c6448468c96d58",
+    "work/search-native13-keyboard-runtime/native-window-gate.json": "767c56f3f6e9f2f2c5bf600e0e67a394b54bb0ef26594deab2039eb940fb9226",
+    "work/search-native13-keyboard-runtime/virtual-before.json": "e100ddee9dae9b5d3f4d5742ad4692183b8b7205a103b645e0393487513ddf15",
+    "work/search-native13-keyboard-runtime/virtual-off.json": "b07f5542f1b26256f9518baf10b311ba9dea089d8e37cbf9bb5dbfff7279db01",
+    "work/search-native13-keyboard-runtime/virtual-restored.json": "1951eaaf8adbc9b0544851997950c3c05c7c80edc2ae5a0f4d495e41893f99ed",
+    "work/search-native13-keyboard-runtime/target-acquire.json": "1b2e777ee5295d2367f0ea4e48c89fa590964ac7b83c9e8087a9fd63c903515a",
+    "work/search-native13-keyboard-runtime/key-request.json": "fd76d8db908cde5839fb97b25b442206c9ddd531253b8cf63689516e898eb859",
+    "work/search-native13-keyboard-runtime/finish.json": "d8f1530a0894015cf2b4a570b395b115ad0bd3d6279a2ee05a18736c1ab54d9c",
+    "work/search-native13-keyboard-runtime/terminal-capture.json": "54f263d59866ae55e7d48e332c63b4290757cd049f25c931e97f8ac5574e143d",
+    "work/search-native13-keyboard-runtime/window.png": "3712f5a57e00c17b45e841bc053aca4e9c3ad8ae970677dbd7d31b6c7deafc49",
+    "work/search-native13-keyboard-runtime/cleanup-292221533631833.json": "07e6cb2d735e36c3b1c7379d237d7d28f9b80a2247463f9447fd59c8942bf994",
+    "/Users/torrekie/Documents/Codex/2026-07-15/plugin-computer-use-openai-bundled/work/open-codex-ventura/Sources/ClaudexComputerUseCore/KeyInjection.swift": "2bf947cdc09db7cc866a287e660d030e3d82fa9044841cd4ec1d9c97eef6704d",
+    "work/search-native-input-delivery-audit/audit.json": "d65b424673c11f6c0fcfe8be64bd5e754b8164a664e1620e89c9881f1f131fe6"
+  }
+}

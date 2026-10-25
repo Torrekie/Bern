@@ -1,0 +1,93 @@
+{
+  "verdict": "No_evidence_supported_single_property_product_patch_yet;_coupled_Caption_Menu_width_metrics_missing",
+  "historical_Frame_source": "f9e08b1d55bed4b9d880b19934abe48281057bb3",
+  "actual_delivered_Gallery_source": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "actual_delivered_Showcase_source": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "f9_to_e48_selected_source_equivalence": [
+    {
+      "path": "examples/gallery/gallery-ui/src/lib.rs",
+      "whole_file_equal": true,
+      "bytes": 22898,
+      "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+    },
+    {
+      "path": "crates/bern-backend-swiftui/src/swift/controls.rs",
+      "whole_file_equal": true,
+      "bytes": 39644,
+      "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+    },
+    {
+      "path": "crates/bern-backend-swiftui/src/swift/toolbar.rs",
+      "whole_file_equal": true,
+      "bytes": 19138,
+      "sha256": "567469f6f4bf9e64180590538f175a7f78491723e920b83252933e1f481de285"
+    },
+    {
+      "path": "crates/bern-backend-swiftui/src/swift/layout.rs",
+      "whole_file_equal": true,
+      "bytes": 34137,
+      "sha256": "b236cea821f6f4f6a88a21af417f8cb62fbbbd9ddd26339cde8c9f22237a67d1"
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "block": "struct BernSplitButton<Content: View>: View {",
+      "whole_file_equal": false,
+      "selected_block_equal": true,
+      "bytes": 3572,
+      "sha256": "ef36f2e56b55ab3fc9ccfaf30c75a55ecec077fbda112caf43a1ab32440bf52e"
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "block": "struct BernRow: Layout {",
+      "whole_file_equal": false,
+      "selected_block_equal": true,
+      "bytes": 5785,
+      "sha256": "719bc0deb60e639340fdfd565a76bc8463957fc3f280de3527c8aacdc5e5324f"
+    }
+  ],
+  "not_claimed": "No new e48 Frame runtime; selected source equality is not whole app acceptance",
+  "inputs": [
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-frame-volume/paired-f9-aot/README.md",
+      "sha256": "ce1eda4bc173700cd9ab6b7e0fcac8dc60ef8ece9f0c4c78bdce45acc9089e2b"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-frame-volume/paired-f9-aot/analysis/comparison.json",
+      "sha256": "b619b3425fc64c4d984b7f1397a7f4eb756743e0ea0386c5ef3466450256fb55"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-frame-volume/paired-f9-aot/run-aot/report.json",
+      "sha256": "79334d78d4a1f8cc2a36e31d91b107270de052d1dee9cb5f2d5276ab697e7398"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS14-frame-volume/paired-40065164350/README.md",
+      "sha256": "cf8d2f550c194299d5ae207c486bde5d6a37bc5d86a03ad43b2c6f38f982b7ae"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS14-frame-volume/paired-40065164350/b/report.json",
+      "sha256": "11707bd82606f4a93fbf398f0455611c0e2d758163bdc66b00acaa356831652c"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-clean-delivery-e48/delivery.json",
+      "sha256": "e6fbe8ea1c3f62dc89a5e6d56c6cc40c6b369a15eefed2d4e07dbb4c3b9a71c7"
+    }
+  ],
+  "viewed_original_PNGs": [
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-frame-volume/paired-f9-aot/run-aot/frame-closed-light.png",
+      "sha256": "ece61b2d4e05da32f3598e1f56da8369bb2029814fb3a66b4129bf363aff37f3"
+    },
+    {
+      "path": "outputs/Bern/Docs/Evidence/macOS14-frame-volume/paired-40065164350/b/frame-closed-light.png",
+      "sha256": "e6df62db77a72967fa5488f5499ac9b6bee153c75050300a0d044c0f8a24c970"
+    }
+  ],
+  "missing": [
+    "Exact e48 Frame generatedsource output",
+    "Caption/Size native class and actualview/cell frame, controlSize/effectivefont/label-image metrics",
+    "BernRow Caption/Size least/ideal/most/offered/actualwidth within same real Frame context"
+  ],
+  "source_candidate_adopted": false,
+  "UI_compile_CI_probe_product_actions": false,
+  "new_pixel_algorithm_or_threshold": false
+}

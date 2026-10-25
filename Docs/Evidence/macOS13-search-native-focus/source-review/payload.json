@@ -1,0 +1,119 @@
+{
+  "App_or_helper_launched": false,
+  "CLI_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+  "actual_payload_reads_complete": true,
+  "apps": [
+    {
+      "SDK": "26.2",
+      "actual_GUI_sha256": "4078c90361cf39c9dc92dc741ec368b280a02ae78b27515dee46a1fa9d980817",
+      "actual_machos": [
+        {
+          "all_sections_exact_original_and_prepare": true,
+          "bytes": 3736784,
+          "member": "Contents/MacOS/Showcase",
+          "normalized_exact_original_and_prepare": true,
+          "section_count": 40,
+          "signature_storage_sizes_normalized_sha256": "7b85edf156aecea52d4fcbdefab9617e4c45b1dfc2bb0e96718453f96e86bb56"
+        }
+      ],
+      "all_member_bytes_match_prepare": true,
+      "all_original_members_match_delivery": true,
+      "app": "work/search-native13-build/retired-attempt1/Showcase.app",
+      "case": "attempt1",
+      "changed_members": [
+        "Contents/Info.plist",
+        "Contents/MacOS/Showcase"
+      ],
+      "macho_count": 1,
+      "member_count": 15,
+      "minimum_macos": "13.0",
+      "prepare": "work/search-native13-attempt1/prepare.json",
+      "prepare_sha256": "c66897f85214653fe29f7072d3bad9afb063590e809581453fc858f8722babeb",
+      "private_identifier": "dev.bern.search-native13.e6325e3152de4e4ba178cdfd349b04d2",
+      "strict_codesign_exit": 0
+    },
+    {
+      "SDK": "26.2",
+      "actual_GUI_sha256": "65517556ae8044a513a92e53782a33110401f34cdab2194e5650783eca770a4c",
+      "actual_machos": [
+        {
+          "all_sections_exact_original_and_prepare": true,
+          "bytes": 3736784,
+          "member": "Contents/MacOS/Showcase",
+          "normalized_exact_original_and_prepare": true,
+          "section_count": 40,
+          "signature_storage_sizes_normalized_sha256": "7b85edf156aecea52d4fcbdefab9617e4c45b1dfc2bb0e96718453f96e86bb56"
+        }
+      ],
+      "all_member_bytes_match_prepare": true,
+      "all_original_members_match_delivery": true,
+      "app": "work/search-native13-build/Showcase.app",
+      "case": "attempt2",
+      "changed_members": [
+        "Contents/Info.plist",
+        "Contents/MacOS/Showcase"
+      ],
+      "macho_count": 1,
+      "member_count": 15,
+      "minimum_macos": "13.0",
+      "prepare": "work/search-native13-build/prepare.json",
+      "prepare_sha256": "843f3e1236ff966c24b900d22641b51d2375a65ca03aa7208893dca53ae2f7fd",
+      "private_identifier": "dev.bern.search-native13.9c490a2da821476d94d61275a8c03141",
+      "strict_codesign_exit": 0
+    },
+    {
+      "SDK": "26.2",
+      "actual_GUI_sha256": "a09a44c130275c6f44f1989c19767199b20c389dc39fff505dcee38bd1e037e4",
+      "actual_machos": [
+        {
+          "all_sections_exact_original_and_prepare": true,
+          "bytes": 3736784,
+          "member": "Contents/MacOS/Showcase",
+          "normalized_exact_original_and_prepare": true,
+          "section_count": 40,
+          "signature_storage_sizes_normalized_sha256": "7b85edf156aecea52d4fcbdefab9617e4c45b1dfc2bb0e96718453f96e86bb56"
+        }
+      ],
+      "all_member_bytes_match_prepare": true,
+      "all_original_members_match_delivery": true,
+      "app": "work/search-native13-build/Keyboard.app",
+      "case": "keyboard",
+      "changed_members": [
+        "Contents/Info.plist",
+        "Contents/MacOS/Showcase"
+      ],
+      "macho_count": 1,
+      "member_count": 15,
+      "minimum_macos": "13.0",
+      "prepare": "work/search-native13-build/keyboard-prepare.json",
+      "prepare_sha256": "04485bb5de67990f76a45764a2a7101350b299eaf517a01af505cfdc65df1293",
+      "private_identifier": "dev.bern.search-native13.a0c8fdd18ead47e1ac8d00860eea8f4e",
+      "strict_codesign_exit": 0
+    }
+  ],
+  "helpers_and_CLI": [
+    {
+      "bytes": 140680,
+      "path": "work/search-native13-build/FocusGuard",
+      "sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+      "strict_codesign_exit": 0
+    },
+    {
+      "bytes": 67416,
+      "path": "work/search-native13-build/Profile",
+      "sha256": "88f0b7d58ddf6095c925a2aa16615bd7634251b3087214d9b9fb302fbb726839",
+      "strict_codesign_exit": 0
+    },
+    {
+      "bytes": 898336,
+      "path": "outputs/macOS13/bin/showcase",
+      "sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+      "strict_codesign_exit": 0
+    }
+  ],
+  "kind": "read_only_actual_payload_review",
+  "macho_reader_source": "outputs/Bern/Docs/Evidence/macOS13-toolbar-title-host-f6/capture-pair/run-pair.py",
+  "macho_reader_source_sha256": "2155609f04678ac13249125995831ebf26c8331cd00960e1f643517111d150c1",
+  "original_GUI_sha256": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+  "product_compile_attempted": false
+}
