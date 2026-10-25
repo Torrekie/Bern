@@ -1,0 +1,111 @@
+{
+  "all_build_functions_byte_exact": {
+    "apply_diff": {
+      "byte_exact": true,
+      "sha256": "a156f029a61934b8cfaad23e2a67aa115ffdb4bdaa54c57aa5a4edaf323a46f3"
+    },
+    "collect": {
+      "byte_exact": true,
+      "sha256": "2e8b6b73010b3b7ae71682316f9a818a8632bfffc73bb7530e9c7b377f7958d5"
+    },
+    "package_hashes": {
+      "byte_exact": true,
+      "sha256": "a4e9978344cbee9381e70f599aff5363788a10e28d612b2618b6d468bb5ede50"
+    },
+    "patch": {
+      "byte_exact": true,
+      "sha256": "434b81a5ea5599542e895d4b6201588520db920841340fa252ee17f97656eef1"
+    },
+    "prepare": {
+      "byte_exact": true,
+      "sha256": "6bd87aab0cc298958b5d0bbe18a419fa1e9e591996c3b7c65235b28b1f964bf4"
+    },
+    "require": {
+      "byte_exact": true,
+      "sha256": "3c0757518ce0496b4a485c0c8a7ed35ae7977af6cb36de2d0ec7da3a0665a82d"
+    },
+    "sha": {
+      "byte_exact": true,
+      "sha256": "4e627faf4b903521e935f7c6f3ae93545856f821d0e2565ba7ea6cf97d3d0e6c"
+    },
+    "source_guard": {
+      "byte_exact": true,
+      "sha256": "3ef57831b49afa25fd6b9b56a44878241ae4dea411fbc3295dae53744feb006b"
+    },
+    "source_rows": {
+      "byte_exact": true,
+      "sha256": "b0eb05ba2dd4d7ffbb04d6475749d693c80399c30685c40b0ab01de4d536e4f3"
+    },
+    "verify_diffs": {
+      "byte_exact": true,
+      "sha256": "5cfdd238491e6b4196798aeb9a6677d4cfe040bc3d993fa658cae4615f619dae"
+    }
+  },
+  "allowed_literal_changes_only": true,
+  "baseline_build_sha256": "cac961115f0667ab0ddb50bf8fabec3a04df2fa5bf0e63b25208e17debbda862",
+  "candidate_files": {
+    "FrameClosed.swift": {
+      "bytes": 51401,
+      "sha256": "3613df83629f0b3e975425c3db37a53e40135dfc93dd6d333bf4487ad2e1d974"
+    },
+    "PixelGate.swift": {
+      "bytes": 7157,
+      "sha256": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"
+    },
+    "RowLedger.swift": {
+      "bytes": 10954,
+      "sha256": "681b54e8ca767dd98ff9ba3725d9780a7373f329840685371684fd242ab39b7c"
+    },
+    "build.py": {
+      "bytes": 14330,
+      "sha256": "b034c8b3ef007795c13130150b18ce3ccc10758a6a9c6015b5a23906dacdf81d"
+    },
+    "patch.py": {
+      "bytes": 10774,
+      "sha256": "adbbe1572a627c19a0ddb559858678b0283f4b21d52a18be23314377721e9039"
+    }
+  },
+  "not_performed": [
+    "package prepare/patch/collect execution",
+    "source guard execution",
+    "compiler/typecheck/test",
+    "UI",
+    "CI",
+    "Git commands or mutation"
+  ],
+  "outcome": "no blocking package finding",
+  "parent_source_validation_matched": true,
+  "pure_text_actual_diff_checks": {
+    "BernGenerated": {
+      "actual_forward_reverse_exact": true,
+      "diff_sha256": "2526d985052b81f59bb56f030eaee047a4b8d13d0669235f2f45d223ca4dfd1f",
+      "modified_bytes": 81150,
+      "modified_sha256": "709d1c95afbc2b894a3f7d3baf88e423d1f384bfb5c21b893fc7362bc012a511",
+      "original_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+    },
+    "BernStyle": {
+      "actual_forward_reverse_exact": true,
+      "diff_sha256": "9cb489eb50db4127ec5726f06e270cadbeaff9d7e8c22b69ea15d5885e654c14",
+      "modified_bytes": 222826,
+      "modified_sha256": "0288df5c90b4a409c5ec034a6736722d9f908c11d9d3c0661422b6d550ec512c",
+      "original_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+    }
+  },
+  "readme": {
+    "bytes": 3566,
+    "local13_cleanup_only_different_helper_disclosed": true,
+    "sha256": "b674cfdf551f0b662b32264f848b060443d0554304cfdc86902273e76f1971b6"
+  },
+  "remaining_runtime_gates": [
+    "actual new product build/provenance",
+    "fresh14 same-collector control/observer ROI/ICC/time/hash gate",
+    "then local13 cleanup-only adapter with disclosed helper difference"
+  ],
+  "scope": "independent package/wrapper review only; latest1 core hashes compared to its frozen source and separately peer-reviewed implementation",
+  "workflow": {
+    "bytes": 11481,
+    "expected_exact": true,
+    "path": "outputs/Bern/.github/workflows/macos14-frame-row-ledger.yml",
+    "sha256": "d7a274e88daab4b8113e5e30edf6476c280c52a050ebf41535a77838f7a1bde7"
+  }
+}

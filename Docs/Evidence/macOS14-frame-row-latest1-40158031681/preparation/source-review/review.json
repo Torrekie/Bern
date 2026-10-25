@@ -1,0 +1,113 @@
+{
+  "binding": "Exact author-frozen three core inputs and final package manifest; all manifest entries independently hashed. Any subsequent core byte change requires review rebinding.",
+  "checks": {
+    "atomic_commit": {
+      "initial_write": "arm binding and first-write file absence checks precede .atomic. Accepted under collector-owned fresh directory/single producer; not external-writer-exclusive.",
+      "locations": "RowLedger.swift:96-125,138-141,179-198",
+      "producer": "Whole packet is encoded and size checked; write .atomic; latest memory slot assigned only after write returns successfully. No growing history array or record cap increase."
+    },
+    "author_manifest_all_entries_match": true,
+    "consumer_native_gates": {
+      "all_source_after_volumeTarget_byte_exact": true,
+      "changed_functions_only": [
+        "ledgerLogHasError",
+        "finishRowLedger"
+      ],
+      "new_hash_scope": "rejects any latest file change from validated snapshot through cleanup, including a later valid placement; deliberate conservative failure, not an observation/presentation fence.",
+      "temporal": "entered>=armed; on main thread; completed<=same stable image sample begin retained; finite timestamps and entered<=completed strengthen this. No sample-end/cleanup substitution.",
+      "unchanged": "actual e48 source, normal/closed/Ready-to-Paused0/awake, own-PID window capture/stable4/ICC, cleanup and post-defer exit; old PixelGate bytes unchanged, so actual PNG/ICC binding and fixed ROI/whole-window split remain."
+    },
+    "counters": {
+      "consumer": "strict nonnegative integral NSNumber, Boolean/float/double rejected; N>0 and relations exact",
+      "definition": "observedCompleteCount increments after valid arm and all complete memory/ordinal checks; Int64 checked add; serialized successful state N>0 has replaced=N-1, retained=1, latest.sequence=N-1",
+      "failure_boundary": "count can advance before encoding/write; if this fails stopped is latched and stderr emitted. Older committed packet may remain but must be rejected by consumer error checks.",
+      "locations": "RowLedger.swift:155-198; FrameClosed.swift:65-78"
+    },
+    "failure_latch": {
+      "consumer": "prior IO check preserved; adds re-read hash before binding, IO check before/after binding; bound SHA rechecked via ledgerLogHasError at post-cleanup old call site. Missing, changed, too large or error-marked slot fails.",
+      "locations": "RowLedger.swift:144-198; FrameClosed.swift:33-45,57-87",
+      "producer": "incomplete capture, missing normalized value, count overflow, output missing, individual packet overflow or encoding/IO error -> stopped=true + unchanged BERN_FRAME_ROW_LEDGER_IO_ERROR stderr marker; no old slot fallback"
+    },
+    "new_schema": {
+      "end_state": "not_observed",
+      "file_byte_limit": 65536,
+      "locations": "RowLedger.swift:128-135; FrameClosed.swift:70-78",
+      "retained_limit": 1,
+      "retention": "latest1",
+      "value": "bern_frame_row_latest_v2"
+    },
+    "old_cohort": "40155522534 remains observer success=false, byte_limit truncated prefix invalid, non-PixelGatePASS. No input/report fields changed.",
+    "row_math_and_record": {
+      "Row_EDITS_assignment_sha256": "93d894923baf40a7fd71639a00cee2580dac9ac1af62b24ce6953d9cab7f1a51",
+      "Row_EDITS_byte_exact": true,
+      "effect": "Original queries/branches/arithmetic/place/x order and all raw/normalized/dimensions/offer/extent/top/guide/point/proposal/ordinal/bounds/row_size/gaps/finalX/thread/uptime fields retained. Post-place arm/encoding/IO boundary retained.",
+      "ordinal_dictionary_byte_exact": true,
+      "original_capture_class_prefix_exact": true,
+      "record_dictionary_exact_except_sequence_expression": true
+    }
+  },
+  "frozen": true,
+  "inputs": {
+    "author_manifest": {
+      "bytes": 399,
+      "path": "work/frame-row-latest1-preparation/SHA256SUMS",
+      "sha256": "3396a3d8d086f1a082cd2576ff93539ae426cb597de1c1f3beab0d4bc8bf2ae8"
+    },
+    "author_validation": {
+      "bytes": 3248,
+      "path": "work/frame-row-latest1-preparation/validation.json",
+      "sha256": "82905cecdbb33112bcafd5de7631da0a84535f74d133190a2a52d9dd566200b4"
+    },
+    "new_collector": {
+      "bytes": 51401,
+      "path": "work/frame-row-latest1-preparation/FrameClosed.swift",
+      "sha256": "3613df83629f0b3e975425c3db37a53e40135dfc93dd6d333bf4487ad2e1d974"
+    },
+    "new_helper": {
+      "bytes": 10954,
+      "path": "work/frame-row-latest1-preparation/RowLedger.swift",
+      "sha256": "681b54e8ca767dd98ff9ba3725d9780a7373f329840685371684fd242ab39b7c"
+    },
+    "new_patch": {
+      "bytes": 10774,
+      "path": "work/frame-row-latest1-preparation/patch.py",
+      "sha256": "adbbe1572a627c19a0ddb559858678b0283f4b21d52a18be23314377721e9039"
+    },
+    "old_collector": {
+      "bytes": 49556,
+      "path": "work/frame-row-runtime-preparation/FrameClosed.swift",
+      "sha256": "dcbd5405f31e0797937049feed74c4d54d7136da602636077085a856b2f2cd3d"
+    },
+    "old_failure_review": {
+      "bytes": 9909,
+      "path": "work/frame-row-failure-result-review/review.json",
+      "sha256": "d1852144be6e3691696edf4ad37122f5c6869e29ddec0672b162911d423088d9"
+    },
+    "old_helper": {
+      "bytes": 11049,
+      "path": "work/frame-row-ledger-preparation/RowLedger.swift",
+      "sha256": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf"
+    },
+    "old_patch": {
+      "bytes": 10761,
+      "path": "work/frame-row-ledger-preparation/patch.py",
+      "sha256": "815322661ba0681f89b6737bd70c88e58a5ee28cd4886eabd885f940b833b6ed"
+    },
+    "unchanged_pixel_gate": {
+      "bytes": 7157,
+      "path": "work/frame-row-runtime-preparation/PixelGate.swift",
+      "sha256": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"
+    }
+  },
+  "limits": [
+    "No compile/typecheck or runtime proof claimed by this reviewer.",
+    "Allocation/timing and one atomic IO per placement remain observer overhead; same-source actual control/pixel gate remains required.",
+    "Fresh-check plus atomic replacement does not exclude unrelated external writers; owned fresh directory/single writer is required.",
+    "One retained placement cannot prove complete history, settled layout, native frames, UI cause or presentation synchronization.",
+    "Latest/hash/time conservatism may reject later normal placements; do not loosen gates or introduce layout/flush/retries to force success.",
+    "Local13 draft not reviewed or modified in this task; prior binaries/schema receipts cannot be reused as new latest1 acceptance."
+  ],
+  "schema": 1,
+  "scope": "Read-only latest1 producer/patch/consumer review and Python AST/text comparisons only; no patch/helper execution, compiler, UI, CI, fixtures or repository mutation.",
+  "verdict": "no_remaining_blocking_source_finding"
+}

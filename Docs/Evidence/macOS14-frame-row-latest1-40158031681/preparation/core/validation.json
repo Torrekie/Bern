@@ -1,0 +1,72 @@
+{
+  "arm_protocol": {
+    "environment": "BERN_FRAME_ROW_LEDGER_OUTPUT_DIR",
+    "file": "frame-row-ledger.arm.json",
+    "required": [
+      "schema",
+      "pid",
+      "stage",
+      "token"
+    ],
+    "schema": "bern_frame_row_arm_v1",
+    "stage": "frame-closed-light"
+  },
+  "baseline_collector_sha256": "dcbd5405f31e0797937049feed74c4d54d7136da602636077085a856b2f2cd3d",
+  "baseline_helper_sha256": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf",
+  "begin_scalar_arm_exact": true,
+  "candidate_collector_sha256": "3613df83629f0b3e975425c3db37a53e40135dfc93dd6d333bf4487ad2e1d974",
+  "candidate_helper_sha256": "681b54e8ca767dd98ff9ba3725d9780a7373f329840685371684fd242ab39b7c",
+  "collector_final_defer": {
+    "end_byte_exclusive": 40863,
+    "end_line_inclusive": 390,
+    "sha256": "028828b268eb21044bb358f1dc3cebfed51d19f120d05a8bb0976fbbdd0a04f3",
+    "start_byte": 38562,
+    "start_line": 370
+  },
+  "collector_only_ledger_functions_changed": true,
+  "complete_record_exact_except_sequence_expression": true,
+  "counter_semantics": "N counts armed complete-memory observations using Int64 checked add; only successful whole-file atomic write replaces committed latest slot; any failure invalidates old slot through latched marker",
+  "file_byte_limit": 65536,
+  "first_atomic_write_scope": "first existing-file rejection then .atomic under own-PID/single-writer assumption; not external concurrent exclusivity",
+  "frame_original_start_line": 1248,
+  "frame_row_original_line": 1274,
+  "frame_tag_count": 1,
+  "generated": {
+    "after_bytes": 81150,
+    "after_sha256": "709d1c95afbc2b894a3f7d3baf88e423d1f384bfb5c21b893fc7362bc012a511",
+    "before_bytes": 81110,
+    "before_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+  },
+  "helper": {
+    "bytes": 10954,
+    "path": "RowLedger.swift",
+    "sha256": "681b54e8ca767dd98ff9ba3725d9780a7373f329840685371684fd242ab39b7c"
+  },
+  "inverse_exact_original_generated": true,
+  "inverse_exact_original_row": true,
+  "inverse_exact_original_style": true,
+  "original_layout_query_counts": {
+    "dimensions": 1,
+    "place": 1,
+    "sizeThatFits": 3
+  },
+  "original_measurement_and_place_calls_unchanged": true,
+  "output_name": "frame-row-ledger-<pid>.json",
+  "patch_script_sha256": "adbbe1572a627c19a0ddb559858678b0283f4b21d52a18be23314377721e9039",
+  "placement_class_exact": true,
+  "retained_limit": 1,
+  "retention": "latest1",
+  "row_EDITS_exact_bytes": true,
+  "row_edit_count": 12,
+  "row_original_start_line": 4419,
+  "scope": "one Frame BernRow optional diagnosticID; original Row queries/algorithm retained with memory snapshots; post-place arm/encode/write; appended helper",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "style": {
+    "after_bytes": 222826,
+    "after_sha256": "0288df5c90b4a409c5ec034a6736722d9f908c11d9d3c0661422b6d550ec512c",
+    "before_bytes": 210785,
+    "before_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+  },
+  "success_scope": "patch construction only; not compile/runtime/visual acceptance",
+  "validation_scope": "Python AST and pure in-memory text reconstruction only; patch main, Swift compilation/tests, UI, CI, and Git mutation not run"
+}

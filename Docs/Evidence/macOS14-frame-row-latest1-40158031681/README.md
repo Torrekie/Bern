@@ -1,0 +1,17 @@
+# Actual14 latest1 Frame Row result — route stopped
+
+[CI40158031681](https://github.com/Torrekie/Bern/actions/runs/40158031681), harness `c28f678f31442db40358a20b877e0e1f03fdb2fb`, diagnostic package commit `2c199894feb9c46856a37c5e3af0739af0d14fdc`; observed source remains exact e48. Full build succeeded. Actual14.8.9 arm64 original control succeeded; observer failed its final packet SHA check. **PixelGate did not run. No local13 acquisition or product/UI fix is claimed.**
+
+The retention-only correction kept the original Row edits/queries/math/place and full fields, replacing the bounded history with one whole latest1 atomic packet and checked counters. Local SDK14.2/min13 targeted Row/helper and collector typechecks passed; the unchanged workflow built the actual SDK26.2/min13 product and helpers once. Preparation/source and independent reviews are retained under preparation/.
+
+At image association, the report bound count122/sequence121, SHA6d234cb2…341fd2, complete uptime422.547707; actual stable image sample begins426.058005. The final retained file is2287B, count140/sequence139, SHA9a86dcab…61fda0, completed426.860770 (0.802764s later). The bound whole record was replaced and is not present. Do not interpret its missing data or final later-placement widths as image layout. The strict final hash/time contract rejected the observer; later writes are observed, but no unique trigger is established. Both apps stopped with termination0 and original front343 restored.
+
+The two actual PNGs are each byte-identical to their corresponding PNG from failed40155522534. Independent offline Pillow comparison finds fixed Frame ROI [211,52,920,668) and ICC equal; whole window still differs in5284 sidebar pixels. This limited offline image fact is not a substitute PixelGate PASS, whole-window or cross-OS acceptance. See [independent result review](result-review/README.md) and [root actual validation](root-review/actual-result.json).
+
+Stop this ledger route: no new timing/hash/cap relaxations, filtering/fences, sampling changes or CI retries; do not run the observer13 drafts. The old failure remains unchanged. The [next control-only plan](next-control-only-plan/README.md) is a separate descriptive baseline of the uninstrumented original e48; it does not unlock this observer gate. It is source planning only, not implemented or run here.
+
+All local13 preparation is unexecuted source with independent static review; superseded draft is clearly labeled. Their 13 cleanup adapter differs from14 only in the final defer, and would need fresh regular build paths for any future use. Do not execute/build through the work evidence aliases.
+
+Cleanup: fresh task module cache49,799,262 logical bytes was retired after both typechecks finished and lsof showed no open files. The149,517B runtime ZIP matched API digest872ba862…5284002 before extraction/removal. The unnecessary2.7MB product/helper build artifact was not downloaded. Four delivered executables were rehashed unchanged; no local native helper binaries/App copies/UI or preference operations were created by this cohort. Small source/review/raw evidence was moved once, with aliases and manifests, not copied. These are logical counts, not measured APFS reclamation.
+
+Whole macOS13 colors/layout/interactions/animation acceptance remains open and goal active. Actual14 was available, so the multi-hour unavailability pause condition is not met. macOS11/Swift5.3, Objective-C and iOS stages remain postponed.

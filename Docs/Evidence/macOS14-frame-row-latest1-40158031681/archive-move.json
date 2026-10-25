@@ -1,0 +1,82 @@
+{
+  "rule": "One canonical move; work relative aliases are read-only evidence pointers. Never execute or build through archive aliases. No binaries or App copies retained by this cohort.",
+  "moves": [
+    {
+      "from": "work/frame-row-latest1-preparation",
+      "to": "preparation/core",
+      "files": 6,
+      "logical_bytes": 80686,
+      "manifest_sha256": "3396a3d8d086f1a082cd2576ff93539ae426cb597de1c1f3beab0d4bc8bf2ae8"
+    },
+    {
+      "from": "work/frame-row-latest1-review",
+      "to": "preparation/source-review",
+      "files": 4,
+      "logical_bytes": 11897,
+      "manifest_sha256": "0812a0b266f8967e6be0b94f6d30968f201acaa22b1e1144022d799bb88fccf4"
+    },
+    {
+      "from": "work/frame-row-latest1-build-review",
+      "to": "preparation/build-review",
+      "files": 16,
+      "logical_bytes": 138621,
+      "manifest_sha256": "6832864495d5c69d78ea9b10c5e3e52c751fdd8bd949d36f3b919c0b48f1a15d"
+    },
+    {
+      "from": "work/frame-row-latest1-package-review",
+      "to": "preparation/package-review",
+      "files": 4,
+      "logical_bytes": 7961,
+      "manifest_sha256": "67b7a2aa0cfca4137e77f6d4fe16e8935e20ea51eddde24dc68bae2bdbc82205"
+    },
+    {
+      "from": "work/frame-row-local13-latest1",
+      "to": "preparation/local13-draft-unexecuted",
+      "files": 8,
+      "logical_bytes": 101317,
+      "manifest_sha256": "397a6211732adf6cc771522117ef9504d8b7febc55cc40935af38492d1d65e27"
+    },
+    {
+      "from": "work/frame-row-local13-latest1-review",
+      "to": "preparation/local13-source-review",
+      "files": 3,
+      "logical_bytes": 9267,
+      "manifest_sha256": "64cb74186d754013239adf24155d27a73347b52dc8f6e8dc8c470e9e6283db94"
+    },
+    {
+      "from": "work/frame-row-local13-preparation",
+      "to": "preparation/superseded-local13-draft-unexecuted",
+      "files": 7,
+      "logical_bytes": 92298,
+      "manifest_sha256": "08ebdfd1ca86af5ef0709ebba6d76c915e001f90cbccdd1676e6f8eb6da4b25a"
+    },
+    {
+      "from": "work/frame-row-latest1-result-review",
+      "to": "result-review",
+      "files": 3,
+      "logical_bytes": 14821,
+      "manifest_sha256": "07020154adf53a2d2e9cf4811a3fb848cf66c6f59dbf02df4c3ff73595d0598c"
+    },
+    {
+      "from": "work/frame-row-unobserved-next-plan",
+      "to": "next-control-only-plan",
+      "files": 3,
+      "logical_bytes": 10056,
+      "manifest_sha256": "3ef3709a70a8d42209b4908b195975840072c460f56bd8b9ce0cb066f1e1b0c6"
+    },
+    {
+      "from": "work/frame-row-latest1-ci14-40158031681",
+      "to": "runtime",
+      "files": 168,
+      "logical_bytes": 501859,
+      "manifest_sha256": null
+    },
+    {
+      "from": "work/frame-row-latest1-publication",
+      "to": "root-review",
+      "files": 3,
+      "logical_bytes": 27614,
+      "manifest_sha256": null
+    }
+  ]
+}

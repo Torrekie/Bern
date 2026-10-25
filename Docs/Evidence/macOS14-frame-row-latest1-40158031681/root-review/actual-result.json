@@ -1,0 +1,59 @@
+{
+  "run_id": 40158031681,
+  "harness_sha": "c28f678f31442db40358a20b877e0e1f03fdb2fb",
+  "build_job": {
+    "id": 121063498052,
+    "conclusion": "success"
+  },
+  "capture_job": {
+    "id": 121064156383,
+    "conclusion": "failure",
+    "step": "One observed closed capture with precreated ledger directory"
+  },
+  "os": "14.8.9 Build23J631 arm64",
+  "control_success": true,
+  "observer_success": false,
+  "exact_failure": "Final latest ledger hash differs from validated snapshot",
+  "bound_snapshot": {
+    "bytes": 2286,
+    "end_state": "not_observed",
+    "file": "frame-row-ledger-7997.json",
+    "last_complete_uptime_seconds": 422.5477074583334,
+    "latest_sequence": 121,
+    "observed_complete_count": 122,
+    "replaced_complete_count": 121,
+    "retained_complete_count": 1,
+    "retention": "latest1",
+    "scope": "latest complete original placement preceding stable image; not a history or presentation synchronization fence",
+    "sha256": "6d234cb284b241147991c97e2f723e4d9996ee4b5ade30cbc6f844e271341fd2",
+    "stable_image_sample_begin_uptime_seconds": 426.0580055416667,
+    "token": "3EA7FD67-2D7D-418C-B333-CCF808A8AD59"
+  },
+  "bound_snapshot_original_record_not_retained": true,
+  "final_packet": {
+    "file": "b/ledger/frame-row-ledger-7997.json",
+    "sha256": "9a86dcab45274ee5a0c5f56cd1a72d2fd8ad2ad466dc43d21e1484c7e061fda0",
+    "bytes": 2287,
+    "count": 140,
+    "sequence": 139,
+    "complete_uptime": 426.86076962500005,
+    "sample_begin": 426.0580055416667,
+    "complete_after_sample_seconds": 0.8027640833333294
+  },
+  "no_IO_marker_in_logs": true,
+  "pixel_gate_ran": false,
+  "no_width_or_control_attribution": true,
+  "native_cleanup": "both stopped/termination0/front343 restored",
+  "png_bytes_identical_to_previous_failed_cohort": true,
+  "delivered_executables_unchanged": {
+    "outputs/macOS13/Showcase.app/Contents/MacOS/Showcase": "cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b",
+    "outputs/macOS13/bin/showcase": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+    "outputs/macOS13/Gallery.app/Contents/MacOS/Gallery": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "outputs/macOS13/bin/gallery": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5"
+  },
+  "local13_Apps_helpers_UI_run": false,
+  "unneeded_build_artifact_downloaded": false,
+  "route_stopped": "No new trace retries, cap/time/hash relaxation or interpretation of discarded/after-image placements. Whole macOS13 goal stays active; subsequent port stages postponed.",
+  "diagnostic_package_commit": "2c199894feb9c46856a37c5e3af0739af0d14fdc",
+  "product_source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d"
+}

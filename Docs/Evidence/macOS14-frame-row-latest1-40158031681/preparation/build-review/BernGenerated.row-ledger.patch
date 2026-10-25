@@ -1,0 +1,11 @@
+--- a/Sources/BernGenerated.swift
++++ b/Sources/BernGenerated.swift
+@@ -1271,7 +1271,7 @@
+                     BernVideo(target: "frame.clip", label: BernText.string("frame.0.0.1.0.label"), binding: .source(bernEngine.clip.url), controls: false, fit: .contain, corner: Double(((bernWindow.idle) ? (Int64(0)) : (Int64(20)))), cornerMotion: BernMotion(period: 0.48, damping: 0.86))
+                     .animation(BernMotion(period: 0.48, damping: 0.86).animation, value: [AnyHashable(((bernWindow.idle) ? (Int64(0)) : (Int64(20))))])
+                     if !(bernWindow.idle) {
+-                        BernRow(alignment: .center, spacing: 12.0) {
++                        BernRow(alignment: .center, spacing: 12.0, diagnosticID: "gallery.frame.controls") {
+                             BernSplitButton(label: BernText.string("frame.0.0.1.1.if0.0.0.label"), systemImage: "captions.bubble", more: BernText.string("bern.split.more"), isOn: SwiftUI.Binding(get: { bernEngine.caption }, set: { newValue in bernEngine.setCaption(newValue, from: bernWindow) }), capsule: false, height: 34.0, target: "frame.caption") {
+                                 SwiftUI.Text(verbatim: BernText.string("frame.0.0.1.1.if0.0.0.0.content"))
+                                 .font(.headline)

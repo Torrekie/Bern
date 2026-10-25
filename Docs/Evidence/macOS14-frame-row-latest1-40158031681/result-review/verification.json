@@ -1,0 +1,285 @@
+{
+  "artifact": {
+    "archive_deleted": true,
+    "extracted_file_count": 168,
+    "head_sha": "c28f678f31442db40358a20b877e0e1f03fdb2fb",
+    "id": 12584897807,
+    "identity_scope": "API/archive verification is the retained download receipt; actual ZIP removed before this review; binary identities below are build/capture receipts, not freshly rehashed executables",
+    "name": "frame-row-ledger-on14",
+    "outer_zip_bytes": 149517,
+    "outer_zip_independently_recomputed_in_this_review": false,
+    "receipt_records_api_verified": true,
+    "recorded_api_digest": "sha256:872ba8629608e643d8c9d63d25439cdb1c2a36c50434258959c73d5752284002"
+  },
+  "bound_snapshot_metadata_only": {
+    "bytes": 2286,
+    "end_state": "not_observed",
+    "file": "frame-row-ledger-7997.json",
+    "last_complete_uptime_seconds": 422.5477074583334,
+    "latest_sequence": 121,
+    "observed_complete_count": 122,
+    "replaced_complete_count": 121,
+    "retained_complete_count": 1,
+    "retention": "latest1",
+    "scope": "latest complete original placement preceding stable image; not a history or presentation synchronization fence",
+    "sha256": "6d234cb284b241147991c97e2f723e4d9996ee4b5ade30cbc6f844e271341fd2",
+    "stable_image_sample_begin_uptime_seconds": 426.0580055416667,
+    "token": "3EA7FD67-2D7D-418C-B333-CCF808A8AD59"
+  },
+  "checks": {
+    "PixelGate_program_run": false,
+    "bound_hash_matching_files": [],
+    "bound_raw_standalone_file_present": false,
+    "bound_reported_complete_before_sample": true,
+    "final_complete_before_stable_sample_begin": false,
+    "final_hash_equals_report_bound": false,
+    "internal_latest_counters_consistent": true,
+    "late_by_seconds": 0.8027640833333294,
+    "offline_pixels_substitute_acceptance": false,
+    "packet_token_and_pid_match_arm": true,
+    "source_build_and_capture_identity_consistent": true,
+    "width_fields_interpreted": false
+  },
+  "final_latest_nonwidth_fields": {
+    "on_main_thread": true,
+    "place_completed_uptime_seconds": 426.86076962500005,
+    "place_entered_uptime_seconds": 426.86073325,
+    "sequence": 139
+  },
+  "final_packet_nonwidth_fields": {
+    "diagnostic_id": "gallery.frame.controls",
+    "end_state": "not_observed",
+    "file_byte_limit": 65536,
+    "observed_complete_count": 140,
+    "pid": 7997,
+    "point_scope": "arguments requested by existing Layout.place; not native frame or bezel",
+    "replaced_complete_count": 139,
+    "retained_complete_count": 1,
+    "retained_limit": 1,
+    "retention": "latest1",
+    "schema": "bern_frame_row_latest_v2",
+    "stage": {
+      "pid": 7997,
+      "schema": "bern_frame_row_arm_v1",
+      "stage": "frame-closed-light",
+      "token": "3EA7FD67-2D7D-418C-B333-CCF808A8AD59"
+    }
+  },
+  "inputs": {
+    "work/frame-row-latest1-ci14-40158031681.download.json": {
+      "bytes": 792,
+      "sha256": "02fa18a4b560aa4a36516c43da1a6d6f8c4f25a4443dfd6459b7392700eaa4b8"
+    },
+    "work/frame-row-latest1-ci14-40158031681/a/application.log": {
+      "bytes": 405,
+      "sha256": "23a9f7d2ac5991fe6d9507b187f7c6b94f2a38b46fe20c4b6a4798c8eeb94ade"
+    },
+    "work/frame-row-latest1-ci14-40158031681/a/report.json": {
+      "bytes": 93001,
+      "sha256": "cc3ce7bcf4c241cc65fd25a1002734f29f04d3f4370a2fe38f178ee3efbe59d1"
+    },
+    "work/frame-row-latest1-ci14-40158031681/b/application.log": {
+      "bytes": 405,
+      "sha256": "8bae67678a6ed4f1fda1f033e9e4f9348165ca8599abfb133bd3cb8eec02913d"
+    },
+    "work/frame-row-latest1-ci14-40158031681/b/ledger/frame-row-ledger-7997.json": {
+      "bytes": 2287,
+      "sha256": "9a86dcab45274ee5a0c5f56cd1a72d2fd8ad2ad466dc43d21e1484c7e061fda0"
+    },
+    "work/frame-row-latest1-ci14-40158031681/b/ledger/frame-row-ledger.arm.json": {
+      "bytes": 163,
+      "sha256": "dc8832700c5bff0850d184ba4408f958302ecd925114cca2daa8e4ea143d4f3d"
+    },
+    "work/frame-row-latest1-ci14-40158031681/b/report.json": {
+      "bytes": 103996,
+      "sha256": "952cfcedc89702c053c254f3186f94f2e617e3b931e67bcb03a1ef1d88f77fd3"
+    },
+    "work/frame-row-latest1-ci14-40158031681/environment.txt": {
+      "bytes": 358,
+      "sha256": "3450bb2d272796c42ffbf1ba77186811dfde574ef1ba2f28065566a2c9360251"
+    },
+    "work/frame-row-latest1-ci14-40158031681/harness-inputs.sha256": {
+      "bytes": 716,
+      "sha256": "5997c2fb8c21e2bd7a36d3cdd89585c1628f36a8b420964b5dad3a2dca1656a2"
+    },
+    "work/frame-row-latest1-ci14-40158031681/helper-binaries.sha256": {
+      "bytes": 154,
+      "sha256": "ffe17c914b98759da6c18061ecadfdac9a2f2956c1c9e435d61556edcdf7f8d4"
+    },
+    "work/frame-row-latest1-ci14-40158031681/helper-verification14.txt": {
+      "bytes": 342,
+      "sha256": "0a15eda172610f988df479930d83ddfedd3cc3eb95f77b58f26ce333e6057803"
+    },
+    "work/frame-row-latest1-ci14-40158031681/observer-build.json": {
+      "bytes": 2980,
+      "sha256": "6c7d976234f7ed6b7092c902ef2c18a71df96d7ffe18a4e5bd3bc9a7922df63d"
+    }
+  },
+  "native_end_as_reported_not_live_process_query": {
+    "a": {
+      "all_window_array_ids_and_owner_checks_true": true,
+      "app_still_running_after_cleanup": false,
+      "app_termination_status": 0,
+      "closed_only": true,
+      "command_count": 39,
+      "expected_os": 14,
+      "final_context": {
+        "appearance": "Light",
+        "caption": true,
+        "frame_appearance": "dark from exact generated source",
+        "video": "Paused0",
+        "volume": "closed"
+      },
+      "last_media": {
+        "phase": "Paused",
+        "position_ms": 0
+      },
+      "last_stage": "closed-end",
+      "nonzero_command_positions_status": [
+        [
+          1,
+          3
+        ]
+      ],
+      "os": "Version 14.8.9 (Build 23J631)",
+      "report_success": true,
+      "reported_front_before_after": [
+        343,
+        343
+      ],
+      "restore_request_accepted": true,
+      "stable_equal_comparisons": 4,
+      "writer_error_marker_present": false
+    },
+    "b": {
+      "all_window_array_ids_and_owner_checks_true": true,
+      "app_still_running_after_cleanup": false,
+      "app_termination_status": 0,
+      "closed_only": true,
+      "command_count": 38,
+      "expected_os": 14,
+      "final_context": {
+        "appearance": "Light",
+        "caption": true,
+        "frame_appearance": "dark from exact generated source",
+        "video": "Paused0",
+        "volume": "closed"
+      },
+      "last_media": {
+        "phase": "Paused",
+        "position_ms": 0
+      },
+      "last_stage": "closed-end",
+      "nonzero_command_positions_status": [
+        [
+          1,
+          3
+        ]
+      ],
+      "os": "Version 14.8.9 (Build 23J631)",
+      "report_success": false,
+      "reported_front_before_after": [
+        343,
+        343
+      ],
+      "restore_request_accepted": true,
+      "stable_equal_comparisons": 4,
+      "writer_error_marker_present": false
+    }
+  },
+  "offline_png_review": {
+    "a": {
+      "exact_old_401555_bytes": true,
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "mode": "RGBA",
+      "old_path": "outputs/Bern/Docs/Evidence/macOS14-frame-row-ledger-40155522534/runtime/a/frame-closed-light.png",
+      "png_sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b",
+      "size": [
+        920,
+        668
+      ]
+    },
+    "b": {
+      "exact_old_401555_bytes": true,
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "mode": "RGBA",
+      "old_path": "outputs/Bern/Docs/Evidence/macOS14-frame-row-ledger-40155522534/runtime/b/frame-closed-light.png",
+      "png_sha256": "66e16368abbad027b9d51cb43e1af61ae0877eab5a6c6cbb72431c6b5b61919b",
+      "size": [
+        920,
+        668
+      ]
+    },
+    "fixed_frame_roi": {
+      "changed_bbox_half_open_pixels": null,
+      "changed_pixels": 0,
+      "equal_native_PIL_RGBA_bytes": true,
+      "roi_half_open_pixels": [
+        211,
+        52,
+        920,
+        668
+      ]
+    },
+    "icc_equal": true,
+    "whole": {
+      "changed_bbox_half_open_pixels": [
+        10,
+        118,
+        200,
+        146
+      ],
+      "changed_pixels": 5284,
+      "equal_native_PIL_RGBA_bytes": false,
+      "roi_half_open_pixels": [
+        0,
+        0,
+        920,
+        668
+      ]
+    }
+  },
+  "packet_actual_bytes": 2287,
+  "packet_actual_sha256": "9a86dcab45274ee5a0c5f56cd1a72d2fd8ad2ad466dc43d21e1484c7e061fda0",
+  "result": "COHORT_FAIL",
+  "run_id": 40158031681,
+  "scope": "offline preserved original reports/packet/logs/PNG only; no UI/CI/compilation/binary download or sampling",
+  "source_identity": {
+    "build_success": true,
+    "compiled_source_hashes": {
+      "BernGenerated.swift": {
+        "compiled_bytes": 81150,
+        "compiled_sha256": "709d1c95afbc2b894a3f7d3baf88e423d1f384bfb5c21b893fc7362bc012a511",
+        "diff_sha256": "2526d985052b81f59bb56f030eaee047a4b8d13d0669235f2f45d223ca4dfd1f",
+        "original_bytes": 81110,
+        "original_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+      },
+      "BernStyle.swift": {
+        "compiled_bytes": 222826,
+        "compiled_sha256": "0288df5c90b4a409c5ec034a6736722d9f908c11d9d3c0661422b6d550ec512c",
+        "diff_sha256": "9cb489eb50db4127ec5726f06e270cadbeaff9d7e8c22b69ea15d5885e654c14",
+        "original_bytes": 210785,
+        "original_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+      }
+    },
+    "control_gui": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "harness_sha": "c28f678f31442db40358a20b877e0e1f03fdb2fb",
+    "helpers_recorded": [
+      "3bfce116bc7c3c6d57cfceb55a066e84f0d749d2463d4895bdfc388385ea580f  FrameClosed",
+      "99ca83ccc154058790d4d140149e4e6a018f4096bdfa15874e6908a5970f145d  PixelGate"
+    ],
+    "observer_gui": "de21e46ff2e8bca3174b30210d3bff0aae8c805ac79c1425387bfb5a9118e90a",
+    "package_hashes": {
+      "FrameClosed.swift": "3613df83629f0b3e975425c3db37a53e40135dfc93dd6d333bf4487ad2e1d974",
+      "PixelGate.swift": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253",
+      "RowLedger.swift": "681b54e8ca767dd98ff9ba3725d9780a7373f329840685371684fd242ab39b7c",
+      "build.py": "b034c8b3ef007795c13130150b18ce3ccc10758a6a9c6015b5a23906dacdf81d",
+      "patch.py": "adbbe1572a627c19a0ddb559858678b0283f4b21d52a18be23314377721e9039"
+    },
+    "shared_cli": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d"
+  },
+  "stop_recommendation": "Stop this history/latest1 ledger route under the preregistered time/hash stop condition; do not relax final hash/time, enlarge cap, infer missing bound widths, blame cleanup uniquely, run13 observer, or try new sampling parameters."
+}
