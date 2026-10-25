@@ -1,0 +1,74 @@
+{
+  "schema": "bern_native_name_input13_bounded_v1",
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "host": "macOS13.7.8 arm64",
+  "pixel_comparison_required": false,
+  "outcome": "Native editing and keyboard submission remain unverified; no new13-only product defect established.",
+  "first_attempt": {
+    "own_pid": 63373,
+    "window_rendered": true,
+    "sidebar_AXPress_rejected": true,
+    "navigation_via_cli_setup": true,
+    "native_edit_arrived_after_bounded_app_cleanup": true,
+    "not_a_product_pass_or_failure": true,
+    "window_activate_cli_timeout_seconds": 8,
+    "short_defaults_timeout_seconds": 15,
+    "corrective_defaults_zero_and_empty_domain_plist_removed": true
+  },
+  "supplement": {
+    "own_pid": 65454,
+    "window_rendered": true,
+    "system_appearance": "dark, inherited system default",
+    "native_AXValue_field_display": "Bern13Input",
+    "model_name_after_AXValue": "",
+    "visible_preview_after_AXValue": "No name entered yet",
+    "native_AXConfirm": "Rejected by backend: could not resolve UI element at root",
+    "last_AX_snapshot_elements": 9,
+    "last_screenshot_content_present": true,
+    "coordinate_click_not_sent_because_fresh_snapshot_lacked_field": true,
+    "keyboard_events_not_sent": true,
+    "baseline_activations": 0,
+    "final_activations": 0,
+    "final_last_action": null,
+    "final_name_control": {
+      "enabled": true,
+      "label": "Name",
+      "reason": null,
+      "role": "text_input",
+      "target": "inputs_page.name",
+      "value": "",
+      "window": "main#1"
+    },
+    "window_is_active_before_and_after_AXValue": false,
+    "foreground_pid": 1390,
+    "focused_ui_element_after_AXValue": "sidebar outline12",
+    "Name_first_responder_confirmed": false
+  },
+  "limits": [
+    "AXValue setter changed a displayed AppKit value without proving SwiftUI edit callback delivery.",
+    "CLI select was setup only; no CLI edit/submit was used.",
+    "Partial AX tree and rejected action are tool observation limits, not blank-content or keyboard-defect proof.",
+    "No first-responder/typing/Return/Tab/IME/VoiceOver acceptance claimed.",
+    "No13/14 pixel matching or new product source change."
+  ],
+  "cleanup": {
+    "strong_guard_success": true,
+    "own_instance_absent": true,
+    "original_front_pid": 1390,
+    "original_front_kernel_start": {
+      "tv_sec": 1792598787,
+      "tv_usec": 261710
+    },
+    "child_exit": -9,
+    "ipc_absent": true,
+    "private_preferences_absent": true,
+    "saved_states_absent": true,
+    "original_gui_unchanged": true,
+    "original_cli_unchanged": true,
+    "owned_artifacts_logical_bytes_removed": 53931670,
+    "cursor_config_preserved": true,
+    "physical_cursor_moved_distance": 0,
+    "desktop_lease_released": true,
+    "overlay_final_visible": false
+  }
+}

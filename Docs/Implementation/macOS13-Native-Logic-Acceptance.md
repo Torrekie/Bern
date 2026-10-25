@@ -29,10 +29,12 @@
 | 外观、布局、动画 | 已有完整窗口与限定可见运动证据；stock13语义色、材质和相应替代真实存在。 | 正常窗口/窄窗、浅深色的可读可达性及代表性过渡终态，按缺口补最少检查。 |
 | 键盘与能力边界 | 13 局部键盘 monitor 有窗口/焦点过滤；Search 程序化焦点在当前模板13/14均有15前限制。 | 核可见输入及焦点行为；共有平台能力限制不自动视为13回归，但不得合理化产品明示承诺却无效果的动作。 |
 
+2026-10-25 的[普通 Name 输入补查](../Evidence/macOS13-native-input-9dd-20261025/README.md)确认当前深色系统外观下输入页正常绘制，但未补成键盘验收：后台 AXValue 仅改变文本框显示，未确认 Name 焦点或编辑回调到达 SwiftUI；后续 AXConfirm 在工具后端解析失败，原生草稿仍为空、提交计数仍0。截图仍有内容，不能把部分 AX 树误判为空白界面。没有用 CLI edit/submit 补成通过，也没有据此修改产品。此输入交付缺口保留，停止同一组 AX 参数尝试，先完成独立的布局/媒体缺口。
+
 详细来源、哈希和限制见[现有证据表](../Evidence/macOS13-native-logic-acceptance-20261025/evidence-audit/README.md)、[当前 API 源码审查](../Evidence/macOS13-native-logic-acceptance-20261025/source-audit/README.md)及[精简验收建议](../Evidence/macOS13-native-logic-acceptance-20261025/acceptance-review/README.md)。它们记录了文档调整前 `dc87117` 的输入快照。
 
 ## 执行顺序与收束
 
-复用原交付与足够的历史证据，只补缺失的功能检查。下一项优先为现有可见输入的焦点/编辑→模型→结果链，再选择未覆盖的窗口可达性或键盘路径。只在出现可复现的实质缺陷时定点修复；不再运行像素、Row ledger、14.5 pt 或观察器零影响路线，也不为细小色差重新触发远程 CI。
+复用原交付与足够的历史证据，只补缺失的功能检查。下一项为 Gallery 现有 Details/Inspector 显隐与一次窄窗可达性，再补 Film First、Frame 音量和真实媒体进度/暂停状态。Gallery Frame 明确 `controls:none`，不要求它显示 Play/Pause；可用已有 CLI 控制加实际状态变化读回，不能只看 ACK。macOS13 Inspector 使用系统 HSplitView，源码没有动画承诺，验显隐、可达性和可继续操作的终态，不为验收增加动画。只在出现可复现的实质缺陷时定点修复；不再运行像素、Row ledger、14.5 pt 或观察器零影响路线，也不为细小色差重新触发远程 CI。
 
 新原生检查仍需明确 App/CLI 来源、独立身份和有界清理；历史 work 别名不得直接执行。逐项记录“已有证据满足 / 新实测满足 / 实质问题待修 / 能力范围说明”，才能完成 macOS13 阶段。当前 goal 保持 active，放宽像素要求本身不等于阶段完成。

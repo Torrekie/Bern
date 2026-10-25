@@ -1,0 +1,411 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Computer Use state (CUA App Version: 0.1.0-alpha)\n<app_specific_instructions>\n- Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.\n- Use set_value for editable controls when AXValue is settable (0 settable element(s) in the current snapshot).\n- Refresh the snapshot after each mutation to avoid stale paths.\n\nLimitations:\n- Custom drawing regions can still hide controls from AX even in otherwise native apps.\n</app_specific_instructions>\n<app_state>\nApp=dev.bern.native13.input.b5bcaaec8dfd4f308a5404d853d362f2 (pid 65454)\nWindow: \"Text Fields\", App: Bern Showcase.\n\t0 menubaritem Apple Secondary Actions: Cancel\n\t1 menubaritem Bern Showcase Secondary Actions: Cancel\n\t2 menubaritem File Secondary Actions: Cancel\n\t3 menubaritem Edit Secondary Actions: Cancel\n\t4 menubaritem View Secondary Actions: Cancel\n\t5 menubaritem Window Secondary Actions: Cancel\n\t6 menubaritem Help Secondary Actions: Cancel\n\t7 standard window Text Fields ID: main Secondary Actions: Raise\n\t\t8 container\n\t\t9 element Secondary Actions: Show Menu\n\t\t\t10 button Description: Toggle Sidebar Secondary Actions: Increment, Decrement, Delete, Show Menu, Cancel\n\t\t\t\t11 button Description: Toggle Sidebar\n\t\t12 close button\n\t\t13 fullscreen button Secondary Actions: Zoom Window, Show Menu\n\t\t14 minimize button\n\t\t15 text Value: Text Fields\n</app_state>"
+    }
+  ],
+  "structuredContent": {
+    "screenshot": {
+      "contentRect": {
+        "y": 112,
+        "height": 640,
+        "width": 920,
+        "x": 260
+      },
+      "window": {
+        "pid": 65454,
+        "isOnScreen": true,
+        "appName": "Bern Showcase",
+        "frame": {
+          "y": 112,
+          "height": 640,
+          "width": 920,
+          "x": 260
+        },
+        "title": "Text Fields",
+        "bundleIdentifier": "dev.bern.native13.input.b5bcaaec8dfd4f308a5404d853d362f2",
+        "windowLayer": 0,
+        "windowID": 11810,
+        "isActive": false
+      },
+      "captureBackend": "screencapture",
+      "virtualCursorApplied": false,
+      "pixelHeight": 640,
+      "requestedScale": 0.5,
+      "pixelWidth": 920,
+      "virtualCursorMarkCount": 0,
+      "pointPixelScale": 2
+    },
+    "desktopSession": {
+      "frontmostAppAtAcquire": "ChatGPT",
+      "sessionID": "DD40B1BA-7397-4ACF-8D19-D32DB2A925A5",
+      "currentCursor": {
+        "x": 642.75390625,
+        "y": 155.28125
+      },
+      "active": true,
+      "actionsUsed": 2,
+      "frontmostPIDAtAcquire": 1390,
+      "cursorMovedDistance": 0,
+      "lockPath": "/Users/torrekie/Library/Caches/claudex-computer-use/desktop-session.lock",
+      "currentFrontmostBundleID": "com.openai.codex",
+      "actionBudget": 6,
+      "externalExclusiveLock": false,
+      "frontmostBundleIDAtAcquire": "com.openai.codex",
+      "interrupted": false,
+      "mode": "exclusive",
+      "currentFrontmostPID": 1390,
+      "currentFrontmostApp": "ChatGPT",
+      "cursorAtAcquire": {
+        "x": 642.75390625,
+        "y": 155.28125
+      },
+      "acquiredAt": 814615567.289081
+    },
+    "snapshot": {
+      "revision": "d69ca3f3",
+      "elements": [
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Apple",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            0
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 0
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Bern Showcase",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            1
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 1
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "File",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            2
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 2
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Edit",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            3
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 3
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "View",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            4
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 4
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Window",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            5
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 5
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Help",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            6
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 6
+        },
+        {
+          "depth": 0,
+          "frame": {
+            "y": 112,
+            "height": 640,
+            "width": 920,
+            "x": 260
+          },
+          "role": "standard window",
+          "title": "Text Fields",
+          "windowIndex": 0,
+          "identifier": "main",
+          "settable": false,
+          "path": [],
+          "actions": [
+            "AXRaise"
+          ],
+          "index": 7
+        },
+        {
+          "depth": 1,
+          "frame": {
+            "y": 112,
+            "height": 640,
+            "width": 920,
+            "x": 260
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0
+          ],
+          "actions": [],
+          "index": 8
+        },
+        {
+          "depth": 1,
+          "frame": {
+            "y": 112,
+            "height": 52,
+            "width": 920,
+            "x": 260
+          },
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1
+          ],
+          "actions": [
+            "AXShowMenu"
+          ],
+          "index": 9
+        },
+        {
+          "depth": 2,
+          "elementDescription": "Toggle Sidebar",
+          "enabled": true,
+          "frame": {
+            "y": 112,
+            "height": 52,
+            "width": 48,
+            "x": 409
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            0
+          ],
+          "actions": [
+            "AXIncrement",
+            "AXDecrement",
+            "AXDelete",
+            "AXShowMenu",
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 10
+        },
+        {
+          "depth": 3,
+          "elementDescription": "Toggle Sidebar",
+          "enabled": true,
+          "frame": {
+            "y": 126,
+            "height": 18.5,
+            "width": 29.5,
+            "x": 418.5
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            0,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 11
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 130,
+            "height": 16,
+            "width": 14,
+            "x": 279
+          },
+          "role": "close button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            2
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 12
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 130,
+            "height": 16,
+            "width": 14,
+            "x": 319
+          },
+          "role": "fullscreen button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            3
+          ],
+          "actions": [
+            "AXPress",
+            "AXZoomWindow",
+            "AXShowMenu"
+          ],
+          "index": 13
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 130,
+            "height": 16,
+            "width": 14,
+            "x": 299
+          },
+          "role": "minimize button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            4
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 14
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 112,
+            "height": 52,
+            "width": 715,
+            "x": 457
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Text Fields",
+          "path": [
+            5
+          ],
+          "actions": [],
+          "index": 15
+        }
+      ],
+      "app": "Bern Showcase",
+      "elementCount": 16,
+      "bundleIdentifier": "dev.bern.native13.input.b5bcaaec8dfd4f308a5404d853d362f2",
+      "timestamp": 814615672.155327,
+      "windowTitle": "Text Fields",
+      "pid": 65454
+    },
+    "virtualCursor": {
+      "config": {
+        "showTrail": false,
+        "style": "ghostArrow",
+        "maxAgeSeconds": 12,
+        "trailLimit": 6,
+        "mode": "hybrid"
+      },
+      "overlayHelperRunning": false,
+      "totalMarkCount": 0,
+      "desktopOverlayDriver": "same-process",
+      "desktopOverlayReady": true,
+      "desktopOverlayVisible": true,
+      "trackedAppCount": 0
+    },
+    "guidance": {
+      "frameReliability": "high",
+      "summary": "This app appears to expose a mostly native Accessibility tree. Use element-index actions first and coordinates only as fallback.",
+      "confidence": "high",
+      "knownLimitations": [
+        "Custom drawing regions can still hide controls from AX even in otherwise native apps."
+      ],
+      "profile": "native",
+      "recommendedStrategies": [
+        "Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.",
+        "Use set_value for editable controls when AXValue is settable (0 settable element(s) in the current snapshot).",
+        "Refresh the snapshot after each mutation to avoid stale paths."
+      ]
+    }
+  },
+  "imageReceipt": [
+    {
+      "mimeType": "image/png",
+      "base64Length": 75228,
+      "retained": false
+    }
+  ]
+}

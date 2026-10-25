@@ -1,0 +1,6 @@
+{
+  "step": "FocusGuard build only",
+  "timeout_seconds": 15,
+  "result": "subprocess.TimeoutExpired; no application launch or desktop lease",
+  "corrective_action": "Only compiler command now permits 90seconds; ordinary commands retain15seconds. Private unlaunched copy removed before prepare retry; same source, no product changes."
+}
