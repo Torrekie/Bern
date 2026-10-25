@@ -1,0 +1,138 @@
+{
+  "verdict": "B4_native_acquisition_kernel_identity_restore_before_stop_and_release_pass",
+  "OS": "Version 13.7.8 (Build 22H730)",
+  "source_commit": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "harness_sha_in_collector_report": "unknown",
+  "harness_identity_scope": "Local collector reports unknown; source/build/helper identity is locked by source/payload reviews, not inferred from this field.",
+  "own_identity": {
+    "pid": 74700,
+    "bundle_id": "dev.bern.picture13.b4.cc73116e334346bbaa2f93dce3a1cea4",
+    "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-local13/runtime-work/B4/Showcase.app/Contents/MacOS/Showcase",
+    "kernel_start": {
+      "tv_sec": 1792886168,
+      "tv_usec": 822274
+    }
+  },
+  "collector_pid": 74698,
+  "normal_start": {
+    "accent": "default",
+    "increase_contrast": false,
+    "reduce_motion": false,
+    "reduce_transparency": false
+  },
+  "normal_end": {
+    "increase_contrast": false,
+    "reduce_motion": false,
+    "reduce_transparency": false
+  },
+  "commands": {
+    "total": 60,
+    "zero_status": 59,
+    "nonzero_startup_sessions": [
+      {
+        "command_index_1_based": 1,
+        "status": 3
+      }
+    ],
+    "checks_passed": 14
+  },
+  "windows": {
+    "count": 9,
+    "own_window_number": 10736,
+    "outer_points": [
+      920,
+      668
+    ],
+    "actual_PNG_pixels": [
+      1840,
+      1336
+    ],
+    "all_reported_main_focused_visible": true
+  },
+  "PNG_sha256": {
+    "controls-light.png": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+    "controls-light-after-commit.png": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+    "text-light.png": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+    "buttons-light.png": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+    "inputs-light.png": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+    "query-failed-light.png": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+    "query-empty-light.png": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+    "query-recovered-light.png": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+    "images-layout-light.png": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f"
+  },
+  "packets": {
+    "picture-grid-width-74700.json": {
+      "sha256": "1ac02f4ce1e258e80d70dadb32fcd75f3b31d8996523620bffb50d653ea1bccd",
+      "bytes": 1365,
+      "pid": 74700,
+      "events": 3,
+      "end_state": "not_observed",
+      "direct_window_field_present": false
+    },
+    "picture-observer-74700.json": {
+      "sha256": "b625774f86cf95d89f458bf6d14ceb9002c0f108a3d2a59426bd1cab8b7c4509",
+      "bytes": 124063,
+      "pid": 74700,
+      "events": 21,
+      "end_state": "not_observed",
+      "labels": 21,
+      "window_numbers": [
+        10736
+      ],
+      "language": "en",
+      "display_scale": 2
+    }
+  },
+  "cleanup": {
+    "kernel_identity_equal_across_ownership_watchdog_cleanup": true,
+    "launch_date": null,
+    "original_front_identity": {
+      "pid": 9292,
+      "bundle_id": "com.apple.iphonesimulator",
+      "executable_path": "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator",
+      "kernel_start": {
+        "tv_sec": 1792825613,
+        "tv_usec": 867159
+      }
+    },
+    "restored_before_own_stop": true,
+    "own_process_still_running": false,
+    "collector_exit_code": 0,
+    "outer_cleanup_success": true
+  },
+  "desktop": {
+    "after_capture_receipt_active": true,
+    "release_receipt_active": false,
+    "final_front_pid": 9292,
+    "cursor": {
+      "x": 691.7734375,
+      "y": 444.12890625
+    },
+    "cursor_moved_distance": 0,
+    "actions_used": 0,
+    "interrupted": false
+  },
+  "helper_actual_whole_hashes_equal_A2_B3": "B4-payload-review.json",
+  "input_hashes": {
+    "work/picture-grid-width-local13/capture/result.json": "4bab4480a0ca5785417672377083690560a9ef681363d2046fe30f2e0da534e4",
+    "work/picture-grid-width-local13/capture/cleanup-helper.json": "9ed44cc651b78233d3c4fcb23ad2e324b26237b187232cb617b75f589787964e",
+    "work/picture-grid-width-local13/capture/original-front.json": "8b1d6e18ba79469e2cfa0dce41e0aabb738f601c597723ee7308fac09a006cd5",
+    "work/picture-grid-width-local13/capture/ownership.json": "fd04957ac765a691d7534d84cfe5419d3435c772e40fa5ab02f68efada11bb60",
+    "work/picture-grid-width-local13/capture.watchdog/watchdog.json": "16a8cdc6111552c71d0a0e551bf19d1d46764c03fea99de057cbd35dd6166c71",
+    "work/picture-grid-width-local13/capture.watchdog/original-front.json": "a16d829630dead9bd3b80118ddfc98afb868b6c718455755a893466dd831c4b9",
+    "work/picture-grid-width-local13/capture.watchdog/owned.json": "032d1e01d903d09c809f76b1600ac0447d5e0aac153a5d1b1186cbc0ea7b7efe",
+    "work/picture-grid-width-local13/desktop-before.json": "ac1c7afd5c4d29ffcfe5d44d889945d1cb31839a9ecf28ea8701470188b29615",
+    "work/picture-grid-width-local13/desktop-after.json": "2532d405db628ce181213550a679109ddecb3303b8eb76777b68ac69cd419d3f",
+    "work/picture-grid-width-local13/desktop-release.json": "e06a310363d513a80cdfa6936ee22e20c74fb4b24f09df479b9fbe9903076e4e",
+    "work/picture-grid-width-local13/observer-preflight.json": "a805476d0ee49ef1c787ab63327a01167e312efce06fce6453a3f05c26f7f4f2",
+    "work/picture-grid-width-local13/locks.json": "5f3b1c3d6e385e9a671373e60af44a02e24576d91d0fad560da28342aeda49e9",
+    "work/picture-grid-width-local13/B4/isolation.json": "a232eb38d3985d2327fc0ab6aaef4e84e7f25d5c5d349a8afb14b0faf2b36036",
+    "work/picture-grid-width-local13-build/build.json": "f39d8ea2b3eedec7e8a97a6a0b1fd182ad5c4dbd25e611d1da7d0df065dc3555"
+  },
+  "scope": [
+    "Records and PNG bytes only; no UI/helper execution/build/signing mutation/cleanup.",
+    "External observer directory preflight and both actual packets retained. Geometry packet PID/window bind Layout; width packet has PID only and no direct window field.",
+    "No width/column/per-label geometry interpretation or pixel/color comparison. All packets retain not_observed; no settled or synchronized claim.",
+    "Original Layout pause0.8 has no5stable chain. Generated CLI bindings do not prove physical input equivalence."
+  ]
+}

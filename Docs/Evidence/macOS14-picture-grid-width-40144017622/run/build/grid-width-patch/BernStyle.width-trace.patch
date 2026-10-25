@@ -1,0 +1,88 @@
+--- Sources/BernStyle.swift.original
++++ Sources/BernStyle.swift.width-trace
+@@ -3077,6 +3077,15 @@
+         .animation(reduce || bernForcedReduceMotion ? nil : motion?.animation,
+                    value: [CGFloat(columns), gap, rowGap])
+         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { measured in
++            let bernGridTraceOldWidth = width
++            let bernGridTraceUptime = ProcessInfo.processInfo.systemUptime
++            defer {
++                BernPictureGridWidthTrace.shared.append(
++                    oldWidth: Double(bernGridTraceOldWidth), measured: Double(measured),
++                    columns: columns, minimum: Double(minimum),
++                    gap: Double(gap), rowGap: Double(rowGap),
++                    actionEnteredUptime: bernGridTraceUptime)
++            }
+             guard measured.isFinite, measured != width else { return }
+             if width == 0 {
+                 var transaction = Transaction()
+@@ -5226,3 +5235,69 @@
+     }
+     #endif
+ }
++
++// Diagnostic width-action trace; original grid statements preserved.
++import Foundation
++
++// Logger state only; this type is not Observable and never writes product state.
++private final class BernPictureGridWidthTrace: @unchecked Sendable {
++    static let shared = BernPictureGridWidthTrace()
++    private let lock = NSLock()
++    private let output: URL?
++    private let pid = ProcessInfo.processInfo.processIdentifier
++    private var events: [[String: Any]] = []
++    private var stopped = false
++    private let eventLimit = 64
++    private let byteLimit = 64 * 1024
++
++    private init() {
++        guard let path = ProcessInfo.processInfo.environment["BERN_PICTURE_OBSERVER_OUTPUT_DIR"], !path.isEmpty else {
++            output = nil; return
++        }
++        let folder = URL(fileURLWithPath: path, isDirectory: true)
++        var isDirectory: ObjCBool = false
++        let file = folder.appendingPathComponent("picture-grid-width-\(ProcessInfo.processInfo.processIdentifier).json")
++        guard FileManager.default.fileExists(atPath: folder.path, isDirectory: &isDirectory), isDirectory.boolValue,
++              !FileManager.default.fileExists(atPath: file.path) else { output = nil; return }
++        output = file
++    }
++
++    private func scalar(_ value: Double) -> Any { value.isFinite ? value as Any : NSNull() }
++    private func bits(_ value: Double) -> String { String(format: "%016llx", value.bitPattern) }
++
++    func append(oldWidth: Double, measured: Double, columns: Int,
++                minimum: Double, gap: Double, rowGap: Double,
++                actionEnteredUptime: Double) {
++        lock.lock(); defer { lock.unlock() }
++        guard let output, !stopped else { return }
++        guard events.count < eventLimit else { stopped = true; return }
++        let event: [String: Any] = [
++            "sequence": events.count,
++            "callback_entered_uptime_seconds": actionEnteredUptime,
++            "recorded_after_action_uptime_seconds": ProcessInfo.processInfo.systemUptime,
++            "on_main_thread": Thread.isMainThread,
++            "old_stored_width": scalar(oldWidth), "old_stored_width_bits": bits(oldWidth),
++            "measured_width": scalar(measured), "measured_width_bits": bits(measured),
++            "measured_is_finite": measured.isFinite,
++            "original_guard_would_pass": measured.isFinite && measured != oldWidth,
++            "columns_captured_from_body": columns,
++            "minimum": scalar(minimum), "gap": scalar(gap), "row_gap": scalar(rowGap)
++        ]
++        let next = events + [event]
++        let packet: [String: Any] = [
++            "schema": "bern_picture_grid_width_action_v1", "pid": pid,
++            "event_limit": eventLimit, "file_byte_limit": byteLimit,
++            "event_limit_reached": next.count == eventLimit,
++            "end_state": "not_observed", "events": next
++        ]
++        do {
++            let data = try JSONSerialization.data(withJSONObject: packet, options: [.sortedKeys])
++            guard data.count <= byteLimit else { stopped = true; return }
++            try data.write(to: output, options: events.isEmpty ? [.withoutOverwriting] : [.atomic])
++            events = next
++        } catch {
++            // Keep the last successful prefix; no fallback path, unmount write or retry.
++            stopped = true
++        }
++    }
++}

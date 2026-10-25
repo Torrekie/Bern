@@ -1,0 +1,65 @@
+   Compiling bern-protocol v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-protocol)
+   Compiling bern-svg v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-svg)
+   Compiling bern-theme v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-theme)
+   Compiling bern-media v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-media)
+   Compiling bern-ir v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-ir)
+   Compiling bern-adapter-json v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-adapter-json)
+   Compiling bern-target-api v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-target-api)
+   Compiling bern-runtime v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-runtime)
+   Compiling bern-command v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-command)
+   Compiling bern-syntax v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-syntax)
+   Compiling bern-transport-ipc v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-transport-ipc)
+   Compiling bern-backend-objc v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-objc)
+   Compiling bern-compiler v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-compiler)
+   Compiling bern-backend-swiftui v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-swiftui)
+   Compiling bern-backend-compose v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-compose)
+   Compiling bern-transport-ws v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-transport-ws)
+   Compiling bern-backend-winui3 v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-winui3)
+   Compiling bern-backend-web v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-web)
+   Compiling bern-backend-gtk v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-backend-gtk)
+   Compiling bern-cli v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-cli)
+    Finished `release` profile [optimized] target(s) in 1m 05s
+     Running `target/release/bern build --manifest examples/showcase/Bern.toml --target macos_modern --release`
+  [1;32mDescribed[0m showcase-widgets 0.1.0 (1 components, sources e8fafd7388dd1616)
+   [1;32mFeatures[0m for swiftui-modern-macos (macos)
+            MediaFeature::Clip [compact] covered by media_page.bars, media_page.damaged, media_page.pattern
+            MediaFeature::Clip [expanded] covered by media_page.bars, media_page.damaged, media_page.pattern
+    [1;32mChecked[0m showcase for swiftui-modern-macos (11 components, 2 windows)
+  [1;32mGenerated[0m 20 files (20 changed) in /Users/runner/work/Bern/Bern/source/target/bern/macos_modern
+{"candidate_sha256": "f152c30b1ed4e3107c7198db2652c536ea0f5cddf81a046ecc9b0fed0ea47c10", "hook_count": 21, "original_restored_exact": true, "output": "/Users/runner/work/Bern/Bern/evidence/picture-patch"}
+BERN_PICTURE_OBSERVER_PATCHED: original target.plan follows
+     [1;32mRunning[0m Build the Rust engine and bridge
+   Compiling bern-protocol v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-protocol)
+   Compiling bern-media v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-media)
+   Compiling bern-command v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-command)
+   Compiling bern-runtime v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-runtime)
+   Compiling bern-syntax v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-syntax)
+   Compiling bern-adapter-json v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-adapter-json)
+   Compiling bern-ir v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-ir)
+   Compiling bern-macros v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-macros)
+   Compiling bern-transport-ipc v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-transport-ipc)
+   Compiling bern v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern)
+   Compiling showcase-protocol v0.1.0 (/Users/runner/work/Bern/Bern/source/examples/showcase/showcase-protocol)
+   Compiling showcase-core v0.1.0 (/Users/runner/work/Bern/Bern/source/examples/showcase/showcase-core)
+   Compiling bern-adapter-mcp v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-adapter-mcp)
+   Compiling bern-adapter-cli v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-adapter-cli)
+   Compiling bern-ffi v0.1.0 (/Users/runner/work/Bern/Bern/source/crates/bern-ffi)
+   Compiling bern-glue-showcase v0.1.0 (/Users/runner/work/Bern/Bern/source/target/bern/macos_modern/glue)
+    Finished `release` profile [optimized] target(s) in 37.02s
+     [1;32mRunning[0m List the native libraries the engine links
+   Compiling bern-glue-showcase v0.1.0 (/Users/runner/work/Bern/Bern/source/target/bern/macos_modern/glue)
+note: native artifacts to link against have been written to /Users/runner/work/Bern/Bern/source/target/bern-glue/aarch64-apple-darwin/release/libbern_app.native-libs. The order and any duplication can be significant on some platforms
+
+    Finished `release` profile [optimized] target(s) in 12.99s
+     [1;32mRunning[0m Compile the SwiftUI frontend
+     [1;32mRunning[0m Move the debug symbols out of the bundle
+     [1;32mRunning[0m Strip the symbols the dSYM keeps from the executable
+     [1;32mRunning[0m Sign the app for local use
+/Users/runner/work/Bern/Bern/source/target/bern/macos_modern/Showcase.app: replacing existing signature
+     [1;32mRunning[0m Refresh the app's icon in Finder and the Dock
+     [1;32mRunning[0m Register the app again with Launch Services
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/Showcase.app
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/bin/showcase
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/bin/showcase-mcp
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/Showcase.app.dSYM
+   [1;32mFinished[0m /Users/runner/work/Bern/Bern/source/target/bern/macos_modern/skills/showcase/SKILL.md

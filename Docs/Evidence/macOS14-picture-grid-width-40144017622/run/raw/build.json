@@ -1,0 +1,43 @@
+{
+  "app_bundle": "Showcase.app",
+  "architecture": "arm64",
+  "channels": [
+    "ipc"
+  ],
+  "color_source": "native",
+  "engine_deployment": "in-process",
+  "generator": "bern-backend-swiftui",
+  "generator_version": "0.1.0",
+  "ir_version": 8,
+  "languages": [
+    "zh-Hans",
+    "en"
+  ],
+  "media": {
+    "backend": "avfoundation",
+    "backend_version": "1",
+    "contract": 1,
+    "players": [
+      "preview"
+    ],
+    "presenter": "avplayerview",
+    "presenter_version": "1"
+  },
+  "minimum_macos": "13.0",
+  "platform": "macos",
+  "profile": "release",
+  "protocol": "showcase",
+  "protocol_fingerprint": "2490f5e67cff9fac",
+  "resources": [
+    "images/bern.png",
+    "images/hdr-gainmap.jpg",
+    "images/hdr-pq.png",
+    "images/landscape.jpg",
+    "media/aurora.mp4",
+    "media/broken.mp4",
+    "media/tides.mp4"
+  ],
+  "target": "swiftui-modern-macos",
+  "ui": "swiftui-modern",
+  "ui_bridge": "c-abi"
+}

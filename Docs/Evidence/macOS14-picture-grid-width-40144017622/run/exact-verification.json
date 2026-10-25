@@ -1,0 +1,90 @@
+{
+  "success": true,
+  "tar_sha256": "d7db5e239e86ccae5c2cdda6c6ad151bd3b06080a00299336c4d2a82aac86b0d",
+  "members": {
+    "bin/showcase": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+    "Showcase.app/Contents/Info.plist": "f9b2da17ed0bf719fe346df3a96adc8268e6f11a42800ce48011f3eb199e7395",
+    "Showcase.app/Contents/_CodeSignature/CodeResources": "bed368bd5d3412d9cc5e10bd3b0326fde9e09fe9ef6c1e3ad8affa395e91a770",
+    "Showcase.app/Contents/Resources/AppIcon.icns": "8d5ced690e3c1079453b8684010991b8a3bde25b6157337ffa8c0a4fb3ad37de",
+    "Showcase.app/Contents/MacOS/Showcase": "5e9790ef812c424f27bb91e3248c73ea451069d92d7d627d57428f8390a96765",
+    "Showcase.app/Contents/Resources/en.lproj/InfoPlist.strings": "4984e6029a9c94bcc01eb83949adce5f71a7d5c89d81e01e7feaefcad17a6ce6",
+    "Showcase.app/Contents/Resources/en.lproj/Localizable.strings": "3a7d50d44f5d6d09181dc082cabad62ffc029c6e99a24ba50b038c8a8260a077",
+    "Showcase.app/Contents/Resources/images/landscape.jpg": "d695b5334dba7db1c105a28a3ae2d4695f1d3dad03c19b4f5b1857e83a9cc209",
+    "Showcase.app/Contents/Resources/images/hdr-gainmap.jpg": "4990810200785611a2c5460be4c84011168a5e5a5426123d643a0e597fe1ac58",
+    "Showcase.app/Contents/Resources/images/bern.png": "305f11ac22ffc4e2966877f8aa646deff43fa58fe65b09b9b9491c61d94edb85",
+    "Showcase.app/Contents/Resources/images/hdr-pq.png": "96f80d2f1c06070dac29e3b7e2924a6aed8e54286bc73921f62cf75420a599ed",
+    "Showcase.app/Contents/Resources/zh-Hans.lproj/InfoPlist.strings": "e1589e92bb8b7247dec956643fab943b27d21999023e95d932ac20e98249ff33",
+    "Showcase.app/Contents/Resources/zh-Hans.lproj/Localizable.strings": "18eb07217e93a74ab5b05905b30edf7e300fefdea5eb4e1b22a74b70fa8079b1",
+    "Showcase.app/Contents/Resources/media/broken.mp4": "93ccebfb7520face20317702f46fe294500ff8e4aeade748f53443717f5e685a",
+    "Showcase.app/Contents/Resources/media/aurora.mp4": "d26f01e89dd6a31da402bbf71f2299387c1232abf7dec7a3e84577557b91c560",
+    "Showcase.app/Contents/Resources/media/tides.mp4": "145a1b5e572bd3ce16207e2b341c0eecb04b4d1e765bf72f5fe3809a24f34957"
+  },
+  "commands": [
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-run/exact/Showcase.app"
+      ],
+      "status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-run/exact/bin/showcase"
+      ],
+      "status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lipo",
+        "-archs",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-run/exact/Showcase.app/Contents/MacOS/Showcase"
+      ],
+      "status": 0,
+      "stdout": "arm64\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-run/exact/Showcase.app/Contents/MacOS/Showcase"
+      ],
+      "status": 0,
+      "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-run/exact/Showcase.app/Contents/MacOS/Showcase:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 26.2\n   ntools 1\n     tool LD\n  version 1230.1\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lipo",
+        "-archs",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-run/exact/bin/showcase"
+      ],
+      "status": 0,
+      "stdout": "arm64\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-run/exact/bin/showcase"
+      ],
+      "status": 0,
+      "stdout": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-run/exact/bin/showcase:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform MACOS\n    minos 13.0\n      sdk 26.2\n   ntools 1\n     tool LD\n  version 1230.1\n",
+      "stderr": ""
+    }
+  ],
+  "gui_entitlement_bytes": 0
+}

@@ -1,0 +1,100 @@
+{
+  "binaries": {
+    "Showcase.app/Contents/MacOS/Showcase": {
+      "bytes": 3790432,
+      "sha256": "5e9790ef812c424f27bb91e3248c73ea451069d92d7d627d57428f8390a96765"
+    },
+    "bin/showcase": {
+      "bytes": 898336,
+      "sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170"
+    }
+  },
+  "build": {
+    "app_bundle": "Showcase.app",
+    "architecture": "arm64",
+    "channels": [
+      "ipc"
+    ],
+    "color_source": "native",
+    "engine_deployment": "in-process",
+    "generator": "bern-backend-swiftui",
+    "generator_version": "0.1.0",
+    "ir_version": 8,
+    "languages": [
+      "zh-Hans",
+      "en"
+    ],
+    "media": {
+      "backend": "avfoundation",
+      "backend_version": "1",
+      "contract": 1,
+      "players": [
+        "preview"
+      ],
+      "presenter": "avplayerview",
+      "presenter_version": "1"
+    },
+    "minimum_macos": "13.0",
+    "platform": "macos",
+    "profile": "release",
+    "protocol": "showcase",
+    "protocol_fingerprint": "2490f5e67cff9fac",
+    "resources": [
+      "images/bern.png",
+      "images/hdr-gainmap.jpg",
+      "images/hdr-pq.png",
+      "images/landscape.jpg",
+      "media/aurora.mp4",
+      "media/broken.mp4",
+      "media/tides.mp4"
+    ],
+    "target": "swiftui-modern-macos",
+    "ui": "swiftui-modern",
+    "ui_bridge": "c-abi"
+  },
+  "instrumentation": {
+    "compiled_generated_bytes": 106494,
+    "compiled_generated_sha256": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+    "generated_measured_sha256": "f152c30b1ed4e3107c7198db2652c536ea0f5cddf81a046ecc9b0fed0ea47c10",
+    "generated_original_sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083",
+    "hook_count": 21,
+    "observer_helper_sha256": "14532e7960a7138ae3be48b26fe08ecb0f0d6b347e6cd7faa76be08eb01709da",
+    "scope": "21 appended background modifiers plus file-scope observer; original Scene/children preserved",
+    "success": true
+  },
+  "log": {
+    "full_bytes": 5981,
+    "full_sha256": "5e384482e2e6ababe647bb72f5a290a130191abc7c934a5acc89739b8ab010f6",
+    "truncated": false
+  },
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "success": true,
+  "width_instrumentation": {
+    "generated_21point_sha256": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+    "packet_schemas": [
+      "bern_picture_public_geometry_v1",
+      "bern_picture_grid_width_action_v1"
+    ],
+    "style_compiled_bytes": 209558,
+    "style_compiled_sha256": "09d8f99a26a73498e7ef4d7d597eca646be751f32b4fe99f63482b944a81987f",
+    "style_original_sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f",
+    "success": true,
+    "width_patch": {
+      "action_block_match_count": 1,
+      "adaptive_grid_anchor_count": 1,
+      "generated_21point_sha256_after": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+      "generated_21point_sha256_before": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+      "helper_bytes": 3234,
+      "helper_sha256": "027c778fe272cf388e38ea0d2d5cab5089fa1d51b7b50768dca33da67227311b",
+      "original_action_line": 3079,
+      "original_bytes": 205764,
+      "original_guard_transaction_write_bytes_unchanged": true,
+      "original_sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f",
+      "patched_bytes": 209558,
+      "patched_sha256": "09d8f99a26a73498e7ef4d7d597eca646be751f32b4fe99f63482b944a81987f",
+      "removing_only_insertion_and_appended_helper_restores_original": true,
+      "scope": "one action-entry capture/defer plus file-scope logger; original grid body unchanged",
+      "written_style_sha256": "09d8f99a26a73498e7ef4d7d597eca646be751f32b4fe99f63482b944a81987f"
+    }
+  }
+}

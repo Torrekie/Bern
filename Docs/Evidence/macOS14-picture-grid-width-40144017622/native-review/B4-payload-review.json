@@ -1,0 +1,86 @@
+{
+  "verdict": "actual_B4_private_derivation_sections_signatures_helpers_pass",
+  "private_bundle_id": "dev.bern.picture13.b4.cc73116e334346bbaa2f93dce3a1cea4",
+  "original_GUI_sha256": "5e9790ef812c424f27bb91e3248c73ea451069d92d7d627d57428f8390a96765",
+  "private_GUI_sha256": "1eaf93e377d423490fdd84c04938449c5899bbc52cc5594d9691831b2d7dda35",
+  "private_GUI_bytes": 3790464,
+  "section_count": 40,
+  "all_sections_and_normalized_non_signature_equal": true,
+  "normalized_non_signature_sha256": "4b44a6fdc21f8f3dc45cbdfabeee5134089e309dcb7535b5733b1a640f0b134d",
+  "only_changed_members": [
+    "Contents/Info.plist",
+    "Contents/MacOS/Showcase"
+  ],
+  "only_changed_plist_key": "CFBundleIdentifier",
+  "App_arch": "arm64",
+  "App_build": {
+    "minos": "13.0",
+    "sdk": "26.2"
+  },
+  "CLI_sha256": "963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170",
+  "actual_readonly_signature_checks": [
+    {
+      "argv": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--strict",
+        "--deep",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-local13/runtime-work/B4/Showcase.app"
+      ],
+      "status": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/showcase"
+      ],
+      "status": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-local13-build/Collector"
+      ],
+      "status": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/picture-grid-width-local13-build/FocusGuard"
+      ],
+      "status": 0,
+      "output": ""
+    }
+  ],
+  "actual_helpers_match_A2_B3": {
+    "Collector": {
+      "sha256": "c3e3545585e168d50f7d96f15f76f8aa80174a061fcfa9c82ae806d8c4bba2af",
+      "bytes": 276072,
+      "arch": "arm64",
+      "build": {
+        "minos": "13.0",
+        "sdk": "14.2"
+      }
+    },
+    "FocusGuard": {
+      "sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+      "bytes": 140680,
+      "arch": "arm64",
+      "build": {
+        "minos": "13.0",
+        "sdk": "14.2"
+      }
+    }
+  },
+  "isolation_receipt_sha256": "a232eb38d3985d2327fc0ab6aaef4e84e7f25d5c5d349a8afb14b0faf2b36036",
+  "scope": "Actual B4/original/CLI/helpers read before root cleanup; no UI/re-sign/compile/deletion. Full GUI bytes differ as expected after private signing."
+}

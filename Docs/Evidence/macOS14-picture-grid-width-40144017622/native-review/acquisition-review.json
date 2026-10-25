@@ -1,0 +1,127 @@
+{
+  "verdict": "new_cohort_API_bound_download_receipts_runner_chain_native_records_consistent",
+  "CI_run": 40144017622,
+  "download_receipts": [
+    {
+      "artifact_id": 12579124961,
+      "name": "picture-grid-width-build",
+      "outer_zip_bytes": 2588206,
+      "API_and_actual_download_receipt_digest": "sha256:0510273b85e8bd060eced02ac5ef65cf1b1e2ca71645af747755a7be026d57e6",
+      "API_receipt_bound": true,
+      "runner_upload_digest_matches": true,
+      "capture_runner_expected_and_download_digest_match": true,
+      "extracted_regular_files_observed_before_root_cleanup": 19,
+      "outer_ZIP_already_deleted": true,
+      "reviewer_outer_ZIP_rehash": false
+    },
+    {
+      "artifact_id": 12579374714,
+      "name": "picture-grid-width-on14",
+      "outer_zip_bytes": 1029815,
+      "API_and_actual_download_receipt_digest": "sha256:c3ce065dce17ed36f57018c4fdef37e972d3edb72283cf2736852d38d3b4ef4c",
+      "API_receipt_bound": true,
+      "runner_upload_digest_matches": true,
+      "capture_runner_expected_and_download_digest_match": null,
+      "extracted_regular_files_observed_before_root_cleanup": 185,
+      "outer_ZIP_already_deleted": true,
+      "reviewer_outer_ZIP_rehash": false
+    }
+  ],
+  "CI_jobs": [
+    {
+      "id": 121021445468,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-24T23:45:28Z",
+      "active_steps": []
+    },
+    {
+      "id": 121022131750,
+      "name": "capture",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-24T23:49:02Z",
+      "active_steps": []
+    }
+  ],
+  "inner_tar_independent_verification": "payload-review.json; actual retained16member tar was read and hashed before root cleanup",
+  "copied_build_evidence_byte_equal": {
+    "environment.txt": "22a5c93198c235b1da915c49f518c9742294d896ffec424b8cb7f7eff2d8af7c",
+    "binary.txt": "93f76e163b1ae2059cfc6fbb7ad2970f49c6ffe48373d74cd1108f11253c5690",
+    "build.json": "e7e12bc06672384c3d75e7b6e669b687c004d97a769e479f9592ce2de5c2bff5",
+    "harness-inputs.sha256": "7c6fcf392f7eddb153270a60be0c4516b96f3a58e08337916edfb4ecdc349bd6",
+    "showcase-grid-width.tar.gz.sha256": "791a70409b55687b069dfc94c6472f62ba3acf25cf58fdb9f5f837a222e24de5"
+  },
+  "remote14": {
+    "OS": "Version 14.8.9 (Build 23J631)",
+    "normal_start": {
+      "accent": "default",
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "normal_end_recorded": false,
+    "commands": 80,
+    "zero_status": 78,
+    "nonzero_startup_sessions_only": [
+      1,
+      72
+    ],
+    "selected_PNG_count": 13,
+    "actual_PNG_sha256_matches_gate14": {
+      "buttons-light.png": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9",
+      "controls-dark.png": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e",
+      "controls-light-after-commit.png": "f8bc92c12960dc94bffe727aaf3f7363e0a128a04eedda7567efdbaf28f3373a",
+      "controls-light.png": "49479af56bfba53146b3f50d35929dcdbfb849fb0e4b7e5c5fc2ffdd8bb95929",
+      "images-layout-light.png": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780",
+      "inputs-light.png": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519",
+      "query-empty-light.png": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef",
+      "query-failed-light.png": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243",
+      "query-recovered-light.png": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5",
+      "text-light.png": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572",
+      "video-failed-light.png": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9",
+      "video-ready-light.png": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5",
+      "video-recovered-light.png": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5"
+    },
+    "packets": {
+      "picture-grid-width-1532.json": {
+        "sha256": "ff56bff223c0daf89c341d862c76735e33cfcfea9bb0a7e1d125ccc9e2f76624",
+        "bytes": 1364,
+        "pid": 1532,
+        "events": 3,
+        "end_state": "not_observed",
+        "direct_window_field_present": false
+      },
+      "picture-observer-1532.json": {
+        "sha256": "857211cf3dbfde8d218cb27c51cf6a1d31df03a0b3ef9d0d4147f219731fd25e",
+        "bytes": 286408,
+        "pid": 1532,
+        "events": 49,
+        "end_state": "not_observed",
+        "labels": 21,
+        "window_numbers": [
+          25
+        ]
+      }
+    }
+  },
+  "input_hashes": {
+    "work/picture-grid-width-run/build.download.json": "afe5bececc49db0682d42fd1ac3f154a3fa6f93696868b1a02a1e1f3442039b7",
+    "work/picture-grid-width-run/raw.download.json": "968596171a092caeb2140b4906c26ae1e8f1cef00fab1084fdd9f152b3feceaf",
+    "work/picture-grid-width-run/status-2.json": "a930958e8ac7c00bf7d634f2aad4ca4d0619582d592edf82b3690e54508ddfc2",
+    "work/picture-grid-width-run/checkpoint.json": "84382a2f5d7ed098bd0d169e7d51194ee40f41764784f554fc4444a4704798fc",
+    "work/picture-grid-width-run/build-job.log": "8d690e7b1de24717deca731d91299cd00b2a75961d19757cb5a50237a88ba3f5",
+    "work/picture-grid-width-run/capture-job.log": "162e65089dd8753f7435f110079b4919cd0d479f8aabd725c745a0d0954572d2",
+    "work/picture-grid-width-run/gate14.json": "d9002c8da6c682c34d7b64ed53fef072c54be41fa610817b1c88ebcfe23bcae5",
+    "work/picture-grid-width-run/raw/result.json": "273d471fdd317d0b37983dd7c0139c8d723a3cbebef08a6fe83ee1ba4d5d1491",
+    "work/picture-grid-width-run/raw/environment.txt": "011c879d65715138543d85048480426497028b3df11b852422d1e3ac4034abad",
+    "work/picture-grid-width-run/exact-verification.json": "1e017338eff680435d9176e5768b8aa6969d911270bf7238b38310bd3b8de47e"
+  },
+  "scope": [
+    "Deleted outer ZIPs were not independently reread. Actual-byte/API-bound download receipts were cross-checked with runner uploads and build-artifact runner download. New cohort only; no older outer digest backfill.",
+    "File counts19/185 were directly observed before parent cleanup. Parent retired the already-read inner tar during finalization; current build18 is expected. A checker stopped before writing when its later present-file assertion met that cleanup; this is not a corrupt artifact or runtime failure.",
+    "No new UI/CI/download/extraction/signing or pixel/geometry algorithm. Selected13PNGs is a macOS14 file count.",
+    "Only initial sessions calls use allowFailure in original collector. Other78commands status0. Original Layout pause0.8 has no5stable chain. Packet end_state remains not_observed."
+  ]
+}

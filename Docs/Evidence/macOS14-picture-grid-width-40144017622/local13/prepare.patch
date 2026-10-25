@@ -1,0 +1,22 @@
+--- previous-preparer
++++ width-B4-preparer
+@@ -4,8 +4,8 @@
+ prior=repo/'Docs/Evidence/macOS13-toolbar-title-host-f6/capture-pair/run-pair.py'
+ spec=importlib.util.spec_from_file_location('previous_macho_receipt',prior);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+-cli=base/'work/picture-scene-observed14/exact/bin/showcase';assert sha(cli)=='963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170'
+-inputs={'A':(base/'outputs/macOS13/Showcase.app','cc267abcafeec30112c2796b3c0ea7699a6836a0f09a1caa73f66ea48bfa1c1b'), 'B':(base/'work/picture-scene-observed14/exact/Showcase.app','c1d27a0435bd145f08a098adaaf22c6718c1192da15367456afb7ff151c4c12c')}
++cli=base/'outputs/macOS13/bin/showcase';assert sha(cli)=='963eb1f1fc5ab553ba8f46286c19746f65cdbb4cec9d255755f7d814818e3170'
++inputs={'B4':(base/'work/picture-grid-width-run/exact/Showcase.app','5e9790ef812c424f27bb91e3248c73ea451069d92d7d627d57428f8390a96765')}
+ assert not (out/'runtime-work').exists()and not (out/'locks.json').exists()
+ commands=[];groups={}
+ def run(args,log):
+@@ -33,7 +33,7 @@
+   assert before['sections']==after_machos[name]['sections']
+   assert before['signature_storage_sizes_normalized_sha256']==after_machos[name]['signature_storage_sizes_normalized_sha256']
+  assert m.members(original)==before_members and sha(original/'Contents/MacOS/Showcase')==expected
+- receipt={'variant':side,'source_sha':'9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0','observer_added':side=='B','original_app':str(original),'private_app':str(app),'private_bundle_id':identifier,'original_gui_sha256':expected,'private_gui_sha256':sha(app/'Contents/MacOS/Showcase'),'changed_members':changed,'original_members':before_members,'private_members':after_members,'original_machos':before_machos,'private_machos':after_machos,'sections_and_signature_storage_sizes_normalized_equal':True,'whole_GUI_bytes_equal':False,'originals_unchanged':True,'cli':str(cli),'cli_sha256':sha(cli),'preferences_path':str(prefs),'saved_state_path':str(state),'compiled_original_entitlements':'Original CI and delivered apps have no entitlements; prior raw extraction0 bytes retained separately.'}
++ receipt={'variant':side,'source_sha':'9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0','observer_added':side.startswith('B'),'original_app':str(original),'private_app':str(app),'private_bundle_id':identifier,'original_gui_sha256':expected,'private_gui_sha256':sha(app/'Contents/MacOS/Showcase'),'changed_members':changed,'original_members':before_members,'private_members':after_members,'original_machos':before_machos,'private_machos':after_machos,'sections_and_signature_storage_sizes_normalized_equal':True,'whole_GUI_bytes_equal':False,'originals_unchanged':True,'cli':str(cli),'cli_sha256':sha(cli),'preferences_path':str(prefs),'saved_state_path':str(state),'compiled_original_entitlements':'Original CI and delivered apps have no entitlements; prior raw extraction0 bytes retained separately.'}
+  (evidence/'isolation.json').write_text(json.dumps(receipt,indent=2)+'\n');groups[side]={'app':str(app),'cli':str(cli),'bundle_id':identifier,'receipt':str(evidence/'isolation.json')}
+ (out/'locks.json').write_text(json.dumps({'schema':1,'groups':groups,'macho_helper_source':str(prior),'macho_helper_source_sha256':sha(prior),'commands':commands,'scope':'Preparation only; no UI launched. Private signatures/IDs differ; Mach-O sections and signature-size-normalized non-signature bytes preserved. Original App/CLI unchanged. A/B share the exact unchanged CI CLI.'},indent=2)+'\n')
+ print('Prepared A/B private identities; all Mach-O sections/normalized bytes and original App/CLI hashes preserved; UI not launched')

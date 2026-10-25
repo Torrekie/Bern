@@ -1,0 +1,525 @@
+{
+  "verdict": "actual14_selected13PNG_125_147_and_21point_plus_width_prefix_gates_pass",
+  "run_id": 40144017622,
+  "harness_sha": "7dddc256ccdc006d746766af6ef3d7f68d887547",
+  "result_sha256": "273d471fdd317d0b37983dd7c0139c8d723a3cbebef08a6fe83ee1ba4d5d1491",
+  "normal_three_flags_false": true,
+  "commands": 80,
+  "startup_sessions_status3_indices": [
+    1,
+    72
+  ],
+  "remaining78_commands_zero": true,
+  "checks18_all_pass": true,
+  "PNG_originals": [
+    {
+      "name": "controls-light.png",
+      "sha256": "49479af56bfba53146b3f50d35929dcdbfb849fb0e4b7e5c5fc2ffdd8bb95929",
+      "bytes": 85729,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "controls-light-after-commit.png",
+      "sha256": "f8bc92c12960dc94bffe727aaf3f7363e0a128a04eedda7567efdbaf28f3373a",
+      "bytes": 85326,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "text-light.png",
+      "sha256": "86b0eaa59080adc4423663852af1f199cfa934f42cd2174d40ff11ed8321f572",
+      "bytes": 57046,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "buttons-light.png",
+      "sha256": "79ebc470a49d0f49a7c84beeefde57fc9d11138841a2bf579e8eae45f949b0e9",
+      "bytes": 58374,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "inputs-light.png",
+      "sha256": "201d8ffc94f4d931e67d64891923de8ef6a79cfa99cf2a9d78f4111b92188519",
+      "bytes": 42905,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "query-failed-light.png",
+      "sha256": "4e345a06eee07f9759e6cf63db1ce25c476272dc7d9c1cd3acd8771a07520243",
+      "bytes": 57561,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "query-empty-light.png",
+      "sha256": "1ea7461455a0dcc29753f57d6239495d0cee584e3838829704505540a5f981ef",
+      "bytes": 52401,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "query-recovered-light.png",
+      "sha256": "492010001ecb5b132a9978fc9cc63e5568a9d7c7f47e25076b3d1daf32833bb5",
+      "bytes": 57882,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "images-layout-light.png",
+      "sha256": "dfe053e307e033d0a4e583a88d34a4b60f428318f63e1954a500f14bb2016780",
+      "bytes": 172517,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "video-ready-light.png",
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5",
+      "bytes": 136932,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "video-failed-light.png",
+      "sha256": "f595e0874d2da82106f6ae87f8fa56f1084348c2d464776f7de4e6f5316626c9",
+      "bytes": 58010,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "video-recovered-light.png",
+      "sha256": "0a6f625611e2b977f56750798b560119365e9029b34d0b6e015a89402e24f7a5",
+      "bytes": 136932,
+      "old_observed_and_control_exact": true
+    },
+    {
+      "name": "controls-dark.png",
+      "sha256": "a38e62012c2eb92aa14f4c8e516e383576882aa7110f9e51ae2486a95f4a9a7e",
+      "bytes": 88154,
+      "old_observed_and_control_exact": true
+    }
+  ],
+  "card_geometry_from_exact_original_baseline": {
+    "images_half_open_points": [
+      161,
+      98,
+      900,
+      223
+    ],
+    "images_height": 125,
+    "HDR_half_open_points": [
+      161,
+      321,
+      900,
+      468
+    ],
+    "HDR_height": 147,
+    "new_threshold_or_resampling": false
+  },
+  "artifact_download_receipts": [
+    {
+      "path": "work/picture-grid-width-run/build.download.json",
+      "sha256": "afe5bececc49db0682d42fd1ac3f154a3fa6f93696868b1a02a1e1f3442039b7",
+      "artifact": {
+        "id": 12579124961,
+        "name": "picture-grid-width-build",
+        "size_in_bytes": 2588206,
+        "digest": "sha256:0510273b85e8bd060eced02ac5ef65cf1b1e2ca71645af747755a7be026d57e6",
+        "created_at": "2026-10-24T23:48:56Z",
+        "expires_at": "2026-10-27T23:48:55Z",
+        "workflow_run": {
+          "id": 40144017622,
+          "repository_id": 1430931787,
+          "head_repository_id": 1430931787,
+          "head_branch": "master",
+          "head_sha": "7dddc256ccdc006d746766af6ef3d7f68d887547"
+        }
+      },
+      "outer_zip_bytes": 2588206,
+      "outer_zip_digest": "sha256:0510273b85e8bd060eced02ac5ef65cf1b1e2ca71645af747755a7be026d57e6",
+      "api_digest_verified_in_actual_root_receipt": true,
+      "server_upload_log_digest_matches": true,
+      "reviewer_rehashed_deleted_ZIP": false
+    },
+    {
+      "path": "work/picture-grid-width-run/raw.download.json",
+      "sha256": "968596171a092caeb2140b4906c26ae1e8f1cef00fab1084fdd9f152b3feceaf",
+      "artifact": {
+        "id": 12579374714,
+        "name": "picture-grid-width-on14",
+        "size_in_bytes": 1029815,
+        "digest": "sha256:c3ce065dce17ed36f57018c4fdef37e972d3edb72283cf2736852d38d3b4ef4c",
+        "created_at": "2026-10-24T23:49:39Z",
+        "expires_at": "2026-10-27T23:49:37Z",
+        "workflow_run": {
+          "id": 40144017622,
+          "repository_id": 1430931787,
+          "head_repository_id": 1430931787,
+          "head_branch": "master",
+          "head_sha": "7dddc256ccdc006d746766af6ef3d7f68d887547"
+        }
+      },
+      "outer_zip_bytes": 1029815,
+      "outer_zip_digest": "sha256:c3ce065dce17ed36f57018c4fdef37e972d3edb72283cf2736852d38d3b4ef4c",
+      "api_digest_verified_in_actual_root_receipt": true,
+      "server_upload_log_digest_matches": true,
+      "reviewer_rehashed_deleted_ZIP": false
+    }
+  ],
+  "geometry_packet": {
+    "path": "work/picture-grid-width-run/raw/observer/picture-observer-1532.json",
+    "sha256": "857211cf3dbfde8d218cb27c51cf6a1d31df03a0b3ef9d0d4147f219731fd25e",
+    "bytes": 286408,
+    "events": 49,
+    "labels": 21,
+    "finite_rectangles_checked": 2827,
+    "callbacks": {
+      "viewDidMoveToWindow": 21,
+      "setFrameOrigin": 20,
+      "updateNSView": 8
+    },
+    "end_state": "not_observed",
+    "per_label_callback_geometry_matches_old": true,
+    "global_sequence_changes_from_old": [
+      {
+        "sequence": 42,
+        "new_label": "hdr-pq-column",
+        "old_label": "hdr-gainmap-column",
+        "callback": "updateNSView"
+      },
+      {
+        "sequence": 43,
+        "new_label": "hdr-pq-caption",
+        "old_label": "hdr-gainmap-caption",
+        "callback": "updateNSView"
+      },
+      {
+        "sequence": 44,
+        "new_label": "hdr-pq-image",
+        "old_label": "hdr-gainmap-image",
+        "callback": "updateNSView"
+      },
+      {
+        "sequence": 45,
+        "new_label": "hdr-gainmap-column",
+        "old_label": "hdr-pq-column",
+        "callback": "updateNSView"
+      },
+      {
+        "sequence": 46,
+        "new_label": "hdr-gainmap-caption",
+        "old_label": "hdr-pq-caption",
+        "callback": "updateNSView"
+      },
+      {
+        "sequence": 47,
+        "new_label": "hdr-gainmap-image",
+        "old_label": "hdr-pq-image",
+        "callback": "updateNSView"
+      }
+    ],
+    "environment": {
+      "color_scheme": "light",
+      "contrast": "standard",
+      "control_size": "regular",
+      "default_min_list_row_height": 24,
+      "display_scale": 1,
+      "dynamic_type_size": "large",
+      "font": "inherited nil",
+      "layout_direction": "leftToRight",
+      "locale": "en",
+      "size_category": "large"
+    },
+    "probe_size_match_counts": {
+      "True": 48,
+      "False": 1
+    }
+  },
+  "width_packet": {
+    "path": "work/picture-grid-width-run/raw/observer/picture-grid-width-1532.json",
+    "sha256": "ff56bff223c0daf89c341d862c76735e33cfcfea9bb0a7e1d125ccc9e2f76624",
+    "bytes": 1364,
+    "events": 3,
+    "pid": 1532,
+    "no_written_cap": true,
+    "end_state": "not_observed",
+    "rows": [
+      {
+        "callback_entered_uptime_seconds": 120.82004108333334,
+        "columns_captured_from_body": 1,
+        "gap": 12,
+        "measured_is_finite": true,
+        "measured_width": 719,
+        "measured_width_bits": "4086780000000000",
+        "minimum": 140,
+        "old_stored_width": 0,
+        "old_stored_width_bits": "0000000000000000",
+        "on_main_thread": true,
+        "original_guard_would_pass": true,
+        "recorded_after_action_uptime_seconds": 120.82125450000001,
+        "row_gap": 12,
+        "sequence": 0,
+        "entry_ms_from_first_width_entry": 0.0,
+        "pre_IO_record_ms_from_first_width_entry": 1.2134166666726287,
+        "entry_to_pre_IO_record_ms": 1.2134166666726287,
+        "columns_derived_from_measured_not_observed": 4
+      },
+      {
+        "callback_entered_uptime_seconds": 120.82239233333334,
+        "columns_captured_from_body": 1,
+        "gap": 16,
+        "measured_is_finite": true,
+        "measured_width": 719,
+        "measured_width_bits": "4086780000000000",
+        "minimum": 192,
+        "old_stored_width": 0,
+        "old_stored_width_bits": "0000000000000000",
+        "on_main_thread": true,
+        "original_guard_would_pass": true,
+        "recorded_after_action_uptime_seconds": 120.82242108333334,
+        "row_gap": 16,
+        "sequence": 1,
+        "entry_ms_from_first_width_entry": 2.3512500000038017,
+        "pre_IO_record_ms_from_first_width_entry": 2.380000000002269,
+        "entry_to_pre_IO_record_ms": 0.0287499999984675,
+        "columns_derived_from_measured_not_observed": 3
+      },
+      {
+        "callback_entered_uptime_seconds": 120.82307041666667,
+        "columns_captured_from_body": 1,
+        "gap": 16,
+        "measured_is_finite": true,
+        "measured_width": 719,
+        "measured_width_bits": "4086780000000000",
+        "minimum": 120,
+        "old_stored_width": 0,
+        "old_stored_width_bits": "0000000000000000",
+        "on_main_thread": true,
+        "original_guard_would_pass": true,
+        "recorded_after_action_uptime_seconds": 120.82308375000001,
+        "row_gap": 16,
+        "sequence": 2,
+        "entry_ms_from_first_width_entry": 3.0293333333304417,
+        "pre_IO_record_ms_from_first_width_entry": 3.042666666672744,
+        "entry_to_pre_IO_record_ms": 0.013333333342302467,
+        "columns_derived_from_measured_not_observed": 5
+      }
+    ]
+  },
+  "geometry_timeline_relative_to_first_width_entry": [
+    {
+      "sequence": 0,
+      "label": "form-root",
+      "callback": "viewDidMoveToWindow",
+      "uptime_seconds": 120.86713325000001,
+      "ms_from_first_width_entry": 47.0921666666726,
+      "resolved_size": {
+        "height": 616,
+        "width": 779
+      },
+      "swiftui_global_frame": [
+        141,
+        52,
+        779,
+        616
+      ],
+      "native_probe_window_base": [
+        141,
+        0,
+        779,
+        616
+      ],
+      "nearest_graphics_ancestor_window_base": [
+        141,
+        0,
+        779,
+        616
+      ],
+      "probe_size_equals_resolved": true
+    },
+    {
+      "sequence": 1,
+      "label": "images-grid",
+      "callback": "viewDidMoveToWindow",
+      "uptime_seconds": 120.87341383333334,
+      "ms_from_first_width_entry": 53.372750000008296,
+      "resolved_size": {
+        "height": 105,
+        "width": 719
+      },
+      "swiftui_global_frame": [
+        171,
+        108,
+        719,
+        105
+      ],
+      "native_probe_window_base": [
+        171,
+        507,
+        719,
+        105
+      ],
+      "nearest_graphics_ancestor_window_base": [
+        161,
+        497,
+        739,
+        125
+      ],
+      "probe_size_equals_resolved": true
+    },
+    {
+      "sequence": 14,
+      "label": "hdr-grid",
+      "callback": "viewDidMoveToWindow",
+      "uptime_seconds": 120.91699366666667,
+      "ms_from_first_width_entry": 96.95258333333356,
+      "resolved_size": {
+        "height": 127,
+        "width": 719
+      },
+      "swiftui_global_frame": [
+        171,
+        331,
+        719,
+        127
+      ],
+      "native_probe_window_base": [
+        171,
+        262,
+        719,
+        127
+      ],
+      "nearest_graphics_ancestor_window_base": [
+        161,
+        252,
+        739,
+        147
+      ],
+      "probe_size_equals_resolved": true
+    },
+    {
+      "sequence": 21,
+      "label": "images-grid",
+      "callback": "setFrameOrigin",
+      "uptime_seconds": 120.96725887500001,
+      "ms_from_first_width_entry": 147.2177916666766,
+      "resolved_size": {
+        "height": 105,
+        "width": 719
+      },
+      "swiftui_global_frame": [
+        171,
+        108,
+        719,
+        105
+      ],
+      "native_probe_window_base": [
+        171,
+        455,
+        719,
+        105
+      ],
+      "nearest_graphics_ancestor_window_base": [
+        161,
+        445,
+        739,
+        125
+      ],
+      "probe_size_equals_resolved": true
+    },
+    {
+      "sequence": 34,
+      "label": "hdr-grid",
+      "callback": "setFrameOrigin",
+      "uptime_seconds": 121.11024270833335,
+      "ms_from_first_width_entry": 290.2016250000088,
+      "resolved_size": {
+        "height": 127,
+        "width": 719
+      },
+      "swiftui_global_frame": [
+        171,
+        331,
+        719,
+        127
+      ],
+      "native_probe_window_base": [
+        171,
+        210,
+        719,
+        127
+      ],
+      "nearest_graphics_ancestor_window_base": [
+        161,
+        200,
+        739,
+        147
+      ],
+      "probe_size_equals_resolved": true
+    },
+    {
+      "sequence": 41,
+      "label": "hdr-grid",
+      "callback": "updateNSView",
+      "uptime_seconds": 122.79208208333334,
+      "ms_from_first_width_entry": 1972.0410000000043,
+      "resolved_size": {
+        "height": 127,
+        "width": 719
+      },
+      "swiftui_global_frame": [
+        171,
+        335,
+        719,
+        127
+      ],
+      "native_probe_window_base": [
+        171,
+        210,
+        719,
+        127
+      ],
+      "nearest_graphics_ancestor_window_base": [
+        161,
+        200,
+        739,
+        147
+      ],
+      "probe_size_equals_resolved": true
+    },
+    {
+      "sequence": 48,
+      "label": "images-grid",
+      "callback": "updateNSView",
+      "uptime_seconds": 122.94958545833335,
+      "ms_from_first_width_entry": 2129.544375000009,
+      "resolved_size": {
+        "height": 109,
+        "width": 719
+      },
+      "swiftui_global_frame": [
+        171,
+        108,
+        719,
+        109
+      ],
+      "native_probe_window_base": [
+        171,
+        455,
+        719,
+        105
+      ],
+      "nearest_graphics_ancestor_window_base": [
+        161,
+        445,
+        739,
+        125
+      ],
+      "probe_size_equals_resolved": false
+    }
+  ],
+  "last_width_pre_IO_record_to_first_geometry_ms": 44.04949999999985,
+  "interpretation_limits": [
+    "Three records are one bounded successful serialized prefix. Configurations hint at three source callsites; no instance/remount identity or terminal coverage is available.",
+    "Body-captured columns1 are consistent with initialwidth0, while measured719 predicts4/3/5. Those predictions are derived, not observed rendered column counts or evidence of a later body evaluation.",
+    "All width pre-IO record timestamps precede all retained geometry attachment callbacks. This bounds observer callback ordering in this process, not when SwiftUI performed its internal layout, committed a presentation frame, or captured the PNG.",
+    "Entry-to-record intervals include original state action, singleton setup/lock and scheduling before serialization. They are not complete I/O cost, closure-return latency, animation timing or a cross-host responsiveness comparison.",
+    "New and old14 per-label/callback geometry states are equal, but late Gainmap/PQ update groups switch global order. The13PNG files remain byte-identical; this ordering difference alone cannot identify the card-height cause.",
+    "The14 first-grid resolved105→109/native105 mismatch persists. Last HDR global335 does not turn native higher geometry into equivalence. Both packets retain end_state not_observed and no synchronized terminal/presentation state.",
+    "Outer ZIP verification is grounded in actual root download receipts cross-checked against server upload logs. DeletedZIP bytes were not independently rehashed by this reviewer. Native binary/source audit belongs to the separate reviewer.",
+    "No13 width-trace result has been reviewed here yet. Equal or different future width histories cannot by themselves establish a unique root cause."
+  ],
+  "reviewer_scope": "Offline original hashes/JSON/logs only. No UI, CI, compiler, source changes, new pixel thresholds or large copy."
+}

@@ -1,0 +1,32 @@
+{
+  "verdict": "no_remaining_blocking_static_finding_after_destination_alias_fix",
+  "source": "work/github-ci.py",
+  "source_sha256": "ae29c7de03fb3197e5107986c19ab68b39975dcd0ab9d63b6f3b2202015bbeb7",
+  "source_bytes": 5495,
+  "previous_source_sha256": "52d183af039474d51c728ba2a896049ecbcf8d9f3d34347d8d2343803a67719b",
+  "review_mode": "AST parse, source/hash and control-flow review only; script not imported/executed. No auth/token acquisition, network, UI, cache or root-tool modification.",
+  "resolved_finding": {
+    "before": "Raw ZIP-name uniqueness permits a/b versus a//b or a/./b to overwrite the same destination.",
+    "after": "Path-normalized destination keys are NFC-normalized and casefolded; every key must be unique before extractall.",
+    "closed": true
+  },
+  "checks": {
+    "download_identity": "Exactly one nonexpired named API artifact; API record/run retained in sibling receipt.",
+    "digest_before_use": "Actual downloaded ZIP bytes SHA256 computed before opening/extracting ZIP or deleting it. API digest must match strict sha256 format and actual bytes when present.",
+    "mismatch": "Initial receipt already preserves API digest and actual ZIP digest. Equality failure precedes destination creation/extraction/unlink; ZIP remains.",
+    "missing_digest": "api_digest_verified remains false; successful download receipt explicitly says API digest unavailable. No API verification claimed.",
+    "bounds": "API advertised archive size and sum of declared expanded member sizes each strictly below100MiB.",
+    "zip_paths": "Absolute paths/.. rejected; resolved destination must remain a descendant. Literal names and normalized NFC/casefold targets unique.",
+    "zip_types": "Only unspecified/regular/directory Unix type accepted; symlink and other special types rejected before extraction.",
+    "success_receipt": "Successful extraction precedes archive unlink; sibling receipt persists digest, API snapshot, member count, normalized-target check and deletion flag."
+  },
+  "limits": [
+    "Static preflight only. A real future ZIP/download has not been exercised by this review.",
+    "Uses ordinary Python with assertions enabled and an owned fresh destination namespace without concurrent writers.",
+    "Advertised archive-size gate is from API; expanded-size gate uses ZIP metadata. This is not a new transport/decompression fuzz audit.",
+    "Archive validation/extraction errors may leave a fresh empty/partial destination and the retained ZIP; final success/deletion is not claimed.",
+    "If extraction fails after a matching digest, the initial receipt may still have api_digest_verified=false; this underclaims, rather than asserting a completed operation.",
+    "No historical cohort outer-ZIP digest verification is added or backfilled."
+  ],
+  "future_executions_only": true
+}

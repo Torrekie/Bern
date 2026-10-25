@@ -1,0 +1,156 @@
+{
+  "verdict": "both_source_patches_reconstructed_55_Git_inputs_preserved",
+  "source_commit": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "harness_commit": "7dddc256ccdc006d746766af6ef3d7f68d887547",
+  "Generated": {
+    "original_bytes": 95129,
+    "original_sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083",
+    "measured_bytes": 96430,
+    "measured_sha256": "f152c30b1ed4e3107c7198db2652c536ea0f5cddf81a046ecc9b0fed0ea47c10",
+    "labels_exact": 21,
+    "removing_only_modifier_lines_restores_original": true,
+    "helper_sha256": "14532e7960a7138ae3be48b26fe08ecb0f0d6b347e6cd7faa76be08eb01709da",
+    "compiled_bytes": 106494,
+    "compiled_sha256": "f4cac6965e72f454c257a30420ca5966d2b9afc012d1e9e264c20ed947b706d2",
+    "unchanged_prior21point_compiled_input": true
+  },
+  "Style": {
+    "original_bytes": 205764,
+    "original_sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f",
+    "compiled_bytes": 209558,
+    "compiled_sha256": "09d8f99a26a73498e7ef4d7d597eca646be751f32b4fe99f63482b944a81987f",
+    "trace_helper_bytes": 3234,
+    "trace_helper_sha256": "027c778fe272cf388e38ea0d2d5cab5089fa1d51b7b50768dca33da67227311b",
+    "only_single_action_insertion_and_appended_helper": true,
+    "removal_restores_all_original_bytes": true,
+    "original_guard_transaction_write_block_contiguous_unchanged": true
+  },
+  "source_inputs": {
+    "count": 55,
+    "path_set_rederived_from_committed_selector": true,
+    "every_original_Git_blob_size_hash_verified": true,
+    "CLI_original_sha256": "63af68fa7f763b118ca34ed432b0f1b9fdfa2b3190582ebde747135303d0fa64",
+    "CLI_patched_sha256": "b21fd5f23250959e3e845333c07141d89b478d30f3ac7cbae8d4b58193772c17",
+    "original_target_plan_needle_once": true,
+    "eight_harness_inputs_verified": [
+      {
+        "path": ".github/scripts/picture-grid-width/build.py",
+        "sha256": "3ca51ca81333d20fd7512f6fe7093b14e14a3ef0efc5f4290342d3dc9d9b6812"
+      },
+      {
+        "path": ".github/scripts/picture-grid-width/patch.py",
+        "sha256": "06a8b12d24ede2bec754f297a9f3bc3ae1fd650c9831f6c6ab42e9f36e746914"
+      },
+      {
+        "path": ".github/scripts/picture-grid-width/GridWidthTrace.swift",
+        "sha256": "027c778fe272cf388e38ea0d2d5cab5089fa1d51b7b50768dca33da67227311b"
+      },
+      {
+        "path": ".github/scripts/picture-scene-observer/build.py",
+        "sha256": "70f388f8a7346d2edb68a8e428c40350fb67025ab0bd86e35ab375b055d7d97d"
+      },
+      {
+        "path": ".github/scripts/picture-scene-observer/patch.py",
+        "sha256": "9de84f9da6b52602e1bdc9613c3e32b884b68335e8da789c3a161ae8c1f9f4cd"
+      },
+      {
+        "path": ".github/scripts/picture-scene-observer/Observer.swift",
+        "sha256": "14532e7960a7138ae3be48b26fe08ecb0f0d6b347e6cd7faa76be08eb01709da"
+      },
+      {
+        "path": ".github/scripts/picture-source-export.py",
+        "sha256": "e4f7bc61dce0241c53858d8c0f28250f13fa6bcac3c4c13759985ebb3b80df2e"
+      },
+      {
+        "path": ".github/scripts/macos14-reference.swift",
+        "sha256": "3dcaaf994cd7b61655e202ac76f79cc0e0b7c161b608ed2800378652207f0ac6"
+      }
+    ],
+    "all_package_checkpoint_hashes_verified_from_Git": true,
+    "build_post_source_hash_receipts_and_single_hook_marker_pass": true,
+    "seven_packaged_image_media_resources_also_match_Git_source": true
+  },
+  "scope": "Source-only independent in-memory unified diff reconstruction; no product generator/patcher imported or executed. Physical post-build Generated/Style compiler inputs are not retained; reconstructed hashes match successful CI post-build checks, not a reproducible-binary proof. No event/geometry/root-cause interpretation.",
+  "input_hashes": {
+    "work/picture-source-export-run/raw/BernGenerated.swift": {
+      "bytes": 95129,
+      "sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083"
+    },
+    "work/picture-grid-width-run/build/showcase-grid-width.tar.gz.sha256": {
+      "bytes": 93,
+      "sha256": "791a70409b55687b069dfc94c6472f62ba3acf25cf58fdb9f5f837a222e24de5"
+    },
+    "work/picture-grid-width-run/build/cli-observer.patch": {
+      "bytes": 723,
+      "sha256": "6c29ba2b24ee4ae8cd72d67098512fa450e995501393cba67dfcf90959889cfe"
+    },
+    "work/picture-grid-width-run/build/width-instrumentation.json": {
+      "bytes": 1480,
+      "sha256": "8ec15d578c675f5a3c6de125c5f1dca548e32ebd1915e44506fc0005b005a519"
+    },
+    "work/picture-grid-width-run/build/instrumentation.json": {
+      "bytes": 580,
+      "sha256": "6b2f46888def0f71b1c4ce657755979fbd636678c00767424a7925c924d5b0df"
+    },
+    "work/picture-grid-width-run/build/harness-inputs.sha256": {
+      "bytes": 967,
+      "sha256": "7c6fcf392f7eddb153270a60be0c4516b96f3a58e08337916edfb4ecdc349bd6"
+    },
+    "work/picture-grid-width-run/build/observer-build.json": {
+      "bytes": 3747,
+      "sha256": "315cbd5e903e70982cecf7894f29d8f941584c0d2b253e9af8c6af92c35b1ab1"
+    },
+    "work/picture-grid-width-run/build/environment.txt": {
+      "bytes": 533,
+      "sha256": "22a5c93198c235b1da915c49f518c9742294d896ffec424b8cb7f7eff2d8af7c"
+    },
+    "work/picture-grid-width-run/build/build.exit-code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "work/picture-grid-width-run/build/observer-before.json": {
+      "bytes": 11324,
+      "sha256": "1631db65f13467d2fc3b2512e770409bfa2d29849f89cefb488b2c4a8bec8554"
+    },
+    "work/picture-grid-width-run/build/build.json": {
+      "bytes": 921,
+      "sha256": "e7e12bc06672384c3d75e7b6e669b687c004d97a769e479f9592ce2de5c2bff5"
+    },
+    "work/picture-grid-width-run/build/binary.txt": {
+      "bytes": 5192,
+      "sha256": "93f76e163b1ae2059cfc6fbb7ad2970f49c6ffe48373d74cd1108f11253c5690"
+    },
+    "work/picture-grid-width-run/build/build.log": {
+      "bytes": 5981,
+      "sha256": "5e384482e2e6ababe647bb72f5a290a130191abc7c934a5acc89739b8ab010f6"
+    },
+    "work/picture-grid-width-run/build/picture-patch/observer.patch": {
+      "bytes": 5099,
+      "sha256": "4adc088242aa5dfbdefe1c71b275ad5f5310b509810803643c38faa7db18bd23"
+    },
+    "work/picture-grid-width-run/build/picture-patch/BernGenerated.measured.swift": {
+      "bytes": 96430,
+      "sha256": "f152c30b1ed4e3107c7198db2652c536ea0f5cddf81a046ecc9b0fed0ea47c10"
+    },
+    "work/picture-grid-width-run/build/picture-patch/SHA256SUMS": {
+      "bytes": 257,
+      "sha256": "ba5001c3434d35ef82d52ff102f5b177fcac2b3e812402b57a777d5822433069"
+    },
+    "work/picture-grid-width-run/build/picture-patch/patch-map.json": {
+      "bytes": 8236,
+      "sha256": "42d32c6a49b0ab9c2bb13e41b7f7260d652662fce251437f0b4e7a12c8e1eb63"
+    },
+    "work/picture-grid-width-run/build/grid-width-patch/patch-proof.json": {
+      "bytes": 980,
+      "sha256": "d156f0b953499c8ac727173886e2ddcd6aa09b288c0bb136940805bee7a9fd39"
+    },
+    "work/picture-grid-width-run/build/grid-width-patch/BernStyle.width-trace.patch": {
+      "bytes": 4390,
+      "sha256": "8b34b2d5954bb06ef0e39ec7f4c1f7e52686c2c3939ea6adf7ee5f8b49bdad7a"
+    },
+    "work/picture-grid-width-run/checkpoint.json": {
+      "bytes": 1335,
+      "sha256": "84382a2f5d7ed098bd0d169e7d51194ee40f41764784f554fc4444a4704798fc"
+    }
+  }
+}

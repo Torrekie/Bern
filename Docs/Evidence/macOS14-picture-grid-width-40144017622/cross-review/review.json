@@ -1,0 +1,4372 @@
+{
+  "verdict": "bounded13_14_width_prefix_equal_new_diagnostic_noninterference_pass_card_gap_unresolved_stop_width_diagnostic",
+  "source_sha": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "remote_run": 40144017622,
+  "local_capture": {
+    "result_sha256": "4bab4480a0ca5785417672377083690560a9ef681363d2046fe30f2e0da534e4",
+    "success": true,
+    "commands": 60,
+    "first_startup_sessions3_remaining59zero": true,
+    "checks14_all_pass": true,
+    "source_prefix_normalized_equal_A2_and_remote14": true,
+    "normal_three_flags_start_end_false": true,
+    "reported_local_harness_sha": "unknown",
+    "originalPNG9": [
+      {
+        "name": "controls-light.png",
+        "sha256": "93fd4c9954be56553970a4556afee78f89102f2046859ba030fdc4ad53d59939",
+        "bytes": 237074,
+        "A2_B3_original_PNG_exact": true
+      },
+      {
+        "name": "controls-light-after-commit.png",
+        "sha256": "c673b24b6e485bbba7502a1b97960bf55f0c5067b3753be9b5ea452719a0ad21",
+        "bytes": 236584,
+        "A2_B3_original_PNG_exact": true
+      },
+      {
+        "name": "text-light.png",
+        "sha256": "2e26a35c62b5e2c1104355a56b50cd13704dc7085be424fee7788cb89fc3cf80",
+        "bytes": 159842,
+        "A2_B3_original_PNG_exact": true
+      },
+      {
+        "name": "buttons-light.png",
+        "sha256": "404d2688aa8be2b42efc93ff484df191ef3b5f4e0dd5b8273a8e32e2572100d8",
+        "bytes": 169038,
+        "A2_B3_original_PNG_exact": true
+      },
+      {
+        "name": "inputs-light.png",
+        "sha256": "2a3f58f99ed23434a6f84f8c1ee8fbda270225fced277f141f4ca9837733617f",
+        "bytes": 125117,
+        "A2_B3_original_PNG_exact": true
+      },
+      {
+        "name": "query-failed-light.png",
+        "sha256": "2a9837f242b5faaf3a92a04159f9625636926b7996d193a81ff793103ae2fc0f",
+        "bytes": 158369,
+        "A2_B3_original_PNG_exact": true
+      },
+      {
+        "name": "query-empty-light.png",
+        "sha256": "858089f00c022f3701ae66270888a614b135890d49ef0b241a29915b04b16644",
+        "bytes": 146486,
+        "A2_B3_original_PNG_exact": true
+      },
+      {
+        "name": "query-recovered-light.png",
+        "sha256": "b43df2af26a3edf791e64b586b2edfb0c7089d72bfdb46bceafead70ad8fd95d",
+        "bytes": 162770,
+        "A2_B3_original_PNG_exact": true
+      },
+      {
+        "name": "images-layout-light.png",
+        "sha256": "ce10e8d2b029e48e53edbe6746dfc2aeb019d6f96e08457eb3cd8bcec1e2f98f",
+        "bytes": 460220,
+        "A2_B3_original_PNG_exact": true
+      }
+    ]
+  },
+  "cleanup_identity": {
+    "ownership_sha256": "fd04957ac765a691d7534d84cfe5419d3435c772e40fa5ab02f68efada11bb60",
+    "cleanup_receipt_sha256": "9ed44cc651b78233d3c4fcb23ad2e324b26237b187232cb617b75f589787964e",
+    "own_pid": 74700,
+    "original_front_pid": 9292,
+    "restored_before_stop": true,
+    "owned_instance_stopped": true,
+    "desktop_released_cursor_unchanged": true
+  },
+  "binary_identity_scope": {
+    "isolation_receipt_sha256": "a232eb38d3985d2327fc0ab6aaef4e84e7f25d5c5d349a8afb14b0faf2b36036",
+    "original_GUI_sha256": "5e9790ef812c424f27bb91e3248c73ea451069d92d7d627d57428f8390a96765",
+    "private_GUI_sha256": "1eaf93e377d423490fdd84c04938449c5899bbc52cc5594d9691831b2d7dda35",
+    "sections_and_signature_size_normalized_bytes_match_receipt": true,
+    "whole_GUI_bytes_equal": false,
+    "scope": "Same compiled executable code in an isolated ad-hoc signature copy. This review validates retained receipt consistency, not a fresh post-cleanup native binary audit.",
+    "collector_helper_build_receipt_sha256": "f39d8ea2b3eedec7e8a97a6a0b1fd182ad5c4dbd25e611d1da7d0df065dc3555",
+    "collector_helper_whole_hashes_match_previous_receipt": {
+      "Collector": {
+        "sha256": "c3e3545585e168d50f7d96f15f76f8aa80174a061fcfa9c82ae806d8c4bba2af",
+        "bytes": 276072,
+        "prior_A2_B3_binary_sha256": "c3e3545585e168d50f7d96f15f76f8aa80174a061fcfa9c82ae806d8c4bba2af",
+        "whole_binary_matches_previous": true
+      },
+      "FocusGuard": {
+        "sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+        "bytes": 140680,
+        "prior_A2_B3_binary_sha256": "e843bcc95aa390a2fb4b4b72261b1a33a9a10f0b169608d04d78a3e1b068ddae",
+        "whole_binary_matches_previous": true
+      }
+    }
+  },
+  "card_raster_geometry_from_original_PNG_exactness": {
+    "local13_Images": [
+      161,
+      98,
+      900,
+      227
+    ],
+    "local13_Images_height": 129,
+    "local13_HDR": [
+      161,
+      325,
+      900,
+      472
+    ],
+    "local13_HDR_height": 147,
+    "remote14_Images": [
+      161,
+      98,
+      900,
+      223
+    ],
+    "remote14_Images_height": 125,
+    "remote14_HDR": [
+      161,
+      321,
+      900,
+      468
+    ],
+    "remote14_HDR_height": 147,
+    "no_new_threshold_resampling_or_correction": true
+  },
+  "local13_geometry": {
+    "path": "work/picture-grid-width-local13/events-13/picture-observer-74700.json",
+    "sha256": "b625774f86cf95d89f458bf6d14ceb9002c0f108a3d2a59426bd1cab8b7c4509",
+    "bytes": 124063,
+    "pid": 74700,
+    "window": 10736,
+    "events": 21,
+    "labels": 21,
+    "finite_rectangles": 1203,
+    "callbacks": {
+      "viewDidMoveToWindow": 21
+    },
+    "probe_size_match_counts": {
+      "True": 21
+    },
+    "environment": {
+      "color_scheme": "light",
+      "contrast": "standard",
+      "control_size": "regular",
+      "default_min_list_row_height": 24,
+      "display_scale": 2,
+      "dynamic_type_size": "large",
+      "font": "inherited nil",
+      "layout_direction": "leftToRight",
+      "locale": "en",
+      "size_category": "large"
+    },
+    "end_state": "not_observed"
+  },
+  "remote14_geometry": {
+    "path": "work/picture-grid-width-run/raw/observer/picture-observer-1532.json",
+    "sha256": "857211cf3dbfde8d218cb27c51cf6a1d31df03a0b3ef9d0d4147f219731fd25e",
+    "bytes": 286408,
+    "pid": 1532,
+    "window": 25,
+    "events": 49,
+    "labels": 21,
+    "finite_rectangles": 2827,
+    "callbacks": {
+      "viewDidMoveToWindow": 21,
+      "setFrameOrigin": 20,
+      "updateNSView": 8
+    },
+    "probe_size_match_counts": {
+      "True": 48,
+      "False": 1
+    },
+    "environment": {
+      "color_scheme": "light",
+      "contrast": "standard",
+      "control_size": "regular",
+      "default_min_list_row_height": 24,
+      "display_scale": 1,
+      "dynamic_type_size": "large",
+      "font": "inherited nil",
+      "layout_direction": "leftToRight",
+      "locale": "en",
+      "size_category": "large"
+    },
+    "end_state": "not_observed"
+  },
+  "local13_all21_attachment_states_equal_previous_B3": true,
+  "environment_differences": {
+    "display_scale": {
+      "local13": 2,
+      "remote14": 1
+    }
+  },
+  "all21_labels_full_size_frame_caption_environment_summary": [
+    {
+      "label": "form-root",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 616,
+          "width": 779
+        },
+        "swiftui_global_frame": [
+          141,
+          52,
+          779,
+          616
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          779,
+          616
+        ],
+        "native_probe_window_base": [
+          141,
+          0,
+          779,
+          616
+        ],
+        "graphics_ancestor_local_bounds": [
+          0,
+          0,
+          779,
+          616
+        ],
+        "graphics_ancestor_window_base": [
+          141,
+          0,
+          779,
+          616
+        ],
+        "clip_bounds": null,
+        "document_bounds": null,
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 616,
+          "width": 779
+        },
+        "swiftui_global_frame": [
+          141,
+          52,
+          779,
+          616
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          779,
+          616
+        ],
+        "native_probe_window_base": [
+          141,
+          0,
+          779,
+          616
+        ],
+        "graphics_ancestor_local_bounds": [
+          0,
+          0,
+          779,
+          616
+        ],
+        "graphics_ancestor_window_base": [
+          141,
+          0,
+          779,
+          616
+        ],
+        "clip_bounds": null,
+        "document_bounds": null,
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 616,
+          "width": 779
+        },
+        "swiftui_global_frame": [
+          141,
+          52,
+          779,
+          616
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          779,
+          616
+        ],
+        "native_probe_window_base": [
+          141,
+          0,
+          779,
+          616
+        ],
+        "graphics_ancestor_local_bounds": [
+          0,
+          0,
+          779,
+          616
+        ],
+        "graphics_ancestor_window_base": [
+          141,
+          0,
+          779,
+          616
+        ],
+        "clip_bounds": null,
+        "document_bounds": null,
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 1
+    },
+    {
+      "label": "images-grid",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 109,
+          "width": 719
+        },
+        "swiftui_global_frame": [
+          171,
+          108,
+          719,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          719,
+          109
+        ],
+        "native_probe_window_base": [
+          171,
+          451,
+          719,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -10,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 105,
+          "width": 719
+        },
+        "swiftui_global_frame": [
+          171,
+          108,
+          719,
+          105
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          719,
+          105
+        ],
+        "native_probe_window_base": [
+          171,
+          507,
+          719,
+          105
+        ],
+        "graphics_ancestor_local_bounds": [
+          -10,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "updateNSView",
+        "resolved_size": {
+          "height": 109,
+          "width": 719
+        },
+        "swiftui_global_frame": [
+          171,
+          108,
+          719,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          719,
+          105
+        ],
+        "native_probe_window_base": [
+          171,
+          455,
+          719,
+          105
+        ],
+        "graphics_ancestor_local_bounds": [
+          -10,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": false
+      },
+      "remote14_event_count": 3
+    },
+    {
+      "label": "images-contain-column",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          176.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          176.5,
+          451,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -15.5,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          176.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          177,
+          503,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -16,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          176.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          177,
+          451,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -16,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-contain-image",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          176.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          176.5,
+          470,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -15.5,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          176.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          177,
+          522,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -16,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          176.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          177,
+          470,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -16,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-contain-caption",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 37.5
+        },
+        "swiftui_global_frame": [
+          217.75,
+          204,
+          37.5,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          37.5,
+          13
+        ],
+        "native_probe_window_base": [
+          218,
+          451,
+          37.5,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -57,
+          -106,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 38
+        },
+        "swiftui_global_frame": [
+          217.5,
+          204,
+          38,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          38,
+          13
+        ],
+        "native_probe_window_base": [
+          218,
+          503,
+          38,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -57,
+          -106,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 13,
+          "width": 38
+        },
+        "swiftui_global_frame": [
+          217.5,
+          204,
+          38,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          38,
+          13
+        ],
+        "native_probe_window_base": [
+          218,
+          451,
+          38,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -57,
+          -106,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-cover-column",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          323.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          323.5,
+          451,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -162.5,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          323.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          324,
+          503,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -163,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          323.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          324,
+          451,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -163,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-cover-image",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          323.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          323.5,
+          470,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -162.5,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          323.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          324,
+          522,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -163,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          323.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          324,
+          470,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -163,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-cover-caption",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 28.5
+        },
+        "swiftui_global_frame": [
+          369.25,
+          204,
+          28.5,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          28.5,
+          13
+        ],
+        "native_probe_window_base": [
+          369.5,
+          451,
+          28.5,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -208.5,
+          -106,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 29
+        },
+        "swiftui_global_frame": [
+          369,
+          204,
+          29,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          29,
+          13
+        ],
+        "native_probe_window_base": [
+          369,
+          503,
+          29,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -208,
+          -106,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 13,
+          "width": 29
+        },
+        "swiftui_global_frame": [
+          369,
+          204,
+          29,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          29,
+          13
+        ],
+        "native_probe_window_base": [
+          369,
+          451,
+          29,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -208,
+          -106,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-fill-column",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          470.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          470.5,
+          451,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -309.5,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          470.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          471,
+          503,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -310,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 109,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          470.5,
+          108,
+          120,
+          109
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          109
+        ],
+        "native_probe_window_base": [
+          471,
+          451,
+          120,
+          109
+        ],
+        "graphics_ancestor_local_bounds": [
+          -310,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-fill-image",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          470.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          470.5,
+          470,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -309.5,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          470.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          471,
+          522,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -310,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 90,
+          "width": 120
+        },
+        "swiftui_global_frame": [
+          470.5,
+          108,
+          120,
+          90
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          120,
+          90
+        ],
+        "native_probe_window_base": [
+          471,
+          470,
+          120,
+          90
+        ],
+        "graphics_ancestor_local_bounds": [
+          -310,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-fill-caption",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 14
+        },
+        "swiftui_global_frame": [
+          523.5,
+          204,
+          14,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          14,
+          13
+        ],
+        "native_probe_window_base": [
+          523.5,
+          451,
+          14,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -362.5,
+          -106,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 14
+        },
+        "swiftui_global_frame": [
+          523.5,
+          204,
+          14,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          14,
+          13
+        ],
+        "native_probe_window_base": [
+          524,
+          503,
+          14,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -363,
+          -106,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 13,
+          "width": 14
+        },
+        "swiftui_global_frame": [
+          523.5,
+          204,
+          14,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          14,
+          13
+        ],
+        "native_probe_window_base": [
+          524,
+          451,
+          14,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -363,
+          -106,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-mark-column",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 83,
+          "width": 64
+        },
+        "swiftui_global_frame": [
+          645.5,
+          108,
+          64,
+          83
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          64,
+          83
+        ],
+        "native_probe_window_base": [
+          645.5,
+          477,
+          64,
+          83
+        ],
+        "graphics_ancestor_local_bounds": [
+          -484.5,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 83,
+          "width": 64
+        },
+        "swiftui_global_frame": [
+          645.5,
+          108,
+          64,
+          83
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          64,
+          83
+        ],
+        "native_probe_window_base": [
+          646,
+          529,
+          64,
+          83
+        ],
+        "graphics_ancestor_local_bounds": [
+          -485,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 83,
+          "width": 64
+        },
+        "swiftui_global_frame": [
+          645.5,
+          108,
+          64,
+          83
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          64,
+          83
+        ],
+        "native_probe_window_base": [
+          646,
+          477,
+          64,
+          83
+        ],
+        "graphics_ancestor_local_bounds": [
+          -485,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-mark-image",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 64,
+          "width": 64
+        },
+        "swiftui_global_frame": [
+          645.5,
+          108,
+          64,
+          64
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "native_probe_window_base": [
+          645.5,
+          496,
+          64,
+          64
+        ],
+        "graphics_ancestor_local_bounds": [
+          -484.5,
+          -10,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 64,
+          "width": 64
+        },
+        "swiftui_global_frame": [
+          645.5,
+          108,
+          64,
+          64
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "native_probe_window_base": [
+          646,
+          548,
+          64,
+          64
+        ],
+        "graphics_ancestor_local_bounds": [
+          -485,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 64,
+          "width": 64
+        },
+        "swiftui_global_frame": [
+          645.5,
+          108,
+          64,
+          64
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "native_probe_window_base": [
+          646,
+          496,
+          64,
+          64
+        ],
+        "graphics_ancestor_local_bounds": [
+          -485,
+          -10,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "images-mark-caption",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 51.5
+        },
+        "swiftui_global_frame": [
+          651.75,
+          178,
+          51.5,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          51.5,
+          13
+        ],
+        "native_probe_window_base": [
+          652,
+          477,
+          51.5,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -491,
+          -80,
+          739,
+          129
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          441,
+          739,
+          129
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 52
+        },
+        "swiftui_global_frame": [
+          651.5,
+          178,
+          52,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          52,
+          13
+        ],
+        "native_probe_window_base": [
+          652,
+          529,
+          52,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -491,
+          -80,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          497,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "setFrameOrigin",
+        "resolved_size": {
+          "height": 13,
+          "width": 52
+        },
+        "swiftui_global_frame": [
+          651.5,
+          178,
+          52,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          52,
+          13
+        ],
+        "native_probe_window_base": [
+          652,
+          477,
+          52,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -491,
+          -80,
+          739,
+          125
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          445,
+          739,
+          125
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 2
+    },
+    {
+      "label": "hdr-grid",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 127,
+          "width": 719
+        },
+        "swiftui_global_frame": [
+          171,
+          335,
+          719,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          719,
+          127
+        ],
+        "native_probe_window_base": [
+          171,
+          206,
+          719,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -10,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          196,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 127,
+          "width": 719
+        },
+        "swiftui_global_frame": [
+          171,
+          331,
+          719,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          719,
+          127
+        ],
+        "native_probe_window_base": [
+          171,
+          262,
+          719,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -10,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          252,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "updateNSView",
+        "resolved_size": {
+          "height": 127,
+          "width": 719
+        },
+        "swiftui_global_frame": [
+          171,
+          335,
+          719,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          719,
+          127
+        ],
+        "native_probe_window_base": [
+          171,
+          210,
+          719,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -10,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          200,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 3
+    },
+    {
+      "label": "hdr-gainmap-column",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 127,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          189.5,
+          335,
+          192,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          127
+        ],
+        "native_probe_window_base": [
+          189.5,
+          206,
+          192,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -28.5,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          196,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 127,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          189.5,
+          331,
+          192,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          127
+        ],
+        "native_probe_window_base": [
+          190,
+          262,
+          192,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -29,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          252,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "updateNSView",
+        "resolved_size": {
+          "height": 127,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          189.5,
+          335,
+          192,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          127
+        ],
+        "native_probe_window_base": [
+          190,
+          210,
+          192,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -29,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          200,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 3
+    },
+    {
+      "label": "hdr-gainmap-image",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 108,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          189.5,
+          335,
+          192,
+          108
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          108
+        ],
+        "native_probe_window_base": [
+          189.5,
+          225,
+          192,
+          108
+        ],
+        "graphics_ancestor_local_bounds": [
+          -28.5,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          196,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 108,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          189.5,
+          331,
+          192,
+          108
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          108
+        ],
+        "native_probe_window_base": [
+          190,
+          281,
+          192,
+          108
+        ],
+        "graphics_ancestor_local_bounds": [
+          -29,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          252,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "updateNSView",
+        "resolved_size": {
+          "height": 108,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          189.5,
+          335,
+          192,
+          108
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          108
+        ],
+        "native_probe_window_base": [
+          190,
+          229,
+          192,
+          108
+        ],
+        "graphics_ancestor_local_bounds": [
+          -29,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          200,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 3
+    },
+    {
+      "label": "hdr-gainmap-caption",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 74
+        },
+        "swiftui_global_frame": [
+          248.5,
+          449,
+          74,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          74,
+          13
+        ],
+        "native_probe_window_base": [
+          248.5,
+          206,
+          74,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -87.5,
+          -124,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          196,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 74
+        },
+        "swiftui_global_frame": [
+          248.5,
+          445,
+          74,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          74,
+          13
+        ],
+        "native_probe_window_base": [
+          249,
+          262,
+          74,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -88,
+          -124,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          252,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "updateNSView",
+        "resolved_size": {
+          "height": 13,
+          "width": 74
+        },
+        "swiftui_global_frame": [
+          248.5,
+          449,
+          74,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          74,
+          13
+        ],
+        "native_probe_window_base": [
+          249,
+          210,
+          74,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -88,
+          -124,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          200,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 3
+    },
+    {
+      "label": "hdr-pq-column",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 127,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          434.5,
+          335,
+          192,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          127
+        ],
+        "native_probe_window_base": [
+          434.5,
+          206,
+          192,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -273.5,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          196,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 127,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          434.5,
+          331,
+          192,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          127
+        ],
+        "native_probe_window_base": [
+          435,
+          262,
+          192,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -274,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          252,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "updateNSView",
+        "resolved_size": {
+          "height": 127,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          434.5,
+          335,
+          192,
+          127
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          127
+        ],
+        "native_probe_window_base": [
+          435,
+          210,
+          192,
+          127
+        ],
+        "graphics_ancestor_local_bounds": [
+          -274,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          200,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 3
+    },
+    {
+      "label": "hdr-pq-image",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 108,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          434.5,
+          335,
+          192,
+          108
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          108
+        ],
+        "native_probe_window_base": [
+          434.5,
+          225,
+          192,
+          108
+        ],
+        "graphics_ancestor_local_bounds": [
+          -273.5,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          196,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 108,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          434.5,
+          331,
+          192,
+          108
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          108
+        ],
+        "native_probe_window_base": [
+          435,
+          281,
+          192,
+          108
+        ],
+        "graphics_ancestor_local_bounds": [
+          -274,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          252,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "updateNSView",
+        "resolved_size": {
+          "height": 108,
+          "width": 192
+        },
+        "swiftui_global_frame": [
+          434.5,
+          335,
+          192,
+          108
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          192,
+          108
+        ],
+        "native_probe_window_base": [
+          435,
+          229,
+          192,
+          108
+        ],
+        "graphics_ancestor_local_bounds": [
+          -274,
+          -10,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          200,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 3
+    },
+    {
+      "label": "hdr-pq-caption",
+      "local13_attachment": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 39
+        },
+        "swiftui_global_frame": [
+          511,
+          449,
+          39,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          39,
+          13
+        ],
+        "native_probe_window_base": [
+          511,
+          206,
+          39,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -350,
+          -124,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          196,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1256.5
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 2,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_first": {
+        "callback": "viewDidMoveToWindow",
+        "resolved_size": {
+          "height": 13,
+          "width": 39
+        },
+        "swiftui_global_frame": [
+          511,
+          445,
+          39,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          39,
+          13
+        ],
+        "native_probe_window_base": [
+          511,
+          262,
+          39,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -350,
+          -124,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          252,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          0,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_last": {
+        "callback": "updateNSView",
+        "resolved_size": {
+          "height": 13,
+          "width": 39
+        },
+        "swiftui_global_frame": [
+          511,
+          449,
+          39,
+          13
+        ],
+        "native_probe_local_bounds": [
+          0,
+          0,
+          39,
+          13
+        ],
+        "native_probe_window_base": [
+          511,
+          210,
+          39,
+          13
+        ],
+        "graphics_ancestor_local_bounds": [
+          -350,
+          -124,
+          739,
+          147
+        ],
+        "graphics_ancestor_window_base": [
+          161,
+          200,
+          739,
+          147
+        ],
+        "clip_bounds": [
+          0,
+          -52,
+          779,
+          668
+        ],
+        "document_bounds": [
+          0,
+          0,
+          779,
+          1251
+        ],
+        "environment_at_probe": {
+          "color_scheme": "light",
+          "contrast": "standard",
+          "control_size": "regular",
+          "default_min_list_row_height": 24,
+          "display_scale": 1,
+          "dynamic_type_size": "large",
+          "font": "inherited nil",
+          "layout_direction": "leftToRight",
+          "locale": "en",
+          "size_category": "large"
+        },
+        "probe_size_equals_resolved": true
+      },
+      "remote14_event_count": 3
+    }
+  ],
+  "normalized_width_rows_all_nontimestamp_fields_equal": true,
+  "normalized_width_rows": [
+    {
+      "columns_captured_from_body": 1,
+      "gap": 12,
+      "measured_is_finite": true,
+      "measured_width": 719,
+      "measured_width_bits": "4086780000000000",
+      "minimum": 140,
+      "old_stored_width": 0,
+      "old_stored_width_bits": "0000000000000000",
+      "on_main_thread": true,
+      "original_guard_would_pass": true,
+      "row_gap": 12,
+      "sequence": 0
+    },
+    {
+      "columns_captured_from_body": 1,
+      "gap": 16,
+      "measured_is_finite": true,
+      "measured_width": 719,
+      "measured_width_bits": "4086780000000000",
+      "minimum": 192,
+      "old_stored_width": 0,
+      "old_stored_width_bits": "0000000000000000",
+      "on_main_thread": true,
+      "original_guard_would_pass": true,
+      "row_gap": 16,
+      "sequence": 1
+    },
+    {
+      "columns_captured_from_body": 1,
+      "gap": 16,
+      "measured_is_finite": true,
+      "measured_width": 719,
+      "measured_width_bits": "4086780000000000",
+      "minimum": 120,
+      "old_stored_width": 0,
+      "old_stored_width_bits": "0000000000000000",
+      "on_main_thread": true,
+      "original_guard_would_pass": true,
+      "row_gap": 16,
+      "sequence": 2
+    }
+  ],
+  "normalized_width_rows_sha256": "3cae04b3a75b497a4ef6213c960460e84180f80542d90fdae6c76c7e4486e5a3",
+  "local13_width_and_relative_timeline": {
+    "path": "work/picture-grid-width-local13/events-13/picture-grid-width-74700.json",
+    "sha256": "1ac02f4ce1e258e80d70dadb32fcd75f3b31d8996523620bffb50d653ea1bccd",
+    "bytes": 1365,
+    "pid": 74700,
+    "rows": [
+      {
+        "config": [
+          140,
+          12,
+          12
+        ],
+        "entry_ms_from_own_first_width_entry": 0.0,
+        "pre_IO_record_ms_from_own_first_width_entry": 0.35883334930986166,
+        "entry_to_pre_IO_record_ms": 0.35883334930986166,
+        "columns_derived_from_measured_not_rendered": 4
+      },
+      {
+        "config": [
+          192,
+          16,
+          16
+        ],
+        "entry_ms_from_own_first_width_entry": 0.7459583575837314,
+        "pre_IO_record_ms_from_own_first_width_entry": 0.7534999749623239,
+        "entry_to_pre_IO_record_ms": 0.007541617378592491,
+        "columns_derived_from_measured_not_rendered": 3
+      },
+      {
+        "config": [
+          120,
+          16,
+          16
+        ],
+        "entry_ms_from_own_first_width_entry": 1.1501666740514338,
+        "pre_IO_record_ms_from_own_first_width_entry": 1.1570416390895844,
+        "entry_to_pre_IO_record_ms": 0.006874965038150549,
+        "columns_derived_from_measured_not_rendered": 5
+      }
+    ],
+    "no_written_cap": true,
+    "end_state": "not_observed",
+    "geometry_key_timeline": [
+      {
+        "label": "form-root",
+        "callback": "viewDidMoveToWindow",
+        "sequence": 0,
+        "ms_from_own_first_width_entry": 26.08350000809878
+      },
+      {
+        "label": "images-grid",
+        "callback": "viewDidMoveToWindow",
+        "sequence": 1,
+        "ms_from_own_first_width_entry": 30.268499976955354
+      },
+      {
+        "label": "hdr-grid",
+        "callback": "viewDidMoveToWindow",
+        "sequence": 14,
+        "ms_from_own_first_width_entry": 87.73383335210383
+      }
+    ],
+    "last_width_preIO_to_first_geometry_ms": 24.926458369009197
+  },
+  "remote14_width_and_relative_timeline": {
+    "path": "work/picture-grid-width-run/raw/observer/picture-grid-width-1532.json",
+    "sha256": "ff56bff223c0daf89c341d862c76735e33cfcfea9bb0a7e1d125ccc9e2f76624",
+    "bytes": 1364,
+    "pid": 1532,
+    "rows": [
+      {
+        "config": [
+          140,
+          12,
+          12
+        ],
+        "entry_ms_from_own_first_width_entry": 0.0,
+        "pre_IO_record_ms_from_own_first_width_entry": 1.2134166666726287,
+        "entry_to_pre_IO_record_ms": 1.2134166666726287,
+        "columns_derived_from_measured_not_rendered": 4
+      },
+      {
+        "config": [
+          192,
+          16,
+          16
+        ],
+        "entry_ms_from_own_first_width_entry": 2.3512500000038017,
+        "pre_IO_record_ms_from_own_first_width_entry": 2.380000000002269,
+        "entry_to_pre_IO_record_ms": 0.0287499999984675,
+        "columns_derived_from_measured_not_rendered": 3
+      },
+      {
+        "config": [
+          120,
+          16,
+          16
+        ],
+        "entry_ms_from_own_first_width_entry": 3.0293333333304417,
+        "pre_IO_record_ms_from_own_first_width_entry": 3.042666666672744,
+        "entry_to_pre_IO_record_ms": 0.013333333342302467,
+        "columns_derived_from_measured_not_rendered": 5
+      }
+    ],
+    "no_written_cap": true,
+    "end_state": "not_observed",
+    "geometry_key_timeline": [
+      {
+        "label": "form-root",
+        "callback": "viewDidMoveToWindow",
+        "sequence": 0,
+        "ms_from_own_first_width_entry": 47.0921666666726
+      },
+      {
+        "label": "images-grid",
+        "callback": "viewDidMoveToWindow",
+        "sequence": 1,
+        "ms_from_own_first_width_entry": 53.372750000008296
+      },
+      {
+        "label": "hdr-grid",
+        "callback": "viewDidMoveToWindow",
+        "sequence": 14,
+        "ms_from_own_first_width_entry": 96.95258333333356
+      },
+      {
+        "label": "images-grid",
+        "callback": "setFrameOrigin",
+        "sequence": 21,
+        "ms_from_own_first_width_entry": 147.2177916666766
+      },
+      {
+        "label": "hdr-grid",
+        "callback": "setFrameOrigin",
+        "sequence": 34,
+        "ms_from_own_first_width_entry": 290.2016250000088
+      },
+      {
+        "label": "hdr-grid",
+        "callback": "updateNSView",
+        "sequence": 41,
+        "ms_from_own_first_width_entry": 1972.0410000000043
+      },
+      {
+        "label": "images-grid",
+        "callback": "updateNSView",
+        "sequence": 48,
+        "ms_from_own_first_width_entry": 2129.544375000009
+      }
+    ],
+    "last_width_preIO_to_first_geometry_ms": 44.04949999999985
+  },
+  "interpretation_and_stop_boundary": [
+    "Both bounded action prefixes contain three matching source configurations in140→192→120 order, old+0→measured719, captured1/main/guardtrue. This does not prove complete width histories or instance/remount identity.",
+    "Measured719 predicts4/3/5 columns; those are derived predictions rather than observed rendered state. The matching prefix does not explain native/raster card129vs125.",
+    "All width pre-I/O record times precede retained geometry callbacks on both hosts. Relative uptimes are computed against each hosts own first-width timestamp; absolute boot uptimes are not aligned. Interval differences are not responsiveness, pure logging cost or a unique causal diagnosis.",
+    "Local13 has21 attachment events with probe109/ancestor129 for Images and127/147 for HDR. Remote14 has49 callbacks and persists resolved105→109/native105/ancestor125 mismatch. Different callback counts or timing alone do not identify why.",
+    "All10 public environment fields are retained; only displayScale differs2vs1. Caption width37.5vs38 for Contain, fractional origins and all other full caption fields remain explicit. Probe inherited-nil font is not internal effective Text font.",
+    "Both packet end states remain not_observed. No proposed size, synchronized terminal presentation state, continuous coverage, HDR luminance or full UI equivalence is established.",
+    "Stop this width-action diagnostic at the planned boundary. Do not add traces, CI, UI runs, fixed row heights, negative padding or a4pt correction from this non-distinguishing prefix. The broader port remains unaccepted with the measured first-card difference intact."
+  ],
+  "reviewer_scope": "Only offline retained metadata, originalPNG hash/byte comparison and bounded packet analysis. No payload needed, UI/CI/compiler/cache/product/repo mutation."
+}
