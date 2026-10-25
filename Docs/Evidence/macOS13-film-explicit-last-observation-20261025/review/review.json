@@ -1,0 +1,71 @@
+{
+  "kind": "independent_film_explicit_last_observation_source_review",
+  "verdict": "no_blocking_source_finding_diagnostic_only_generated_and_runtime_gates_pending",
+  "blocking_findings": [],
+  "method": "Read/AST literal extraction and own in-memory replacement/inverse only; no retained patcher/functions, compiler, helper/native/UI/CI/API/Git executed. No source or templates modified.",
+  "input_hashes": {
+    "work/film-explicit-last-observation-preparation/SHA256SUMS": "f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741",
+    "work/film-explicit-last-observation-preparation/patch.py": "9a5a0679e2eaaa1fd47c54eefc30957dc9d8bf0f7a7869a2abbb0396b1799dda",
+    "work/film-explicit-last-observation-preparation/FilmLastObservation.swift.inc": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06",
+    "work/film-explicit-last-observation-preparation/README.md": "8ffb68285f7f23466e6c6f842446343530255b66b0a6fc11461ebc7bcca47425",
+    "work/film-explicit-last-observation-preparation/source-proof.json": "31c97758195b9c40f36ab048735fcc32953e295765e2e766f45d544fe6f20170",
+    "work/film-explicit-last-template-diffs/patch-proof.json": "92bb7d3baa3c62e4dbe42a17c78b0c0f66898537b87b294051128f9dbfadf579",
+    "work/film-explicit-last-local-checks/core-typecheck.json": "d1536fe8e575b5f5952510403df74731182d3beabaac76e5a22bb81a6908f1f3",
+    "work/film-explicit-last-local-checks/template-patch-and-parse.json": "f3e7459eb0019a05b5a9f4f420100a5fa84bc3cf01e7652e5e98fa8b1641b790"
+  },
+  "independent_template_inverse": {
+    "BernStyle.swift": {
+      "before_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+      "candidate_sha256": "fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c",
+      "candidate_bytes": 214581,
+      "literal_inverse_edit_count": 10,
+      "root_actual_parsed_copy_read_equal": true,
+      "retained_unified_diff_equal": true
+    },
+    "BernRuntime.swift": {
+      "before_sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+      "candidate_sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77",
+      "candidate_bytes": 131944,
+      "literal_inverse_edit_count": 1,
+      "root_actual_parsed_copy_read_equal": true,
+      "retained_unified_diff_equal": true
+    }
+  },
+  "source_findings": [
+    "Only original Style3912 and Runtime255bac accepted; 10Style+1Runtime literal edits invert exactly. Runtime gains macOS-only inspect hook and exact core suffix. Generated Runtime is explicitly rejected by input hash.",
+    "Original target assignment occurs before enabled request snapshot. Original guards, pending cancel/DispatchWorkItem schedule,160ms/180ms, native setters, same arithmetic and response serialization remain in literal before/after pairs.",
+    "One document.frame read is hoisted to immediately before maximum; runtime getter count stays one selected getter. This changes getter timing and source structure, not a zero-effect proof.",
+    "Recording is enabled only on13 with env present. Default/14 have no recording/export body. Generic weak closure associates existing BernScrollItems; no new View/timer/task/queue/layout or native setter.",
+    "Owner cannot be replaced after first request; weak live owner must match===. Scroll/clip/document retain permanent IDs and require old weak object alive plus===, with current contentView/documentView rechecked at terminal. Mismatch latches invalid rather than silently rebinding.",
+    "Five fixed slots/counters only; key/string/depth/node/field limits and finite validation apply, with per-slot2048 and final16384 encoded-byte limits. JSON sanitization/encoding/disk access occur only after export begins. First writer inputs are nonescaping autoclosure and evaluated only for its own first slot.",
+    "exportIfRequested ignores requests0, then irreversibly exports at first post-request ui.inspect. Existing collector calls target inspect before Last go, then Last PNG, terminalAX, checkedFilmControls inspect; this planned chain places export after PNG/AX. Core alone does not identify Last or a PNG/AX completion.",
+    "Existing file/path/serialization/IO problems cause bounded fixed stderr, no throw/retry and no change to original inspect response. A failed/missing file must remain diagnostic failure; acquisition success alone is insufficient."
+  ],
+  "interpretation_limits": [
+    "Future gate must verify exactly one request wanted/position/target for the actual Last6, correct owner and intended post-PNG/AX export opportunity; early/unexpected/multiple request cannot be re-labelled as Last.",
+    "First schedule/first settle/first writer can be different work items. Writer own token/native inputs are necessary; diagnostic_complete is bounded coverage/validity, not one atomic transaction or animation completion.",
+    "Counters include eligible calls only; skipped guards, cancelled work identity and notification cause are not exported. Do not infer a unique bounds/live/wheel cause from coverage.",
+    "animator_requested is setter request inside animation group, not display/animation completion. Request snapshot is after SwiftUI target assignment, before any proven proxy/native movement.",
+    "Terminal native getters, earlier slots, PNG and AX are distinct observations/times; no atomic frame mapping proof.",
+    "Weak object lookup/recording/static initialization/extra config field and getter hoist may alter timing; no observer-no-effect or14-no-effect claim follows from static review.",
+    "Fresh env path must be externally isolated; pre-write nonexistence check plus atomic replacement is not a general multiwriter exclusive-create protocol.",
+    "I/O failure may leave no JSON and only fixed stderr; future driver must require fresh successful diagnostic file and complete slots instead of treating original CLI success as diagnostic success."
+  ],
+  "root_retained_checks": {
+    "standalone_core_typecheck_exit": 0,
+    "core_typecheck_seconds": 12.75772616697941,
+    "Swift": "5.9.2",
+    "requested_headers": "14.2",
+    "target": "arm64-macosx13.0",
+    "patched_templates_parse_exit": 0,
+    "parse_seconds": 0.6952617500210181,
+    "actual_candidate_sources_read_and_hashed": true,
+    "scope": "Read hash-bound root receipts/logs/copies only. Not full product typecheck/link, Swift6, generated Runtime or native execution."
+  },
+  "pending_gates": [
+    "Actual generated Runtime FILE_KIND_EXTENSIONS/SVG binding and exact source package provenance.",
+    "Full Swift6/product compile/link; standalone core and syntax parse do not prove integration.",
+    "Separately reviewed fresh env/output, diagnostic schema/phase/identity gate and unchanged original collector/driver prerequisites.",
+    "Actual14 no-effect and13 observer-effect PNG/geometry/native evidence before interpreting the observation; no pixel gate performed here."
+  ]
+}

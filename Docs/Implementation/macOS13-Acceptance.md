@@ -315,3 +315,13 @@ root已目检两张原p0，candidate named内容实际可见。control→candida
 本次强kernel清理完整通过：先恢复原1390/kernel1792598787.261710，再停止自有25080/kernel1792908958.713508，termination0、postown=null；exact-child/IPC/private prefs/state均通过，defaults delete0且原5秒上限不变。旧cohort清理false不改写。独占桌面已释放、cursor位移0、配置不变，空overlay clear-only后的false与原visible状态都保留。自有helper/privateApp及编译cache合计53,933,813B逻辑文件已核hash/lsof后退役，原四个交付exe不变；不把此数字当APFS回收量。
 
 本轮属于采集与证据推进，位置一致性仍未通过；尚不能由单次差异归因或改默认3/nearest/anchor/间距。下一先审查显式Last程序化滚动与现有几何证据，缺口明确后再决定最小观察；不重开已停止的Row/颜色/搜索/Scene路线。完整13颜色/布局/交互/动画门槛及后续macOS11/Swift5.3、Objective-C、iOS阶段保持未通过/延期，goal active。
+
+## 显式 Last 的证据边界与观察准备（2026-10-25）
+
+[源码与有界观察包](../Evidence/macOS13-film-explicit-last-observation-20261025/README.md)已独立复核。13兼容snap允许响应非live的bounds变化，包括程序化滚动可能产生的通知；initial owner首次退役后generation不再递增，后续显式Last不因此使这波工作失效。实际执行、哪个writer介入、native坐标及−14.5pt原因仍无运行证据，未改滚动条件或补偿。
+
+现有AX的“完整/未截断”只指筛选后的walk；持久化flat行没有原生父子树、数值AXValue或NSClipView/document offset，AXScrollArea矩形不能当viewport。Last成功响应证明注册闭包被调用并返回，generated setter却可能静默拒绝，故不能当Rust draft/私有target/原生到达的直接读回；这不表示本次确有拒绝。
+
+已实现仅显式启用的macOS13诊断源码：五固定槽及有界计数、weak身份、首post-request inspect才序列化导出，记录请求、首eligible snap/首writer owninputs及postcapture native scalar，不增加View/Task/timer/滚动操作。原条件、算式、动画与150/160/180ms不变；有限观测仍有开销，不能先宣称无影响。真实standalone core typecheck0、两完整patch模板parse0（Swift5.9.2/请求SDK14.2/target13）及实际fuzz0补丁应用通过；不等于完整SwiftUI类型检查、Swift6产品构建或运行。template-only patcher故意拒绝generated Runtime。
+
+本轮无产品源码/行为改动、无新native或CI；临时cache与重复源码49,916,983B逻辑文件已核hash/lsof清除，原四个交付exe和两个模板保持。下一先完成新SDK/Swift6/target13 observer构建与实际generated来源，再核观察影响/适用14参考及独立强kernel入口，才可运行。诊断失败不得改写原采集/清理真假；完整13验收及后续平台阶段仍未通过，goal active。

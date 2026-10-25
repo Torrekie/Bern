@@ -1,0 +1,163 @@
+{
+  "kind": "explicit_first_last_source_only_audit",
+  "verdict": "programmatic_legacy_snap_eligibility_proven_execution_and_cause_unobserved",
+  "baseline_root_commit_from_parent": "522d705",
+  "product_source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "input_hashes": {
+    "outputs/Bern/crates/bern-backend-swiftui/templates/BernStyle.swift": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+    "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/BernGenerated.swift": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+    "outputs/Bern/crates/bern-backend-swiftui/src/swift/layout.rs": "b236cea821f6f4f6a88a21af417f8cb62fbbbd9ddd26339cde8c9f22237a67d1",
+    "outputs/Bern/examples/gallery/gallery-ui/src/lib.rs": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07",
+    "work/film-first-last13-analysis/analysis.json": "02c7027a22ce1bc42ee53436b8a2828df7afafa03ef20a448cbdafe32355918f",
+    "outputs/Bern/Docs/Evidence/macOS14-film-e48-endpoints-40165343690/reference.json": "8921655dea0938f76e49cfc808414d3278fce1deabeca1b98f5fd1d5bdfe8f50"
+  },
+  "narrow_confirmed_facts": [
+    {
+      "fact": "Original native button and CLI to_last assign session_GalleryDraft.centered=6; generated Film uses bound center anchor, smooth0.45/damping1 and arrival0.42/damping0.42.",
+      "lines": "Gallery Rust281-348; Generated1055,1129-1139",
+      "strength": "direct_source"
+    },
+    {
+      "fact": "Position onChange invokes scroll(to:) only if wanted differs from target and not the already-nearest nil-target case. scroll(to:) retires legacy initial owner, calls items.expect, then animates target=wanted.13 target onChange calls ScrollViewProxy.scrollTo using declared center once initial-owner correction is ineligible;14 binds native scrollPosition(id:$target,anchor:anchor).",
+      "lines": "Style2463-2496,2530-2537,2553-2574,2588-2606",
+      "strength": "direct_source"
+    },
+    {
+      "fact": "snap probe is separately installed by BernSnap; it receives rest(start,length), and only initial-owner waiting/generation gate. It does not receive explicit target or coming key. If initialOwner is absent, optional gates also do not suppress snap.",
+      "lines": "Style2090-2114",
+      "strength": "direct_source"
+    },
+    {
+      "fact": "Observer.install sets postsBoundsChangedNotifications and schedulesSnap for every received clip boundsDidChange while !live, without identifying user versus programmatic cause. didEndLiveScroll and wheel momentum end also schedule. Live starts cancel pending and invoke userScroll, but a bounds notification alone does not invoke userScroll.",
+      "lines": "Style5046-5082",
+      "strength": "direct_source_conditional_on_notification_delivery"
+    },
+    {
+      "fact": "scheduleSnap cancels/replaces pending then records generation; after0.16, settle checks allowed, same generation,!live,scroll/document/snap, but no explicit-target state. It can compute a different clamped clip origin and use direct scroll or0.18s AppKit animator.",
+      "lines": "Style5112-5149",
+      "strength": "direct_source_eligibility_not_runtime_execution"
+    },
+    {
+      "fact": "finish is one-shot: guard waiting else return, then waiting=false and generation++. Once initial owner retired, explicit Last or later stops calling finish does not increment generation again. Thus generation does not itself distinguish/cancel a new post-retirement programmatic snap wave.",
+      "lines": "Style2219-2229,2523-2529,2588-2591",
+      "strength": "direct_source"
+    },
+    {
+      "fact": "Pending work cancellation/generation check does not cancel a clip.animator bounds-origin animation that already started. stop removes notifications/monitor and pending; no animation cancellation primitive appears. Completion only reflects the current clip.",
+      "lines": "Style5142-5162",
+      "strength": "source_absence_boundary_not_proven_effect"
+    }
+  ],
+  "coordinate_spaces": [
+    {
+      "value": "BernSnapItems.frames",
+      "source": "bernSnapItem onGeometryChange.frame(in:.named(bern.snap)), UUID-keyed; nearest item point=minX+width/2 for horizontal center.",
+      "lines": "Style2017-2030,2129-2135",
+      "boundary": "No semantic to_last ID in rest() and no conversion to NSScrollView document coordinates at comparison time."
+    },
+    {
+      "value": "Legacy snap content/margin",
+      "source": "VStack wraps content, horizontal SwiftUI padding by legacy margin, named bern.snap coordinate space outside padding; margin=max(0,(SwiftUI viewport-largest item)/2).",
+      "lines": "Style1875-1888,2090-2114",
+      "boundary": "This is layout padding, not proof of actual NSScrollView.contentInsets; intended document-origin equivalence is a source comment, not native getter evidence."
+    },
+    {
+      "value": "Native rest input/range",
+      "source": "start=clip.bounds.minX; length=clip.bounds.width; min=-contentInsets.left; max=max(min,document.frame.width+insets.right-length); wanted=items.rest(start,length), then clamped.",
+      "lines": "Style5125-5136",
+      "boundary": "Actual clip bounds, document frame/bounds/flipped state and native insets are absent from current raw AX/CLI reports."
+    },
+    {
+      "value": "Position nearest frames",
+      "source": "bernScrollItem measures keyed frames in separate bern.scroll named space; items.viewport from SwiftUI size, nearest compares anchor-relative center.",
+      "lines": "Style2374-2385,2416-2431,2502-2510",
+      "boundary": "Separate from bern.snap UUID frames and raw AppKit clip bounds; current AXImage screen frames cannot substitute for either internal map."
+    },
+    {
+      "value": "Scroll effect phase",
+      "source": "Probe view.convert(bounds,to:clip); semantic viewport starts at clip.bounds then subtracts native insets and legacy margin before phase calculation.",
+      "lines": "Style5084-5109",
+      "boundary": "This changes phase/visual transform calculation, not the raw clip start/length consumed by snap settle; do not use the AXScrollArea or scaled AXImage as native clip."
+    },
+    {
+      "value": "14 path",
+      "source": "native.scrollPosition + native.scrollTargetBehavior(BernSnapBehavior) + native.contentMargins; custom target behavior uses items.rest on native target.rect.",
+      "lines": "Style2065-2082,2101-2105,2463-2465",
+      "boundary": "Framework invocation/arbitration rules are outside these sources; cannot assert14 never runs snap during programmatic requests."
+    }
+  ],
+  "current_evidence_boundary": {
+    "reference": "Canonical14 firstLast index0 only; no repeatLast or old f9 substitution.",
+    "observed_first_five_relative_x_difference_13_minus_14": -14.5,
+    "Windowpane_exact_delta": {
+      "x": -14.504430837515656,
+      "y": -0.0029354298540056334,
+      "width": 0.008861675031312188,
+      "height": 0.0049846922050562625
+    },
+    "scope": "Current raw reports show AX/CLI and provider stability, not clip notifications, live/target/generation, rest chosen/clamp inputs or actual native offset writers. No source-only root cause or correctness verdict."
+  },
+  "minimal_next_observation": {
+    "scope": "Proposal only for one authorized fresh original-e48 direct→firstLast. No new action, motion/owner guard change, offset constant, sampling tolerance or framework. Root must approve any source observation separately.",
+    "fixed_slots": [
+      {
+        "slot": "request",
+        "fields": [
+          "actual uptime",
+          "wanted and target-before/after phase",
+          "owner.waiting/generation"
+        ]
+      },
+      {
+        "slot": "first eligible schedule after request",
+        "fields": [
+          "actual uptime/cause bounds-or-live-end",
+          "live/allowed/captured generation",
+          "correlated explicit-target phase"
+        ],
+        "note": "Retain skipped/absent status and bounded cancellation/replacement count; do not fabricate a schedule."
+      },
+      {
+        "slot": "first settle attempt after request",
+        "fields": [
+          "actual uptime/captured and current generation/live/allowed",
+          "clip start/length",
+          "contentInsets left/right",
+          "document.frame.width",
+          "snap chosen wanted offset or nil",
+          "minimum/maximum/clamped",
+          "writer none/direct/animator requested"
+        ],
+        "note": "These scalars decide whether the legacy writer actually participated. If settle is skipped, preserve the guard outcome."
+      },
+      {
+        "slot": "terminal native scalar snapshot",
+        "fields": [
+          "actual uptime",
+          "same scroll/clip/document identity",
+          "clip start/length/insets/document width"
+        ],
+        "note": "After existing PNG/AX acquisition, marked separate in time; no display-completion inference."
+      }
+    ],
+    "decision_boundaries": [
+      "No eligible settle/write observed: this proposed arbitration path is not evidenced as the source of the captured endpoint.",
+      "A write observed: proves that writer participated; only observed clip deltas and snap/clamp inputs may be related, without attributing14.5 automatically.",
+      "Without actual measured coordinate-space mapping, a computed snap result cannot establish which alignment is correct or that13/14 framework coordinates are equivalent.",
+      "Do not change margins, anchor, inset arithmetic or timers before observing actual values; no fitting14.5 or zeroing legitimate native insets."
+    ]
+  },
+  "not_proven": [
+    "The actual13 firstLast ran legacy settle or AppKit clip animator.",
+    "A wrong anchor or initial-owner bug caused the14.5 point difference.",
+    "SwiftUI named snap coordinates equal real native document origin on this instance.",
+    "Native14 avoids programmatic snapping, or proxy/native scroll APIs have identical inset behavior.",
+    "No logical-gap repair, position PASS, visual equivalence or product adoption follows."
+  ],
+  "not_performed": [
+    "No code/constant/guard change",
+    "No helper/native/compile/UI/CI/Git/API action",
+    "No new image decode/ROI/color/geometry algorithm or test framework",
+    "No old broad initial/wait/direct/resize matrix audit"
+  ]
+}

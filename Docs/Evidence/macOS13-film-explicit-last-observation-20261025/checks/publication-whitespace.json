@@ -1,0 +1,35 @@
+{
+  "kind": "unified_diff_context_whitespace_classification",
+  "default_check": {
+    "exit_code": 2,
+    "stdout": "Docs/Evidence/macOS13-film-explicit-last-observation-20261025/template-diffs/BernStyle.swift.patch:26: trailing whitespace.\n+ \n",
+    "stderr": ""
+  },
+  "only_finding": {
+    "path": "Docs/Evidence/macOS13-film-explicit-last-observation-20261025/template-diffs/BernStyle.swift.patch",
+    "line": 26,
+    "raw_bytes_hex": "200a",
+    "meaning": "Required unified-diff context prefix for an unchanged empty original line; not an added source whitespace line."
+  },
+  "all_added_patch_source_lines_without_trailing_whitespace": 257,
+  "all_other_staged_files_default_diff_check": {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      ".",
+      ":(exclude)Docs/Evidence/macOS13-film-explicit-last-observation-20261025/template-diffs/BernStyle.swift.patch"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "patch_syntax_and_candidate_bytes": "Already applied with system patch fuzz0; candidate hashes and parse receipts preserved.",
+  "source_diffs_unchanged": true,
+  "repository_whitespace_configuration_changed": false,
+  "scope": "Preserve raw evidence bytes; classify the single representation marker explicitly, without changing native/diagnostic/cleanup gates or claiming the default whole-patch check returned0."
+}

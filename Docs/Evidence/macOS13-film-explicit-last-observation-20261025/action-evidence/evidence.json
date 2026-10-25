@@ -1,0 +1,198 @@
+{
+  "kind": "fixed_e48_last_action_evidence_boundary_source_offline_only",
+  "source_commit": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "commands": {
+    "13": {
+      "original_command": {
+        "arguments": [
+          "--session",
+          "e8cba81261f800-ui",
+          "ui",
+          "activate",
+          "--target",
+          "film.to_last"
+        ],
+        "end_uptime": 310242.37504712504,
+        "start_uptime": 310242.32582625,
+        "status": 0,
+        "stderr": "025-stderr.txt",
+        "stdout": "025-stdout.json"
+      },
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "last_control_at_terminal": {
+        "enabled": true,
+        "label": "Last",
+        "reason": null,
+        "role": "button",
+        "target": "film.to_last",
+        "value": null,
+        "window": "main#1"
+      },
+      "stage_action_start_uptime": 310242.2776501667,
+      "stage_action_return_uptime": 310242.37517812505,
+      "time_limit": "Observer process boundaries; stage action bracket includes resolving the target; no App callback/native arrival timestamp."
+    },
+    "14": {
+      "original_command": {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "activate",
+          "--target",
+          "film.to_last"
+        ],
+        "end_uptime": 461.2544422083334,
+        "start_uptime": 461.22072479166667,
+        "status": 0,
+        "stderr": "017-stderr.txt",
+        "stdout": "017-stdout.json"
+      },
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "last_control_at_terminal": {
+        "enabled": true,
+        "label": "Last",
+        "reason": null,
+        "role": "button",
+        "target": "film.to_last",
+        "value": null,
+        "window": "main#1"
+      },
+      "stage_action_start_uptime": 461.18450675,
+      "stage_action_return_uptime": null,
+      "time_limit": "Observer process boundaries; stage action bracket includes resolving the target; no App callback/native arrival timestamp."
+    }
+  },
+  "source_locations_at_fixed_commit": {
+    "examples/gallery/gallery-ui/src/lib.rs": {
+      "lines": [
+        "67-70",
+        "281-292",
+        "329-333"
+      ],
+      "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+    },
+    "crates/bern-backend-swiftui/src/swift/expr.rs": {
+      "sha256": "228f8136c696e172d77bb5b94e4497862ddc8e06eac2794d2514393c08214ce7",
+      "lines": [
+        "303-315"
+      ]
+    },
+    "crates/bern-backend-swiftui/src/swift/controls.rs": {
+      "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd",
+      "lines": [
+        "253-265"
+      ]
+    },
+    "crates/bern-backend-swiftui/src/swift/values.rs": {
+      "sha256": "add39694eecd3dcb51d94cd1517d5b12a31f02c1f01d8c745f164e471e9f80d3",
+      "lines": [
+        "400-438"
+      ]
+    },
+    "crates/bern-backend-swiftui/templates/BernRuntime.swift": {
+      "sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+      "lines": [
+        "659-662",
+        "711-727",
+        "783-808",
+        "1334-1346",
+        "1497-1510",
+        "1523-1544"
+      ]
+    },
+    "crates/bern-backend-swiftui/templates/BernStyle.swift": {
+      "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+      "lines": [
+        "2210-2229",
+        "2310-2353",
+        "2374-2382",
+        "2464-2489",
+        "2503-2545",
+        "2580-2606"
+      ]
+    },
+    "crates/bern-ffi/src/lib.rs": {
+      "sha256": "c6ded3e0dfcd7bcd72c9887f5647e67a3c84f1ec3159feb0d86fcd76510948ed",
+      "lines": [
+        "171-189",
+        "269-320",
+        "1029-1078"
+      ]
+    },
+    "crates/bern-runtime/src/lib.rs": {
+      "sha256": "5f149a4e93914a220570f3fb5ec02fc78f579320f803dad202f85ce9b27b3277",
+      "lines": [
+        "385-411",
+        "584-614"
+      ]
+    },
+    "crates/bern-protocol/src/session.rs": {
+      "sha256": "3e22690ddf4bc60e13bb622b939053e4951cabdc66c5db9a33088af39fd96b5b",
+      "lines": [
+        "558-564"
+      ]
+    },
+    "crates/bern-adapter-cli/src/lib.rs": {
+      "sha256": "1136df046650f361c54e0d87a928c43edf3c63b89d719d96d13170f1993d45c6",
+      "lines": [
+        "299-324"
+      ]
+    }
+  },
+  "actual_generated_source": {
+    "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/BernGenerated.swift",
+    "sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+    "lines": [
+      "575-582",
+      "1055",
+      "1153-1159"
+    ]
+  },
+  "established": [
+    "The explicit same-session ui.activate film.to_last returned a successful Unit response after a uniquely resolved enabled mounted action closure returned.",
+    "The fixed medium-layout generated closure attempts session_GalleryDraft.centered=Int64(6); the native button shares this action expression.",
+    "The generated setter accepts its local published cache update only when Rust bern_session_set returns status0; rejection silently returns from setter.",
+    "The retained Last inspect row has value=null and carries no centered/target/nearest/arrival evidence.",
+    "Retained engine state was before Last and excludes the per-window GalleryDraft.centered field."
+  ],
+  "not_established": [
+    "Actual per-window Rust draft or local centered value before/after this action.",
+    "Position onChange admission/guard reason, target assignment, native scroll request delivery or native completion.",
+    "BernScrollItems.nearest, coming, arrived, arrivals/stops or tracked viewport/frame values at request/terminal.",
+    "Actual native clip bounds, content offset, effective insets or an atomic AX/PNG/internal state tuple."
+  ],
+  "single_next_observation": {
+    "point": "Fixed BernStyle.swift BernScrollPosition.scroll(to:) existing go closure immediately after its original withAnimation { target=wanted } (e48 line2597).",
+    "admission": "Single non-observable in-memory slot for first typed ID6 go in the declared one-Last sequence; missing or multiple eligible go events invalidates diagnostic coverage, never overwrite or retry.",
+    "fields": [
+      "uptime",
+      "wanted",
+      "position.wrappedValue",
+      "target_after_original_assignment",
+      "items.nearest",
+      "items.coming/nudges",
+      "items.arrived/arrivals/stops",
+      "items.viewport/anchor",
+      "items.frames[6] if already reported",
+      "legacyMargin and legacyInitial key/waiting/generation on13"
+    ],
+    "implementation_boundary": "Document only. Private BernScrollItems diagnostic accessor may read its existing own fields into a plain immutable value; passed binding/target scalar reads at the one existing callback. No native view getter, geometry query or layout API added.",
+    "timing": "No new Task/timer/await/dispatch/RunLoop/flush/layout or mutation of original branch/animation/clock. Serialize once after acquisition/teardown. Small synchronous memory-copy overhead cannot honestly be called zero, so observed run would not become byte/timing-equivalent to frozen original.",
+    "can_resolve": "Whether a post-assignment explicit target6 go was actually entered and which existing internal values coexisted at that request point.",
+    "still_missing": "Native clip/content offset and later arrival/stop outcome; request tuple cannot prove exact native arrival or root cause.",
+    "failure": "Missing/duplicate/nonfinite/serialization/IO failure => separate diagnostic_complete=false. Preserve original collector/action response/native gates and all frozen cohort results; no fallback, best-slot selection or relaxed success."
+  },
+  "not_done": [
+    "No product/source mutation or implementation",
+    "No helper/App/CLI/native/UI/compile/CI/API execution",
+    "No PNG/image analysis or new geometry tolerance",
+    "No new sampling matrix, default/anchor/nearest/gap change or14.5pt cause/offset assumption"
+  ]
+}

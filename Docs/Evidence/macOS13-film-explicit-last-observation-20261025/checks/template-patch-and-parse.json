@@ -1,0 +1,78 @@
+{
+  "kind": "film_explicit_last_actual_template_patch_and_parse",
+  "commands": [
+    {
+      "kind": "strict_template_patcher",
+      "argv": [
+        "python3",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-observation-preparation/patch.py",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/crates/bern-backend-swiftui/templates",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-template-diffs"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.336243083991576,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "kind": "system_patch_exact_fuzz0",
+      "argv": [
+        "patch",
+        "-f",
+        "-F",
+        "0",
+        "-p1",
+        "-i",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-template-diffs/BernStyle.swift.patch"
+      ],
+      "cwd": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/parsed-sources",
+      "exit_code": 0,
+      "candidate_sha256": "fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c",
+      "log_sha256": "f33f7cea8635a988c57e2ebf1cb771e7c5f68a462556a5527b2e9cb6002c6220"
+    },
+    {
+      "kind": "system_patch_exact_fuzz0",
+      "argv": [
+        "patch",
+        "-f",
+        "-F",
+        "0",
+        "-p1",
+        "-i",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-template-diffs/BernRuntime.swift.patch"
+      ],
+      "cwd": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/parsed-sources",
+      "exit_code": 0,
+      "candidate_sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77",
+      "log_sha256": "10206c1fd617ab2fc49eee5aed3d485fbabdb555d24c818639ba9e1bec71f3b7"
+    },
+    {
+      "kind": "two_patched_templates_parse_only",
+      "argv": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+        "-frontend",
+        "-parse",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+        "-module-cache-path",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/module-cache",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/parsed-sources/BernStyle.swift",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/parsed-sources/BernRuntime.swift"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.6952617500210181,
+      "log_bytes": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_manifest_sha256": "f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741",
+  "patch_proof_sha256": "92bb7d3baa3c62e4dbe42a17c78b0c0f66898537b87b294051128f9dbfadf579",
+  "all_commands_succeeded": true,
+  "original_templates_unchanged": true,
+  "scope": "Executed fresh regular reviewed patcher to emit two exact template diffs, applied via system patch fuzz0 to private source copies, parsed both. No generated Runtime acceptance, Swift6 product compile/link, diagnostic/core/native/UI/CI execution."
+}

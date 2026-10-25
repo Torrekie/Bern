@@ -1,0 +1,51 @@
+{
+  "retrieval_kind": "official_Apple_markdown_read_only",
+  "sources": [
+    {
+      "title": "scrollPosition(id:anchor:)",
+      "url": "https://developer.apple.com/documentation/swiftui/view/scrollposition%28id%3Aanchor%3A%29.md",
+      "resolved_url": "https://developer.apple.com/documentation/swiftui/view/scrollposition%28id%3Aanchor%3A%29.md",
+      "http_status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "bytes": 3366,
+      "sha256": "a88afbbd46864e979d2e52a9b7f78b1953dba4302942836b6a83e4c0d1669d58"
+    },
+    {
+      "title": "updateTarget(_:context:)",
+      "url": "https://developer.apple.com/documentation/swiftui/scrolltargetbehavior/updatetarget%28_%3Acontext%3A%29.md",
+      "resolved_url": "https://developer.apple.com/documentation/swiftui/scrolltargetbehavior/updatetarget%28_%3Acontext%3A%29.md",
+      "http_status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "bytes": 1620,
+      "sha256": "4545aec47577e2c1a29a93e28b57f0bd1e994f145296c524f743ae71d43abc09"
+    },
+    {
+      "title": "scrollTo(_:anchor:)",
+      "url": "https://developer.apple.com/documentation/swiftui/scrollviewproxy/scrollto%28_%3Aanchor%3A%29.md",
+      "resolved_url": "https://developer.apple.com/documentation/swiftui/scrollviewproxy/scrollto%28_%3Aanchor%3A%29.md",
+      "http_status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "bytes": 1781,
+      "sha256": "62aebfe604292e090aeeef7a8f57ac3b40fd6a3f6c2fcdbe9b730afd5aff8f2e"
+    }
+  ],
+  "stored_full_page": false,
+  "scope": "Read current official Apple API descriptions only; not an archived macOS14 implementation trace or proof of framework arbitration.",
+  "interpretation": [
+    {
+      "source": "scrollPosition(id:anchor:)",
+      "claim": "Writing the identity binding requests that item, and the anchor influences identity choice and alignment; no documented numeric margin/clip formula establishes the observed 14.5pt.",
+      "availability_metadata": "macOS14.0+"
+    },
+    {
+      "source": "updateTarget(_:context:)",
+      "claim": "Documentation names gesture-end and scroll-view-size changes as the two main invocation cases. This is not an exhaustive prohibition on other contexts, so it cannot prove native14 never arbitrates programmatic requests."
+    },
+    {
+      "source": "scrollTo(_:anchor:)",
+      "claim": "An explicit anchor aligns corresponding points of the identified view and its scroll view. Actual native view geometry and offset were not exported by the previous collector.",
+      "availability_metadata": "macOS11.0+"
+    }
+  ],
+  "effect_on_next_action": "Keep source eligibility separate from actual execution; collect bounded request/legacy writer/native terminal state before changing alignment, margins or scheduling."
+}

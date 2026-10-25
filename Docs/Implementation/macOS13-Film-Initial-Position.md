@@ -168,3 +168,11 @@ wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001
 13原PNG1840×1336/2×、ICC4032B，14为920×668/1×、ICC3300B；这里只查元数据，不比较/归一像素、不选ROI或容差。AX walk在PNG之后、collector/startup/heartbeat/时序不同；本次只证明两端点的这组观察，不证明根因、物理手势、历史/resize、完整动画或视觉等效。root已直接查看原13两图及14首次Last原图；没有由目检增加成功判定。
 
 产品未改。下一步先核显式Last程序化滚动的native14/compat13路径与现有几何能证明什么，仍禁止按14.5pt套偏移或改默认3/nearest/initial anchor。自有App/两个helper/cache已清理53,933,813B逻辑文件，原交付四exe不变；work相对别名只读历史，不可执行/构建/清理。完整13验收未通过，goal active，11/Swift5.3/ObjC/iOS继续延期。
+
+## 显式 Last：已完成源码观察准备，尚未运行
+
+[本单元](../Evidence/macOS13-film-explicit-last-observation-20261025/README.md)确认三项边界：非live bounds变化可触发兼容snap但本次是否执行未知；现有AX只是筛选后的flat行而非完整native状态；CLI空Unit成功不是session写入/target/native到达的直接读回。因此不把−14.5pt指认为某个anchor或initial owner缺陷。
+
+五槽诊断源码已独立审查：原target赋值之后读取既有状态，同一weak owner的首eligible schedule/settle与首writer owninputs有界保存，terminal在首post-request inspect后读native scalar；PNG/AX先于该inspect依赖固定collector顺序，core自己不识别PNG或Last，未来须核实际Last6/单请求/owner。首槽并非同一工作或原子事务，writer不是动画完成；缺失/异常/IO失败单独diagfalse，不覆盖原truth。
+
+原两模板未改，只有可复核diff与core；实际standalone typecheck0和两patch模板parse0已通过，cache/复制源49,916,983B逻辑文件清除。尚未生成/构建Swift6观察产品或执行诊断，没有新native/CI。下一构建必须绑定原631输入、仅两模板改动及实际生成Runtime的extension/SVG来源，不能把template-only patcher直接套生成文件；再过观察影响控制和强身份入口，保持原5s/95s/75s界限。完整13等效与后续11/Swift5.3/ObjC/iOS仍延期。

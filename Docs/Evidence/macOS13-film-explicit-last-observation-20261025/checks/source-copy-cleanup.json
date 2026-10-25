@@ -1,0 +1,52 @@
+{
+  "kind": "film_explicit_last_temporary_source_retirement",
+  "targets": [
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/FilmLastObservation.swift",
+      "logical_bytes": 12641,
+      "sha256": "b9a7c8d9a4060148f150c562e96297c10482181c96bf88477a6bfcf6cf5f5b06"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/parsed-sources/BernRuntime.swift",
+      "logical_bytes": 131944,
+      "sha256": "1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77"
+    },
+    {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/parsed-sources/BernStyle.swift",
+      "logical_bytes": 214581,
+      "sha256": "fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c"
+    }
+  ],
+  "lsof": [
+    {
+      "argv": [
+        "lsof",
+        "-F",
+        "pfn",
+        "--",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/FilmLastObservation.swift"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-F",
+        "pfn",
+        "+D",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-explicit-last-local-checks/parsed-sources"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "duplicate_source_logical_bytes": 359166,
+  "module_cache_retired_logical_bytes": 49557817,
+  "total_retired_logical_bytes": 49916983,
+  "absent_after": true,
+  "original_templates_unchanged": true,
+  "scope": "Only exact temporary standalone/parsed copies after compilation and independent peer byte reads; keep canonical source core/diffs/compiler receipts. No product/executable/native/UI/CI change; logical bytes, not APFS reclaim."
+}
