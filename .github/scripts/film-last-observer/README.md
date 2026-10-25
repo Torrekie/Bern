@@ -1,0 +1,9 @@
+# Film Last observation: source preparation only
+
+Exact e48 templates: Style3912ecd…cbd89 / Runtime255bac…9e16e. `patch.py TEMPLATE_DIR FRESH_OUTPUT_DIR` emits two unified diffs and proof; never edits templates. It rejects generated Runtime. Future generation expands FILE_KIND_EXTENSIONS and may append SVG: root must bind those real bytes separately. No CI/wrapper/collector path is supplied.
+
+Only macOS13 with BERN_FILM_LAST_OBSERVATION_FILE enables recording. Five fixed slots: post-assignment request; first eligible schedule; first eligible settle; first actual setter request (its own inputs via nonescaping autoclosure); terminal. Counts cover eligible schedules/settles and writer invocations, not rejected guards. Private Style snapshot reads existing state only. One selected document.frame getter is hoisted after minimum, before maximum; original arithmetic/branch/getter count stays, not machine timing or zero effect.
+
+No new view/task/timer/queue/setter/layout. Non-Published buffer uses weak owners/surfaces plus permanent IDs; expired/mismatched identities invalidate without rebinding. Only export sanitizes/encodes after existing Last PNG/AX at first post-request ui.inspect. One export phase may encode each slot and the complete file; this is not one JSON API call. Slots≤2048 encoded bytes, total≤16KiB; fixed field/key shapes bound retention (not allocator overhead). Missing slots, multiple requests, invalid fields/identity or caps => diagnostic_complete=false; nonfinite=>null+path/type.
+
+Fresh absolute env file, existing parent, one atomic write; no directory/prefs/IPC changes. Existing file/serialization/IO error: fixed stderr, no retry/throw/response change. No results or validity override. Control pixels remain a future gate. Author ran AST/in-memory edits only. Root reports b9a7 core typecheck rc0: Swift5.9.2/requestedSDK14.2/-swift-version5/arm64-target13. This is not product/Swift6/runtime validation.
