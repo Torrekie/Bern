@@ -1,0 +1,20 @@
+{
+  "source": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "outcome": "Harness control-channel path rejected before IPC ready; no UI input or desktop lease.",
+  "owned_pid": 5312,
+  "startup_timeout_seconds": 18,
+  "desktop_mutations": 0,
+  "name_edit_or_return_attempted": false,
+  "diagnostic": "Workspace run/ipc produced a167-byte representative socket path. Native socket bind returned AF_UNIX path too long; bern-transport-ipc/src/lib.rs rejects socket paths over100 bytes before bind.",
+  "diagnostic_file": "ipc-path-diagnostic.json",
+  "cleanup_completed": true,
+  "cleanup_success_field_limit": "run/cleanup.json success=false includes the startup failure; guard/cleanup completed and original four binaries unchanged.",
+  "runtime_products_removed": {
+    "private_app_logical_bytes": 4215128,
+    "guard_logical_bytes": 158832,
+    "private_gui_sha256": "47f78648a99ca1285d6503e85004c08ce8ff4046bfaf78245c37bee2d105b2d2",
+    "guard_sha256": "76d6825371ba5964fe6e134202333efaea46433b3eae6942618a9c48efd4950f"
+  },
+  "no_product_change": true,
+  "next": "Separate regular driver directory using a unique short/tmp IPC root; original files remain unchanged."
+}

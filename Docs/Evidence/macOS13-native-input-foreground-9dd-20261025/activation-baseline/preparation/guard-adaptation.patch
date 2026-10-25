@@ -1,0 +1,15 @@
+--- GalleryFocusGuard.swift
++++ ShowcaseFocusGuard.swift
+@@ -53,9 +53,9 @@
+     guard let bundle = Bundle(url: appURL), let bundleID = bundle.bundleIdentifier else {
+         throw GuardFailure(description: "No application bundle identity")
+     }
+-    try require(bundleID.hasPrefix("dev.bern.native13.gallery.") && bundleID != "dev.bern.gallery", "A root-prepared private Gallery identity is required")
+-    try require(bundle.object(forInfoDictionaryKey: "CFBundleExecutable") as? String == "Gallery", "Expected Gallery executable")
+-    let executable = appURL.appendingPathComponent("Contents/MacOS/Gallery").resolvingSymlinksInPath().path
++    try require(bundleID.hasPrefix("dev.bern.native13.inputfg.") && bundleID != "dev.bern.showcase", "A root-prepared private Showcase identity is required")
++    try require(bundle.object(forInfoDictionaryKey: "CFBundleExecutable") as? String == "Showcase", "Expected Showcase executable")
++    let executable = appURL.appendingPathComponent("Contents/MacOS/Showcase").resolvingSymlinksInPath().path
+     let matches = NSWorkspace.shared.runningApplications.filter { $0.bundleIdentifier == bundleID }
+     try require(matches.count <= 1, "Ambiguous private bundle identity; no action")
+     if let own = matches.first {

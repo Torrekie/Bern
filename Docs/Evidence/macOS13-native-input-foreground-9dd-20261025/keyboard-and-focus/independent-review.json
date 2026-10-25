@@ -1,0 +1,29 @@
+{
+  "scope": "Independent read-only native acceptance audit, plus separate source comparison.",
+  "same_pid_window": [
+    11709,
+    12048
+  ],
+  "verified": [
+    "actual active window",
+    "Tab focusName53 and visible caret",
+    "Bern13Input and Hello preview",
+    "draft readback",
+    "beforeReturn0/revision0",
+    "afterReturn1/Submit/revision1",
+    "value retained",
+    "restore original foreground before exact ownstop",
+    "child_exit0 and ownabsent",
+    "prefs/state/IPC absent",
+    "final App/Guard removal"
+  ],
+  "conclusion": "Enough to end the current limited macOS13 stage under native-logic acceptance; no substantive new blocker.",
+  "limits": [
+    "mouse focus not confirmed",
+    "controller TypeError retained",
+    "earlier IPC and activation failures retained",
+    "not hardware keyboard/IME/VoiceOver or all controls",
+    "no pixel matrix expansion"
+  ],
+  "source_reuse": "15 relevant Rust/Swift binding/submit/keyboard regions byte-identical9dd to13354f9; source-reuse/comparison.json"
+}

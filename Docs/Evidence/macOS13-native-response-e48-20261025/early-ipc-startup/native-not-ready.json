@@ -1,0 +1,63 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Computer Use state (CUA App Version: 0.1.0-alpha)\n<app_specific_instructions>\n- Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.\n- Use set_value for editable controls when AXValue is settable (0 settable element(s) in the current snapshot).\n- Refresh the snapshot after each mutation to avoid stale paths.\n\nLimitations:\n- Custom drawing regions can still hide controls from AX even in otherwise native apps.\n</app_specific_instructions>\n<app_state>\nApp=dev.bern.native13.gallery.7cbeebc7de454e328d6592661aaf6df7 (pid 956)\nWindow: \"(untitled)\", App: Gallery.\n</app_state>"
+    }
+  ],
+  "structuredContent": {
+    "desktopSession": {
+      "active": false,
+      "currentFrontmostPID": 1390,
+      "cursorMovedDistance": 0,
+      "actionsUsed": 0,
+      "interrupted": false,
+      "lockPath": "/Users/torrekie/Library/Caches/claudex-computer-use/desktop-session.lock",
+      "externalExclusiveLock": false,
+      "currentFrontmostBundleID": "com.openai.codex",
+      "currentCursor": {
+        "x": 1108.5,
+        "y": 437.58203125
+      },
+      "currentFrontmostApp": "ChatGPT"
+    },
+    "snapshot": {
+      "revision": "6d3292de",
+      "elements": [],
+      "app": "Gallery",
+      "elementCount": 0,
+      "bundleIdentifier": "dev.bern.native13.gallery.7cbeebc7de454e328d6592661aaf6df7",
+      "timestamp": 814621919.968002,
+      "pid": 956
+    },
+    "virtualCursor": {
+      "config": {
+        "showTrail": false,
+        "style": "ghostArrow",
+        "maxAgeSeconds": 12,
+        "trailLimit": 6,
+        "mode": "hybrid"
+      },
+      "overlayHelperRunning": false,
+      "totalMarkCount": 0,
+      "desktopOverlayDriver": "same-process",
+      "desktopOverlayReady": true,
+      "desktopOverlayVisible": false,
+      "trackedAppCount": 0
+    },
+    "guidance": {
+      "frameReliability": "high",
+      "summary": "This app appears to expose a mostly native Accessibility tree. Use element-index actions first and coordinates only as fallback.",
+      "confidence": "high",
+      "knownLimitations": [
+        "Custom drawing regions can still hide controls from AX even in otherwise native apps."
+      ],
+      "profile": "native",
+      "recommendedStrategies": [
+        "Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.",
+        "Use set_value for editable controls when AXValue is settable (0 settable element(s) in the current snapshot).",
+        "Refresh the snapshot after each mutation to avoid stale paths."
+      ]
+    }
+  }
+}

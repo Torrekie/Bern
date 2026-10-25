@@ -1,0 +1,68 @@
+{
+  "schema": "bern_foreground_name13_short_ipc_delta_v1",
+  "old_directory": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-input-foreground13-20261025",
+  "new_directory": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-input-foreground-short13-20261025",
+  "old_sources_receipt_sha256": "365ab5a58e762ba597bb63713b2acfd9b92e4143229d9bc261e9f5e446f55448",
+  "old_sources_still_match_receipt": true,
+  "new_sources_receipt_sha256": "8d69e9d095ac5f64ec4c5f870fd6a25ea9f5ab3082a9fd353a211c4d38c499b7",
+  "old_source_hashes": {
+    "common.py": "350be37fbe549820d3dbcdc839ff4ca1eb82d1308edcddd64d8be635d00e6bf3",
+    "control.py": "8314c5e90f081edc63e153782a4c597a0f09b97c2312de9cb0e1bb8544c1418a",
+    "prepare.py": "8b43f21548cb6e1b78975e431533d528b3b0a2be38f028c969c67da609f943d8",
+    "session.py": "d1499fd8838240ce9cb462f7964b9ba1d449db63e379dd0ae813f96614dd7ffb",
+    "tools/FocusGuard.swift": "e5731c68ee2f16ba632670dfaf1e8173a8be9f75bd48315777dc6237437f1c8d"
+  },
+  "new_source_hashes": {
+    "common.py": "289ee75c7691a3d147ba1352d44241550bb364456303dce8ce6b61eb5a9ba862",
+    "control.py": "8314c5e90f081edc63e153782a4c597a0f09b97c2312de9cb0e1bb8544c1418a",
+    "prepare.py": "477c7fdabd86359438082eb2d57e6c6a65ad63449083868533b2f943bbfd59ae",
+    "session.py": "d1499fd8838240ce9cb462f7964b9ba1d449db63e379dd0ae813f96614dd7ffb",
+    "tools/FocusGuard.swift": "e5731c68ee2f16ba632670dfaf1e8173a8be9f75bd48315777dc6237437f1c8d"
+  },
+  "unchanged_byte_for_byte": [
+    "session.py",
+    "control.py",
+    "tools/FocusGuard.swift"
+  ],
+  "guard_compiler_arguments_unchanged_after_only_task_path_substitution": true,
+  "guard_compile_timeout_unchanged_seconds": 90,
+  "compiler_version_metadata_reused_without_new_command": {
+    "source_hashes": {
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-input-foreground13-20261025/preparation/compiler-version.stdout": "7bb6faa9bc4ccf03f8869e06d0e2398b3fac5c45393c322c359b17b709cb1ed1",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-input-foreground13-20261025/preparation/compiler-version.stderr": "10aeec347f970c6ee46629eafd7613674dc1ec5952ed2861a8e1dc6123af159c",
+      "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-input-foreground13-20261025/preparation/compiler-version.command.json": "b20095f4fa0999c2d74b7b2663e6328b192fc5c443ade38afe7b45eff2e15e86"
+    },
+    "new_compiler_version_command_executed": false
+  },
+  "runtime_ipc": {
+    "root": "/tmp/bern-input13-492e2a0f789f",
+    "anticipated_socket": "/tmp/bern-input13-492e2a0f789f/bern-ffffffffffffffff/ffffffffffffff.sock",
+    "anticipated_socket_bytes": 72,
+    "required_less_than": 100
+  },
+  "self_check": {
+    "scope": "Independent local AF_UNIX bind only; no Bern App/Guard/GUI/session launch",
+    "root": "/tmp/bern-input13-d47fbd4cd8a7",
+    "anticipated_socket": "/tmp/bern-input13-d47fbd4cd8a7/bern-ffffffffffffffff/ffffffffffffff.sock",
+    "anticipated_socket_bytes": 72,
+    "required_less_than": 100,
+    "bind_succeeded": true,
+    "socket_absent": true,
+    "root_absent": true,
+    "future_runtime_root_never_created": true
+  },
+  "scope": "Only short IPC root/complete-path checks and independent bind preparation added; compiler-version facts reused. No App/Guard/watch/desktop/input execution.",
+  "source_rationale": {
+    "transport_file": "crates/bern-transport-ipc/src/lib.rs",
+    "socket_directory_format_line": 61,
+    "path_limit_check_line": 255,
+    "limit": "Product rejects complete path over100 bytes; this driver requires strictly under100.",
+    "engine_id_file": "crates/bern-command/src/lib.rs",
+    "engine_id_format_line": 319,
+    "engine_hex_digits": 14,
+    "directory_hash_hex_digits": 16
+  },
+  "cleanup_and_runtime_gate": "Inherited unchanged240-second active watch, original-front capture, exact PID/path/kernel guard, preferences/savedState/owned IPC cleanup and original four binary checks.",
+  "old_long_path_diagnostic_sha256": "32cb777995ead096ca167bd528df07f133b480f76f5ca523513d94298f1be84d",
+  "old_cleanup_receipt_sha256": "ee9599b0aa204abce2821b422e3e55460234e1882e50585e95da64be7dfbf7ee"
+}

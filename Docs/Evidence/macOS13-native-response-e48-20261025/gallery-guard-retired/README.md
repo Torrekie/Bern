@@ -1,0 +1,1 @@
+Historical Gallery Guard source/provenance only. Its158832B binary was removed after all Gallery instances and private App were removed; never execute archived drivers. Showcase uses its separate bounded Guard.

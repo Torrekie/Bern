@@ -23,11 +23,11 @@
 | 要求 | 已有依据 | 剩余工作 |
 |---|---|---|
 | 来源、部署与 API 替代 | 原交付 e48 Gallery、9dd Showcase 已在本机 13 运行；新 SDK/Swift 6 target13 完整构建有实际二进制证据；四模板的替代分支已复核。 | 本次源码审查没有证明新的 13 独有功能删除；后续若修改产品，重验受影响路径。 |
-| Gallery 基本流程 | e48 Patterns→Film→首次 Last、Frame 路径已有成功原件；新补720×600 Inspector退出及原生网格扩展、e48 First首卡正确终态。 | 不复刻坐标；仅定点复核下述未解释的响应/挂载观察。 |
-| 状态与错误恢复 | 9dd Showcase 的页面、Query/draft、Library 错误→重试→空结果→恢复链已有证据。 | 原生文本输入→模型→结果链仍须补证，CLI ACK不能替代输入。 |
-| 媒体与弹出层 | e48新实测Playing 0→501ms、Paused 848→848ms，sourceVersion1/views1/无error；Volume复用f9原生开闭与草稿同步，加11处相关源码未变证明。 | 此范围已有依据；不重新跑音量样式矩阵，不把draft滑块当实际音量绑定。首次Film→Frame未等Ready便读失败的同代挂载情况仍未观察完整。 |
-| 外观、布局、动画 | 已有完整窗口与限定可见运动证据；新增720×600深色与干净启动Light真实窗口，stock13语义色/材质、可读内容及正确终态有依据。 | 原生Close后的一次外观/UI超时仍未确定原因；干净Light成功不能消去该观察。 |
-| 键盘与能力边界 | 13 局部键盘 monitor 有窗口/焦点过滤；Search 程序化焦点在当前模板13/14均有15前限制。 | 核可见输入及焦点行为；共有平台能力限制不自动视为13回归，但不得合理化产品明示承诺却无效果的动作。 |
+| Gallery 基本流程 | e48 Patterns→Film→首次 Last、Frame 路径已有成功原件；新补720×600 Inspector退出及原生网格扩展、e48 First首卡正确终态；实际窗口就绪后Film→Frame Ready及离页返回有新原件。 | 此限定范围已有依据；不复刻坐标。 |
+| 状态与错误恢复 | 9dd Showcase 的页面、Query/draft、Library 错误→重试→空结果→恢复链已有证据；新增前台Tab聚焦Name、键盘输入、草稿/Hello预览及Return单次提交完整链。 | 此限定范围满足；不以CLI ACK替代实际输入。 |
+| 媒体与弹出层 | e48新实测Playing 0→501ms、Paused 848→848ms，sourceVersion1/views1/无error；Volume复用f9原生开闭与草稿同步，加11处相关源码未变证明；独立正常窗口链中Frame实际Ready、画面可见并成功离页。 | 此范围已有依据；不重测音量矩阵或播放，不把draft滑块当实际音量绑定。另一次8秒内Loading的最终结果未知，如实保留。 |
+| 外观、布局、动画 | 已有完整窗口与限定可见运动证据；新增720×600深色与浅色真实窗口；连续关闭详情→Light→Dark的模型、窗口和完整控件树均正常更新。 | 本次连续响应范围满足；旧进程超时未定因，不能宣称已找到或修复根因。 |
+| 键盘与能力边界 | 13 局部键盘 monitor 有窗口/焦点过滤；实际Tab到Name、Unicode事件输入及Return均已验证。Search 程序化焦点在当前模板13/14均有15前限制。 | 常规键盘路径满足；不声称硬件/IME/VoiceOver或全控件矩阵通过。两次自动化鼠标点击未取得Name焦点，保留工具路径限制，不宣称已定产品根因。 |
 
 2026-10-25 的[普通 Name 输入补查](../Evidence/macOS13-native-input-9dd-20261025/README.md)确认当前深色系统外观下输入页正常绘制，但未补成键盘验收：后台 AXValue 仅改变文本框显示，未确认 Name 焦点或编辑回调到达 SwiftUI；后续 AXConfirm 在工具后端解析失败，原生草稿仍为空、提交计数仍0。截图仍有内容，不能把部分 AX 树误判为空白界面。没有用 CLI edit/submit 补成通过，也没有据此修改产品。此输入交付缺口保留，停止同一组 AX 参数尝试，先完成独立的布局/媒体缺口。
 
@@ -35,8 +35,12 @@
 
 详细来源、哈希和限制见[现有证据表](../Evidence/macOS13-native-logic-acceptance-20261025/evidence-audit/README.md)、[当前 API 源码审查](../Evidence/macOS13-native-logic-acceptance-20261025/source-audit/README.md)及[精简验收建议](../Evidence/macOS13-native-logic-acceptance-20261025/acceptance-review/README.md)。它们记录了文档调整前 `dc87117` 的输入快照。
 
+随后[连续响应与挂载补查](../Evidence/macOS13-native-response-e48-20261025/README.md)确认同一进程关闭详情后可正常更新Light/Dark，以及独立进程在实际原生窗口就绪后Film→Frame进入Ready、显示视频并离页返回。另一次8秒内Loading的37条原件及准备过程栈保留，最终结果未知；不把后来成功反推为前次成功或已定因。一次外部前台切换在Close投递前中断，以及一次仅IPC就绪便发命令的超时，均保留为有限/未完成采集，不自动认定产品缺陷。此限定正常流程不再需要追加像素、外观或媒体矩阵。
+
+随后[真正前台键盘输入验收](../Evidence/macOS13-native-input-foreground-9dd-20261025/README.md)在同一9dd Showcase进程PID11709中完成：一次Tab使焦点对应唯一Name53且截图可见插入光标；unicodeEvent输入Bern13Input后，草稿同值、真实窗口显示Hello, Bern13Input，提交数仍0；一次Return后revision1、activations1、last_action Submit，文字保留。此前两次坐标点击未确认焦点、控制脚本TypeError、IPC长路径及过早读取激活baseline的失败均保留；最终通过仅限真实聚焦后的合成键盘事件，没有用AXValue或CLI编辑补成通过。私有进程、偏好/状态/IPC及最终保留的App/Guard均已清理，原四交付未改动。
+
 ## 执行顺序与收束
 
-复用原交付与足够的历史证据，只补缺失的功能检查。下一项收缩为有界复核未解释的Close/外观响应及Film→Frame挂载，在确有无响应时及时采同一自有进程栈；不先判断为13兼容代码故障。再补真正聚焦的原生文本输入路径，不继续后台AXValue参数尝试。Gallery Frame明确`controls:none`；当前实际媒体状态已满足，不再重测。macOS13 Inspector使用系统HSplitView，源码没有动画承诺，不为验收增加动画。只在出现可复现的实质缺陷时定点修复；不再运行像素、Row ledger、14.5 pt或观察器零影响路线，也不为细小色差重新触发远程CI。
+按用户的新标准，当前macOS13阶段在已审查的兼容路径及Showcase/Gallery代表性流程范围满足验收：构建、运行、原生外观与可达布局、状态恢复、限定动画终态、媒体及常规键盘编辑/提交均有依据。复用足够的历史证据，缺失的连续响应、实际挂载及前台输入已补足，没有为消除细微系统差异修改产品。Gallery Frame明确`controls:none`；macOS13 Inspector使用系统HSplitView且源码没有动画承诺，不增加矩阵或动画。不再运行像素、Row ledger、14.5 pt或观察器零影响路线，也不为细小色差重新触发远程CI。
 
-新原生检查仍需明确 App/CLI 来源、独立身份和有界清理；历史 work 别名不得直接执行。逐项记录“已有证据满足 / 新实测满足 / 实质问题待修 / 能力范围说明”，才能完成 macOS13 阶段。当前 goal 保持 active，放宽像素要求本身不等于阶段完成。
+验收范围不包含全示例/控件变体、物理HDR校准、硬件输入、IME、VoiceOver及自动化鼠标投递保证；旧进程的短时Loading/超时最终结果未知，不能声称已定因或修复。这些限制不改写为成功，也不扩大为未证实的13移植故障。macOS11 API/Swift5.3、Objective-C和iOS仍未进入本轮；后续须沿用本机13实际结果与同一原生逻辑标准逐阶段移植。历史work别名与归档驱动不得直接执行。

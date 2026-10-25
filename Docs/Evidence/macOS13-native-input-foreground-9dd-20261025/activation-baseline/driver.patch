@@ -1,0 +1,101 @@
+--- old/common.py
++++ short/common.py
+@@ -4,6 +4,7 @@
+ import json
+ import os
+ from pathlib import Path
++import re
+ import subprocess
+ import sys
+ import time
+@@ -61,10 +62,18 @@
+     lock = json.loads((PREP / 'isolation.json').read_text())
+     assert lock['app'] == str(APP) and lock['guard'] == str(GUARD)
+     assert lock['identifier'].startswith('dev.bern.native13.inputfg.')
+-    assert lock['ipc'] == str(RUN / 'ipc')
++    validate_ipc_root(lock['ipc'])
+     assert sha(APP / 'Contents/MacOS/Showcase') == lock['private_gui_sha256']
+     assert sha(GUARD) == lock['guard_sha256']
+     return lock
++
++def validate_ipc_root(value):
++    root = Path(value)
++    assert root.parent == Path('/tmp') and re.fullmatch(r'bern-input13-[0-9a-f]{12}', root.name)
++    # socket_dir uses 16 hex digits; native new_engine_id uses 8+4+2 hex digits.
++    anticipated = root / ('bern-' + 'f' * 16) / ('f' * 14 + '.sock')
++    assert len(os.fsencode(anticipated)) < 100, 'Anticipated complete Bern socket path must be under100 bytes'
++    return {'root': str(root), 'anticipated_socket': str(anticipated), 'anticipated_socket_bytes': len(os.fsencode(anticipated)), 'required_less_than': 100}
+ 
+ def runtime_environment(lock):
+     env = {k: v for k, v in os.environ.items() if not k.startswith('BERN_')}
+--- old/prepare.py
++++ short/prepare.py
+@@ -9,10 +9,11 @@
+ from pathlib import Path
+ import plistlib
+ import shutil
++import socket
+ import subprocess
+ import tempfile
+ import uuid
+-from common import APP, DELIVERY, GUARD, HERE, PREP, REPO, ROOT, RUN, command, original_hashes, sha, write
++from common import APP, DELIVERY, GUARD, HERE, PREP, REPO, ROOT, RUN, command, original_hashes, sha, validate_ipc_root, write
+ 
+ def main():
+     assert not PREP.exists() and not APP.parent.exists() and not GUARD.parent.exists() and not RUN.exists()
+@@ -23,6 +24,28 @@
+     success = False
+     try:
+         original_hashes()
++        ipc = Path('/tmp') / ('bern-input13-' + uuid.uuid4().hex[:12])
++        ipc_shape = validate_ipc_root(str(ipc))
++        assert not ipc.exists() and not ipc.is_symlink()
++        probe = Path('/tmp') / ('bern-input13-' + uuid.uuid4().hex[:12])
++        assert probe != ipc and not probe.exists() and not probe.is_symlink()
++        probe_shape = validate_ipc_root(str(probe))
++        probe_socket = Path(probe_shape['anticipated_socket'])
++        bound = False
++        listener = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
++        try:
++            probe.mkdir(mode=0o700)
++            probe_socket.parent.mkdir(mode=0o700)
++            listener.bind(str(probe_socket))
++            bound = True
++        finally:
++            listener.close()
++            if probe_socket.exists(): probe_socket.unlink()
++            if probe_socket.parent.exists(): probe_socket.parent.rmdir()
++            if probe.exists(): probe.rmdir()
++            write(PREP / 'short-ipc-bind-self-check.json', {'scope': 'Independent local AF_UNIX bind only; no Bern App/Guard/GUI/session launch',
++                  **probe_shape, 'bind_succeeded': bound, 'socket_absent': not probe_socket.exists(), 'root_absent': not probe.exists(),
++                  'future_runtime_root_never_created': not ipc.exists()})
+         prior = REPO / 'Docs/Evidence/macOS13-native-input-9dd-20261025/isolation.json'
+         old = json.loads(prior.read_text())
+         assert old['source_sha'] == '9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0'
+@@ -75,7 +98,16 @@
+         compiler = developer + '/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc'
+         assert os.path.isdir(sdk) and os.path.isfile(compiler)
+         env = dict(os.environ, DEVELOPER_DIR=developer)
+-        command([compiler, '--version'], PREP, 'compiler-version', env=env, timeout=45)
++        # Reuse the already observed compiler metadata; no repeat version invocation.
++        old_preparation = ROOT / 'work/native-logic-input-foreground13-20261025/preparation'
++        compiler_record = json.loads((old_preparation / 'compiler-version.command.json').read_text())
++        assert compiler_record['argv'] == [compiler, '--version'] and compiler_record['returncode'] == 0
++        reused = {}
++        for suffix in ['stdout', 'stderr', 'command.json']:
++            source_metadata = old_preparation / ('compiler-version.' + suffix)
++            shutil.copy2(source_metadata, PREP / ('compiler-version-reused.' + suffix))
++            reused[str(source_metadata)] = sha(source_metadata)
++        write(PREP / 'compiler-metadata-reuse.json', {'source_hashes': reused, 'new_compiler_version_command_executed': False})
+         command([compiler, '-swift-version', '5', '-target', 'arm64-apple-macosx13.0', '-sdk', sdk,
+                  '-module-cache-path', cache, GUARD.with_suffix('.swift'), '-o', GUARD], PREP, 'compile-guard', env=env, timeout=90)
+         command(['/usr/bin/codesign', '--force', '--sign', '-', GUARD], PREP, 'sign-guard')
+@@ -104,7 +136,7 @@
+             'macho_sections_unchanged': True, 'normalized_non_signature_bytes_unchanged': True,
+             'original_four_binaries': original_hashes(), 'requested_developer_dir': developer,
+             'requested_sdk': sdk, 'requested_target': 'arm64-apple-macosx13.0', 'swift_language_mode': '5',
+-            'actual_guard_build_metadata': 'guard-build-metadata.stdout', 'ipc': str(RUN / 'ipc'),
++            'actual_guard_build_metadata': 'guard-build-metadata.stdout', 'ipc': str(ipc), 'ipc_shape': ipc_shape,
+             'deadline_seconds': 240, 'startup_seconds': 18, 'cli_timeout_seconds': 8,
+             'watch_executed': False, 'gui_or_guard_executed': False,
+             'purpose': 'Single future foreground Name click, Unicode typing and Return; no AXValue, Search focus, backend/privacy/config or product change.'})

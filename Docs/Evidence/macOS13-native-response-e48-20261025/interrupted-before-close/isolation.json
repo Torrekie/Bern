@@ -1,0 +1,128 @@
+{
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-response13-20261025/runtime/Gallery.app",
+  "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/gallery",
+  "identifier": "dev.bern.native13.gallery.7cbeebc7de454e328d6592661aaf6df7",
+  "original_app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Gallery.app",
+  "original_gui_sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+  "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+  "private_gui_sha256": "684ab50474cd8b666d74c7c7d9b522b3c419a33b180e7172e28591122ea425af",
+  "original_members": {
+    "Contents/Info.plist": "30c9dfdf5b8718341e1b534f5298451051a6d44eb01dcdb2921f71efda5dd15d",
+    "Contents/MacOS/Gallery": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "Contents/Resources/AppIcon.icns": "8d5ced690e3c1079453b8684010991b8a3bde25b6157337ffa8c0a4fb3ad37de",
+    "Contents/Resources/en.lproj/InfoPlist.strings": "0b456fde30f7a8ce7a04de7305719d704b752a41c5490b02565a426530410426",
+    "Contents/Resources/en.lproj/Localizable.strings": "2a0722c09210e95dc38c354daa09961c9a90af601c33345a469676cf095a300c",
+    "Contents/Resources/media/poster.jpg": "76dadce80a79ca2684c9fe23712cff47d11d1e2928ab4bc81f1396b504cf2c6c",
+    "Contents/Resources/media/tides.mp4": "145a1b5e572bd3ce16207e2b341c0eecb04b4d1e765bf72f5fe3809a24f34957",
+    "Contents/Resources/zh-Hans.lproj/InfoPlist.strings": "72b62e39761f9d14cdef4698153dcbd957a8fa6c0096a09f1a7ded08820b7bd4",
+    "Contents/Resources/zh-Hans.lproj/Localizable.strings": "1421ca2397bc1e7b3347bb344fa8b4b444e62ae939b9120b2925a356026e46f0",
+    "Contents/_CodeSignature/CodeResources": "e21b13a5652924ee6f6ac14775a4a8791c174bc9b29859a6ffcfef1212084be4"
+  },
+  "private_members": {
+    "Contents/Info.plist": "cb00519669471e8c8f04bc610483ce023fb23abb0cf340b5560e9c9b095620dc",
+    "Contents/MacOS/Gallery": "684ab50474cd8b666d74c7c7d9b522b3c419a33b180e7172e28591122ea425af",
+    "Contents/Resources/AppIcon.icns": "8d5ced690e3c1079453b8684010991b8a3bde25b6157337ffa8c0a4fb3ad37de",
+    "Contents/Resources/en.lproj/InfoPlist.strings": "0b456fde30f7a8ce7a04de7305719d704b752a41c5490b02565a426530410426",
+    "Contents/Resources/en.lproj/Localizable.strings": "2a0722c09210e95dc38c354daa09961c9a90af601c33345a469676cf095a300c",
+    "Contents/Resources/media/poster.jpg": "76dadce80a79ca2684c9fe23712cff47d11d1e2928ab4bc81f1396b504cf2c6c",
+    "Contents/Resources/media/tides.mp4": "145a1b5e572bd3ce16207e2b341c0eecb04b4d1e765bf72f5fe3809a24f34957",
+    "Contents/Resources/zh-Hans.lproj/InfoPlist.strings": "72b62e39761f9d14cdef4698153dcbd957a8fa6c0096a09f1a7ded08820b7bd4",
+    "Contents/Resources/zh-Hans.lproj/Localizable.strings": "1421ca2397bc1e7b3347bb344fa8b4b444e62ae939b9120b2925a356026e46f0",
+    "Contents/_CodeSignature/CodeResources": "e21b13a5652924ee6f6ac14775a4a8791c174bc9b29859a6ffcfef1212084be4"
+  },
+  "changed_members": [
+    "Contents/Info.plist",
+    "Contents/MacOS/Gallery"
+  ],
+  "macho_sections_unchanged": true,
+  "normalized_non_signature_bytes_unchanged": true,
+  "guard_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-gallery13-tools/FocusGuard",
+  "guard_sha256": "b4301b511a82a0d0eedb1e54d1dc507f573e5535d4015b123dd8424b17e9b561",
+  "guard_source_sha256": "b87279696d54a514fc8e406acad75f5e649e853816504cfb7577fad5bcf297f7",
+  "ipc": "/tmp/bern-response13-0a130a00c99c",
+  "deadline_seconds": 240,
+  "commands": [
+    {
+      "label": "original-signature",
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Gallery.app"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "cli-signature",
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/bin/gallery"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "guard-signature",
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-gallery13-tools/FocusGuard"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "private-copy",
+      "argv": [
+        "ditto",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/macOS13/Gallery.app",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-response13-20261025/runtime/Gallery.app"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "private-sign",
+      "argv": [
+        "codesign",
+        "--force",
+        "--deep",
+        "--sign",
+        "-",
+        "--identifier",
+        "dev.bern.native13.gallery.7cbeebc7de454e328d6592661aaf6df7",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-response13-20261025/runtime/Gallery.app"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-response13-20261025/runtime/Gallery.app: replacing existing signature\n"
+    },
+    {
+      "label": "private-signature",
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/native-logic-response13-20261025/runtime/Gallery.app"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "no_compile_or_module_cache": true,
+  "macho_helper_source": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/outputs/Bern/Docs/Evidence/macOS13-film-first-last-e48-20261025/preparation/driver/prepare-film13.py",
+  "macho_helper_sha256": "ae223d27e45d894bb6fdd3654427f9ae193056bb36eb89f0a18901e78d3ba065",
+  "scope": "Existing source-bound e48 coupled Close/Light and Film/Frame response; no pixel gates or keyboard claims."
+}

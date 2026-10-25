@@ -1,0 +1,22 @@
+--- short-ipc/session.py
++++ window-ready/session.py
+@@ -115,13 +115,13 @@
+             cleanup['ipc_members_before_removal'] = [str(p.relative_to(ipc)) for p in ipc.rglob('*')]
+             shutil.rmtree(ipc)
+             cleanup.update({'private_preferences_absent': not prefs.exists(), 'saved_states_absent': all(not p.exists() for p in state_paths), 'ipc_absent': not ipc.exists()})
+-            # Future single-use runtime products are no longer needed after all guard/control subprocesses ended.
+-            removed = {'private_app_logical_bytes': sum(p.stat().st_size for p in APP.rglob('*') if p.is_file()), 'guard_logical_bytes': GUARD.stat().st_size,
++            # This active input acceptance still needs its products; root owns final removal.
++            retained = {'private_app_logical_bytes': sum(p.stat().st_size for p in APP.rglob('*') if p.is_file()), 'guard_logical_bytes': GUARD.stat().st_size,
+                        'private_gui_sha256': sha(APP / 'Contents/MacOS/Showcase'), 'guard_sha256': sha(GUARD)}
+-            assert removed['private_gui_sha256'] == lock['private_gui_sha256'] and removed['guard_sha256'] == lock['guard_sha256']
+-            shutil.rmtree(APP)
+-            GUARD.unlink()
+-            cleanup['owned_runtime_products_removed'] = removed
++            assert retained['private_gui_sha256'] == lock['private_gui_sha256'] and retained['guard_sha256'] == lock['guard_sha256']
++            retained['reason'] = 'Required by the still-unfinished foreground Name input acceptance; retain for root final cleanup/reuse without recompiling.'
++            retained['final_cleanup_owner'] = 'root'
++            cleanup['owned_runtime_products_retained'] = retained
+             cleanup['success'] = cleanup.get('guard_returncode', 0) == 0 and failure is None
+         except BaseException as error:
+             errors.append(repr(error))

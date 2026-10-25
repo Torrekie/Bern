@@ -2,10 +2,12 @@
 
 > **当前验收口径（用户于2026-10-25明确调整）**：不要求像素级复现，以目标平台的原生 UI 逻辑、可读可达布局、交互/状态与动画终态正确为准。细微系统配色、间距、轨迹和落点差异不再单独阻断。执行与收束以[原生逻辑验收合同](macOS13-Native-Logic-Acceptance.md)为准。
 >
-> 以下是历史研究日志：旧 exact PNG/RGB/ICC/ROI/frame/14.5pt/observer 门槛已被新口径取代，原数据和 false 收据仍保留。尚缺的实际功能证据不会自动变成通过。未启用的观察器路线已停止并清理；goal 仍 active，后续平台阶段延期。
+> 以下是历史研究日志：旧 exact PNG/RGB/ICC/ROI/frame/14.5pt/observer 门槛已被新口径取代，原数据和 false 收据仍保留。缺失的实际功能证据已按新合同补查，不能把旧false改写为成功。未启用的观察器路线已停止并清理；当前阶段结论见新合同，后续平台阶段不由本日志的旧门槛决定。
 
 
 本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
+
+原生逻辑收束检查点（2026-10-25）：[Gallery连续响应与实际挂载](../Evidence/macOS13-native-response-e48-20261025/README.md)及[Showcase前台键盘输入](../Evidence/macOS13-native-input-foreground-9dd-20261025/README.md)补足最后功能缺口。Close后Light/Dark模型与真实窗口正常更新；独立真实窗口就绪后Film→Frame Ready、视频可见并离页返回；同一Showcase进程Tab→Name实际聚焦→Unicode输入→草稿/Hello预览→Return仅提交一次（activations0→1，Submit）。所查兼容路径与代表性流程按新合同满足验收，不再消除细微版本差异。旧8秒Loading/超时最终未知，鼠标自动化两次未聚焦及控制脚本错误仍保留，不宣称已定因、修复或鼠标通过。没有产品修改、App重编译或新CI；自有副本/Guard、专用编译缓存、偏好/状态/IPC均已清理，四原交付不变。macOS11/Swift5.3、ObjC、iOS未进入本轮。下列精确对比是此前历史。
 
 最新检查点（2026-10-25）：[精确e48 Film的14后续参考](../Evidence/macOS14-film-e48-endpoints-40165343690/README.md)已由既有工作流单次CI40165343690取得，不重编App。真实14.8.9、原e48/d44/CLI31a、active/light/normal三false，一个fresh direct进程后原Last/First/Last-again/wide/restore；六终态AX完整六图、全部36组坐标和7PNG/ICC经独立复核。首次Last Windowpane中心573，重复Last565、wide599、restore565，均保留，未选优或套旧f9数。它补足当前port14准确参考，不是未修改上游ffb、本机13、完整动画或物理手势验收。源码未直接证明13兼容bug，不修改anchor/默认/nearest；下一本机只fresh direct后的第一次Last，安全入口另行source-only准备，旧CI stop-before-restore不能在用户桌面原样运行。原defaults5s失败未放宽，一次只读缺失域查询0.652s正常且无文件，不等于删除已证明健康。637806B ZIP核验API digest后清除，本轮没有本机构建缓存/新增App运行，108件约1.12MB小证据单份归档。整阶段颜色/布局/交互/动画仍未通过、goal active；remote14可用，11/Swift5.3/ObjC/iOS继续延期。
 

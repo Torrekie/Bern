@@ -1,0 +1,2080 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Computer Use state (CUA App Version: 0.1.0-alpha)\n<app_specific_instructions>\n- Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.\n- Use set_value for editable controls when AXValue is settable (1 settable element(s) in the current snapshot).\n- Refresh the snapshot after each mutation to avoid stale paths.\n\nLimitations:\n- Custom drawing regions can still hide controls from AX even in otherwise native apps.\n</app_specific_instructions>\n<app_state>\nApp=dev.bern.native13.gallery.7cbeebc7de454e328d6592661aaf6df7 (pid 92250)\nWindow: \"Patterns\", App: Gallery.\n\t0 menubaritem Apple Secondary Actions: Cancel\n\t1 menubaritem Gallery Secondary Actions: Cancel\n\t2 menubaritem File Secondary Actions: Cancel\n\t3 menubaritem Edit Secondary Actions: Cancel\n\t4 menubaritem View Secondary Actions: Cancel\n\t5 menubaritem Window Secondary Actions: Cancel\n\t6 menubaritem Help Secondary Actions: Cancel\n\t7 standard window Patterns ID: main Secondary Actions: Raise\n\t\t8 container\n\t\t\t9 split group ID: main, SidebarNavigationSplitView\n\t\t\t\t10 container\n\t\t\t\t\t11 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down\n\t\t\t\t\t\t12 outline\n\t\t\t\t\t\t\t13 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t14 cell\n\t\t\t\t\t\t\t\t\t15 text Value: Patterns\n\t\t\t\t\t\t\t16 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t17 cell\n\t\t\t\t\t\t\t\t\t18 text Value: Favorites\n\t\t\t\t\t\t\t19 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t20 cell\n\t\t\t\t\t\t\t\t\t21 text Value: Frame\n\t\t\t\t\t\t\t22 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t23 cell\n\t\t\t\t\t\t\t\t\t24 text Value: Film\n\t\t\t\t\t\t\t25 column ID: ListColumn\n\t\t\t\t\t26 text Value: Local user\n\t\t\t\t\t27 button Description: About ID: main_window.about\n\t\t\t\t\t28 button Description: Clear Favorites ID: main_window.clear_favorites\n\t\t\t\t29 splitter (settable) 210 (disabled)\n\t\t\t\t30 container\n\t\t\t\t\t31 split group\n\t\t\t\t\t\t32 container\n\t\t\t\t\t\t\t33 text Value: Card size\n\t\t\t\t\t\t\t34 button Description: square.grid.3x3\n\t\t\t\t\t\t\t35 slider Value: 180 ID: main_window.find Secondary Actions: Increment, Decrement, Increment, Decrement\n\t\t\t\t\t\t\t\t36 valueindicator Value: 180\n\t\t\t\t\t\t\t37 button Description: Grid View\n\t\t\t\t\t\t\t38 scroll area Description: Scale the cards ID: main_window.find Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down, Increment, Decrement\n\t\t\t\t\t\t\t\t39 opaqueprovidergroup Secondary Actions: ScrollToTop, ScrollToBottom\n\t\t\t\t\t\t\t\t\t40 button Description: Gingham ID: card.open_swatch[1] Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t41 text Value: Gingham Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t42 button Description: Tartan ID: card.open_swatch[2] Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t43 text Value: Tartan Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t44 button Description: Madras ID: card.open_swatch[3] Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t45 text Value: Madras Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t46 button Description: Glen ID: card.open_swatch[4] Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t47 text Value: Glen Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t48 button Description: Houndstooth ID: card.open_swatch[5] Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t49 text Value: Houndstooth Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t50 button Description: Windowpane ID: card.open_swatch[6] Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t\t51 text Value: Windowpane Secondary Actions: Scroll To Visible\n\t\t\t\t\t\t\t\t52 scrollbar (settable) 0\n\t\t\t\t\t\t\t\t\t53 valueindicator (settable) 0\n\t\t\t\t\t\t\t\t\t54 button\n\t\t\t\t\t\t\t\t\t55 button\n\t\t\t\t\t\t\t\t\t56 button\n\t\t\t\t\t\t\t\t\t57 button\n\t\t\t\t\t\t58 splitter (settable) 284 (disabled)\n\t\t\t\t\t\t59 container\n\t\t\t\t\t\t\t60 text Value: Details\n\t\t\t\t\t\t\t61 button Description: Close ID: main_window.close_details\n\t\t\t\t\t\t\t62 image Description: The poster's color\n\t\t\t\t\t\t\t63 image Description: Poster\n\t\t\t\t\t\t\t64 button Description: Search “check” ID: main_window.search_check\n\t\t\t\t\t\t\t65 button Description: Delete a Letter ID: main_window.search_delete\n\t\t\t\t\t\t\t66 text Value: Open a pattern to see it here\n\t\t67 toolbar Secondary Actions: Show Menu\n\t\t\t68 button Description: Toggle Sidebar Secondary Actions: Increment, Decrement, Delete, Show Menu, Cancel\n\t\t\t\t69 button Description: Toggle Sidebar\n\t\t\t70 button Description: Open Video ID: main_window.open_file Secondary Actions: Increment, Decrement, Delete, Show Menu, Cancel\n\t\t\t\t71 button Description: Open Video ID: main_window.open_file\n\t\t\t72 container\n\t\t\t\t73 popup button Description: paintpalette ID: main_window.choose_poster\n\t\t\t74 container\n\t\t\t\t75 checkbox Value: 1 Description: Details ID: main_window.show_details\n\t\t\t76 container\n\t\t\t\t77 search text field Secondary Actions: Show Menu, Confirm\n\t\t\t\t\t78 button Description: Search\n\t\t79 close button\n\t\t80 fullscreen button Secondary Actions: Zoom Window, Show Menu\n\t\t81 minimize button\n\t\t82 text Value: Patterns\n</app_state>\nThe focused UI element is 12 outline."
+    }
+  ],
+  "structuredContent": {
+    "screenshot": {
+      "contentRect": {
+        "y": 80,
+        "height": 600,
+        "width": 720,
+        "x": 270
+      },
+      "window": {
+        "pid": 92250,
+        "isOnScreen": true,
+        "appName": "Gallery",
+        "frame": {
+          "y": 80,
+          "height": 600,
+          "width": 720,
+          "x": 270
+        },
+        "title": "Patterns",
+        "bundleIdentifier": "dev.bern.native13.gallery.7cbeebc7de454e328d6592661aaf6df7",
+        "windowLayer": 0,
+        "windowID": 11852,
+        "isActive": false
+      },
+      "captureBackend": "screencapture",
+      "virtualCursorApplied": false,
+      "pixelHeight": 600,
+      "requestedScale": 0.5,
+      "pixelWidth": 720,
+      "virtualCursorMarkCount": 0,
+      "pointPixelScale": 2
+    },
+    "desktopSession": {
+      "frontmostAppAtAcquire": "ChatGPT",
+      "sessionID": "8621F662-B959-4C19-8B6D-C1F192D2C3F8",
+      "currentCursor": {
+        "x": 705.671875,
+        "y": 492.91015625
+      },
+      "active": true,
+      "actionsUsed": 0,
+      "frontmostPIDAtAcquire": 1390,
+      "cursorMovedDistance": 0,
+      "lockPath": "/Users/torrekie/Library/Caches/claudex-computer-use/desktop-session.lock",
+      "currentFrontmostBundleID": "com.apple.iphonesimulator",
+      "actionBudget": 3,
+      "externalExclusiveLock": false,
+      "frontmostBundleIDAtAcquire": "com.openai.codex",
+      "interrupted": true,
+      "interruptionReason": "frontmost app changed from PID=1390 to PID=9292",
+      "currentFrontmostPID": 9292,
+      "currentFrontmostApp": "Simulator",
+      "cursorAtAcquire": {
+        "x": 705.671875,
+        "y": 492.91015625
+      },
+      "mode": "exclusive",
+      "acquiredAt": 814621289.927008
+    },
+    "snapshot": {
+      "revision": "a59f013c",
+      "elements": [
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Apple",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            0
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 0
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Gallery",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            1
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 1
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "File",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            2
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 2
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Edit",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            3
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 3
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "View",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            4
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 4
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Window",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            5
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 5
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "role": "menubaritem",
+          "title": "Help",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            6
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 6
+        },
+        {
+          "depth": 0,
+          "frame": {
+            "y": 80,
+            "height": 600,
+            "width": 720,
+            "x": 270
+          },
+          "role": "standard window",
+          "title": "Patterns",
+          "windowIndex": 0,
+          "identifier": "main",
+          "settable": false,
+          "path": [],
+          "actions": [
+            "AXRaise"
+          ],
+          "index": 7
+        },
+        {
+          "depth": 1,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 720,
+            "x": 270
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0
+          ],
+          "actions": [],
+          "index": 8
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 720,
+            "x": 270
+          },
+          "role": "split group",
+          "windowIndex": 0,
+          "identifier": "main, SidebarNavigationSplitView",
+          "settable": false,
+          "path": [
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 9
+        },
+        {
+          "depth": 3,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 210,
+            "x": 270
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 10
+        },
+        {
+          "depth": 4,
+          "frame": {
+            "y": 132,
+            "height": 512,
+            "width": 210,
+            "x": 270
+          },
+          "role": "scroll area",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXScrollLeftByPage",
+            "AXScrollRightByPage",
+            "AXScrollUpByPage",
+            "AXScrollDownByPage"
+          ],
+          "index": 11
+        },
+        {
+          "depth": 5,
+          "enabled": true,
+          "frame": {
+            "y": 132,
+            "height": 512,
+            "width": 210,
+            "x": 270
+          },
+          "role": "outline",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 12
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 142,
+            "height": 28,
+            "width": 210,
+            "x": 270
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 13
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 142,
+            "height": 28,
+            "width": 190,
+            "x": 280
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 14
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 148,
+            "height": 16,
+            "width": 71,
+            "x": 290
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Patterns",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 15
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 170,
+            "height": 28,
+            "width": 210,
+            "x": 270
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 16
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 170,
+            "height": 28,
+            "width": 190,
+            "x": 280
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "actions": [],
+          "index": 17
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 176.0399169921875,
+            "height": 16,
+            "width": 76,
+            "x": 289
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Favorites",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 18
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 198,
+            "height": 28,
+            "width": 210,
+            "x": 270
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 19
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 198,
+            "height": 28,
+            "width": 190,
+            "x": 280
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "actions": [],
+          "index": 20
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 204,
+            "height": 16,
+            "width": 59.5,
+            "x": 288.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Frame",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 21
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 226,
+            "height": 28,
+            "width": 210,
+            "x": 270
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 22
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 226,
+            "height": 28,
+            "width": 190,
+            "x": 280
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          "actions": [],
+          "index": 23
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 232,
+            "height": 16,
+            "width": 46.5,
+            "x": 288.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Film",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 24
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 132,
+            "height": 512,
+            "width": 190,
+            "x": 280
+          },
+          "role": "column",
+          "windowIndex": 0,
+          "identifier": "ListColumn",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "actions": [],
+          "index": 25
+        },
+        {
+          "depth": 4,
+          "enabled": true,
+          "frame": {
+            "y": 654,
+            "height": 16,
+            "width": 84.5,
+            "x": 281
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Local user",
+          "path": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "actions": [],
+          "index": 26
+        },
+        {
+          "depth": 4,
+          "elementDescription": "About",
+          "enabled": true,
+          "frame": {
+            "y": 652,
+            "height": 20,
+            "width": 20,
+            "x": 422
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.about",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 27
+        },
+        {
+          "depth": 4,
+          "elementDescription": "Clear Favorites",
+          "enabled": true,
+          "frame": {
+            "y": 652,
+            "height": 20,
+            "width": 20,
+            "x": 450
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.clear_favorites",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            3
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 28
+        },
+        {
+          "depth": 3,
+          "enabled": false,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 1,
+            "x": 480
+          },
+          "role": "splitter",
+          "windowIndex": 0,
+          "settable": true,
+          "value": "210",
+          "path": [
+            0,
+            0,
+            1
+          ],
+          "actions": [],
+          "index": 29
+        },
+        {
+          "depth": 3,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 509,
+            "x": 481
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2
+          ],
+          "actions": [],
+          "index": 30
+        },
+        {
+          "depth": 4,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 509,
+            "x": 481
+          },
+          "role": "split group",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "actions": [],
+          "index": 31
+        },
+        {
+          "depth": 5,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 284,
+            "x": 481
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 32
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 150,
+            "height": 16,
+            "width": 56.5,
+            "x": 629
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Card size",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 33
+        },
+        {
+          "depth": 6,
+          "elementDescription": "square.grid.3x3",
+          "enabled": true,
+          "frame": {
+            "y": 151,
+            "height": 14.5,
+            "width": 15.5,
+            "x": 693.5
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 34
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 148,
+            "height": 20,
+            "width": 17.5,
+            "x": 713
+          },
+          "role": "slider",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          "value": "180",
+          "actions": [
+            "AXIncrement",
+            "AXDecrement",
+            "AXIncrement",
+            "AXDecrement"
+          ],
+          "index": 35
+        },
+        {
+          "depth": 7,
+          "frame": {
+            "y": 146,
+            "height": 28,
+            "width": 24,
+            "x": 710
+          },
+          "role": "valueindicator",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "180",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            2,
+            0
+          ],
+          "actions": [],
+          "index": 36
+        },
+        {
+          "depth": 6,
+          "elementDescription": "Grid View",
+          "enabled": true,
+          "frame": {
+            "y": 151.5,
+            "height": 13.5,
+            "width": 14.5,
+            "x": 734.5
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            3
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 37
+        },
+        {
+          "depth": 6,
+          "elementDescription": "Scale the cards",
+          "frame": {
+            "y": 184,
+            "height": 496,
+            "width": 284,
+            "x": 481
+          },
+          "role": "scroll area",
+          "windowIndex": 0,
+          "identifier": "main_window.find",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4
+          ],
+          "actions": [
+            "AXScrollLeftByPage",
+            "AXScrollRightByPage",
+            "AXScrollUpByPage",
+            "AXScrollDownByPage",
+            "AXIncrement",
+            "AXDecrement"
+          ],
+          "index": 38
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 208,
+            "height": 964,
+            "width": 236,
+            "x": 505
+          },
+          "role": "opaqueprovidergroup",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0
+          ],
+          "actions": [
+            "AXScrollToTop",
+            "AXScrollToBottom"
+          ],
+          "index": 39
+        },
+        {
+          "depth": 8,
+          "elementDescription": "Gingham",
+          "enabled": true,
+          "frame": {
+            "y": 208,
+            "height": 120,
+            "width": 236,
+            "x": 505
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "card.open_swatch[1]",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          "actions": [
+            "AXScrollToVisible",
+            "AXPress"
+          ],
+          "index": 40
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 336,
+            "height": 16,
+            "width": 58,
+            "x": 505
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Gingham",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            1
+          ],
+          "actions": [
+            "AXScrollToVisible"
+          ],
+          "index": 41
+        },
+        {
+          "depth": 8,
+          "elementDescription": "Tartan",
+          "enabled": true,
+          "frame": {
+            "y": 372,
+            "height": 120,
+            "width": 236,
+            "x": 505
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "card.open_swatch[2]",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            2
+          ],
+          "actions": [
+            "AXScrollToVisible",
+            "AXPress"
+          ],
+          "index": 42
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 500,
+            "height": 16,
+            "width": 42,
+            "x": 505
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Tartan",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            3
+          ],
+          "actions": [
+            "AXScrollToVisible"
+          ],
+          "index": 43
+        },
+        {
+          "depth": 8,
+          "elementDescription": "Madras",
+          "enabled": true,
+          "frame": {
+            "y": 536,
+            "height": 120,
+            "width": 236,
+            "x": 505
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "card.open_swatch[3]",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            4
+          ],
+          "actions": [
+            "AXScrollToVisible",
+            "AXPress"
+          ],
+          "index": 44
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 664,
+            "height": 16,
+            "width": 48.5,
+            "x": 505
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Madras",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            5
+          ],
+          "actions": [
+            "AXScrollToVisible"
+          ],
+          "index": 45
+        },
+        {
+          "depth": 8,
+          "elementDescription": "Glen",
+          "enabled": true,
+          "frame": {
+            "y": 700,
+            "height": 120,
+            "width": 236,
+            "x": 505
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "card.open_swatch[4]",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            6
+          ],
+          "actions": [
+            "AXScrollToVisible",
+            "AXPress"
+          ],
+          "index": 46
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 828,
+            "height": 16,
+            "width": 29.5,
+            "x": 505
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Glen",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            7
+          ],
+          "actions": [
+            "AXScrollToVisible"
+          ],
+          "index": 47
+        },
+        {
+          "depth": 8,
+          "elementDescription": "Houndstooth",
+          "enabled": true,
+          "frame": {
+            "y": 864,
+            "height": 120,
+            "width": 236,
+            "x": 505
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "card.open_swatch[5]",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            8
+          ],
+          "actions": [
+            "AXScrollToVisible",
+            "AXPress"
+          ],
+          "index": 48
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 992,
+            "height": 16,
+            "width": 85,
+            "x": 505
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Houndstooth",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            9
+          ],
+          "actions": [
+            "AXScrollToVisible"
+          ],
+          "index": 49
+        },
+        {
+          "depth": 8,
+          "elementDescription": "Windowpane",
+          "enabled": true,
+          "frame": {
+            "y": 1028,
+            "height": 120,
+            "width": 236,
+            "x": 505
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "card.open_swatch[6]",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            10
+          ],
+          "actions": [
+            "AXScrollToVisible",
+            "AXPress"
+          ],
+          "index": 50
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 1156,
+            "height": 16,
+            "width": 84,
+            "x": 505
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Windowpane",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            0,
+            11
+          ],
+          "actions": [
+            "AXScrollToVisible"
+          ],
+          "index": 51
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 184,
+            "height": 496,
+            "width": 16,
+            "x": 749
+          },
+          "role": "scrollbar",
+          "windowIndex": 0,
+          "settable": true,
+          "value": "0",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            1
+          ],
+          "actions": [],
+          "index": 52
+        },
+        {
+          "depth": 8,
+          "frame": {
+            "y": 185,
+            "height": 242,
+            "width": 12,
+            "x": 753
+          },
+          "role": "valueindicator",
+          "windowIndex": 0,
+          "settable": true,
+          "value": "0",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            1,
+            0
+          ],
+          "actions": [],
+          "index": 53
+        },
+        {
+          "depth": 8,
+          "frame": {
+            "y": 184,
+            "height": 0,
+            "width": 0,
+            "x": 749
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            1,
+            1
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 54
+        },
+        {
+          "depth": 8,
+          "frame": {
+            "y": 184,
+            "height": 0,
+            "width": 0,
+            "x": 749
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            1,
+            2
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 55
+        },
+        {
+          "depth": 8,
+          "frame": {
+            "y": 427.5,
+            "height": 252.5,
+            "width": 12,
+            "x": 753
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            1,
+            3
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 56
+        },
+        {
+          "depth": 8,
+          "frame": {
+            "y": 184,
+            "height": 1,
+            "width": 12,
+            "x": 753
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            4,
+            1,
+            4
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 57
+        },
+        {
+          "depth": 5,
+          "enabled": false,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 1,
+            "x": 765
+          },
+          "role": "splitter",
+          "windowIndex": 0,
+          "settable": true,
+          "value": "284",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          "actions": [],
+          "index": 58
+        },
+        {
+          "depth": 5,
+          "frame": {
+            "y": 132,
+            "height": 548,
+            "width": 224,
+            "x": 766
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2
+          ],
+          "actions": [],
+          "index": 59
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 150,
+            "height": 16,
+            "width": 45,
+            "x": 782
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Details",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2,
+            0
+          ],
+          "actions": [],
+          "index": 60
+        },
+        {
+          "depth": 6,
+          "elementDescription": "Close",
+          "enabled": true,
+          "frame": {
+            "y": 148,
+            "height": 20,
+            "width": 20,
+            "x": 954
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.close_details",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2,
+            1
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 61
+        },
+        {
+          "depth": 6,
+          "elementDescription": "The poster's color",
+          "enabled": true,
+          "frame": {
+            "y": 180,
+            "height": 180,
+            "width": 192,
+            "x": 782
+          },
+          "role": "image",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2,
+            2
+          ],
+          "actions": [],
+          "index": 62
+        },
+        {
+          "depth": 6,
+          "elementDescription": "Poster",
+          "enabled": true,
+          "frame": {
+            "y": 210,
+            "height": 150,
+            "width": 100,
+            "x": 782
+          },
+          "role": "image",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2,
+            3
+          ],
+          "actions": [],
+          "index": 63
+        },
+        {
+          "depth": 6,
+          "elementDescription": "Search “check”",
+          "enabled": true,
+          "frame": {
+            "y": 373,
+            "height": 16,
+            "width": 68.5,
+            "x": 790
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.search_check",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2,
+            4
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 64
+        },
+        {
+          "depth": 6,
+          "elementDescription": "Delete a Letter",
+          "enabled": true,
+          "frame": {
+            "y": 373,
+            "height": 16,
+            "width": 71,
+            "x": 882.5
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.search_delete",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2,
+            5
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 65
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 404,
+            "height": 16,
+            "width": 174,
+            "x": 782
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Open a pattern to see it here",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2,
+            6
+          ],
+          "actions": [],
+          "index": 66
+        },
+        {
+          "depth": 1,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 720,
+            "x": 270
+          },
+          "role": "toolbar",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1
+          ],
+          "actions": [
+            "AXShowMenu"
+          ],
+          "index": 67
+        },
+        {
+          "depth": 2,
+          "elementDescription": "Toggle Sidebar",
+          "enabled": true,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 48,
+            "x": 357
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            0
+          ],
+          "actions": [
+            "AXIncrement",
+            "AXDecrement",
+            "AXDelete",
+            "AXShowMenu",
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 68
+        },
+        {
+          "depth": 3,
+          "elementDescription": "Toggle Sidebar",
+          "enabled": true,
+          "frame": {
+            "y": 94,
+            "height": 18.5,
+            "width": 29.5,
+            "x": 366.5
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            0,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 69
+        },
+        {
+          "depth": 2,
+          "elementDescription": "Open Video",
+          "enabled": true,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 47,
+            "x": 585
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.open_file",
+          "settable": false,
+          "path": [
+            1,
+            1
+          ],
+          "actions": [
+            "AXIncrement",
+            "AXDecrement",
+            "AXDelete",
+            "AXShowMenu",
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 70
+        },
+        {
+          "depth": 3,
+          "elementDescription": "Open Video",
+          "enabled": true,
+          "frame": {
+            "y": 94,
+            "height": 18.5,
+            "width": 29,
+            "x": 594
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "identifier": "main_window.open_file",
+          "settable": false,
+          "path": [
+            1,
+            1,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 71
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 42,
+            "x": 632
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            2
+          ],
+          "actions": [],
+          "index": 72
+        },
+        {
+          "depth": 3,
+          "elementDescription": "paintpalette",
+          "enabled": true,
+          "frame": {
+            "y": 92,
+            "height": 28,
+            "width": 34,
+            "x": 636
+          },
+          "role": "popup button",
+          "windowIndex": 0,
+          "identifier": "main_window.choose_poster",
+          "settable": false,
+          "path": [
+            1,
+            2,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 73
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 48,
+            "x": 674
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            3
+          ],
+          "actions": [],
+          "index": 74
+        },
+        {
+          "elementDescription": "Details",
+          "index": 75,
+          "actions": [
+            "AXPress"
+          ],
+          "settable": false,
+          "windowIndex": 0,
+          "frame": {
+            "y": 94,
+            "height": 18.5,
+            "width": 29.5,
+            "x": 683.5
+          },
+          "path": [
+            1,
+            3,
+            0
+          ],
+          "value": "1",
+          "identifier": "main_window.show_details",
+          "enabled": true,
+          "depth": 3,
+          "role": "checkbox"
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 251,
+            "x": 731
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            4
+          ],
+          "actions": [],
+          "index": 76
+        },
+        {
+          "depth": 3,
+          "enabled": true,
+          "frame": {
+            "y": 91,
+            "height": 31,
+            "width": 245,
+            "x": 734
+          },
+          "role": "search text field",
+          "windowIndex": 0,
+          "settable": true,
+          "path": [
+            1,
+            4,
+            0
+          ],
+          "actions": [
+            "AXShowMenu",
+            "AXConfirm"
+          ],
+          "index": 77
+        },
+        {
+          "depth": 4,
+          "elementDescription": "Search",
+          "enabled": true,
+          "frame": {
+            "y": 95,
+            "height": 22,
+            "width": 25,
+            "x": 736
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            4,
+            0,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 78
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 98,
+            "height": 16,
+            "width": 14,
+            "x": 289
+          },
+          "role": "close button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            2
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 79
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 98,
+            "height": 16,
+            "width": 14,
+            "x": 329
+          },
+          "role": "fullscreen button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            3
+          ],
+          "actions": [
+            "AXPress",
+            "AXZoomWindow",
+            "AXShowMenu"
+          ],
+          "index": 80
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 98,
+            "height": 16,
+            "width": 14,
+            "x": 309
+          },
+          "role": "minimize button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            4
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 81
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 80,
+            "height": 52,
+            "width": 180,
+            "x": 405
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Patterns",
+          "path": [
+            5
+          ],
+          "actions": [],
+          "index": 82
+        }
+      ],
+      "app": "Gallery",
+      "elementCount": 83,
+      "bundleIdentifier": "dev.bern.native13.gallery.7cbeebc7de454e328d6592661aaf6df7",
+      "timestamp": 814621450.042851,
+      "windowTitle": "Patterns",
+      "pid": 92250
+    },
+    "virtualCursor": {
+      "config": {
+        "showTrail": false,
+        "style": "ghostArrow",
+        "maxAgeSeconds": 12,
+        "trailLimit": 6,
+        "mode": "hybrid"
+      },
+      "overlayHelperRunning": false,
+      "totalMarkCount": 0,
+      "desktopOverlayDriver": "same-process",
+      "desktopOverlayReady": true,
+      "desktopOverlayVisible": true,
+      "trackedAppCount": 0
+    },
+    "guidance": {
+      "frameReliability": "high",
+      "summary": "This app appears to expose a mostly native Accessibility tree. Use element-index actions first and coordinates only as fallback.",
+      "confidence": "high",
+      "knownLimitations": [
+        "Custom drawing regions can still hide controls from AX even in otherwise native apps."
+      ],
+      "profile": "native",
+      "recommendedStrategies": [
+        "Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.",
+        "Use set_value for editable controls when AXValue is settable (1 settable element(s) in the current snapshot).",
+        "Refresh the snapshot after each mutation to avoid stale paths."
+      ]
+    }
+  }
+}

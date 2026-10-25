@@ -1,0 +1,1720 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Computer Use state (CUA App Version: 0.1.0-alpha)\n<app_specific_instructions>\n- Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.\n- Use set_value for editable controls when AXValue is settable (3 settable element(s) in the current snapshot).\n- Refresh the snapshot after each mutation to avoid stale paths.\n\nLimitations:\n- Custom drawing regions can still hide controls from AX even in otherwise native apps.\n</app_specific_instructions>\n<app_state>\nApp=dev.bern.native13.inputfg.fef3dacd06b44729ad15796b2a18a4af (pid 11709)\nWindow: \"Text Fields\", App: Bern Showcase.\n\t0 menubaritem Apple Secondary Actions: Cancel\n\t1 menubaritem Bern Showcase Secondary Actions: Cancel\n\t2 menubaritem File Secondary Actions: Cancel\n\t3 menubaritem Edit Secondary Actions: Cancel\n\t4 menubaritem View Secondary Actions: Cancel\n\t5 menubaritem Window Secondary Actions: Cancel\n\t6 menubaritem Help Secondary Actions: Cancel\n\t7 standard window Text Fields ID: main Secondary Actions: Raise\n\t\t8 container\n\t\t\t9 split group ID: main, SidebarNavigationSplitView\n\t\t\t\t10 container\n\t\t\t\t\t11 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down\n\t\t\t\t\t\t12 outline ID: main_window.sidebar_search\n\t\t\t\t\t\t\t13 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t14 cell\n\t\t\t\t\t\t\t\t\t15 search text field Secondary Actions: Show Menu, Confirm\n\t\t\t\t\t\t\t\t\t\t16 button Description: Search\n\t\t\t\t\t\t\t17 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t18 cell\n\t\t\t\t\t\t\t\t\t19 container\n\t\t\t\t\t\t\t\t\t\t20 heading Description: Controls\n\t\t\t\t\t\t\t21 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t22 cell\n\t\t\t\t\t\t\t\t\t23 text Value: Text\n\t\t\t\t\t\t\t24 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t25 cell\n\t\t\t\t\t\t\t\t\t26 text Value: Buttons\n\t\t\t\t\t\t\t27 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t28 cell\n\t\t\t\t\t\t\t\t\t29 text Value: Switches & Sliders\n\t\t\t\t\t\t\t30 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t31 cell\n\t\t\t\t\t\t\t\t\t32 text Value: Text Fields\n\t\t\t\t\t\t\t33 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t34 cell\n\t\t\t\t\t\t\t\t\t35 text Value: Images & Layout\n\t\t\t\t\t\t\t36 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t37 cell\n\t\t\t\t\t\t\t\t\t38 container\n\t\t\t\t\t\t\t\t\t\t39 heading Description: Data\n\t\t\t\t\t\t\t40 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t41 cell\n\t\t\t\t\t\t\t\t\t42 text Value: List & Detail\n\t\t\t\t\t\t\t43 row Secondary Actions: ShowDefaultUI, ShowAlternateUI\n\t\t\t\t\t\t\t\t44 cell\n\t\t\t\t\t\t\t\t\t45 text Value: Video\n\t\t\t\t\t\t\t46 column ID: ListColumn\n\t\t\t\t47 splitter (settable) 140 (disabled)\n\t\t\t\t48 container\n\t\t\t\t\t49 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down\n\t\t\t\t\t\t50 heading Description: Text\n\t\t\t\t\t\t51 container\n\t\t\t\t\t\t\t52 text Value: Name\n\t\t\t\t\t\t\t53 text field (settable) Bern13Input ID: inputs_page.name Secondary Actions: Show Menu, Confirm\n\t\t\t\t\t\t\t54 text Value: Password\n\t\t\t\t\t\t\t55 secure text field ID: inputs_page.password Secondary Actions: Show Menu, Confirm\n\t\t\t\t\t\t\t56 text Value: Notes\n\t\t\t\t\t\t\t57 text field ID: inputs_page.notes Secondary Actions: Show Menu, Confirm\n\t\t\t\t\t\t58 heading Description: Preview\n\t\t\t\t\t\t59 container\n\t\t\t\t\t\t\t60 text Value: Hello, Bern13Input\n\t\t61 toolbar Secondary Actions: Show Menu\n\t\t\t62 button Description: Toggle Sidebar Secondary Actions: Increment, Decrement, Delete, Show Menu, Cancel\n\t\t\t\t63 button Description: Toggle Sidebar\n\t\t64 close button\n\t\t65 fullscreen button Secondary Actions: Zoom Window, Show Menu\n\t\t66 minimize button\n\t\t67 text Value: Text Fields\n</app_state>\nThe focused UI element is 53 text field."
+    }
+  ],
+  "structuredContent": {
+    "screenshot": {
+      "contentRect": {
+        "y": 112,
+        "height": 640,
+        "width": 920,
+        "x": 260
+      },
+      "window": {
+        "pid": 11709,
+        "isOnScreen": true,
+        "appName": "Bern Showcase",
+        "frame": {
+          "y": 112,
+          "height": 640,
+          "width": 920,
+          "x": 260
+        },
+        "title": "Text Fields",
+        "bundleIdentifier": "dev.bern.native13.inputfg.fef3dacd06b44729ad15796b2a18a4af",
+        "windowLayer": 0,
+        "windowID": 12048,
+        "isActive": true
+      },
+      "captureBackend": "screencapture",
+      "virtualCursorApplied": true,
+      "pixelHeight": 640,
+      "requestedScale": 0.5,
+      "pixelWidth": 920,
+      "virtualCursorMarkCount": 2,
+      "pointPixelScale": 2
+    },
+    "desktopSession": {
+      "frontmostAppAtAcquire": "Bern Showcase",
+      "sessionID": "CAE17521-C9DA-4291-AF94-6713916AC1F3",
+      "currentCursor": {
+        "x": 303.86328125,
+        "y": 555.0390625
+      },
+      "active": true,
+      "actionsUsed": 2,
+      "frontmostPIDAtAcquire": 11709,
+      "cursorMovedDistance": 0,
+      "lockPath": "/Users/torrekie/Library/Caches/claudex-computer-use/desktop-session.lock",
+      "currentFrontmostBundleID": "dev.bern.native13.inputfg.fef3dacd06b44729ad15796b2a18a4af",
+      "actionBudget": 3,
+      "externalExclusiveLock": false,
+      "frontmostBundleIDAtAcquire": "dev.bern.native13.inputfg.fef3dacd06b44729ad15796b2a18a4af",
+      "interrupted": false,
+      "mode": "exclusive",
+      "currentFrontmostPID": 11709,
+      "currentFrontmostApp": "Bern Showcase",
+      "cursorAtAcquire": {
+        "x": 303.86328125,
+        "y": 555.0390625
+      },
+      "acquiredAt": 814624724.436323
+    },
+    "snapshot": {
+      "revision": "bf0bb4e2",
+      "elements": [
+        {
+          "depth": 0,
+          "enabled": true,
+          "frame": {
+            "y": 0,
+            "height": 24,
+            "width": 33,
+            "x": 10
+          },
+          "role": "menubaritem",
+          "title": "Apple",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            0
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 0
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "frame": {
+            "y": 0,
+            "height": 24,
+            "width": 120,
+            "x": 43
+          },
+          "role": "menubaritem",
+          "title": "Bern Showcase",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            1
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 1
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "frame": {
+            "y": 0,
+            "height": 24,
+            "width": 42,
+            "x": 163
+          },
+          "role": "menubaritem",
+          "title": "File",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            2
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 2
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "frame": {
+            "y": 0,
+            "height": 24,
+            "width": 44,
+            "x": 205
+          },
+          "role": "menubaritem",
+          "title": "Edit",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            3
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 3
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "frame": {
+            "y": 0,
+            "height": 24,
+            "width": 50,
+            "x": 249
+          },
+          "role": "menubaritem",
+          "title": "View",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            4
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 4
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "frame": {
+            "y": 0,
+            "height": 24,
+            "width": 69,
+            "x": 299
+          },
+          "role": "menubaritem",
+          "title": "Window",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            5
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 5
+        },
+        {
+          "depth": 0,
+          "enabled": true,
+          "frame": {
+            "y": 0,
+            "height": 24,
+            "width": 48,
+            "x": 368
+          },
+          "role": "menubaritem",
+          "title": "Help",
+          "windowIndex": -1,
+          "settable": false,
+          "path": [
+            6
+          ],
+          "actions": [
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 6
+        },
+        {
+          "depth": 0,
+          "frame": {
+            "y": 112,
+            "height": 640,
+            "width": 920,
+            "x": 260
+          },
+          "role": "standard window",
+          "title": "Text Fields",
+          "windowIndex": 0,
+          "identifier": "main",
+          "settable": false,
+          "path": [],
+          "actions": [
+            "AXRaise"
+          ],
+          "index": 7
+        },
+        {
+          "depth": 1,
+          "frame": {
+            "y": 112,
+            "height": 640,
+            "width": 920,
+            "x": 260
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0
+          ],
+          "actions": [],
+          "index": 8
+        },
+        {
+          "depth": 2,
+          "frame": {
+            "y": 112,
+            "height": 640,
+            "width": 920,
+            "x": 260
+          },
+          "role": "split group",
+          "windowIndex": 0,
+          "identifier": "main, SidebarNavigationSplitView",
+          "settable": false,
+          "path": [
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 9
+        },
+        {
+          "depth": 3,
+          "frame": {
+            "y": 112,
+            "height": 640,
+            "width": 140,
+            "x": 260
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 10
+        },
+        {
+          "depth": 4,
+          "frame": {
+            "y": 164,
+            "height": 588,
+            "width": 140,
+            "x": 260
+          },
+          "role": "scroll area",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXScrollLeftByPage",
+            "AXScrollRightByPage",
+            "AXScrollUpByPage",
+            "AXScrollDownByPage"
+          ],
+          "index": 11
+        },
+        {
+          "depth": 5,
+          "enabled": true,
+          "frame": {
+            "y": 164,
+            "height": 588,
+            "width": 140,
+            "x": 260
+          },
+          "role": "outline",
+          "windowIndex": 0,
+          "identifier": "main_window.sidebar_search",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 12
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 164,
+            "height": 28,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 13
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 164,
+            "height": 28,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 14
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 164,
+            "height": 28,
+            "width": 124,
+            "x": 268
+          },
+          "role": "search text field",
+          "windowIndex": 0,
+          "settable": true,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXShowMenu",
+            "AXConfirm"
+          ],
+          "index": 15
+        },
+        {
+          "depth": 9,
+          "elementDescription": "Search",
+          "enabled": true,
+          "frame": {
+            "y": 167,
+            "height": 22,
+            "width": 25,
+            "x": 270
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 16
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 205,
+            "height": 19,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 17
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 205,
+            "height": 19,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "actions": [],
+          "index": 18
+        },
+        {
+          "depth": 8,
+          "frame": {
+            "y": 205,
+            "height": 19,
+            "width": 124,
+            "x": 274
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 19
+        },
+        {
+          "depth": 9,
+          "elementDescription": "Controls",
+          "enabled": true,
+          "frame": {
+            "y": 207.5,
+            "height": 14,
+            "width": 47,
+            "x": 274
+          },
+          "role": "heading",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 20
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 224,
+            "height": 28,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 21
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 224,
+            "height": 28,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          "actions": [],
+          "index": 22
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 230,
+            "height": 16,
+            "width": 47,
+            "x": 278.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Text",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 23
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 252,
+            "height": 28,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 24
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 252,
+            "height": 28,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          "actions": [],
+          "index": 25
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 258.5,
+            "height": 16.0399169921875,
+            "width": 67.5,
+            "x": 280
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Buttons",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 26
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 280,
+            "height": 28,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 27
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 280,
+            "height": 28,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          "actions": [],
+          "index": 28
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 286,
+            "height": 16,
+            "width": 98.5,
+            "x": 279.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Switches & Sliders",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 29
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 308,
+            "height": 28,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 30
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 308,
+            "height": 28,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          "actions": [],
+          "index": 31
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 314,
+            "height": 16,
+            "width": 85.5,
+            "x": 279.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Text Fields",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 32
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 336,
+            "height": 28,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 33
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 336,
+            "height": 28,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0
+          ],
+          "actions": [],
+          "index": 34
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 342,
+            "height": 16,
+            "width": 99.5,
+            "x": 278.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Images & Layout",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 35
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 377,
+            "height": 19,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            7
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 36
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 377,
+            "height": 19,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0
+          ],
+          "actions": [],
+          "index": 37
+        },
+        {
+          "depth": 8,
+          "frame": {
+            "y": 377,
+            "height": 19,
+            "width": 124,
+            "x": 274
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 38
+        },
+        {
+          "depth": 9,
+          "elementDescription": "Data",
+          "enabled": true,
+          "frame": {
+            "y": 379.5,
+            "height": 14,
+            "width": 25.5,
+            "x": 274
+          },
+          "role": "heading",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 39
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 396,
+            "height": 28,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 40
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 396,
+            "height": 28,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          "actions": [],
+          "index": 41
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 402,
+            "height": 16,
+            "width": 94.5,
+            "x": 278.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "List & Detail",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 42
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 424,
+            "height": 28,
+            "width": 140,
+            "x": 260
+          },
+          "role": "row",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          "actions": [
+            "AXShowDefaultUI",
+            "AXShowAlternateUI"
+          ],
+          "index": 43
+        },
+        {
+          "depth": 7,
+          "enabled": true,
+          "frame": {
+            "y": 424,
+            "height": 28,
+            "width": 120,
+            "x": 270
+          },
+          "role": "cell",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          "actions": [],
+          "index": 44
+        },
+        {
+          "depth": 8,
+          "enabled": true,
+          "frame": {
+            "y": 430,
+            "height": 16,
+            "width": 56.5,
+            "x": 278.5
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Video",
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 45
+        },
+        {
+          "depth": 6,
+          "frame": {
+            "y": 164,
+            "height": 588,
+            "width": 120,
+            "x": 270
+          },
+          "role": "column",
+          "windowIndex": 0,
+          "identifier": "ListColumn",
+          "settable": false,
+          "path": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            10
+          ],
+          "actions": [],
+          "index": 46
+        },
+        {
+          "depth": 3,
+          "enabled": false,
+          "frame": {
+            "y": 164,
+            "height": 588,
+            "width": 1,
+            "x": 400
+          },
+          "role": "splitter",
+          "windowIndex": 0,
+          "settable": true,
+          "value": "140",
+          "path": [
+            0,
+            0,
+            1
+          ],
+          "actions": [],
+          "index": 47
+        },
+        {
+          "depth": 3,
+          "frame": {
+            "y": 112,
+            "height": 640,
+            "width": 779,
+            "x": 401
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2
+          ],
+          "actions": [],
+          "index": 48
+        },
+        {
+          "depth": 4,
+          "frame": {
+            "y": 164,
+            "height": 588,
+            "width": 779,
+            "x": 401
+          },
+          "role": "scroll area",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "actions": [
+            "AXScrollLeftByPage",
+            "AXScrollRightByPage",
+            "AXScrollUpByPage",
+            "AXScrollDownByPage"
+          ],
+          "index": 49
+        },
+        {
+          "depth": 5,
+          "elementDescription": "Text",
+          "enabled": true,
+          "frame": {
+            "y": 184,
+            "height": 16,
+            "width": 27,
+            "x": 431
+          },
+          "role": "heading",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          "actions": [],
+          "index": 50
+        },
+        {
+          "depth": 5,
+          "enabled": true,
+          "frame": {
+            "y": 208,
+            "height": 149.5,
+            "width": 745,
+            "x": 418
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            1
+          ],
+          "actions": [],
+          "index": 51
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 220,
+            "height": 16,
+            "width": 35.5,
+            "x": 431
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Name",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          "actions": [],
+          "index": 52
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 220,
+            "height": 16,
+            "width": 675.5,
+            "x": 474.5
+          },
+          "role": "text field",
+          "windowIndex": 0,
+          "identifier": "inputs_page.name",
+          "settable": true,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            1
+          ],
+          "value": "Bern13Input",
+          "actions": [
+            "AXShowMenu",
+            "AXConfirm"
+          ],
+          "index": 53
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 257,
+            "height": 16,
+            "width": 58.5,
+            "x": 431
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Password",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            2
+          ],
+          "actions": [],
+          "index": 54
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 257,
+            "height": 16,
+            "width": 652.5,
+            "x": 497.5
+          },
+          "role": "secure text field",
+          "windowIndex": 0,
+          "identifier": "inputs_page.password",
+          "settable": true,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            3
+          ],
+          "actions": [
+            "AXShowMenu",
+            "AXConfirm"
+          ],
+          "index": 55
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 294,
+            "height": 49.5,
+            "width": 36,
+            "x": 431
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Notes",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            4
+          ],
+          "actions": [],
+          "index": 56
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 294,
+            "height": 48,
+            "width": 675,
+            "x": 475
+          },
+          "role": "text field",
+          "windowIndex": 0,
+          "identifier": "inputs_page.notes",
+          "settable": true,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            1,
+            5
+          ],
+          "actions": [
+            "AXShowMenu",
+            "AXConfirm"
+          ],
+          "index": 57
+        },
+        {
+          "depth": 5,
+          "elementDescription": "Preview",
+          "enabled": true,
+          "frame": {
+            "y": 383.5,
+            "height": 16,
+            "width": 50,
+            "x": 431
+          },
+          "role": "heading",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            2
+          ],
+          "actions": [],
+          "index": 58
+        },
+        {
+          "depth": 5,
+          "enabled": true,
+          "frame": {
+            "y": 407.5,
+            "height": 42,
+            "width": 745,
+            "x": 418
+          },
+          "role": "container",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            3
+          ],
+          "actions": [],
+          "index": 59
+        },
+        {
+          "depth": 6,
+          "enabled": true,
+          "frame": {
+            "y": 419.5,
+            "height": 16,
+            "width": 111,
+            "x": 431
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Hello, Bern13Input",
+          "path": [
+            0,
+            0,
+            2,
+            0,
+            3,
+            0
+          ],
+          "actions": [],
+          "index": 60
+        },
+        {
+          "depth": 1,
+          "frame": {
+            "y": 112,
+            "height": 52,
+            "width": 920,
+            "x": 260
+          },
+          "role": "toolbar",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1
+          ],
+          "actions": [
+            "AXShowMenu"
+          ],
+          "index": 61
+        },
+        {
+          "depth": 2,
+          "elementDescription": "Toggle Sidebar",
+          "enabled": true,
+          "frame": {
+            "y": 112,
+            "height": 52,
+            "width": 48,
+            "x": 409
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            0
+          ],
+          "actions": [
+            "AXIncrement",
+            "AXDecrement",
+            "AXDelete",
+            "AXShowMenu",
+            "AXCancel",
+            "AXPress"
+          ],
+          "index": 62
+        },
+        {
+          "depth": 3,
+          "elementDescription": "Toggle Sidebar",
+          "enabled": true,
+          "frame": {
+            "y": 126,
+            "height": 18.5,
+            "width": 29.5,
+            "x": 418.5
+          },
+          "role": "button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            1,
+            0,
+            0
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 63
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 130,
+            "height": 16,
+            "width": 14,
+            "x": 279
+          },
+          "role": "close button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            2
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 64
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 130,
+            "height": 16,
+            "width": 14,
+            "x": 319
+          },
+          "role": "fullscreen button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            3
+          ],
+          "actions": [
+            "AXPress",
+            "AXZoomWindow",
+            "AXShowMenu"
+          ],
+          "index": 65
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 130,
+            "height": 16,
+            "width": 14,
+            "x": 299
+          },
+          "role": "minimize button",
+          "windowIndex": 0,
+          "settable": false,
+          "path": [
+            4
+          ],
+          "actions": [
+            "AXPress"
+          ],
+          "index": 66
+        },
+        {
+          "depth": 1,
+          "enabled": true,
+          "frame": {
+            "y": 112,
+            "height": 52,
+            "width": 715,
+            "x": 457
+          },
+          "role": "text",
+          "windowIndex": 0,
+          "settable": false,
+          "value": "Text Fields",
+          "path": [
+            5
+          ],
+          "actions": [],
+          "index": 67
+        }
+      ],
+      "app": "Bern Showcase",
+      "elementCount": 68,
+      "bundleIdentifier": "dev.bern.native13.inputfg.fef3dacd06b44729ad15796b2a18a4af",
+      "timestamp": 814624726.055493,
+      "windowTitle": "Text Fields",
+      "pid": 11709
+    },
+    "virtualCursor": {
+      "config": {
+        "showTrail": false,
+        "style": "ghostArrow",
+        "maxAgeSeconds": 12,
+        "trailLimit": 6,
+        "mode": "hybrid"
+      },
+      "overlayHelperRunning": false,
+      "totalMarkCount": 2,
+      "desktopOverlayDriver": "same-process",
+      "desktopOverlayReady": true,
+      "desktopOverlayVisible": true,
+      "trackedAppCount": 1
+    },
+    "guidance": {
+      "frameReliability": "high",
+      "summary": "This app appears to expose a mostly native Accessibility tree. Use element-index actions first and coordinates only as fallback.",
+      "confidence": "high",
+      "knownLimitations": [
+        "Custom drawing regions can still hide controls from AX even in otherwise native apps."
+      ],
+      "profile": "native",
+      "recommendedStrategies": [
+        "Start from get_app_state and target visible buttons, text fields, rows, and menus via element_index.",
+        "Use set_value for editable controls when AXValue is settable (3 settable element(s) in the current snapshot).",
+        "Refresh the snapshot after each mutation to avoid stale paths."
+      ]
+    }
+  }
+}

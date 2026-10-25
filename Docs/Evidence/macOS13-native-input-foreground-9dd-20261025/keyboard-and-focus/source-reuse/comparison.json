@@ -1,0 +1,453 @@
+{
+  "schema": "bern_name_input_source_reuse_v1",
+  "created_at_utc": "2026-10-25T12:46:31.863183+00:00",
+  "historical_delivered_showcase_source": "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0",
+  "current_reviewed_revision": "13354f94bfee6e71d152b3c3ec1005cbc2044e7a",
+  "conclusion": "All selected Name component, protocol/command/draft, TextField binding/onSubmit and keyboard monitor regions are byte-identical. Reuse the actual9dd input acceptance for these current unchanged paths.",
+  "method": "Read-only local git show; raw byte equality checked in addition to SHA256. Exact markers included/excluded, no normalization. All inspected current working-tree source bytes equal pinned13354f94 despite ongoing documentation edits.",
+  "regions": [
+    {
+      "region": "Rust window-owned MainDraft including name",
+      "path": "examples/showcase/showcase-ui/src/lib.rs",
+      "start_marker_included": "#[bern::session]\npub struct MainDraft",
+      "end_marker_excluded": "/// The application:",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 73,
+          "end_line_inclusive": 94,
+          "bytes": 468,
+          "sha256": "5d8420bc5afd5ef83b8f658122d9088a3c8a6ad519e4daa6c8cbc82dd2e649af"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 73,
+          "end_line_inclusive": 94,
+          "bytes": 468,
+          "sha256": "5d8420bc5afd5ef83b8f658122d9088a3c8a6ad519e4daa6c8cbc82dd2e649af"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Rust Inputs Name action and Hello preview",
+      "path": "examples/showcase/showcase-ui/src/pages.rs",
+      "start_marker_included": "#[component]\npub fn inputs_page",
+      "end_marker_excluded": "\n/// Pictures from declared resources",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 123,
+          "end_line_inclusive": 141,
+          "bytes": 1255,
+          "sha256": "039f232f2e8465e0f7474ba726a85a7ca87f8ffafa465822edfae0cea30c9813"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 123,
+          "end_line_inclusive": 141,
+          "bytes": 1255,
+          "sha256": "039f232f2e8465e0f7474ba726a85a7ca87f8ffafa465822edfae0cea30c9813"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Rust record command: last_action and exactly one activation",
+      "path": "examples/showcase/showcase-core/src/lib.rs",
+      "start_marker_included": "    fn record(&mut self, action: Action) -> Result<(), CommandError> {",
+      "end_marker_excluded": "    fn set_volume(",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 90,
+          "end_line_inclusive": 95,
+          "bytes": 215,
+          "sha256": "ca389d59cc7058b9a29dac12ea7072a586908d37693bfe120c71022199006985"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 90,
+          "end_line_inclusive": 95,
+          "bytes": 215,
+          "sha256": "ca389d59cc7058b9a29dac12ea7072a586908d37693bfe120c71022199006985"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Rust Action enum including Submit",
+      "path": "examples/showcase/showcase-protocol/src/lib.rs",
+      "start_marker_included": "    /// A button in the gallery.",
+      "end_marker_excluded": "    /// Category of a sample library item.",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 9,
+          "end_line_inclusive": 27,
+          "bytes": 763,
+          "sha256": "8aeb209b501dd2c817515411bd0bcd47af157e44568e2a3b53f2ae5305b98d10"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 9,
+          "end_line_inclusive": 27,
+          "bytes": 763,
+          "sha256": "8aeb209b501dd2c817515411bd0bcd47af157e44568e2a3b53f2ae5305b98d10"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Rust State and record protocol declaration",
+      "path": "examples/showcase/showcase-protocol/src/lib.rs",
+      "start_marker_included": "    #[state]",
+      "end_marker_excluded": "        /// Commit the volume slider.",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 66,
+          "end_line_inclusive": 89,
+          "bytes": 830,
+          "sha256": "f970d4c2aaa11d5dea3f131e1873fd9d29d63c09da728b00a3b3a36d655b8099"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 66,
+          "end_line_inclusive": 89,
+          "bytes": 830,
+          "sha256": "f970d4c2aaa11d5dea3f131e1873fd9d29d63c09da728b00a3b3a36d655b8099"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "SwiftUI TextField, binding, onSubmit and control registration generator",
+      "path": "crates/bern-backend-swiftui/src/swift/controls.rs",
+      "start_marker_included": "    pub(super) fn text_input(",
+      "end_marker_excluded": "    pub(super) fn switch(",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 362,
+          "end_line_inclusive": 443,
+          "bytes": 3390,
+          "sha256": "2965a38065712f4b44a6a0d36c44de070aa23cfbc951d745f775bb844c6dfa60"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 362,
+          "end_line_inclusive": 443,
+          "bytes": 3390,
+          "sha256": "2965a38065712f4b44a6a0d36c44de070aa23cfbc951d745f775bb844c6dfa60"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Swift Binding get/set expression generator",
+      "path": "crates/bern-backend-swiftui/src/swift/expr.rs",
+      "start_marker_included": "    pub(super) fn binding_of(",
+      "end_marker_excluded": "    /// The file a control takes",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 241,
+          "end_line_inclusive": 244,
+          "bytes": 148,
+          "sha256": "afc10b25884b71ab27ccbd5fa3acb69d3bd194e4a56a5a49becaa15ac694b33e"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 241,
+          "end_line_inclusive": 244,
+          "bytes": 148,
+          "sha256": "afc10b25884b71ab27ccbd5fa3acb69d3bd194e4a56a5a49becaa15ac694b33e"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Generated window draft @Published storage and validated setter",
+      "path": "crates/bern-backend-swiftui/src/swift/values.rs",
+      "start_marker_included": "pub(super) fn generate_sessions(",
+      "end_marker_excluded": null,
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 400,
+          "end_line_inclusive": 453,
+          "bytes": 2122,
+          "sha256": "23d710568238c932392b6a5c7727446bdc9198b4c36b7e4127b28cc0c58baf74"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 400,
+          "end_line_inclusive": 453,
+          "bytes": 2122,
+          "sha256": "23d710568238c932392b6a5c7727446bdc9198b4c36b7e4127b28cc0c58baf74"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Runtime window-owned session state and set entry",
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "start_marker_included": "// MARK: - Session state",
+      "end_marker_excluded": "// MARK: - Controls",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 497,
+          "end_line_inclusive": 664,
+          "bytes": 5378,
+          "sha256": "17bf9f87130d2bc8461fa6453d5621f3ced91f5b91a17a820fb44034c0911ec8"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 497,
+          "end_line_inclusive": 664,
+          "bytes": 5378,
+          "sha256": "17bf9f87130d2bc8461fa6453d5621f3ced91f5b91a17a820fb44034c0911ec8"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Runtime BernHost.sessionSet validation bridge",
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "start_marker_included": "    func sessionSet(",
+      "end_marker_excluded": "    /// Request closing a window kind",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 1334,
+          "end_line_inclusive": 1348,
+          "bytes": 583,
+          "sha256": "c9aceaad587e554e4106d57747b4570b7aa93a8d241ff8869d9a4cd9b8bb14da"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 1334,
+          "end_line_inclusive": 1348,
+          "bytes": 583,
+          "sha256": "c9aceaad587e554e4106d57747b4570b7aa93a8d241ff8869d9a4cd9b8bb14da"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Runtime mounted control registration, removal and readback API",
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "start_marker_included": "// MARK: - Controls",
+      "end_marker_excluded": "// MARK: - Host",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 665,
+          "end_line_inclusive": 930,
+          "bytes": 9652,
+          "sha256": "f79997e93eaa878ed79b8323ed463f32a415d4fcabc59a548c3a06d8fdda18a8"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 665,
+          "end_line_inclusive": 930,
+          "bytes": 9652,
+          "sha256": "f79997e93eaa878ed79b8323ed463f32a415d4fcabc59a548c3a06d8fdda18a8"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Sidebar focus and arrow-key modifier",
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "start_marker_included": "/// Styled rows draw selection themselves",
+      "end_marker_excluded": "/// A sidebar destination",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 1272,
+          "end_line_inclusive": 1314,
+          "bytes": 1889,
+          "sha256": "6c88052b2ee509c1f9a1ec940d9135505dbaf4ddf27cb139e99cfc116f7cf8c3"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 1272,
+          "end_line_inclusive": 1314,
+          "bytes": 1889,
+          "sha256": "6c88052b2ee509c1f9a1ec940d9135505dbaf4ddf27cb139e99cfc116f7cf8c3"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "macOS13 sidebar arrow-key monitor",
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "start_marker_included": "private struct BernLegacySidebarKeys:",
+      "end_marker_excluded": "\n#endif\n\nextension View {\n    @ViewBuilder fileprivate func bernPopoverMaterial",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 5163,
+          "end_line_inclusive": 5191,
+          "bytes": 1675,
+          "sha256": "891b7b89094b60dd15a636ad62de7d931bd1b1a4a1bf1b1237c5d046dd4f8561"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 5272,
+          "end_line_inclusive": 5300,
+          "bytes": 1675,
+          "sha256": "891b7b89094b60dd15a636ad62de7d931bd1b1a4a1bf1b1237c5d046dd4f8561"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "macOS13 scrubber arrow-key monitor",
+      "path": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "start_marker_included": "private struct BernLegacyScrubberKeys:",
+      "end_marker_excluded": "// MARK: - Circular icon buttons",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 1294,
+          "end_line_inclusive": 1341,
+          "bytes": 1765,
+          "sha256": "4e65029678bdab826e4da3886dbc3471082c147ed2caceaf667077f053a14270"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 1294,
+          "end_line_inclusive": 1341,
+          "bytes": 1765,
+          "sha256": "4e65029678bdab826e4da3886dbc3471082c147ed2caceaf667077f053a14270"
+        }
+      },
+      "byte_identical": true
+    },
+    {
+      "region": "Window input idle monitor returns original event",
+      "path": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "start_marker_included": "/// Watches input in one window",
+      "end_marker_excluded": "/// `submit: clear`:",
+      "versions": {
+        "9dd99b76cc5600043a37b3cf8ec46e046c0c1ec0": {
+          "start_line_inclusive": 1552,
+          "end_line_inclusive": 1617,
+          "bytes": 2633,
+          "sha256": "00a9878c17c3af9225169474a1925252b589c56d10bffc8909ff7747ca6a33b3"
+        },
+        "13354f94bfee6e71d152b3c3ec1005cbc2044e7a": {
+          "start_line_inclusive": 1552,
+          "end_line_inclusive": 1617,
+          "bytes": 2633,
+          "sha256": "00a9878c17c3af9225169474a1925252b589c56d10bffc8909ff7747ca6a33b3"
+        }
+      },
+      "byte_identical": true
+    }
+  ],
+  "inspected_files": [
+    {
+      "path": "crates/bern-backend-swiftui/src/swift/controls.rs",
+      "historical_sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd",
+      "current_sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/src/swift/expr.rs",
+      "historical_sha256": "228f8136c696e172d77bb5b94e4497862ddc8e06eac2794d2514393c08214ce7",
+      "current_sha256": "228f8136c696e172d77bb5b94e4497862ddc8e06eac2794d2514393c08214ce7",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/src/swift/values.rs",
+      "historical_sha256": "add39694eecd3dcb51d94cd1517d5b12a31f02c1f01d8c745f164e471e9f80d3",
+      "current_sha256": "add39694eecd3dcb51d94cd1517d5b12a31f02c1f01d8c745f164e471e9f80d3",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernAppKit.swift",
+      "historical_sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598",
+      "current_sha256": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "historical_sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+      "current_sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "historical_sha256": "e1cad857ba8d4d6a5ad5155c3d7f30cc44a511b6de8988329aa45392c6cd1c6f",
+      "current_sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+      "whole_file_equal": false,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "examples/showcase/showcase-core/src/lib.rs",
+      "historical_sha256": "5b9eb983342a80ad93e2f8d5b021e27e752971c8aaade6a2002539419a6dd323",
+      "current_sha256": "5b9eb983342a80ad93e2f8d5b021e27e752971c8aaade6a2002539419a6dd323",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "examples/showcase/showcase-protocol/src/lib.rs",
+      "historical_sha256": "7c084817cb1e8a215306852592b3ff3a473968dc21a604d4d50e97544fb1ae8b",
+      "current_sha256": "7c084817cb1e8a215306852592b3ff3a473968dc21a604d4d50e97544fb1ae8b",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "examples/showcase/showcase-ui/src/lib.rs",
+      "historical_sha256": "62886e42cc848568e9e5d5f15cc254e7360a9c4d6beb9e55caa061d35681837b",
+      "current_sha256": "62886e42cc848568e9e5d5f15cc254e7360a9c4d6beb9e55caa061d35681837b",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    },
+    {
+      "path": "examples/showcase/showcase-ui/src/pages.rs",
+      "historical_sha256": "1bb92ffd8d13f7e732baa2668285dd4d4e4524ce04602d89ffba8a532f44b261",
+      "current_sha256": "1bb92ffd8d13f7e732baa2668285dd4d4e4524ce04602d89ffba8a532f44b261",
+      "whole_file_equal": true,
+      "working_tree_equals_current_revision": true
+    }
+  ],
+  "remaining_inspected_file_diff": {
+    "numstat": [
+      "119\t10\tcrates/bern-backend-swiftui/templates/BernStyle.swift"
+    ],
+    "sha256": "56beb9686bdc3014c89d97bb91004661cc16e3e0005af017a878c48a503dd581",
+    "hunk_headers": [
+      "@@ -2090,0 +2091,3 @@ private struct BernSnap: ViewModifier {",
+      "@@ -2103,0 +2107 @@ private struct BernSnap: ViewModifier {",
+      "@@ -2106 +2110,3 @@ private struct BernSnap: ViewModifier {",
+      "@@ -2185,0 +2192,42 @@ extension View {",
+      "@@ -2208,0 +2257,4 @@ final class BernScrollItems: BernObservableObject {",
+      "@@ -2400,0 +2453 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2415,0 +2469 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2418 +2472 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2425 +2479,4 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2430 +2487,2 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2433,0 +2492 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2441 +2500,3 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2449,0 +2511 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2451,0 +2514,3 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2458,0 +2524,3 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2471 +2539,4 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2477,0 +2549,29 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -2488,0 +2589,3 @@ private struct BernScrollPosition<ID: Hashable & Sendable>: ViewModifier {",
+      "@@ -4849,0 +4953,2 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {",
+      "@@ -5009,2 +5114,4 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {",
+      "@@ -5014,2 +5121,4 @@ private struct BernLegacyScrollProbe: NSViewRepresentable {"
+    ],
+    "scope": "Only BernStyle legacy Snap/ScrollPosition/ScrollProbe changes; no selected input region differs. The complete backend is not claimed identical."
+  },
+  "input_semantics": [
+    "Name binds window-owned MainDraft.name; the same draft controls Hello preview.",
+    "The generator creates stock SwiftUI.TextField with a Binding getter/setter and onSubmit record(Submit), without a custom Name NSView.",
+    "Generated draft setters validate through BernWindowContext.set/BernHost.sessionSet before publishing the new value.",
+    "record(Submit) sets last_action and increments activations once; this Name declaration has no submit-clear action.",
+    "Sidebar legacy monitor consumes only unmodified up/down arrows in its focused window and yields marked-text editing.",
+    "Scrubber monitor consumes only arrows and excludes NSTextView; the window idle monitor returns the original event. Tab/Return are not consumed by those selected monitor implementations."
+  ],
+  "runtime_scope_boundary": {
+    "summary_source": "Parent/root reported runtime; this source-only review does not create or rewrite runtime evidence.",
+    "passed_route": "Actual foreground window and new baseline; Tab -> unique focused Name53 with caret -> Unicode/direct Bern13Input -> Hello and draft readback -> one Return -> activations0/revision0 to activations1/revision1 and last_actionSubmit.",
+    "reported_own_pid": 11709,
+    "native_mouse_pass_claimed": false,
+    "physical_hardware_keyboard_pass_claimed": false,
+    "preserve_failed_records": [
+      "Two coordinate mouse attempts left focus on outline12; not input passes.",
+      "Controller text-variable TypeError remains a controller failure record."
+    ],
+    "not_claimed": [
+      "Whole backend or complete app equality",
+      "Mouse hit testing or CGEvent mouse routing correctness",
+      "Physical hardware keyboard, IME or VoiceOver acceptance",
+      "Pixel equality or cross-version animation trajectory equality"
+    ]
+  },
+  "write_scope": "Only this new source-reuse directory; no run/responses/product files altered; no UI, compilation, CI or network."
+}
