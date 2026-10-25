@@ -10,7 +10,7 @@ STYLE_SHA = "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
 STYLE_BYTES = 210785
 GENERATED_SHA = "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
 GENERATED_BYTES = 81110
-HELPER_SHA = "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf"
+HELPER_SHA = "681b54e8ca767dd98ff9ba3725d9780a7373f329840685371684fd242ab39b7c"
 ROW_START = b"struct BernRow: Layout {\n"
 ROW_END = b"\nstruct BernFlow: Layout {"
 FRAME_START = b"/// Generated from the `frame` component.\n"
@@ -105,7 +105,7 @@ def candidate(style, generated, helper):
         "original_layout_query_counts": {"sizeThatFits": original_row.count(b"subview.sizeThatFits("), "dimensions": original_row.count(b"subview.dimensions(in:"), "place": original_row.count(b"subviews[index].place(")},
         "original_measurement_and_place_calls_unchanged": True,
         "arm_protocol": {"environment": "BERN_FRAME_ROW_LEDGER_OUTPUT_DIR", "file": "frame-row-ledger.arm.json", "schema": "bern_frame_row_arm_v1", "stage": "frame-closed-light", "required": ["schema", "pid", "stage", "token"]},
-        "output_name": "frame-row-ledger-<pid>.json", "file_byte_limit": 65536, "complete_placement_limit": 64,
+        "output_name": "frame-row-ledger-<pid>.json", "file_byte_limit": 65536, "retention": "latest1", "retained_limit": 1,
         "success_scope": "patch construction only; not compile/runtime/visual acceptance"
     }
     return changed_style, changed_generated, proof

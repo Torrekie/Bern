@@ -35,10 +35,10 @@ FILES = ("BernGenerated.swift", "BernStyle.swift")
 ORIGINAL = {"BernGenerated.swift": (81110, "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"),
             "BernStyle.swift": (210785, "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89")}
 COMPILED = {"BernGenerated.swift": (81150, "709d1c95afbc2b894a3f7d3baf88e423d1f384bfb5c21b893fc7362bc012a511"),
-            "BernStyle.swift": (222921, "b3361ab4ff9ee1f7a4284cfba06df101c829fdfdd5ea5f8b040eeee1cd7569db")}
-LOCKED_PATCH = {"patch.py": "815322661ba0681f89b6737bd70c88e58a5ee28cd4886eabd885f940b833b6ed",
-                "RowLedger.swift": "680fbf705238a12c734d9b7c21a33b4911f077f16ae8fd7146d19a31d827bdbf",
-                "FrameClosed.swift": "dcbd5405f31e0797937049feed74c4d54d7136da602636077085a856b2f2cd3d",
+            "BernStyle.swift": (222826, "0288df5c90b4a409c5ec034a6736722d9f908c11d9d3c0661422b6d550ec512c")}
+LOCKED_PATCH = {"patch.py": "adbbe1572a627c19a0ddb559858678b0283f4b21d52a18be23314377721e9039",
+                "RowLedger.swift": "681b54e8ca767dd98ff9ba3725d9780a7373f329840685371684fd242ab39b7c",
+                "FrameClosed.swift": "3613df83629f0b3e975425c3db37a53e40135dfc93dd6d333bf4487ad2e1d974",
                 "PixelGate.swift": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"}
 
 
