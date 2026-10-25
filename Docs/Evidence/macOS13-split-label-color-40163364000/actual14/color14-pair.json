@@ -1,0 +1,60 @@
+{
+  "build_manifest_sha256" : "55b75658cf84e3fb5eb713c414cab495d37843b6959c9801e439da48c24413df",
+  "candidate_png_sha256" : "66e16368abbad027b9d51cb43e1af61ae0877eab5a6c6cbb72431c6b5b61919b",
+  "candidate_report_sha256" : "f210ba7ca4aa3bad42720e1440cc02ff0fe333251fbdf90dc03ec26e74704378",
+  "ci_run_id" : "40163364000",
+  "collector_executable_sha256" : "eff075bf6cabaff996652c71088d51980e29caafeb96e3cc238b01c867fb95f7",
+  "control_png_sha256" : "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b",
+  "control_report_sha256" : "4ad911aa06c132c2f2a83444c4d173909c2845125cabcfd6353932370a06c728",
+  "decoded_layout" : {
+    "alpha_info" : 3,
+    "bitmap_info" : 3,
+    "bits_per_component" : 8,
+    "bits_per_pixel" : 32,
+    "bytes_per_row" : 3680,
+    "height" : 668,
+    "width" : 920
+  },
+  "frame_detail" : {
+    "changed_bbox_half_open_pixels" : null,
+    "changed_pixels" : 0,
+    "comparison" : "All decoded active pixel bytes including stored alpha; row padding excluded; no color conversion",
+    "equal" : true,
+    "roi_half_open_pixels" : [
+      211,
+      52,
+      920,
+      668
+    ]
+  },
+  "frame_roi_points" : [
+    211,
+    52,
+    920,
+    668
+  ],
+  "gate_executable_sha256" : "3e26fa35769b6e5cb3feb34e41e23f82ddfea6ac6d442d0bb67655977fa02eb4",
+  "harness_sha" : "2cff19aad748ac673fefda921b313886bb902e4b",
+  "icc_sha256" : "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+  "kind" : "split_label_color14_no_effect",
+  "scale" : 1,
+  "scope" : "Selected-label color candidate effect on same-CI macOS14 closed Frame detail only; whole-window differences separate; not full UI or cross-OS equivalence",
+  "success" : true,
+  "whole_window" : {
+    "changed_bbox_half_open_pixels" : [
+      10,
+      118,
+      200,
+      146
+    ],
+    "changed_pixels" : 5284,
+    "comparison" : "All decoded active pixel bytes including stored alpha; row padding excluded; no color conversion",
+    "equal" : false,
+    "roi_half_open_pixels" : [
+      0,
+      0,
+      920,
+      668
+    ]
+  }
+}

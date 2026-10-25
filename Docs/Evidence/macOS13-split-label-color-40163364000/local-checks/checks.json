@@ -1,0 +1,106 @@
+{
+  "toolchain": "Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\n",
+  "sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+  "target": "arm64-apple-macosx13.0",
+  "swift_language_mode": "5",
+  "before": [
+    {
+      "path": "work/split-label-color-preparation/BernStyle.swift",
+      "bytes": 211493,
+      "sha256": "8219c50ec45a81eb7516b63bddbc7541211006c1a09f0069a93390707c0c6df0"
+    },
+    {
+      "path": "work/split-label-color-ci-preparation/FrameColorCapture.swift",
+      "bytes": 52243,
+      "sha256": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69"
+    },
+    {
+      "path": "work/split-label-color-ci-preparation/FrameColorGate.swift",
+      "bytes": 12832,
+      "sha256": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618"
+    }
+  ],
+  "checks": [
+    {
+      "argv": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+        "-frontend",
+        "-parse",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-preparation/BernStyle.swift"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.07210016599856317,
+      "log": {
+        "path": "work/split-label-color-local-checks/BernStyle.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+        "-typecheck",
+        "-swift-version",
+        "5",
+        "-j",
+        "2",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-module-cache-path",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-local-checks/module-cache",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-ci-preparation/FrameColorCapture.swift"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 4.840520792000461,
+      "log": {
+        "path": "work/split-label-color-local-checks/FrameColorCapture.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+        "-typecheck",
+        "-swift-version",
+        "5",
+        "-j",
+        "2",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk",
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-module-cache-path",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-local-checks/module-cache",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-ci-preparation/FrameColorGate.swift"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.6180752500076778,
+      "log": {
+        "path": "work/split-label-color-local-checks/FrameColorGate.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "scope": "parse candidate Style and typecheck exact Capture/Gate; no executable or native UI",
+  "after": [
+    {
+      "path": "work/split-label-color-preparation/BernStyle.swift",
+      "bytes": 211493,
+      "sha256": "8219c50ec45a81eb7516b63bddbc7541211006c1a09f0069a93390707c0c6df0"
+    },
+    {
+      "path": "work/split-label-color-ci-preparation/FrameColorCapture.swift",
+      "bytes": 52243,
+      "sha256": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69"
+    },
+    {
+      "path": "work/split-label-color-ci-preparation/FrameColorGate.swift",
+      "bytes": 12832,
+      "sha256": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618"
+    }
+  ]
+}

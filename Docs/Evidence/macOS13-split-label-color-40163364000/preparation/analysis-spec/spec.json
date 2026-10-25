@@ -1,0 +1,113 @@
+{
+  "acceptance_rules": {
+    "decision": "A distinct label-color acceptance result, conditional on all root/native/raw controls. Not old PixelGate PASS, not layout acceptance or automatic product adoption. Root original-image review remains required.",
+    "foreground13": "For each R,G,B separately, candidate mean absolute error at frozen original13 foreground pixels toward fixed14 foreground mean must not exceed original13 error; at least one channel strictly improves. Exact float comparison,epsilon0. Preserve every channel, per-pixel error improvements/regressions/ties,max/mean and signed changes; no best-channel or aggregate-only decision.",
+    "full_frame_color": "Report original13-to14 and candidate13-to14 normalized fullFrameRGBA errors and all improved/regressed/tied counts, without choosing alternate regions/intents/filters or declaring wholeUI equivalence.",
+    "samehost13": "Require original ICC bytes/mode/scale/layout, raw RGBA Frame ROI outside fixed label rectangle exact (zero tolerance), entire Frame alpha exact, fixed background-strip raw RGBA exact; preserve full body/label/whole-window difference report.",
+    "samehost14": "Require raw stored RGBA complete Frame ROI and embedded ICC bytes exact versus14 original. Whole-window difference reported separately."
+  },
+  "base_source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "candidate_context_requirements": [
+    "Actual root source/binary/manifest bindings supplied after freeze; no invented candidate hash. Same actual candidate product binary on13/14 before permitted private-CFID signing normalization.",
+    "Single generic selected-label color source delta only; no Frame/Row/geometry/timing/context controls.",
+    "Successful uninstrumented closed capture, correct OS, same per-host native scale/ICC,920x668points,en/normal3false/Light/captiontrue/closed/source-bound Ready-to-Paused0, original media hash and original main/parent/clip/volume relations.",
+    "Original collector75s acquisition deadline/outer95s wait contracts preserved, capture_begin<=sample_begin<=sample_acquired finite, stable comparisons>=4 and samples>=5. No new retry or stable fallback.",
+    "Native clip/volume rectangles exact to each own-host original; screen-minus-main matches relative rect; inherited AX identifier is not direct-target proof. No Caption/Size Layout width inferred.",
+    "Root receipts must verify compiled sources/helper hashes, provenance/signatures/private normalization, process/kernel/front/parent cleanup and cursor restoration. Both report/native/root gates fail closed.",
+    "No ledger environment, arm or packet; row_ledger_enabled=false. Old row-observer protocol/gates/failures unchanged."
+  ],
+  "candidate_images_read_now": false,
+  "candidate_inputs_bound_now": false,
+  "color_pipeline": {
+    "bpc": false,
+    "flags": 0,
+    "full_frame_diagnostic": "Normalize each native Frame ROI to sRGB8 first, preserve alpha. Only13 fixed integer2x2 Pillow RGBA BOX to709x616;14 unchanged1x. Premultiplied encoded-sRGB8 averaging, not linear-light; original window integer phase, no registration/fitting.",
+    "intent": 0,
+    "native_foreground": "Each source embedded RGB ICC to fixed sRGB8, alpha copied. Foreground comparison uses native13 fixed mask and native14 fixed target; no cross-scale glyph alignment.",
+    "target_icc": "outputs/Bern/Docs/Evidence/macOS13-frame-control-e48-20261025/offline-review/target-sRGB.icc",
+    "target_icc_sha256": "74507e57c55865be59b10632707adea311cb509e7d20327a3fb6a92e1fd90b84",
+    "unsupported_profile": "Stop raster color stage; no profile substitution/installation/alternate intent."
+  },
+  "foreground_mask": {
+    "background": "Per native pixel row, per-channel median of the fixed glyph-free background strip in normalized sRGB8",
+    "candidate_policy": "Always reuse original13 mask; never select foreground from candidate",
+    "linf_threshold_0_255": 32,
+    "predicate": "original alpha==255 and max(abs(originalRGB-rowBackgroundRGB))>=32",
+    "selection_source": "Only each original normalized native-scale reference label crop; once, then frozen as row runs",
+    "target": "Original14 masked foreground arithmetic mean in each RGB channel; retained raw/native/sRGB stats distinguish rendered foreground pixels from NSColor/style value",
+    "zero_mask_policy": "Stop; do not change threshold or region"
+  },
+  "kind": "generic_splitbutton_selected_label_color_diagnostic",
+  "references": {
+    "13": {
+      "icc_sha256": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+      "native_geometry": {
+        "frame.clip": [
+          251,
+          167,
+          629,
+          354
+        ],
+        "frame.volume": [
+          620.5,
+          533,
+          20,
+          20
+        ]
+      },
+      "png_sha256": "ece61b2d4e05da32f3598e1f56da8369bb2029814fb3a66b4129bf363aff37f3",
+      "report": "outputs/Bern/Docs/Evidence/macOS13-frame-control-e48-20261025/runtime/report.json",
+      "report_sha256": "60d71641769e1e7630b8d235512f700db416a8a0646cf559cc6bb75f6f5ac480",
+      "scale": 2
+    },
+    "14": {
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "native_geometry": {
+        "frame.clip": [
+          251,
+          167,
+          629,
+          354
+        ],
+        "frame.volume": [
+          619,
+          536,
+          22,
+          15
+        ]
+      },
+      "png_sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b",
+      "report": "outputs/Bern/Docs/Evidence/macOS14-frame-row-latest1-40158031681/runtime/a/report.json",
+      "report_sha256": "cc3ce7bcf4c241cc65fd25a1002734f29f04d3f4370a2fe38f178ee3efbe59d1",
+      "scale": 1
+    }
+  },
+  "regions_half_open_points": {
+    "caption_body": [
+      250,
+      532,
+      360,
+      555
+    ],
+    "caption_label": [
+      255,
+      535,
+      329,
+      551
+    ],
+    "frame": [
+      211,
+      52,
+      920,
+      668
+    ],
+    "label_background_strip": [
+      273,
+      535,
+      276,
+      551
+    ]
+  },
+  "roi_policy": "Chosen from original references only before any candidate read. Body includes the full Caption split button and margin; label includes icon+Caption text but excludes menu/bezel. Never fit, translate, expand or choose a better region after candidate results.",
+  "schema": "split_label_color_spec_v1"
+}

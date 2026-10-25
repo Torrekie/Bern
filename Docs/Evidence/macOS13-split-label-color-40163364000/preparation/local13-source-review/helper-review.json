@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "kind": "helper_source_only_review_driver_pending",
+  "verdict": "no_blocking_helper_source_finding",
+  "preparation_manifest_sha256": "9e50ba1b0e22223183a0ea102d9ced851c11db52bff9adec475c9b2013299089",
+  "preparation_members": [
+    {
+      "file": "FocusGuard.swift",
+      "bytes": 8082,
+      "sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d"
+    },
+    {
+      "file": "FrameColorCapture.local13-cleanup.patch",
+      "bytes": 7781,
+      "sha256": "e714517d0ea95f7b9421e6f0353c623f4c9d2ab12e67a646727848a14e0aea0f"
+    },
+    {
+      "file": "FrameColorCapture.swift",
+      "bytes": 55439,
+      "sha256": "61426976dbb557d0d8974dcb4da11337bc1611420b04cec0f856bace14bf362c"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2923,
+      "sha256": "fd0f414af034eeefc79fb93395609f9ef9da668390a8d6e3aa868350a01ccd1a"
+    },
+    {
+      "file": "source-proof.json",
+      "bytes": 3364,
+      "sha256": "d24fc6fa8a36ebda7a289f9a423a1887d0387d419d9be2739c8763a1fc305515"
+    }
+  ],
+  "independent_byte_proof": {
+    "baseline14_capture_sha256": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69",
+    "baseline14_cleanup_half_open_bytes": [
+      39245,
+      41546
+    ],
+    "replacement_source_control13_sha256": "7649982511b13e379c973be88c676b7149362afe6aa7e3a792aa25b9983afbd0",
+    "replacement_control13_half_open_bytes": [
+      38562,
+      44059
+    ],
+    "candidate_local13_cleanup_half_open_bytes": [
+      39245,
+      44742
+    ],
+    "unchanged_prefix": {
+      "bytes": 39245,
+      "sha256": "573ecf883df51b402fc56047c6fd21c0b889fb5f12f8ebdb1fc9b6510da87dfc"
+    },
+    "unchanged_suffix": {
+      "bytes": 10697,
+      "sha256": "953c3ebdb16004f515f67954c142c185fb1d1940eef9b6a6b837697431307aa3"
+    },
+    "old_cleanup_sha256": "028828b268eb21044bb358f1dc3cebfed51d19f120d05a8bb0976fbbdd0a04f3",
+    "replacement_cleanup_sha256": "823fe5274110cb6e841c886a2c25af7e6deca043eb67b5c33d80c69546ae8334",
+    "whole_forward_replacement_equals_candidate": true,
+    "whole_inverse_replacement_equals_baseline14": true,
+    "guard_full_bytes_equal_verified_ab78": true
+  },
+  "preserved_source": [
+    "All acquisition/media/window/CG/stable4 implementation",
+    "75-second original clock/deadline calls",
+    "e48/ce462 fixed source allowlist and hard ledger nil guard",
+    "ci_run_id and actual own executable SHA metadata without fake fallback",
+    "Entire run acquisition and final exit logic"
+  ],
+  "cleanup_review": [
+    "Exact copied original-front NSRunningApplication PID/bundle/path correlated with outer valid kernel receipt before cleanup request.",
+    "Owned receipt must correlate collector PID, actual child PID, private executable and bundle ID; independent Guard verifies live kernel identity and restore-before-stop.",
+    "Uncertain/missing ownership/front/guard leaves cleanup failure and IPC retained; later outer driver must perform exact guarded recovery.",
+    "Helper process timeout remains7s; only spawned helper is killed on helper timeout. Final report write error causes nonzero.",
+    "Guard private Gallery identity, kernel/PID/path/bundle and preservation of a changed foreground are unchanged from verifiedab78."
+  ],
+  "future_driver_contract": [
+    "Fresh new control/candidate schema/locks; do not reuse or relabel plain-control13 inputs.",
+    "Actual passing14 gate bound to build manifest/reports/PNG/helper and source identities, not source-only expectations.",
+    "Local collector binary differs from14 and old plain13; actual binary/source/signature/SDK receipts required.",
+    "Own-PID active13 flag, hard no ledger, fresh private identities, bidirectional path isolation, original-front/owned/kernel/IPC/private-prefs guards must be independently reviewed."
+  ],
+  "not_reviewed": "No new prepare/run wrapper exists in this review scope; waiting root stable notification without polling driver or CI.",
+  "not_performed": [
+    "No compiler/typecheck or helper/product invocation",
+    "No UI/native process/CI/network/Git",
+    "No source/product/driver edits or child agents"
+  ]
+}

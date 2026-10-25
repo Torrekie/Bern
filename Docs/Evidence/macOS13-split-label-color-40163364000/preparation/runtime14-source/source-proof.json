@@ -1,0 +1,94 @@
+{
+  "CI_binding": "Both report run IDs == current GITHUB_RUN_ID == manifest.run_id; both harnesses == current GITHUB_SHA == manifest.harness_sha; both collector executable digests == manifest.helpers.FrameColorCapture.sha256; actual gate executable digest and length == manifest.helpers.FrameColorGate.",
+  "baseline_capture": {
+    "bytes": 51401,
+    "path": "outputs/Bern/.github/scripts/frame-row-ledger/FrameClosed.swift",
+    "sha256": "3613df83629f0b3e975425c3db37a53e40135dfc93dd6d333bf4487ad2e1d974"
+  },
+  "baseline_gate": {
+    "bytes": 7157,
+    "path": "outputs/Bern/.github/scripts/frame-row-ledger/PixelGate.swift",
+    "sha256": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"
+  },
+  "capture_CG_function_bytes_equal": {
+    "bytes": 4891,
+    "sha256": "119335b2d48a0fa69c740fcd2ca9144a41951553e91804f60a33d8035cc38846"
+  },
+  "capture_changes": [
+    "Source allowlist at original run provenance check: baseline e48 and candidate ce462",
+    "Immediately following check rejects any nonnil row ledger environment before UI",
+    "Pre-UI provenance metadata only: ci_run_id and actual current executable SHA; missing CI run/executable or unreadable executable fails nonzero"
+  ],
+  "capture_exact_inverse_restores_entire_3613_baseline": true,
+  "capture_final_defer_bytes_equal": {
+    "bytes": 2301,
+    "sha256": "028828b268eb21044bb358f1dc3cebfed51d19f120d05a8bb0976fbbdd0a04f3"
+  },
+  "capture_metadata_scope": "Whole source file differs in metadata/provenance. Original acquisition/media/window/CG/stability/deadline and cleanup bodies remain unchanged except the declared entry provenance gates.",
+  "gate_cli": "FrameColorGate CONTROL_REPORT CANDIDATE_REPORT BUILD_MANIFEST FRESH_PAIR_JSON",
+  "gate_complete_original_algorithm_prefix_bytes_equal": {
+    "bytes": 2599,
+    "contains": [
+      "imports",
+      "GateFailure",
+      "need",
+      "digest",
+      "object",
+      "Raster",
+      "differences"
+    ],
+    "sha256": "3cd86b71093cea73c7639092e88f0944b355ec7eea3542ceaf3810d7c49b6af6"
+  },
+  "gate_kind": "split_label_color14_no_effect",
+  "gate_scale_whole_fixedROI_call_block_bytes_equal": {
+    "bytes": 391,
+    "frame_roi_points": [
+      211,
+      52,
+      920,
+      668
+    ],
+    "sha256": "cdb8a7fd09b1abab77dcaee9e2b1e637c8659bca9b2ad57451f6423c60d0ad12"
+  },
+  "helper_entry_fields": [
+    "sha256",
+    "bytes",
+    "source_sha256"
+  ],
+  "limits": [
+    "No successful future acquisition assumed",
+    "Normal flags are existing collector preflight fields; no new ending profile observation added",
+    "Candidate GUI/CLI digest records are matched to manifest via the locked collector actual-file reads; this gate does not independently open those product binaries",
+    "Local13 will use separately disclosed cleanup adapter/helper hash; no same14binary claim",
+    "Root owns build/source/signature/archive provenance beyond report and manifest binding"
+  ],
+  "new_capture": {
+    "bytes": 52243,
+    "sha256": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69"
+  },
+  "new_gate": {
+    "bytes": 12832,
+    "sha256": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618"
+  },
+  "not_performed": [
+    "No compiler/typecheck",
+    "No helper/App/CLI execution",
+    "No UI/CI/network/Git command",
+    "No repository or old source modification",
+    "No image algorithm execution",
+    "No subagent spawn"
+  ],
+  "required_manifest_fields": [
+    "schema",
+    "source_sha",
+    "baseline_sha",
+    "success",
+    "binaries",
+    "helpers",
+    "run_id",
+    "harness_sha"
+  ],
+  "required_manifest_schema": "bern_split_label_color_build_v1",
+  "scope": "Only candidate no-effect on acquired macOS14 closed Frame detail; same-run old/new source binary facts. Whole window difference reported separately. No fullUI/crossOS equivalence or selected13 color claim.",
+  "status": "source_preparation_only_not_compiled_or_runtime_accepted"
+}

@@ -1,0 +1,15 @@
+# Actual14 split-label color result — independent offline review
+
+Verdict: the previously fixed Frame-detail no-effect gate is supported on macOS14.8.9 (23J631); whole-window equality is false. No candidate13 color result or cross-OS/fullUI acceptance follows.
+
+CI40163364000 uses harness2cff19aad748ac673fefda921b313886bb902e4b, baseline e48 and candidate ce462. Candidate GUI is de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1; CLI remains31a75c0a…f379f5. All631 tracked local input paths match the frozen e48 record; comparing content bytes/SHA changes only BernStyle to211493B/8219c50e…. The generated Swift is the original f72c…. BernRuntime's emitted hash differs from its raw template because existing file-extension substitution expands the marker; this was reconstructed as text to626c4b77…, matching the manifest, with no compiler execution. This is not an external dependency-closure proof.
+
+Actual two helper binaries, candidate GUI/CLI, inner tar and all regular tar members were read before cleanup. The tar's11 regular files match the10 actual App members plus CLI; all match the build manifest. Independent raw Mach-O reads give arm64/min13/SDK26.2 and code-signature load-command presence. Root's saved strict-signature exit0/log hashes were checked; no codesign or binary was executed here. Outer ZIPs were already deleted: the two download receipts consistently bind recorded measured and API digests, but this reviewer did not rehash those ZIPs. Parent observed both CI jobs successful; no API status query was made here.
+
+Both reports bind the same actual collector eff075bf… and CI run/harness, normal threefalse, Light window/dark Frame, caption=true, Paused0, no ledger,920×668 at1x. A is PID32299/window24 with6CG samples; B is32400/window33 with5; each has stable4 and exact own-window descriptions at x500/y206. Each startup has one allowed sessions status3; later commands are0.
+
+The recorded native gate gives fixed Frame ROI [211,52,920,668] zero changed pixels and exact ICC3d40c076…. A separate Pillow decoded-RGBA comparison without ICC conversion, resizing or fitting reproduced Frame0 and whole5284 changed pixels, bbox [10,118,200,146], inside the sidebar region. This is an independent PNG-sample check, not a re-execution of the CoreGraphics provider or Gate binary. Whole-window differences remain reported; the ROI was not chosen after this result.
+
+Cleanup uses actual fields: app_still_running_after_cleanup=false, app_termination_status=0, frontmost_before/after334 for each; the recorded restore request targets334 and was accepted. There is no cleanup dictionary in these reports and none was invented. Source ordering places that request before own-child stop; no separate stop timestamp or new ending-profile observation is claimed.
+
+Future13 must reuse this de170 candidate with fresh private CFIDs and prove all Mach-O sections and signature-storage-normalized non-signature bytes after signing. Its local cleanup helper has separate source/binary provenance. No binaries/compiler/UI/CI/Git/API were executed, no threshold/ROI or old evidence changed, and no payload was copied into this review.

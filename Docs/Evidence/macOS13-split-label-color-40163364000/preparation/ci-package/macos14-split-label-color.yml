@@ -1,0 +1,209 @@
+name: Selected split label color candidate
+run-name: Build one selected-label candidate and require no effect on macOS14
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: split-label-color-candidate
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+      CARGO_INCREMENTAL: "0"
+      CARGO_BUILD_JOBS: "2"
+      CARGO_TERM_COLOR: never
+      MACOSX_DEPLOYMENT_TARGET: "13.0"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/checkout@v5
+        with:
+          ref: ce462b3ef5d11b72d51ddf9158940d686bc7707a
+          path: source
+          persist-credentials: false
+      - name: Pin candidate, original source and toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C source fetch --no-tags --depth=1 origin e48fff46b3a92a28465ad74295bd273a9d69af7d
+          mkdir evidence
+          {
+            printf 'source_sha=%s\nharness_sha=%s\nrun_id=%s\n' "$(git -C source rev-parse HEAD)" "$GITHUB_SHA" "$GITHUB_RUN_ID"
+            sw_vers
+            uname -m
+            xcodebuild -version
+            xcrun --sdk macosx --show-sdk-version
+            xcrun swiftc -version
+          } > evidence/environment.txt 2>&1
+          test "$(uname -m)" = arm64
+          test "$(xcrun --sdk macosx --show-sdk-version)" = 26.2
+          rustup toolchain install 1.99.0 --profile minimal
+          rustc +1.99.0 -Vv >> evidence/environment.txt
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            source/target
+          key: bern-macos13-cargo-macos15-v1-${{ hashFiles('source/Cargo.lock') }}
+      - name: Verify sole product change and reset only the generated target
+        id: prepare
+        shell: bash
+        run: python3 harness/.github/scripts/split-label-color/build.py prepare source evidence
+      - name: Run the original full Gallery product plan
+        shell: bash
+        run: |
+          set +e
+          unset BERN_DIAGNOSTIC_GENERATE_ONLY BERN_FRAME_ROW_OBSERVER_DRIVER BERN_FRAME_ROW_OBSERVER_EVIDENCE
+          (cd source && cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest examples/gallery/Bern.toml --target macos_modern --release) > evidence/build.full.log 2>&1
+          result=$?
+          printf '%s\n' "$result" > evidence/build.exit-code.txt
+          if test "$result" != 0; then
+            python3 - <<'PY'
+          import re
+          from pathlib import Path
+          lines=Path('evidence/build.full.log').read_text().splitlines()
+          first=next((i for i,l in enumerate(lines) if re.search(r'error:|error\[E',l)),max(0,len(lines)-60))
+          print('\n'.join(lines[max(0,first-2):first+80]))
+          PY
+          fi
+          exit "$result"
+      - name: Verify strict product and package one reusable candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          app=source/target/bern/macos_modern/Gallery.app
+          cli=source/target/bern/macos_modern/bin/gallery
+          {
+            for binary in "$app/Contents/MacOS/Gallery" "$cli"; do
+              test "$(lipo -archs "$binary")" = arm64
+              test "$(xcrun vtool -show-build "$binary" | awk '/minos/ {print $2;exit}')" = 13.0
+              test "$(xcrun vtool -show-build "$binary" | awk '/sdk/ {print $2;exit}')" = 26.2
+              codesign --verify --strict "$binary"
+              xcrun vtool -show-build "$binary"
+            done
+            codesign --verify --deep --strict "$app"
+          } > evidence/product-verification.txt 2>&1
+          test "$(plutil -extract LSMinimumSystemVersion raw -o - "$app/Contents/Info.plist")" = 13.0
+          tar -czf evidence/gallery-split-label-color.tar.gz -C source/target/bern/macos_modern Gallery.app bin/gallery
+          (cd evidence && shasum -a 256 gallery-split-label-color.tar.gz > gallery-split-label-color.tar.gz.sha256)
+      - name: Compile one common collector and native-byte color gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcrun --sdk macosx swiftc -swift-version 5 -O -j 2 -target arm64-apple-macosx13.0 harness/.github/scripts/split-label-color/FrameColorCapture.swift -o evidence/FrameColorCapture
+          xcrun --sdk macosx swiftc -swift-version 5 -O -j 2 -target arm64-apple-macosx13.0 harness/.github/scripts/split-label-color/FrameColorGate.swift -o evidence/FrameColorGate
+          {
+            for helper in evidence/FrameColorCapture evidence/FrameColorGate; do
+              test "$(lipo -archs "$helper")" = arm64
+              test "$(xcrun vtool -show-build "$helper" | awk '/minos/ {print $2;exit}')" = 13.0
+              test "$(xcrun vtool -show-build "$helper" | awk '/sdk/ {print $2;exit}')" = 26.2
+              codesign --verify --strict "$helper"
+              xcrun vtool -show-build "$helper"
+            done
+          } > evidence/helper-verification.txt 2>&1
+          (cd evidence && shasum -a 256 FrameColorCapture FrameColorGate > helper-binaries.sha256)
+      - name: Bind compiled source, package, product and helper identities
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        shell: bash
+        run: python3 harness/.github/scripts/split-label-color/build.py collect source evidence
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: split-label-color-build
+          path: |
+            evidence/
+            !evidence/build.full.log
+          retention-days: 3
+          compression-level: 0
+          if-no-files-found: error
+  capture:
+    needs: build
+    runs-on: macos-14
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/download-artifact@v5
+        with:
+          name: macos13-gallery
+          path: control-build
+          github-token: ${{ github.token }}
+          run-id: 40070407306
+      - uses: actions/download-artifact@v5
+        with:
+          name: split-label-color-build
+          path: candidate-build
+          github-token: ${{ github.token }}
+          run-id: ${{ github.run_id }}
+      - name: Verify actual14 and immutable product/helper artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(sw_vers -productVersion | cut -d. -f1)" = 14
+          test "$(uname -m)" = arm64
+          mkdir evidence control candidate
+          (cd control-build && printf '%s  gallery.tar.gz\n' e7ee2c11f7795bf9391b275ec9f6be329feceebf890193ee53434ec0607c3067 | shasum -a 256 -c -)
+          (cd candidate-build && shasum -a 256 -c gallery-split-label-color.tar.gz.sha256 && shasum -a 256 -c helper-binaries.sha256)
+          tar -xzf control-build/gallery.tar.gz -C control
+          tar -xzf candidate-build/gallery-split-label-color.tar.gz -C candidate
+          test "$(shasum -a 256 control/Gallery.app/Contents/MacOS/Gallery | awk '{print $1}')" = d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c
+          test "$(shasum -a 256 control/bin/gallery | awk '{print $1}')" = 31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5
+          python3 - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          m=json.loads(Path('candidate-build/candidate-build.json').read_text())
+          assert m['success'] is True and m['schema']=='bern_split_label_color_build_v1'
+          assert m['source_sha']=='ce462b3ef5d11b72d51ddf9158940d686bc7707a'
+          for name,row in m['binaries'].items():
+              assert hashlib.sha256((Path('candidate')/name).read_bytes()).hexdigest()==row['sha256']
+          for name,row in m['helpers'].items():
+              assert hashlib.sha256((Path('candidate-build')/name).read_bytes()).hexdigest()==row['sha256']
+          PY
+          chmod +x candidate-build/FrameColorCapture candidate-build/FrameColorGate
+          {
+            printf 'candidate_source=%s\nharness_sha=%s\nrun_id=%s\n' ce462b3ef5d11b72d51ddf9158940d686bc7707a "$GITHUB_SHA" "$GITHUB_RUN_ID"
+            sw_vers
+            uname -m
+            for app in control/Gallery.app candidate/Gallery.app; do codesign --verify --deep --strict "$app"; done
+            for helper in candidate-build/FrameColorCapture candidate-build/FrameColorGate; do
+              codesign --verify --strict "$helper"
+              xcrun vtool -show-build "$helper"
+            done
+          } > evidence/environment.txt 2>&1
+          cp candidate-build/candidate-build.json candidate-build/helper-binaries.sha256 candidate-build/helper-verification.txt evidence/
+      - name: Set ordinary profile on this disposable runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          defaults write com.apple.universalaccess reduceMotion -bool false
+          defaults write com.apple.universalaccess reduceTransparency -bool false
+          defaults write com.apple.universalaccess increaseContrast -bool false
+          killall cfprefsd || true
+      - name: Capture original14 and candidate14 with the same non-tracing collector
+        shell: bash
+        run: |
+          set -euo pipefail
+          unset BERN_FRAME_ROW_LEDGER_OUTPUT_DIR BERN_RENDER
+          candidate-build/FrameColorCapture "$PWD/control/Gallery.app" "$PWD/control/bin/gallery" "$PWD/evidence/a" 14 control e48fff46b3a92a28465ad74295bd273a9d69af7d
+          candidate-build/FrameColorCapture "$PWD/candidate/Gallery.app" "$PWD/candidate/bin/gallery" "$PWD/evidence/b" 14 candidate ce462b3ef5d11b72d51ddf9158940d686bc7707a
+      - name: Require unchanged raw Frame pixels and ICC on14
+        shell: bash
+        run: candidate-build/FrameColorGate "$PWD/evidence/a/report.json" "$PWD/evidence/b/report.json" "$PWD/evidence/candidate-build.json" "$PWD/evidence/color14-pair.json"
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: split-label-color-on14
+          path: evidence/
+          retention-days: 3
+          compression-level: 0
+          if-no-files-found: error

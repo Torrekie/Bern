@@ -1,0 +1,36 @@
+{
+  "build_ast_parse": true,
+  "constants": {
+    "SOURCE": "ce462b3ef5d11b72d51ddf9158940d686bc7707a",
+    "BASE": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+    "STYLE": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+    "INPUTS": [
+      "Cargo.toml",
+      "Cargo.lock",
+      "crates",
+      "examples/gallery"
+    ],
+    "STYLE_META": [
+      211493,
+      "8219c50ec45a81eb7516b63bddbc7541211006c1a09f0069a93390707c0c6df0"
+    ],
+    "GENERATED_META": [
+      81110,
+      "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+    ],
+    "BASE_STYLE_SHA": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89",
+    "CLI_SHA": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "HELPER_SOURCES": {
+      "FrameColorCapture.swift": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69",
+      "FrameColorGate.swift": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618"
+    }
+  },
+  "helper_locks_equal_actual_frozen_runtime_sources": true,
+  "executed_candidate_module": false,
+  "script_cli_args": "build.py prepare|collect SOURCE EVIDENCE",
+  "collector_argv_count_including_executable": 7,
+  "gate_argv_count_including_executable": 5,
+  "workflow_helper_executable_permission_issue": "closed: after actual manifest helper SHA verification and before first signature/execution, chmod +x only candidate-build/FrameColorCapture and candidate-build/FrameColorGate",
+  "official_permission_reference": "https://raw.githubusercontent.com/actions/download-artifact/v5/README.md#permission-loss",
+  "documentation_read_only_lookup_performed": true
+}

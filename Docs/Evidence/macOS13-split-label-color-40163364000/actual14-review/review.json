@@ -1,0 +1,344 @@
+{
+  "CI_jobs": "Parent observed both jobs successful. This review made no API request; local build exit0 and both acquisition/gate success bound independently.",
+  "CI_native_gate": {
+    "ICC_equal": true,
+    "frame_changed_pixels": 0,
+    "frame_roi_points": [
+      211,
+      52,
+      920,
+      668
+    ],
+    "gate_binary_reexecuted": false,
+    "kind": "split_label_color14_no_effect",
+    "success": true,
+    "whole_bbox_half_open": [
+      10,
+      118,
+      200,
+      146
+    ],
+    "whole_changed_pixels": 5284
+  },
+  "baseline_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "downloads": [
+    {
+      "ZIP_independently_rehashed": false,
+      "artifact_id": 12587477312,
+      "artifact_name": "split-label-color-build",
+      "path": "work/split-label-color-candidate-build.download.json",
+      "reason": "ZIP already deleted; receipt consistency reviewed",
+      "receipt_consistent": true,
+      "recorded_outer_digest": "sha256:cc5c1e58f948d8f68dd1ebb4efb93989671132da7142c222f5e3b21825b381c1",
+      "sha256": "2dffd848f7c16e42b325e069e96565582efec75f552462a628eb4864084847df"
+    },
+    {
+      "ZIP_independently_rehashed": false,
+      "artifact_id": 12586454982,
+      "artifact_name": "split-label-color-on14",
+      "path": "work/split-label-color-actual14.download.json",
+      "reason": "ZIP already deleted; receipt consistency reviewed",
+      "receipt_consistent": true,
+      "recorded_outer_digest": "sha256:feaae7c044fa822cce6a990045b19ec2dcd5f1465c93dfce84e5c372dd365e23",
+      "sha256": "5e8a0abbfdc8471086151d2065c92c4b088f591d4a561775c63b72f696ee95bc"
+    }
+  ],
+  "harness_sha": "2cff19aad748ac673fefda921b313886bb902e4b",
+  "independent_Pillow": {
+    "ICC_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+    "alpha_extrema_a": [
+      0,
+      255
+    ],
+    "alpha_extrema_b": [
+      0,
+      255
+    ],
+    "frame_changed_pixels": 0,
+    "method": "Decoded PNG RGBA samples; no ICC transform/resizing/fitting; not a rerun of CoreGraphics native provider",
+    "whole_bbox_half_open": [
+      10,
+      118,
+      200,
+      146
+    ],
+    "whole_changed_pixels": 5284
+  },
+  "input_hashes": [
+    {
+      "bytes": 2039,
+      "path": "work/split-label-color-actual14/color14-pair.json",
+      "sha256": "9bc482b047c31af2d6391a3fd6606b7c277f0fb43e7442850ab0c9c2ce740502"
+    },
+    {
+      "bytes": 4935,
+      "path": "work/split-label-color-candidate-build/candidate-build.json",
+      "sha256": "55b75658cf84e3fb5eb713c414cab495d37843b6959c9801e439da48c24413df"
+    },
+    {
+      "bytes": 4935,
+      "path": "work/split-label-color-actual14/candidate-build.json",
+      "sha256": "55b75658cf84e3fb5eb713c414cab495d37843b6959c9801e439da48c24413df"
+    },
+    {
+      "bytes": 219326,
+      "path": "work/split-label-color-candidate-build/prepare.json",
+      "sha256": "3cec307fe7fd2dcc64176fd9a054cac8b3f917c9d0dd041013554daff1d9e3bf"
+    },
+    {
+      "bytes": 7130,
+      "path": "work/split-label-color-candidate-build/build.log",
+      "sha256": "09d97ea99bd6e2af00e5f3d77a57c6bfeae0144d9a3921ee228f504dfe545060"
+    },
+    {
+      "bytes": 2,
+      "path": "work/split-label-color-candidate-build/build.exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 552,
+      "path": "work/split-label-color-candidate-build/environment.txt",
+      "sha256": "c3f4729f7a2757ce2c95c34b0828e9e716e743a942083aa54546158cdb147cab"
+    },
+    {
+      "bytes": 557,
+      "path": "work/split-label-color-actual14/environment.txt",
+      "sha256": "c405975f05cb235288b313654621977fdca68e17dca5e85ac223cf5335f3d915"
+    },
+    {
+      "bytes": 165,
+      "path": "work/split-label-color-candidate-build/helper-binaries.sha256",
+      "sha256": "2e8696975e96e997fef07be8452be7b4f95549e70f2ac8974ca2927d6c1ef97d"
+    },
+    {
+      "bytes": 341,
+      "path": "work/split-label-color-candidate-build/helper-verification.txt",
+      "sha256": "7cff6adc55a57586a4df412b91ef1c9a0adcbacdc1839f6a3f0c399e29b8830f"
+    },
+    {
+      "bytes": 401,
+      "path": "work/split-label-color-candidate-build/product-verification.txt",
+      "sha256": "0d7949e0816513bbf0259c5dfb3c9e032bc6537d2c89f9833a78bd8f15e7c42c"
+    },
+    {
+      "bytes": 3862,
+      "path": "work/split-label-color-product-verification.json",
+      "sha256": "05ce814845a9468ffb8621e8cc5d62c2200305ba5785eb9ca1bac69a0f3ded21"
+    },
+    {
+      "bytes": 113332,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/before.json",
+      "sha256": "c1f38ae72c9a3f732d3832ac4b88dabce639c51396e100b6b8fc5c1f8e5eb5c3"
+    },
+    {
+      "bytes": 70376,
+      "path": "outputs/Bern/crates/bern-ir/src/spec.rs",
+      "sha256": "bfaa73d93e3d528757f434eca8ee5c9da4d248ed934301787c78d0f1fb139e3c"
+    },
+    {
+      "bytes": 119201,
+      "path": "outputs/Bern/crates/bern-backend-swiftui/templates/BernRuntime.swift",
+      "sha256": "255bacb40db71fa17a8bd9ecaefc1b72c187864295221727c28653a09839e16e"
+    },
+    {
+      "bytes": 34003,
+      "path": "outputs/Bern/crates/bern-backend-swiftui/src/lib.rs",
+      "sha256": "aa8c31577c941bd35b66ec99101b287bdf3d99f41da1d4af996c5e3bcbbaf8ff"
+    },
+    {
+      "bytes": 795,
+      "path": "work/split-label-color-candidate-build.download.json",
+      "sha256": "2dffd848f7c16e42b325e069e96565582efec75f552462a628eb4864084847df"
+    },
+    {
+      "bytes": 793,
+      "path": "work/split-label-color-actual14.download.json",
+      "sha256": "5e8a0abbfdc8471086151d2065c92c4b088f591d4a561775c63b72f696ee95bc"
+    },
+    {
+      "bytes": 106629,
+      "path": "work/split-label-color-actual14/a/report.json",
+      "sha256": "4ad911aa06c132c2f2a83444c4d173909c2845125cabcfd6353932370a06c728"
+    },
+    {
+      "bytes": 49907,
+      "path": "work/split-label-color-actual14/a/frame-closed-light.png",
+      "sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b"
+    },
+    {
+      "bytes": 91,
+      "path": "work/split-label-color-actual14/a/001-stderr.txt",
+      "sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
+    },
+    {
+      "bytes": 0,
+      "path": "work/split-label-color-actual14/a/001-stdout.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 101953,
+      "path": "work/split-label-color-actual14/b/report.json",
+      "sha256": "f210ba7ca4aa3bad42720e1440cc02ff0fe333251fbdf90dc03ec26e74704378"
+    },
+    {
+      "bytes": 50001,
+      "path": "work/split-label-color-actual14/b/frame-closed-light.png",
+      "sha256": "66e16368abbad027b9d51cb43e1af61ae0877eab5a6c6cbb72431c6b5b61919b"
+    },
+    {
+      "bytes": 91,
+      "path": "work/split-label-color-actual14/b/001-stderr.txt",
+      "sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
+    },
+    {
+      "bytes": 0,
+      "path": "work/split-label-color-actual14/b/001-stdout.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 8013,
+      "path": "outputs/Bern/.github/scripts/split-label-color/build.py",
+      "sha256": "2ac4f9e2ca85a3cd0f85c4503ec7aec90ce19f825496cc345ceef5d76209b2a5"
+    },
+    {
+      "bytes": 52243,
+      "path": "outputs/Bern/.github/scripts/split-label-color/FrameColorCapture.swift",
+      "sha256": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69"
+    },
+    {
+      "bytes": 12832,
+      "path": "outputs/Bern/.github/scripts/split-label-color/FrameColorGate.swift",
+      "sha256": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618"
+    }
+  ],
+  "limits": [
+    "Whole-window5284 differences remain in sidebar rectangle; Frame-only no-effect is not fullUI equivalence",
+    "Normal flags are original preflight values, no new ending-profile observation",
+    "No cleanup or cleanup_success dictionary invented; actual app termination/front fields plus restore request read. Source establishes request-before-stop ordering; no independent child-stop timestamp",
+    "Outer ZIPs already deleted: only recorded measured/API digest consistency rechecked",
+    "631 local inputs are not external dependency closure; package/build source identity is receipt-bound, not new compiler/Git proof",
+    "Future13 must reuse de170 GUI with fresh private CFID and Mach-O sections/normalized non-signature proof; local helper needs distinct provenance. No13 color improvement or crossOS pass claimed"
+  ],
+  "not_performed": [
+    "No binary/compiler/helper/App execution",
+    "No UI/Git/CI/API/network",
+    "No signing/payload change",
+    "No new ROI/threshold or crossOS comparison",
+    "No old evidence edited"
+  ],
+  "os": "14.8.9 (23J631)",
+  "product": {
+    "actual_CLI_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "actual_candidate_GUI_sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1",
+    "actual_payload_receipt": "payload-review.json",
+    "actual_payload_receipt_sha256": "a9cd50a5207daa56af6331478da706486bc3314e3871d23ecd0a54023bf1829a",
+    "root_saved_strict_and_metadata_checks": [
+      {
+        "name": "app-strict",
+        "recorded_exit_code": 0,
+        "reexecuted": false,
+        "saved_log_hash_matches": true
+      },
+      {
+        "name": "cli-strict",
+        "recorded_exit_code": 0,
+        "reexecuted": false,
+        "saved_log_hash_matches": true
+      },
+      {
+        "name": "gui-build",
+        "recorded_exit_code": 0,
+        "reexecuted": false,
+        "saved_log_hash_matches": true
+      },
+      {
+        "name": "cli-build",
+        "recorded_exit_code": 0,
+        "reexecuted": false,
+        "saved_log_hash_matches": true
+      }
+    ],
+    "signature_command_rerun": false
+  },
+  "run_id": "40163364000",
+  "runtime": [
+    {
+      "CG_bounds": {
+        "height": 668,
+        "width": 920,
+        "x": 500,
+        "y": 206
+      },
+      "actual_cleanup_fields": {
+        "app_still_running_after_cleanup": false,
+        "app_termination_status": 0,
+        "frontmost_after": 334,
+        "frontmost_before": 334
+      },
+      "actual_restore_request": {
+        "accepted": true,
+        "elapsed": 9.90897810459137,
+        "frontmost_before": 32299,
+        "frontmost_immediately_after": 32299,
+        "options": [],
+        "reason": "restore-immediate-original-before-own-child-stop",
+        "requested_pid": 334
+      },
+      "all_post_startup_commands_zero": true,
+      "cleanup_dictionary_present": false,
+      "command_count": 41,
+      "label": "control",
+      "own_pid": 32299,
+      "samples": 6,
+      "stable_equal_comparisons": 4,
+      "startup_sessions_status3": 1,
+      "window_id": 24
+    },
+    {
+      "CG_bounds": {
+        "height": 668,
+        "width": 920,
+        "x": 500,
+        "y": 206
+      },
+      "actual_cleanup_fields": {
+        "app_still_running_after_cleanup": false,
+        "app_termination_status": 0,
+        "frontmost_after": 334,
+        "frontmost_before": 334
+      },
+      "actual_restore_request": {
+        "accepted": true,
+        "elapsed": 7.625761985778809,
+        "frontmost_before": 32400,
+        "frontmost_immediately_after": 32400,
+        "options": [],
+        "reason": "restore-immediate-original-before-own-child-stop",
+        "requested_pid": 334
+      },
+      "all_post_startup_commands_zero": true,
+      "cleanup_dictionary_present": false,
+      "command_count": 36,
+      "label": "candidate",
+      "own_pid": 32400,
+      "samples": 5,
+      "stable_equal_comparisons": 4,
+      "startup_sessions_status3": 1,
+      "window_id": 33
+    }
+  ],
+  "source": {
+    "candidate_style_sha256": "8219c50ec45a81eb7516b63bddbc7541211006c1a09f0069a93390707c0c6df0",
+    "checker_correction": "Raw BernRuntime template SHA is not emitted-source SHA: existing runtime_source expands file-extension marker. Text-only reconstruction matches manifest; not a CI/runtime failure.",
+    "compiled_generated_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+    "existing_runtime_marker_expansion_reconstructed_sha256": "626c4b7785cf46f9e6d86389d5c64b8221d5f5ead8f7518a67e407b38883ba95",
+    "local_input_count": 631,
+    "only_bytes_SHA_change": [
+      "crates/bern-backend-swiftui/templates/BernStyle.swift"
+    ],
+    "package_sources_match_current_files": true,
+    "same_path_set_as_frozen_e48": true
+  },
+  "source_sha": "ce462b3ef5d11b72d51ddf9158940d686bc7707a",
+  "verdict": "macos14_fixed_Frame_no_effect_supported_whole_window_not_equal_candidate13_unverified"
+}

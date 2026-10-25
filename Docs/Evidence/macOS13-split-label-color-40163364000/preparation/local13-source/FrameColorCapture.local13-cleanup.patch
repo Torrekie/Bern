@@ -1,0 +1,86 @@
+--- a/FrameColorCapture.swift
++++ b/FrameColorCapture.swift
+@@ -380,25 +380,68 @@
+ func run() -> Int32 {
+ defer {
+     timer?.invalidate()
+-    let ownWasFront = process != nil && NSWorkspace.shared.frontmostApplication?.processIdentifier == process?.processIdentifier
+-    if ownWasFront, let original = originalApplication, !original.isTerminated {
+-        requestActivation(original.processIdentifier,options:[],names:[],reason:"restore-immediate-original-before-own-child-stop")
+-        let end = Date().addingTimeInterval(1)
+-        while NSWorkspace.shared.frontmostApplication?.processIdentifier == process?.processIdentifier && Date() < end { RunLoop.current.run(until:Date().addingTimeInterval(0.02)) }
+-    }
+-    let restoreFailed = ownWasFront && originalApplication != nil && NSWorkspace.shared.frontmostApplication?.processIdentifier == process?.processIdentifier
+-    if restoreFailed { report["cleanup_failure"] = "Original foreground could not be restored before own child stop; child left for explicit guarded cleanup"; report["success"] = false }
+-    if !restoreFailed, let p = process, p.isRunning {
+-        NSRunningApplication(processIdentifier:p.processIdentifier)?.terminate(); let end = Date().addingTimeInterval(2)
+-        while p.isRunning && Date() < end { RunLoop.current.run(until:Date().addingTimeInterval(0.02)) }; if p.isRunning { kill(p.processIdentifier,SIGKILL) }
+-        let killed = Date().addingTimeInterval(1); while p.isRunning && Date() < killed { RunLoop.current.run(until:Date().addingTimeInterval(0.02)) }
+-    }
++    report["local_cleanup_adapter"] = "kernel_guard_before_stop_v1"
++    report["ipc_directory"] = ipc.path
++    do {
++        if let p = process, p.isRunning {
++            guard let guardPath = env["BERN_PICTURE_FOCUS_GUARD"],
++                  let frontPath = env["BERN_PICTURE_WATCHDOG_FRONT"] else { throw Failure(description:"Missing independent kernel guard handoff") }
++            let outerData = try Data(contentsOf:URL(fileURLWithPath:frontPath))
++            guard let captured = originalApplication, !captured.isTerminated,
++                  let outer = try JSONSerialization.jsonObject(with:outerData) as? [String:Any],
++                  integer(outer["pid"]) == Int64(originalFront ?? 0),
++                  integer(outer["pid"]) == Int64(captured.processIdentifier),
++                  outer["bundle_id"] as? String == captured.bundleIdentifier,
++                  outer["executable_path"] as? String == captured.executableURL?.resolvingSymlinksInPath().path,
++                  let kernel = outer["kernel_start"] as? [String:Any],
++                  let seconds = integer(kernel["tv_sec"]), seconds > 0,
++                  let micros = integer(kernel["tv_usec"]), micros >= 0, micros < 1_000_000 else {
++                throw Failure(description:"Captured original application does not match outer strong receipt; no guard cleanup request")
++            }
++            report["local_original_front_binding"] = ["matched":true,"pid":captured.processIdentifier,
++                "outer_front_receipt_sha256":sha(outerData),
++                "scope":"Captured NSRunningApplication PID/bundle/path correlated to outer kernel receipt; guard verifies the live kernel identity before any restoration"]
++            let owned = output.appendingPathComponent("ownership.json")
++            guard let row = try JSONSerialization.jsonObject(with:Data(contentsOf:owned)) as? [String:Any],
++                  integer(row["collector_pid"]) == Int64(getpid()), integer(row["pid"]) == Int64(p.processIdentifier),
++                  row["executable_path"] as? String == appURL.appendingPathComponent("Contents/MacOS/Gallery").resolvingSymlinksInPath().path,
++                  row["bundle_id"] as? String == Bundle(url:appURL)?.bundleIdentifier else { throw Failure(description:"Missing/mismatched outer kernel ownership receipt; own child left for guarded cleanup") }
++            let helper = Process(); helper.executableURL = URL(fileURLWithPath:guardPath)
++            helper.arguments = ["cleanup",appURL.path,frontPath,owned.path]
++            let log = output.appendingPathComponent("cleanup-helper.json"), err = output.appendingPathComponent("cleanup-helper.stderr.txt")
++            _ = fm.createFile(atPath:log.path,contents:nil); _ = fm.createFile(atPath:err.path,contents:nil)
++            let oh = try FileHandle(forWritingTo:log), eh = try FileHandle(forWritingTo:err)
++            defer { oh.closeFile(); eh.closeFile() }
++            helper.standardOutput = oh; helper.standardError = eh; try helper.run()
++            let until = Date().addingTimeInterval(7)
++            while helper.isRunning && Date() < until { RunLoop.current.run(until:Date().addingTimeInterval(0.02)) }
++            if helper.isRunning { kill(helper.processIdentifier,SIGKILL); throw Failure(description:"Independent kernel guard timed out") }
++            guard let receipt = try JSONSerialization.jsonObject(with:Data(contentsOf:log)) as? [String:Any],
++                  helper.terminationStatus == 0, receipt["success"] as? Bool == true else { throw Failure(description:"Independent kernel restore-before-stop did not complete") }
++            report["kernel_guard_cleanup"] = receipt
++            let ended = Date().addingTimeInterval(1)
++            while p.isRunning && Date() < ended { RunLoop.current.run(until:Date().addingTimeInterval(0.02)) }
++        }
++    } catch { report["success"] = false; report["cleanup_failure"] = String(describing:error) }
+     report["app_still_running_after_cleanup"] = process?.isRunning ?? false
+-    if process?.isRunning == true { report["success"] = false; report["cleanup_failure"] = report["cleanup_failure"] ?? "Own child still running after cleanup" }
++    if process?.isRunning == true { report["success"] = false; report["cleanup_failure"] = report["cleanup_failure"] ?? "Own child still running after guarded cleanup" }
+     do { if try ledgerLogHasError() { report["success"] = false; report["ledger_io_error_seen_after_cleanup"] = true } }
+     catch { report["success"] = false; report["ledger_log_error_after_cleanup"] = String(describing:error) }
+     if let p = process, !p.isRunning { report["app_termination_status"] = p.terminationStatus }
+-    if process?.isRunning != true { try? fm.removeItem(at:ipc) } else { report["ipc_preserved_for_live_child"] = ipc.path }; report["elapsed_seconds"] = Date().timeIntervalSince(began); report["frontmost_after"] = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0; try? save()
++    let guardSucceeded = (report["kernel_guard_cleanup"] as? [String:Any])?["success"] as? Bool == true
++    if process == nil || (guardSucceeded && process?.isRunning != true) {
++        do {
++            if fm.fileExists(atPath:ipc.path) { try fm.removeItem(at:ipc) }
++            report["ipc_removed_by_adapter"] = !fm.fileExists(atPath:ipc.path)
++        } catch { report["success"] = false; report["ipc_cleanup_failure"] = String(describing:error) }
++    } else {
++        report["ipc_preserved_for_unverified_cleanup"] = ipc.path
++        report["success"] = false
++        report["cleanup_failure"] = report["cleanup_failure"] ?? "No successful exact guarded child cleanup receipt; IPC retained"
++    }
++    report["elapsed_seconds"] = Date().timeIntervalSince(began)
++    report["frontmost_after"] = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
++    do { try save() } catch { report["success"] = false; fputs("Final local report save failed: \(error)\n",stderr) }
+ }
+ do {
+     try save(); try require(["e48fff46b3a92a28465ad74295bd273a9d69af7d","ce462b3ef5d11b72d51ddf9158940d686bc7707a"].contains(CommandLine.arguments[6]),"Color collector requires exact baseline or candidate source provenance")

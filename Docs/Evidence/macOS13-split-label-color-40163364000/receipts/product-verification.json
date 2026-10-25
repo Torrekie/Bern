@@ -1,0 +1,100 @@
+{
+  "success": true,
+  "kind": "actual14_gate_and_reusable_candidate_product_root_verification",
+  "run_id": 40163364000,
+  "gate_sha256": "9bc482b047c31af2d6391a3fd6606b7c277f0fb43e7442850ab0c9c2ce740502",
+  "build_manifest_sha256": "55b75658cf84e3fb5eb713c414cab495d37843b6959c9801e439da48c24413df",
+  "archive_sha256": "5b44ed49f0fcca42ba7791f1748914873b583e09a47e8863ade4bbcb03fa9266",
+  "product_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product",
+  "app_members": {
+    "Contents/Info.plist": {
+      "bytes": 2633,
+      "sha256": "30c9dfdf5b8718341e1b534f5298451051a6d44eb01dcdb2921f71efda5dd15d"
+    },
+    "Contents/_CodeSignature/CodeResources": {
+      "bytes": 4416,
+      "sha256": "e21b13a5652924ee6f6ac14775a4a8791c174bc9b29859a6ffcfef1212084be4"
+    },
+    "Contents/Resources/AppIcon.icns": {
+      "bytes": 63607,
+      "sha256": "8d5ced690e3c1079453b8684010991b8a3bde25b6157337ffa8c0a4fb3ad37de"
+    },
+    "Contents/MacOS/Gallery": {
+      "bytes": 3735024,
+      "sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1"
+    },
+    "Contents/Resources/en.lproj/InfoPlist.strings": {
+      "bytes": 59,
+      "sha256": "0b456fde30f7a8ce7a04de7305719d704b752a41c5490b02565a426530410426"
+    },
+    "Contents/Resources/en.lproj/Localizable.strings": {
+      "bytes": 6713,
+      "sha256": "2a0722c09210e95dc38c354daa09961c9a90af601c33345a469676cf095a300c"
+    },
+    "Contents/Resources/zh-Hans.lproj/InfoPlist.strings": {
+      "bytes": 63,
+      "sha256": "72b62e39761f9d14cdef4698153dcbd957a8fa6c0096a09f1a7ded08820b7bd4"
+    },
+    "Contents/Resources/zh-Hans.lproj/Localizable.strings": {
+      "bytes": 6740,
+      "sha256": "1421ca2397bc1e7b3347bb344fa8b4b444e62ae939b9120b2925a356026e46f0"
+    },
+    "Contents/Resources/media/poster.jpg": {
+      "bytes": 8124,
+      "sha256": "76dadce80a79ca2684c9fe23712cff47d11d1e2928ab4bc81f1396b504cf2c6c"
+    },
+    "Contents/Resources/media/tides.mp4": {
+      "bytes": 49327,
+      "sha256": "145a1b5e572bd3ce16207e2b341c0eecb04b4d1e765bf72f5fe3809a24f34957"
+    }
+  },
+  "checks": [
+    {
+      "name": "app-strict",
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/Gallery.app"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "cli-strict",
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/bin/gallery"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "gui-build",
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/Gallery.app/Contents/MacOS/Gallery"
+      ],
+      "exit_code": 0,
+      "log_sha256": "4ce06f25f802b8206d0ef1556e370197b20b1ac121fb91acdc294f1a9a948594"
+    },
+    {
+      "name": "cli-build",
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/bin/gallery"
+      ],
+      "exit_code": 0,
+      "log_sha256": "8e7160e32938df527c6c07c33c4fcb591cff4b87441401f6d933d4c213c18dff"
+    }
+  ],
+  "no_app_or_helper_execution": true,
+  "scope": "Source/manifest/artifact/signature binding only; actual14 runtime success from CI; candidate13 not run"
+}

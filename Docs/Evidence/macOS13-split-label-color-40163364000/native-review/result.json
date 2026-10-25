@@ -1,0 +1,223 @@
+{
+  "kind": "actual13_native_and_separate_cleanup_receipt_review",
+  "conclusion": "Collector evidence coherent; original wrapper remains failed; subsequent owned residue cleanup and desktop release independently recorded. No gate rewritten.",
+  "collector": {
+    "success": true,
+    "exit_code": 0,
+    "elapsed_seconds": 8.766746997833252,
+    "deadline_seconds": 75,
+    "closed_normal_light_caption_paused0": true,
+    "stable_equal_comparisons": 4,
+    "samples": 5,
+    "canvas_points": [
+      260,
+      116,
+      920,
+      668
+    ],
+    "row_ledger_enabled": false
+  },
+  "identity_and_restore": {
+    "own": {
+      "bundle_id": "dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3",
+      "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate13-isolation/runtime-work/candidate/Gallery.app/Contents/MacOS/Gallery",
+      "kernel_start": {
+        "tv_sec": 1792904573,
+        "tv_usec": 703383
+      },
+      "launch_date": null,
+      "pid": 15319,
+      "collector_pid": 15314
+    },
+    "original_front": {
+      "bundle_id": "com.openai.codex",
+      "executable_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+      "kernel_start": {
+        "tv_sec": 1792598787,
+        "tv_usec": 261710
+      },
+      "launch_date": null,
+      "pid": 1390
+    },
+    "local_front_receipt_bound": true,
+    "guard_restore_before_stop": true,
+    "private_app_stopped": true,
+    "private_sections_and_normalized_non_signature_equal_from_receipt": true,
+    "changed_members": [
+      "Contents/Info.plist",
+      "Contents/MacOS/Gallery"
+    ],
+    "strict_prepare_commands_all_zero": true
+  },
+  "local_helpers": {
+    "compiler": "Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)\nTarget: arm64-apple-macosx13.0\n",
+    "requested_headers_sdk": "14.2",
+    "actual_embedded_sdk": "13.0",
+    "minimum_os": "13.0",
+    "architecture": "arm64",
+    "compiler_signature_metadata_commands_all_zero": true,
+    "recorded_logs_rehashed": [
+      "work/split-label-color-local13-build/FrameColorCapture.compile.log",
+      "work/split-label-color-local13-build/FrameColorCapture.signature.txt",
+      "work/split-label-color-local13-build/FrameColorCapture.build.txt",
+      "work/split-label-color-local13-build/FrameColorCapture.arch.txt",
+      "work/split-label-color-local13-build/FocusGuard.compile.log",
+      "work/split-label-color-local13-build/FocusGuard.signature.txt",
+      "work/split-label-color-local13-build/FocusGuard.build.txt",
+      "work/split-label-color-local13-build/FocusGuard.arch.txt"
+    ],
+    "source_proof_bound": true
+  },
+  "original_wrapper": {
+    "success": false,
+    "cleanup_success": false,
+    "error_preserved": "TimeoutExpired: Command '['defaults', 'delete', 'dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3']' timed out after 5 seconds",
+    "exact_child_cleanup_verified": true,
+    "ipc_cleanup_verified": true,
+    "overall_gate_pass": false
+  },
+  "separate_manual_cleanup": {
+    "success_receipt": true,
+    "guard_own_null": true,
+    "pid_absent_receipt": true,
+    "front_same_original_kernel": true,
+    "exact_private_prefs": {
+      "field": "preferences_path",
+      "path": "/Users/torrekie/Library/Preferences/dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3.plist",
+      "existed_before": true,
+      "bytes_before": 279,
+      "sha256_before": "a54289b83b1b99a7e985e435e91151de96de122d79e97ab229f8c4dc0b52855c",
+      "uid": 501,
+      "mode": 384,
+      "lsof_exit_code": 1,
+      "absent_after": true
+    },
+    "saved_state_not_present": true,
+    "exact_ipc_absent": true,
+    "scope": "Root removed only matching fresh private regular preference file after exact child absence and no open writer; CFPreferences daemon cache not claimed inspected or flushed.",
+    "cfpreferences_daemon_cache_flush_claimed": false
+  },
+  "desktop": {
+    "session_id": "7060E3C8-CFF7-4CEB-8D65-9BE0815C2DE6",
+    "released": true,
+    "final_active": false,
+    "front_pid": 1390,
+    "cursor_moved_distance": 0,
+    "cursor_config_unchanged": true,
+    "buffered_marks": 0,
+    "overlay_visible_after_release": true,
+    "clear_only_receipt_preserved": true,
+    "final_overlay_visible": false
+  },
+  "actual_binary_reads": {
+    "receipt": "actual-binary-reads.json",
+    "sha256": "e01cfd6ae4c1a3c71ad64b7e8eb27a02ac99f46ce9b7e7e63fa1ca87008c11ca",
+    "all_four_read_and_matched": true,
+    "no_more_binary_retention_needed_for_this_review": true
+  },
+  "inputs": [
+    {
+      "path": "work/split-label-color-candidate13/report.json",
+      "bytes": 132072,
+      "sha256": "bab12aebc8151308beff5a00edccc80d5bae0d044779629df2662cda1e0ca868"
+    },
+    {
+      "path": "work/split-label-color-candidate13/ownership.json",
+      "bytes": 427,
+      "sha256": "822af8487ebd95d9a9de835ebd827988171f81b69c08d6dac5a8ab02b635b3b2"
+    },
+    {
+      "path": "work/split-label-color-candidate13/cleanup-helper.json",
+      "bytes": 1966,
+      "sha256": "10eb4ef842b9a572228ccb5ba0507061903dbcd11ee5f068e08dd32049bce473"
+    },
+    {
+      "path": "work/split-label-color-candidate13.watchdog/watchdog.json",
+      "bytes": 8957,
+      "sha256": "c0d4e1aff9f1d29a00726d9b07a6f88cd2239959bb053357f71d9ecafd54e51a"
+    },
+    {
+      "path": "work/split-label-color-candidate13.watchdog/original-front.json",
+      "bytes": 222,
+      "sha256": "656f877c7ac186771984aebf5c19a7c085a60054e952cd6365b2ec06cdc4f825"
+    },
+    {
+      "path": "work/split-label-color-candidate13-isolation/locks.json",
+      "bytes": 4712,
+      "sha256": "20ae0ad072a54645656ce984755f975a61fc6da42cfbb4ad365235427610e084"
+    },
+    {
+      "path": "work/split-label-color-candidate13-isolation/candidate/isolation.json",
+      "bytes": 37100,
+      "sha256": "d28aae8f451de7c5cfb1e8fadeaff6bf93f749e87c04289d16ac8853368291a1"
+    },
+    {
+      "path": "work/split-label-color-local13-build/build.json",
+      "bytes": 8649,
+      "sha256": "8bf8c03505e758ca08a3d4d9688417af2e4074d46e4a03312a7461b5ba2f8798"
+    },
+    {
+      "path": "work/split-label-color-local13-preparation/source-proof.json",
+      "bytes": 3364,
+      "sha256": "d24fc6fa8a36ebda7a289f9a423a1887d0387d419d9be2739c8763a1fc305515"
+    },
+    {
+      "path": "work/split-label-color-manual-cleanup/cleanup.json",
+      "bytes": 1968,
+      "sha256": "0f70b83591607b40b863d3f5982e3fa01ce8f863bd2b2a21a4b70234a7eb7fd6"
+    },
+    {
+      "path": "work/split-label-color-manual-cleanup/guard-inspect.stdout.json",
+      "bytes": 885,
+      "sha256": "980dc52aed6771453c40ee419f46c4e0cb695617a92b0734778ff91744e0680a"
+    },
+    {
+      "path": "work/split-label-color-manual-cleanup/private-preferences-before.plist",
+      "bytes": 279,
+      "sha256": "a54289b83b1b99a7e985e435e91151de96de122d79e97ab229f8c4dc0b52855c"
+    },
+    {
+      "path": "work/split-label-color-desktop/acquire.json",
+      "bytes": 940,
+      "sha256": "02e0bf8498007577d6768af222cf5b41b3538c030e3c26752c4f25fc6b7a5dcf"
+    },
+    {
+      "path": "work/split-label-color-desktop/release.json",
+      "bytes": 553,
+      "sha256": "b10dfe1f09dd55fca5da0af59bc205a53fc4b3474c715b82bcec9864e409c8b5"
+    },
+    {
+      "path": "work/split-label-color-desktop/status-final.json",
+      "bytes": 554,
+      "sha256": "bfa7b38cd6a0669d32db7b3df943ebbd457c092cc4e4c7e4bcc49efe3168fd42"
+    },
+    {
+      "path": "work/split-label-color-desktop/cursor-before.json",
+      "bytes": 591,
+      "sha256": "fac4c017b968e14d21e2c2e14817cd3bfe53baff108f2b2d3619488abb67f572"
+    },
+    {
+      "path": "work/split-label-color-desktop/cursor-after-release.json",
+      "bytes": 592,
+      "sha256": "e100ddee9dae9b5d3f4d5742ad4692183b8b7205a103b645e0393487513ddf15"
+    },
+    {
+      "path": "work/split-label-color-desktop/cursor-clear-only.json",
+      "bytes": 578,
+      "sha256": "29df425648112349d4d505abe8380c0b4ca985c96e4fa582f0b0fd93d4a5e05b"
+    },
+    {
+      "path": "work/split-label-color-desktop/cursor-final.json",
+      "bytes": 591,
+      "sha256": "fac4c017b968e14d21e2c2e14817cd3bfe53baff108f2b2d3619488abb67f572"
+    }
+  ],
+  "not_performed": [
+    "PNG read or pixel conversion",
+    "Helper/App/CLI/native/UI/compile/CI/Git/API execution",
+    "Live process/status command",
+    "Preference or IPC deletion",
+    "Any original report/gate modification"
+  ],
+  "limitations": "Read/hash of retained actual executables plus existing native/build/signature/kernel/manual-cleanup/desktop receipts; no new native signing, liveness or cache observation. No assertion that wrapper or color candidate passed."
+}

@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "kind": "source_only_candidate13_driver_review",
+  "verdict": "no_blocking_source_finding",
+  "source_package_manifest_sha256": "47681b8e5bc6762b6179f46d03465f86ef2e1d354d321b69910bfae065c36ac9",
+  "source_package_members": [
+    {
+      "path": "work/split-label-color-local13-driver/README.md",
+      "bytes": 4444,
+      "sha256": "383667c02696d628fef592db1a95605f3f87ce159f735278bcdad1b3ff497169"
+    },
+    {
+      "path": "work/split-label-color-local13-driver/draft.json",
+      "bytes": 3192,
+      "sha256": "39a882cd27e3ef888a191a5e32c2d89de67f8083a8f1eb6361609c9e24bd589f"
+    },
+    {
+      "path": "work/split-label-color-local13-driver/prepare-candidate.py",
+      "bytes": 15970,
+      "sha256": "0b03dd3afa92169f447a9f1e623388e0293428026a225547bd3af6fd60daf940"
+    },
+    {
+      "path": "work/split-label-color-local13-driver/run-candidate13.py",
+      "bytes": 30080,
+      "sha256": "5f0a75d69bd4b4507dc71bb8478ccaf54d7d1c56f077cf2b6c267f0d2fefa905"
+    },
+    {
+      "path": "work/split-label-color-local13-driver/source-proof.json",
+      "bytes": 1839,
+      "sha256": "ffa35bb374b33805a46fc29993e25ab5b70186335c5329f7684abd0a62a8b605"
+    }
+  ],
+  "independent_comparisons": {
+    "prepare4_functions_source_bytes_and_AST_identical": true,
+    "runner12_functions_classes_source_bytes_and_AST_identical": true,
+    "prepare_run_read_contract_source_bytes_and_AST_identical": true,
+    "runner_process_none_to_exit_byte_exact_after3_documented_substitutions": true,
+    "whole_local_sources_directory_in_bidirectional_isolation_AST_verified": true,
+    "old_frozen_helper_review_unchanged": true
+  },
+  "actual_prerequisite_metadata": {
+    "build": {
+      "path": "work/split-label-color-candidate-build/candidate-build.json",
+      "bytes": 4935,
+      "sha256": "55b75658cf84e3fb5eb713c414cab495d37843b6959c9801e439da48c24413df"
+    },
+    "gate": {
+      "path": "work/split-label-color-actual14/color14-pair.json",
+      "bytes": 2039,
+      "sha256": "9bc482b047c31af2d6391a3fd6606b7c277f0fb43e7442850ab0c9c2ce740502"
+    },
+    "run_id": "40163364000",
+    "harness_sha": "2cff19aad748ac673fefda921b313886bb902e4b",
+    "frame_detail": {
+      "changed_bbox_half_open_pixels": null,
+      "changed_pixels": 0,
+      "comparison": "All decoded active pixel bytes including stored alpha; row padding excluded; no color conversion",
+      "equal": true,
+      "roi_half_open_pixels": [
+        211,
+        52,
+        920,
+        668
+      ]
+    },
+    "whole_window": {
+      "changed_bbox_half_open_pixels": [
+        10,
+        118,
+        200,
+        146
+      ],
+      "changed_pixels": 5284,
+      "comparison": "All decoded active pixel bytes including stored alpha; row padding excluded; no color conversion",
+      "equal": false,
+      "roi_half_open_pixels": [
+        0,
+        0,
+        920,
+        668
+      ]
+    },
+    "report_PNG_hashes": [
+      {
+        "path": "work/split-label-color-actual14/a/report.json",
+        "bytes": 106629,
+        "sha256": "4ad911aa06c132c2f2a83444c4d173909c2845125cabcfd6353932370a06c728"
+      },
+      {
+        "path": "work/split-label-color-actual14/a/frame-closed-light.png",
+        "bytes": 49907,
+        "sha256": "ef6951d5a8355936f3666b0091478c0bb17ef3a374bb84888e16a3b06eccfb6b"
+      },
+      {
+        "path": "work/split-label-color-actual14/b/report.json",
+        "bytes": 101953,
+        "sha256": "f210ba7ca4aa3bad42720e1440cc02ff0fe333251fbdf90dc03ec26e74704378"
+      },
+      {
+        "path": "work/split-label-color-actual14/b/frame-closed-light.png",
+        "bytes": 50001,
+        "sha256": "66e16368abbad027b9d51cb43e1af61ae0877eab5a6c6cbb72431c6b5b61919b"
+      }
+    ],
+    "candidate_binaries": {
+      "Gallery.app/Contents/MacOS/Gallery": {
+        "bytes": 3735024,
+        "sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1"
+      },
+      "bin/gallery": {
+        "bytes": 898336,
+        "sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5"
+      }
+    },
+    "local_helper_build": {
+      "path": "work/split-label-color-local13-build/build.json",
+      "bytes": 8649,
+      "sha256": "8bf8c03505e758ca08a3d4d9688417af2e4074d46e4a03312a7461b5ba2f8798"
+    },
+    "local_helper_binary_receipt_rows": {
+      "FrameColorCapture": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-local13-build/FrameColorCapture",
+        "bytes": 333520,
+        "sha256": "b241507bb2a88b47146681d4ba04b791ab30c23a5e3abda05025f52a228e95c7"
+      },
+      "FocusGuard": {
+        "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-local13-build/FocusGuard",
+        "bytes": 104088,
+        "sha256": "fb6594e71032d7a838fba8ae3529aa2dcfddad1c936a027886948a5b3958b26b"
+      }
+    },
+    "actual_embedded_sdk": "13.0",
+    "requested_headers": "14.2",
+    "method": "Saved JSON and file-byte hashes only; no image decoding/comparison or binary invocation."
+  },
+  "source_gates": [
+    "Exact new single-candidate schema/kind, candidatece462 and baselinee48; old plain-control and observer locks rejected.",
+    "External actual build/Gate SHAs bind manifest, matched successful14 reports/PNGs, current CI source/run/harness/helper/product identity and frozen FrameROI.",
+    "Actual candidate GUI/CLI metadata dynamic from build; all original candidate App members/sizes checked; private CFID/signature only and all-section/non-signature comparisons preserved.",
+    "Local frozen source manifest/proof, source-before/after build packet, helper actual file hashes/path/size and successful build command receipts bound to explicit root digest arguments.",
+    "Fresh OUTPUT/watchdog disjoint from actual inputs and complete frozen local-source directory in both directions.",
+    "Hard no-ledger; clears CI/GITHUB_SHA/GITHUB_RUN_ID; child fixedlocal own-active13/candidate and actual self-SHA checked.",
+    "All kernel/parent/privateCFID/original-front/restore-before-stop/exactchild/IPC/privateprefs gates and95/75/7-second bounds retained; defaults delete retains original5s bounded timeout and failure classification."
+  ],
+  "source_ready_scope": "Reviewer source-only verdict; actual private locks/isolation and native outcomes are separate gates. No driver entry mode was executed by this reviewer.",
+  "runtime_status_boundary": "Parent reported a later candidate13 attempt with wrapper failure at defaults-delete5s timeout and no color effect. This review does not inspect those13 outputs, relabel failure or provide cleanup/runtime acceptance; parent owns separate receipts.",
+  "not_performed": [
+    "No candidate driver mode or module execution",
+    "No compiler/typecheck or helper/App/CLI/native process/UI",
+    "No network/Git/CI",
+    "No new13 PNG decoding or color analysis, retry or source fixes"
+  ]
+}

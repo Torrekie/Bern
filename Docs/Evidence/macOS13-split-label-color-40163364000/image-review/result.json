@@ -1,0 +1,196 @@
+{
+  "kind": "candidate13_byte_identity_negative_color_review",
+  "status": "unchanged_no_strict_improvement_overall_gate_false",
+  "method": "One direct whole-PNG byte equality and SHA256 comparison to the frozen original13 reference; no PNG decoding, RGB conversion, resampling, mask construction or candidate IO adapter.",
+  "png_comparison": {
+    "reference": {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-frame-control-e48-20261025/runtime/frame-closed-light.png",
+      "bytes": 136239,
+      "sha256": "ece61b2d4e05da32f3598e1f56da8369bb2029814fb3a66b4129bf363aff37f3"
+    },
+    "candidate": {
+      "path": "work/split-label-color-candidate13/frame-closed-light.png",
+      "bytes": 136239,
+      "sha256": "ece61b2d4e05da32f3598e1f56da8369bb2029814fb3a66b4129bf363aff37f3"
+    },
+    "bytes_equal": true,
+    "icc_sha256_from_bound_reports": "e2473ef48182e793b50bd21dd4d1d9b37d26b02b5a38508ded86d836ef9b64d4",
+    "native_pixels": [
+      1840,
+      1336
+    ],
+    "pixels_per_point": [
+      2,
+      2
+    ],
+    "embedded_icc_equality_basis": "Whole PNG bytes identical; report ICC matches frozen binding."
+  },
+  "frozen_foreground_consequence": {
+    "derivation": "Identical original/candidate PNG bytes with the same fixed deterministic color/mask specification imply identical normalized pixels, fixed-mask statistics and errors; copied frozen original metrics, not a new transformation.",
+    "mask_count": 957,
+    "mask_sha256": "e3cd5a9143504997e96d1004165928c1172ca806e495a8a47d999efc3c21d48a",
+    "target14_rgb_mean": [
+      158.57057057057057,
+      197.5795795795796,
+      239.44744744744744
+    ],
+    "candidate_rgb_stats_equal_to_original": {
+      "channel_max": [
+        93,
+        155,
+        234
+      ],
+      "channel_mean": [
+        84.00940438871473,
+        147.43051201671892,
+        226.27377220480668
+      ],
+      "channel_min": [
+        52,
+        128,
+        215
+      ],
+      "count": 957
+    },
+    "candidate_error_to_target14_equal_to_original": {
+      "per_channel_max_absolute_error": [
+        106.57057057057057,
+        69.57957957957959,
+        24.447447447447445
+      ],
+      "per_channel_mean_absolute_error": [
+        74.56116618185584,
+        50.14906756286067,
+        13.173675242640757
+      ],
+      "per_channel_signed_mean_bias": [
+        -74.56116618185584,
+        -50.14906756286067,
+        -13.173675242640757
+      ]
+    },
+    "candidate_minus_original_per_channel_mae": [
+      0,
+      0,
+      0
+    ],
+    "per_channel_error_improved_pixel_counts": [
+      0,
+      0,
+      0
+    ],
+    "per_channel_error_regressed_pixel_counts": [
+      0,
+      0,
+      0
+    ],
+    "per_channel_error_tied_pixel_counts": [
+      957,
+      957,
+      957
+    ],
+    "per_channel_strict_mae_improvement": [
+      false,
+      false,
+      false
+    ],
+    "all_channels_nonworse": true,
+    "at_least_one_channel_strictly_improves": false,
+    "frozen_color_rule_pass": false
+  },
+  "samehost_pixel_controls": {
+    "entire_png_equal": true,
+    "all_fixed_Frame_body_label_background_and_outside_regions_equal_by_byte_identity": true,
+    "no_new_cross_scale_comparison": true
+  },
+  "runtime_and_overall": {
+    "collector_success": true,
+    "collector_exit_code": 0,
+    "collector_elapsed_seconds": 8.766746997833252,
+    "app_still_running_after_cleanup": false,
+    "app_termination_status": 0,
+    "wrapper_success": false,
+    "wrapper_cleanup_success": false,
+    "wrapper_error_preserved": "TimeoutExpired: Command '['defaults', 'delete', 'dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3']' timed out after 5 seconds",
+    "exact_child_cleanup_verified_at_wrapper_receipt": true,
+    "ipc_cleanup_verified_at_wrapper_receipt": true,
+    "overall_gate_pass": false,
+    "later_root_cleanup_not_part_of_this_raw_result": true
+  },
+  "provenance": {
+    "source_sha": "ce462b3ef5d11b72d51ddf9158940d686bc7707a",
+    "original_candidate_gui_sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1",
+    "private_candidate_gui_sha256": "434c1e639d61d366a962681c1a24c9c13540b968b7df6dd220a77eba7f6c470e",
+    "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "collector_binary_sha256": "b241507bb2a88b47146681d4ba04b791ab30c23a5e3abda05025f52a228e95c7",
+    "guard_binary_sha256": "fb6594e71032d7a838fba8ae3529aa2dcfddad1c936a027886948a5b3958b26b",
+    "collector_source_sha256": "61426976dbb557d0d8974dcb4da11337bc1611420b04cec0f856bace14bf362c",
+    "guard_source_sha256": "ab78c7d374169478a5f99c1a3000f9a6180338b78e2f250e5ff1446f7e19345d",
+    "private_sections_normalized_equal_receipt": true,
+    "ci14_run_id": "40163364000",
+    "ci14_gate_success": true
+  },
+  "inputs": {
+    "frozen_spec": {
+      "path": "work/split-label-color-analysis/spec.json",
+      "bytes": 6379,
+      "sha256": "68f5b9fba17609f416a80cae51bc1be465fff0d4a7b8451d7762b88b117e416a"
+    },
+    "frozen_reference_binding": {
+      "path": "work/split-label-color-analysis/reference-binding.json",
+      "bytes": 39815,
+      "sha256": "9b0a0111f8d062adf4c2bd7dd0972fefd3e5688b3055c810dcc5c67ebffb5fa4"
+    },
+    "frozen_reference_manifest": {
+      "path": "work/split-label-color-analysis/SHA256SUMS",
+      "bytes": 678,
+      "sha256": "8676b0442824a7f509fd54bf93ba04432a90847ea5ae8d3b0f1fc0c8ea6385cb"
+    },
+    "reference13_report": {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-frame-control-e48-20261025/runtime/report.json",
+      "bytes": 135017,
+      "sha256": "60d71641769e1e7630b8d235512f700db416a8a0646cf559cc6bb75f6f5ac480"
+    },
+    "candidate13_report": {
+      "path": "work/split-label-color-candidate13/report.json",
+      "bytes": 132072,
+      "sha256": "bab12aebc8151308beff5a00edccc80d5bae0d044779629df2662cda1e0ca868"
+    },
+    "wrapper_watchdog": {
+      "path": "work/split-label-color-candidate13.watchdog/watchdog.json",
+      "bytes": 8957,
+      "sha256": "c0d4e1aff9f1d29a00726d9b07a6f88cd2239959bb053357f71d9ecafd54e51a"
+    },
+    "locks": {
+      "path": "work/split-label-color-candidate13-isolation/locks.json",
+      "bytes": 4712,
+      "sha256": "20ae0ad072a54645656ce984755f975a61fc6da42cfbb4ad365235427610e084"
+    },
+    "isolation": {
+      "path": "work/split-label-color-candidate13-isolation/candidate/isolation.json",
+      "bytes": 37100,
+      "sha256": "d28aae8f451de7c5cfb1e8fadeaff6bf93f749e87c04289d16ac8853368291a1"
+    },
+    "build_manifest": {
+      "path": "work/split-label-color-candidate-build/candidate-build.json",
+      "bytes": 4935,
+      "sha256": "55b75658cf84e3fb5eb713c414cab495d37843b6959c9801e439da48c24413df"
+    },
+    "actual14_gate": {
+      "path": "work/split-label-color-actual14/color14-pair.json",
+      "bytes": 2039,
+      "sha256": "9bc482b047c31af2d6391a3fd6606b7c277f0fb43e7442850ab0c9c2ce740502"
+    },
+    "local_helper_build": {
+      "path": "work/split-label-color-local13-build/build.json",
+      "bytes": 8649,
+      "sha256": "8bf8c03505e758ca08a3d4d9688417af2e4074d46e4a03312a7461b5ba2f8798"
+    },
+    "local_source_proof": {
+      "path": "work/split-label-color-local13-preparation/source-proof.json",
+      "bytes": 3364,
+      "sha256": "d24fc6fa8a36ebda7a289f9a423a1887d0387d419d9be2739c8763a1fc305515"
+    }
+  },
+  "scope": "No visible color improvement in this exact closed Frame Caption case. Not a general SplitButton/NSColor conclusion, no UI cause attribution, no Row-ledger result or whole-UI acceptance. No retry/threshold/condition/product modification."
+}

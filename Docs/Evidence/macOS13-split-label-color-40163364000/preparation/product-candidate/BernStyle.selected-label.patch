@@ -1,0 +1,45 @@
+--- a/crates/bern-backend-swiftui/templates/BernStyle.swift
++++ b/crates/bern-backend-swiftui/templates/BernStyle.swift
+@@ -1069,6 +1069,10 @@
+     let target: String
+     @ViewBuilder let content: Content
+     @Environment(\.colorScheme) private var scheme
++    #if os(macOS)
++    @Environment(\.isEnabled) private var isEnabled
++    @Environment(\.controlActiveState) private var activeState
++    #endif
+     @State private var showing = false
+ 
+     init(
+@@ -1092,6 +1096,19 @@
+             Text(verbatim: label)
+         }
+     }
++
++    #if os(macOS)
++    @ViewBuilder private var buttonToggleLabel: some View {
++        if #available(macOS 14.0, *) {
++            toggleLabel
++        } else if #available(macOS 13.0, *), isOn, isEnabled,
++                  activeState == .key, scheme == .dark {
++            toggleLabel.foregroundStyle(Color(nsColor: .selectedControlTextColor))
++        } else {
++            toggleLabel
++        }
++    }
++    #endif
+ 
+     /// The design's split button (6.3): the symbol in a 16-point box, 6
+     /// before the words.
+@@ -1124,7 +1141,11 @@
+             .modifier(BernGlassCapsule(prominent: isOn))
+         } else {
+             ControlGroup {
++                #if os(macOS)
++                Toggle(isOn: $isOn) { buttonToggleLabel }.bernButtonToggle()
++                #else
+                 Toggle(isOn: $isOn) { toggleLabel }.bernButtonToggle()
++                #endif
+                 Button { showing = true } label: { Image(systemName: "chevron.down") }
+                     .accessibilityLabel(Text(verbatim: more)).help(more)
+             }

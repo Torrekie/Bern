@@ -1,0 +1,57 @@
+{
+  "kind": "read_only_frozen_runtime_source_review",
+  "verdict": "no_blocking_source_finding",
+  "source_manifest_sha256": "daad85804648d71f7184d5a2d2e1e449b94877bc96b5bd0e537e2dc991aebb46",
+  "source_files": [
+    {
+      "name": "FrameColorCapture.swift",
+      "bytes": 52243,
+      "sha256": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69"
+    },
+    {
+      "name": "FrameColorGate.swift",
+      "bytes": 12832,
+      "sha256": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618"
+    },
+    {
+      "name": "README.md",
+      "bytes": 3724,
+      "sha256": "4c4db0cdcf47ed9c59578435566a538c7edc0ecace5a6d8e2ac92315dcabd712"
+    },
+    {
+      "name": "source-proof.json",
+      "bytes": 3938,
+      "sha256": "8b659251b8741f453f22008078f753619de7c1da3c4163e5dcaf4f724e1dbbf3"
+    }
+  ],
+  "independent_comparisons": {
+    "capture_complete_inverse_restores3613": true,
+    "capture_final2301B_defer_unchanged": true,
+    "gate_complete_original_algorithm_prefix_unchanged": true,
+    "gate_ICC_comparison_bytes_unchanged": true,
+    "gate_scale_whole_fixed_ROI_and_result_block_unchanged": true
+  },
+  "capture_delta": [
+    "Only allow e48 or ce462 at original source gate and immediately reject nonnil ledgerPath before UI.",
+    "Authorized metadata: ci_run_id and actual Bundle.main executable SHA; unavailable/read errors fail nonzero.",
+    "Original clocks/deadline/acquisition/media/window/CG/stable4/cleanup source bodies remain byte-identical. Metadata read overhead still contributes to original elapsed clock; no zero-overhead claim."
+  ],
+  "gate_contract": {
+    "argv": "CONTROL_REPORT CANDIDATE_REPORT BUILD_MANIFEST FRESH_PAIR_JSON",
+    "argument_count_including_executable": 5,
+    "manifest_schema": "bern_split_label_color_build_v1",
+    "current_run_harness_and_collector_bound": true,
+    "gate_actual_own_binary_sha_and_length_bound": true,
+    "source_and_product_gui_cli_bound": true,
+    "both_reports": "success14, normal preflight3false, closed, traceoff, stable4, Captiontrue/Light/Paused0/darkFrame, original media hash/own source URL",
+    "exact_pixel_algorithm": "Original native decoded active bytes including stored alpha; no color conversion/resampling; equal descriptor/ICC; historical ROI[211,52,920,668]pt; whole window separately reported."
+  },
+  "limits": [
+    "This is source inspection; no Swift compiler/typecheck, binary invocation, UI, CI or Git.",
+    "Normal flags are original preflight fields, not an added ending observation.",
+    "Product file hashes are actual locked-collector reads matched to manifest; Gate does not reopen product binaries itself.",
+    "Only acquired14 closed Frame detail no-effect; no fullUI/crossOS/13 improvement acceptance.",
+    "Later13 cleanup-only adapter requires separately disclosed source/binary identity.",
+    "Build.py/workflow contract review pending stable root files; no complete package conclusion yet."
+  ]
+}

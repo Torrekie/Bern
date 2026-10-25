@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "kind": "read_only_split_button_semantic_color_source_review",
+  "verdict": "no_blocking_source_finding",
+  "base": {
+    "path": "outputs/Bern/crates/bern-backend-swiftui/templates/BernStyle.swift",
+    "bytes": 210785,
+    "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+  },
+  "candidate": {
+    "path": "work/split-label-color-preparation/BernStyle.swift",
+    "bytes": 211493,
+    "sha256": "8219c50ec45a81eb7516b63bddbc7541211006c1a09f0069a93390707c0c6df0"
+  },
+  "source_comparisons": {
+    "exactly_three_documented_edits_reverse_to_complete_original_bytes": true,
+    "outside_BernSplitButton_identical_bytes": true,
+    "original_toggleLabel_body_identical": true,
+    "original_capsule_path_identical": true,
+    "binding_font_tint_layout_popover_preserved_as_source": true,
+    "nonmac_original_Toggle_line_identical": true,
+    "no_Gallery_or_target_specific_identifier": true,
+    "no_measurement_Row_trace_new_native_control": true
+  },
+  "branch_policy": {
+    "platform": "macOS only",
+    "mac14_or_later": "original toggleLabel",
+    "mac13": "selected isOn AND isEnabled AND activeState.key AND scheme.dark only: same toggleLabel with foregroundStyle(Color(nsColor:selectedControlTextColor))",
+    "mac_below13": "original toggleLabel",
+    "other_mac13_states": "original toggleLabel",
+    "nonmac": "original Toggle label and no added mac-only environment properties",
+    "capsule": "original capsuleLabel/style"
+  },
+  "local_sdk_sources": [
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "bytes": 1520489,
+      "sha256": "f1a9f2592019d14603bacaaba32f782af2f6572cb665646e8246fe29be5de43c"
+    },
+    {
+      "path": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSColor.h",
+      "bytes": 38411,
+      "sha256": "f3916e4436f09c86f1e7519fdc965fd9a4a161c30a0a84ba290ba3934a7dc6bd"
+    }
+  ],
+  "sdk_declarations": [
+    {
+      "api": "EnvironmentValues.colorScheme",
+      "macos": "10.15",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "line": 3555
+    },
+    {
+      "api": "ControlActiveState.key",
+      "macos": "10.15",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "line": 13432
+    },
+    {
+      "api": "EnvironmentValues.controlActiveState",
+      "macos": "10.15; unavailable iOS/tvOS/watchOS/visionOS",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "line": 13616
+    },
+    {
+      "api": "View.foregroundStyle(ShapeStyle)",
+      "macos": "12.0",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "line": 18540
+    },
+    {
+      "api": "Color.init(nsColor:)",
+      "macos": "12.0; other platforms unavailable",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "line": 21481
+    },
+    {
+      "api": "EnvironmentValues.isEnabled",
+      "macos": "10.15",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-macos.swiftinterface",
+      "line": 27470
+    },
+    {
+      "api": "NSColor.selectedControlTextColor",
+      "macos": "declared without a newer availability restriction in SDK14.2; named text-on-selected-controls color",
+      "file": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSColor.h",
+      "line": 230
+    }
+  ],
+  "limits": [
+    "No Swift compilation/typecheck or execution. Swift syntax/availability conclusions are source review, not compiler output.",
+    "Same original14 label expression still lives under added ViewBuilder structure/environment dependency; source identity does not prove equal runtime pixels or intrinsic sizing.",
+    "Semantic NSColor is not an RGB sample or a color-space resolution; runtime actual appearance propagation/selected rendering remains unverified.",
+    "No claim of measured13 repair, unique root cause, visual interaction or animation parity, iOS validation or mac11/Swift5.3 completion.",
+    "Root must gate actual14 no-effect then actual13 candidate against retained uninstrumented baseline."
+  ],
+  "not_performed": [
+    "No compiler/helper/product invocation",
+    "No UI/native process actions",
+    "No CI/network/Git",
+    "No product edits or child agents"
+  ],
+  "source_package_manifest_sha256": "32a6e11fd001e5ee8176cb6082c98c06b6c205f677cc3c8cf3638938ab8cea9e",
+  "source_package": [
+    {
+      "file": "BernStyle.selected-label.patch",
+      "bytes": 1595,
+      "sha256": "c3b3413ddaa39e663c16a3cad07fa57821e9680b457af89cc429a03dfd410478"
+    },
+    {
+      "file": "BernStyle.swift",
+      "bytes": 211493,
+      "sha256": "8219c50ec45a81eb7516b63bddbc7541211006c1a09f0069a93390707c0c6df0"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2222,
+      "sha256": "0bc41fc11c87ffc8e8811359dcc8f60f9d43079405a618aa6b451e3d884524e6"
+    },
+    {
+      "file": "source-proof.json",
+      "bytes": 1968,
+      "sha256": "30af95cd739d4bb318b50629dfc6155584e9b1b5aae2a770c9c573085f10ff40"
+    }
+  ],
+  "capsule_and14_environment_dependency_limit": "The added properties live on every macOS BernSplitButton, including capsule and14. Their existing label/body expression is retained, but invalidation behavior is not source-proven unchanged."
+}

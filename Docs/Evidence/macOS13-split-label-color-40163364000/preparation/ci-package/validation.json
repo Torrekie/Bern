@@ -1,0 +1,74 @@
+{
+  "scope": "syntax/source validation only; no product build/helper execution/UI/CI dispatch",
+  "build_python_ast": true,
+  "workflow_yaml_parse": true,
+  "bash_blocks": [
+    {
+      "job": "build",
+      "step": "Pin candidate, original source and toolchain",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "build",
+      "step": "Verify sole product change and reset only the generated target",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "build",
+      "step": "Run the original full Gallery product plan",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "build",
+      "step": "Verify strict product and package one reusable candidate",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "build",
+      "step": "Compile one common collector and native-byte color gate",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "build",
+      "step": "Bind compiled source, package, product and helper identities",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "capture",
+      "step": "Verify actual14 and immutable product/helper artifacts",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "capture",
+      "step": "Set ordinary profile on this disposable runner",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "capture",
+      "step": "Capture original14 and candidate14 with the same non-tracing collector",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "job": "capture",
+      "step": "Require unchanged raw Frame pixels and ICC on14",
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "copied_helpers_exact_frozen_runtime": true,
+  "old_frame_row_sources_unchanged": {
+    "FrameClosed.swift": "3613df83629f0b3e975425c3db37a53e40135dfc93dd6d333bf4487ad2e1d974",
+    "PixelGate.swift": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"
+  },
+  "downloaded_helpers_chmod_after_content_verification": true,
+  "local_parse_typecheck_receipt": "../split-label-color-local-checks/checks.json"
+}

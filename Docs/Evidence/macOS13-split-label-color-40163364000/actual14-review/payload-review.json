@@ -1,0 +1,111 @@
+{
+  "actual_product_app_files": 10,
+  "app_members": {
+    "Contents/Info.plist": {
+      "bytes": 2633,
+      "sha256": "30c9dfdf5b8718341e1b534f5298451051a6d44eb01dcdb2921f71efda5dd15d"
+    },
+    "Contents/MacOS/Gallery": {
+      "bytes": 3735024,
+      "sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1"
+    },
+    "Contents/Resources/AppIcon.icns": {
+      "bytes": 63607,
+      "sha256": "8d5ced690e3c1079453b8684010991b8a3bde25b6157337ffa8c0a4fb3ad37de"
+    },
+    "Contents/Resources/en.lproj/InfoPlist.strings": {
+      "bytes": 59,
+      "sha256": "0b456fde30f7a8ce7a04de7305719d704b752a41c5490b02565a426530410426"
+    },
+    "Contents/Resources/en.lproj/Localizable.strings": {
+      "bytes": 6713,
+      "sha256": "2a0722c09210e95dc38c354daa09961c9a90af601c33345a469676cf095a300c"
+    },
+    "Contents/Resources/media/poster.jpg": {
+      "bytes": 8124,
+      "sha256": "76dadce80a79ca2684c9fe23712cff47d11d1e2928ab4bc81f1396b504cf2c6c"
+    },
+    "Contents/Resources/media/tides.mp4": {
+      "bytes": 49327,
+      "sha256": "145a1b5e572bd3ce16207e2b341c0eecb04b4d1e765bf72f5fe3809a24f34957"
+    },
+    "Contents/Resources/zh-Hans.lproj/InfoPlist.strings": {
+      "bytes": 63,
+      "sha256": "72b62e39761f9d14cdef4698153dcbd957a8fa6c0096a09f1a7ded08820b7bd4"
+    },
+    "Contents/Resources/zh-Hans.lproj/Localizable.strings": {
+      "bytes": 6740,
+      "sha256": "1421ca2397bc1e7b3347bb344fa8b4b444e62ae939b9120b2925a356026e46f0"
+    },
+    "Contents/_CodeSignature/CodeResources": {
+      "bytes": 4416,
+      "sha256": "e21b13a5652924ee6f6ac14775a4a8791c174bc9b29859a6ffcfef1212084be4"
+    }
+  },
+  "app_members_exact_build_manifest": true,
+  "binaries": [
+    {
+      "arm64": true,
+      "bytes": 317440,
+      "code_signature_load_command": {
+        "bytes": 2592,
+        "offset": 314848
+      },
+      "cryptographic_signature_rerun": false,
+      "minimum_macos": "13.0",
+      "path": "work/split-label-color-candidate-build/FrameColorCapture",
+      "sdk": "26.2",
+      "sha256": "eff075bf6cabaff996652c71088d51980e29caafeb96e3cc238b01c867fb95f7"
+    },
+    {
+      "arm64": true,
+      "bytes": 133024,
+      "code_signature_load_command": {
+        "bytes": 1184,
+        "offset": 131840
+      },
+      "cryptographic_signature_rerun": false,
+      "minimum_macos": "13.0",
+      "path": "work/split-label-color-candidate-build/FrameColorGate",
+      "sdk": "26.2",
+      "sha256": "3e26fa35769b6e5cb3feb34e41e23f82ddfea6ac6d442d0bb67655977fa02eb4"
+    },
+    {
+      "arm64": true,
+      "bytes": 3735024,
+      "code_signature_load_command": {
+        "bytes": 47104,
+        "offset": 3687920
+      },
+      "cryptographic_signature_rerun": false,
+      "minimum_macos": "13.0",
+      "path": "work/split-label-color-candidate-product/Gallery.app/Contents/MacOS/Gallery",
+      "sdk": "26.2",
+      "sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1"
+    },
+    {
+      "arm64": true,
+      "bytes": 898336,
+      "code_signature_load_command": {
+        "bytes": 7120,
+        "offset": 891216
+      },
+      "cryptographic_signature_rerun": false,
+      "minimum_macos": "13.0",
+      "path": "work/split-label-color-candidate-product/bin/gallery",
+      "sdk": "26.2",
+      "sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5"
+    }
+  ],
+  "not_claimed": "Raw LC_CODE_SIGNATURE presence is not cryptographic verification; root saved strict codesign results are checked separately.",
+  "read_method": "Python standard-library reads only; no binary/tool execution",
+  "status": "actual_read_hash_and_structural_payload_verification_passed",
+  "tar": {
+    "all_regular_member_bytes_equal_actual_product": true,
+    "bytes": 2119388,
+    "path": "work/split-label-color-candidate-build/gallery-split-label-color.tar.gz",
+    "regular_members": 11,
+    "sha256": "5b44ed49f0fcca42ba7791f1748914873b583e09a47e8863ade4bbcb03fa9266",
+    "total_members": 19
+  }
+}

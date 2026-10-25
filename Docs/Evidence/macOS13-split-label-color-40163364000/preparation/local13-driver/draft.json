@@ -1,0 +1,74 @@
+{
+  "kind": "candidate13_entry_sources_only",
+  "status": "source_ready_actual_private_locks_not_created_or_run",
+  "source_sha": "ce462b3ef5d11b72d51ddf9158940d686bc7707a",
+  "actual_inputs_metadata_read": {
+    "candidate_build": {
+      "path": "work/split-label-color-candidate-build/candidate-build.json",
+      "bytes": 4935,
+      "sha256": "55b75658cf84e3fb5eb713c414cab495d37843b6959c9801e439da48c24413df"
+    },
+    "color14_gate": {
+      "path": "work/split-label-color-actual14/color14-pair.json",
+      "bytes": 2039,
+      "sha256": "9bc482b047c31af2d6391a3fd6606b7c277f0fb43e7442850ab0c9c2ce740502"
+    },
+    "control14_report": {
+      "path": "work/split-label-color-actual14/a/report.json",
+      "bytes": 106629,
+      "sha256": "4ad911aa06c132c2f2a83444c4d173909c2845125cabcfd6353932370a06c728"
+    },
+    "candidate14_report": {
+      "path": "work/split-label-color-actual14/b/report.json",
+      "bytes": 101953,
+      "sha256": "f210ba7ca4aa3bad42720e1440cc02ff0fe333251fbdf90dc03ec26e74704378"
+    },
+    "local_source_manifest": {
+      "path": "work/split-label-color-local13-preparation/SHA256SUMS",
+      "bytes": 439,
+      "sha256": "9e50ba1b0e22223183a0ea102d9ced851c11db52bff9adec475c9b2013299089"
+    },
+    "local_helper_build": {
+      "path": "work/split-label-color-local13-build/build.json",
+      "bytes": 8649,
+      "sha256": "8bf8c03505e758ca08a3d4d9688417af2e4074d46e4a03312a7461b5ba2f8798"
+    }
+  },
+  "actual_local_binary_parameters_from_root_receipt": {
+    "FrameColorCapture": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-local13-build/FrameColorCapture",
+      "bytes": 333520,
+      "sha256": "b241507bb2a88b47146681d4ba04b791ab30c23a5e3abda05025f52a228e95c7"
+    },
+    "FocusGuard": {
+      "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-local13-build/FocusGuard",
+      "bytes": 104088,
+      "sha256": "fb6594e71032d7a838fba8ae3529aa2dcfddad1c936a027886948a5b3958b26b"
+    }
+  },
+  "actual_product_root": "work/split-label-color-candidate-product",
+  "required_remaining_actions_owned_by_root": [
+    "Independent final source review",
+    "Prepare one fresh private candidate copy with the actual manifest/success14 gate inputs",
+    "Review new isolation/locks and supply their actual digest",
+    "Execute only the separately authorized native capture and frozen offline analysis"
+  ],
+  "not_performed": [
+    "Any entry mode or function execution",
+    "Candidate PNG pixel reads or color analysis",
+    "Helper/App/CLI/native/UI/compile/CI/network/Git command",
+    "Signing/App copy/cleanup mutation",
+    "Any modification of frozen baseline/analysis/Swift/repository artifacts"
+  ],
+  "source_files": {
+    "prepare-candidate.py": {
+      "bytes": 15970,
+      "sha256": "0b03dd3afa92169f447a9f1e623388e0293428026a225547bd3af6fd60daf940"
+    },
+    "run-candidate13.py": {
+      "bytes": 30080,
+      "sha256": "5f0a75d69bd4b4507dc71bb8478ccaf54d7d1c56f077cf2b6c267f0d2fefa905"
+    }
+  },
+  "source_proof_sha256": "ffa35bb374b33805a46fc29993e25ab5b70186335c5329f7684abd0a62a8b605"
+}

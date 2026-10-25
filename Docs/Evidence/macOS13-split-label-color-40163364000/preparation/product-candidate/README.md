@@ -1,0 +1,11 @@
+# Native SplitButton selected-label semantic color — candidate only
+
+The base is the current repository BernStyle.swift read as bytes: 210785B, SHA2563912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89, identical to the frozen e48 template. Root identifies the current product revision as ed929f0; no Git command was run here. The repository was not edited.
+
+Only three fragments in BernSplitButton change: macOS-only isEnabled/controlActiveState Environment properties, a private ViewBuilder label, and the noncapsule Toggle label reference on macOS. For macOS13 selected+enabled+key+dark the original toggleLabel gains dynamic `Color(nsColor: .selectedControlTextColor)`. No application ID, Caption literal or Gallery target is used. macOS14+, older macOS and other states return the original toggleLabel. The nonmac branch retains the original entire Toggle statement; macOS-only declarations are excluded, so iOS has no new helper path.
+
+The original toggleLabel implementation, native ControlGroup/Toggle, binding, chevron action, font, layout, tint, capsule body, popover and registry behavior are unchanged. No new NSView/control, measured geometry, pixel read or fixed RGB is introduced. The semantic selected color is not presumed white, and the native toggle style may ignore or override this explicit label style.
+
+The macOS ViewBuilder generic label shape changes even when the14 branch returns the original label. The two new Environment properties also belong to all macOS BernSplitButton instances, including capsule/14 instances. Source branch retention is not proof of identical runtime rendering or invalidation behavior. Actual14 original/candidate no-effect acceptance is required before adoption, alongside the selected13 title+symbol result and unchanged bezel/geometry/native actions. This directory proves no visual improvement and no root cause.
+
+BernStyle.selected-label.patch is the complete minimal delta. source-proof.json records exact inverse reconstruction and unchanged outside-region hashes. No compiler/typecheck, helper/App execution, UI, CI, Git command, repository mutation or subagent spawn occurred here. Root owns builds, runtime verification, staging and adoption.

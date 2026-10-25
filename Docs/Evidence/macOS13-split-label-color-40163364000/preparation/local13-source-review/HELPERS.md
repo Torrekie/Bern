@@ -1,0 +1,13 @@
+# Local13 helper source review only
+
+Verdict: **no blocking helper-source finding** for Capture61426976…bf362c and Guardab78c7d3…9345d. This completes the helper portion only; the new candidate prepare/run driver remains unreviewed, pending root's stable-source notification. No driver or CI polling occurred.
+
+Independent byte comparison confirms exactly one replacement: remote14 Capture fa850da2…9b69 cleanup[39245,41546) is replaced by the already-reviewed plain-control13 cleanup from76499825…afbd0[38562,44059). The55439-byte local source has an identical39245-byte prefix and10697-byte suffix. Forward replacement equals the complete new file; inverse replacement restores the complete14 file. Replacement is5497 bytes, SHA823fe527…e8334. Guard's entire8082 bytes equal the verifiedab78 source. `helper-review.json` binds exact full digests, intervals and frozen package members.
+
+Every acquisition/media/window/CG/stable4 implementation, original75-second deadline/clock call, source allowlist e48/ce462, hard nil-ledger guard, pre-UI run/self-executable metadata, full run body and final exit check is outside that replacement and unchanged. The local executable will therefore have a new identity; it is not the14 helper or the old plain13 helper, and no same-binary claim is made.
+
+Copied cleanup correlates the captured original foreground to the outer strong receipt before asking the unchanged independent Guard to restore-before-stop. Collector/child/private executable/bundle ownership must match. Missing or mismatched receipt/guard success fails closed and preserves IPC for outer guarded recovery. Timeout7s, failure propagation and final report-write failure retain the verified copied behavior. The Guard's exact private Gallery identity/kernel/PID/path checks and changed-foreground preservation are unchanged. Static copying is not new native safety acceptance.
+
+Future wrapper review must bind actual successful14 gate/reports/PNGs/build, actual candidate/original products and fresh new locks; it may not relabel old plain-control13 or failed observer results. Actual local helper build/source/signature/embedded SDK, private copies, identity/front/IPC/prefs guards and bidirectional isolation remain future runtime prerequisites. This source package provides none of those runtime results. A same-clock/metadata source expression does not establish equal scheduling cost or pixels across helpers/systems.
+
+Only read-only file/JSON and pure text/byte comparisons ran. No compiler/typecheck, binary invocation, UI/native process action, CI/network/Git, driver/product modification or subagent ran. Old gates remain untouched and failed where previously failed.

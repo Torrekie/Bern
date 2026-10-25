@@ -1,0 +1,130 @@
+{
+  "app_members": {
+    "Contents/Info.plist": {
+      "bytes": 2633,
+      "sha256": "30c9dfdf5b8718341e1b534f5298451051a6d44eb01dcdb2921f71efda5dd15d"
+    },
+    "Contents/MacOS/Gallery": {
+      "bytes": 3735024,
+      "sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1"
+    },
+    "Contents/Resources/AppIcon.icns": {
+      "bytes": 63607,
+      "sha256": "8d5ced690e3c1079453b8684010991b8a3bde25b6157337ffa8c0a4fb3ad37de"
+    },
+    "Contents/Resources/en.lproj/InfoPlist.strings": {
+      "bytes": 59,
+      "sha256": "0b456fde30f7a8ce7a04de7305719d704b752a41c5490b02565a426530410426"
+    },
+    "Contents/Resources/en.lproj/Localizable.strings": {
+      "bytes": 6713,
+      "sha256": "2a0722c09210e95dc38c354daa09961c9a90af601c33345a469676cf095a300c"
+    },
+    "Contents/Resources/media/poster.jpg": {
+      "bytes": 8124,
+      "sha256": "76dadce80a79ca2684c9fe23712cff47d11d1e2928ab4bc81f1396b504cf2c6c"
+    },
+    "Contents/Resources/media/tides.mp4": {
+      "bytes": 49327,
+      "sha256": "145a1b5e572bd3ce16207e2b341c0eecb04b4d1e765bf72f5fe3809a24f34957"
+    },
+    "Contents/Resources/zh-Hans.lproj/InfoPlist.strings": {
+      "bytes": 63,
+      "sha256": "72b62e39761f9d14cdef4698153dcbd957a8fa6c0096a09f1a7ded08820b7bd4"
+    },
+    "Contents/Resources/zh-Hans.lproj/Localizable.strings": {
+      "bytes": 6740,
+      "sha256": "1421ca2397bc1e7b3347bb344fa8b4b444e62ae939b9120b2925a356026e46f0"
+    },
+    "Contents/_CodeSignature/CodeResources": {
+      "bytes": 4416,
+      "sha256": "e21b13a5652924ee6f6ac14775a4a8791c174bc9b29859a6ffcfef1212084be4"
+    }
+  },
+  "baseline_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "binaries": {
+    "Gallery.app/Contents/MacOS/Gallery": {
+      "bytes": 3735024,
+      "sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1"
+    },
+    "bin/gallery": {
+      "bytes": 898336,
+      "sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5"
+    }
+  },
+  "build": {
+    "app_bundle": "Gallery.app",
+    "architecture": "arm64",
+    "channels": [
+      "ipc"
+    ],
+    "color_source": "native",
+    "engine_deployment": "in-process",
+    "generator": "bern-backend-swiftui",
+    "generator_version": "0.1.0",
+    "ir_version": 8,
+    "languages": [
+      "zh-Hans",
+      "en"
+    ],
+    "media": {
+      "backend": "avfoundation",
+      "backend_version": "1",
+      "contract": 1,
+      "players": [],
+      "presenter": "avplayerview",
+      "presenter_version": "1"
+    },
+    "minimum_macos": "13.0",
+    "platform": "macos",
+    "profile": "release",
+    "protocol": "gallery",
+    "protocol_fingerprint": "cfa638eac6dad4e6",
+    "resources": [
+      "media/poster.jpg",
+      "media/tides.mp4"
+    ],
+    "target": "swiftui-modern-macos",
+    "ui": "swiftui-modern",
+    "ui_bridge": "c-abi"
+  },
+  "compiled_generated_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+  "compiled_sources": {
+    "BernAppKit.swift": "5921238de799177589a7ee325afcc9380bdc8a896aeb862cd4129f5fd5a04598",
+    "BernCompatibility.swift": "7f46dcf0d23d280465ea5139c21a760fed047c3a3b383a203f9b642fc1a8807d",
+    "BernGenerated.swift": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+    "BernMedia.swift": "6301cdac97dde694f8fc75dd88a1611244301cecf3c77bf97fab12a33cf74793",
+    "BernRuntime.swift": "626c4b7785cf46f9e6d86389d5c64b8221d5f5ead8f7518a67e407b38883ba95",
+    "BernStyle.swift": "8219c50ec45a81eb7516b63bddbc7541211006c1a09f0069a93390707c0c6df0",
+    "bern.h": "be9d815ce3a1d6b3e40d417b5fc57f1b178d8e3f2ca214850328ad91f19d37ec"
+  },
+  "compiled_style_sha256": "8219c50ec45a81eb7516b63bddbc7541211006c1a09f0069a93390707c0c6df0",
+  "harness_sha": "2cff19aad748ac673fefda921b313886bb902e4b",
+  "helpers": {
+    "FrameColorCapture": {
+      "bytes": 317440,
+      "sha256": "eff075bf6cabaff996652c71088d51980e29caafeb96e3cc238b01c867fb95f7",
+      "source_sha256": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69"
+    },
+    "FrameColorGate": {
+      "bytes": 133024,
+      "sha256": "3e26fa35769b6e5cb3feb34e41e23f82ddfea6ac6d442d0bb67655977fa02eb4",
+      "source_sha256": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618"
+    }
+  },
+  "log": {
+    "full_bytes": 7130,
+    "full_sha256": "09d97ea99bd6e2af00e5f3d77a57c6bfeae0144d9a3921ee228f504dfe545060",
+    "truncated": false
+  },
+  "package_sources": {
+    "FrameColorCapture.swift": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69",
+    "FrameColorGate.swift": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618",
+    "build.py": "2ac4f9e2ca85a3cd0f85c4503ec7aec90ce19f825496cc345ceef5d76209b2a5"
+  },
+  "prepare_sha256": "3cec307fe7fd2dcc64176fd9a054cac8b3f917c9d0dd041013554daff1d9e3bf",
+  "run_id": "40163364000",
+  "schema": "bern_split_label_color_build_v1",
+  "source_sha": "ce462b3ef5d11b72d51ddf9158940d686bc7707a",
+  "success": true
+}

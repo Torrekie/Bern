@@ -1,0 +1,52 @@
+{
+  "kind": "manual_owned_residue_cleanup_after_failed_wrapper",
+  "success": true,
+  "raw_watchdog_sha256": "c0d4e1aff9f1d29a00726d9b07a6f88cd2239959bb053357f71d9ecafd54e51a",
+  "raw_watchdog_success_remains_false": true,
+  "no_capture_retry_or_gate_rewrite": true,
+  "guard_inspect_exit_code": 0,
+  "own_kernel_receipt": {
+    "bundle_id": "dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3",
+    "executable_path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate13-isolation/runtime-work/candidate/Gallery.app/Contents/MacOS/Gallery",
+    "kernel_start": {
+      "tv_sec": 1792904573,
+      "tv_usec": 703383
+    },
+    "launch_date": null,
+    "pid": 15319,
+    "collector_pid": 15314
+  },
+  "current_kernel_at_pid": null,
+  "original_front": {
+    "bundle_id": "com.openai.codex",
+    "executable_path": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT",
+    "kernel_start": {
+      "tv_sec": 1792598787,
+      "tv_usec": 261710
+    },
+    "launch_date": null,
+    "pid": 1390
+  },
+  "own_is_null": true,
+  "paths": [
+    {
+      "field": "preferences_path",
+      "path": "/Users/torrekie/Library/Preferences/dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3.plist",
+      "existed_before": true,
+      "bytes_before": 279,
+      "sha256_before": "a54289b83b1b99a7e985e435e91151de96de122d79e97ab229f8c4dc0b52855c",
+      "uid": 501,
+      "mode": 384,
+      "lsof_exit_code": 1,
+      "absent_after": true
+    },
+    {
+      "field": "saved_state_path",
+      "path": "/Users/torrekie/Library/Saved Application State/dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3.savedState",
+      "existed_before": false,
+      "absent_after": true
+    }
+  ],
+  "exact_ipc_absent": true,
+  "scope": "Root removed only matching fresh private regular preference file after exact child absence and no open writer; CFPreferences daemon cache not claimed inspected or flushed."
+}

@@ -1,0 +1,101 @@
+{
+  "kind": "split_label_color_candidate13_capture",
+  "source_sha": "ce462b3ef5d11b72d51ddf9158940d686bc7707a",
+  "baseline_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "build_manifest": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-build/candidate-build.json",
+  "build_manifest_sha256": "55b75658cf84e3fb5eb713c414cab495d37843b6959c9801e439da48c24413df",
+  "color14_gate": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-actual14/color14-pair.json",
+  "color14_gate_sha256": "9bc482b047c31af2d6391a3fd6606b7c277f0fb43e7442850ab0c9c2ce740502",
+  "control14_report": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-actual14/a/report.json",
+  "candidate14_report": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-actual14/b/report.json",
+  "ci_run_id": "40163364000",
+  "harness_sha": "2cff19aad748ac673fefda921b313886bb902e4b",
+  "schema": "bern_split_label_color_candidate13_locks_v1",
+  "candidate": {
+    "app": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate13-isolation/runtime-work/candidate/Gallery.app",
+    "cli": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/bin/gallery",
+    "bundle_id": "dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3",
+    "private_gui_sha256": "434c1e639d61d366a962681c1a24c9c13540b968b7df6dd220a77eba7f6c470e",
+    "original_gui_sha256": "de1707e68e58bf0b5a0b7c7f064dd9b0d5bea91cd28782c1fb124f472425e7b1",
+    "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "receipt": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate13-isolation/candidate/isolation.json"
+  },
+  "commands": [
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/Gallery.app"
+      ],
+      "status": 0,
+      "log": "candidate/original-signature.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/bin/gallery"
+      ],
+      "status": 0,
+      "log": "candidate/original-cli-signature.txt"
+    },
+    {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/Gallery.app/Contents/MacOS/Gallery"
+      ],
+      "status": 0,
+      "log": "candidate/original-gui-build.txt"
+    },
+    {
+      "argv": [
+        "xcrun",
+        "vtool",
+        "-show-build",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/bin/gallery"
+      ],
+      "status": 0,
+      "log": "candidate/original-cli-build.txt"
+    },
+    {
+      "argv": [
+        "ditto",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate-product/Gallery.app",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate13-isolation/runtime-work/candidate/Gallery.app"
+      ],
+      "status": 0,
+      "log": "candidate/copy.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--force",
+        "--deep",
+        "--sign",
+        "-",
+        "--identifier",
+        "dev.bern.frame13.candidate.534f47e3432843f591ff2dec8edbb0c3",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate13-isolation/runtime-work/candidate/Gallery.app"
+      ],
+      "status": 0,
+      "log": "candidate/resign.txt"
+    },
+    {
+      "argv": [
+        "codesign",
+        "--verify",
+        "--deep",
+        "--strict",
+        "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/split-label-color-candidate13-isolation/runtime-work/candidate/Gallery.app"
+      ],
+      "status": 0,
+      "log": "candidate/signature.txt"
+    }
+  ],
+  "scope": "Unaccepted generic SplitButton color candidate13; actual14 color gate prerequisite. No UI executed; original candidate App/CLI unchanged; only private CFID/signature changes allowed."
+}

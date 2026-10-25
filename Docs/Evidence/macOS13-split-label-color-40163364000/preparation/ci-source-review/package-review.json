@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "kind": "source_only_split_label_ci_package_review",
+  "verdict": "no_remaining_blocking_source_finding",
+  "core_files": [
+    {
+      "path": "work/split-label-color-ci-preparation/build.py",
+      "bytes": 8013,
+      "sha256": "2ac4f9e2ca85a3cd0f85c4503ec7aec90ce19f825496cc345ceef5d76209b2a5"
+    },
+    {
+      "path": "work/split-label-color-ci-preparation/FrameColorCapture.swift",
+      "bytes": 52243,
+      "sha256": "fa850da24c63d6f8a543808b59ff07d5a5535d718ef2fec949b99df6f8dc9b69"
+    },
+    {
+      "path": "work/split-label-color-ci-preparation/FrameColorGate.swift",
+      "bytes": 12832,
+      "sha256": "f8a3f035a357a211f86ba5ca70774745324db5e1778f5a7644384fc95978a618"
+    },
+    {
+      "path": "work/split-label-color-ci-preparation/macos14-split-label-color.yml",
+      "bytes": 10251,
+      "sha256": "758658e07951cd60cd0f6db1bec4c524d4d2f916ceffd7e4623136b603cab2e5"
+    }
+  ],
+  "old_files_still_original": [
+    {
+      "path": "outputs/Bern/.github/scripts/frame-row-ledger/FrameClosed.swift",
+      "bytes": 51401,
+      "sha256": "3613df83629f0b3e975425c3db37a53e40135dfc93dd6d333bf4487ad2e1d974"
+    },
+    {
+      "path": "outputs/Bern/.github/scripts/frame-row-ledger/PixelGate.swift",
+      "bytes": 7157,
+      "sha256": "10ca1789d7356a369c629e4b575d42744d1d3a0b505c4562bb6f51e00a41a253"
+    },
+    {
+      "path": "outputs/Bern/.github/workflows/macos14-frame-row-ledger.yml",
+      "bytes": 11481,
+      "sha256": "d7a274e88daab4b8113e5e30edf6476c280c52a050ebf41535a77838f7a1bde7"
+    }
+  ],
+  "closed_finding": {
+    "issue": "Artifact download strips raw executable file modes; original workflow directly invoked two raw helper files.",
+    "source": "https://raw.githubusercontent.com/actions/download-artifact/v5/README.md#permission-loss",
+    "fix": "chmod +x only two explicit helpers after actual build-manifest helper SHA verification, before signature/execution.",
+    "final_workflow_sha256": "758658e07951cd60cd0f6db1bec4c524d4d2f916ceffd7e4623136b603cab2e5",
+    "closure_verified_in_source": true
+  },
+  "build_review": {
+    "full_product_command": "cargo +1.99.0 run --locked --release -p bern-cli -- build --manifest examples/gallery/Bern.toml --target macos_modern --release",
+    "source_candidate": "ce462b3ef5d11b72d51ddf9158940d686bc7707a",
+    "source_baseline": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+    "source_guard": "631 committed/live Cargo/Gallery inputs before and after; candidate HEAD exact and tracked clean; sole membership/blob/mode difference is Style; base/candidate Style hashes fixed. Not an external dependency closure claim.",
+    "generation": "No source patch or generate-only hook; full product build exit0, exact actual81110B Generated and211493B Style checked in Sources.",
+    "cache_cleanup": "Only source/target/bern/macos_modern after canonical directory and build metadata validation; Rust cache retained.",
+    "products": "Actual GUI/CLI digests, all App member digests, CLI31a exact, original source/GUI/CLI pinned separately, strict minOS/SDK/architecture/signature checks in workflow.",
+    "helpers": "Actual bytes/hash/source hash in manifest; same run/harness sources before/after; common compiled collector for both captures; Gate reads its own executable hash/length.",
+    "logs": "131072-byte fixed cap; retained prefix plus original full length/hash; oversize/failure sets unsuccessful manifest.",
+    "failure_collection": "collect always only after successful prepare; unsuccessful builds retain failure JSON/log artifacts and cannot start needs:build capture."
+  },
+  "workflow_interfaces": {
+    "build_args": "prepare|collect SOURCE EVIDENCE; count4 including script",
+    "capture_args": "APP CLI OUTPUT 14 control|candidate SOURCE; count7 including executable",
+    "gate_args": "CONTROL_REPORT CANDIDATE_REPORT BUILD_MANIFEST FRESH_PAIR_JSON; count5 including executable",
+    "artifact_containers": "Original macos13-gallery from fixed run40070407306 with fixed tar SHA; new same-run split-label-color-build extracted directly into candidate-build; product tar extracts into separate candidate; report evidence carries copied candidate-build.json for Gate.",
+    "capture": "macOS14/arm64; actual product/helper digests verified before use, products deep strict, common helper bytes; normal3false disposable runner only; ledger/render env removed; trace forbidden by collector and Gate.",
+    "result": "New color14-pair.json only; exact decoded Frame ROI/ICC, whole-window separately reported; no old gate replacement."
+  },
+  "limits": [
+    "Reviewer used Python AST/text/byte comparisons and offline source reads only; no candidate module mode, compiler/typecheck, helper/product, UI, CI or Git ran.",
+    "Official versioned action documentation read solely to confirm permission loss; no remote mutation or CI observation performed.",
+    "Root source publication/dispatch is not this review runtime evidence.",
+    "Normal flags are inherited preflight observations; acquisition/cleanup is preserved original14 behavior.",
+    "No future build/collection success, fullUI or crossOS equivalence,13 repair, physical input or old observer acceptance claimed."
+  ]
+}

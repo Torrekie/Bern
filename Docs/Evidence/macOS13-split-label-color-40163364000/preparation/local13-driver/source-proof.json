@@ -1,0 +1,51 @@
+{
+  "kind": "candidate13_driver_source_only_proof",
+  "prepare_base": {
+    "path": "outputs/Bern/Docs/Evidence/macOS13-frame-control-e48-20261025/preparation/source/prepare-control.py",
+    "sha256": "3dda78fcb178faa7b1a7a5d6fb681c01573ccec5685184821710f417fbb87048"
+  },
+  "runner_base": {
+    "path": "outputs/Bern/Docs/Evidence/macOS13-frame-control-e48-20261025/preparation/source/run-control13.py",
+    "sha256": "bdb7c3502a81d177fbe50b83be003adaeae97cee5e641f48ab8e29a9970dd091"
+  },
+  "prepare_helpers_byte_identical": {
+    "sha": true,
+    "macho": true,
+    "members": true,
+    "app_machos": true
+  },
+  "runner_functions_and_classes_byte_identical": {
+    "bundle_members": true,
+    "ProcBSDInfo": true,
+    "process_info": true,
+    "valid_start": true,
+    "same_process": true,
+    "exact_instance_absent": true,
+    "executable": true,
+    "parent": true,
+    "save": true,
+    "helper": true,
+    "refresh_owned": true,
+    "bootstrap_owned": true
+  },
+  "runner_body_from_process_none_inverse_exact": true,
+  "runner_body_changes": [
+    "Clear GITHUB_RUN_ID along with original inherited CI context",
+    "Capture label control to candidate",
+    "Replace obsolete delivery rehash with candidate report identity and pinned actual prerequisites rehash"
+  ],
+  "shared_contract_byte_identical": true,
+  "ast_parse_only": true,
+  "entry_modes_executed": false,
+  "source_files": {
+    "prepare-candidate.py": {
+      "bytes": 15970,
+      "sha256": "0b03dd3afa92169f447a9f1e623388e0293428026a225547bd3af6fd60daf940"
+    },
+    "run-candidate13.py": {
+      "bytes": 30080,
+      "sha256": "5f0a75d69bd4b4507dc71bb8478ccaf54d7d1c56f077cf2b6c267f0d2fefa905"
+    }
+  },
+  "source_directory_isolation": "Whole frozen local-sources directory plus every pinned source file is a bidirectional output/watchdog input boundary."
+}
