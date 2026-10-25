@@ -68,11 +68,10 @@ private final class BernFrameRowLedger: @unchecked Sendable {
     private let pid = ProcessInfo.processInfo.processIdentifier
     private var stage: [String: Any]? = nil
     private var output: URL? = nil
-    private var records: [[String: Any]] = []
+    private var latest: [String: Any]? = nil
+    private var observedCompleteCount: Int64 = 0
     private var stopped = false
-    private let placementLimit = 64
     private let byteLimit = 64 * 1024
-    private let reserveBytes = 512
 
     private init() {
         let value = ProcessInfo.processInfo.environment["BERN_FRAME_ROW_LEDGER_OUTPUT_DIR"]
@@ -126,28 +125,24 @@ private final class BernFrameRowLedger: @unchecked Sendable {
         return true
     }
 
-    private func packet(_ placements: [[String: Any]], truncated: Bool, reason: String?) -> [String: Any] {
-        var result: [String: Any] = [
-            "schema": "bern_frame_row_ledger_v1", "pid": pid, "diagnostic_id": "gallery.frame.controls",
-            "stage": stage ?? [:], "placement_limit": placementLimit, "file_byte_limit": byteLimit,
-            "truncated": truncated, "end_state": "not_observed", "placements": placements,
-            "complete_placement_count": placements.count,
+    private func packet(_ record: [String: Any], observed: Int64) -> [String: Any] {
+        [
+            "schema": "bern_frame_row_latest_v2", "pid": pid, "diagnostic_id": "gallery.frame.controls",
+            "stage": stage ?? [:], "retention": "latest1", "retained_limit": 1, "file_byte_limit": byteLimit,
+            "end_state": "not_observed", "observed_complete_count": observed,
+            "replaced_complete_count": observed - 1, "retained_complete_count": 1, "latest": record,
             "point_scope": "arguments requested by existing Layout.place; not native frame or bezel"
         ]
-        if let reason { result["truncation_reason"] = reason }
-        return result
     }
 
     private func write(_ data: Data, initial: Bool) throws {
-        guard let output else { return }
-        try data.write(to: output, options: initial ? [.withoutOverwriting] : [.atomic])
+        guard let output else { throw failure("output_not_bound") }
+        if initial && FileManager.default.fileExists(atPath: output.path) { throw failure("existing_latest_slot_refused") }
+        try data.write(to: output, options: [.atomic])
     }
 
-    private func truncate(_ reason: String) throws {
-        let data = try JSONSerialization.data(withJSONObject: packet(records, truncated: true, reason: reason), options: [.sortedKeys])
-        guard data.count <= byteLimit else { throw NSError(domain: "BernFrameRowLedger", code: 5) }
-        try write(data, initial: records.isEmpty)
-        stopped = true
+    private func failure(_ reason: String) -> NSError {
+        NSError(domain: "BernFrameRowLedger", code: 5, userInfo: [NSLocalizedDescriptionKey: reason])
     }
 
     func finish(_ capture: BernFrameRowLedgerPlacement?, size: CGSize, widths: [CGFloat], tops: [CGFloat],
@@ -159,16 +154,15 @@ private final class BernFrameRowLedger: @unchecked Sendable {
         guard !stopped else { return }
         do {
             guard try armAfterPlace() else { return }
-            guard records.count < placementLimit else { try truncate("placement_limit"); return }
             let count = capture.items.count
             guard !capture.inconsistent, widths.count == count, tops.count == count, extents.count == count,
                   capture.items.allSatisfy({ $0.rawCaptured && $0.normalized != nil && $0.dimensionCaptured && $0.placed }) else {
-                try truncate("incomplete_memory_capture"); return
+                throw failure("incomplete_memory_capture")
             }
             var ordinals: [[String: Any]] = []
             for index in capture.items.indices {
                 let item = capture.items[index]
-                guard let normalized = item.normalized else { try truncate("missing_normalized_item"); return }
+                guard let normalized = item.normalized else { throw failure("missing_normalized_item") }
                 ordinals.append([
                     "ordinal": index,
                     "raw_queries_performed": item.rawQueried,
@@ -182,8 +176,11 @@ private final class BernFrameRowLedger: @unchecked Sendable {
                     "place_proposal": ["width": scalar(widths[index]), "height": scalar(item.placeSpacer ? capture.bounds.height : capture.proposal.height)]
                 ])
             }
+            let (nextObserved, overflow) = observedCompleteCount.addingReportingOverflow(1)
+            guard !overflow, nextObserved > 0 else { throw failure("observed_complete_count_overflow") }
+            observedCompleteCount = nextObserved
             let record: [String: Any] = [
-                "sequence": records.count, "place_entered_uptime_seconds": capture.enteredUptime,
+                "sequence": observedCompleteCount - 1, "place_entered_uptime_seconds": capture.enteredUptime,
                 "place_completed_uptime_seconds": completedUptime, "on_main_thread": Thread.isMainThread,
                 "actual_subview_count": count, "ordinals": ordinals,
                 "proposal": ["width": scalar(capture.proposal.width), "height": scalar(capture.proposal.height)],
@@ -191,11 +188,10 @@ private final class BernFrameRowLedger: @unchecked Sendable {
                 "row_size": ["width": scalar(size.width), "height": scalar(size.height)],
                 "gaps": gaps.map { scalar($0) }, "final_x": scalar(finalX), "anchor": "topLeading"
             ]
-            let next = records + [record]
-            let data = try JSONSerialization.data(withJSONObject: packet(next, truncated: false, reason: nil), options: [.sortedKeys])
-            guard data.count <= byteLimit - reserveBytes else { try truncate("byte_limit"); return }
-            try write(data, initial: records.isEmpty)
-            records = next
+            let data = try JSONSerialization.data(withJSONObject: packet(record, observed: observedCompleteCount), options: [.sortedKeys])
+            guard data.count <= byteLimit else { throw failure("single_complete_placement_byte_limit") }
+            try write(data, initial: latest == nil)
+            latest = record
         } catch {
             stopped = true
             // A failed write cannot truthfully update the previous successful file. Make the failure explicit in stderr.

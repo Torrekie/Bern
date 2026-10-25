@@ -35,7 +35,14 @@ func ledgerLogHasError() throws -> Bool {
     let file = output.appendingPathComponent("application.log")
     let attributes = try fm.attributesOfItem(atPath:file.path)
     try require(((attributes[.size] as? NSNumber)?.intValue ?? Int.max) <= 262144,"Application log exceeds bounded ledger error check")
-    return try Data(contentsOf:file).range(of:Data("BERN_FRAME_ROW_LEDGER_IO_ERROR".utf8)) != nil
+    let failed = try Data(contentsOf:file).range(of:Data("BERN_FRAME_ROW_LEDGER_IO_ERROR".utf8)) != nil
+    if let bound = report["row_ledger"] as? [String:Any], let digest = bound["sha256"] as? String, let p = process, let path = ledgerPath {
+        let latestFile = URL(fileURLWithPath:path,isDirectory:true).appendingPathComponent("frame-row-ledger-\(p.processIdentifier).json")
+        let current = try fm.attributesOfItem(atPath:latestFile.path)
+        try require(current[.type] as? FileAttributeType == .typeRegular && ((current[.size] as? NSNumber)?.intValue ?? Int.max) <= 65536,"Latest ledger lost its bounded regular file")
+        try require(sha(try Data(contentsOf:latestFile)) == digest,"Final latest ledger hash differs from validated snapshot")
+    }
+    return failed
 }
 func armRowLedger() throws {
     guard let path = ledgerPath, let p = process else { return }
@@ -49,19 +56,34 @@ func armRowLedger() throws {
 }
 func finishRowLedger() throws {
     guard let path = ledgerPath, let token = ledgerToken, let p = process else { report["row_ledger_enabled"] = false; return }
-    try require(!(try ledgerLogHasError()),"Ledger reported an I/O error; prior file prefix is not accepted")
+    try require(!(try ledgerLogHasError()),"Ledger reported an I/O error; old latest slot is not accepted")
     let file = URL(fileURLWithPath:path,isDirectory:true).appendingPathComponent("frame-row-ledger-\(p.processIdentifier).json")
     let attributes = try fm.attributesOfItem(atPath:file.path)
     try require(attributes[.type] as? FileAttributeType == .typeRegular && ((attributes[.size] as? NSNumber)?.intValue ?? Int.max) <= 65536,"Missing regular bounded row ledger")
     let data = try Data(contentsOf:file)
-    guard let packet = try JSONSerialization.jsonObject(with:data) as? [String:Any], let rows = packet["placements"] as? [[String:Any]], let stage = packet["stage"] as? [String:Any], let last = rows.last, let capture = captures.last else { throw Failure(description:"Incomplete row ledger") }
-    try require(packet["schema"] as? String == "bern_frame_row_ledger_v1" && integer(packet["pid"]) == Int64(p.processIdentifier) && packet["diagnostic_id"] as? String == "gallery.frame.controls","Ledger identity mismatch")
-    try require(packet["truncated"] as? Bool == false && packet["end_state"] as? String == "not_observed" && rows.count > 0 && rows.count <= 64 && integer(packet["complete_placement_count"]) == Int64(rows.count),"Missing/truncated row placements")
+    guard let packet = try JSONSerialization.jsonObject(with:data) as? [String:Any], let latest = packet["latest"] as? [String:Any], let stage = packet["stage"] as? [String:Any], let capture = captures.last else { throw Failure(description:"Incomplete latest row ledger") }
+    func count(_ value: Any?) -> Int64? {
+        guard let number = value as? NSNumber, CFGetTypeID(number) != CFBooleanGetTypeID(),
+              !["f","d"].contains(String(cString:number.objCType)), let result = Int64(number.stringValue), result >= 0 else { return nil }
+        return result
+    }
+    try require(packet["schema"] as? String == "bern_frame_row_latest_v2" && integer(packet["pid"]) == Int64(p.processIdentifier) && packet["diagnostic_id"] as? String == "gallery.frame.controls","Ledger identity mismatch")
+    try require(packet["retention"] as? String == "latest1" && count(packet["retained_limit"]) == 1 && count(packet["file_byte_limit"]) == 65536 && packet["end_state"] as? String == "not_observed","Wrong latest retention contract")
+    guard let observed = count(packet["observed_complete_count"]), observed > 0,
+          count(packet["replaced_complete_count"]) == observed - 1, count(packet["retained_complete_count"]) == 1,
+          count(latest["sequence"]) == observed - 1 else { throw Failure(description:"Missing or inconsistent latest counters") }
     try require(stage["token"] as? String == token && stage["stage"] as? String == "frame-closed-light" && integer(stage["pid"]) == Int64(p.processIdentifier),"Ledger arm mismatch")
-    guard let arm = report["row_ledger_arm"] as? [String:Any], let armed = arm["armed_uptime_seconds"] as? Double, let imageBegan = capture["sample_begin_uptime_seconds"] as? Double, let completed = last["place_completed_uptime_seconds"] as? Double else { throw Failure(description:"Missing ledger/capture uptime") }
-    try require(rows.allSatisfy { ($0["place_entered_uptime_seconds"] as? Double ?? -.infinity) >= armed && $0["on_main_thread"] as? Bool == true } && completed <= imageBegan,"Ledger does not precede actual stable image sample")
+    guard let arm = report["row_ledger_arm"] as? [String:Any], let armed = arm["armed_uptime_seconds"] as? Double, let imageBegan = capture["sample_begin_uptime_seconds"] as? Double,
+          let entered = latest["place_entered_uptime_seconds"] as? Double, let completed = latest["place_completed_uptime_seconds"] as? Double else { throw Failure(description:"Missing ledger/capture uptime") }
+    try require([armed,imageBegan,entered,completed].allSatisfy { $0.isFinite } && entered >= armed && entered <= completed && latest["on_main_thread"] as? Bool == true && completed <= imageBegan,"Ledger does not precede actual stable image sample")
+    try require(sha(try Data(contentsOf:file)) == sha(data),"Latest ledger changed while being validated")
+    try require(!(try ledgerLogHasError()),"Ledger failed while validating latest slot; no fallback")
     report["row_ledger_enabled"] = true
-    report["row_ledger"] = ["file":file.lastPathComponent,"sha256":sha(data),"bytes":data.count,"token":token,"complete_placement_count":rows.count,"last_complete_uptime_seconds":completed,"stable_image_sample_begin_uptime_seconds":imageBegan,"end_state":"not_observed","scope":"complete original placements preceding the stable image; not a presentation synchronization fence"]
+    report["row_ledger"] = ["file":file.lastPathComponent,"sha256":sha(data),"bytes":data.count,"token":token,
+        "retention":"latest1","observed_complete_count":observed,"replaced_complete_count":observed - 1,"retained_complete_count":1,
+        "latest_sequence":observed - 1,"last_complete_uptime_seconds":completed,"stable_image_sample_begin_uptime_seconds":imageBegan,
+        "end_state":"not_observed","scope":"latest complete original placement preceding stable image; not a history or presentation synchronization fence"]
+    try require(!(try ledgerLogHasError()),"Ledger failed after latest hash binding; no fallback")
     try save()
 }
 var volumeTarget = "", clipTarget = "", sliderTarget = "", playerID = "", sourceURL = "", sourceVersion: Int64?
