@@ -1,0 +1,84 @@
+{
+  "all_entries_regular_blob_mode100644": true,
+  "candidate_manifest_sha256": "695e86c6d621871a7800a3384372168087502b48963419be1f84cd4492f7da93",
+  "candidate_script_bytes": 15448,
+  "candidate_script_sha256": "5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017",
+  "exact_git_support_files": [
+    {
+      "bytes": 3749,
+      "path": "crates/bern-target-api/src/names.rs",
+      "sha256": "2eda32488ac72dbbd53246bfeb881ad1384607ea02a370e4d5c82c40524c2977"
+    },
+    {
+      "bytes": 11868,
+      "path": "crates/bern-backend-swiftui/src/swift/windows.rs",
+      "sha256": "2ec659c909a5a33d69361700d4d58f70132b1ecc4f4e7500e86bd5f481bf3696"
+    },
+    {
+      "bytes": 18420,
+      "path": "crates/bern-backend-swiftui/src/swift/mod.rs",
+      "sha256": "1204efb2ac063372cda20bb3ebe8423025f89a6493eb7192f4bf0ff90ab9600e"
+    },
+    {
+      "bytes": 18249,
+      "path": "crates/bern-backend-swiftui/src/swift/app.rs",
+      "sha256": "016469cc58eb8df628889592558105182d341fbc1f79eaaaa1942609df4de15a"
+    },
+    {
+      "bytes": 39644,
+      "path": "crates/bern-backend-swiftui/src/swift/controls.rs",
+      "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+    },
+    {
+      "bytes": 19138,
+      "path": "crates/bern-backend-swiftui/src/swift/toolbar.rs",
+      "sha256": "567469f6f4bf9e64180590538f175a7f78491723e920b83252933e1f481de285"
+    },
+    {
+      "bytes": 14444,
+      "path": "crates/bern-backend-swiftui/src/swift/expr.rs",
+      "sha256": "228f8136c696e172d77bb5b94e4497862ddc8e06eac2794d2514393c08214ce7"
+    },
+    {
+      "bytes": 34137,
+      "path": "crates/bern-backend-swiftui/src/swift/layout.rs",
+      "sha256": "b236cea821f6f4f6a88a21af417f8cb62fbbbd9ddd26339cde8c9f22237a67d1"
+    },
+    {
+      "bytes": 210785,
+      "path": "crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+    }
+  ],
+  "failure_evidence_review": {
+    "bounded_actual_raw_and_build_copied_before_Frame_Scene_build_semantic_guards": true,
+    "earlier_identity_or_header_failure_does_not_reach_raw_copy": "logs/after false remain; no claim all early failures export raw",
+    "initial_end_only_raw_copy_risk": "corrected in final candidate",
+    "later_semantic_failure_still_false_nonzero": true
+  },
+  "independent_fixed_git_tree_read": true,
+  "input_count": 631,
+  "input_names_sha256": "8bdc7bd94a8c6726924a36e5ddf054fdb3678b68b8e26955e6b568c87978849d",
+  "input_scope_counts": {
+    "crates": 620,
+    "examples_gallery": 9,
+    "root_Cargo": 2
+  },
+  "input_total_bytes": 7430108,
+  "kind": "reopened_audit_addendum_for_final_631_input_candidate",
+  "minimal_Frame_width_facts": "DSL Row gap12/center; conditional !window.idle; Caption SplitButton, Size Menu, Volume popover and optional caption helper share row. Source alone provides no actual offered/allocated width or native intrinsic width; no generated-layout analysis performed.",
+  "no_prepare_collect_generated_fixture_cargo_build_UI_CI_dispatch_or_git_mutation": true,
+  "previous_manifest_sha256": "50141ae6629723feeccf63e9eab4b83a2d6598d0eaa614e1d39b0ec51854e7b6",
+  "previous_manifest_status": "superseded after explicit root request to reopen; old38 selector facts remain historical and do not constrain new631 candidate",
+  "token_review": {
+    "AppView_naming": "names.rs62-63 emits AppView_{name}; windows.rs25-32 uses component.name",
+    "BernSplitButton": "Mac path supported controls.rs324-342",
+    "Frame_comment_and_class": "source-backed exact frame component/name, not a generated-output result",
+    "SwiftUI_Menu_open": "toolbar.rs209-219",
+    "SwiftUI_Slider_value": "Mac ordinary value binding supported controls.rs494-543; Gallery caption_size is value not current",
+    "actual_calls_signature_not_assumed_empty": "candidate uses AppView_main_window( and AppView_frame(",
+    "control_targets": "expr.rs165 target is component.id, Gallery ids caption/caption_size/caption_sizes"
+  },
+  "unique_count": 631,
+  "verdict": "no_remaining_blocking_source_finding_in_frozen_candidate_within_scope"
+}

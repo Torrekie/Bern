@@ -2,7 +2,9 @@
 
 本阶段使用真正的 `swiftui-modern` / `macos_modern`，不以旧的共享 Objective-C 原型代替上游 SwiftUI。macOS 11、Swift 5.3、Objective-C 和 iOS 阶段仍暂停。当前整应用视觉证据覆盖Showcase和Gallery，不能扩充为全部控件变体与示例均已验收。
 
-最新检查点（2026-10-25）：[原生搜索焦点门槛](../Evidence/macOS13-search-native-focus/README.md)未通过：长IPC启动失败保留；短IPC实例坐标点击后AX仍outline，独立一次Shift-Tab后未取得search焦点，因此均未投递`!`、未进入Library或验收Query。坐标组还保留root超180s后的缺finish/迟到截图错误，不把App退出0当采集通过。来源/签名与清理已独立核验，约62.4MB自有产物/cache退休，原交付保持。停止输入试验，不指定Bern根因；下一项先补精确e48 Gallery Frame源片段，历史f9 Caption/Size耦合2pt变化不足以支持padding/字体补偿。整阶段仍未通过、goal active，后续11/Swift5.3、ObjC、iOS继续推迟。
+最新检查点（2026-10-25）：[精确e48 Gallery Frame生成源码](../Evidence/macOS13-gallery-frame-source-40152701810/README.md)已由单次CI40152701810取得并独立复核：631项固定输入保持，只有CLI在生成后、target.plan之前加入退出；实际完整Swift81110B、Frame原片段9021B/1248–1353行保留，rc0/标记1。此次只在macOS15生成源码，没有编译Swift产品或新增13/14窗口证据。真实Frame行的源码包含Caption、Size、Volume和条件Group，源码项数不证明运行时Layout.Subviews数；下一步只读取这一行原有查询得到的宽度分配与实际推进，先验证观察不改变画面，再解释数值，不据历史f9的2pt差加入补偿。下载ZIP在实算并匹配API digest后清理，本机没有新增构建缓存或App副本，四个原交付可执行文件hash保持。整阶段仍未通过、goal active，后续11/Swift5.3、ObjC、iOS继续推迟。
+
+此前检查点（2026-10-25）：[原生搜索焦点门槛](../Evidence/macOS13-search-native-focus/README.md)未通过：长IPC启动失败保留；短IPC实例坐标点击后AX仍outline，独立一次Shift-Tab后未取得search焦点，因此均未投递`!`、未进入Library或验收Query。坐标组还保留root超180s后的缺finish/迟到截图错误，不把App退出0当采集通过。来源/签名与清理已独立核验，约62.4MB自有产物/cache退休，原交付保持。停止输入试验，不指定Bern根因；下一项先补精确e48 Gallery Frame源片段，历史f9 Caption/Size耦合2pt变化不足以支持padding/字体补偿。整阶段仍未通过、goal active，后续11/Swift5.3、ObjC、iOS继续推迟。
 
 此前检查点（2026-10-25）：[Scene compact showsTitle原生对照](../Evidence/macOS13-toolbar-scene-shows-title/README.md)已完成冻结源修链后的true/false pair：同一次Swift5.9.2/SDK14.2/min13编译，实际三样本/AX/原PNG及身份清理均独立核验。两侧顶部均38pt，false隐藏可见Buttons标题并把plus左移691pt，不满足现有52pt/可见标题目标，停止候选、不合产品、不追加14CI。首轮编译输入未锁定，保留为source-unbound，未回填验收。已退休本轮约51.6MB逻辑产物/cache并合并两张重复PNG，原交付GUI/CLI与签名保持。整阶段仍未通过、goal active，11/Swift5.3、ObjC与iOS继续推迟。
 

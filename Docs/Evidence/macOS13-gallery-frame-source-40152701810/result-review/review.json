@@ -1,0 +1,132 @@
+{
+  "CLI": {
+    "exact_diff_reconstruction_matches": true,
+    "hook_count": 1,
+    "original_hook_line": 917,
+    "original_sha256": "63af68fa7f763b118ca34ed432b0f1b9fdfa2b3190582ebde747135303d0fa64",
+    "patched_sha256": "0510fef557d01e2849f4445ab450166b474dadc0e552f0b7eece27da02ef3636"
+  },
+  "Frame": {
+    "bytes": 9021,
+    "component_comment": "/// Generated from the `frame` component.",
+    "end_byte_exclusive": 74696,
+    "end_line_inclusive": 1353,
+    "path": "Frame.component.swift",
+    "range_policy": "original bytes from frame component comment through before next component comment",
+    "sha256": "9e67b6890dcacdc2f8f84d330c422206dd2c05e19d08c1e2265213e2166d4a67",
+    "start_byte": 65675,
+    "start_line": 1248
+  },
+  "Frame_slice_exact_actual_source_bytes": true,
+  "all_actual_files_covered_and_SHA256_match": true,
+  "artifact_files": 10,
+  "build_metadata": {
+    "BernApp_swift_absent_reported": true,
+    "app_bundle": "Gallery.app",
+    "minimum_macos": "13.0",
+    "no_product_outputs_reported": true,
+    "profile": "release",
+    "protocol": "gallery",
+    "sha256": "21eba86ba8be2b3e9e5c49b02eb76cd8d1220810b80d1bc0862a8594938462a9"
+  },
+  "download_receipt": {
+    "ZIP_deleted_before_independent_review": true,
+    "digest": "sha256:8309227d935aa86b6b8781c09a478b872fa2a6d18149024f40c84d311d4dc565",
+    "receipt_API_and_measured_digest_consistent": true,
+    "reviewer_did_not_recompute_deleted_ZIP_or_call_API": true,
+    "sha256": "54e0a70059386ba5fa49358d606d37dff54ac74181f741700e9a2e7cd4a69117"
+  },
+  "generation": {
+    "actual_Gallery_source_bytes": 81110,
+    "actual_Gallery_source_sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+    "actual_source_differs_cached_before": true,
+    "cached_before_was_Showcase": {
+      "bytes": 95129,
+      "exists": true,
+      "sha256": "1d1da3167d9437b2305df1a39099f01f693b1b674f13cd2e4d88bffec2c52083"
+    },
+    "changed": 20,
+    "files": 20,
+    "log_bytes": 2360,
+    "log_complete_not_truncated": true,
+    "log_sha256": "fd9d1128a0173d3532263694f826e498be3c418eaf54e1871e31e8beb7e18adf",
+    "marker_count": 1,
+    "rc": 0
+  },
+  "harness_helper_sha256": "5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017",
+  "harness_sha": "84f1f07b927cd4056a57d04d3c52dcdb4859f33a",
+  "harness_workflow": ".github/workflows/macos13-gallery-source.yml",
+  "harness_workflow_sha256": "fc31a265d88119f5dbb7f039a09ebed0e48d5015bf8336f2e59702aff524b8bd",
+  "input_artifact": [
+    {
+      "bytes": 81110,
+      "path": "work/gallery-frame-source-ci-40152701810/BernGenerated.swift",
+      "sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+    },
+    {
+      "bytes": 9021,
+      "path": "work/gallery-frame-source-ci-40152701810/Frame.component.swift",
+      "sha256": "9e67b6890dcacdc2f8f84d330c422206dd2c05e19d08c1e2265213e2166d4a67"
+    },
+    {
+      "bytes": 746,
+      "path": "work/gallery-frame-source-ci-40152701810/SHA256SUMS",
+      "sha256": "de9e2c61c36eb55063359d8aae163b041aaffce666c05421696a967a837b7257"
+    },
+    {
+      "bytes": 115022,
+      "path": "work/gallery-frame-source-ci-40152701810/after.json",
+      "sha256": "87e37fc1bf756b0247c50b783eb21568d7f230d8e689a5d7e39486937717a900"
+    },
+    {
+      "bytes": 113332,
+      "path": "work/gallery-frame-source-ci-40152701810/before.json",
+      "sha256": "c1f38ae72c9a3f732d3832ac4b88dabce639c51396e100b6b8fc5c1f8e5eb5c3"
+    },
+    {
+      "bytes": 768,
+      "path": "work/gallery-frame-source-ci-40152701810/build.json",
+      "sha256": "21eba86ba8be2b3e9e5c49b02eb76cd8d1220810b80d1bc0862a8594938462a9"
+    },
+    {
+      "bytes": 592,
+      "path": "work/gallery-frame-source-ci-40152701810/cli-generate-only.patch",
+      "sha256": "66b5ea9924999955e5e2e2ac2f665bcd67f72c29328bf40c8c7bc89cfbc8bd49"
+    },
+    {
+      "bytes": 533,
+      "path": "work/gallery-frame-source-ci-40152701810/environment.txt",
+      "sha256": "f2685d856297141aeb9f6261b0b9a23d8fdfaf7a93dbd5302ffbf14b543843d6"
+    },
+    {
+      "bytes": 2,
+      "path": "work/gallery-frame-source-ci-40152701810/generate.exit-code.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 2360,
+      "path": "work/gallery-frame-source-ci-40152701810/generate.log",
+      "sha256": "fd9d1128a0173d3532263694f826e498be3c418eaf54e1871e31e8beb7e18adf"
+    }
+  ],
+  "input_review": {
+    "after630_original_plus_exact_CLI_hook": true,
+    "all_before_sizes_SHA256_match_e48_Git_blobs": true,
+    "count": 631,
+    "method": "git cat-file --batch; parsed every blob length, then SHA256; no helper execution",
+    "original_input_bytes": 7430108,
+    "paths_unique_exact_fixed_tree": true
+  },
+  "kind": "independent_actual_source_export_result_review",
+  "limitations": [
+    "no actual UI or binary equivalence acceptance",
+    "min13 is source build metadata; no Gallery executable was built in this export",
+    "remote absence/reset is supported by exact harness source and retained receipts; no remote filesystem inspection",
+    "outer ZIP digest verification inherited root receipt, not independently rerun after ZIP deletion"
+  ],
+  "manifest_entries": 9,
+  "run_id": "40152701810",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "source_tree": "9b028204744063ae5c23a336a4eb32dbb41b6d86",
+  "verdict": "PASS_source_generation_evidence_only"
+}
