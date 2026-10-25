@@ -1,0 +1,116 @@
+{
+  "confirmed_flow": [
+    {
+      "fact": "Film binds position to draft.centered, starts3, First assigns1 and Last assigns6 in every adaptive layout; native actions and bernControl activate callbacks use same assignment, not an independent scroll-event revision.",
+      "location": "gallery-ui/src/lib.rs:281-348; Generated:1055,1118-1200"
+    },
+    {
+      "fact": "Keyed targets get bernScrollItem(swatch.id), snap center and anchor.center; modifier ordering supplies scope and horizontal axis.",
+      "location": "layout.rs:497-566; Generated:1044-1057"
+    },
+    {
+      "fact": "14 uses native scrollPosition;13 ScrollViewReader uses initial-corrected anchor when eligible, otherwise the declared anchor; user scroll clears target and retires initial owner.",
+      "location": "Style:2465-2492"
+    },
+    {
+      "fact": "Initial owner retires on userScroll, disappearance, stops and every scroll(to:); finish clears waiting/key/applied and increments generation. Explicit First/Last do not keep the initial owner alive.",
+      "location": "Style:2210-2229,2469,2492,2525,2590"
+    },
+    {
+      "fact": "Correction requires ownership of initial key, center anchor, valid measured frame and positive finite margin domain. It applies only while initial owner is waiting; retired explicit targets use declared center.",
+      "location": "Style:2553-2574"
+    },
+    {
+      "fact": "Queued legacy snap records/checks generation and snapAllowed, so a later finish invalidates a not-yet-started work item. This does not prove behavior of an animation that already began.",
+      "location": "Style:5112-5124"
+    }
+  ],
+  "inputs": [
+    {
+      "bytes": 210785,
+      "matches_frozen_e48_input": true,
+      "path": "outputs/Bern/crates/bern-backend-swiftui/templates/BernStyle.swift",
+      "sha256": "3912ecdbe102508771174df91f4d7baa153cca9925d89f6e68cdffc2e90cbd89"
+    },
+    {
+      "bytes": 4537,
+      "matches_frozen_e48_input": true,
+      "path": "outputs/Bern/crates/bern-backend-swiftui/templates/BernCompatibility.swift",
+      "sha256": "7f46dcf0d23d280465ea5139c21a760fed047c3a3b383a203f9b642fc1a8807d"
+    },
+    {
+      "bytes": 34137,
+      "matches_frozen_e48_input": true,
+      "path": "outputs/Bern/crates/bern-backend-swiftui/src/swift/layout.rs",
+      "sha256": "b236cea821f6f4f6a88a21af417f8cb62fbbbd9ddd26339cde8c9f22237a67d1"
+    },
+    {
+      "bytes": 39644,
+      "matches_frozen_e48_input": true,
+      "path": "outputs/Bern/crates/bern-backend-swiftui/src/swift/controls.rs",
+      "sha256": "c50078af414f19fda0f4013802238677ae2ffc1a69062350f3f7fcfdf78cf2bd"
+    },
+    {
+      "bytes": 22898,
+      "matches_frozen_e48_input": true,
+      "path": "outputs/Bern/examples/gallery/gallery-ui/src/lib.rs",
+      "sha256": "9840fcaa199b643842f490e89b071ba7b1c9af76e8857354cc4240100f525f07"
+    },
+    {
+      "bytes": 81110,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/BernGenerated.swift",
+      "sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653"
+    },
+    {
+      "bytes": 113332,
+      "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/before.json",
+      "sha256": "c1f38ae72c9a3f732d3832ac4b88dabce639c51396e100b6b8fc5c1f8e5eb5c3"
+    }
+  ],
+  "minimal_conditional_sequence": {
+    "purpose": "Separates an explicit repeated same-ID request from the already-covered changed-value Last6/First1 path; does not assume resize causes misalignment.",
+    "required_evidence": [
+      "Exact source/binary/window/normal and delivered action success plus model centered before/after each step",
+      "Actual viewport/native clip and chosen item center before resize, after settle and after repeated First; preserve actual scale/ICC/raw windows",
+      "To call a13 compatibility gap, the same applicable state/sequence must show13 fails to restore intended alignment while14 restores; existing outer geometry differences alone are insufficient",
+      "Internal owner lifetime/target/generation is not exposed by normal registry state; do not infer it from a final screenshot or demand a new probe without root authorization"
+    ],
+    "sequence": "Existing Film: initial3 \u2192 First1 \u2192 allow existing settle \u2192 resize using the existing window route \u2192 only if actual centered/nearest still1, activate First again.",
+    "stop_if": "If position/nearest changed during resize or item remains correctly aligned, this sequence supplies no failure; do not force an offset or alter padding/anchor/constants."
+  },
+  "not_inferred": [
+    "No old immediate/wait/direct discrepancy attributed to owner, anchor, padding or font",
+    "No claim every pending/in-flight AppKit animation is cancelled; source guard covers queued work only",
+    "No failure of13 First/Last or wide window proven by source",
+    "No14 equivalence or11/ObjC/iOS acceptance"
+  ],
+  "not_performed": [
+    "No source change or patch",
+    "No build/compiler/native/UI/CI/Git command",
+    "No source-executing model test, skills or subagent spawn",
+    "No old geometry evidence copied/recomputed",
+    "No new constant/ROI or Row/color/toolbar work"
+  ],
+  "scope": "Fixed e48 ScrollPosition/initial owner and Gallery Film First/Last/resize event path only. No old geometry archive reanalysis.",
+  "strict_static_findings": [
+    {
+      "classification": "shared_logic_fact_not_a_mac13_failure",
+      "fact": "The only scroll(to:) caller requires wanted!=target, with no await/target mutation before the callee tests target==wanted. Its same-target clear/reissue branch is unreachable through this caller. Both13 and14 share this code.",
+      "location": "Style:2536-2537 versus2588-2605",
+      "visible_effect_not_proven": "A repeated First/Last assignment to an unchanged Equatable position does not provide a distinct onChange request. No visible failure follows if that item is already aligned; source alone does not establish that a resize left it misaligned."
+    },
+    {
+      "classification": "lifecycle_invariant_not_a_proven_reappearance_bug",
+      "fact": "An owner is single-use per BernScrollItems StateObject: finish is permanent and begin cannot restart. Reappear on the same object cannot reacquire; a newly created object can.",
+      "location": "Style:2193-2229,2456,2492,2513-2519",
+      "unknown": "Whether actual Gallery Film leave/return keeps that StateObject is not established by these files. The single-use comment is deliberate; no retained identity was observed."
+    },
+    {
+      "classification": "resize_path_boundary_not_a_wrong_anchor_proof",
+      "fact": "Margin/viewport updates can reapply only a nonnil target or still-owned initial request. After stop clears target, resize has no persistent programmatic ID reissue in this code; AppKit bounds/live-scroll observers may still schedule native snap.",
+      "location": "Style:2473-2488,2506-2510,2523-2529,2571-2575; Probe:5050-5070,5112-5148",
+      "unknown": "Actual bounds notifications, ScrollViewProxy placement, chosen NSScrollView and native14 resize preservation must be observed before claiming wrong center or lost target."
+    }
+  ],
+  "verdict": "no_source_only_mac13_compatibility_failure_proven_no_fix_proposed"
+}

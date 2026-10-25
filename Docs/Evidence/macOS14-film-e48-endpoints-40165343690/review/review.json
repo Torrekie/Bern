@@ -1,0 +1,388 @@
+{
+  "kind": "independent_exact_e48_actual14_film_reference_review",
+  "verdict": "narrow_actual14_followup_reference_verified_no_blocking",
+  "blocking_findings": [],
+  "run_id": "40165343690",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "harness_sha": "2cff19aad748ac673fefda921b313886bb902e4b",
+  "gui_sha256_recorded": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+  "cli_sha256_recorded": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+  "collector_source_sha256": "6c4d5c93c9331ba4dd6427aa18799b6a1e720b6e2e006e036fb908ced4f9e635",
+  "binary_scope": "Original GUI/CLI hashes and minOS/SDK independently checked against retained environment/build metadata; no App or helper executable retained here to rehash/execute. Original product reused by workflow, only external collector compiled.",
+  "manifest_verification": {
+    "work/film-e48-followup14-preparation": {
+      "sha256": "640b2a00a68b322d6e352d191770f56d0a64e1e3f7c4ca65b9a3c68354e5cb20",
+      "all_entries_verified": 3
+    },
+    "work/film-e48-followup14-analysis": {
+      "sha256": "b935720645f759937e2417952bdedcabc7cb47248930481ec63468cc67088916",
+      "all_entries_verified": 6
+    }
+  },
+  "all_83_artifact_paths_bytes_hashes_match_frozen_analysis": true,
+  "artifact_inventory_sha256": "5ab13aa0b63fc2585c8d63b72d747fd53f380cae499572f10f15c05e74c140d1",
+  "context": {
+    "os": "Version 14.8.9 (Build 23J631)",
+    "expected_os_major": 14,
+    "architecture": "arm64",
+    "app_minos": "13.0",
+    "app_sdk": "26.2",
+    "app_build_swift": "6.2.4",
+    "collector_xcode": "15.4",
+    "collector_swift": "5.10",
+    "collector_sdk": "14.5",
+    "collector_target": "arm64-apple-macos14.0",
+    "preflights_true": true,
+    "normal_three_false": true,
+    "active_accepted_pid": 6547,
+    "light_committed_in_state": true,
+    "language_command": "en",
+    "display_scale": 1,
+    "single_direct_case": true,
+    "internal_trace": false
+  },
+  "ci_evidence": {
+    "job_saved_receipt": {
+      "path": "work/film-e48-followup14-jobs.json",
+      "sha256": "5005675467d31c6efc78a9dcd8e8d97ba92b5eb2cad7f6703e636f848ed2d703",
+      "job_id": 121085132216,
+      "conclusion": "success"
+    },
+    "download_receipt": {
+      "path": "work/film-e48-followup14-actual.download.json",
+      "sha256": "050e89047c25e2445cca1c3350295685f88f18e5ca734172ced021676268a863",
+      "api_digest_verified_recorded": true,
+      "zip_sha256_recorded": "sha256:717a85196fef7bf44c21521b0be7d614d121d27f280d6a4e526062f8a5e2d13e",
+      "deleted_zip_independent_rehash_performed": false
+    }
+  },
+  "commands": {
+    "count": 33,
+    "only_nonzero": "001 sessions status3 before session startup",
+    "all_other_statuses_zero": true,
+    "followup_original_targets": [
+      "film.to_last",
+      "film.to_first",
+      "film.to_last"
+    ],
+    "resize_widths": [
+      920,
+      1020,
+      920
+    ],
+    "all_session_commands_bind_single_session": "f65cfc65199300-ui",
+    "generated_source": {
+      "path": "outputs/Bern/Docs/Evidence/macOS13-gallery-frame-source-40152701810/ci/BernGenerated.swift",
+      "sha256": "f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653",
+      "first_assignment": "1",
+      "last_assignment": "6",
+      "native_and_cli_shared_actions_lines": [
+        1118,
+        1128,
+        1129,
+        1139
+      ]
+    },
+    "not_physical_input_or_internal_binding_trace": true
+  },
+  "geometry_checks": {
+    "terminal_ax_complete_count": 6,
+    "unique_named_AXImages_each": 6,
+    "raw_screen_and_relative_frames_verified": 36,
+    "all_four_components_each_verified_exactly": true,
+    "all_actual_origins": [
+      510,
+      158
+    ],
+    "canonical_geometry_sha256": "7be3ca43b387d53c01bc5b2a700ca27ad225ee2858b8d42a2d4cdb7c950aa721",
+    "stage_summary": [
+      {
+        "stage": "initial",
+        "outer_xywh": [
+          510,
+          158,
+          920,
+          668
+        ],
+        "stable_samples": 5,
+        "equal_comparisons": 4,
+        "ax_visited": 174,
+        "ax_duration_seconds": 0.05053625000005013,
+        "largest_AXImage_label": "Glen",
+        "largest_AXImage_width": 267.53478698730476,
+        "largest_AXImage_relative_center_x": 601.0
+      },
+      {
+        "stage": "last",
+        "outer_xywh": [
+          510,
+          158,
+          920,
+          668
+        ],
+        "stable_samples": 11,
+        "equal_comparisons": 4,
+        "ax_visited": 172,
+        "ax_duration_seconds": 0.0597525416666258,
+        "largest_AXImage_label": "Windowpane",
+        "largest_AXImage_width": 268.7492156982421,
+        "largest_AXImage_relative_center_x": 573.0
+      },
+      {
+        "stage": "first",
+        "outer_xywh": [
+          510,
+          158,
+          920,
+          668
+        ],
+        "stable_samples": 11,
+        "equal_comparisons": 4,
+        "ax_visited": 172,
+        "ax_duration_seconds": 0.04655491666665057,
+        "largest_AXImage_label": "Gingham",
+        "largest_AXImage_width": 268.7997802734376,
+        "largest_AXImage_relative_center_x": 565.0
+      },
+      {
+        "stage": "last-again",
+        "outer_xywh": [
+          510,
+          158,
+          920,
+          668
+        ],
+        "stable_samples": 11,
+        "equal_comparisons": 4,
+        "ax_visited": 172,
+        "ax_duration_seconds": 0.046936666666681504,
+        "largest_AXImage_label": "Windowpane",
+        "largest_AXImage_width": 268.7997802734376,
+        "largest_AXImage_relative_center_x": 565.0
+      },
+      {
+        "stage": "resize-wide",
+        "outer_xywh": [
+          510,
+          158,
+          1020,
+          668
+        ],
+        "stable_samples": 5,
+        "equal_comparisons": 4,
+        "ax_visited": 172,
+        "ax_duration_seconds": 0.0484890416666417,
+        "largest_AXImage_label": "Windowpane",
+        "largest_AXImage_width": 268.55033569335956,
+        "largest_AXImage_relative_center_x": 599.0
+      },
+      {
+        "stage": "resize-restore",
+        "outer_xywh": [
+          510,
+          158,
+          920,
+          668
+        ],
+        "stable_samples": 5,
+        "equal_comparisons": 4,
+        "ax_visited": 172,
+        "ax_duration_seconds": 0.04478641666662497,
+        "largest_AXImage_label": "Windowpane",
+        "largest_AXImage_width": 268.7997802734376,
+        "largest_AXImage_relative_center_x": 565.0
+      }
+    ],
+    "first_last_vs_last_again_deltas": [
+      {
+        "label": "Gingham",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Tartan",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Madras",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Glen",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Houndstooth",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Windowpane",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8.025282287597747,
+          -0.016749515533319936,
+          0.0505645751954944,
+          0.028442573547351913
+        ]
+      }
+    ],
+    "no_new_tolerance_or_clip_interpretation": true,
+    "initial_patterns_stable_samples": 7,
+    "initial_patterns_equal_comparisons": 4
+  },
+  "pngs": {
+    "direct-film.png": {
+      "bytes": 110164,
+      "sha256": "46ae79801159c1a9b26e6a86225e51bcfc34a667bf215ec94a611c6cfe8b00d8",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "a1c4b436620c151c5ee2fdf418a56fb729330476750e811997ec1860f34668c5"
+    },
+    "direct-first.png": {
+      "bytes": 97328,
+      "sha256": "1d3efc787885b99f6af8c60f0a0e3e67bb2659e43f2aaf316e606799f684037b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "15130d2240d999c647973be14a59555d33e346b77447e6495e7b8fb119c52f97"
+    },
+    "direct-last-again.png": {
+      "bytes": 98524,
+      "sha256": "4d18a87205c9d1c8665db6542f1a59f3a3c22cd428e7909ee8480990256dfa9b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "bf41168d369440b833982f691795929e35ca1f0986e3d78ec19762e679c1a0ea"
+    },
+    "direct-last.png": {
+      "bytes": 99901,
+      "sha256": "13788694f15e1d1c87111de35daac508c6fa65e7f725ae4639136504013e6522",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "0e44e03694f5a913eef6b348b7f725e6b3913427bdf7e035aa1b6e0f77e20c1e"
+    },
+    "direct-patterns.png": {
+      "bytes": 59293,
+      "sha256": "d072a8140eb5fc531c7d694f3ca893f924b9ecdb53e0347185e5fb9dd879c60e",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "f87b776859a8307e3dcc471de063c563185c6f85eff861809c5fed7dc7359b33"
+    },
+    "direct-resize-restore.png": {
+      "bytes": 98524,
+      "sha256": "4d18a87205c9d1c8665db6542f1a59f3a3c22cd428e7909ee8480990256dfa9b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "bf41168d369440b833982f691795929e35ca1f0986e3d78ec19762e679c1a0ea"
+    },
+    "direct-resize-wide.png": {
+      "bytes": 99815,
+      "sha256": "d4f6fd0b866fc0962d2c37adf07d716131f149fed2ea0386c2e2496ccaef6cc1",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        1020,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "f58377c3607ad6bcac59c1f6953b3208a8ac452c18b54b9158b28b2b40c740fc"
+    }
+  },
+  "source_bound_first_last_reference": {
+    "report_path": "work/film-e48-followup14-actual/result.json",
+    "report_sha256": "54b06d51178cf8e57d947c2de193f837b36ab0a52fa0e341357f0d6972cba0bf",
+    "case_index": 0,
+    "followup_stage_index": 0,
+    "stage": "last",
+    "pid": 6547,
+    "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+    "gui_sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "collector_source_sha256": "6c4d5c93c9331ba4dd6427aa18799b6a1e720b6e2e006e036fb908ced4f9e635",
+    "png_path": "work/film-e48-followup14-actual/direct-last.png",
+    "png_sha256": "13788694f15e1d1c87111de35daac508c6fa65e7f725ae4639136504013e6522",
+    "outer_origin": [
+      510,
+      158
+    ],
+    "outer_size": [
+      920,
+      668
+    ],
+    "Windowpane_AX_relative_xywh": [
+      438.62539215087895,
+      66.47682229995712,
+      268.7492156982421,
+      151.17143383026126
+    ],
+    "Windowpane_AX_relative_center_x": 573.0,
+    "later_last_again_center_x": 565.0
+  },
+  "limits": [
+    "AX collection completes queue of matching retained elements; no full attribute-completeness or native view/clip proof.",
+    "Terminal AX follows stable PNG; they are not simultaneous. Stable4 is provider-buffer equality, not proof all animation settled.",
+    "First Last center x573 and later Last center x565 are both actual reference observations; no fixed offset or f9 values substituted.",
+    "Collector source stops child before attempting original front restoration. No termination status, final process state or front-after-cleanup receipt exists; no local13 strong cleanup acceptance.",
+    "API ZIP digest verification and CI terminal success are retained receipts, not a new API call or deleted ZIP rehash.",
+    "No crossOS parity, product fix, physical input, source binding write or overall acceptance asserted."
+  ],
+  "method": "Independent stdlib JSON/hash/equality/subtraction and Pillow stored RGBA/ICC reads. Artifact analyzer/helper not imported or executed; no image conversion, resampling, ROI or threshold."
+}

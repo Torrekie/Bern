@@ -1,0 +1,18 @@
+{
+  "kind": "single_read_only_absent_owned_domain_defaults_preflight",
+  "domain": "dev.bern.frame13.preflight.f92921a07e6b470c8de00da36ece40bb",
+  "argv": [
+    "defaults",
+    "read",
+    "dev.bern.frame13.preflight.f92921a07e6b470c8de00da36ece40bb"
+  ],
+  "timeout_seconds": 5,
+  "before_files_absent": true,
+  "scope": "Read-only diagnostic after prior defaults-delete timeout; no App/native event or preference write, no original failed result changed",
+  "timed_out": false,
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "2026-10-25 13:35:00.504 defaults[18814:6096553] \nDomain dev.bern.frame13.preflight.f92921a07e6b470c8de00da36ece40bb does not exist\n",
+  "duration_seconds": 0.6522250829730183,
+  "after_files_absent": true
+}

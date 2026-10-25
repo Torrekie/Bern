@@ -1,0 +1,77 @@
+{
+  "kind": "predeclared_exact_e48_actual14_film_endpoint_reference",
+  "scope": "Fill missing exact-current-build14 endpoint/resize baseline. No product repair or fullUI acceptance, no original wait/direct rerun as a new result. Single direct process proceeds beyond initial state.",
+  "workflow": "macos14-film-probe.yml",
+  "harness_sha": "2cff19aad748ac673fefda921b313886bb902e4b",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "inputs": {
+    "variant": "port",
+    "build_run": "40070407306",
+    "scenario": "direct",
+    "followup": "last-resize",
+    "capture_trace": "false"
+  },
+  "artifact": {
+    "id": 12550744117,
+    "name": "macos13-gallery",
+    "size_in_bytes": 2131997,
+    "expired": false,
+    "inner_archive_sha256": "e7ee2c11f7795bf9391b275ec9f6be329feceebf890193ee53434ec0607c3067",
+    "gui_sha256": "d44f051c6b8ca5ab573d9a479ffc4a13eec01f452ad419687b8c0ab13749126c",
+    "cli_sha256": "31a75c0a6900d0df821c5d45f69e3a7ddc25e87e4437db023fc4fc0454f379f5",
+    "live_api_checked_this_turn": true
+  },
+  "collector_sha256": "6c4d5c93c9331ba4dd6427aa18799b6a1e720b6e2e006e036fb908ced4f9e635",
+  "workflow_sha256": "a3fc84219a34af446802b8865837f6efcdf1590b9a5ab647c0dcf2cadd270102",
+  "expected_sequence": [
+    "initial",
+    "last",
+    "first",
+    "last-again",
+    "resize-wide",
+    "resize-restore"
+  ],
+  "outer_sizes": [
+    [
+      920,
+      668
+    ],
+    [
+      920,
+      668
+    ],
+    [
+      920,
+      668
+    ],
+    [
+      920,
+      668
+    ],
+    [
+      1020,
+      668
+    ],
+    [
+      920,
+      668
+    ]
+  ],
+  "runtime_reference_requirements": [
+    "actual14 arm64/source e48/original GUI+CLI",
+    "normal threefalse/active/light/single direct fresh process/no trace",
+    "samePID own window at each stable raw capture/four equal buffer comparisons",
+    "complete terminal AX with exactly six unique named pattern images at every stage; keep all frame coordinates and actual window origins",
+    "original CLI control activations for to_last/to_first, resize widths and committed control state; no physical-gesture claim",
+    "keep old firstLast-vs-lastagain ordering, no selecting best geometry, no fixed compensating offset",
+    "retain current collector before/after stop cleanup order as CI-only inherited limitation, actual local13 must use already verified stronger kernel guard, no user desktop action here",
+    "if source/hash/context/AX/runtime gate fails, preserve partial/failure; no automatic retry or looser sampling threshold"
+  ],
+  "historical_reference": "Docs/Evidence/macOS14-film-followup-40067683100 is f9, not e48. Current actual14 e48 ABBA40074197486 does not include followup stages.",
+  "not_done": [
+    "No new dispatch yet",
+    "No product or helper compile locally",
+    "No local UI/App/CLI or preference change",
+    "No automatic candidate adoption or mac11/ObjC/iOS work"
+  ]
+}

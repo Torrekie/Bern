@@ -1,0 +1,5262 @@
+{
+  "kind": "exact_e48_actual14_film_followup_offline_reference",
+  "reference_requirements_met": true,
+  "run_id": "40165343690",
+  "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+  "harness_sha": "2cff19aad748ac673fefda921b313886bb902e4b",
+  "single_process_pid": 6547,
+  "raw_report_context": {
+    "accessibility_trusted": true,
+    "activation_requests": [
+      {
+        "accepted": true,
+        "after": {
+          "front_bundle": "dev.bern.gallery",
+          "front_pid": 6547,
+          "own_pid": 6547,
+          "uptime": 456.852859125
+        },
+        "before": {
+          "front_bundle": "com.apple.finder",
+          "front_pid": 336,
+          "own_pid": 6547,
+          "uptime": 456.72566925
+        },
+        "options": [
+          "activateAllWindows"
+        ],
+        "pid": 6547,
+        "samples": [
+          {
+            "front_bundle": "com.apple.finder",
+            "front_pid": 336,
+            "own_pid": 6547,
+            "uptime": 456.72835383333336
+          },
+          {
+            "front_bundle": "dev.bern.gallery",
+            "front_pid": 6547,
+            "own_pid": 6547,
+            "uptime": 456.8525846666667
+          }
+        ],
+        "scenario": "direct"
+      }
+    ],
+    "appearance_profile": "normal",
+    "commands": [
+      {
+        "arguments": [
+          "sessions"
+        ],
+        "end_uptime": 455.49502212500005,
+        "start_uptime": 455.3314168333334,
+        "status": 3,
+        "stderr": "001-stderr.txt",
+        "stdout": "001-stdout.json"
+      },
+      {
+        "arguments": [
+          "sessions"
+        ],
+        "end_uptime": 455.9202790416667,
+        "start_uptime": 455.7433921666667,
+        "status": 0,
+        "stderr": "002-stderr.txt",
+        "stdout": "002-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 456.1002926666667,
+        "start_uptime": 455.9210167916667,
+        "status": 0,
+        "stderr": "003-stderr.txt",
+        "stdout": "003-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 456.38485595833333,
+        "start_uptime": 456.326170875,
+        "status": 0,
+        "stderr": "004-stderr.txt",
+        "stdout": "004-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 456.6752945416667,
+        "start_uptime": 456.505576625,
+        "status": 0,
+        "stderr": "005-stderr.txt",
+        "stdout": "005-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "set-language",
+          "--language",
+          "en"
+        ],
+        "end_uptime": 457.08616462500004,
+        "start_uptime": 456.8671921666667,
+        "status": 0,
+        "stderr": "006-stderr.txt",
+        "stdout": "006-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 457.12021787500004,
+        "start_uptime": 457.086677375,
+        "status": 0,
+        "stderr": "007-stderr.txt",
+        "stdout": "007-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "activate",
+          "--target",
+          "main_window.light"
+        ],
+        "end_uptime": 457.3084346666667,
+        "start_uptime": 457.132363375,
+        "status": 0,
+        "stderr": "008-stderr.txt",
+        "stdout": "008-stdout.json"
+      },
+      {
+        "arguments": [
+          "state"
+        ],
+        "end_uptime": 457.4835222916667,
+        "start_uptime": 457.309057875,
+        "status": 0,
+        "stderr": "009-stderr.txt",
+        "stdout": "009-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 457.66744162500004,
+        "start_uptime": 457.48851520833335,
+        "status": 0,
+        "stderr": "010-stderr.txt",
+        "stdout": "010-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "resize",
+          "--window",
+          "main#1",
+          "--width",
+          "920",
+          "--height",
+          "668"
+        ],
+        "end_uptime": 457.7094415,
+        "start_uptime": 457.6680746666667,
+        "status": 0,
+        "stderr": "011-stderr.txt",
+        "stdout": "011-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 457.8871089166667,
+        "start_uptime": 457.70999800000004,
+        "status": 0,
+        "stderr": "012-stderr.txt",
+        "stdout": "012-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 458.0672562916667,
+        "start_uptime": 457.8879738333334,
+        "status": 0,
+        "stderr": "013-stderr.txt",
+        "stdout": "013-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "select",
+          "--target",
+          "main_window.pages",
+          "--option",
+          "Film"
+        ],
+        "end_uptime": 460.45350425000004,
+        "start_uptime": 459.39137608333334,
+        "status": 0,
+        "stderr": "014-stderr.txt",
+        "stdout": "014-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 461.1829112916667,
+        "start_uptime": 461.14421825000005,
+        "status": 0,
+        "stderr": "015-stderr.txt",
+        "stdout": "015-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 461.2199514166667,
+        "start_uptime": 461.1847637083334,
+        "status": 0,
+        "stderr": "016-stderr.txt",
+        "stdout": "016-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "activate",
+          "--target",
+          "film.to_last"
+        ],
+        "end_uptime": 461.2544422083334,
+        "start_uptime": 461.22072479166667,
+        "status": 0,
+        "stderr": "017-stderr.txt",
+        "stdout": "017-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 463.4342002916667,
+        "start_uptime": 463.39950158333335,
+        "status": 0,
+        "stderr": "018-stderr.txt",
+        "stdout": "018-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 463.47313583333334,
+        "start_uptime": 463.435027875,
+        "status": 0,
+        "stderr": "019-stderr.txt",
+        "stdout": "019-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 463.647984,
+        "start_uptime": 463.4759599166667,
+        "status": 0,
+        "stderr": "020-stderr.txt",
+        "stdout": "020-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "activate",
+          "--target",
+          "film.to_first"
+        ],
+        "end_uptime": 463.6846522083334,
+        "start_uptime": 463.6497722083334,
+        "status": 0,
+        "stderr": "021-stderr.txt",
+        "stdout": "021-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 465.78287895833336,
+        "start_uptime": 465.73769550000003,
+        "status": 0,
+        "stderr": "022-stderr.txt",
+        "stdout": "022-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 465.8551062083334,
+        "start_uptime": 465.7836124166667,
+        "status": 0,
+        "stderr": "023-stderr.txt",
+        "stdout": "023-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 465.9660180833334,
+        "start_uptime": 465.880792125,
+        "status": 0,
+        "stderr": "024-stderr.txt",
+        "stdout": "024-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "activate",
+          "--target",
+          "film.to_last"
+        ],
+        "end_uptime": 466.0006727916667,
+        "start_uptime": 465.96669820833336,
+        "status": 0,
+        "stderr": "025-stderr.txt",
+        "stdout": "025-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 468.0254242916667,
+        "start_uptime": 467.9812831666667,
+        "status": 0,
+        "stderr": "026-stderr.txt",
+        "stdout": "026-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 468.0618324166667,
+        "start_uptime": 468.02603425,
+        "status": 0,
+        "stderr": "027-stderr.txt",
+        "stdout": "027-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "resize",
+          "--window",
+          "main#1",
+          "--width",
+          "1020",
+          "--height",
+          "668"
+        ],
+        "end_uptime": 468.28486445833335,
+        "start_uptime": 468.06464995833335,
+        "status": 0,
+        "stderr": "028-stderr.txt",
+        "stdout": "028-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 469.1293081666667,
+        "start_uptime": 469.092823375,
+        "status": 0,
+        "stderr": "029-stderr.txt",
+        "stdout": "029-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 469.16363208333337,
+        "start_uptime": 469.12992812500005,
+        "status": 0,
+        "stderr": "030-stderr.txt",
+        "stdout": "030-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "resize",
+          "--window",
+          "main#1",
+          "--width",
+          "920",
+          "--height",
+          "668"
+        ],
+        "end_uptime": 469.3772705,
+        "start_uptime": 469.1667556666667,
+        "status": 0,
+        "stderr": "031-stderr.txt",
+        "stdout": "031-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "ui",
+          "inspect"
+        ],
+        "end_uptime": 470.464939,
+        "start_uptime": 470.3264007083334,
+        "status": 0,
+        "stderr": "032-stderr.txt",
+        "stdout": "032-stdout.json"
+      },
+      {
+        "arguments": [
+          "--session",
+          "f65cfc65199300-ui",
+          "window",
+          "list"
+        ],
+        "end_uptime": 470.55438437500004,
+        "start_uptime": 470.465644875,
+        "status": 0,
+        "stderr": "033-stderr.txt",
+        "stdout": "033-stdout.json"
+      }
+    ],
+    "displays": [
+      {
+        "frame_points": "{{0, 0}, {1920, 1080}}",
+        "scale": 1
+      }
+    ],
+    "expected_os_major": 14,
+    "followup_sequence": "last-resize",
+    "harness_sha": "2cff19aad748ac673fefda921b313886bb902e4b",
+    "inactive_capture_samples": [],
+    "ipc_directories": [
+      "/tmp/bern-film-6546-direct"
+    ],
+    "observation_contract": "Original active visual capture contract.",
+    "observation_mode": "active",
+    "os": "Version 14.8.9 (Build 23J631)",
+    "requested_scenario": "direct",
+    "sampling_scope": "First second after Film select CLI launch, including mounting latency; actual AX-walk timestamps, no assumed sampling frequency.",
+    "scope": "Light only; each selected scenario uses a fresh process, exact app. AX frames are global screen points. No draft/target/nearest introspection; visible labels do not prove a binding write.",
+    "screen_recording_preflight": true,
+    "source_sha": "e48fff46b3a92a28465ad74295bd273a9d69af7d",
+    "startup_readiness": [
+      {
+        "deadline_uptime": 470.33091900000005,
+        "pid": 6547,
+        "samples": [
+          {
+            "own_native_window": null,
+            "own_native_window_alpha": 0,
+            "uptime": 456.10258258333334,
+            "windows": []
+          },
+          {
+            "own_native_window": null,
+            "own_native_window_alpha": 0,
+            "uptime": 456.38602425000005,
+            "windows": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": false,
+                "frame": {
+                  "height": 600,
+                  "width": 900,
+                  "x": 510,
+                  "y": 210
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 1,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          },
+          {
+            "own_native_window": {
+              "kCGWindowAlpha": 1,
+              "kCGWindowBounds": {
+                "Height": 600,
+                "Width": 900,
+                "X": 510,
+                "Y": 210
+              },
+              "kCGWindowIsOnscreen": true,
+              "kCGWindowLayer": 0,
+              "kCGWindowMemoryUsage": 2176,
+              "kCGWindowName": "Patterns",
+              "kCGWindowNumber": 24,
+              "kCGWindowOwnerName": "Gallery",
+              "kCGWindowOwnerPID": 6547,
+              "kCGWindowSharingState": 1,
+              "kCGWindowStoreType": 1
+            },
+            "own_native_window_alpha": 1,
+            "uptime": 456.718670625,
+            "windows": [
+              {
+                "actions": [
+                  "Activate",
+                  "Close",
+                  "Minimize",
+                  "Maximize",
+                  "Move",
+                  "Resize"
+                ],
+                "changed_by": "System",
+                "focused": false,
+                "frame": {
+                  "height": 600,
+                  "width": 900,
+                  "x": 510,
+                  "y": 210
+                },
+                "kind": "main",
+                "lifecycle": "Open",
+                "presentation": "Native",
+                "size": "Normal",
+                "version": 1,
+                "visibility": "Visible",
+                "window": "main#1"
+              }
+            ]
+          }
+        ],
+        "scenario": "direct"
+      }
+    ],
+    "success": true,
+    "system_preferences": {
+      "increase_contrast": false,
+      "reduce_motion": false,
+      "reduce_transparency": false
+    },
+    "variant": "port"
+  },
+  "case_session": "f65cfc65199300-ui",
+  "initial_patterns_capture": {
+    "bounds_points": {
+      "Height": 668,
+      "Width": 920,
+      "X": 510,
+      "Y": 158
+    },
+    "elapsed_seconds": 1.3233801249999715,
+    "equal_comparisons": 4,
+    "pixels": [
+      920,
+      668
+    ],
+    "png": "direct-patterns.png",
+    "samples": 7
+  },
+  "original_first_second_ax": [
+    {
+      "elements": [],
+      "end_uptime": 459.5663635416667,
+      "matching_elements_missing": true,
+      "pattern_label_count": 0,
+      "scroll_area_count": 0,
+      "start_uptime": 459.3919796666667,
+      "truncated": true,
+      "visited": 1
+    },
+    {
+      "elements": [
+        {
+          "frame": {
+            "height": 616,
+            "width": 920,
+            "x": 510,
+            "y": 210
+          },
+          "role": "AXSplitGroup",
+          "text": "",
+          "text_attribute": "missing"
+        }
+      ],
+      "end_uptime": 459.8571435416667,
+      "matching_elements_missing": false,
+      "pattern_label_count": 0,
+      "scroll_area_count": 0,
+      "start_uptime": 459.66146583333335,
+      "truncated": true,
+      "visited": 24
+    },
+    {
+      "elements": [
+        {
+          "frame": {
+            "height": 616,
+            "width": 920,
+            "x": 510,
+            "y": 210
+          },
+          "role": "AXSplitGroup",
+          "text": "",
+          "text_attribute": "missing"
+        },
+        {
+          "frame": {
+            "height": 580,
+            "width": 210,
+            "x": 510,
+            "y": 210
+          },
+          "role": "AXScrollArea",
+          "text": "",
+          "text_attribute": "missing"
+        },
+        {
+          "frame": {
+            "height": 616,
+            "width": 709,
+            "x": 721,
+            "y": 210
+          },
+          "role": "AXSplitGroup",
+          "text": "",
+          "text_attribute": "missing"
+        },
+        {
+          "frame": {
+            "height": 207,
+            "width": 240,
+            "x": 955.5,
+            "y": 210
+          },
+          "role": "AXScrollArea",
+          "text": "",
+          "text_attribute": "missing"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 43,
+            "x": 745,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Gingham",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 31,
+            "x": 877.2,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Tartan",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 36.00000000000006,
+            "x": 1009.4000000000001,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Madras",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 23,
+            "x": 1141.6,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Glen",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 63,
+            "x": 1273.8000000000002,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Houndstooth",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 62,
+            "x": 1406,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Windowpane",
+          "text_attribute": "AXValue"
+        }
+      ],
+      "end_uptime": 460.15842425000005,
+      "matching_elements_missing": false,
+      "pattern_label_count": 6,
+      "scroll_area_count": 2,
+      "start_uptime": 460.0380825416667,
+      "truncated": true,
+      "visited": 157
+    },
+    {
+      "elements": [
+        {
+          "frame": {
+            "height": 616,
+            "width": 920,
+            "x": 510,
+            "y": 210
+          },
+          "role": "AXSplitGroup",
+          "text": "",
+          "text_attribute": "missing"
+        },
+        {
+          "frame": {
+            "height": 580,
+            "width": 210,
+            "x": 510,
+            "y": 210
+          },
+          "role": "AXScrollArea",
+          "text": "",
+          "text_attribute": "missing"
+        },
+        {
+          "frame": {
+            "height": 616,
+            "width": 709,
+            "x": 721,
+            "y": 210
+          },
+          "role": "AXSplitGroup",
+          "text": "",
+          "text_attribute": "missing"
+        },
+        {
+          "frame": {
+            "height": 207,
+            "width": 240,
+            "x": 955.5,
+            "y": 210
+          },
+          "role": "AXScrollArea",
+          "text": "",
+          "text_attribute": "missing"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 43,
+            "x": 745,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Gingham",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 31,
+            "x": 877.2,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Tartan",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 36.00000000000006,
+            "x": 1009.4000000000001,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Madras",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 23,
+            "x": 1141.6,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Glen",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 63,
+            "x": 1273.8000000000002,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Houndstooth",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 13,
+            "width": 62,
+            "x": 1406,
+            "y": 487
+          },
+          "role": "AXStaticText",
+          "text": "Windowpane",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 135,
+            "width": 240,
+            "x": 181,
+            "y": 234
+          },
+          "role": "AXImage",
+          "text": "Gingham",
+          "text_attribute": "AXDescription"
+        },
+        {
+          "frame": {
+            "height": 135,
+            "width": 240,
+            "x": 451,
+            "y": 234
+          },
+          "role": "AXImage",
+          "text": "Tartan",
+          "text_attribute": "AXDescription"
+        },
+        {
+          "frame": {
+            "height": 135.01623744964604,
+            "width": 240.0288665771484,
+            "x": 720.9855667114258,
+            "y": 233.99043794631962
+          },
+          "role": "AXImage",
+          "text": "Madras",
+          "text_attribute": "AXDescription"
+        },
+        {
+          "frame": {
+            "height": 150.48831768035888,
+            "width": 267.53478698730476,
+            "x": 977.2326065063477,
+            "y": 224.87910181045527
+          },
+          "role": "AXImage",
+          "text": "Glen",
+          "text_attribute": "AXDescription"
+        },
+        {
+          "frame": {
+            "height": 135,
+            "width": 240,
+            "x": 1261,
+            "y": 234
+          },
+          "role": "AXImage",
+          "text": "Houndstooth",
+          "text_attribute": "AXDescription"
+        },
+        {
+          "frame": {
+            "height": 135,
+            "width": 240,
+            "x": 1531,
+            "y": 234
+          },
+          "role": "AXImage",
+          "text": "Windowpane",
+          "text_attribute": "AXDescription"
+        },
+        {
+          "frame": {
+            "height": 16,
+            "width": 58,
+            "x": 181,
+            "y": 377
+          },
+          "role": "AXStaticText",
+          "text": "Gingham",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 16,
+            "width": 42,
+            "x": 451,
+            "y": 377
+          },
+          "role": "AXStaticText",
+          "text": "Tartan",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 16.00192443847658,
+            "width": 49.00589359283447,
+            "x": 720.9855667114258,
+            "y": 377.00763761520375
+          },
+          "role": "AXStaticText",
+          "text": "Madras",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 17.835652465820317,
+            "width": 33.44184837341311,
+            "x": 977.2326065063477,
+            "y": 384.2852457237244
+          },
+          "role": "AXStaticText",
+          "text": "Glen",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 16,
+            "width": 85,
+            "x": 1261,
+            "y": 377
+          },
+          "role": "AXStaticText",
+          "text": "Houndstooth",
+          "text_attribute": "AXValue"
+        },
+        {
+          "frame": {
+            "height": 16,
+            "width": 84,
+            "x": 1531,
+            "y": 377
+          },
+          "role": "AXStaticText",
+          "text": "Windowpane",
+          "text_attribute": "AXValue"
+        }
+      ],
+      "end_uptime": 460.34311708333337,
+      "matching_elements_missing": false,
+      "pattern_label_count": 18,
+      "scroll_area_count": 2,
+      "start_uptime": 460.3005112083334,
+      "truncated": false,
+      "visited": 174
+    }
+  ],
+  "stages": [
+    {
+      "stage": "initial",
+      "original_capture": {
+        "bounds_points": {
+          "Height": 668,
+          "Width": 920,
+          "X": 510,
+          "Y": 158
+        },
+        "elapsed_seconds": 0.6381279999999947,
+        "equal_comparisons": 4,
+        "pixels": [
+          920,
+          668
+        ],
+        "png": "direct-film.png",
+        "samples": 5
+      },
+      "original_action_start_uptime": null,
+      "original_terminal_ax": {
+        "elements": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 240,
+              "x": 955.5,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 43,
+              "x": 745,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 31,
+              "x": 877.2,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 36.00000000000006,
+              "x": 1009.4000000000001,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 23,
+              "x": 1141.6,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 63,
+              "x": 1273.8000000000002,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 62,
+              "x": 1406,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 181,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 451,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135.01623744964604,
+              "width": 240.0288665771484,
+              "x": 720.9855667114258,
+              "y": 233.99043794631962
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 150.48831768035888,
+              "width": 267.53478698730476,
+              "x": 977.2326065063477,
+              "y": 224.87910181045527
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1261,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1531,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 58,
+              "x": 181,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 42,
+              "x": 451,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16.00192443847658,
+              "width": 49.00589359283447,
+              "x": 720.9855667114258,
+              "y": 377.00763761520375
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 17.835652465820317,
+              "width": 33.44184837341311,
+              "x": 977.2326065063477,
+              "y": 384.2852457237244
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 85,
+              "x": 1261,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 84,
+              "x": 1531,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          }
+        ],
+        "end_uptime": 461.1437840416667,
+        "matching_elements_missing": false,
+        "pattern_label_count": 18,
+        "scroll_area_count": 2,
+        "start_uptime": 461.09324779166667,
+        "truncated": false,
+        "visited": 174
+      },
+      "original_controls": [
+        {
+          "enabled": true,
+          "label": "",
+          "reason": null,
+          "role": "adaptive",
+          "target": "film.film_controls",
+          "value": "medium",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Drag up or down",
+          "reason": null,
+          "role": "swipe",
+          "target": "film.level",
+          "value": "0.5",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "First",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_first",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Last",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_last",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "About",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.about",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Choose Poster\u2026",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.choose_poster",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Clear Favorites",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.clear_favorites",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Close",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.close_details",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Crimson",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.crimson",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Dark",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.dark",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search Patterns",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.find",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Follow the System",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.follow_system",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Light",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.light",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Look",
+          "reason": null,
+          "role": "menu",
+          "target": "main_window.look",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Neon",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.neon",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Open Video",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.open_file",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Film",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Film",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search \u201ccheck\u201d",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_check",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Delete a Letter",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_delete",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Details",
+          "reason": null,
+          "role": "switch",
+          "target": "main_window.show_details",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Ultramarine",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.ultramarine",
+          "value": null,
+          "window": "main#1"
+        }
+      ],
+      "original_windows": null,
+      "images": [
+        {
+          "label": "Gingham",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 181,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -329,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Tartan",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 451,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -59,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Madras",
+          "original_ax_element": {
+            "frame": {
+              "height": 135.01623744964604,
+              "width": 240.0288665771484,
+              "x": 720.9855667114258,
+              "y": 233.99043794631962
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            210.9855667114258,
+            75.99043794631962,
+            240.0288665771484,
+            135.01623744964604
+          ]
+        },
+        {
+          "label": "Glen",
+          "original_ax_element": {
+            "frame": {
+              "height": 150.48831768035888,
+              "width": 267.53478698730476,
+              "x": 977.2326065063477,
+              "y": 224.87910181045527
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            467.2326065063477,
+            66.87910181045527,
+            267.53478698730476,
+            150.48831768035888
+          ]
+        },
+        {
+          "label": "Houndstooth",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1261,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            751,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Windowpane",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1531,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            1021,
+            76,
+            240,
+            135
+          ]
+        }
+      ],
+      "maximum_width_points": 267.53478698730476,
+      "maximum_width_labels": [
+        "Glen"
+      ]
+    },
+    {
+      "stage": "last",
+      "original_capture": {
+        "bounds_points": {
+          "Height": 668,
+          "Width": 920,
+          "X": 510,
+          "Y": 158
+        },
+        "elapsed_seconds": 2.0844297500000266,
+        "equal_comparisons": 4,
+        "pixels": [
+          920,
+          668
+        ],
+        "png": "direct-last.png",
+        "samples": 11
+      },
+      "original_action_start_uptime": 461.18450675,
+      "original_terminal_ax": {
+        "elements": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 254.4000000000001,
+              "x": 948.3,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 43,
+              "x": 745,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 31,
+              "x": 877.2,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 36.00000000000006,
+              "x": 1009.4000000000001,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 23,
+              "x": 1141.6,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 63,
+              "x": 1273.8000000000002,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 62,
+              "x": 1406,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -387,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -117,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 153,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 423,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 693,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 151.17143383026126,
+              "width": 268.7492156982421,
+              "x": 948.625392150879,
+              "y": 224.47682229995712
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 58,
+              "x": -387,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 42,
+              "x": -117,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 49,
+              "x": 153,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 30,
+              "x": 423,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 85,
+              "x": 693,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 17.916614379882816,
+              "width": 94.06222549438485,
+              "x": 948.625392150879,
+              "y": 384.6065633201599
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          }
+        ],
+        "end_uptime": 463.39901345833334,
+        "matching_elements_missing": false,
+        "pattern_label_count": 18,
+        "scroll_area_count": 2,
+        "start_uptime": 463.3392609166667,
+        "truncated": false,
+        "visited": 172
+      },
+      "original_controls": [
+        {
+          "enabled": true,
+          "label": "",
+          "reason": null,
+          "role": "adaptive",
+          "target": "film.film_controls",
+          "value": "medium",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Drag up or down",
+          "reason": null,
+          "role": "swipe",
+          "target": "film.level",
+          "value": "0.5",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "First",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_first",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Last",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_last",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "About",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.about",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Choose Poster\u2026",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.choose_poster",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Clear Favorites",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.clear_favorites",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Close",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.close_details",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Crimson",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.crimson",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Dark",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.dark",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search Patterns",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.find",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Follow the System",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.follow_system",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Light",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.light",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Look",
+          "reason": null,
+          "role": "menu",
+          "target": "main_window.look",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Neon",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.neon",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Open Video",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.open_file",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Film",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Film",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search \u201ccheck\u201d",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_check",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Delete a Letter",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_delete",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Details",
+          "reason": null,
+          "role": "switch",
+          "target": "main_window.show_details",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Ultramarine",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.ultramarine",
+          "value": null,
+          "window": "main#1"
+        }
+      ],
+      "original_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "images": [
+        {
+          "label": "Gingham",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -387,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -897,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Tartan",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -117,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -627,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Madras",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 153,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -357,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Glen",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 423,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -87,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Houndstooth",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 693,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            183,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Windowpane",
+          "original_ax_element": {
+            "frame": {
+              "height": 151.17143383026126,
+              "width": 268.7492156982421,
+              "x": 948.625392150879,
+              "y": 224.47682229995712
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            438.62539215087895,
+            66.47682229995712,
+            268.7492156982421,
+            151.17143383026126
+          ]
+        }
+      ],
+      "maximum_width_points": 268.7492156982421,
+      "maximum_width_labels": [
+        "Windowpane"
+      ]
+    },
+    {
+      "stage": "first",
+      "original_capture": {
+        "bounds_points": {
+          "Height": 668,
+          "Width": 920,
+          "X": 510,
+          "Y": 158
+        },
+        "elapsed_seconds": 2.0058382500000107,
+        "equal_comparisons": 4,
+        "pixels": [
+          920,
+          668
+        ],
+        "png": "direct-first.png",
+        "samples": 11
+      },
+      "original_action_start_uptime": 463.47553108333335,
+      "original_terminal_ax": {
+        "elements": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 254.4000000000001,
+              "x": 948.3,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 43,
+              "x": 745,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 31,
+              "x": 877.2,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 36.00000000000006,
+              "x": 1009.4000000000001,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 23,
+              "x": 1141.6,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 63,
+              "x": 1273.8000000000002,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 62,
+              "x": 1406,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 151.19987640380862,
+              "width": 268.7997802734376,
+              "x": 940.6001098632812,
+              "y": 224.4600727844238
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1225,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1495,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1765,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 2035,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 2305,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 17.919985351562502,
+              "width": 64.95994689941409,
+              "x": 940.6001098632812,
+              "y": 384.61994186401375
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 42,
+              "x": 1225,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 49,
+              "x": 1495,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 30,
+              "x": 1765,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 85,
+              "x": 2035,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 84,
+              "x": 2305,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          }
+        ],
+        "end_uptime": 465.73725608333336,
+        "matching_elements_missing": false,
+        "pattern_label_count": 18,
+        "scroll_area_count": 2,
+        "start_uptime": 465.6907011666667,
+        "truncated": false,
+        "visited": 172
+      },
+      "original_controls": [
+        {
+          "enabled": true,
+          "label": "",
+          "reason": null,
+          "role": "adaptive",
+          "target": "film.film_controls",
+          "value": "medium",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Drag up or down",
+          "reason": null,
+          "role": "swipe",
+          "target": "film.level",
+          "value": "0.5",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "First",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_first",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Last",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_last",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "About",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.about",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Choose Poster\u2026",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.choose_poster",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Clear Favorites",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.clear_favorites",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Close",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.close_details",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Crimson",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.crimson",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Dark",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.dark",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search Patterns",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.find",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Follow the System",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.follow_system",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Light",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.light",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Look",
+          "reason": null,
+          "role": "menu",
+          "target": "main_window.look",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Neon",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.neon",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Open Video",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.open_file",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Film",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Film",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search \u201ccheck\u201d",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_check",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Delete a Letter",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_delete",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Details",
+          "reason": null,
+          "role": "switch",
+          "target": "main_window.show_details",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Ultramarine",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.ultramarine",
+          "value": null,
+          "window": "main#1"
+        }
+      ],
+      "original_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "images": [
+        {
+          "label": "Gingham",
+          "original_ax_element": {
+            "frame": {
+              "height": 151.19987640380862,
+              "width": 268.7997802734376,
+              "x": 940.6001098632812,
+              "y": 224.4600727844238
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            430.6001098632812,
+            66.4600727844238,
+            268.7997802734376,
+            151.19987640380862
+          ]
+        },
+        {
+          "label": "Tartan",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1225,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            715,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Madras",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1495,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            985,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Glen",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 1765,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            1255,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Houndstooth",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 2035,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            1525,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Windowpane",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 2305,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            1795,
+            76,
+            240,
+            135
+          ]
+        }
+      ],
+      "maximum_width_points": 268.7997802734376,
+      "maximum_width_labels": [
+        "Gingham"
+      ]
+    },
+    {
+      "stage": "last-again",
+      "original_capture": {
+        "bounds_points": {
+          "Height": 668,
+          "Width": 920,
+          "X": 510,
+          "Y": 158
+        },
+        "elapsed_seconds": 1.9330722083333853,
+        "equal_comparisons": 4,
+        "pixels": [
+          920,
+          668
+        ],
+        "png": "direct-last-again.png",
+        "samples": 11
+      },
+      "original_action_start_uptime": 465.880319625,
+      "original_terminal_ax": {
+        "elements": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 254.4000000000001,
+              "x": 948.3,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 43,
+              "x": 745,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 31,
+              "x": 877.2,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 36.00000000000006,
+              "x": 1009.4000000000001,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 23,
+              "x": 1141.6,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 63,
+              "x": 1273.8000000000002,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 62,
+              "x": 1406,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -395,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -125,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 145,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 415,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 685,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 151.19987640380862,
+              "width": 268.7997802734376,
+              "x": 940.6001098632812,
+              "y": 224.4600727844238
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 58,
+              "x": -395,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 42,
+              "x": -125,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 49,
+              "x": 145,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 30,
+              "x": 415,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 85,
+              "x": 685,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 17.919985351562502,
+              "width": 94.07992309570318,
+              "x": 940.6001098632812,
+              "y": 384.61994186401375
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          }
+        ],
+        "end_uptime": 467.9808362916667,
+        "matching_elements_missing": false,
+        "pattern_label_count": 18,
+        "scroll_area_count": 2,
+        "start_uptime": 467.93389962500004,
+        "truncated": false,
+        "visited": 172
+      },
+      "original_controls": [
+        {
+          "enabled": true,
+          "label": "",
+          "reason": null,
+          "role": "adaptive",
+          "target": "film.film_controls",
+          "value": "medium",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Drag up or down",
+          "reason": null,
+          "role": "swipe",
+          "target": "film.level",
+          "value": "0.5",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "First",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_first",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Last",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_last",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "About",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.about",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Choose Poster\u2026",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.choose_poster",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Clear Favorites",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.clear_favorites",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Close",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.close_details",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Crimson",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.crimson",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Dark",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.dark",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search Patterns",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.find",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Follow the System",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.follow_system",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Light",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.light",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Look",
+          "reason": null,
+          "role": "menu",
+          "target": "main_window.look",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Neon",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.neon",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Open Video",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.open_file",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Film",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Film",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search \u201ccheck\u201d",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_check",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Delete a Letter",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_delete",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Details",
+          "reason": null,
+          "role": "switch",
+          "target": "main_window.show_details",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Ultramarine",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.ultramarine",
+          "value": null,
+          "window": "main#1"
+        }
+      ],
+      "original_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 4,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "images": [
+        {
+          "label": "Gingham",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -395,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -905,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Tartan",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -125,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -635,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Madras",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 145,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -365,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Glen",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 415,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -95,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Houndstooth",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 685,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            175,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Windowpane",
+          "original_ax_element": {
+            "frame": {
+              "height": 151.19987640380862,
+              "width": 268.7997802734376,
+              "x": 940.6001098632812,
+              "y": 224.4600727844238
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            430.6001098632812,
+            66.4600727844238,
+            268.7997802734376,
+            151.19987640380862
+          ]
+        }
+      ],
+      "maximum_width_points": 268.7997802734376,
+      "maximum_width_labels": [
+        "Windowpane"
+      ]
+    },
+    {
+      "stage": "resize-wide",
+      "original_capture": {
+        "bounds_points": {
+          "Height": 668,
+          "Width": 1020,
+          "X": 510,
+          "Y": 158
+        },
+        "elapsed_seconds": 0.7587240416666532,
+        "equal_comparisons": 4,
+        "pixels": [
+          1020,
+          668
+        ],
+        "png": "direct-resize-wide.png",
+        "samples": 5
+      },
+      "original_action_start_uptime": 468.06435683333336,
+      "original_terminal_ax": {
+        "elements": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 1020,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 809,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 254.4000000000001,
+              "x": 998.3,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 43,
+              "x": 745,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 31,
+              "x": 897.2,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 36,
+              "x": 1049.4,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 23,
+              "x": 1201.6,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 63,
+              "x": 1353.8000000000002,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 62,
+              "x": 1506,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -361,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -91,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 179,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 449,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 719,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 151.05956382751464,
+              "width": 268.55033569335956,
+              "x": 974.7248321533202,
+              "y": 224.54270130157465
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 58,
+              "x": -361,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 42,
+              "x": -91,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 49,
+              "x": 179,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 30,
+              "x": 449,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 85,
+              "x": 719,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 17.90335571289063,
+              "width": 93.99261749267589,
+              "x": 974.7248321533202,
+              "y": 384.5539429855347
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          }
+        ],
+        "end_uptime": 469.0923647916667,
+        "matching_elements_missing": false,
+        "pattern_label_count": 18,
+        "scroll_area_count": 2,
+        "start_uptime": 469.04387575000004,
+        "truncated": false,
+        "visited": 172
+      },
+      "original_controls": [
+        {
+          "enabled": true,
+          "label": "",
+          "reason": null,
+          "role": "adaptive",
+          "target": "film.film_controls",
+          "value": "medium",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Drag up or down",
+          "reason": null,
+          "role": "swipe",
+          "target": "film.level",
+          "value": "0.5",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "First",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_first",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Last",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_last",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "About",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.about",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Choose Poster\u2026",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.choose_poster",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Clear Favorites",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.clear_favorites",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Close",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.close_details",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Crimson",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.crimson",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Dark",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.dark",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search Patterns",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.find",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Follow the System",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.follow_system",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Light",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.light",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Look",
+          "reason": null,
+          "role": "menu",
+          "target": "main_window.look",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Neon",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.neon",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Open Video",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.open_file",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Film",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Film",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search \u201ccheck\u201d",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_check",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Delete a Letter",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_delete",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Details",
+          "reason": null,
+          "role": "switch",
+          "target": "main_window.show_details",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Ultramarine",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.ultramarine",
+          "value": null,
+          "window": "main#1"
+        }
+      ],
+      "original_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 1020,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 5,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "images": [
+        {
+          "label": "Gingham",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -361,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -871,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Tartan",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -91,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -601,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Madras",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 179,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -331,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Glen",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 449,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -61,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Houndstooth",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 719,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            209,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Windowpane",
+          "original_ax_element": {
+            "frame": {
+              "height": 151.05956382751464,
+              "width": 268.55033569335956,
+              "x": 974.7248321533202,
+              "y": 224.54270130157465
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            464.7248321533202,
+            66.54270130157465,
+            268.55033569335956,
+            151.05956382751464
+          ]
+        }
+      ],
+      "maximum_width_points": 268.55033569335956,
+      "maximum_width_labels": [
+        "Windowpane"
+      ]
+    },
+    {
+      "stage": "resize-restore",
+      "original_capture": {
+        "bounds_points": {
+          "Height": 668,
+          "Width": 920,
+          "X": 510,
+          "Y": 158
+        },
+        "elapsed_seconds": 0.9036941250000154,
+        "equal_comparisons": 4,
+        "pixels": [
+          920,
+          668
+        ],
+        "png": "direct-resize-restore.png",
+        "samples": 5
+      },
+      "original_action_start_uptime": 469.16645420833333,
+      "original_terminal_ax": {
+        "elements": [
+          {
+            "frame": {
+              "height": 616,
+              "width": 920,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 580,
+              "width": 210,
+              "x": 510,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 616,
+              "width": 709,
+              "x": 721,
+              "y": 210
+            },
+            "role": "AXSplitGroup",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 207,
+              "width": 254.4000000000001,
+              "x": 948.3,
+              "y": 210
+            },
+            "role": "AXScrollArea",
+            "text": "",
+            "text_attribute": "missing"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 43,
+              "x": 745,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 31,
+              "x": 877.2,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 36.00000000000006,
+              "x": 1009.4000000000001,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 23,
+              "x": 1141.6,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 63,
+              "x": 1273.8000000000002,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 13,
+              "width": 62,
+              "x": 1406,
+              "y": 487
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -395,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -125,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 145,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 415,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 685,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 151.19987640380862,
+              "width": 268.7997802734376,
+              "x": 940.6001098632812,
+              "y": 224.4600727844238
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 58,
+              "x": -395,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Gingham",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 42,
+              "x": -125,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Tartan",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 49,
+              "x": 145,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Madras",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 30,
+              "x": 415,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Glen",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 16,
+              "width": 85,
+              "x": 685,
+              "y": 377
+            },
+            "role": "AXStaticText",
+            "text": "Houndstooth",
+            "text_attribute": "AXValue"
+          },
+          {
+            "frame": {
+              "height": 17.919985351562502,
+              "width": 94.07992309570318,
+              "x": 940.6001098632812,
+              "y": 384.61994186401375
+            },
+            "role": "AXStaticText",
+            "text": "Windowpane",
+            "text_attribute": "AXValue"
+          }
+        ],
+        "end_uptime": 470.32603908333334,
+        "matching_elements_missing": false,
+        "pattern_label_count": 18,
+        "scroll_area_count": 2,
+        "start_uptime": 470.2812526666667,
+        "truncated": false,
+        "visited": 172
+      },
+      "original_controls": [
+        {
+          "enabled": true,
+          "label": "",
+          "reason": null,
+          "role": "adaptive",
+          "target": "film.film_controls",
+          "value": "medium",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Drag up or down",
+          "reason": null,
+          "role": "swipe",
+          "target": "film.level",
+          "value": "0.5",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "First",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_first",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Last",
+          "reason": null,
+          "role": "button",
+          "target": "film.to_last",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "About",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.about",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Choose Poster\u2026",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.choose_poster",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Clear Favorites",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.clear_favorites",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Close",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.close_details",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Crimson",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.crimson",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Dark",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.dark",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search Patterns",
+          "reason": null,
+          "role": "search",
+          "target": "main_window.find",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Follow the System",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.follow_system",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Light",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.light",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Look",
+          "reason": null,
+          "role": "menu",
+          "target": "main_window.look",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Neon",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.neon",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Open Video",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.open_file",
+          "value": "",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Film",
+          "reason": null,
+          "role": "sidebar",
+          "target": "main_window.pages",
+          "value": "Film",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Search \u201ccheck\u201d",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_check",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Delete a Letter",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.search_delete",
+          "value": null,
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Details",
+          "reason": null,
+          "role": "switch",
+          "target": "main_window.show_details",
+          "value": "false",
+          "window": "main#1"
+        },
+        {
+          "enabled": true,
+          "label": "Ultramarine",
+          "reason": null,
+          "role": "button",
+          "target": "main_window.ultramarine",
+          "value": null,
+          "window": "main#1"
+        }
+      ],
+      "original_windows": [
+        {
+          "actions": [
+            "Activate",
+            "Close",
+            "Minimize",
+            "Maximize",
+            "Move",
+            "Resize"
+          ],
+          "changed_by": "Command",
+          "focused": true,
+          "frame": {
+            "height": 668,
+            "width": 920,
+            "x": 510,
+            "y": 158
+          },
+          "kind": "main",
+          "lifecycle": "Open",
+          "presentation": "Native",
+          "size": "Normal",
+          "version": 6,
+          "visibility": "Visible",
+          "window": "main#1"
+        }
+      ],
+      "images": [
+        {
+          "label": "Gingham",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -395,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Gingham",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -905,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Tartan",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": -125,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Tartan",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -635,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Madras",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 145,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Madras",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -365,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Glen",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 415,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Glen",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            -95,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Houndstooth",
+          "original_ax_element": {
+            "frame": {
+              "height": 135,
+              "width": 240,
+              "x": 685,
+              "y": 234
+            },
+            "role": "AXImage",
+            "text": "Houndstooth",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            175,
+            76,
+            240,
+            135
+          ]
+        },
+        {
+          "label": "Windowpane",
+          "original_ax_element": {
+            "frame": {
+              "height": 151.19987640380862,
+              "width": 268.7997802734376,
+              "x": 940.6001098632812,
+              "y": 224.4600727844238
+            },
+            "role": "AXImage",
+            "text": "Windowpane",
+            "text_attribute": "AXDescription"
+          },
+          "relative_to_original_outer_xywh_points": [
+            430.6001098632812,
+            66.4600727844238,
+            268.7997802734376,
+            151.19987640380862
+          ]
+        }
+      ],
+      "maximum_width_points": 268.7997802734376,
+      "maximum_width_labels": [
+        "Windowpane"
+      ]
+    }
+  ],
+  "first_last_vs_last_again": {
+    "exact_relative_frames_equal": false,
+    "all_six_deltas": [
+      {
+        "label": "Gingham",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Tartan",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Madras",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Glen",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Houndstooth",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "label": "Windowpane",
+        "last_again_minus_first_last_relative_xywh_points": [
+          -8.025282287597747,
+          -0.016749515533319936,
+          0.0505645751954944,
+          0.028442573547351913
+        ]
+      }
+    ]
+  },
+  "pngs": {
+    "direct-film.png": {
+      "bytes": 110164,
+      "sha256": "46ae79801159c1a9b26e6a86225e51bcfc34a667bf215ec94a611c6cfe8b00d8",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "a1c4b436620c151c5ee2fdf418a56fb729330476750e811997ec1860f34668c5",
+      "interpretation": "Pillow decoded stored mode; no ICC conversion, ROI, scale change or normalization"
+    },
+    "direct-first.png": {
+      "bytes": 97328,
+      "sha256": "1d3efc787885b99f6af8c60f0a0e3e67bb2659e43f2aaf316e606799f684037b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "15130d2240d999c647973be14a59555d33e346b77447e6495e7b8fb119c52f97",
+      "interpretation": "Pillow decoded stored mode; no ICC conversion, ROI, scale change or normalization"
+    },
+    "direct-last-again.png": {
+      "bytes": 98524,
+      "sha256": "4d18a87205c9d1c8665db6542f1a59f3a3c22cd428e7909ee8480990256dfa9b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "bf41168d369440b833982f691795929e35ca1f0986e3d78ec19762e679c1a0ea",
+      "interpretation": "Pillow decoded stored mode; no ICC conversion, ROI, scale change or normalization"
+    },
+    "direct-last.png": {
+      "bytes": 99901,
+      "sha256": "13788694f15e1d1c87111de35daac508c6fa65e7f725ae4639136504013e6522",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "0e44e03694f5a913eef6b348b7f725e6b3913427bdf7e035aa1b6e0f77e20c1e",
+      "interpretation": "Pillow decoded stored mode; no ICC conversion, ROI, scale change or normalization"
+    },
+    "direct-patterns.png": {
+      "bytes": 59293,
+      "sha256": "d072a8140eb5fc531c7d694f3ca893f924b9ecdb53e0347185e5fb9dd879c60e",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "f87b776859a8307e3dcc471de063c563185c6f85eff861809c5fed7dc7359b33",
+      "interpretation": "Pillow decoded stored mode; no ICC conversion, ROI, scale change or normalization"
+    },
+    "direct-resize-restore.png": {
+      "bytes": 98524,
+      "sha256": "4d18a87205c9d1c8665db6542f1a59f3a3c22cd428e7909ee8480990256dfa9b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        920,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "bf41168d369440b833982f691795929e35ca1f0986e3d78ec19762e679c1a0ea",
+      "interpretation": "Pillow decoded stored mode; no ICC conversion, ROI, scale change or normalization"
+    },
+    "direct-resize-wide.png": {
+      "bytes": 99815,
+      "sha256": "d4f6fd0b866fc0962d2c37adf07d716131f149fed2ea0386c2e2496ccaef6cc1",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size_pixels": [
+        1020,
+        668
+      ],
+      "icc_bytes": 3300,
+      "icc_sha256": "3d40c076ef474f107eb2c08fa5cebe2546e836500f4029ded5db7de763eb5f55",
+      "decoded_stored_pixel_bytes_sha256": "f58377c3607ad6bcac59c1f6953b3208a8ac452c18b54b9158b28b2b40c740fc",
+      "interpretation": "Pillow decoded stored mode; no ICC conversion, ROI, scale change or normalization"
+    }
+  },
+  "artifact_inputs": {
+    "001-stderr.txt": {
+      "bytes": 91,
+      "sha256": "3356d12c396366ef63ca9295c9ca599e1fcad08cf84ee9b0658cf7149ef77c91"
+    },
+    "001-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "002-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "002-stdout.json": {
+      "bytes": 69,
+      "sha256": "67eefa18d430fd8f27720a2fe52e0bc5ec2571a269c01e7366e84c8590218beb"
+    },
+    "003-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "003-stdout.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "004-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "004-stdout.json": {
+      "bytes": 453,
+      "sha256": "fd27cd2696f5c28bffae6f26d5abd853fd5eeac35ecb29340112bdcc8b8283f8"
+    },
+    "005-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "005-stdout.json": {
+      "bytes": 453,
+      "sha256": "fd27cd2696f5c28bffae6f26d5abd853fd5eeac35ecb29340112bdcc8b8283f8"
+    },
+    "006-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "006-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "007-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "007-stdout.json": {
+      "bytes": 5500,
+      "sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1"
+    },
+    "008-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "008-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "009-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "009-stdout.json": {
+      "bytes": 1129,
+      "sha256": "e71ccab4d825b11b1d588f21c60da52bd05fdce56cd869de6eba2052a6cc1cf4"
+    },
+    "010-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "010-stdout.json": {
+      "bytes": 452,
+      "sha256": "b381c1511ea5af86a5fcb25f29a1310f4ed513fb817921c2f96b741fc8b421bc"
+    },
+    "011-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "011-stdout.json": {
+      "bytes": 399,
+      "sha256": "608a03658b786ac43fc5fdd6977e650515e652867f2a7aa5f765f9f70fe24f6b"
+    },
+    "012-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "012-stdout.json": {
+      "bytes": 5500,
+      "sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1"
+    },
+    "013-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "013-stdout.json": {
+      "bytes": 5500,
+      "sha256": "4244fdd2eda2547de337811fcaebbfab4cb6fa51414df8bd5ea37031044336f1"
+    },
+    "014-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "014-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "015-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "015-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "016-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "016-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "017-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "017-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "018-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "018-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "019-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "019-stdout.json": {
+      "bytes": 453,
+      "sha256": "1e9d375bb6dda1144fe60a0950041e9d263d8b09f4332333e7a8357c019e15b1"
+    },
+    "020-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "020-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "021-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "021-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "022-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "022-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "023-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "023-stdout.json": {
+      "bytes": 453,
+      "sha256": "1e9d375bb6dda1144fe60a0950041e9d263d8b09f4332333e7a8357c019e15b1"
+    },
+    "024-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "024-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "025-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "025-stdout.json": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "026-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "026-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "027-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "027-stdout.json": {
+      "bytes": 453,
+      "sha256": "1e9d375bb6dda1144fe60a0950041e9d263d8b09f4332333e7a8357c019e15b1"
+    },
+    "028-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "028-stdout.json": {
+      "bytes": 400,
+      "sha256": "89a5ad197b0bcc0f54afe8e90017f8f52c5c6d1b9d3a435dc53602682e2d40ae"
+    },
+    "029-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "029-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "030-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "030-stdout.json": {
+      "bytes": 454,
+      "sha256": "1993d9678c297a8c7429b6e5c9529c15f16bda39c0e49d90c68ff225e2e21d2e"
+    },
+    "031-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "031-stdout.json": {
+      "bytes": 399,
+      "sha256": "6a1179be40c4fd581cf200361b5c8d4b14865c0626a7ab1969add8016a0ddb13"
+    },
+    "032-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "032-stdout.json": {
+      "bytes": 3728,
+      "sha256": "600b140fc723502bafc3baf92f282c3e3e939594401562322097bc440674ec7c"
+    },
+    "033-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "033-stdout.json": {
+      "bytes": 453,
+      "sha256": "71a895b00f0cd0c4d3eacbf1ea78f30117adde70a4ae751363648e9d15389ae2"
+    },
+    "build-binary.txt": {
+      "bytes": 4984,
+      "sha256": "58ce87b13aa1a07e24f0368009fa612957e462dd6400b6198f8ca72c29554b5b"
+    },
+    "build-environment.txt": {
+      "bytes": 565,
+      "sha256": "2745eaa68718a33ecafdab85f093920c67b6d4d43cf02dc3dd8993a1e1465ccc"
+    },
+    "build.json": {
+      "bytes": 768,
+      "sha256": "21eba86ba8be2b3e9e5c49b02eb76cd8d1220810b80d1bc0862a8594938462a9"
+    },
+    "direct-application.log": {
+      "bytes": 215,
+      "sha256": "2e77f8a1f04f2680387f4ad3c298f40c9d36e169cc6ce047036eb90381f41d9b"
+    },
+    "direct-film.png": {
+      "bytes": 110164,
+      "sha256": "46ae79801159c1a9b26e6a86225e51bcfc34a667bf215ec94a611c6cfe8b00d8"
+    },
+    "direct-first.png": {
+      "bytes": 97328,
+      "sha256": "1d3efc787885b99f6af8c60f0a0e3e67bb2659e43f2aaf316e606799f684037b"
+    },
+    "direct-last-again.png": {
+      "bytes": 98524,
+      "sha256": "4d18a87205c9d1c8665db6542f1a59f3a3c22cd428e7909ee8480990256dfa9b"
+    },
+    "direct-last.png": {
+      "bytes": 99901,
+      "sha256": "13788694f15e1d1c87111de35daac508c6fa65e7f725ae4639136504013e6522"
+    },
+    "direct-patterns.png": {
+      "bytes": 59293,
+      "sha256": "d072a8140eb5fc531c7d694f3ca893f924b9ecdb53e0347185e5fb9dd879c60e"
+    },
+    "direct-resize-restore.png": {
+      "bytes": 98524,
+      "sha256": "4d18a87205c9d1c8665db6542f1a59f3a3c22cd428e7909ee8480990256dfa9b"
+    },
+    "direct-resize-wide.png": {
+      "bytes": 99815,
+      "sha256": "d4f6fd0b866fc0962d2c37adf07d716131f149fed2ea0386c2e2496ccaef6cc1"
+    },
+    "environment.txt": {
+      "bytes": 1084,
+      "sha256": "9c5501492d643f1440d6669b0d6655b469d5be674e797501f413f59018de49b5"
+    },
+    "gallery-film-probe.swift": {
+      "bytes": 23963,
+      "sha256": "6c4d5c93c9331ba4dd6427aa18799b6a1e720b6e2e006e036fb908ced4f9e635"
+    },
+    "gallery.tar.gz.sha256": {
+      "bytes": 81,
+      "sha256": "848fa1ead8edc42581bc635ecf4109db041f95a88730d873ae2ad76164e91734"
+    },
+    "observer-build.log": {
+      "bytes": 697,
+      "sha256": "2bde0f79f2e23f718fdb1738adde4c83568d37b4bb24ae0ef3eb5bfaa7b14cb1"
+    },
+    "observer.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "result.json": {
+      "bytes": 114293,
+      "sha256": "54b06d51178cf8e57d947c2de193f837b36ab0a52fa0e341357f0d6972cba0bf"
+    }
+  },
+  "download_receipt": {
+    "path": "/Users/torrekie/Documents/Codex/2026-10-23/https-github-com-aimessoft-bern-https/work/film-e48-followup14-actual.download.json",
+    "sha256": "050e89047c25e2445cca1c3350295685f88f18e5ca734172ced021676268a863",
+    "data": {
+      "run_id": "40165343690",
+      "artifact": {
+        "id": 12588355848,
+        "name": "macos14-film-port",
+        "size_in_bytes": 637806,
+        "digest": "sha256:717a85196fef7bf44c21521b0be7d614d121d27f280d6a4e526062f8a5e2d13e",
+        "created_at": "2026-10-25T05:23:48Z",
+        "expires_at": "2026-10-28T05:23:46Z",
+        "workflow_run": {
+          "id": 40165343690,
+          "repository_id": 1430931787,
+          "head_repository_id": 1430931787,
+          "head_branch": "master",
+          "head_sha": "2cff19aad748ac673fefda921b313886bb902e4b"
+        }
+      },
+      "outer_zip_bytes": 637806,
+      "outer_zip_digest": "sha256:717a85196fef7bf44c21521b0be7d614d121d27f280d6a4e526062f8a5e2d13e",
+      "api_digest_verified": true,
+      "archive_deleted": true,
+      "zip_member_count": 83,
+      "zip_destinations_unique_nfc_casefold": true
+    }
+  },
+  "source_read_only": true,
+  "software": {
+    "pillow": "12.3.0"
+  },
+  "limitations": [
+    "AX measured after stable PNG; no simultaneous AX/pixel state claim.",
+    "All six AXImage frames retained, including off-window coordinates; AXScrollArea is not used as clip.",
+    "Stable4 compares original full provider buffers; no new geometric tolerance or settled-animation claim.",
+    "Existing source stops App before attempting front restoration and reports no termination or front-before/after cleanup fields; no strong cleanup claim.",
+    "CLI First/Last activations are not physical gestures or proof of internal target/binding writes.",
+    "Exact e48 actual14 reference only; f9 is not substituted, no local13 or cross-OS acceptance/adoption."
+  ]
+}

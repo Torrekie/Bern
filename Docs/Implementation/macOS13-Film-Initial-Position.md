@@ -1,6 +1,6 @@
 # Film 初始卡片：测量、兼容修复与剩余边界
 
-诊断候选已经复现 macOS 14 的初始 Glen 身份与卡片几何；它没有把 Rust 默认值 3 改成 4。父任务已将不含日志的最小 Style 语义补丁提交为 `e48fff46b3a92a28465ad74295bd273a9d69af7d`。**该 clean 源码已通过整应用 CI，仍待实际 macOS 13 验证**，不能套用诊断构建的通过记录。后续首次 Last 和加宽窗口仍有差异，完整 Film 等同尚未通过。
+诊断候选已经复现 macOS 14 的初始 Glen 身份与卡片几何；它没有把 Rust 默认值 3 改成 4。父任务已将不含日志的最小 Style 语义补丁提交为 `e48fff46b3a92a28465ad74295bd273a9d69af7d`。**该 clean 源码已通过整应用 CI 及精确 e48 的本机13 wait/direct初始几何核验**；这一有限通过不扩展为后续FirstLast/resize或整图视觉通过，也不能套用诊断构建的通过记录。后续首次 Last 和加宽窗口仍有差异，完整 Film 等同尚未通过。
 
 ## 原始外部现象与已排除项
 
@@ -148,3 +148,13 @@ wait/direct 的全部六张 AXImage frame 与两组 14参考相差小于 0.00001
 [源码差异审查](../Evidence/macOS14-film-source-delta-f9-e48/README.md)另列明14仍具有新增Environment属性、共享闭包及Picture结构差异；13-only owner动作不等于14视图/存储无变化。这些是源码事实，并非对本次可变落点的原因认定。远端已清除自有应用、observer/cache及下载目录，未遗留自有进程；本机原始证据只保留一份。
 
 新增[只读时间表](../Evidence/macOS14-film-abba-timeline-40074197486/README.md)确认12场景的首个完整六图walk均与各自末态逐值相同。四次immediate的首完整walk位于select CLI调用起点后约701–990毫秒；此前截断样本不补造几何。close CLI结束距select启动仅0.733–1.873毫秒，但不是Inspector动画结束间隔；select的command.end还包含强制首1秒观测，不能当作动作ack。整个ABBA都未记录native clip/insets或TargetContext，不能把这张时间表当作完整布局轨迹。原始数据的[纯Python离线复算器](../Evidence/macOS14-film-abba-analyzer/README.md)已独立归档，不执行artifact代码、不改变原图。
+
+## 精确 e48 的14后续终态参考
+
+[单次run40165343690](../Evidence/macOS14-film-e48-endpoints-40165343690/README.md)复用build40070407306原App/CLI，没有重编产品；当前harness2cff19a与原collector6c4d执行一个fresh direct进程及既有Last→First→Last-again→wide1020→restore920。实际14.8.9/arm64/active/light/normal三false，外部helper为Xcode15.4/Swift5.10/SDK14.5/target14；App仍是原d44…/CLI31a…、SDK26.2/min13。
+
+六阶段终AX均完整且有六个唯一命名AXImage，全部36组原screen/outer-relative xywh与7PNG/ICC经独立复核。最大卡片中心依次为Glen601、Windowpane573、Gingham565、Windowpane565、Windowpane599、Windowpane565；首次Last与重复Last的差异必须保留，不选优、不混用f9或d146数据。所有PNG都有原四次raw-buffer相同，终AX在PNG之后采样，不是同步绑定或完整动画证据。
+
+这是当前e48 port运行在14的参考，不冒充未修改上游ffb的独立后续验收。本机clean e48首次Last仍缺实际数据；下一仅fresh direct初始作为setup后一次Last，不继续First/Last-again/resize或immediate矩阵，不改默认3、nearest或套用初始anchor补偿。源码审查没有直接证明13缺陷：显式First/Last会退役initial owner；共享same-target重发死分支与同StateObject重现是静态事实，尚无本机13失败链。
+
+旧CI observer先stop后restore且没有termination/front-after-cleanup收据，不满足本机强kernel cleanup门槛，不能直接在用户桌面运行。本机新入口的source-only接线仍是准备状态，须保留startup/ownPID/前台强身份/restore-before-stop与精确IPC/prefs清理。一次只读缺失私有域defaults查询0.652s正常返回且无文件，不证明删除一定成功，不放宽原5s cap；上一色改wrapper失败保留。下载637806B ZIP已API digest核验后清理；本单元无本机App、helperbinary或编译缓存。goal active，完整13阶段仍未验收，11/Swift5.3/ObjC/iOS仍延期。
