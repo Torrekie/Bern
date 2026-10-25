@@ -18,13 +18,13 @@ from pathlib import Path
 SOURCE = 'e48fff46b3a92a28465ad74295bd273a9d69af7d'
 PACKAGE = Path(__file__).resolve().parent
 GUARD_SHA = '5b4a254565f437f819a308f8cf3c5b1990b937f76b9918ff5b935e91e1a2b017'
-SOURCE_MANIFEST = 'f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741'
+SOURCE_MANIFEST = '3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250'
 GALLERY_GENERATED = 'f72cb1c6082575df75f21aa994bee5301d037046c9ca253a71a905aae6ef1653'
 DERIVED_ORIGINAL_RUNTIME = '626c4b7785cf46f9e6d86389d5c64b8221d5f5ead8f7518a67e407b38883ba95'
 DERIVED_PATCHED_RUNTIME = 'e38647f3b918e4d0c4c503eb8876889578a35b57efdb8feeaadafaac5a51f663'
 STYLE = 'crates/bern-backend-swiftui/templates/BernStyle.swift'
 RUNTIME = 'crates/bern-backend-swiftui/templates/BernRuntime.swift'
-PINS = {STYLE: 'fb2adb075d7abcb70bc1b1b7d434d7686195e5d91a1d18f8156fce285fcb771c',
+PINS = {STYLE: '179b406b1a7246e855ac7634bf225d1680016033fb1044035fb0137399c81e0e',
         RUNTIME: '1da1f603ef7397fcfb8ef2a454343e79257596805697175e7948c30f4e8a2b77'}
 GENERATOR = 'crates/bern-backend-swiftui/src/lib.rs'
 IR = 'crates/bern-ir/src/spec.rs'

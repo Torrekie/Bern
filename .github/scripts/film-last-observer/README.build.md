@@ -1,10 +1,12 @@
 # Film Last observer: build-only package
 
-This adds `build.py` around the unchanged four-file observer source packet.
-`source-SHA256SUMS` is the original packet manifest (SHA-256
-`f939a41d78a5d78cbcdc51d2341952c200aa5187bb6befa2331521eb03565741`),
-not a manifest for this added build driver. The original `README.md` describes
-the observer and remains unchanged.
+This derives the prior seven-file build package with one narrow Swift source
+candidate described in `README.md`: the observation-owner expression is moved
+to an explicitly typed private main-actor helper. The core and Runtime remain
+byte-exact. `source-SHA256SUMS` binds the derived four-file observer source
+packet (SHA-256
+`3e2ba0b9fe468bfc920c357942c7d0fdefd96857b9fb0725f9e99b0fadcfa250`),
+not this build driver. No prior failed build is reclassified as successful.
 
 Use a disposable checkout at exact source
 `e48fff46b3a92a28465ad74295bd273a9d69af7d`. Publish this directory as
@@ -65,6 +67,11 @@ actual generated sources remain evidence. A packaging attempt uses a fresh
 partial path and removes only its own partial/final tar and checksum on error.
 The full build log is hashed but only a bounded 128 KiB log is uploaded. No
 retry, fallback, native capture or cleanup of another checkout is performed.
+
+CI 40175193229 remains a failed full build (Swift 6.2.4 SILGen ErrorExpr,
+signal 6). This source candidate has not been compiled. The build driver
+changes only the derived source-manifest and Style pins; its gates and Runtime
+pins remain unchanged.
 
 This private preparation was checked by AST parsing and independent in-memory
 text derivation only. Neither entry point, patcher, Git, compiler nor App was
